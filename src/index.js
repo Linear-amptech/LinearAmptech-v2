@@ -6,7 +6,7 @@ import { UseEffectScroll } from "react-use-smooth-scroll";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <UseEffectScroll>
-    <App />
-  </UseEffectScroll>
+  // <UseEffectScroll>
+  <App />
+  // </UseEffectScroll>
 );

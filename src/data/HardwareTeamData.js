@@ -12,14 +12,14 @@ export const hardwareTeam = [
     twitter: "",
     facebook: "",
   },
-  {
-    photo: bipul,
-    name: "Bipul Raj",
-    position: "Position",
-    linkedin: "https://www.linkedin.com/in/bipul-raj-3a7596201/",
-    twitter: "",
-    facebook: "",
-  },
+  // {
+  //   photo: bipul,
+  //   name: "Bipul Raj",
+  //   position: "Position",
+  //   linkedin: "https://www.linkedin.com/in/bipul-raj-3a7596201/",
+  //   twitter: "",
+  //   facebook: "",
+  // },
   {
     photo: azhar,
     name: "Azhar Ansari",
