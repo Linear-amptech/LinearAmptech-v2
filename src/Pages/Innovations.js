@@ -624,7 +624,7 @@ const Innovations = () => {
             <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
               <div className="p space-y-3  bg-white  ">
                 <img
-                  className="object-cover object-center w-full lg:w-[354px] rounded-none h-[248px]"
+                  className="object-fill object-center w-full lg:w-[100%] rounded-none h-[248px]"
                   src={require("../assets/first.jpg")}
                   alt=""
                 />
@@ -648,7 +648,7 @@ const Innovations = () => {
 
               <div className=" space-y-3 bg-white   rounded-none ">
                 <img
-                  className="object-cover object-center w-full lg:w-[354px] rounded-none h-[248px]"
+                  className="object-fill object-center w-full lg:w-[100%] rounded-none h-[248px] "
                   src={require("../assets/second.png")}
                   alt=""
                 />
@@ -669,7 +669,7 @@ const Innovations = () => {
 
               <div className=" space-y-3 bg-white">
                 <img
-                  className="object-cover object-center w-full lg:w-[354px] rounded-none h-[248px]"
+                  className="object-cover object-center w-full lg:w-[100%] rounded-none h-[248px]"
                   src={require("../assets/third.png")}
                   alt=""
                 />
