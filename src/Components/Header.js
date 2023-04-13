@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FiRadio } from "react-icons/fi";
 import { VscRadioTower } from "react-icons/vsc";
 import { SiPytest, SiGoogleanalytics } from "react-icons/si";
@@ -19,6 +19,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [isRFPowerAmp, setIsRFPowerAmp] = useState(false);
+  const [isRFPassive, setIsRFPassive] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -140,23 +141,12 @@ const Header = () => {
                         </h2>
                       </NavLink>
                       <ul className="flex flex-col gap-5">
-                        <NavLink to="/products/rf-design-and-signal-processing">
-                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <FiRadio className="text-[1.5rem]" />
-                            </div>
-                            <p className="hover:text-[#616161]">
-                              Radio Frequency Passive <br /> Components
-                            </p>
-                          </li>
-                        </NavLink>
-
                         <li
                           className="flex flex-col gap-4   items-start text-[0.95rem]"
                           onMouseLeave={() => setIsRFPowerAmp(false)}
                         >
                           <NavLink
-                            to="/products/rf-design-and-signal-processing"
+                            to="/products/rf-power-amplifiers"
                             onMouseEnter={() => setIsRFPowerAmp(true)}
                           >
                             <div className="flex gap-4 items-center justify-start w-[100%] hover:text-[#616161">
@@ -193,11 +183,53 @@ const Header = () => {
                             </ul>
                           )}
                         </li>
+                        <li
+                          className="flex flex-col gap-4   items-start text-[0.95rem]"
+                          onMouseLeave={() => setIsRFPassive(false)}
+                        >
+                          <NavLink
+                            to="/products/rf-passive-components"
+                            onMouseEnter={() => setIsRFPassive(true)}
+                          >
+                            <div className="flex gap-4 items-center justify-start w-[100%] hover:text-[#616161">
+                              <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
+                                <MdMicrowave className="text-[1.5rem]" />
+                              </div>
+                              <p className="hover:text-[#616161">
+                                Radio Frequency Passive <br /> Components
+                              </p>
+                            </div>
+                          </NavLink>
+                          {isRFPassive && (
+                            <ul className="ml-14 list-disc text-[0.8rem]">
+                              <NavLink to="/products/rf-passive/KuPD-1">
+                                <li className="hover:text-[#616161]">
+                                  Power Divider-KuPD-1
+                                </li>
+                              </NavLink>
+                              <NavLink to="/products/rf-passive/5GBPF-1">
+                                <li className="hover:text-[#616161]">
+                                  5G Base Station Filter : 5GBPF-1
+                                </li>
+                              </NavLink>
+                              <NavLink to="/products/rf-passive/UHFPD-1">
+                                <li className="hover:text-[#616161]">
+                                  Power Splitter-UHFPD-1
+                                </li>
+                              </NavLink>
+                              <NavLink to="/products/rf-passive/UHFPD-2">
+                                <li className="hover:text-[#616161]">
+                                  Power Splitter-UHFPD-2
+                                </li>
+                              </NavLink>
+                            </ul>
+                          )}
+                        </li>
                         <li className="flex gap-4 justify-start items-center text-[0.95rem]">
                           <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
                             <MdDesignServices className="text-[1.5rem]" />
                           </div>
-                          <NavLink to="/products/rf-design-and-signal-processing">
+                          <NavLink to="/products/rf-passive/GaN-MMIC">
                             <p className="hover:text-[#616161]">
                               GaN MMIC Designs
                             </p>

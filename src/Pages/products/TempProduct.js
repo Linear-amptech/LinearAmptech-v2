@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ProductLeft from "./ProductLeft";
 import productBg from "../../assets/video/bg-product.jpg";
-import p1 from "../../assets/RFlinear/p1.png";
+// import p1 from "../../assets/RFlinear/p1.png";
 import p2 from "../../assets/RFlinear/p2.png";
 import p3 from "../../assets/RFlinear/p3.png";
 import p4 from "../../assets/RFlinear/p4.png";
@@ -14,7 +14,7 @@ import ProductRight from "./ProductRight";
 
 const productDetails = {
   p1: {
-    img: p1,
+    img: p2,
     name: "Radio Frequency Passive Components",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur, est id consequat ultricies, nibh lacus vehicula nisl, eu auctor turpis ante eu ante. Fusce cursus eusapien et luctus. Donec eu diam quis nunc interdum luctus. Utvelit metus, laoreet ut justo vitae, venenatis euismod mauris. Quisque semper nulla ut augue lobortis, nec rhoncus orciiaculis. In hac habitasse platea dictumst. Aliquam fermentum magna neque. Ut vulputate sed dolor ut ullamcorper. Curabitur lobortis quam vestibulum lectus dictum, a egestas nunc sollicitudin. Nulla facilisi.",
