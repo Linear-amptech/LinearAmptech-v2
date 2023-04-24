@@ -3,7 +3,7 @@ import { BgElement2, BgElement1, BgElement3 } from "../../assets";
 import { Footer, Header } from "../../Components";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import foucusImg from "../../assets/product-focus-bg.png";
+import waitSysVideo from "../../assets/video/waitSysVideo.mp4";
 
 const CyberSystem = () => {
   useEffect(() => {
@@ -87,7 +87,12 @@ const CyberSystem = () => {
       </div>
       <div className="productContainer  w-[100%] text-[1.2rem] leading-relaxed ">
         <div className="lg:flex  justify-center gap-16 my-36 px-[10%]">
-          <div className="lg:w-[400px] lg:h-[400px] md:w-[600px] md:h-[600px] h-[350px] w-[350px] bg-[#F2F2F2] rounded-2xl shadow-md"></div>
+          <div className="lg:w-[400px] lg:h-[400px] md:w-[600px] md:h-[600px] h-[350px] w-[350px] bg-[#F2F2F2] flex justify-center rounded-2xl shadow-md">
+            <img
+              src={require("../../assets/Cyber/1.png")}
+              className="w-[100%]  "
+            ></img>
+          </div>
           <div className="lg:w-[800px] max-w-[600px] flex flex-col  justify-between">
             <div>
               <h2
@@ -116,72 +121,22 @@ const CyberSystem = () => {
           </div>
         </div>
 
-        <div className="  lg:flex lg:flex-row flex flex-col-reverse  gap-16 py-40 px-[10%] justify-center text-white bg-primary-color">
-          <div className="lg:w-[800px] max-w-[600px] flex flex-col   justify-between">
-            <div>
-              <h2 className="text-[2rem] font-bold mb-5" data-aos="fade-up">
-                TRACK System
-              </h2>
-              <p data-aos="fade-right" data-aos-duration="1000">
-                The TRACK an acronym here for Traffic Regulation and Control Kit
-                is a product suitable for automatic traffic light control based
-                on traffic queing and vehicle classifications. The system
-                operates on computer vision technology to count the number of
-                vehicles, classify them for givng priority to the important
-                vehcles such as Ambulance, Firebridgade, Police and
-                administration etc. The system works on robust algorithim which
-                can systematically assign waiting time to various sides in the
-                cross junctions.
-              </p>
-            </div>
-            {/* <a className="underline cursor-pointer hover:text-blue-800">more</a> */}
-          </div>
-          <div className="lg:w-[400px] lg:h-[400px] md:w-[600px] md:h-[600px] h-[350px] w-[350px] bg-[#F2F2F2] rounded-2xl shadow-md">
-            {/* <img
-              src={require("../../assets/RFlinear/p2.png")}
-              className="w-[90%]"
-            ></img> */}
-          </div>
-        </div>
-
-        <div className="w-[100vw] h-[100px]">
+        {/* <div className="w-[100vw] h-[100px]">
           <div data-aos="fade-up" data-aos-duration="1000">
             <BgElement2 className="w-[300px] absolute origin-center -left-36 -translate-y-[30%]" />
           </div>
-        </div>
+        </div> */}
 
         <div className="lg:flex  justify-center gap-16 my-40 px-[10%]">
-          <div className="lg:w-[400px] lg:h-[400px] md:w-[600px] md:h-[600px] h-[350px] w-[350px] bg-[#F2F2F2] rounded-2xl shadow-md">
-            {/* <img
-              src={require("../../assets/RFlinear/p3.png")}
-              className="w-[90%]"
-            ></img> */}
-          </div>
-          <div className="lg:w-[800px] max-w-[600px] flex flex-col justify-between">
-            <div>
-              <h2
-                className="text-[2rem] font-bold mb-5 mt-12 lg:mt-0"
-                data-aos="fade-up"
-              >
-                PLAN System
-              </h2>
-              <p data-aos="fade-left" data-aos-duration="1000">
-                The PLAN an acronym here for PLanning Metropolis Navigation is a
-                product suitable for planning and regulating the entire city
-                traffic navigation to avoid any congestions and assists in route
-                diversions required during unavoidable events. The system
-                aquires data from Track system as well as from online traffic
-                data services such as Google map and Microsoft Azure to model
-                the entire city traffic using our AI/ML platform. This platform
-                can give traffic analytics based on data fusion with deployed
-                sensors and online data services to plan for city traffic
-                managements. A “digital Twin” will be developed to predict
-                important measures to make smart city traffic regulated in a
-                wholestic manner.
-              </p>
-            </div>
-            {/* <a className="underline cursor-pointer hover:text-blue-800">more</a> */}
-          </div>
+          <section className="bg-[#6A6A6A] max-w-[1085px] m-auto max-h-[564px] border ">
+            <video
+              src={waitSysVideo}
+              controls
+              className="z-10"
+              preload
+              poster={require("../../assets/banner.png")}
+            />
+          </section>
         </div>
       </div>
       <div className="w-[100vw] ">

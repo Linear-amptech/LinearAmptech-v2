@@ -14,6 +14,7 @@ import {
 } from "react-icons/md";
 import { IoMdAnalytics } from "react-icons/io";
 import { TbDeviceDesktopAnalytics } from "react-icons/tb";
+import { AiCube } from "../assets";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -115,7 +116,7 @@ const Header = () => {
               >
                 Products
                 {isDropDownOpen && (
-                  <div className="container ease-in duration-1000 border   flex flex-wrap justify-center gap-10 text-[#929292] absolute lg:min-w-[1240px] md:min-w-[768px] overflow-auto max-h-[600px] lg:left-36 md:left-[75%] left-[75%] -translate-x-[72%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className="container ease-in duration-1000 border   flex flex-wrap justify-center gap-10 text-[#929292] absolute lg:min-w-[1200px] md:min-w-[768px] overflow-auto max-h-[600px] lg:left-36 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
@@ -133,7 +134,7 @@ const Header = () => {
                         Learn more
                       </button>
                     </div>
-                    <div className="lg:w-[25%] max-w-[250px]">
+                    <div className="lg:w-[30%] max-w-[300px]">
                       <NavLink to="/products/rf-design-and-signal-processing">
                         <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
                           Radio Frequency Design <br />
@@ -159,7 +160,7 @@ const Header = () => {
                             </div>
                           </NavLink>
                           {isRFPowerAmp && (
-                            <ul className="ml-14 list-disc text-[0.8rem]">
+                            <ul className="ml-14 text-[0.8rem]">
                               <NavLink to="/products/rf-amplifier/lamp-PACF1P9">
                                 <li className="hover:text-[#616161]">
                                   LAMP-PACF1P9-10W
@@ -201,7 +202,7 @@ const Header = () => {
                             </div>
                           </NavLink>
                           {isRFPassive && (
-                            <ul className="ml-14 list-disc text-[0.8rem]">
+                            <ul className="ml-14 text-[0.8rem]">
                               <NavLink to="/products/rf-passive/KuPD-1">
                                 <li className="hover:text-[#616161]">
                                   Power Divider-KuPD-1
@@ -251,28 +252,18 @@ const Header = () => {
                               <SiGoogleanalytics className="text-[1.2rem]" />
                             </div>
                             <p className="hover:text-[#616161]">
-                              Transmitter Linearization
-                            </p>
-                          </li>
-                        </NavLink>
-                        <NavLink to="/products/rf-design-and-signal-processing">
-                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <VscRadioTower className="text-[1.5rem]" />
-                            </div>
-                            <p className="hover:text-[#616161]">
-                              Antenna Solutions
+                              Transmitter Linearization & Antenna Solutions
                             </p>
                           </li>
                         </NavLink>
                       </ul>
                     </div>
 
-                    <div className="lg:w-[20%] max-w-[250px]">
+                    <div className="lg:w-[30%] max-w-[300px]">
                       <NavLink to="/products/cyber-physical-system-and-signal-processing">
                         <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
                           Cyber Physical Systems <br />
-                          and Signal Processing
+                          and Artificial Intelligence
                         </h2>
                       </NavLink>
                       <ul className="flex flex-col gap-5">
@@ -284,57 +275,13 @@ const Header = () => {
                             <p className="hover:text-[#616161]">WAIT System</p>
                           </li>
                         </NavLink>
-                        <NavLink to="/products/cyber-physical-system-and-signal-processing">
+                        <NavLink to="/products/ai-qube-data-core">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
                             <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <MdTrackChanges className="text-[1.4rem]" />
-                            </div>
-                            <p className="hover:text-[#616161]">TRACK System</p>
-                          </li>
-                        </NavLink>
-                        <NavLink to="/products/cyber-physical-system-and-signal-processing">
-                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <MdSettingsSystemDaydream className="text-[1.4rem]" />
-                            </div>
-                            <p className="hover:text-[#616161]">PLAN System</p>
-                          </li>
-                        </NavLink>
-                      </ul>
-                    </div>
-                    <div className="lg:w-[20%] max-w-[250px]">
-                      <NavLink to="/products/ai-and-ml">
-                        <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
-                          Artificial Intelligence & <br />
-                          Machine Learning
-                        </h2>
-                      </NavLink>
-                      <ul className="flex flex-col gap-5">
-                        <NavLink to="/products/ai-and-ml">
-                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <IoMdAnalytics className="text-[1.3rem]" />
-                            </div>
-                            <p className="hover:text-[#616161]">Analytics</p>
-                          </li>
-                        </NavLink>
-                        <NavLink to="/products/ai-and-ml">
-                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <MdAnalytics className="text-[1.6rem]" />
+                              <AiCube className="w-5 h-5" />
                             </div>
                             <p className="hover:text-[#616161]">
-                              Observability
-                            </p>
-                          </li>
-                        </NavLink>
-                        <NavLink to="/products/ai-and-ml">
-                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <TbDeviceDesktopAnalytics className="text-[1.5rem]" />
-                            </div>
-                            <p className="hover:text-[#616161]">
-                              Predictive Maintenance
+                              AI Qube Data Core
                             </p>
                           </li>
                         </NavLink>

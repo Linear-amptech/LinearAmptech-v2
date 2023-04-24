@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AboutUs, Home, Team, Innovations, NewsEvents } from "./Pages";
-import { GanMMIC, RFPassive, RFPowerAmp } from "./Pages/products";
+import { AiCube, GanMMIC, RFPassive, RFPowerAmp } from "./Pages/products";
 import AIandML from "./Pages/products/AIandML";
 import CyberSystem from "./Pages/products/CyberSystem";
 import { LAMP1, LAMP2, LAMP3, LAMP4 } from "./Pages/products/RFAmplifier";
@@ -73,6 +73,11 @@ function App() {
           />
 
           {/* ****************************************** */}
+          <Route
+            path="/products/ai-qube-data-core"
+            exact
+            element={<AiCube />}
+          />
           <Route
             path="/products/rf-passive/GaN-MMIC"
             exact

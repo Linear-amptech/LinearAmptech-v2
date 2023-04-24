@@ -104,7 +104,12 @@ const RFPowerAmp = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                LAMP-PAMOCBJ-10W
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-amplifier/lamp-PAMOCBJ"
+                >
+                  LAMP-PAMOCBJ-10W
+                </NavLink>
               </td>
               <td class="px-5 py-4">0.55-3.5</td>
               <td class="px-6 py-4">8-10</td>
@@ -125,7 +130,12 @@ const RFPowerAmp = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                LAMP-PAMOCCE-10W
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-amplifier/lamp-PAMOCCE"
+                >
+                  LAMP-PAMOCCE-10W
+                </NavLink>
               </td>
               <td class="px-5 py-4">0.49-2.9</td>
               <td class="px-6 py-4">10</td>
@@ -146,7 +156,12 @@ const RFPowerAmp = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                LAMP-PAMOCCF-10W
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-amplifier/lamp-PAMOCCF"
+                >
+                  LAMP-PAMOCCF-10W
+                </NavLink>
               </td>
               <td class="px-5 py-4">0.5-2.2</td>
               <td class="px-6 py-4">10</td>
@@ -167,7 +182,12 @@ const RFPowerAmp = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                LAMP-PACF1P9-10W
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-amplifier/lamp-PACF1P9"
+                >
+                  LAMP-PACF1P9-10W
+                </NavLink>
               </td>
               <td class="px-5 py-4">1.5-2.5</td>
               <td class="px-6 py-4">10</td>

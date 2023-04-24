@@ -100,7 +100,12 @@ const RFPassive = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                Power Divider-KuPD-1
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-passive/KuPD-1"
+                >
+                  Power Divider-KuPD-1
+                </NavLink>
               </td>
               <td class="px-5 py-4">1.7</td>
               <td class="px-6 py-4">1.5</td>
@@ -121,7 +126,12 @@ const RFPassive = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                5G Base Station Filter : 5GBPF-1
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-passive/5GBPF-1"
+                >
+                  5G Base Station Filter : 5GBPF-1
+                </NavLink>
               </td>
               <td class="px-5 py-4"> 0.4</td>
               <td class="px-6 py-4">10</td>
@@ -142,7 +152,12 @@ const RFPassive = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                Power Splitter-UHFPD-1
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-passive/UHFPD-1"
+                >
+                  Power Splitter-UHFPD-1
+                </NavLink>
               </td>
               <td class="px-5 py-4">0.9</td>
               <td class="px-6 py-4">0.01</td>
@@ -163,7 +178,12 @@ const RFPassive = () => {
                 scope="row"
                 class="px-6 py-4  text-gray-900 whitespace-nowrap"
               >
-                Power Splitter-UHFPD-2
+                <NavLink
+                  className="text-blue-800 underline"
+                  to="/products/rf-passive/UHFPD-2"
+                >
+                  Power Splitter-UHFPD-2
+                </NavLink>
               </td>
               <td class="px-5 py-4">1.7</td>
               <td class="px-6 py-4">0.1</td>
