@@ -462,7 +462,7 @@ const Innovations = () => {
         <BgElement1 className="w-[200px] absolute origin-center -right-20 -translate-y-[20%]" />
       </div> */}
       <div className="mx-[12%]">
-        <h2 className="text-[2.5rem] font-bold ">Falcon Cloud</h2>
+        <h2 className="text-[2.5rem] font-bold ">AI Qube Data Core</h2>
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="w-[100%] lg:w-[50%]">
             <h2 className="text-[1.8rem] font-bold mt-5">How it works ?</h2>

@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <div
-      onMouse={() => setIsDropDownOpen(false)}
+      onMouseLeave={() => setIsDropDownOpen(false)}
       className="z-50 bg-white sticky top-0 "
     >
       <nav className="relative shadow  ">
@@ -110,13 +110,14 @@ const Header = () => {
 
               <div
                 onMouseEnter={() => setIsDropDownOpen(true)}
+                // onMouseLeave={() => setIsDropDownOpen(false)}
                 onClick={() => setIsDropDownOpen(!isDropDownOpen)}
                 className="my-2 text-gray-700 transition-colors duration-300 z-10 transform md:mx-4 md:my-0 cursor-pointer hover:text-blue-500"
                 // to="/products"
               >
                 Products
                 {isDropDownOpen && (
-                  <div className="container ease-in duration-1000 border   flex flex-wrap justify-center gap-10 text-[#929292] absolute lg:min-w-[1200px] md:min-w-[768px] overflow-auto max-h-[600px] lg:left-36 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className="container ease-in duration-1000 border   flex flex-wrap justify-center gap-10 text-[#929292] absolute lg:min-w-[950px] md:min-w-[768px] overflow-auto max-h-[600px] lg:left-36 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
@@ -236,7 +237,7 @@ const Header = () => {
                             </p>
                           </NavLink>
                         </li>
-                        <NavLink to="/products/rf-design-and-signal-processing">
+                        <NavLink to="/products/sdr-test-bed">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
                             <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
                               <SiPytest className="text-[1.2rem]" />

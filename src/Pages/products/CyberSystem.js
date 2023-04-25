@@ -89,7 +89,7 @@ const CyberSystem = () => {
         <div className="lg:flex  justify-center gap-16 my-36 px-[10%]">
           <div className="lg:w-[400px] lg:h-[400px] md:w-[600px] md:h-[600px] h-[350px] w-[350px] bg-[#F2F2F2] flex justify-center rounded-2xl shadow-md">
             <img
-              src={require("../../assets/Cyber/1.png")}
+              src={require("../../assets/WaitSystem/1.png")}
               className="w-[100%]  "
             ></img>
           </div>
@@ -119,31 +119,62 @@ const CyberSystem = () => {
             </div>
             {/* <a className="underline cursor-pointer hover:text-blue-800">more</a> */}
           </div>
+        </div>{" "}
+        <div className="w-[100vw] ">
+          <div data-aos="fade-up" data-aos-duration="1500">
+            <BgElement3 className="w-[300px] absolute origin-center -right-36 -translate-y-[50%]" />
+          </div>
         </div>
-
         {/* <div className="w-[100vw] h-[100px]">
           <div data-aos="fade-up" data-aos-duration="1000">
             <BgElement2 className="w-[300px] absolute origin-center -left-36 -translate-y-[30%]" />
           </div>
         </div> */}
+      </div>
+      <div className="imgContainer flex flex-col  lg:gap-24 gap-12">
+        <div className="flex lg:flex-row md:flex-row sm:flex-row lg:gap-32 md:gap-12 sm:gap-10 gap-5 flex-col justify-center">
+          <div className="max-w-[550px] flex justify-center items-center">
+            <img
+              src={require("../../assets/WaitSystem/2.png")}
+              className="w-[400px]"
+            ></img>
+          </div>
+          <div className="max-w-[550px] flex justify-center items-center">
+            <img
+              src={require("../../assets/WaitSystem/3.png")}
+              className="w-[400px]"
+            ></img>
+          </div>
+        </div>
 
-        <div className="lg:flex  justify-center gap-16 my-40 px-[10%]">
-          <section className="bg-[#6A6A6A] max-w-[1085px] m-auto max-h-[564px] border ">
-            <video
-              src={waitSysVideo}
-              controls
-              className="z-10"
-              preload
-              poster={require("../../assets/banner.png")}
-            />
-          </section>
+        <div className="flex lg:flex-row md:flex-row sm:flex-row lg:gap-32 md:gap-12 sm:gap-10 gap-5 flex-col justify-center">
+          <div className="max-w-[550px] flex justify-center items-center">
+            <img
+              src={require("../../assets/WaitSystem/4.png")}
+              className="w-[400px]"
+            ></img>
+          </div>
+          <div className="max-w-[550px] flex justify-center items-center">
+            <img
+              src={require("../../assets/WaitSystem/5.png")}
+              className="w-[400px]"
+            ></img>
+          </div>
         </div>
       </div>
-      <div className="w-[100vw] ">
-        <div data-aos="fade-up" data-aos-duration="1500">
-          <BgElement3 className="w-[300px] absolute origin-center -right-36 -translate-y-[50%]" />
-        </div>
+      <div className="lg:flex  justify-center flex-col gap-12 my-40 px-[10%]">
+        <h3 className="text-[3rem] font-bold">Video </h3>
+        <section className="bg-[#6A6A6A] max-w-[1085px] m-auto max-h-[564px] border ">
+          <video
+            src={waitSysVideo}
+            controls
+            className="z-10"
+            preload
+            poster={require("../../assets/banner.png")}
+          />
+        </section>
       </div>
+
       <Footer />
     </div>
   );

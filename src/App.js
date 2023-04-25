@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AboutUs, Home, Team, Innovations, NewsEvents } from "./Pages";
-import { AiCube, GanMMIC, RFPassive, RFPowerAmp } from "./Pages/products";
+import { AiCube, GanMMIC, RFPassive, RFPowerAmp, SDR } from "./Pages/products";
 import AIandML from "./Pages/products/AIandML";
 import CyberSystem from "./Pages/products/CyberSystem";
 import { LAMP1, LAMP2, LAMP3, LAMP4 } from "./Pages/products/RFAmplifier";
@@ -78,6 +78,7 @@ function App() {
             exact
             element={<AiCube />}
           />
+          <Route path="/products/sdr-test-bed" exact element={<SDR />} />
           <Route
             path="/products/rf-passive/GaN-MMIC"
             exact
