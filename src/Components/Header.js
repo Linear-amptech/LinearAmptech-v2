@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 import { FiRadio } from "react-icons/fi";
 import { VscRadioTower } from "react-icons/vsc";
 import { SiPytest, SiGoogleanalytics } from "react-icons/si";
+import { GiHumanPyramid } from "react-icons/gi";
 import {
   MdDesignServices,
+  MdOutlineInventory2,
   MdAnalytics,
   MdSystemUpdateAlt,
   MdTrackChanges,
@@ -284,6 +286,35 @@ const Header = () => {
                             <p className="hover:text-[#616161]">
                               AI Qube Data Core
                             </p>
+                          </li>
+                        </NavLink>
+                      </ul>
+                    </div>
+
+                    <div className="lg:w-[30%] max-w-[300px]">
+                      <NavLink to="/products/cyber-physical-system-and-signal-processing">
+                        <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
+                          Enterprise Software
+                          <br />
+                        </h2>
+                      </NavLink>
+                      <ul className="flex flex-col gap-5">
+                        <NavLink to="/products/inventory-system">
+                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
+                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
+                              <MdOutlineInventory2 className="text-[1.4rem]" />
+                            </div>
+                            <p className="hover:text-[#616161]">
+                              Inventory System
+                            </p>
+                          </li>
+                        </NavLink>
+                        <NavLink to="/products/ai-qube-data-core">
+                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
+                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
+                              <GiHumanPyramid className="w-5 h-5" />
+                            </div>
+                            <p className="hover:text-[#616161]">HRMS</p>
                           </li>
                         </NavLink>
                       </ul>
