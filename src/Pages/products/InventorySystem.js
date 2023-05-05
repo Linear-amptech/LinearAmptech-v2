@@ -457,12 +457,10 @@ const InventorySystem = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:flex lg:w-1/2 lg:justify-around ml-8">
+              <div className="hidden lg:flex lg:w-1/2 lg:justify-around ml-8 shadow-md ">
                 <img
                   className="w-[28rem]  flex-shrink-0 lg:flex-shrink-0 object-cover xl:w-[34rem] xl:h-[760px] "
-                  src={
-                    "https://images.unsplash.com/photo-1616401776146-ae3453da7105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3174&q=80"
-                  }
+                  src={require("../../assets/inventory2.png")}
                   alt=""
                 />
               </div>
