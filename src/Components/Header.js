@@ -292,12 +292,11 @@ const Header = () => {
                     </div>
 
                     <div className="lg:w-[30%] max-w-[300px]">
-                      <NavLink to="/products/cyber-physical-system-and-signal-processing">
-                        <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
-                          Enterprise Software
-                          <br />
-                        </h2>
-                      </NavLink>
+                      <h2 className="text-[1.1rem] font-bold text-black mb-6 ">
+                        Enterprise Software
+                        <br />
+                      </h2>
+
                       <ul className="flex flex-col gap-5">
                         <NavLink to="/products/inventory-system">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
