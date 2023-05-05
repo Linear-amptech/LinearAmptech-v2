@@ -308,7 +308,7 @@ const Header = () => {
                             </p>
                           </li>
                         </NavLink>
-                        <NavLink to="/products/ai-qube-data-core">
+                        <NavLink to="/products/hrms">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
                             <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
                               <GiHumanPyramid className="w-5 h-5" />
