@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AboutUs, Home, Team, Innovations, NewsEvents } from "./Pages";
 import { AiCube, GanMMIC, RFPassive, RFPowerAmp, SDR } from "./Pages/products";
+import InventorySystem from "./Pages/products/InventorySystem";
+import Hrms from "./Pages/products/HRMS";
 import AIandML from "./Pages/products/AIandML";
 import CyberSystem from "./Pages/products/CyberSystem";
 import { LAMP1, LAMP2, LAMP3, LAMP4 } from "./Pages/products/RFAmplifier";
@@ -106,6 +108,12 @@ function App() {
             exact
             element={<RFPassive />}
           />
+          <Route
+            path="/products/inventory-system"
+            exact
+            element={<InventorySystem />}
+          />
+          <Route path="/products/hrms" exact element={<Hrms />} />
 
           {/* ******************unsued ************************ */}
           {/* <Route
