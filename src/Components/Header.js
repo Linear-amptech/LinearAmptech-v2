@@ -119,7 +119,7 @@ const Header = () => {
               >
                 Products
                 {isDropDownOpen && (
-                  <div className="container ease-in duration-1000 border   flex flex-wrap justify-center gap-10 text-[#929292] absolute lg:min-w-[950px] md:min-w-[768px] overflow-auto max-h-[600px] lg:left-36 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className="container ease-in duration-1000 border   flex flex-wrap justify-center gap-10 text-[#929292] absolute lg:min-w-[1400px] md:min-w-[768px] overflow-auto max-h-[600px] lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
