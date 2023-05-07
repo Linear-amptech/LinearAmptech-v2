@@ -119,14 +119,14 @@ const Header = () => {
               >
                 Products
                 {isDropDownOpen && (
-                  <div className="container ease-in duration-1000 border   flex flex-wrap justify-center gap-10 text-[#929292] absolute lg:min-w-[1400px] md:min-w-[768px] overflow-auto max-h-[600px] lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className=" ease-in duration-1000 border lg:w-[92vw]  flex flex-wrap justify-center gap-10 text-[#929292] absolute md:min-w-[768px] overflow-auto max-h-[800px]  lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
                         className="text-[1.5rem]"
                       />
                     </div>
-                    <div className="lg:w-[20%] min-w-[250px]  flex flex-col gap-6 ">
+                    <div className="lg:min-w-[250px] min-w-[250px]  flex flex-col gap-6 ">
                       <h2 className="text-[1.2rem]  font-bold text-[#0346B5]">
                         Linear Amptech
                       </h2>
@@ -137,7 +137,7 @@ const Header = () => {
                         Learn more
                       </button>
                     </div>
-                    <div className="lg:w-[30%] max-w-[300px]">
+                    <div className="lg:min-w-[300px] max-w-[300px]">
                       <NavLink to="/products/rf-design-and-signal-processing">
                         <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
                           Radio Frequency Design <br />
@@ -262,7 +262,7 @@ const Header = () => {
                       </ul>
                     </div>
 
-                    <div className="lg:w-[30%] max-w-[300px]">
+                    <div className="lg:min-w-[250px]  max-w-[300px]">
                       <NavLink to="/products/cyber-physical-system-and-signal-processing">
                         <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
                           Cyber Physical Systems <br />
@@ -291,7 +291,7 @@ const Header = () => {
                       </ul>
                     </div>
 
-                    <div className="lg:w-[30%] max-w-[300px]">
+                    <div className="lg:min-w-[300px] max-w-[300px]">
                       <h2 className="text-[1.1rem] font-bold text-black mb-6 ">
                         Enterprise Software
                         <br />
