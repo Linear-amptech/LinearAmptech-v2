@@ -96,7 +96,7 @@ const Header = () => {
                 : "opacity-0 -translate-x-full"
             }`}
           >
-            <div className="flex flex-col lg:flex-row lg:mx-6  lg:text-[18px] text-base gap-4">
+            <div className="flex flex-col lg:flex-row lg:mx-6  lg:text-[18px] text-base font-semibold gap-4">
               <NavLink
                 className="my-2 text-gray-700  transition-colors duration-300 transform  hover:text-blue-500  md:mx-4 md:my-0"
                 to="/"
@@ -119,7 +119,7 @@ const Header = () => {
               >
                 Products
                 {isDropDownOpen && (
-                  <div className=" ease-in duration-1000 border lg:w-[78vw]  flex flex-wrap lg:justify-between justify-center gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto max-h-[800px]  lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className=" ease-in duration-1000 border lg:w-[78vw] 2xl:max-w-[1200px]  xl:max-w-[1200px] flex flex-wrap lg:justify-between justify-start gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto max-h-[800px]  lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-9 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute w-[20px] right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
