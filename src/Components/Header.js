@@ -96,7 +96,7 @@ const Header = () => {
                 : "opacity-0 -translate-x-full"
             }`}
           >
-            <div className="flex flex-col lg:flex-row lg:mx-6 font-semibold gap-4">
+            <div className="flex flex-col lg:flex-row lg:mx-6  lg:text-[18px] text-base gap-4">
               <NavLink
                 className="my-2 text-gray-700  transition-colors duration-300 transform  hover:text-blue-500  md:mx-4 md:my-0"
                 to="/"
