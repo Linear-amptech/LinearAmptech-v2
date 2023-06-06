@@ -21,7 +21,7 @@ export const boardMember = [
     position: [
       "Founder & Director ",
       "Prof. IIT Roorkee, YFRF,",
-      "MditY Fellow, TIH",
+      "MeitY Fellow, TIH",
     ],
     linkedin: "#",
     twitter: "#",
