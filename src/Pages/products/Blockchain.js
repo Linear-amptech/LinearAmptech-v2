@@ -78,7 +78,7 @@ const Blockchain = () => {
         <section className="bg-white ">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
-              Problems Section
+              Problems
             </h1>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -335,7 +335,7 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Security:
+                  Security
                 </h1>
 
                 <p className="mt-2 text-black ">
@@ -347,9 +347,7 @@ const Blockchain = () => {
                   blockchain network within the Indian Defence and ensuring data
                   transparency only within this network would address the
                   existing ammunition management and tracking challenges
-                  effectively. This solution is secure, efficient, and scalable
-                  to align with the evolving operational requirements of Indian
-                  Defense.
+                  effectively.
                 </p>
               </div>
             </div>
@@ -552,26 +550,30 @@ const Blockchain = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:flex lg:w-1/2 lg:justify-between ml-8 shadow-md flex-col ">
+              <div className=" lg:flex lg:w-1/2 lg:justify-between lg:ml-8 mt-4 lg:mt-0 shadow-md flex-col ">
                 <img
                   className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
                   src={require("../../assets/blockchain1.png")}
                   alt=""
+                  data-aos="fade-up"
                 />
                 <img
                   className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
                   src={require("../../assets/blockchain2.png")}
                   alt=""
+                  data-aos="fade-up"
                 />
                 <img
                   className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
                   src={require("../../assets/blockchain3.png")}
                   alt=""
+                  data-aos="fade-up"
                 />
                 <img
                   className="  flex-shrink-0 lg:flex-shrink-0 object-cover p-2  "
                   src={require("../../assets/blockchain4.png")}
                   alt=""
+                  data-aos="fade-up"
                 />
               </div>
             </div>
