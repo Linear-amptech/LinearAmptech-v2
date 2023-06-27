@@ -29,7 +29,7 @@ const Blockchain = () => {
       <div>
         <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
           <h2 className="text-center font-bold text-[2rem] mb-10">
-            Blockchain
+            Blockchain Enabled Smart Contract Based Ammunition Management System
           </h2>
           <div
             className="container lg:flex lg:px-[12%]  lg:justify-between pt-12 mx-auto text-left px-4"
@@ -37,20 +37,22 @@ const Blockchain = () => {
           >
             <div className="lg:w-[50%]">
               <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-2 ">
-                What is Blockchain
+                Ammunition Management System
               </h2>
 
               <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                Blockchain is a decentralized and distributed digital ledger
-                technology that allows multiple participants to maintain and
-                validate a shared record of transactions in a secure and
-                transparent manner. It was initially introduced as the
-                underlying technology behind the cryptocurrency Bitcoin but has
-                since found applications in various industries beyond finance.
+                This innovative solution is designed to transform the way
+                ammunition inventory is handled in the military, leveraging
+                blockchain technology and smart contracts. Our value proposition
+                lies in the ability to provide a secure, private, and efficient
+                blockchain solution. Our blockchain network presents a
+                significant upgrade over traditional asset tracking systems,
+                providing real-time updates and ensuring complete traceability
+                of each ammunition within the Indian defense ecosystem.
               </p>
 
               <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 my-4 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
-                <a href="https://hrms.linear-amptech.com/" target="_blank">
+                <a href="#" target="_blank">
                   Live Demo
                 </a>
               </li>
@@ -104,16 +106,13 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Problem 1
+                  Limited Visibility
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Fugiat ad nostrud consectetur magna ex dolor consectetur ipsum
-                  ad nulla eu ullamco occaecat in. Commodo occaecat veniam
-                  fugiat voluptate aute Lorem eu adipisicing quis fugiat Lorem
-                  incididunt tempor labore. Nulla sint reprehenderit incididunt
-                  voluptate dolore laboris nisi aliqua fugiat sint. Deserunt ad
-                  ea mollit id eu id ex.
+                  The current system of ammunition manufacturing, shipment,
+                  storage, and issue lacks adequate visibility and transparency
+                  among stakeholders.
                 </p>
               </div>
 
@@ -136,15 +135,14 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Problem 2
+                  Ammunition Management Complexity:
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  In laboris culpa minim et occaecat. Ex veniam non Lorem
-                  exercitation elit. Commodo irure aliquip sit voluptate et aute
-                  proident id veniam. Sint officia excepteur cillum veniam
-                  cillum sint commodo consequat excepteur nostrud consequat
-                  minim commodo.
+                  Ammunition management in the Indian Army involves multiple
+                  agencies, from Ordnance Factories/manufacturers to Ammunition
+                  Depots and placement in forward areas, leading to complexities
+                  in coordination and oversight.
                 </p>
               </div>
 
@@ -167,16 +165,71 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Problem 3
+                  Manual Dependency
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Veniam dolore aliqua quis ad incididunt occaecat occaecat
-                  nulla Lorem velit proident voluptate. Incididunt laborum
-                  incididunt ut officia anim amet et et consectetur magna ex
-                  nisi. Elit dolore enim pariatur duis proident quis
-                  exercitation minim proident enim aliqua. Adipisicing
-                  reprehenderit eu velit ea Lorem aliqua minim.
+                  Presently, the process is heavily reliant on manual
+                  intervention, making it both time-consuming and susceptible to
+                  errors
+                </p>
+              </div>
+              <div className="border-2 shadow-md border-slate-200  p-8 ">
+                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
+                    />
+                  </svg>
+                </span>
+
+                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
+                  Critical Need for Improvement
+                </h1>
+
+                <p className="mt-2 text-black ">
+                  Efficient ammunition management is vital to defense readiness
+                  and operations. Inefficient supply chain management can
+                  adversely impact activities like recycling, segregation, and
+                  repair of ammunition.
+                </p>
+              </div>
+              <div className="border-2 shadow-md border-slate-200  p-8 ">
+                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
+                    />
+                  </svg>
+                </span>
+
+                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
+                  Potential of Distributed Ledger Technology and Smart Contracts
+                </h1>
+
+                <p className="mt-2 text-black ">
+                  These technologies can provide real-time access to
+                  information, increase the efficiency of supply chain
+                  management, and provide a solution to the aforementioned
+                  issues
                 </p>
               </div>
             </div>
@@ -217,15 +270,17 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Solution 1
+                  Decentralization and Transparency
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Sint labore laboris proident do excepteur anim aute dolor
-                  officia. Do deserunt quis sunt occaecat. Tempor occaecat
-                  cillum labore non esse. Nostrud labore deserunt sunt consequat
-                  proident. Amet mollit reprehenderit ad labore nisi ex ullamco
-                  sint culpa aliqua.
+                  In typical blockchain systems, decentralization implies that
+                  data is stored across multiple servers/nodes. However, for our
+                  specific use-case involving sensitive defense data, we propose
+                  a centralized blockchain network that would be solely operated
+                  by Indian Defence. This approach will ensure that all data is
+                  transparent and visible only within the confines of Indian
+                  Defense, maintaining the utmost confidentiality
                 </p>
               </div>
 
@@ -248,15 +303,16 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Solution 2
+                  Immutability:
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Pariatur veniam laboris laboris enim culpa aute dolore amet
-                  irure adipisicing. Nisi veniam fugiat magna proident
-                  reprehenderit esse culpa adipisicing voluptate irure voluptate
-                  sunt incididunt nisi. Velit fugiat qui deserunt mollit
-                  incididunt veniam irure aliquip eu labore.
+                  The intrinsic nature of blockchain's immutability provides a
+                  secure, unalterable record of transactions. Consequently, any
+                  attempted modification of ownership transfer or ammunition
+                  creation data becomes extremely challenging. This will enhance
+                  the precision of ammunition tracking and assurance of data
+                  integrity
                 </p>
               </div>
 
@@ -279,15 +335,21 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Solution 3
+                  Security:
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Laborum cillum qui laboris pariatur do excepteur duis irure
-                  occaecat. Excepteur laboris culpa ullamco duis laborum dolore
-                  exercitation deserunt ex nisi deserunt amet deserunt. Tempor
-                  aliqua dolore commodo veniam nostrud Lorem dolor in et veniam
-                  deserunt commodo adipisicing.
+                  Even within the already secure private network of Indian
+                  Defence, the blockchain provides an additional layer of
+                  protection. Its cryptographic algorithms, combined with the
+                  consensus mechanism for transaction validation, make it highly
+                  resistant to fraud and cyberattacks. Centralizing the
+                  blockchain network within the Indian Defence and ensuring data
+                  transparency only within this network would address the
+                  existing ammunition management and tracking challenges
+                  effectively. This solution is secure, efficient, and scalable
+                  to align with the evolving operational requirements of Indian
+                  Defense.
                 </p>
               </div>
             </div>
@@ -353,13 +415,15 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Feature 1
+                    Transparent and Tamper-proof Record Keeping:
                   </h1>
 
                   <p className="text-black">
-                    This feature allows HR staff to store and manage employee
-                    data such as personal information, contact details,
-                    employment history, and performance reviews.
+                    Every transaction made within the system, including
+                    procurement, storage, usage, and transfer of ammunition, is
+                    recorded on the blockchain. This secure, transparent, and
+                    immutable digital ledger provides a trail of each ammunition
+                    unit from procurement to usage.
                   </p>
                 </div>
 
@@ -382,12 +446,15 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Feature 2
+                    Automated Transactions through Smart Contracts:
                   </h1>
 
                   <p className="text-black">
-                    HRM software can automate payroll processing, including
-                    calculating pay, deductions, and taxes.
+                    Smart contracts enable automatic execution of transactions
+                    based on predefined rules, thus automating processes such as
+                    updating inventory after procurement or usage, setting
+                    reorder levels, transferring ammunition between units, and
+                    decommissioning expired ammunition.
                   </p>
                 </div>
 
@@ -410,12 +477,18 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Feature 3
+                    Single Authority Control:
                   </h1>
 
                   <p className="text-black">
-                    HRM software can facilitate communication and collaboration
-                    between HR staff, managers, and employees.
+                    Our blockchain network operates on a Proof-of-Authority
+                    (PoA) consensus model. Since we have setted only a single
+                    node, this model assigns Indian defense as the sole
+                    validator of the blockchain, leading to efficient
+                    transactions eliminating competition for block validation,
+                    and reducing computational waste. This ensures that the
+                    Indian defense has full control over the blockchain,
+                    enhancing security and trust in the system
                   </p>
                 </div>
                 {/* <div className="space-y-2 border-2 shadow-md border-slate-200  p-4">
@@ -466,15 +539,15 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Feature 4
+                    User-Friendly Interface:
                   </h1>
 
                   <p className="text-black">
-                    "Email notification for leave and salary credit" is a
-                    feature of HRM software that sends automated email
-                    notifications to HR staff or managers when an employee
-                    submits a request for time off or salary credit through the
-                    software.
+                    Despite the advanced technology and features, our blockchain
+                    network remains accessible through its intuitive and
+                    user-friendly interface. This makes it possible for users of
+                    varying technical expertise levels to interact seamlessly
+                    with the system and the deployed smart contracts.
                   </p>
                 </div>
               </div>
