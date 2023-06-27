@@ -47,7 +47,7 @@ const InventorySystem = () => {
                 manually track inventory items.
               </p>
 
-              <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 mt-4 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
+              <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 my-4 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
                 <a href="https://inventory.linear-amptech.com/" target="_blank">
                   Live Demo
                 </a>
@@ -56,7 +56,7 @@ const InventorySystem = () => {
             <div className="lg:w-[50%] flex justify-center items-center">
               <img
                 src={require("../../assets/inventory1.png")}
-                className="w-[500px]  shadow-md "
+                className="w-[auto]  shadow-md "
               ></img>
             </div>
           </div>
@@ -457,9 +457,9 @@ const InventorySystem = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:flex lg:w-1/2 lg:justify-around ml-8 shadow-md ">
+              <div className=" lg:flex lg:w-1/2 lg:justify-around lg:ml-8 mt-4 lg:mt-0 shadow-md ">
                 <img
-                  className="w-[28rem]  flex-shrink-0 lg:flex-shrink-0 object-cover xl:w-[34rem] xl:h-[760px] "
+                  className="w-[auto]  flex-shrink-0 lg:flex-shrink-0 object-cover xl:w-[34rem] xl:h-[760px] "
                   src={require("../../assets/inventory2.png")}
                   alt=""
                 />
