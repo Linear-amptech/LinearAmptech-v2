@@ -552,7 +552,7 @@ const Blockchain = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:flex lg:w-1/2 lg:justify-around ml-8 shadow-md flex-col ">
+              <div className="hidden lg:flex lg:w-1/2 lg:justify-between ml-8 shadow-md flex-col ">
                 <img
                   className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
                   src={require("../../assets/blockchain1.png")}
@@ -566,6 +566,11 @@ const Blockchain = () => {
                 <img
                   className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
                   src={require("../../assets/blockchain3.png")}
+                  alt=""
+                />
+                <img
+                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover p-2  "
+                  src={require("../../assets/blockchain4.png")}
                   alt=""
                 />
               </div>
