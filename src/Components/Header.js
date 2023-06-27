@@ -307,7 +307,9 @@ const Header = () => {
                             <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
                               <SiBlockchaindotcom className="w-5 h-5" />
                             </div>
-                            <p className="hover:text-[#616161]">Blockchain</p>
+                            <p className="hover:text-[#616161]">
+                              Private Blockchain Network
+                            </p>
                           </li>
                         </NavLink>
                         <NavLink to="/products/inventory-system">

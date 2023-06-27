@@ -29,7 +29,7 @@ const Blockchain = () => {
       <div>
         <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
           <h2 className="text-center font-bold text-[2rem] mb-10">
-            Blockchain Enabled Smart Contract Based Ammunition Management System
+            Blockchain Enabled Smart Contract Based Management System
           </h2>
           <div
             className="container lg:flex lg:px-[12%]  lg:justify-between pt-12 mx-auto text-left px-4"
@@ -37,18 +37,25 @@ const Blockchain = () => {
           >
             <div className="lg:w-[50%]">
               <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-2 ">
-                Ammunition Management System
+                Private Blockchain Network
               </h2>
 
               <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                This innovative solution is designed to transform the way
-                ammunition inventory is handled in the military, leveraging
-                blockchain technology and smart contracts. Our value proposition
-                lies in the ability to provide a secure, private, and efficient
-                blockchain solution. Our blockchain network presents a
-                significant upgrade over traditional asset tracking systems,
-                providing real-time updates and ensuring complete traceability
-                of each ammunition within the Indian defense ecosystem.
+                The blockchain-based management system offers a range of
+                applications across various industries. In the military and
+                defense sector, it ensures accurate tracking and efficient
+                management of ammunition, weapons, and critical assets. For
+                supply chain management, the system enables real-time tracking
+                of inventory, improving efficiency and trust among stakeholders.
+                In healthcare, it facilitates the efficient management of
+                medical supplies, pharmaceuticals, and equipment. Government
+                agencies benefit from accurate tracking and transparent
+                information for managing public infrastructure and assets. In
+                the energy and utilities sector, the system supports effective
+                management of equipment, spare parts, and maintenance schedules.
+                These applications demonstrate the broad potential and
+                advantages of implementing the blockchain-based inventory
+                management system in various industries.
               </p>
 
               <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 my-4 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
@@ -110,9 +117,9 @@ const Blockchain = () => {
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  The current system of ammunition manufacturing, shipment,
-                  storage, and issue lacks adequate visibility and transparency
-                  among stakeholders.
+                  The current system of asset manufacturing, shipment, storage,
+                  and issue lacks adequate visibility and transparency among
+                  stakeholders.
                 </p>
               </div>
 
@@ -135,14 +142,14 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Ammunition Management Complexity
+                  Asset Management Complexity
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Ammunition management in the Indian Army involves multiple
-                  agencies, from Ordnance Factories/manufacturers to Ammunition
-                  Depots and placement in forward areas, leading to complexities
-                  in coordination and oversight.
+                  Asset management across many industries involves multiple
+                  agencies, from manufacturers to storage facilities and
+                  deployment in various locations, leading to complexities in
+                  coordination and oversight.
                 </p>
               </div>
 
@@ -197,10 +204,10 @@ const Blockchain = () => {
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Efficient ammunition management is vital to defense readiness
-                  and operations. Inefficient supply chain management can
-                  adversely impact activities like recycling, segregation, and
-                  repair of ammunition.
+                  Efficient asset management is vital to defense readiness and
+                  operations. Inefficient supply chain management can adversely
+                  impact activities like recycling, segregation, and repair of
+                  assets.
                 </p>
               </div>
               <div className="border-2 shadow-md border-slate-200  p-8 ">
@@ -276,11 +283,11 @@ const Blockchain = () => {
                 <p className="mt-2 text-black ">
                   In typical blockchain systems, decentralization implies that
                   data is stored across multiple servers/nodes. However, for our
-                  specific use-case involving sensitive defense data, we propose
-                  a centralized blockchain network that would be solely operated
-                  by Indian Defence. This approach will ensure that all data is
-                  transparent and visible only within the confines of Indian
-                  Defense, maintaining the utmost confidentiality
+                  specific use-case involving sensitive data, we propose a
+                  centralized blockchain network that would be solely operated
+                  by the designated organization. This approach will ensure that
+                  all data is transparent and visible only within the
+                  organization, maintaining the utmost confidentiality.
                 </p>
               </div>
 
@@ -303,16 +310,16 @@ const Blockchain = () => {
                 </span>
 
                 <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Immutability:
+                  Immutability
                 </h1>
 
                 <p className="mt-2 text-black ">
                   The intrinsic nature of blockchain's immutability provides a
-                  secure, unalterable record of transactions. Consequently, any
-                  attempted modification of ownership transfer or ammunition
+                  secure and unalterable record of transactions. Consequently,
+                  any attempted modification of ownership transfer or asset
                   creation data becomes extremely challenging. This will enhance
-                  the precision of ammunition tracking and assurance of data
-                  integrity
+                  the precision of asset tracking and assure the integrity of
+                  data.
                 </p>
               </div>
 
@@ -339,15 +346,14 @@ const Blockchain = () => {
                 </h1>
 
                 <p className="mt-2 text-black ">
-                  Even within the already secure private network of Indian
-                  Defence, the blockchain provides an additional layer of
-                  protection. Its cryptographic algorithms, combined with the
-                  consensus mechanism for transaction validation, make it highly
-                  resistant to fraud and cyberattacks. Centralizing the
-                  blockchain network within the Indian Defence and ensuring data
-                  transparency only within this network would address the
-                  existing ammunition management and tracking challenges
-                  effectively.
+                  Even within the already secure private network of the
+                  designated organization, the blockchain provides an additional
+                  layer of protection. Its cryptographic algorithms, combined
+                  with the consensus mechanism for transaction validation, make
+                  it highly resistant to fraud and cyberattacks. Centralizing
+                  the blockchain network within the organization and ensuring
+                  data transparency only within this network would address the
+                  existing asset management and tracking challenges effectively.
                 </p>
               </div>
             </div>
@@ -418,10 +424,10 @@ const Blockchain = () => {
 
                   <p className="text-black">
                     Every transaction made within the system, including
-                    procurement, storage, usage, and transfer of ammunition, is
+                    procurement, storage, usage, and transfer of assets, is
                     recorded on the blockchain. This secure, transparent, and
-                    immutable digital ledger provides a trail of each ammunition
-                    unit from procurement to usage.
+                    immutable digital ledger provides a trail of each asset unit
+                    from procurement to usage.
                   </p>
                 </div>
 
@@ -448,11 +454,11 @@ const Blockchain = () => {
                   </h1>
 
                   <p className="text-black">
-                    Smart contracts enable automatic execution of transactions
-                    based on predefined rules, thus automating processes such as
-                    updating inventory after procurement or usage, setting
-                    reorder levels, transferring ammunition between units, and
-                    decommissioning expired ammunition.
+                    Smart contracts enable the automatic execution of
+                    transactions based on predefined rules, thus automating
+                    processes such as updating inventory after procurement or
+                    usage, setting reorder levels, transferring assets between
+                    units, and decommissioning expired assets.
                   </p>
                 </div>
 
@@ -478,13 +484,13 @@ const Blockchain = () => {
 
                   <p className="text-black">
                     Our blockchain network operates on a Proof-of-Authority
-                    (PoA) consensus model. Since we have setted only a single
-                    node, this model assigns Indian defense as the sole
-                    validator of the blockchain, leading to efficient
-                    transactions eliminating competition for block validation,
+                    (PoA) consensus model. Since we have set up only a single
+                    node, this model assigns the designated organization as the
+                    sole validator of the blockchain, leading to efficient
+                    transactions, eliminating competition for block validation,
                     and reducing computational waste. This ensures that the
-                    Indian defense has full control over the blockchain,
-                    enhancing security and trust in the system
+                    organization has full control over the blockchain, enhancing
+                    security and trust in the system.
                   </p>
                 </div>
                 {/* <div className="space-y-2 border-2 shadow-md border-slate-200  p-4">
