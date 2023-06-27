@@ -413,7 +413,7 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Transparent and Tamper-proof Record Keeping:
+                    Transparent and Tamper-proof Record Keeping
                   </h1>
 
                   <p className="text-black">
@@ -444,7 +444,7 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Automated Transactions through Smart Contracts:
+                    Automated Transactions through Smart Contracts
                   </h1>
 
                   <p className="text-black">
@@ -473,7 +473,7 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Single Authority Control:
+                    Single Authority Control
                   </h1>
 
                   <p className="text-black">
@@ -533,7 +533,7 @@ const Blockchain = () => {
                   </span>
 
                   <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    User-Friendly Interface:
+                    User-Friendly Interface
                   </h1>
 
                   <p className="text-black">
