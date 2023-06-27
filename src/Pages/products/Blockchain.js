@@ -54,8 +54,8 @@ const Blockchain = () => {
                 the energy and utilities sector, the system supports effective
                 management of equipment, spare parts, and maintenance schedules.
                 These applications demonstrate the broad potential and
-                advantages of implementing the blockchain-based inventory
-                management system in various industries.
+                advantages of implementing the blockchain-based management
+                system in various industries.
               </p>
 
               <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 my-4 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
