@@ -31,7 +31,10 @@ const Hrms = () => {
           <h2 className="text-center font-bold text-[2rem] mb-10">
             Human Resource Management System
           </h2>
-          <div className="container lg:flex lg:px-[12%] pt-12 mx-auto text-left px-4">
+          <div
+            className="container lg:flex lg:px-[12%] pt-12 mx-auto text-left px-4"
+            data-aos="fade-up"
+          >
             <div className="lg:w-[50%]">
               <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-2 ">
                 Revolutionize Your HR Management with HRM Software
@@ -71,7 +74,7 @@ const Hrms = () => {
       </div>
 
       <div className="lg:pr-44 lg:pl-44 mt-16">
-        <section className="bg-white ">
+        <section className="bg-white " data-aos="fade-up">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
               Problems in traditional HRM Software
@@ -180,7 +183,7 @@ const Hrms = () => {
         </section>
       </div>
 
-      <div className="lg:pr-44 lg:pl-44 mt-16">
+      <div className="lg:pr-44 lg:pl-44 mt-16" data-aos="fade-up">
         <section className="bg-white ">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
@@ -279,7 +282,7 @@ const Hrms = () => {
         </section>
       </div>
 
-      <div className="lg:pr-40 lg:pl-40 mt-16">
+      <div className="lg:pr-40 lg:pl-40 mt-16" data-aos="fade-up">
         <section className="bg-white ">
           <div className="container px-4 py-10 mx-auto">
             <h1 className="lg:text-[40px] text-3xl font-bold text-black capitalize mb-8   ">
