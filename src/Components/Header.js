@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FiRadio } from "react-icons/fi";
 import { VscRadioTower } from "react-icons/vsc";
-import { SiPytest, SiGoogleanalytics } from "react-icons/si";
+import {
+  SiPytest,
+  SiGoogleanalytics,
+  SiBlockchaindotcom,
+} from "react-icons/si";
 import { GiHumanPyramid } from "react-icons/gi";
 import {
   MdDesignServices,
@@ -298,6 +302,14 @@ const Header = () => {
                       </h2>
 
                       <ul className="flex flex-col gap-5">
+                        <NavLink to="/products/blockchain">
+                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
+                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
+                              <SiBlockchaindotcom className="w-5 h-5" />
+                            </div>
+                            <p className="hover:text-[#616161]">Blockchain</p>
+                          </li>
+                        </NavLink>
                         <NavLink to="/products/inventory-system">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
                             <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
