@@ -11,7 +11,7 @@ const RFlinear = () => {
         <div className="absolute z-10 w-[100%] h-[400px] flex flex-col justify-center items-center gap-2 text-white">
           <h2 className="text-[4rem] font-bold font-Roboto">Our Products</h2>
           <p className="text-[1.5rem] font-mnormal mb-4">
-            Solutions for a smarter, more connected RF LINN
+            Solutions for a smarter, more connected future
           </p>
         </div>
         <img

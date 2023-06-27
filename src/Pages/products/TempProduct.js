@@ -107,7 +107,7 @@ const TempProduct = () => {
             Our Products
           </h2>
           <p className="lg:text-[1.8rem] font-normal mb-4 ">
-            Solutions for a smarter, more connected
+            Solutions for a smarter, more connected future
           </p>
         </div>
 
