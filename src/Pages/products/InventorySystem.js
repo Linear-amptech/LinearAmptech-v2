@@ -27,7 +27,10 @@ const InventorySystem = () => {
         ></img>
       </div>
       <div>
-        <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
+        <section
+          className="bg-white  lg:mt-8 mt-4 xl:mt-12 "
+          data-aos="fade-up"
+        >
           <h2 className="text-center font-bold text-[2rem] mb-10">
             Inventory System
           </h2>
@@ -70,7 +73,7 @@ const InventorySystem = () => {
         <BgElement1 className="lg:w-[300px] absolute origin-center w-[180px] -right-20 lg:-right-36 -translate-y-[20%]" />
       </div>
 
-      <div className="lg:pr-44 lg:pl-44 mt-16">
+      <div className="lg:pr-44 lg:pl-44 mt-16" data-aos="fade-up">
         <section className="bg-white ">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
@@ -167,7 +170,7 @@ const InventorySystem = () => {
         </section>
       </div>
 
-      <div className="lg:pr-44 lg:pl-44 mt-16">
+      <div className="lg:pr-44 lg:pl-44 mt-16" data-aos="fade-up">
         <section className="bg-white ">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
@@ -269,7 +272,7 @@ const InventorySystem = () => {
         </section>
       </div>
 
-      <div className="lg:pr-40 lg:pl-40 mt-16">
+      <div className="lg:pr-40 lg:pl-40 mt-16" data-aos="fade-up">
         <section className="bg-white ">
           <div className="container px-4 py-10 mx-auto">
             <h1 className="lg:text-[40px] text-3xl font-bold text-black capitalize mb-8   ">
