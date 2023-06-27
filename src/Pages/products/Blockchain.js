@@ -27,7 +27,7 @@ const Blockchain = () => {
         ></img>
       </div>
       <div>
-        <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
+        <section className="bg-white   mt-4 xl:mt-12 ">
           <h2 className="text-center font-bold text-[2rem] mb-10">
             Blockchain Enabled Smart Contract Based Ammunition Management System
           </h2>
@@ -60,7 +60,7 @@ const Blockchain = () => {
             <div className="lg:w-[50%] flex justify-center items-center ">
               <img
                 src={require("../../assets/blockchain.png")}
-                className="w-[500px] object-fill  shadow-md "
+                className="lg:w-[auto] object-fill  shadow-md "
               ></img>
             </div>
           </div>
