@@ -76,7 +76,7 @@ const Blockchain = () => {
         </div>
       </div>
 
-      <div className="w-[auto] h-[auto] mt-10" data-aos="zoom-in-up">
+      <div className="w-[auto] h-[auto] mt-10" data-aos="zoom-out">
         <div className="flex justify-center">
           <Blockchain5 />
         </div>
