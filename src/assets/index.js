@@ -6,3 +6,4 @@ export { ReactComponent as Element1 } from "./element1.svg";
 export { ReactComponent as Element2 } from "./element2.svg";
 export { ReactComponent as Element3 } from "./element3.svg";
 export { ReactComponent as AiCube } from "./aiCube.svg";
+export { ReactComponent as Blockchain5 } from "./Blockchain5.svg";

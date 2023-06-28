@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Footer, Header } from "../../Components";
-import { BgElement1, BgElement2, BgElement3 } from "../../assets";
+import { BgElement1, BgElement2, BgElement3, Blockchain5 } from "../../assets";
 
 const Blockchain = () => {
   useEffect(() => {
@@ -27,7 +27,7 @@ const Blockchain = () => {
         ></img>
       </div>
       <div>
-        <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
+        {/* <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
           <h2 className="text-center font-bold text-[2rem] mb-10">
             Private Blockchain Enabled Smart Contract Based Management System
           </h2>
@@ -71,8 +71,120 @@ const Blockchain = () => {
               ></img>
             </div>
           </div>
-        </section>
+        </section> */}
+        <div className="container mx-auto lg:mt-16 mt-4 xl:mt-20">
+          <h2 className="text-center font-bold text-[2rem] mb-10">
+            Private Blockchain Enabled Smart Contract Based Management System
+          </h2>
+          <div className="lg:flex lg:mt-16 mt-4 xl:mt-20" data-aos="fade-up">
+            <div className="flex items-center justify-center w-full px-6  lg:w-1/2">
+              <div className="max-w-xl ">
+                <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-2 ">
+                  Private Blockchain Network
+                </h2>
+
+                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
+                  The blockchain-based management system offers a range of
+                  applications across various industries. In the military and
+                  defense sector, it ensures accurate tracking and efficient
+                  management of ammunition, weapons, and critical assets. For
+                  supply chain management, the system enables real-time tracking
+                  of inventory, improving efficiency and trust among
+                  stakeholders. In healthcare, it facilitates the efficient
+                  management of medical supplies, pharmaceuticals, and
+                  equipment. Government agencies benefit from accurate tracking
+                  and transparent information for managing public infrastructure
+                  and assets. In the energy and utilities sector, the system
+                  supports effective management of equipment, spare parts, and
+                  maintenance schedules. These applications demonstrate the
+                  broad potential and advantages of implementing the
+                  blockchain-based management system in various industries.
+                </p>
+
+                <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
+                  <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
+                    <a href="#" target="_blank">
+                      Live Demo
+                    </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div className="w-full h-64 lg:w-1/2 lg:h-auto ">
+              <div className=" bg-cover">
+                <img
+                  src={require("../../assets/blockchain.png")}
+                  className="w-full h-full shadow-md"
+                ></img>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="container mx-auto mt-28">
+          <div className="lg:flex justify-center">
+            <div className="w-full h-64 lg:w-1/2 lg:h-auto">
+              <div className="w-full h-full bg-cover">
+                <img
+                  src={require("../../assets/blockchain.png")}
+                  className="w-full h-full shadow-md"
+                ></img>
+              </div>
+            </div>
+            <div className="flex items-center justify-center w-full px-6 py-8 lg:h-[32rem] lg:w-1/2">
+              <div className="max-w-xl">
+                <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-2 ">
+                  Private Blockchain Network
+                </h2>
+
+                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
+                  The blockchain-based management system offers a range of
+                  applications across various industries. In the military and
+                  defense sector, it ensures accurate tracking and efficient
+                  management of ammunition, weapons, and critical assets. For
+                  supply chain management, the system enables real-time tracking
+                  of inventory, improving efficiency and trust among
+                  stakeholders. In healthcare, it facilitates the efficient
+                  management of medical supplies, pharmaceuticals, and
+                  equipment. Government agencies benefit from accurate tracking
+                  and transparent information for managing public infrastructure
+                  and assets. In the energy and utilities sector, the system
+                  supports effective management of equipment, spare parts, and
+                  maintenance schedules. These applications demonstrate the
+                  broad potential and advantages of implementing the
+                  blockchain-based management system in various industries.
+                </p>
+
+                <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
+                  <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
+                    <a href="#" target="_blank">
+                      Live Demo
+                    </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
+
+      {/* <div className="w-[100vw] h-[100vh] mt-10" data-aos="zoom-in-up">
+        <div
+          className="w-full h-full bg-contain"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="w-90 h-90 bg-black "></div>
+        </div>
+      </div> */}
+      <div className="w-[auto] h-[auto] mt-10" data-aos="zoom-in-up">
+        <div className="flex justify-center">
+          <Blockchain5 />
+        </div>
+      </div>
+
       <div
         className="absolute w-[100vw] overflow-hidden h-[200px]"
         data-aos="fade-up"
@@ -80,9 +192,8 @@ const Blockchain = () => {
       >
         <BgElement1 className="lg:w-[300px] absolute origin-center w-[180px] -right-20 lg:-right-36 -translate-y-[20%]" />
       </div>
-
-      <div className="lg:pr-44 lg:pl-44 mt-16" data-aos="fade-up">
-        <section className="bg-white ">
+      <div className="lg:pr-44 lg:pl-44 mt-16 " data-aos="fade-up">
+        <section className="bg-transparent ">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
               Problems
