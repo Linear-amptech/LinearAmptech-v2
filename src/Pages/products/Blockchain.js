@@ -110,13 +110,11 @@ const Blockchain = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full h-64 lg:w-1/2 lg:h-auto ">
-              <div className=" bg-cover">
-                <img
-                  src={require("../../assets/blockchain.png")}
-                  className="w-full h-full shadow-md"
-                ></img>
-              </div>
+            <div className="w-full  lg:w-1/2 lg:h-auto lg:mt-0 mt-4  ">
+              <img
+                src={require("../../assets/blockchain.png")}
+                className="w-full h-full shadow-md"
+              ></img>
             </div>
           </div>
         </div>
