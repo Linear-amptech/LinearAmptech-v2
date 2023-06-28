@@ -368,18 +368,28 @@ const Blockchain = () => {
           </div>
         </section>
       </div>
-      <section className="max-w-[1100px] py-12 m-auto mt-12   ">
+      <section className=" container py-12 mx-auto mt-12 flex justify-center  ">
         {/* <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-8 ">
           Video
         </h2> */}
-        <video
+        {/* <video
           data-aos="zoom-out"
           src={blockchainVideo}
           controls
           className="z-10"
           preload
           poster={require("../../assets/blockchainBanner.png")}
-        />
+        /> */}
+        <iframe
+          data-aos="zoom-out"
+          width="1005"
+          height="565"
+          src="https://www.youtube.com/embed/1xNVw2x04WA"
+          title="Supply chain using private blockchain network: Linear Amptech"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </section>
 
       <div className="lg:pr-40 lg:pl-40 mt-16" data-aos="fade-up">
