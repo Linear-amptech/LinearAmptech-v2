@@ -3,6 +3,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Footer, Header } from "../../Components";
 import { BgElement1, BgElement2, BgElement3, Blockchain5 } from "../../assets";
+import blockchainVideo from "../../assets/video/final4.mp4";
+import blockchainBanner from "../../assets/blockchainBanner.png";
 
 const Blockchain = () => {
   useEffect(() => {
@@ -367,6 +369,19 @@ const Blockchain = () => {
           </div>
         </section>
       </div>
+      <section className="max-w-[1100px] py-12 m-auto mt-12   ">
+        {/* <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-8 ">
+          Video
+        </h2> */}
+        <video
+          data-aos="zoom-out"
+          src={blockchainVideo}
+          controls
+          className="z-10"
+          preload
+          poster={require("../../assets/blockchainBanner.png")}
+        />
+      </section>
 
       <div className="lg:pr-40 lg:pl-40 mt-16" data-aos="fade-up">
         <section className="bg-white ">
