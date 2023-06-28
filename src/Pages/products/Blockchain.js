@@ -29,7 +29,7 @@ const Blockchain = () => {
       <div>
         <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
           <h2 className="text-center font-bold text-[2rem] mb-10">
-            Blockchain Enabled Smart Contract Based Management System
+            Private Blockchain Enabled Smart Contract Based Management System
           </h2>
           <div
             className="container lg:flex lg:px-[12%]  lg:justify-between pt-12 mx-auto text-left px-4"
