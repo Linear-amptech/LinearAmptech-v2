@@ -4,7 +4,6 @@ import "aos/dist/aos.css";
 import { Footer, Header } from "../../Components";
 import { BgElement1, BgElement2, BgElement3, Blockchain5 } from "../../assets";
 import blockchainVideo from "../../assets/video/final4.mp4";
-import blockchainBanner from "../../assets/blockchainBanner.png";
 
 const Blockchain = () => {
   useEffect(() => {
