@@ -57,8 +57,9 @@ const Footer = () => {
                   hello@linear-amptech.com
                 </a>
                 <p className="mt-4 text-md text-gray-100 sm:mt-0 dark:text-gray-300">
-                  I-7, Tides Incubation Center, IIT Roorkee <br /> Uttarakhand,
-                  India 247667
+                  Incubation building IHUB DivyaSampark (Near Wind Tunnel
+                  Building) I.I.T Roorkee <br></br> Roorkee, Uttarakhand, India
+                  247667
                 </p>
               </div>
             </div>
