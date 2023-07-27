@@ -20,11 +20,21 @@ const TeamMember = (props) => {
         </p>
 
         <div className="flex mt-3 -mx-2 justify-self-end">
-          <a href="#" className="mx-2 text-black  " aria-label="Reddit">
+          <a
+            href={props.member.twitter}
+            target="_blank"
+            className="mx-2 text-black  "
+            aria-label="Reddit"
+          >
             <AiFillTwitterCircle size={26} />
           </a>
 
-          <a href="#" className="mx-2 text-black  " aria-label="Facebook">
+          <a
+            href={props.member.facebook}
+            className="mx-2 text-black  "
+            aria-label="Facebook"
+            target="_blank"
+          >
             <BsFacebook size={22} />
           </a>
 
