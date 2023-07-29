@@ -17,7 +17,7 @@ export const coreTeam = [
   {
     photo: kanhaiya,
     name: "Kanhaiya Kumar",
-    position: "Alpha Stocks",
+    position: "Enphase Energy",
     linkedin: "https://www.linkedin.com/in/kanhaiya-kumar-1ba2b81a1/",
     twitter: "#",
     facebook: "#",
