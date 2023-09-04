@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { Footer, Slider } from "../Components";
+
 import { NavLink } from "react-router-dom";
 import Header from "../Components/Header";
+import Slider2 from "../Components/Slider2";
 import video1 from "../assets/video/2.mp4";
 import {
   BgElement1,
@@ -105,6 +107,10 @@ const Home = () => {
         <BgElement1 className="lg:w-[200px] w-[150px] absolute origin-center -right-20 -translate-y-[20%]" />
       </div>
       {/* *********************Intro ****************************** */}
+
+      <div className="slider lg:w-[98.9vw] max-w-[98.9vw] lg:px-[7%] px-4 py-14 bg-[#F2F2F2] mt-28">
+        <Slider2 />
+      </div>
 
       <div className="slider lg:w-[98.9vw] max-w-[98.9vw] lg:px-[7%] px-4 py-14 bg-[#F2F2F2] mt-28">
         <h2 className="lg:text-[2.5rem] text-3xl font-bold text-center">
