@@ -46,7 +46,7 @@ const Home = () => {
       {/* </div> */}
       {/* *********************Hero Section ****************************** */}
 
-      <div className="heroSection gap-2  lg:max-h-[calc(100vh-95.99px)] flex flex-col justify-center items-center text-white z-0 overflow-hidden ">
+      <div className="heroSection gap-2  lg:max-h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white z-0 overflow-hidden ">
         {/* <div className=" bg-slate-600 z-10"></div> */}
         <video autoPlay muted loop src={video1} className="z-10" />
         <div className="absolute w-[100%] lg:py-20  gap-0  overflow-hidden z-10 flex flex-col justify-center items-center leading-relaxed">

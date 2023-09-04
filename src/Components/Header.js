@@ -41,7 +41,7 @@ const Header = () => {
       className="z-50 bg-white sticky top-0 "
     >
       <nav className="relative shadow  ">
-        <div className="container px-6 py-4 mx-auto lg:flex lg:justify-between lg:items-center">
+        <div className="container px-6 py-1 mx-auto lg:flex lg:justify-between lg:items-center">
           <div className="flex items-center justify-between">
             <NavLink to="/">
               <img
@@ -94,21 +94,21 @@ const Header = () => {
           </div>
 
           <div
-            className={` absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out  bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
+            className={` absolute inset-x-0 z-20 w-full px-6 py-0 transition-all duration-300 ease-in-out  bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
               isOpen
                 ? " translate-x-0 opacity-100 "
                 : "opacity-0 -translate-x-full"
             }`}
           >
-            <div className="flex flex-col lg:flex-row lg:mx-6  lg:text-[18px] text-base font-semibold gap-4">
+            <div className="flex flex-col lg:flex-row lg:mx-6  lg:text-[16px] text-base  gap-4">
               <NavLink
-                className="my-2 text-gray-700  transition-colors duration-300 transform  hover:text-blue-500  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900  transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
                 to="/"
               >
                 Home
               </NavLink>
               <NavLink
-                className="my-2 text-gray-700  transition-colors duration-300 transform  hover:text-blue-500  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900  transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
                 to="/innovations"
               >
                 Innovations
@@ -118,7 +118,7 @@ const Header = () => {
                 onMouseEnter={() => setIsDropDownOpen(true)}
                 // onMouseLeave={() => setIsDropDownOpen(false)}
                 onClick={() => setIsDropDownOpen(!isDropDownOpen)}
-                className="my-2 text-gray-700 transition-colors duration-300 z-10 transform md:mx-4 md:my-0 cursor-pointer hover:text-blue-500"
+                className="my-1 text-blue-gray-900 transition-colors duration-300 z-10 transform md:mx-4 md:my-0 cursor-pointer hover:text-[#0065ed]"
                 // to="/products"
               >
                 Products
@@ -337,19 +337,19 @@ const Header = () => {
               </div>
 
               <NavLink
-                className="my-2 text-gray-700 -z-1 transition-colors duration-300 transform  hover:text-blue-500  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900 -z-1 transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
                 to="/news-and-events"
               >
                 News & Events
               </NavLink>
               <NavLink
-                className="my-2 text-gray-700 transition-colors duration-300 transform  hover:text-blue-500  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
                 to="/team"
               >
                 Team
               </NavLink>
               <NavLink
-                className="my-2 text-gray-700 transition-colors duration-300 transform  hover:text-blue-500  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
                 to="/about-us"
               >
                 About us
@@ -397,7 +397,7 @@ export default Header;
 // } from "@heroicons/react/24/outline";
 
 // const colors = {
-//   blue: "bg-blue-50 text-blue-500",
+//   blue: "bg-blue-50 text-[#0065ed]",
 //   orange: "bg-orange-50 text-orange-500",
 //   green: "bg-green-50 text-green-500",
 //   "blue-gray": "bg-blue-gray-50 text-blue-gray-500",
