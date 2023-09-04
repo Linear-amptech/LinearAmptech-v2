@@ -44,20 +44,18 @@ const Home = () => {
       {/* </div> */}
       {/* *********************Hero Section ****************************** */}
 
-      <div className="heroSection gap-2  lg:max-h-[93vh] flex flex-col justify-center items-center text-white z-0 overflow-hidden ">
+      <div className="heroSection gap-2  lg:max-h-[calc(100vh-95.99px)] flex flex-col justify-center items-center text-white z-0 overflow-hidden ">
         {/* <div className=" bg-slate-600 z-10"></div> */}
         <video autoPlay muted loop src={video1} className="z-10" />
         <div className="absolute w-[100%] lg:py-20  gap-0  overflow-hidden z-10 flex flex-col justify-center items-center leading-relaxed">
           <h2 className=" lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent">
             We Are Working on{" "}
           </h2>
-          <TextTransition
-            springConfig={presets.wobbly}
-            className="lg:text-[5.5rem] md:text-4xl text-3xl font-bold drop-shadow-2xl bg-transparent mt-10"
-          >
-            {TEXTS[index % TEXTS.length]}
-          </TextTransition>
-
+          <h2 className="lg:text-[5.5rem] md:text-4xl text-3xl font-bold drop-shadow-2xl bg-transparent mt-10 leading-loose">
+            <TextTransition springConfig={presets.default}>
+              {TEXTS[index % TEXTS.length]}
+            </TextTransition>
+          </h2>
           {/* <p className="lg:text-[2rem] text-xl font-normal lg:mb-5 lg:mt-6 text-center">
             Creating Difference With Technology
           </p>
