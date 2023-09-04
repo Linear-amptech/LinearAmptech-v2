@@ -15,14 +15,28 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import TextTransition, { presets } from "react-text-transition";
+const TEXTS = ["Forest", "Building", "Tree", "Color"];
+
 const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 500, delay: 300 });
   }, [AOS]);
-  return (
-    <div className="font-Inter">
-      <Header />
 
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      3000 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+  return (
+    <div className="font-Inter relative">
+      {/* <div className="sticky top-0 right-0 z-20"> */}
+      <Header />
+      {/* </div> */}
       {/* *********************Hero Section ****************************** */}
 
       <div className="heroSection gap-2  lg:max-h-[88vh] flex flex-col justify-center items-center text-white z-0 overflow-hidden ">
@@ -31,7 +45,15 @@ const Home = () => {
         <div className="absolute w-[100%] lg:p-20 pb-4 gap-3  overflow-hidden z-10 flex flex-col justify-center items-center leading-relaxed">
           <h2 className=" lg:text-[5rem] md:text-4xl text-3xl font-bold drop-shadow-2xl bg-transparent">
             Linear AmpTech
+            <TextTransition
+              springConfig={presets.stiff}
+              inline={true}
+              className="lg:text-[5rem] md:text-4xl text-3xl font-bold drop-shadow-2xl bg-transparent"
+            >
+              {TEXTS[index % TEXTS.length]}
+            </TextTransition>
           </h2>
+
           <p className="lg:text-[2rem] text-xl font-normal lg:mb-5 lg:mt-6 text-center">
             Creating Difference With Technology
           </p>
