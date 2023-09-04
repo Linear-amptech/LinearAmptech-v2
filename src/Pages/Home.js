@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Footer, Slider } from "../Components";
 import { NavLink } from "react-router-dom";
 import Header from "../Components/Header";
-import video1 from "../assets/video/1.mp4";
+import video1 from "../assets/video/2.mp4";
 import {
   BgElement1,
   BgElement2,
