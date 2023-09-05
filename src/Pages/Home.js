@@ -202,7 +202,7 @@ const Home = () => {
           About Us
         </h2>
         <p className="text-[1.1rem] leading-loose text-center">
-          a technology service company that provides innovative solutions to
+          A technology service company that provides innovative solutions to
           help businesses stay ahead of the curve. We specialize in [list your
           main services], and our team of experts is dedicated to providing the
           best possible service to our clients. We believe in the power of
