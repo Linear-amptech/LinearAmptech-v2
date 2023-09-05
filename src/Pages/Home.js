@@ -119,7 +119,7 @@ const Home = () => {
         <h2 className="lg:text-[2.5rem] text-3xl font-bold text-center">
           Our Products
         </h2>
-        <Products />
+        {/* <Products /> */}
       </div>
       {/* *********************Innovation ****************************** */}
 
