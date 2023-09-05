@@ -1,9 +1,12 @@
 import { Carousel, IconButton, Button } from "@material-tailwind/react";
+import first from "../assets/first.jpg";
+import second from "../assets/second.png";
+import third from "../assets/third.png";
 
 export default function Slider2() {
   return (
     <Carousel
-      className="rounded-none bg-blue-gray-900 h-[700px]"
+      className="rounded-none bg-blue-gray-900 h-[700px] mx-auto"
       loop={true}
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2">
@@ -74,14 +77,18 @@ export default function Slider2() {
           <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-black  lg:text-[56px] leading-none ">
-                Medium length hero headline goes here
+                Cyber physical system
               </h2>
 
               <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis
-                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-                commodo diam libero vitae erat.
+                Refers to a system that integrates physical devices with a cyber
+                interface for monitoring and controlling the physical world. The
+                company is focusing on innovation in CPS for various
+                applications such as
+                <span className="">Traffic Solutions</span>, Industry 4.0, and
+                Defence Platforms, and is seeking unique sensors for innovative
+                solutions such as Gun-Shot Detection, RF Location-Finding, and
+                Correlation Interferometry, amonog others.
               </p>
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
@@ -103,8 +110,61 @@ export default function Slider2() {
             <div
               className="w-full  bg-cover h-[500px]"
               style={{
-                backgroundImage:
-                  "url(https://images.unsplash.com/photo-1508394522741-82ac9c15ba69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=748&q=80)",
+                backgroundImage: `url(${first})`,
+              }}
+            >
+              <div className="w-full h-full bg-black opacity-25"></div>
+            </div>
+            <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
+              <h3 className=" text-2xl font-semibold text-black">
+                Hello Guest
+              </h3>
+
+              <p className=" text-gray-900">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
+                eum modi incidunt adipisci quod porro et non
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="lg:flex bg-blue-gray-50 shadow-md">
+          <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
+            <div className="max-w-xl">
+              <h2 className="text-3xl font-semibold text-black  lg:text-[56px] leading-none ">
+                Artificial Intelligence and Machine Learning
+              </h2>
+
+              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-lg">
+                We are committed to evolving as Deep Tech Comapany. Artificial
+                Intelligence and Machine Learning is one the innovative areas to
+                which we are keen to contribute. Our recent innovation involves
+                the development of and ML Pipleline in our own Network-Attached
+                Storage (NAS) and computational Platform for executing all the
+                background algorithms.
+              </p>
+
+              <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
+                <Button size="lg" className="rounded-none shadow-none">
+                  Button
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outlined"
+                  className="rounded-none shadow-none"
+                >
+                  Button
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full h-64 lg:w-1/2 lg:h-full">
+            <div
+              className="w-full  bg-cover h-[500px]"
+              style={{
+                backgroundImage: `url(${second})`,
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
@@ -125,18 +185,62 @@ export default function Slider2() {
         </div>
       </div>
       <div>
-        <img
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-          alt="image 2"
-          className="h-[700px] w-full object-cover"
-        />
-      </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-          alt="image 2"
-          className="h-[700px] w-full object-cover"
-        />
+        <div className="lg:flex bg-blue-gray-50 shadow-md">
+          <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
+            <div className="max-w-xl">
+              <h2 className="text-3xl font-semibold text-black  lg:text-[56px] leading-none ">
+                The Radio Frequency Components
+              </h2>
+
+              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-lg">
+                The company has a strong research background, with directors
+                from I.I.T-Roorkee who are working in cutting-edge radio
+                frequency technologies. Their recent R&D focus includes
+                intelligent reflecting surfaces, multi-octave GAN MMICs, and
+                millimeter-wave RFICs in CMOS and SiGe BiCMOS. Overall, the
+                company is dedicated to pushing the boundaries of radio
+                frequency technology and providing innovative solutions to their
+                clients.
+              </p>
+
+              <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
+                <Button size="lg" className="rounded-none shadow-none">
+                  Button
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outlined"
+                  className="rounded-none shadow-none"
+                >
+                  Button
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full h-64 lg:w-1/2 lg:h-full">
+            <div
+              className="w-full  bg-cover h-[500px]"
+              style={{
+                backgroundImage: `url(${third})`,
+              }}
+            >
+              <div className="w-full h-full bg-black opacity-25"></div>
+            </div>
+            <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
+              <h3 className=" text-2xl font-semibold text-black">
+                Hello Guest
+              </h3>
+
+              <p className=" text-gray-900">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
+                eum modi incidunt adipisci quod porro et non exercitationem
+                quasi, maxime culpa ut nemo ab delectus saepe iste nostrum
+                explicabo a?
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </Carousel>
   );
