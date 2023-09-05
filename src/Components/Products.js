@@ -8,37 +8,125 @@ import {
   Chip,
 } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
-
+import p1 from "../assets/RFPowerAmp/p1.png";
+import aiqube from "../assets/AIQube/1.jpg";
+import wait from "../assets/WaitSystem/1.png";
+import rfpassive from "../assets/RFPassive/UHFPD-1/p1.jpg";
+import blockchain from "../assets/blockchain.png";
+import sdr from "../assets/SDR/4.png";
 export default function Products() {
   return (
     <div className="flex gap-8 flex-wrap justify-center ">
-      <Card className="mt-6 w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
         <CardHeader
           color="blue-gray"
-          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none"
+          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
         >
           <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            src={aiqube}
             alt="card-image"
             className="w-full h-full object-cover mx-auto "
           />
         </CardHeader>
         <CardBody>
           <Typography variant="h5" color="blue-gray" className="mb-2">
-            UI/UX Review Check
+            AI Qube Data Core
           </Typography>
           <Typography>
-            The place is close to Barceloneta Beach and bus stop just 2 min by
-            walk and near to &quot;Naviglio&quot; where you can enjoy the main
-            night life in Barcelona.
+            AiQube was founded with a mission to make data science accessible
+            and actionable for every business. Our hybrid platform provide
+            comprehensive analytics,...
           </Typography>
-          <div className="flex">
-            <Chip
-              variant="ghost"
-              value="chip ghost"
-              className="rounded-sm capitalize font-semibold text-blue-gray-900"
-            />
-          </div>
+        </CardBody>
+        <CardFooter className="pt-0">
+          <NavLink
+            to="/products/ai-qube-data-core"
+            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          >
+            Read More
+          </NavLink>
+        </CardFooter>
+      </Card>
+      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+        <CardHeader
+          color="blue-gray"
+          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
+        >
+          <img
+            src={wait}
+            alt="card-image"
+            className="w-full h-full object-cover mx-auto "
+          />
+        </CardHeader>
+        <CardBody>
+          <Typography variant="h5" color="blue-gray" className="mb-2">
+            WAIT System
+          </Typography>
+          <Typography>
+            The WAIT an acronym here for Warning Ahead of Intersection & Turns
+            is a product suitable for early warning in blind turns and highlyway
+            intersections with rural roads...
+          </Typography>
+        </CardBody>
+        <CardFooter className="pt-0">
+          <NavLink
+            to="/products/cyber-physical-system-and-signal-processing"
+            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          >
+            Read More
+          </NavLink>
+        </CardFooter>
+      </Card>
+      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+        <CardHeader
+          color="blue-gray"
+          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
+        >
+          <img
+            src={blockchain}
+            alt="card-image"
+            className="w-full h-full object-cover mx-auto "
+          />
+        </CardHeader>
+        <CardBody>
+          <Typography variant="h5" color="blue-gray" className="mb-2">
+            Private Blockchain Network
+          </Typography>
+          <Typography>
+            The blockchain-based management system offers a range of
+            applications across various industries. In the military and defense
+            sector, it ensures accurate tracking and...
+          </Typography>
+        </CardBody>
+        <CardFooter className="pt-0">
+          <NavLink
+            to="/products/blockchain"
+            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          >
+            Read More
+          </NavLink>
+        </CardFooter>
+      </Card>
+      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+        <CardHeader
+          color="blue-gray"
+          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
+        >
+          <img
+            src={p1}
+            alt="card-image"
+            className="w-full h-full object-cover mx-auto "
+          />
+        </CardHeader>
+        <CardBody>
+          <Typography variant="h5" color="blue-gray" className="mb-2">
+            Radio Frequency Power Amplifier
+          </Typography>
+          <Typography>
+            The company has varieties of Radio Frequency Power Amplifiers for L,
+            S and C band in their product line. These Amplifiers are power
+            stages as well as complete unit with DC/DC converters.
+          </Typography>
         </CardBody>
         <CardFooter className="pt-0">
           <NavLink
@@ -49,37 +137,64 @@ export default function Products() {
           </NavLink>
         </CardFooter>
       </Card>
-
-      <Card className="mt-6 w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
         <CardHeader
           color="blue-gray"
-          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none"
+          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
         >
           <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            src={rfpassive}
             alt="card-image"
             className="w-full h-full object-cover mx-auto "
           />
         </CardHeader>
         <CardBody>
           <Typography variant="h5" color="blue-gray" className="mb-2">
-            UI/UX Review Check
+            Radio Frequency Passive Components
           </Typography>
           <Typography>
-            The place is close to Barceloneta Beach and bus stop just 2 min by
-            walk and near to &quot;Naviglio&quot; where you can enjoy the main
-            night life in Barcelona.
+            These RF passive components have unique design topologies enabling
+            low loss and high selectivity in case of filters and excellent
+            combining efficiency (more than 90%)...
           </Typography>
-          <div className="flex">
-            <Chip
-              variant="ghost"
-              value="chip ghost"
-              className="rounded-sm capitalize font-semibold text-blue-gray-900"
-            />
-          </div>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button>Read More</Button>
+          <NavLink
+            to="/products/rf-passive-components"
+            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          >
+            Read More
+          </NavLink>
+        </CardFooter>
+      </Card>
+      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+        <CardHeader
+          color="blue-gray"
+          className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
+        >
+          <img
+            src={sdr}
+            alt="card-image"
+            className="w-full h-full object-cover mx-auto "
+          />
+        </CardHeader>
+        <CardBody>
+          <Typography variant="h5" color="blue-gray" className="mb-2">
+            SDR Test-Beds
+          </Typography>
+          <Typography>
+            With the advent of Software Defined Radio (SDR) the radio hardware
+            scaled down to software and most of the features is pushed into
+            software. In the scenario of war...
+          </Typography>
+        </CardBody>
+        <CardFooter className="pt-0">
+          <NavLink
+            to="/products/sdr-test-bed"
+            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          >
+            Read More
+          </NavLink>
         </CardFooter>
       </Card>
     </div>
