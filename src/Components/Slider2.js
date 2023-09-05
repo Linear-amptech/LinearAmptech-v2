@@ -6,7 +6,7 @@ import third from "../assets/third.png";
 export default function Slider2() {
   return (
     <Carousel
-      className="rounded-none bg-white max-h-[700px] "
+      className="rounded-none bg-white  "
       loop={true}
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2">
@@ -29,7 +29,7 @@ export default function Slider2() {
           color="white"
           size="md"
           onClick={handlePrev}
-          className="!absolute bottom-1 right-16 rounded-full bg-blue-gray-100  -translate-y-2/4"
+          className="!absolute bottom-1 right-16 rounded-full bg-white/10  -translate-y-2/4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function Slider2() {
           color="white"
           size="md"
           onClick={handleNext}
-          className="!absolute bottom-1 !right-4 rounded-full bg-blue-gray-100 -translate-y-2/4"
+          className="!absolute bottom-1 !right-4 rounded-full bg-white/10 -translate-y-2/4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export default function Slider2() {
     >
       <div>
         <div className="lg:flex bg-blue-gray-50/30 shadow-md">
-          <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
+          <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
                 Cyber physical system
@@ -130,7 +130,7 @@ export default function Slider2() {
       </div>
       <div>
         <div className="lg:flex bg-blue-gray-50 shadow-md">
-          <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
+          <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
                 Artificial Intelligence and Machine Learning
@@ -186,7 +186,7 @@ export default function Slider2() {
       </div>
       <div>
         <div className="lg:flex bg-blue-gray-50 shadow-md">
-          <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
+          <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
                 The Radio Frequency Components
