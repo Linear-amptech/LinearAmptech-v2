@@ -119,11 +119,11 @@ const Home = () => {
         <h2 className="lg:text-[2.5rem] text-3xl font-bold text-center">
           Our Products
         </h2>
-        {/* <Products /> */}
+        <Products />
       </div>
       {/* *********************Innovation ****************************** */}
 
-      <div className="innovation w-[100%] px-[10%] py-32 lg:flex xl:flex justify-center gap-20">
+      {/* <div className="innovation w-[100%] px-[10%] py-32 lg:flex xl:flex justify-center gap-20">
         <div className="max-w-[650px] lg:flex lg:flex-col gap-5 px-4">
           <p className="tag text-[#0346B5] text-[1.1rem] font-semibold">
             INNOVATIONS
@@ -144,15 +144,15 @@ const Home = () => {
         <div className="flex justify-center">
           <Element1 className="lg:h-[450px] h-[320px] m-auto" />
         </div>
-      </div>
-      <div className="w-[100vw] h-[100px]">
+      </div> */}
+      {/* <div className="w-[100vw] h-[100px]">
         <div data-aos="fade-up" data-aos-duration="1000">
           <BgElement2 className="lg:w-[300px] w-[200px] absolute origin-center -left-36 -translate-y-[30%]" />
         </div>
-      </div>
+      </div> */}
 
       {/* *********************Service ****************************** */}
-      <div className="lg:flex max-w-[100%] lg:px-[10%] py-32 gap-20 bg-[#F2F2F2] px-4">
+      {/* <div className="lg:flex max-w-[100%] lg:px-[10%] py-32 gap-20 bg-[#F2F2F2] px-4">
         <div className="lg:left lg:w-1/2 mt-10">
           <div className="upperPart flex">
             <div className="serviceHeading lg:text-[2.5rem] text-3xl font-bold w-[300px] mb-14">
@@ -189,7 +189,7 @@ const Home = () => {
             Discover more
           </NavLink>
         </div>
-      </div>
+      </div> */}
       <div className="max-w-[100vw]  ">
         <div data-aos="fade-up" data-aos-duration="1500">
           <BgElement3 className="lg:w-[300px] w-[200px] absolute origin-center -right-36 -translate-y-[50%]" />
