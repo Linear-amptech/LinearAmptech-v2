@@ -102,15 +102,27 @@ export default function Slider2() {
             </div>
           </div>
 
-          <div className="w-full h-64 lg:w-1/2 lg:h-auto">
+          <div className="w-full h-64 lg:w-1/2 lg:h-full">
             <div
-              className="w-full h-full bg-cover"
+              className="w-full  bg-cover h-[500px]"
               style={{
                 backgroundImage:
                   "url(https://images.unsplash.com/photo-1508394522741-82ac9c15ba69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=748&q=80)",
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
+            </div>
+            <div className="h-[200px] w-full bg-red-200">
+              <h3 className=" text-2xl font-semibold text-gray-100">
+                Hello Guest
+              </h3>
+
+              <p className=" text-gray-100">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
+                eum modi incidunt adipisci quod porro et non exercitationem
+                quasi, maxime culpa ut nemo ab delectus saepe iste nostrum
+                explicabo a?
+              </p>
             </div>
           </div>
         </div>
