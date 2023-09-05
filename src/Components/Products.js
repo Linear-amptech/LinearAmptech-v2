@@ -7,6 +7,7 @@ import {
   Button,
   Chip,
 } from "@material-tailwind/react";
+import { NavLink } from "react-router-dom";
 
 export default function Products() {
   return (
@@ -40,7 +41,12 @@ export default function Products() {
           </div>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button>Read More</Button>
+          <NavLink
+            to="/products/rf-power-amplifiers"
+            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          >
+            Read More
+          </NavLink>
         </CardFooter>
       </Card>
 
