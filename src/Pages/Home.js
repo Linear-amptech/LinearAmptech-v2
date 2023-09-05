@@ -18,6 +18,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import TextTransition, { presets } from "react-text-transition";
+import Products from "../Components/Products";
 const TEXTS = [
   "Artificial Intelligence",
   "Cyber Physical System Design",
@@ -78,7 +79,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="introSection gap-16   lg:flex justify-center items-end px-[10%] lg:h-[100vh] lg:pb-16 pt-20">
+      {/* <div className="introSection gap-16   lg:flex justify-center items-end px-[10%] lg:h-[100vh] lg:pb-16 pt-20">
         <div className="flex justify-center items-center">
           <div className="lg:flex flex-col gap-10">
             <h2 className="lg:text-[2.5rem] md:text-[2.10rem] text-[1.6rem] font-bold text-center lg:text-left leading-relaxed">
@@ -104,7 +105,7 @@ const Home = () => {
             Read more
           </NavLink>
         </div>
-      </div>
+      </div> */}
       <div
         className="w-[100vw] absolute overflow-hidden h-[200px] -translate-y-[200px]"
         data-aos="fade-up"
@@ -118,7 +119,7 @@ const Home = () => {
         <h2 className="lg:text-[2.5rem] text-3xl font-bold text-center">
           Our Products
         </h2>
-        <Slider />
+        <Products />
       </div>
       {/* *********************Innovation ****************************** */}
 
