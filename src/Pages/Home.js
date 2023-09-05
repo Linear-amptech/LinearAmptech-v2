@@ -73,7 +73,7 @@ const Home = () => {
 
       {/* *********************Intro Section****************************** */}
 
-      <div className="introSection gap-16    lg:flex justify-center items-end pt-20   lg:pb-16 ">
+      <div className="introSection gap-16    lg:flex justify-center items-end pt-20 mt-20   lg:pb-16 ">
         <div className="flex justify-center items-center">
           <Slider2 />
         </div>
