@@ -6,7 +6,7 @@ import third from "../assets/third.png";
 export default function Slider2() {
   return (
     <Carousel
-      className="rounded-none bg-blue-gray-900 h-[700px] mx-auto"
+      className="rounded-none bg-white max-h-[700px] "
       loop={true}
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2">
@@ -73,14 +73,14 @@ export default function Slider2() {
       )}
     >
       <div>
-        <div className="lg:flex bg-blue-gray-50 shadow-md">
+        <div className="lg:flex bg-blue-gray-50/30 shadow-md">
           <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold text-black  lg:text-[56px] leading-none ">
+              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
                 Cyber physical system
               </h2>
 
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-lg">
+              <p className="mt-4 text-sm text-blue-gray-600 dark:text-gray-400 lg:text-lg">
                 Refers to a system that integrates physical devices with a cyber
                 interface for monitoring and controlling the physical world. The
                 company is focusing on innovation in CPS for various
@@ -108,15 +108,15 @@ export default function Slider2() {
 
           <div className="w-full h-64 lg:w-1/2 lg:h-full">
             <div
-              className="w-full  bg-cover h-[500px]"
+              className="w-full  bg-cover h-[700px]"
               style={{
                 backgroundImage: `url(${first})`,
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
             </div>
-            <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
-              <h3 className=" text-2xl font-semibold text-black">
+            {/* <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
+              <h3 className=" text-2xl font-semibold text-blue-gray-900">
                 Hello Guest
               </h3>
 
@@ -124,7 +124,7 @@ export default function Slider2() {
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
                 eum modi incidunt adipisci quod porro et non
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -132,11 +132,11 @@ export default function Slider2() {
         <div className="lg:flex bg-blue-gray-50 shadow-md">
           <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold text-black  lg:text-[56px] leading-none ">
+              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
                 Artificial Intelligence and Machine Learning
               </h2>
 
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-lg">
+              <p className="mt-4 text-sm text-blue-gray-600 dark:text-gray-400 lg:text-lg">
                 We are committed to evolving as Deep Tech Comapany. Artificial
                 Intelligence and Machine Learning is one the innovative areas to
                 which we are keen to contribute. Our recent innovation involves
@@ -162,15 +162,15 @@ export default function Slider2() {
 
           <div className="w-full h-64 lg:w-1/2 lg:h-full">
             <div
-              className="w-full  bg-cover h-[500px]"
+              className="w-full  bg-cover h-[700px]"
               style={{
                 backgroundImage: `url(${second})`,
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
             </div>
-            <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
-              <h3 className=" text-2xl font-semibold text-black">
+            {/* <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
+              <h3 className=" text-2xl font-semibold text-blue-gray-900">
                 Hello Guest
               </h3>
 
@@ -180,7 +180,7 @@ export default function Slider2() {
                 quasi, maxime culpa ut nemo ab delectus saepe iste nostrum
                 explicabo a?
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -188,11 +188,11 @@ export default function Slider2() {
         <div className="lg:flex bg-blue-gray-50 shadow-md">
           <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold text-black  lg:text-[56px] leading-none ">
+              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
                 The Radio Frequency Components
               </h2>
 
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-lg">
+              <p className="mt-4 text-sm text-blue-gray-600 dark:text-gray-400 lg:text-lg">
                 The company has a strong research background, with directors
                 from I.I.T-Roorkee who are working in cutting-edge radio
                 frequency technologies. Their recent R&D focus includes
@@ -220,15 +220,15 @@ export default function Slider2() {
 
           <div className="w-full h-64 lg:w-1/2 lg:h-full">
             <div
-              className="w-full  bg-cover h-[500px]"
+              className="w-full  bg-cover h-[700px]"
               style={{
                 backgroundImage: `url(${third})`,
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
             </div>
-            <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
-              <h3 className=" text-2xl font-semibold text-black">
+            {/* <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
+              <h3 className=" text-2xl font-semibold text-blue-gray-900">
                 Hello Guest
               </h3>
 
@@ -238,7 +238,7 @@ export default function Slider2() {
                 quasi, maxime culpa ut nemo ab delectus saepe iste nostrum
                 explicabo a?
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
