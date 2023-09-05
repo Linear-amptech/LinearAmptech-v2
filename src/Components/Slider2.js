@@ -1,4 +1,4 @@
-import { Carousel, IconButton } from "@material-tailwind/react";
+import { Carousel, IconButton, Button } from "@material-tailwind/react";
 
 export default function Slider2() {
   return (
@@ -6,14 +6,14 @@ export default function Slider2() {
       className="rounded-none bg-blue-gray-900 h-[700px]"
       loop={true}
       navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+        <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
             <span
               key={i}
               className={`block h-1  rounded-2xl transition-all content-[''] ${
                 activeIndex === i
-                  ? "w-4 h-4 rounded-full bg-white"
-                  : "w-4 h-4 bg-white/50"
+                  ? "w-2 h-2 rounded-full bg-white"
+                  : "w-2 h-2 bg-white/50"
               }`}
               onClick={() => setActiveIndex(i)}
             />
@@ -24,9 +24,9 @@ export default function Slider2() {
         <IconButton
           variant="text"
           color="white"
-          size="lg"
+          size="md"
           onClick={handlePrev}
-          className="!absolute top-2/4 left-4 -translate-y-2/4"
+          className="!absolute bottom-1 right-16 rounded-full bg-blue-gray-100  -translate-y-2/4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +48,9 @@ export default function Slider2() {
         <IconButton
           variant="text"
           color="white"
-          size="lg"
+          size="md"
           onClick={handleNext}
-          className="!absolute top-2/4 !right-4 -translate-y-2/4"
+          className="!absolute bottom-1 !right-4 rounded-full bg-blue-gray-100 -translate-y-2/4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,34 +70,31 @@ export default function Slider2() {
       )}
     >
       <div>
-        <div className="lg:flex">
+        <div className="lg:flex bg-blue-gray-50 shadow-md">
           <div className="flex items-center justify-center w-full px-6  lg:h-[700px] lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
-                Build Your New{" "}
-                <span className="text-blue-600 dark:text-blue-400">Idea</span>
+              <h2 className="text-3xl font-semibold text-black  lg:text-[56px] leading-none ">
+                Medium length hero headline goes here
               </h2>
 
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Blanditiis commodi cum cupiditate ducimus, fugit harum id
-                necessitatibus odio quam quasi, quibusdam rem tempora
-                voluptates.
+              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+                commodo diam libero vitae erat.
               </p>
 
-              <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
-                <a
-                  href="#"
-                  className="block px-5 py-2 text-sm font-medium tracking-wider text-center text-white transition-colors duration-300 transform bg-gray-900 rounded-md hover:bg-gray-700"
+              <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
+                <Button size="lg" className="rounded-none shadow-none">
+                  Button
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outlined"
+                  className="rounded-none shadow-none"
                 >
-                  Get Started
-                </a>
-                <a
-                  href="#"
-                  className="block px-5 py-2 text-sm font-medium tracking-wider text-center text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md lg:mx-4 hover:bg-gray-300"
-                >
-                  Learn More
-                </a>
+                  Button
+                </Button>
               </div>
             </div>
           </div>
@@ -112,12 +109,12 @@ export default function Slider2() {
             >
               <div className="w-full h-full bg-black opacity-25"></div>
             </div>
-            <div className="h-[200px] w-full bg-red-200">
-              <h3 className=" text-2xl font-semibold text-gray-100">
+            <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
+              <h3 className=" text-2xl font-semibold text-black">
                 Hello Guest
               </h3>
 
-              <p className=" text-gray-100">
+              <p className=" text-gray-900">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
                 eum modi incidunt adipisci quod porro et non exercitationem
                 quasi, maxime culpa ut nemo ab delectus saepe iste nostrum
