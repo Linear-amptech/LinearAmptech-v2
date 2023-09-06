@@ -19,11 +19,19 @@ import "aos/dist/aos.css";
 
 import TextTransition, { presets } from "react-text-transition";
 import Products from "../Components/Products";
+const heading = [
+  "Linear Amptech",
+  "Empowering Automation",
+  "Leading in RF Technology",
+  "Bridging the Digital and Physical",
+  "Your Tech Partner for Tomorrow",
+];
 const TEXTS = [
-  "Artificial Intelligence",
-  "Cyber Physical System Design",
-  "Machine Learning",
-  "Radio Frequency Censors",
+  "Innovating the Future of Cyber-Physical Systems",
+  "Integrating Machine Learning into Real-World Systems",
+  "Advanced Radio Frequency Sensors for Precision Applications",
+  "Transforming Interactions with our Cyber-Physical System Designs",
+  "Linear Amptech - Pioneering Breakthrough Solutions",
 ];
 
 const Home = () => {
@@ -50,24 +58,17 @@ const Home = () => {
       <div className="heroSection gap-2  lg:max-h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white z-0 overflow-hidden ">
         {/* <div className=" bg-slate-600 z-10"></div> */}
         <video autoPlay muted loop src={video1} className="z-10" />
-        <div className="absolute w-[100%] lg:py-20  gap-0  overflow-hidden z-10 flex flex-col justify-center items-center leading-relaxed">
-          <h2 className=" lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent">
-            We Are Working on{" "}
+        <div className="absolute w-[100%] lg:py-20  gap-0  overflow-hidden z-10 flex flex-col justify-center items-center leading-none px-6">
+          <h2 className=" lg:text-[4rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent text-center">
+            <TextTransition springConfig={presets.gentle}>
+              {heading[index % heading.length]}
+            </TextTransition>
           </h2>
-          <h2 className="lg:text-[5.5rem] md:text-4xl text-3xl font-bold drop-shadow-2xl bg-transparent mt-10 leading-loose">
-            <TextTransition springConfig={presets.default}>
+          <h2 className="lg:text-[3rem] md:text-4xl text-3xl font-bold drop-shadow-2xl bg-transparent  leading-none mt-10 text-center">
+            <TextTransition springConfig={presets.gentle}>
               {TEXTS[index % TEXTS.length]}
             </TextTransition>
           </h2>
-          {/* <p className="lg:text-[2rem] text-xl font-normal lg:mb-5 lg:mt-6 text-center">
-            Creating Difference With Technology
-          </p>
-          <NavLink
-            className=" lg:border-[3px] border-2 border-white text-white lg:text-[1.1rem] lg:py-3 lg:px-5 hover:scale-110 duration-300 py-2 px-3 text-base "
-            to="/about-us"
-          >
-            Read more
-          </NavLink> */}
         </div>
       </div>
 
