@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .active {
-  @apply text-[#0065ed];
+  @apply text-[#2196f3];
 }
 :root {
   --primary-color: #0465f8;
