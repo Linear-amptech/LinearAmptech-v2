@@ -41,7 +41,7 @@ export default function Products() {
         <CardFooter className="pt-0">
           <NavLink
             to="/products/ai-qube-data-core"
-            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm capitalize"
           >
             Read More
           </NavLink>
@@ -71,7 +71,7 @@ export default function Products() {
         <CardFooter className="pt-0">
           <NavLink
             to="/products/cyber-physical-system-and-signal-processing"
-            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm capitalize"
           >
             Read More
           </NavLink>
@@ -101,7 +101,7 @@ export default function Products() {
         <CardFooter className="pt-0">
           <NavLink
             to="/products/blockchain"
-            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm capitalize"
           >
             Read More
           </NavLink>
@@ -131,7 +131,7 @@ export default function Products() {
         <CardFooter className="pt-0">
           <NavLink
             to="/products/rf-power-amplifiers"
-            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm capitalize"
           >
             Read More
           </NavLink>
@@ -161,7 +161,7 @@ export default function Products() {
         <CardFooter className="pt-0">
           <NavLink
             to="/products/rf-passive-components"
-            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm capitalize"
           >
             Read More
           </NavLink>
@@ -191,7 +191,7 @@ export default function Products() {
         <CardFooter className="pt-0">
           <NavLink
             to="/products/sdr-test-bed"
-            className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-sm bg-gray-900 text-white shadow-md  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm capitalize"
           >
             Read More
           </NavLink>
