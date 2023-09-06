@@ -65,12 +65,12 @@ const Home = () => {
           className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
         />
         <div className="relative z-50 w-[100%] lg:py-20  gap-0  overflow-hidden flex flex-col justify-center items-center leading-none px-6">
-          <h2 className=" lg:text-[4rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent text-center">
+          <h2 className=" lg:text-[5rem] md:text-5xl text-4xl font-bold drop-shadow-2xl bg-transparent text-center">
             <TextTransition springConfig={presets.gentle}>
               {heading[index % heading.length]}
             </TextTransition>
           </h2>
-          <h2 className="lg:text-[3rem] md:text-4xl text-3xl font-bold drop-shadow-2xl bg-transparent  leading-none mt-10 text-center">
+          <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-none mt-10 text-center">
             <TextTransition springConfig={presets.gentle}>
               {TEXTS[index % TEXTS.length]}
             </TextTransition>
