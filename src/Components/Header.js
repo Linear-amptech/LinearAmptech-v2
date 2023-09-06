@@ -28,6 +28,27 @@ const Header = () => {
   const [isRFPowerAmp, setIsRFPowerAmp] = useState(false);
   const [isRFPassive, setIsRFPassive] = useState(false);
 
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+
+    if (currentScrollPos > prevScrollPos) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -38,7 +59,7 @@ const Header = () => {
   return (
     <div
       onMouseLeave={() => setIsDropDownOpen(false)}
-      className="z-50 bg-white sticky top-0 "
+      className={`z-50 bg-white sticky ${visible ? "top-0" : ""}`}
     >
       <nav className="relative   ">
         <div className="container px-6 py-1 mx-auto lg:flex lg:justify-between lg:items-center">
