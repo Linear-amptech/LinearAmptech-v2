@@ -18,20 +18,20 @@ const Footer = () => {
               <div className="flex flex-col items-start mt-5 space-y-2">
                 <NavLink
                   to="/"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   Home
                 </NavLink>
                 <NavLink
                   to="/innovations"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   Innovations
                 </NavLink>
                 <a
                   href={pdf}
                   target="_blank"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   Privacy Policy
                 </a>
@@ -46,43 +46,43 @@ const Footer = () => {
               <div className="flex flex-col items-start mt-5 space-y-2">
                 <NavLink
                   to="/products/ai-qube-data-core"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   AI Qube Data Core
                 </NavLink>
                 <NavLink
                   to="/products/cyber-physical-system-and-signal-processing"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   WAIT System
                 </NavLink>
                 <NavLink
                   to="/products/blockchain"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   Private Blockchain Network
                 </NavLink>
                 <NavLink
                   to="/products/rf-power-amplifiers"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   RF Power Amplifier
                 </NavLink>
                 <NavLink
                   to="/products/rf-passive-components"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   RF Passive Components
                 </NavLink>
                 <NavLink
                   to="/products/rf-passive/GaN-MMIC"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   GaN MMIC
                 </NavLink>
                 <NavLink
                   to="/products/sdr-test-bed"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   SDR Test-Beds
                 </NavLink>
@@ -97,13 +97,13 @@ const Footer = () => {
               <div className="flex flex-col items-start mt-5 space-y-2">
                 <a
                   href="#"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   +91 6354814759
                 </a>
                 <a
                   href="#"
-                  className="text-gray-50 transition-colors duration-300   hover:underline hover:text-[#2196f3]"
+                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   hello@linear-amptech.com
                 </a>
