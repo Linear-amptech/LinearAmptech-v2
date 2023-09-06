@@ -59,7 +59,9 @@ const Header = () => {
   return (
     <div
       onMouseLeave={() => setIsDropDownOpen(false)}
-      className={`z-50 bg-white sticky ${visible ? "top-0" : ""}`}
+      className={`z-50 bg-white sticky opacity-0 transition-opacity ${
+        visible ? "top-0  duration-500 opacity-100" : ""
+      } `}
     >
       <nav className="relative   ">
         <div className="container px-6 py-1 mx-auto lg:flex lg:justify-between lg:items-center">
