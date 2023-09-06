@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Footer, Slider } from "../Components";
+import { Button } from "@material-tailwind/react";
 
 import { NavLink } from "react-router-dom";
 import Header from "../Components/Header";
@@ -219,7 +220,7 @@ const Home = () => {
         </p>
         <NavLink
           to="/about-us"
-          className="bg-primary-color text-white text-[1.1rem] py-3 px-6 border-2 border-white hover:scale-105 duration-100"
+          className="align-middle select-none font-sans text-base text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3.5 px-7 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm normal-case"
         >
           Read more
         </NavLink>
