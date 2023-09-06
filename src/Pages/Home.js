@@ -55,10 +55,16 @@ const Home = () => {
       {/* </div> */}
       {/* *********************Hero Section ****************************** */}
 
-      <div className="heroSection gap-2  lg:max-h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white z-0 overflow-hidden ">
+      <div className="heroSection gap-2  h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white z-0 overflow-hidden relative ">
         {/* <div className=" bg-slate-600 z-10"></div> */}
-        <video autoPlay muted loop src={video1} className="z-10" />
-        <div className="absolute w-[100%] lg:py-20  gap-0  overflow-hidden z-10 flex flex-col justify-center items-center leading-none px-6">
+        <video
+          autoPlay
+          muted
+          loop
+          src={video1}
+          className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
+        />
+        <div className="relative z-50 w-[100%] lg:py-20  gap-0  overflow-hidden flex flex-col justify-center items-center leading-none px-6">
           <h2 className=" lg:text-[4rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent text-center">
             <TextTransition springConfig={presets.gentle}>
               {heading[index % heading.length]}
