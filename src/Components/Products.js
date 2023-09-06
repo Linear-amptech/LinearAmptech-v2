@@ -17,7 +17,7 @@ import sdr from "../assets/SDR/4.png";
 export default function Products() {
   return (
     <div className="flex gap-12 flex-wrap justify-center ">
-      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-none">
         <CardHeader
           color="blue-gray"
           className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
@@ -47,7 +47,7 @@ export default function Products() {
           </NavLink>
         </CardFooter>
       </Card>
-      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-none">
         <CardHeader
           color="blue-gray"
           className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
@@ -77,7 +77,7 @@ export default function Products() {
           </NavLink>
         </CardFooter>
       </Card>
-      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-none">
         <CardHeader
           color="blue-gray"
           className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
@@ -107,7 +107,7 @@ export default function Products() {
           </NavLink>
         </CardFooter>
       </Card>
-      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-none">
         <CardHeader
           color="blue-gray"
           className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
@@ -137,7 +137,7 @@ export default function Products() {
           </NavLink>
         </CardFooter>
       </Card>
-      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-none">
         <CardHeader
           color="blue-gray"
           className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
@@ -167,7 +167,7 @@ export default function Products() {
           </NavLink>
         </CardFooter>
       </Card>
-      <Card className=" w-[500px] px-0 rounded-sm shadow-sm">
+      <Card className=" w-[500px] px-0 rounded-sm shadow-none">
         <CardHeader
           color="blue-gray"
           className="relative h-72 mt-0 px-0 w-full mx-auto rounded-sm shadow-none bg-blue-gray-200"
