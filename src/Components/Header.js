@@ -102,13 +102,13 @@ const Header = () => {
           >
             <div className="flex flex-col lg:flex-row lg:mx-6  lg:text-[16px] text-base  gap-4">
               <NavLink
-                className="my-1 text-blue-gray-900  transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900  transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
                 to="/"
               >
                 Home
               </NavLink>
               <NavLink
-                className="my-1 text-blue-gray-900  transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900  transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
                 to="/innovations"
               >
                 Innovations
@@ -118,7 +118,7 @@ const Header = () => {
                 onMouseEnter={() => setIsDropDownOpen(true)}
                 // onMouseLeave={() => setIsDropDownOpen(false)}
                 onClick={() => setIsDropDownOpen(!isDropDownOpen)}
-                className="my-1 text-blue-gray-900 transition-colors duration-300 z-10 transform md:mx-4 md:my-0 cursor-pointer hover:text-[#0065ed]"
+                className="my-1 text-blue-gray-900 transition-colors duration-300 z-10 transform md:mx-4 md:my-0 cursor-pointer hover:text-[#2196f3]"
                 // to="/products"
               >
                 Products
@@ -337,19 +337,19 @@ const Header = () => {
               </div>
 
               <NavLink
-                className="my-1 text-blue-gray-900 -z-1 transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900 -z-1 transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
                 to="/news-and-events"
               >
                 News & Events
               </NavLink>
               <NavLink
-                className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
                 to="/team"
               >
                 Team
               </NavLink>
               <NavLink
-                className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#0065ed]  md:mx-4 md:my-0"
+                className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
                 to="/about-us"
               >
                 About us
@@ -397,7 +397,7 @@ export default Header;
 // } from "@heroicons/react/24/outline";
 
 // const colors = {
-//   blue: "bg-blue-50 text-[#0065ed]",
+//   blue: "bg-blue-50 text-[#2196f3]",
 //   orange: "bg-orange-50 text-orange-500",
 //   green: "bg-green-50 text-green-500",
 //   "blue-gray": "bg-blue-gray-50 text-blue-gray-500",
