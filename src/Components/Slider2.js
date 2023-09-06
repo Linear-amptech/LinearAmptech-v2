@@ -93,13 +93,18 @@ export default function Slider2() {
               </p>
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
-                <Button size="lg" className="rounded-none shadow-none">
-                  Button
+                <Button
+                  size="lg"
+                  className="rounded-sm shadow-none hover:shadow-none"
+                  color="gray"
+                  variant="gradient"
+                >
+                  Discover
                 </Button>
                 <Button
                   size="lg"
                   variant="outlined"
-                  className="rounded-none shadow-none"
+                  className="rounded-sm shadow-none"
                 >
                   Button
                 </Button>
@@ -147,13 +152,18 @@ export default function Slider2() {
               </p>
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
-                <Button size="lg" className="rounded-none shadow-none">
-                  Button
+                <Button
+                  size="lg"
+                  className="rounded-sm shadow-none hover:shadow-none"
+                  color="gray"
+                  variant="gradient"
+                >
+                  Discover
                 </Button>
                 <Button
                   size="lg"
                   variant="outlined"
-                  className="rounded-none shadow-none"
+                  className="rounded-sm shadow-none"
                 >
                   Button
                 </Button>
@@ -205,13 +215,18 @@ export default function Slider2() {
               </p>
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
-                <Button size="lg" className="rounded-none shadow-none">
-                  Button
+                <Button
+                  size="lg"
+                  className="rounded-sm shadow-none hover:shadow-none"
+                  color="gray"
+                  variant="gradient"
+                >
+                  Discover
                 </Button>
                 <Button
                   size="lg"
                   variant="outlined"
-                  className="rounded-none shadow-none"
+                  className="rounded-sm shadow-none"
                 >
                   Button
                 </Button>
