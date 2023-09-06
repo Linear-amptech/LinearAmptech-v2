@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="container px-6 py-12 mx-auto">
           {/* <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" /> */}
 
-          <div className="flex  justify-between gap-4">
-            <div>
+          <div className="flex  justify-between lg:gap-4 gap-8 flex-wrap">
+            <div className="min-w-[300px]">
               <p className="font-semibold text-gray-50 dark:text-white">
                 Quick Link
               </p>
@@ -38,7 +38,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div>
+            <div className="min-w-[300px]">
               <p className="font-semibold text-gray-50 dark:text-white">
                 Products
               </p>
@@ -89,7 +89,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="">
+            <div className="min-w-[300px]">
               <p className="font-semibold text-gray-50  dark:text-white">
                 Contact Us
               </p>
