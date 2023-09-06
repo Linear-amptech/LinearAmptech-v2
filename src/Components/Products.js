@@ -29,7 +29,7 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" className="mb-2 text-blue-gray-800">
             AI Qube Data Core
           </Typography>
           <Typography>
@@ -59,7 +59,7 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" className="mb-2 text-blue-gray-800">
             WAIT System
           </Typography>
           <Typography>
@@ -89,7 +89,7 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" className="mb-2 text-blue-gray-800">
             Private Blockchain Network
           </Typography>
           <Typography>
@@ -119,7 +119,7 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" className="mb-2 text-blue-gray-800">
             Radio Frequency Power Amplifier
           </Typography>
           <Typography>
@@ -149,7 +149,7 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" className="mb-2 text-blue-gray-800">
             Radio Frequency Passive Components
           </Typography>
           <Typography>
@@ -179,7 +179,7 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" className="mb-2 text-blue-gray-800">
             SDR Test-Beds
           </Typography>
           <Typography>
