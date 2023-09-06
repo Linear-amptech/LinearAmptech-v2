@@ -5,7 +5,7 @@ import pdf from "../assets/media/PRIVACY-POLICY.pdf";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-gray-900 text-slate-100 dark:bg-gray-900">
+      <footer className="bg-gradient-to-tr from-gray-900 to-gray-800 text-slate-100 ">
         <div className="container px-6 py-12 mx-auto">
           {/* <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" /> */}
 
