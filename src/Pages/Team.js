@@ -21,10 +21,16 @@ const Team = () => {
         }}
       >
         <div className=" ">
-          <p className="font-bold lg:text-[64px] text-4xl text-white text-center">
+          <p
+            className="font-bold lg:text-[64px] text-4xl text-white text-center"
+            data-aos="fade-up"
+          >
             Meet Our Team
           </p>
-          <p className="text-[24px] lg:mt-6 text-white font-medium text-center">
+          <p
+            className="text-[24px] lg:mt-6 text-white font-medium text-center"
+            data-aos="fade-up"
+          >
             Solutions for a smarter, more connected future
           </p>
         </div>
