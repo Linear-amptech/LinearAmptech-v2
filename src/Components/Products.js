@@ -16,7 +16,7 @@ import blockchain from "../assets/blockchain.png";
 import sdr from "../assets/SDR/4.png";
 export default function Products() {
   return (
-    <div className="flex gap-12 flex-wrap justify-center ">
+    <div className="flex gap-12 flex-wrap justify-center font-[poppins] ">
       <Card
         className=" w-[500px] px-0 rounded-sm shadow-none"
         data-aos="fade-right"
