@@ -195,7 +195,10 @@ const Innovations = () => {
 
               <div className="mt-2 lg:flex lg:items-center">
                 <div className="grid w-full grid-cols-1 gap-4 lg:w-full xl:gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                  <div
+                    className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white"
+                    data-aos="fade-up"
+                  >
                     <div className="inline-block ">
                       <img
                         src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -230,7 +233,10 @@ const Innovations = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                  <div
+                    className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white"
+                    data-aos="fade-up"
+                  >
                     <div className="inline-block ">
                       <img
                         src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -273,7 +279,10 @@ const Innovations = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                  <div
+                    className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white"
+                    data-aos="fade-up"
+                  >
                     <div className="inline-block ">
                       <img
                         src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -309,7 +318,10 @@ const Innovations = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                  <div
+                    className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white"
+                    data-aos="fade-up"
+                  >
                     <div className="inline-block ">
                       <img
                         src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -344,7 +356,10 @@ const Innovations = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                  <div
+                    className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white"
+                    data-aos="fade-up"
+                  >
                     <div className="inline-block ">
                       <img
                         src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -380,7 +395,10 @@ const Innovations = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                  <div
+                    className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white"
+                    data-aos="fade-up"
+                  >
                     <div className="inline-block ">
                       <img
                         src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
