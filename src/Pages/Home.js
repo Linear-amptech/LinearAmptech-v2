@@ -56,7 +56,7 @@ const Home = () => {
       {/* </div> */}
       {/* *********************Hero Section ****************************** */}
 
-      <div className="heroSection gap-2  h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white bg-black z-0 overflow-hidden relative ">
+      <div className="heroSection gap-2  h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white bg-blue-gray-900 z-0 overflow-hidden relative ">
         {/* <div className=" bg-slate-600 z-10"></div> */}
         <video
           autoPlay
