@@ -1,5 +1,6 @@
 import { BsLinkedin, BsFacebook } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const TeamMember = (props) => {
   return (
@@ -11,7 +12,7 @@ const TeamMember = (props) => {
       />
 
       <div className=" m-4  bg-white">
-        <h1 className="mt-2 text-2xl font-semibold text-slate-900 capitalize  group-hover:text-white">
+        <h1 className="mt-2 text-2xl font-semibold text-blue-gray-900 capitalize   group-hover:text-white">
           {props.member.name}
         </h1>
 
@@ -26,7 +27,7 @@ const TeamMember = (props) => {
             className="mx-2 text-black  "
             aria-label="Reddit"
           >
-            <AiFillTwitterCircle size={26} />
+            <FaSquareXTwitter size={23} />
           </a>
 
           <a
