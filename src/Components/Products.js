@@ -16,7 +16,7 @@ import blockchain from "../assets/blockchain.png";
 import sdr from "../assets/SDR/4.png";
 export default function Products() {
   return (
-    <div className="flex gap-12 flex-wrap justify-center font-[poppins] ">
+    <div className="flex gap-12 flex-wrap justify-center font-Poppins ">
       <Card
         className=" w-[500px] px-0 rounded-sm shadow-none"
         data-aos="fade-right"
@@ -32,10 +32,13 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" className="mb-2 text-blue-gray-800">
+          <Typography
+            variant="h5"
+            className="mb-2 text-blue-gray-800 font-Poppins"
+          >
             AI Qube Data Core
           </Typography>
-          <Typography>
+          <Typography className="font-Poppins">
             AiQube was founded with a mission to make data science accessible
             and actionable for every business. Our hybrid platform provide
             comprehensive analytics,...
@@ -68,7 +71,7 @@ export default function Products() {
           <Typography variant="h5" className="mb-2 text-blue-gray-800">
             WAIT System
           </Typography>
-          <Typography>
+          <Typography className="font-Poppins">
             The WAIT an acronym here for Warning Ahead of Intersection & Turns
             is a product suitable for early warning in blind turns and highlyway
             intersections with rural roads...
@@ -98,10 +101,13 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" className="mb-2 text-blue-gray-800">
+          <Typography
+            variant="h5"
+            className="mb-2 text-blue-gray-800 font-Poppins"
+          >
             Private Blockchain Network
           </Typography>
-          <Typography>
+          <Typography className="font-Poppins">
             The blockchain-based management system offers a range of
             applications across various industries. In the military and defense
             sector, it ensures accurate tracking and...
@@ -131,10 +137,13 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" className="mb-2 text-blue-gray-800">
+          <Typography
+            variant="h5"
+            className="mb-2 text-blue-gray-800 font-Poppins"
+          >
             Radio Frequency Power Amplifier
           </Typography>
-          <Typography>
+          <Typography className="font-Poppins">
             The company has varieties of Radio Frequency Power Amplifiers for L,
             S and C band in their product line. These Amplifiers are power
             stages as well as complete unit with DC/DC converters.
@@ -164,10 +173,13 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" className="mb-2 text-blue-gray-800">
+          <Typography
+            variant="h5"
+            className="mb-2 text-blue-gray-800 font-Poppins"
+          >
             Radio Frequency Passive Components
           </Typography>
-          <Typography>
+          <Typography className="font-Poppins">
             These RF passive components have unique design topologies enabling
             low loss and high selectivity in case of filters and excellent
             combining efficiency (more than 90%)...
@@ -197,10 +209,13 @@ export default function Products() {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" className="mb-2 text-blue-gray-800">
+          <Typography
+            variant="h5"
+            className="mb-2 text-blue-gray-800 font-Poppins"
+          >
             SDR Test-Beds
           </Typography>
-          <Typography>
+          <Typography className="font-Poppins">
             With the advent of Software Defined Radio (SDR) the radio hardware
             scaled down to software and most of the features is pushed into
             software. In the scenario of war...
