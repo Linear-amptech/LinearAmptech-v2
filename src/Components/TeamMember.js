@@ -11,7 +11,7 @@ const TeamMember = (props) => {
   }, [AOS]);
   return (
     <div
-      className="flex flex-col items-center justify-center w-[300px] lg:w-[300px] bg-white shadow-sm  rounded-sm"
+      className="flex flex-col items-center justify-center w-[230px] lg:w-[230px]  "
       data-aos="fade-up"
     >
       <img
@@ -20,8 +20,8 @@ const TeamMember = (props) => {
         alt=""
       />
 
-      <div className=" m-4  bg-white">
-        <h1 className="mt-2 text-2xl font-semibold text-blue-gray-900 capitalize   group-hover:text-white">
+      <div className=" m-4  ">
+        <h1 className="mt-2 text-xl font-semibold text-blue-gray-900 capitalize   group-hover:text-white">
           {props.member.name}
         </h1>
 
