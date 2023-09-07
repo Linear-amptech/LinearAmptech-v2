@@ -11,10 +11,11 @@ import poweramp from "../assets/PowerAmp/1.png";
 import BoardMember from "../Components/BoardMember";
 
 import { boardMember } from "../data/BoardMemberData";
+import TeamMember from "../Components/TeamMember";
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className="bg-[#f5f8fa]">
       <Header />
       {/* firt section */}
 
@@ -35,9 +36,9 @@ const AboutUs = () => {
       </div>
 
       {/* middle */}
-      <div className="mt-10 ">
-        <section className="bg-white dark:bg-gray-800 lg:pt-12 pb-0 lg:flex lg:justify-center">
-          <div className="overflow-hidden bg-white md:mx-4  lg:mx-8 md:flex md:max-w-6xl md:w-full lg:shadow-none ">
+      <div className="mt-10  ">
+        <section className=" dark:bg-gray-800 lg:pt-12 pb-0 lg:flex lg:justify-center">
+          <div className="overflow-hidden  md:mx-4  lg:mx-8 md:flex md:max-w-6xl md:w-full lg:shadow-none ">
             <div className="md:w-1/2">
               <div
                 className="h-64 bg-cover lg:h-full lg:max-w-[588px] lg:h[480px] md:max-w-[480px] md:h-[500px]"
@@ -69,8 +70,8 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        <section className="bg-white dark:bg-gray-800 lg:pb-12 pt-0 lg:flex lg:justify-center px-4">
-          <div className="overflow-hidden bg-white  lg:mx-auto lg:flex lg:max-w-6xl lg:w-full lg:shadow-none ">
+        <section className=" dark:bg-gray-800 lg:pb-12 pt-0 lg:flex lg:justify-center px-4">
+          <div className="overflow-hidden   lg:mx-auto lg:flex lg:max-w-6xl lg:w-full lg:shadow-none ">
             <div className=" px-0 lg:py-12 ">
               <p className="mt-0 md:mt-8  text-black  lg:text-[20px] md:text-[18px] text-base leading-loose ">
                 The company is geared up to take on new technology development
@@ -125,13 +126,13 @@ const AboutUs = () => {
               </NavLink>
             </div>
           </div>
-          <div className="h-[282px] lg:w-[477px] max-w-[477px] sm-max-w-[350px] bg-white ">
+          <div className="h-[282px] lg:w-[477px] max-w-[477px] sm-max-w-[350px]  ">
             <img src={rf} className="h-[100%]" />
           </div>
         </div>
 
         <div className="lg:flex  ">
-          <div className="h-[282px] lg:w-[477px] max-w-[477px] bg-white">
+          <div className="h-[282px] lg:w-[477px] max-w-[477px] ">
             <img src={sdr} className="h-[100%] " />
           </div>
           <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-[#0465F8] text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0  ">
@@ -171,14 +172,14 @@ const AboutUs = () => {
               </NavLink>
             </div>
           </div>
-          <div className="h-[282px] max-w-[477px] bg-white border-b border-r border-black">
+          <div className="h-[282px] max-w-[477px]  border-b border-r border-black">
             <img src={poweramp} className="h-[100%]" />
           </div>
         </div>
       </div>
       {/* BOARD of Directors */}
       <div className="lg:mt-64 mb-20">
-        <section className="bg-white ">
+        <section className=" ">
           <div className="container px-6 py-10 mx-auto mt-12">
             <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-black capitalize ">
               Board Of Directors
@@ -197,7 +198,7 @@ const AboutUs = () => {
 
             <div className="flex flex-wrap gap-2 justify-center mt-2 xl:mt-12 ">
               {boardMember.map((member) => {
-                return <BoardMember member={member} />;
+                return <TeamMember member={member} />;
               })}
             </div>
           </div>
