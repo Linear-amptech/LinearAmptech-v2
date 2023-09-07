@@ -195,175 +195,225 @@ const Innovations = () => {
 
               <div className="mt-2 lg:flex lg:items-center">
                 <div className="grid w-full grid-cols-1 gap-4 lg:w-full xl:gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  <div className="space-y-2  shadow-sm border-slate-200  p-4 bg-white">
-                    <span className="inline-block p-3 text-[#0465F8] bg-blue-100   dark:bg-blue-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                        />
-                      </svg>
-                    </span>
+                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                    <div className="inline-block ">
+                      <img
+                        src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        className="rounded-t-sm"
+                      />
+                    </div>
+                    <div className="px-4 pt-0 pb-4">
+                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
+                          />
+                        </svg>
+                      </span>
 
-                    <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                      Machine Learning
-                    </h1>
+                      <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
+                        Machine Learning
+                      </h1>
 
-                    <p className="text-black">
-                      It is a generalized ML platform to provide personalized
-                      solution for defence and industries.
-                    </p>
+                      <p className="text-gray-700">
+                        It is a generalized ML platform to provide personalized
+                        solution for defence and industries.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                    <div className="inline-block ">
+                      <img
+                        src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        className="rounded-t-sm"
+                      />
+                    </div>
+                    <div className="px-4 pt-0 pb-4">
+                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+                          />
+                        </svg>
+                      </span>
+
+                      <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
+                        Real Time Data
+                      </h1>
+
+                      <p className="text-gray-700">
+                        Use of real-time data predictive analytics to identify
+                        and track potential problems before they occur in our
+                        assets.
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2  shadow-sm border-slate-200  p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
-                        />
-                      </svg>
-                    </span>
+                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                    <div className="inline-block ">
+                      <img
+                        src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        className="rounded-t-sm"
+                      />
+                    </div>
+                    <div className="px-4 pt-0 pb-4">
+                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+                          />
+                        </svg>
+                      </span>
 
-                    <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                      Real Time Data
-                    </h1>
+                      <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
+                        Acuuracy
+                      </h1>
 
-                    <p className="text-black">
-                      Use of real-time data predictive analytics to identify and
-                      track potential problems before they occur in our assets.
-                    </p>
+                      <p className="text-gray-700">
+                        To develop a digital twin of an industrial asset that
+                        accurately represents its behavior and performance.
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2   shadow-sm border-slate-200  p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
-                        />
-                      </svg>
-                    </span>
+                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                    <div className="inline-block ">
+                      <img
+                        src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        className="rounded-t-sm"
+                      />
+                    </div>
+                    <div className="px-4 pt-0 pb-4">
+                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                          />
+                        </svg>
+                      </span>
 
-                    <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                      Acuuracy
-                    </h1>
+                      <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
+                        Usefullness
+                      </h1>
 
-                    <p className="text-black">
-                      To develop a digital twin of an industrial asset that
-                      accurately represents its behavior and performance.
-                    </p>
+                      <p className="text-gray-700">
+                        To predict remaining useful life (RUL) of Machines.
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2  shadow-sm border-slate-200  p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                        />
-                      </svg>
-                    </span>
+                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                    <div className="inline-block ">
+                      <img
+                        src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        className="rounded-t-sm"
+                      />
+                    </div>
+                    <div className="px-4 pt-0 pb-4">
+                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                          />
+                        </svg>
+                      </span>
 
-                    <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                      Usefullness
-                    </h1>
+                      <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
+                        Deep Learning
+                      </h1>
 
-                    <p className="text-black">
-                      To predict remaining useful life (RUL) of Machines.
-                    </p>
+                      <p className="text-gray-700">
+                        Provide research platform where teams can collaborate
+                        develop deep learning models and take data driven
+                        actions.
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-2  shadow-sm border-slate-200  p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                        />
-                      </svg>
-                    </span>
+                  <div className="space-y-2  shadow-sm border-slate-200  rounded-sm bg-white">
+                    <div className="inline-block ">
+                      <img
+                        src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        className="rounded-t-sm"
+                      />
+                    </div>
+                    <div className="px-4 pt-0 pb-4">
+                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"
+                          />
+                        </svg>
+                      </span>
 
-                    <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                      Deep Learning
-                    </h1>
+                      <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
+                        Premise Solution
+                      </h1>
 
-                    <p className="text-black">
-                      Provide research platform where teams can collaborate
-                      develop deep learning models and take data driven actions.
-                    </p>
-                  </div>
-                  <div className="space-y-2  shadow-sm border-slate-200  p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"
-                        />
-                      </svg>
-                    </span>
-
-                    <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                      Premise Solution
-                    </h1>
-
-                    <p className="text-black">
-                      Provide on premise solution which gives full control of
-                      their critical data with security
-                    </p>
+                      <p className="text-gray-700">
+                        Provide on premise solution which gives full control of
+                        their critical data with security
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
