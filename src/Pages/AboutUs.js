@@ -196,7 +196,7 @@ const AboutUs = () => {
               outcomes to our stakeholders
             </p>
 
-            <div className="flex flex-wrap gap-2 justify-center mt-2 xl:mt-12 ">
+            <div className="flex flex-wrap gap-12 justify-center mt-2 xl:mt-12 ">
               {boardMember.map((member) => {
                 return <TeamMember member={member} />;
               })}
