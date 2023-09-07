@@ -146,7 +146,7 @@ const Header = () => {
               >
                 Products
                 {isDropDownOpen && (
-                  <div className=" ease-in duration-1000 border lg:w-[78vw] 2xl:max-w-[1145px] xl:max-w-[1145px] flex flex-wrap items-start lg:justify-between justify-start gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto lg:h-[63vh] xl:h-[63vh] 2xl:h-[63vh] h-[80vh]   lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-6 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className=" ease-in duration-1000 border lg:w-[90vw] 2xl:max-w-[1180px] xl:max-w-[1180px] flex flex-wrap items-start lg:justify-between justify-start gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto lg:h-[62vh] xl:h-[62vh] 2xl:h-[62vh] h-[80vh]   lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-6 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute w-[20px] right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
@@ -347,7 +347,7 @@ const Header = () => {
                             <div className="w-12 h-12 p-3 flex justify-center items-center text-purple-500 bg-purple-50 ">
                               <MdOutlineInventory2 className="text-[2rem]" />
                             </div>
-                            <p className="hover:text-[#616161]">
+                            <p className="hover:text-[#616161] text-blue-gray-700">
                               Inventory System
                             </p>
                           </li>
@@ -357,7 +357,9 @@ const Header = () => {
                             <div className="w-12 h-12 p-3 flex justify-center items-center text-pink-500 bg-pink-50 ">
                               <GiHumanPyramid className="text-[2rem]" />
                             </div>
-                            <p className="hover:text-[#616161]">HRMS</p>
+                            <p className="hover:text-[#616161] text-blue-gray-700">
+                              HRMS
+                            </p>
                           </li>
                         </NavLink>
                       </ul>
