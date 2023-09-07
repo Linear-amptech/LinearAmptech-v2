@@ -15,7 +15,7 @@ const AIandML = () => {
       {/* <div className="w-[100%] h-[100%]">
         <div className="absolute w-[100%] h-[100%] lg:top-[35%] md:top-[30%]   sm:top-[25%] top-[15%]">
           <h2
-            className="lg:text-[5rem] md:text-6xl text-4xl font-bold font-Roboto drop-shadow-2xl text-center text-white "
+            className="lg:text-[5rem] md:text-6xl text-4xl font-bold  drop-shadow-2xl text-center text-white "
             data-aos="fade"
             data-aos-duration="1000"
           >
@@ -27,7 +27,7 @@ const AIandML = () => {
       </div> */}
       <div className="heroSection z-0 w-[100%]  h-[400px] overflow-hidden flex  ">
         <div className=" absolute z-10 w-[100%] h-[400px] flex flex-col justify-center items-center gap-2  text-white">
-          <h2 className="lg:text-[4rem] sm:text-[3rem] text-[2.5rem] font-bold font-Roboto ">
+          <h2 className="lg:text-[4rem] sm:text-[3rem] text-[2.5rem] font-bold  ">
             Our Products
           </h2>
           <p className="lg:text-[1.8rem] font-normal mb-4 ">

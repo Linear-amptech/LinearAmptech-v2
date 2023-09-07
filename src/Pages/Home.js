@@ -50,7 +50,7 @@ const Home = () => {
     return () => clearTimeout(intervalId);
   }, []);
   return (
-    <div className="font-Inter relative">
+    <div className=" relative">
       {/* <div className="sticky top-0 right-0 z-20"> */}
       <Header />
       {/* </div> */}

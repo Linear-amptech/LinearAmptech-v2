@@ -25,10 +25,10 @@ const AboutUs = () => {
             backgroundImage: `url("https://images.unsplash.com/photo-1676676701269-65de47175adf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2128&q=80")`,
           }}
         >
-          <h2 className="lg:text-[4rem] md:text-5xl text-4xl font-bold font-Roboto drop-shadow-2xl text-center">
+          <h2 className="lg:text-[4rem] md:text-5xl text-4xl font-bold  drop-shadow-2xl text-center">
             Get to Know Us
           </h2>
-          <h2 className="lg:text-[4rem] md:text-5xl text-4xl font-bold font-Roboto drop-shadow-2xl text-center lg:mt-8 p-1">
+          <h2 className="lg:text-[4rem] md:text-5xl text-4xl font-bold  drop-shadow-2xl text-center lg:mt-8 p-1">
             Our Passion, Purpose, and People
           </h2>
         </div>
