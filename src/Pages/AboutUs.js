@@ -38,7 +38,7 @@ const AboutUs = () => {
 
       {/* middle */}
       <div className="mt-10  ">
-        <section className=" dark:bg-gray-800 lg:pt-12 pb-0 lg:flex lg:justify-center">
+        <section className="  lg:pt-12 pb-0 lg:flex lg:justify-center">
           <div className="overflow-hidden  md:mx-4  lg:mx-8 md:flex md:max-w-6xl md:w-full lg:shadow-none ">
             <div className="md:w-1/2">
               <div
@@ -74,11 +74,11 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        <section className=" dark:bg-gray-800 lg:pb-12 pt-0 lg:flex lg:justify-center px-4">
+        <section className="  lg:pb-12 pt-0 lg:flex lg:justify-center px-4">
           <div className="overflow-hidden   lg:mx-auto lg:flex lg:max-w-6xl lg:w-full lg:shadow-none ">
             <div className=" px-0 lg:py-12 ">
               <p
-                className="mt-0 md:mt-8  text-black  lg:text-[20px] md:text-[18px] text-base leading-loose "
+                className="mt-0 md:mt-8  text-blue-gray-800  lg:text-[20px] md:text-[18px] text-base leading-loose "
                 id="moretag"
               >
                 The company is geared up to take on new technology development
@@ -92,7 +92,7 @@ const AboutUs = () => {
                 including radio-frequency sensors development and addressing the
                 cyber domain with Artificial intelligence and Machine Learning.
               </p>
-              <p className="mt-4 text-black  lg:text-[20px] md:text-[18px] leading-loose text-base">
+              <p className="mt-4 text-blue-gray-800  lg:text-[20px] md:text-[18px] leading-loose text-base">
                 The company also envisages the requirement for the specialized
                 technology areas such as Radio-frequency design and hence is
                 committed to the development of radios and related components to
@@ -111,7 +111,7 @@ const AboutUs = () => {
       {/* fetuses area */}
 
       {/* we build awesome products */}
-      <div className="lg:h-[893px] bg-gradient-to-tr from-gray-900 to-gray-800 text-slate-100  flex justify-center flex-col align-end items-center mt-12 ">
+      <div className="lg:h-[893px] bg-gradient-to-tr from-gray-700 to-gray-900 text-slate-100  flex justify-center flex-col align-end items-center mt-12 ">
         <div className="py-16 lg:mt-32">
           <h1 className="text-white lg:text-[48px] text-3xl  font-semibold text-center">
             We build awesome products
@@ -119,21 +119,33 @@ const AboutUs = () => {
         </div>
 
         <div className="lg:flex lg:flex-row flex flex-col-reverse  ">
-          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-[#48484A] text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0 ">
+          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-gradient-to-tr from-gray-900 to-gray-700 text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0 flex gap-3 flex-col">
             <h1 className="text-[20px] font-semibold">RF Power Amplifiers</h1>
-            <p className="pt-2">
+            <p className="">
               Linear Amptech provides excellent indigenous power amplifier
               solution for Cellular application and variety of military and
               space applications. We provide vast range of high performance
               power amplifiers with frequency coverage from Dc to 18 GHz.
             </p>
-            <div className="w-[114px] min-h-[36px]  px-5 pt-1 mt-2  text-[14px] border border-white text-white    hover:scale-110 duration-300  ">
-              <NavLink to={"/products/rf-linear-nonlinear-characterization"}>
+            <div>
+              <NavLink
+                to={"/products/software-defined-radio"}
+                className="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 border border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] font-Poppins rounded-sm "
+              >
                 Read more
               </NavLink>
             </div>
+            {/* <Button
+              size="md"
+              className="font-Poppins rounded-sm"
+              variant="outlined"
+              color="white"
+            >
+              {" "}
+              Read More
+            </Button> */}
           </div>
-          <div className="h-[282px] lg:w-[477px] max-w-[477px] sm-max-w-[350px]  ">
+          <div className="h-[282px] lg:w-[477px] max-w-[477px] sm-max-w-[350px] bg-white ">
             <img src={rf} className="h-[100%]" />
           </div>
         </div>
@@ -142,19 +154,22 @@ const AboutUs = () => {
           <div className="h-[282px] lg:w-[477px] max-w-[477px] ">
             <img src={sdr} className="h-[100%] " />
           </div>
-          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-gradient-to-tr from-blue-600 to-blue-400 text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0  ">
+          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-gradient-to-tr from-blue-600 to-blue-400 text-white px-8 lg:pt-4 pt-2 pb-4 lg:pb-0 flex flex-col gap-3 ">
             <h1 className="text-[20px] font-semibold">
               Software Defined Point to Point Radio Applications
             </h1>
-            <p className="pt-2">
+            <p className="">
               With the advent of Software Defined Radio (SDR) the radio hardware
               scaled down to software and most of the features is pushed into
               software. In the scenario of war, the communication significantly
               depends on flexibility, interoperability, accuracy, and
               promptness.
             </p>
-            <div className="w-[114px] h-[36px]  px-5 pt-1 mt-2  text-[14px] border border-white text-white    hover:scale-110 duration-300  ">
-              <NavLink to={"/products/software-defined-radio"}>
+            <div>
+              <NavLink
+                to={"/products/software-defined-radio"}
+                className="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 border border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] font-Poppins rounded-sm "
+              >
                 Read more
               </NavLink>
             </div>
@@ -162,19 +177,22 @@ const AboutUs = () => {
         </div>
 
         <div className="lg:flex lg:flex-row flex flex-col-reverse ">
-          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-[#48484A] text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0 ">
+          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-gradient-to-tr from-gray-900 to-gray-700 text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0 flex flex-col gap-3 ">
             <h1 className="text-[20px] font-semibold">
               RF linear and nonlinear characterization
             </h1>
-            <p className="pt-2">
+            <p className="">
               Our capabilities lies in the generation of single and multiple
               Tone, modulated signals like QAM, OFDM, LTE, pulse shaping in
               baseband and transmission in analog domain. The testbed designed
               is capable of performing the measurement of active devices as well
               as passive devices.
             </p>
-            <div className="w-[114px] min-h-[36px]  px-5 pt-1 mt-2  text-[14px] border border-white text-white    hover:scale-110 duration-300  ">
-              <NavLink to={"/products/rf-linear-nonlinear-characterization"}>
+            <div>
+              <NavLink
+                to={"/products/software-defined-radio"}
+                className="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 border border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] font-Poppins rounded-sm "
+              >
                 Read more
               </NavLink>
             </div>
