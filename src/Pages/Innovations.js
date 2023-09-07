@@ -53,7 +53,7 @@ const Innovations = () => {
                   Shaping the future with creativity and vision.
                 </h2>
 
-                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
+                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem] text-gray-800">
                   Innovations are the lifeblood of progress and have the power
                   to transform the way we live, work, and interact with the
                   world around us. From the wheel to the internet, human beings
@@ -431,8 +431,10 @@ const Innovations = () => {
         <h2 className="text-[2.5rem] font-bold ">AI Qube Data Core</h2>
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="w-[100%] lg:w-[50%]">
-            <h2 className="text-[1.8rem] font-bold mt-5">How it works ?</h2>
-            <ul className="list-disc my-3 ml-8 flex flex-col gap-1">
+            <h2 className="text-[1.8rem] font-bold mt-5 text-blue-gray-900">
+              How it works ?
+            </h2>
+            <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-gray-800">
               <li>
                 Linear Amptech's Cloud Analytics solution is designed to monitor
                 sensors and generate valuable insights from them.
@@ -456,8 +458,10 @@ const Innovations = () => {
                 efficiency and reducing downtime.
               </li>
             </ul>
-            <h2 className="text-[1.8rem] font-bold mt-5">Benefits</h2>
-            <ul className="list-disc my-3 ml-8 flex flex-col gap-1">
+            <h2 className="text-[1.8rem] font-bold mt-5 text-blue-gray-900">
+              Benefits
+            </h2>
+            <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-gray-800">
               <li>
                 Reduction of cost for an organisation due to process
                 optimization
@@ -499,7 +503,7 @@ const Innovations = () => {
             poster={require("../assets/banner.png")}
           />
         </section>
-        <p className=" leading-relaxed max-w-[1085px] m-auto mt-20 text-[1.1rem] text-justify">
+        <p className=" leading-relaxed max-w-[1085px] m-auto mt-20 text-[1.1rem] text-justify text-gray-800">
           WAIT System stands for Warning Ahead Of Intersections and Turns.
           <br />
           Driving on rural roads in India can be risky, especially during
@@ -518,10 +522,10 @@ const Innovations = () => {
         </h2>
         <div className="lg:flex justify-between">
           <div className="lg:w-[50%]">
-            <h2 className="text-[1.8rem] font-bold mt-5">
+            <h2 className="text-[1.8rem] font-bold mt-5 text-blue-gray-900">
               Testing Hard Connections
             </h2>
-            <ul className=" my-3 ml-8 flex flex-col gap-1 list-square">
+            <ul className=" my-3 ml-8 flex flex-col gap-1 list-square text-gray-800">
               <li>
                 Device connected to multiple gateways with varying backhaul
                 performance
@@ -530,8 +534,10 @@ const Innovations = () => {
               <li> Rapidly moving devices </li>
               <li> Uncalibrated crystals</li>
             </ul>
-            <h2 className="text-[1.8rem] font-bold mt-5">Benefits</h2>
-            <ul className=" my-3 ml-8 flex flex-col gap-1 list-square">
+            <h2 className="text-[1.8rem] font-bold mt-5 text-blue-gray-900">
+              Benefits
+            </h2>
+            <ul className=" my-3 ml-8 flex flex-col gap-1 list-square text-gray-800">
               <li> Run application in seconds </li>
               <li>
                 Full control over gateway parameters (RSSI, gateways within
@@ -573,7 +579,7 @@ const Innovations = () => {
         </div> */}
       </div>
       {/* BLUE BOX */}
-      <div className="lg:pr-48 lg:pl-48 h-[324px] max-w-[100%] bg-[#0465f8] flex justify-center my-4 px-4 lg:m-0 lg:mt-6 justify-items-center mt-20  items-center content-center">
+      <div className="lg:pr-48 lg:pl-48 h-[324px] max-w-[100%] bg-gradient-to-tr from-blue-600 to-blue-400  flex justify-center my-4 px-4 lg:m-0 lg:mt-6 justify-items-center mt-20  items-center content-center">
         <p className="text-center text-white lg:text-[20px] text-base leading-relaxed px-2 lg:px-0">
           We are dedicated to exploring new technologies in our core product
           areas and have established a good ecosystem between academics and
@@ -588,18 +594,18 @@ const Innovations = () => {
         <section className="bg-[#f2f2f2] ">
           <div className="container px-4 py-10 mx-auto">
             <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-              <div className="p space-y-3    ">
+              <div className="p space-y-3   bg-white shadow-sm rounded-sm ">
                 <img
-                  className="object-fill object-center w-full lg:w-[100%] rounded-none h-[248px]"
+                  className="object-fill object-center w-full lg:w-[100%] rounded-t-sm h-[248px]"
                   src={require("../assets/first.jpg")}
                   alt=""
                 />
 
-                <h1 className="text-[20px] font-bold  text-black capitalize  px-4 pt-2">
+                <h1 className="text-[20px] font-bold  text-blue-gray-900 capitalize  px-4 pt-2">
                   Cyber physical system
                 </h1>
 
-                <p className="text-black tracking-wide px-4 pb-6">
+                <p className="text-gray-700 tracking-wide px-4 pb-6">
                   Refers to a system that integrates physical devices with a
                   cyber interface for monitoring and controlling the physical
                   world. The company is focusing on innovation in CPS for
@@ -612,18 +618,18 @@ const Innovations = () => {
                 </p>
               </div>
 
-              <div className=" space-y-3    rounded-none ">
+              <div className=" space-y-3    rounded-sm bg-white shadow-sm ">
                 <img
-                  className="object-fill object-center w-full lg:w-[100%] rounded-none h-[248px] "
+                  className="object-fill object-center w-full lg:w-[100%] rounded-t-sm h-[248px] "
                   src={require("../assets/second.png")}
                   alt=""
                 />
 
-                <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize px-4 pt-2 ">
+                <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize px-4 pt-2 ">
                   AI and ML
                 </h1>
 
-                <p className="text-black px-4 pb-6">
+                <p className="text-gray-700 px-4 pb-6">
                   We are committed to evolving as Deep Tech Comapany. Artificial
                   Intelligence and Machine Learning is one the innovative areas
                   to which we are keen to contribute. Our recent innovation
@@ -633,18 +639,18 @@ const Innovations = () => {
                 </p>
               </div>
 
-              <div className=" space-y-3 ">
+              <div className=" space-y-3 shadow-sm bg-white rounded-sm ">
                 <img
-                  className="object-cover object-center w-full lg:w-[100%] rounded-none h-[248px]"
+                  className="object-cover object-center w-full lg:w-[100%] rounded-t-sm h-[248px]"
                   src={require("../assets/third.png")}
                   alt=""
                 />
 
-                <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize px-4 pt-2 ">
+                <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize px-4 pt-2 ">
                   The Radio Frequency Components
                 </h1>
 
-                <p className="text-black px-4 pb-6">
+                <p className="text-gray-700 px-4 pb-6">
                   The company has a strong research background, with directors
                   from I.I.T-Roorkee who are working in cutting-edge radio
                   frequency technologies. Their recent R&D focus includes
