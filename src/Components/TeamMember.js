@@ -11,17 +11,17 @@ const TeamMember = (props) => {
   }, [AOS]);
   return (
     <div
-      className="flex flex-col items-center justify-center w-[230px] lg:w-[230px]  "
+      className="flex flex-col items-center justify-center w-[230px] min-h-[320px]  lg:w-[230px] hover:bg-white  group overflow-hidden "
       data-aos="fade-up"
     >
       <img
-        className="object-cover w-[100%]   rounded-full  "
+        className="object-cover w-[100%]   rounded-full  transition-all group-hover:scale-105 overflow-hidden group-hover:p-2 duration-500 "
         src={props.member.photo}
         alt=""
       />
 
       <div className=" m-4  ">
-        <h1 className="mt-2 text-xl font-semibold text-blue-gray-900 capitalize   group-hover:text-white">
+        <h1 className="mt-2 text-xl font-semibold text-blue-gray-900 capitalize   ">
           {props.member.name}
         </h1>
 
@@ -29,7 +29,7 @@ const TeamMember = (props) => {
           {props.member.position}
         </p> */}
 
-        <div className="flex mt-3 justify-center">
+        <div className="group-hover:flex justify-center hidden group-hover:transition-all duration-500">
           <a
             href={props.member.twitter}
             target="_blank"
