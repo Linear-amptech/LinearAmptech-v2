@@ -7,6 +7,7 @@ import aboutbg from "../assets/aboutbg.jpg";
 import rf from "../assets/rfpower/0.png";
 import sdr from "../assets/SDR/1.jpg";
 import poweramp from "../assets/PowerAmp/1.png";
+import { Button } from "@material-tailwind/react";
 
 import BoardMember from "../Components/BoardMember";
 
@@ -49,12 +50,12 @@ const AboutUs = () => {
             </div>
 
             <div className="md:max-w-lg sm:w-full px-4 lg:pl-12 py-12 lg:max-w-5xl lg:w-1/2">
-              <div class="lineStyle h-[6px] w-[111px] bg-[#0465f8] relative top-7 left-1/2"></div>
-              <h2 className="lg:text-[40px] md:text-4xl text-3xl font-semibold text-black  ">
+              <div class="lineStyle h-[6px] w-[111px] bg-[#2196f3] relative top-7 left-1/2"></div>
+              <h2 className="lg:text-[40px] md:text-4xl text-3xl font-semibold text-blue-gray-900  ">
                 About us
               </h2>
 
-              <p className="mt-4 lg:text-[20px] md:text-[18px] text-base text-black leading-loose  ">
+              <p className="mt-4 lg:text-[20px] md:text-[18px] text-base text-blue-gray-800 leading-loose pb-10 ">
                 Linear Amplifier Technology & Services private ltd (Linear
                 Amp-tech) is a company formed and driven by innovative minds of
                 Indian I.I.T Roorkee. The company is Incubated in I.I.T Roorkee
@@ -64,16 +65,22 @@ const AboutUs = () => {
                 Engineering.
               </p>
 
-              <button className="w-[148.8px] h-[47px] bg-[#0465F8] px-5 py-2 mt-4 lg:text-[18.8px] text-base  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
-                Read more
-              </button>
+              <a
+                href="#moretag"
+                className="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 bg-gradient-to-tr from-blue-600 to-blue-400 text-white   active:opacity-[0.85] rounded-sm font-Poppins mt-20   hover:cursor-pointer"
+              >
+                Read More
+              </a>
             </div>
           </div>
         </section>
         <section className=" dark:bg-gray-800 lg:pb-12 pt-0 lg:flex lg:justify-center px-4">
           <div className="overflow-hidden   lg:mx-auto lg:flex lg:max-w-6xl lg:w-full lg:shadow-none ">
             <div className=" px-0 lg:py-12 ">
-              <p className="mt-0 md:mt-8  text-black  lg:text-[20px] md:text-[18px] text-base leading-loose ">
+              <p
+                className="mt-0 md:mt-8  text-black  lg:text-[20px] md:text-[18px] text-base leading-loose "
+                id="moretag"
+              >
                 The company is geared up to take on new technology development
                 projects in the relevant areas. The company is primarily
                 focusing on various aspects of cyber-physical system design
@@ -104,7 +111,7 @@ const AboutUs = () => {
       {/* fetuses area */}
 
       {/* we build awesome products */}
-      <div className="lg:h-[893px] bg-[#292C33]  flex justify-center flex-col align-end items-center mt-12 ">
+      <div className="lg:h-[893px] bg-gradient-to-tr from-gray-900 to-gray-800 text-slate-100  flex justify-center flex-col align-end items-center mt-12 ">
         <div className="py-16 lg:mt-32">
           <h1 className="text-white lg:text-[48px] text-3xl  font-semibold text-center">
             We build awesome products
@@ -135,7 +142,7 @@ const AboutUs = () => {
           <div className="h-[282px] lg:w-[477px] max-w-[477px] ">
             <img src={sdr} className="h-[100%] " />
           </div>
-          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-[#0465F8] text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0  ">
+          <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-gradient-to-tr from-blue-600 to-blue-400 text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0  ">
             <h1 className="text-[20px] font-semibold">
               Software Defined Point to Point Radio Applications
             </h1>
@@ -206,7 +213,7 @@ const AboutUs = () => {
       </div>
       {/* GET to know */}
       <hr />
-      <section className=" bg-[#0465F8]">
+      <section className=" bg-gradient-to-tr from-blue-600 to-blue-400">
         <div className="container px-4 lg:py-16 py-8 mx-auto lg:flex lg:items-center lg:justify-between">
           <h2 className="lg:text-4xl text-3xl  font-medium tracking-tight  text-white">
             Get to know today!
