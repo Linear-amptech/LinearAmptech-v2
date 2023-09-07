@@ -6,6 +6,8 @@ import Header from "../Components/Header";
 
 import Footer from "../Components/Footer";
 import newsbg from "../assets/newsbg.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const NewsEvents = () => {
   const [newsData, setNewsData] = useState("");
@@ -17,6 +19,9 @@ const NewsEvents = () => {
     setNewsData(responseData);
     console.log(responseData);
   };
+  useEffect(() => {
+    AOS.init({ duration: 500, delay: 300 });
+  }, [AOS]);
   useEffect(() => {
     fetchNews();
   }, []);
@@ -32,10 +37,16 @@ const NewsEvents = () => {
           }}
         >
           <div className=" ">
-            <p className="font-bold lg:text-[64px] text-4xl lg:mb-4 text-white text-center">
+            <p
+              className="font-bold lg:text-[64px] text-4xl lg:mb-4 text-white text-center"
+              data-aos="fade-up"
+            >
               News and Events
             </p>
-            <p className="text-[24px] text-white font-medium text-center">
+            <p
+              className="text-[24px] text-white font-medium text-center"
+              data-aos="fade-up"
+            >
               Solutions for a smarter, more connected future
             </p>
           </div>
@@ -44,8 +55,8 @@ const NewsEvents = () => {
         {!isLoading &&
           newsData &&
           newsData.data.map((data) => console.log(data))}
-        <section className="bg-white dark:bg-gray-900 mt-16">
-          <div className="container lg:flex flex-wrap  mx-auto justify-center gap-2">
+        <section className="bg-[#f5f8fa]  py-16">
+          <div className="container flex flex-wrap  mx-auto justify-center  gap-10">
             {isLoading && (
               <Oval
                 height={80}
@@ -63,14 +74,12 @@ const NewsEvents = () => {
             {newsData
               ? newsData.data.map(({ content, image }) => {
                   return (
-                    <div className="flex justify-start">
-                      <div className="lg:flex border mx-2 lg:my-2 my-2  w-[594px]">
-                        <div className="flex flex-col justify-between py-6 mx-6">
-                          <img src={image} className="max-h-80 w-[100%]" />
-                          <p className="lg:text-[20px] lg:font-regular text-md text-black  mt-2 leading-relaxed  ">
-                            {content ? content : "Title"}
-                          </p>
-                        </div>
+                    <div className="lg:flex border  w-[400px] bg-white">
+                      <div className="flex flex-col justify-start  ">
+                        <img src={image} className="h-60 w-[100%]" />
+                        <p className="lg:text-[20px] lg:font-regular text-md text-blue-gray-800  mt-2 leading-relaxed py-2 px-2 ">
+                          {content ? content : "Title"}
+                        </p>
                       </div>
                     </div>
                   );
