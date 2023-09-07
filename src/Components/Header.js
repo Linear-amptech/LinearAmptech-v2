@@ -276,7 +276,7 @@ const Header = () => {
                             <div className="w-12 p-3  h-12 flex justify-center items-center text-light-blue-500 bg-light-blue-50 ">
                               <SiPytest className="text-[2rem]" />
                             </div>
-                            <p className="hover:text-[#616161]">
+                            <p className="hover:text-[#616161] text-blue-gray-700">
                               SDR Test-Beds
                             </p>
                           </li>
@@ -326,7 +326,7 @@ const Header = () => {
                     </div>
 
                     <div className="lg:min-w-[250px] max-w-[300px]">
-                      <h2 className="text-[1.1rem] font-bold text-black mb-6 ">
+                      <h2 className="text-[1.1rem] font-bold text-blue-gray-900 mb-6 ">
                         Enterprise Software
                         <br />
                       </h2>
@@ -334,18 +334,18 @@ const Header = () => {
                       <ul className="flex flex-col gap-5">
                         <NavLink to="/products/blockchain">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] ">
-                              <SiBlockchaindotcom className="w-5 h-5" />
+                            <div className="w-12 h-12 p-3 flex justify-center items-center text-indigo-500 bg-indigo-50 ">
+                              <SiBlockchaindotcom className="text-[2rem]" />
                             </div>
-                            <p className="hover:text-[#616161]">
+                            <p className="hover:text-[#616161] text-blue-gray-700">
                               Private Blockchain Network
                             </p>
                           </li>
                         </NavLink>
                         <NavLink to="/products/inventory-system">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] ">
-                              <MdOutlineInventory2 className="text-[1.4rem]" />
+                            <div className="w-12 h-12 p-3 flex justify-center items-center text-purple-500 bg-purple-50 ">
+                              <MdOutlineInventory2 className="text-[2rem]" />
                             </div>
                             <p className="hover:text-[#616161]">
                               Inventory System
@@ -354,8 +354,8 @@ const Header = () => {
                         </NavLink>
                         <NavLink to="/products/hrms">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] ">
-                              <GiHumanPyramid className="w-5 h-5" />
+                            <div className="w-12 h-12 p-3 flex justify-center items-center text-pink-500 bg-pink-50 ">
+                              <GiHumanPyramid className="text-[2rem]" />
                             </div>
                             <p className="hover:text-[#616161]">HRMS</p>
                           </li>
