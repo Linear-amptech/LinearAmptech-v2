@@ -1,10 +1,19 @@
 import { BsLinkedin, BsFacebook } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TeamMember = (props) => {
+  useEffect(() => {
+    AOS.init({ duration: 500, delay: 300 });
+  }, [AOS]);
   return (
-    <div className="flex flex-col items-center justify-center w-[300px] lg:w-[300px] bg-white shadow-sm">
+    <div
+      className="flex flex-col items-center justify-center w-[300px] lg:w-[300px] bg-white shadow-sm"
+      data-aos="fade-up"
+    >
       <img
         className="object-cover w-[100%]   "
         src={props.member.photo}
