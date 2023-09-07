@@ -15,7 +15,7 @@ const Innovations = () => {
     AOS.init({ duration: 500, delay: 300 });
   }, [AOS]);
   return (
-    <div>
+    <div className="bg-[#f5f8fa]">
       <Header />
       <div className="z-10">
         <header>
@@ -46,7 +46,7 @@ const Innovations = () => {
           </div>
         </header>
         <div>
-          <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
+          <section className="  lg:mt-8 mt-4 xl:mt-12 ">
             <div className="container lg:flex lg:px-[12%] pt-12 mx-auto text-left px-4">
               <div className="lg:w-[50%]">
                 <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-black mb-2 ">
@@ -62,11 +62,7 @@ const Innovations = () => {
                   improve efficiency, and enhance our quality of life.
                   Innovations can take many forms, from breakthrough
                   technologies and scientific discoveries to new business models
-                  and social movements. They often require creativity,
-                  perseverance, and the courage to challenge conventional
-                  thinking. The impact of innovations can be profound and
-                  long-lasting, shaping the course of history and defining the
-                  future of humanity.
+                  and social movements.
                 </p>
               </div>
               <div className="lg:w-[50%] flex justify-center items-center">
@@ -86,7 +82,7 @@ const Innovations = () => {
           <BgElement1 className="lg:w-[300px] absolute origin-center w-[180px] -right-20 lg:-right-36 -translate-y-[20%]" />
         </div>
         <div className="lg:pr-44 lg:pl-44 mt-16">
-          <section className="bg-white ">
+          <section className=" ">
             <div className="container px-4 py-12  mx-auto">
               <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
                 Problems
@@ -217,7 +213,7 @@ const Innovations = () => {
         </div>
         {/* solutions */}
         <div className="lg:pr-40 lg:pl-40 mt-16">
-          <section className="bg-white ">
+          <section className=" ">
             <div className="container px-4 py-10 mx-auto">
               <h1 className="lg:text-[40px] text-3xl font-bold text-black capitalize mb-8   ">
                 Solutions
@@ -416,7 +412,7 @@ const Innovations = () => {
       </div>
       {/* new image box */}
       {/* <div className="lg:pr-44 lg:pl-44">
-        <section className="bg-white ">
+        <section className=" ">
           <div className="h-[32rem]  ">
             <div className="container  py-32 mx-auto">
               <h1 className="text-2xl font-bold font-Poppins text-center text-black capitalize lg:text-3xl px-4 ">
@@ -622,7 +618,7 @@ const Innovations = () => {
         <section className="bg-[#f2f2f2] ">
           <div className="container px-4 py-10 mx-auto">
             <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-              <div className="p space-y-3  bg-white  ">
+              <div className="p space-y-3    ">
                 <img
                   className="object-fill object-center w-full lg:w-[100%] rounded-none h-[248px]"
                   src={require("../assets/first.jpg")}
@@ -646,7 +642,7 @@ const Innovations = () => {
                 </p>
               </div>
 
-              <div className=" space-y-3 bg-white   rounded-none ">
+              <div className=" space-y-3    rounded-none ">
                 <img
                   className="object-fill object-center w-full lg:w-[100%] rounded-none h-[248px] "
                   src={require("../assets/second.png")}
@@ -667,7 +663,7 @@ const Innovations = () => {
                 </p>
               </div>
 
-              <div className=" space-y-3 bg-white">
+              <div className=" space-y-3 ">
                 <img
                   className="object-cover object-center w-full lg:w-[100%] rounded-none h-[248px]"
                   src={require("../assets/third.png")}
