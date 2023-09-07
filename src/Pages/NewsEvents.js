@@ -61,12 +61,12 @@ const NewsEvents = () => {
               <Oval
                 height={80}
                 width={80}
-                color="#4169e1"
+                color="#2196f3"
                 wrapperStyle={{}}
                 wrapperClass=""
                 visible={true}
                 ariaLabel="oval-loading"
-                secondaryColor="#add8e6"
+                secondaryColor="#2196f3"
                 strokeWidth={6}
                 strokeWidthSecondary={6}
               />
@@ -90,7 +90,7 @@ const NewsEvents = () => {
                     </div>
                   );
                 })
-              : "1"}
+              : " "}
           </div>
         </section>
       </div>
