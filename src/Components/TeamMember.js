@@ -11,7 +11,7 @@ const TeamMember = (props) => {
   }, [AOS]);
   return (
     <div
-      className="flex flex-col items-center justify-center w-[230px] min-h-[320px]  lg:w-[230px] hover:bg-white  group overflow-hidden "
+      className="flex flex-col items-center justify-center w-[230px] min-h-[330px]  lg:w-[230px] hover:bg-white  group overflow-hidden transition-all duration-500 "
       data-aos="fade-up"
     >
       <img
