@@ -33,7 +33,8 @@ const Team = () => {
       <div>
         <section className="bg-[#f5f8fa] ">
           <div className="container px-6 py-10 mx-auto mt-12">
-            <h1 className="lg:text-[40px] text-4xl font-semibold  text-gray-900 capitalize max-w-6xl">
+            <div class="lineStyle h-[6px] w-[111px] bg-[#2196f3] relative top-7 left-72"></div>
+            <h1 className="lg:text-[40px]  text-4xl font-semibold mx-auto  text-gray-900 capitalize max-w-6xl">
               Our Team
             </h1>
 
