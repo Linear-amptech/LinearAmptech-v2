@@ -83,14 +83,14 @@ const Innovations = () => {
         </div>
         <div className="lg:pr-44 lg:pl-44 mt-16">
           <section className=" ">
-            <div className="container px-4 py-12  mx-auto">
+            <div className="container py-12  mx-auto">
               <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
                 Problems
               </h1>
 
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <div
-                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col"
+                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col  "
                   data-aos="fade-up"
                 >
                   <div className="">
@@ -124,7 +124,7 @@ const Innovations = () => {
                 </div>
 
                 <div
-                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col"
+                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col "
                   data-aos="fade-up"
                 >
                   <div className="">
@@ -153,7 +153,7 @@ const Innovations = () => {
                 </div>
 
                 <div
-                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col"
+                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col "
                   data-aos="fade-up"
                 >
                   <div className="">
@@ -426,53 +426,7 @@ const Innovations = () => {
           <BgElement2 className="lg:w-[300px] absolute origin-center lg:-left-36 -translate-y-[30%] w-[180px] -left-20" />
         </div>
       </div>
-      {/* new image box */}
-      {/* <div className="lg:pr-44 lg:pl-44">
-        <section className=" ">
-          <div className="h-[32rem]  ">
-            <div className="container  py-32 mx-auto">
-              <h1 className="text-2xl font-bold font-Poppins text-center text-black capitalize lg:text-3xl px-4 ">
-                Asset tracking by VHR remote sensing data
-              </h1>
-            </div>
-          </div>
 
-          <div className="container px-4 py-10 mx-auto -mt-72 sm:-mt-80 md:-mt-96">
-            <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
-              <div className="flex flex-col items-center  rounded-none dark:-gray-700">
-                <img
-                  className="object-cover w-full rounded-none aspect-square"
-                  src={require("../assets/tracking1.png")}
-                  alt=""
-                />
-              </div>
-
-              <div className="flex flex-col items-center  sm:rounded-none dark:-gray-700">
-                <img
-                  className="object-cover w-full rounded-none aspect-square"
-                  src={require("../assets/tracking2.png")}
-                  alt=""
-                />
-              </div>
-
-              <div className="flex flex-col items-center  sm:rounded-none dark:-gray-700">
-                <img
-                  className="object-cover w-full rounded-none aspect-square"
-                  src={require("../assets/tracking3.png")}
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </div> */}
-      {/* <div
-        className="absolute w-[100vw] overflow-hidden h-[200px]"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        <BgElement1 className="w-[200px] absolute origin-center -right-20 -translate-y-[20%]" />
-      </div> */}
       <div className="mx-[12%]">
         <h2 className="text-[2.5rem] font-bold ">AI Qube Data Core</h2>
         <div className="flex flex-col lg:flex-row justify-between">
