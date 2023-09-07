@@ -95,7 +95,7 @@ export default function Slider2() {
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
                 <NavLink
-                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
+                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-blue-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
                   to="/innovations"
                 >
                   Discover
@@ -145,7 +145,7 @@ export default function Slider2() {
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
                 <NavLink
-                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
+                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-blue-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
                   to="/innovations"
                 >
                   Discover
@@ -199,7 +199,7 @@ export default function Slider2() {
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
                 <NavLink
-                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
+                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-blue-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
                   to="/innovations"
                 >
                   Discover
