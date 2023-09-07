@@ -203,7 +203,7 @@ const Innovations = () => {
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
-                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                      <span className="inline-block p-3  text-cyan-500 bg-cyan-50    ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -238,7 +238,7 @@ const Innovations = () => {
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
-                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                      <span className="inline-block p-3  text-orange-500 bg-orange-50    ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-6 h-6"
@@ -281,7 +281,7 @@ const Innovations = () => {
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
-                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                      <span className="inline-block p-3  text-deep-orange-500 bg-deep-orange-50    ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-6 h-6"
@@ -317,7 +317,7 @@ const Innovations = () => {
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
-                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                      <span className="inline-block p-3  text-green-500 bg-green-50    ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-6 h-6"
@@ -352,7 +352,7 @@ const Innovations = () => {
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
-                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                      <span className="inline-block p-3  text-indigo-500 bg-indigo-50   ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -388,7 +388,7 @@ const Innovations = () => {
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
-                      <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                      <span className="inline-block p-3  text-purple-500 bg-purple-50    ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
