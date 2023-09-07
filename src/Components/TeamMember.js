@@ -11,11 +11,11 @@ const TeamMember = (props) => {
   }, [AOS]);
   return (
     <div
-      className="flex flex-col items-center justify-center w-[230px] min-h-[330px]  lg:w-[230px] hover:bg-white  group overflow-hidden transition-all duration-500 "
+      className="flex flex-col items-center justify-center w-[230px] min-h-[330px]  lg:w-[230px] hover:bg-white  group overflow-hidden transition-all duration-100 hover:shadow-sm rounded-md "
       data-aos="fade-up"
     >
       <img
-        className="object-cover w-[100%]   rounded-full  transition-all group-hover:scale-105 overflow-hidden group-hover:p-2 duration-500 "
+        className="object-cover w-[100%]   rounded-full  transition-all group-hover:scale-95 overflow-hidden  duration-200 "
         src={props.member.photo}
         alt=""
       />
@@ -29,11 +29,11 @@ const TeamMember = (props) => {
           {props.member.position}
         </p> */}
 
-        <div className="group-hover:flex justify-center hidden group-hover:transition-all duration-500">
+        <div className="group-hover:flex justify-center hidden group-hover:transition-all duration-100">
           <a
             href={props.member.twitter}
             target="_blank"
-            className="mx-2 text-black  "
+            className="mx-2 text-blue-600  "
             aria-label="Reddit"
           >
             <FaSquareXTwitter size={23} />
@@ -41,7 +41,7 @@ const TeamMember = (props) => {
 
           <a
             href={props.member.facebook}
-            className="mx-2 text-black  "
+            className="mx-2 text-[#1877f2]  "
             aria-label="Facebook"
             target="_blank"
           >
@@ -50,7 +50,7 @@ const TeamMember = (props) => {
 
           <a
             href={props.member.linkedin}
-            className="mx-2 text-black  "
+            className="mx-2 text-[#0a66c2]  "
             aria-label="Github"
             target={"_blank"}
           >

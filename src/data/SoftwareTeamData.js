@@ -23,7 +23,7 @@ export const softwareTeam = [
 
   {
     photo: manav,
-    name: "Manav Singh Chauhan",
+    name: "Manav Singh ",
     position: "Linear AmpTech",
     linkedin: "https://www.linkedin.com/in/manav-chauhan-430379267/",
     twitter: "#",
