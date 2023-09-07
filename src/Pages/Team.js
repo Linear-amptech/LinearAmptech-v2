@@ -33,11 +33,11 @@ const Team = () => {
       <div>
         <section className="bg-[#f5f8fa] ">
           <div className="container px-6 py-10 mx-auto mt-12">
-            <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-gray-900 capitalize ">
-              Board Of Directors
+            <h1 className="lg:text-[40px] text-4xl font-semibold  text-gray-900 capitalize max-w-6xl">
+              Our Team
             </h1>
 
-            <p className="max-w-6xl text-[20px] mx-auto my-6 text-center text-blue-gray-800 ">
+            <p className="max-w-6xl text-[20px] mx-auto my-6  text-blue-gray-800 ">
               Our board of directors comprises seasoned professionals who
               possess a wealth of knowledge and expertise in various fields. We
               are honored to have a world-renowned power amplifier expert Dr.
@@ -48,8 +48,17 @@ const Team = () => {
               outcomes to our stakeholders
             </p>
 
-            <div className="flex flex-wrap gap-2 justify-center mt-2 xl:mt-12 ">
+            <div className="flex flex-wrap gap-12 justify-center mt-2 xl:mt-12 ">
               {boardMember.map((member) => {
+                return <TeamMember member={member} />;
+              })}
+              {coreTeam.map((member) => {
+                return <TeamMember member={member} />;
+              })}
+              {softwareTeam.map((member) => {
+                return <TeamMember member={member} />;
+              })}
+              {hardwareTeam.map((member) => {
                 return <TeamMember member={member} />;
               })}
             </div>
@@ -57,7 +66,7 @@ const Team = () => {
         </section>
       </div>
       {/* core team  */}
-      <div className="mt-2">
+      {/* <div className="mt-2">
         <div>
           <section className="bg-[#f5f8fa] ">
             <div className="container px-4 py-10 mx-auto">
@@ -82,9 +91,9 @@ const Team = () => {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
       {/* Software team */}
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <div>
           <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2 mx-auto">
@@ -100,9 +109,9 @@ const Team = () => {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
       {/* hardware team */}
-      <div className="mt-12 mb-8">
+      {/* <div className="mt-12 mb-8">
         <div>
           <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2  mx-auto">
@@ -118,7 +127,7 @@ const Team = () => {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );
