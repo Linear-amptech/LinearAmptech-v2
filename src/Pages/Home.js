@@ -56,7 +56,7 @@ const Home = () => {
       {/* </div> */}
       {/* *********************Hero Section ****************************** */}
 
-      <div className="heroSection gap-2  h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white z-0 overflow-hidden relative ">
+      <div className="heroSection gap-2  h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white bg-black z-0 overflow-hidden relative ">
         {/* <div className=" bg-slate-600 z-10"></div> */}
         <video
           autoPlay
@@ -65,13 +65,16 @@ const Home = () => {
           src={video1}
           className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
         />
-        <div className="relative z-50 w-[100%]   gap-4  overflow-hidden flex flex-col justify-center items-center leading-none px-6">
+        <div
+          className="relative z-50 w-[100%]   gap-4  overflow-hidden flex flex-col justify-center items-center leading-none px-6"
+          data-aos="fade-up"
+        >
           <h2 className=" lg:text-[5rem] md:text-5xl text-4xl font-bold drop-shadow-2xl bg-transparent text-center">
             <TextTransition springConfig={presets.gentle}>
               {heading[index % heading.length]}
             </TextTransition>
           </h2>
-          <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-none  text-center">
+          <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-none pb-10  text-center">
             <TextTransition springConfig={presets.gentle}>
               {TEXTS[index % TEXTS.length]}
             </TextTransition>
