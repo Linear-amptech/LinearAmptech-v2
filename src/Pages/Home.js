@@ -220,7 +220,7 @@ const Home = () => {
         </p>
         <NavLink
           to="/about-us"
-          className="align-middle select-none font-sans text-base text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3.5 px-7 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm normal-case"
+          className="align-middle select-none font-Poppins text-base text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3.5 px-7 bg-gradient-to-tr from-gray-900 to-gray-700 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm uppercase"
         >
           Read more
         </NavLink>
