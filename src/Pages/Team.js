@@ -33,11 +33,11 @@ const Team = () => {
       <div>
         <section className="bg-[#f5f8fa] ">
           <div className="container px-6 py-10 mx-auto mt-12">
-            <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-black capitalize ">
+            <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-gray-900 capitalize ">
               Board Of Directors
             </h1>
 
-            <p className="max-w-6xl text-[20px] mx-auto my-6 text-center text-black ">
+            <p className="max-w-6xl text-[20px] mx-auto my-6 text-center text-blue-gray-800 ">
               Our board of directors comprises seasoned professionals who
               possess a wealth of knowledge and expertise in various fields. We
               are honored to have a world-renowned power amplifier expert Dr.
@@ -61,10 +61,10 @@ const Team = () => {
         <div>
           <section className="bg-[#f5f8fa] ">
             <div className="container px-4 py-10 mx-auto">
-              <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-black capitalize ">
+              <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-gray-900 capitalize ">
                 Core Team
               </h1>
-              <p className="max-w-6xl text-[20px] mx-auto my-3 text-center text-black ">
+              <p className="max-w-6xl text-[20px] mx-auto my-3 text-center text-blue-gray-800 ">
                 Our core team comprises talented individuals with diverse
                 backgrounds and experiences. Our members hail from some of the
                 largest software companies in the world, including JPMC,
@@ -88,7 +88,7 @@ const Team = () => {
         <div>
           <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2 mx-auto">
-              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-black capitalize ">
+              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-gray-900 capitalize ">
                 Software Team
               </h1>
 
@@ -106,7 +106,7 @@ const Team = () => {
         <div>
           <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2  mx-auto">
-              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-black capitalize ">
+              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-gray-900 capitalize ">
                 Hardware Team
               </h1>
 
