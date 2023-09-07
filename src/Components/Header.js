@@ -146,7 +146,7 @@ const Header = () => {
               >
                 Products
                 {isDropDownOpen && (
-                  <div className=" ease-in duration-1000 border lg:w-[78vw] 2xl:max-w-[1135px] xl:max-w-[1135px] flex flex-wrap items-start lg:justify-between justify-start gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto lg:h-[60vh] xl:h-[60vh] 2xl:h-[60vh] h-[80vh]   lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-6 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className=" ease-in duration-1000 border lg:w-[78vw] 2xl:max-w-[1145px] xl:max-w-[1145px] flex flex-wrap items-start lg:justify-between justify-start gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto lg:h-[60vh] xl:h-[60vh] 2xl:h-[60vh] h-[80vh]   lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-6 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute w-[20px] right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
@@ -154,15 +154,20 @@ const Header = () => {
                       />
                     </div>
                     <div className="lg:min-w-[250px] min-w-[250px]  flex flex-col gap-6 ">
-                      <h2 className="text-[1.2rem]  font-bold text-[#0346B5]">
+                      <h2 className="text-[1.2rem]  font-bold text-[#2196f3]">
                         Linear Amptech
                       </h2>
-                      <p>
+                      <p className="text-blue-gray-700">
                         Creating Difference With <br /> Technology
                       </p>
-                      <button className=" border-[2px] border-primary-color text-primary-color py-2 px-3 w-32  duration-300">
-                        Learn more
-                      </button>
+                      <div>
+                        <NavLink
+                          to="/about-us"
+                          className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-700 text-white shadow-md shadow-gray-900/10  hover:shadow-blue-900/20 active:opacity-[0.85] rounded-sm  hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 uppercase "
+                        >
+                          Read More
+                        </NavLink>
+                      </div>
                     </div>
                     <div className="lg:min-w-[250px] max-w-[300px]">
                       <NavLink to="/products/rf-design-and-signal-processing">
