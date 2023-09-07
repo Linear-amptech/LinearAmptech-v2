@@ -20,7 +20,7 @@ const TeamMember = (props) => {
         alt=""
       />
 
-      <div className=" m-4  ">
+      <div className="  ">
         <h1 className="mt-2 text-xl font-semibold text-blue-gray-900 capitalize   ">
           {props.member.name}
         </h1>
