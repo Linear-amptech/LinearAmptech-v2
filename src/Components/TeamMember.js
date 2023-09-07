@@ -11,11 +11,11 @@ const TeamMember = (props) => {
   }, [AOS]);
   return (
     <div
-      className="flex flex-col items-center justify-center w-[300px] lg:w-[300px] bg-white shadow-sm"
+      className="flex flex-col items-center justify-center w-[300px] lg:w-[300px] bg-white shadow-sm  rounded-sm"
       data-aos="fade-up"
     >
       <img
-        className="object-cover w-[100%]   "
+        className="object-cover w-[100%]   rounded-full  "
         src={props.member.photo}
         alt=""
       />
