@@ -33,7 +33,7 @@ const Innovations = () => {
                 Innovation that drives progress
               </p>
               <NavLink
-                className=" lg:border-[3px] border border-white text-white text-[1.1rem] lg:py-3 lg:px-5 py-2 px-4 hover:scale-110 duration-300"
+                className=" lg:border-[3px] border rounded-sm border-white text-white text-[1.1rem] lg:py-3 lg:px-5 py-2 px-4 hover:scale-110 duration-300"
                 to="/about-us"
               >
                 Read more
@@ -74,13 +74,13 @@ const Innovations = () => {
             </div>
           </section>
         </div>
-        <div
+        {/* <div
           className="absolute w-[100vw] overflow-hidden h-[200px]"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
           <BgElement1 className="lg:w-[300px] absolute origin-center w-[180px] -right-20 lg:-right-36 -translate-y-[20%]" />
-        </div>
+        </div> */}
         <div className="lg:pr-44 lg:pl-44 mt-16">
           <section className=" ">
             <div className="container py-12  mx-auto">
@@ -421,11 +421,11 @@ const Innovations = () => {
           </section>
         </div>
       </div>
-      <div className="w-[100vw] h-[100px]">
+      {/* <div className="w-[100vw] h-[100px]">
         <div data-aos="fade-up" data-aos-duration="1000">
           <BgElement2 className="lg:w-[300px] absolute origin-center lg:-left-36 -translate-y-[30%] w-[180px] -left-20" />
         </div>
-      </div>
+      </div> */}
 
       <div className="mx-[12%]">
         <h2 className="text-[2.5rem] font-bold ">AI Qube Data Core</h2>
