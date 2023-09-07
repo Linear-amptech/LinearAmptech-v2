@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="container px-6 py-12 mx-auto">
           {/* <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" /> */}
 
-          <div className="flex  justify-between lg:gap-4 gap-8 flex-wrap">
+          <div className="flex  justify-between lg:gap-4 gap-8 w-full lg:flex-nowrap flex-wrap">
             <div className="min-w-[300px]">
               <p className="font-semibold text-gray-50 dark:text-white">
                 Quick Link
@@ -108,7 +108,7 @@ const Footer = () => {
                   hello@linear-amptech.com
                 </a>
                 <p className="mt-4 text-md text-gray-50 sm:mt-0 ">
-                  Incubation building IHUB DivyaSampark (Near Wind Tunnel
+                  Incubation building IHUB DivyaSampark <br /> (Near Wind Tunnel
                   Building) I.I.T Roorkee <br></br> Roorkee, Uttarakhand, India
                   247667
                 </p>
