@@ -74,11 +74,11 @@ const NewsEvents = () => {
             {newsData
               ? newsData.data.map(({ content, image }) => {
                   return (
-                    <div
-                      className="lg:flex rounded-md shadow-sm  w-[400px] bg-white group overflow-hidden"
-                      data-aos="fade-up"
-                    >
-                      <div className="flex flex-col justify-start ">
+                    <div className="lg:flex rounded-md shadow-sm  w-[400px] bg-white group overflow-hidden">
+                      <div
+                        className="flex flex-col justify-start "
+                        data-aos="fade-up"
+                      >
                         <img
                           src={image}
                           className="max-h-60 w-[100%] rounded-t-md group-hover:scale-105 duration-500 overflow-hidden"
