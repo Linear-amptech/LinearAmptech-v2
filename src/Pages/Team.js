@@ -39,14 +39,16 @@ const Team = () => {
             </h1>
 
             <p className="max-w-6xl text-[20px] mx-auto my-6  text-blue-gray-800 ">
-              Our board of directors comprises seasoned professionals who
-              possess a wealth of knowledge and expertise in various fields. We
-              are honored to have a world-renowned power amplifier expert Dr.
-              Karun Rawat, a professor from IIT Roorkee, and an experienced
-              member in the field of electronics communication on our board.
-              With their diverse skill sets and leadership, we are well-equipped
-              to steer our organization towards success and deliver outstanding
-              outcomes to our stakeholders
+              Our team is a diverse and talented group of individuals, each
+              bringing their unique strengths and perspectives to the table.
+              Together, we form a cohesive unit that thrives on innovation and
+              creativity. We are committed to continuous growth and learning,
+              always striving to exceed expectations and tackle challenges
+              head-on. Our strong communication and teamwork ensure that we can
+              tackle even the most complex projects with ease. With a shared
+              vision and a passion for excellence, our team is poised for
+              success in every endeavor we undertake. Together, we are
+              unstoppable.
             </p>
 
             <div className="flex flex-wrap gap-12 justify-center mt-2 xl:mt-12 ">
