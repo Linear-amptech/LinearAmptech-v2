@@ -2,6 +2,7 @@ import { Carousel, IconButton, Button } from "@material-tailwind/react";
 import first from "../assets/first.jpg";
 import second from "../assets/second.png";
 import third from "../assets/third.png";
+import { NavLink } from "react-router-dom";
 
 export default function Slider2() {
   return (
@@ -93,21 +94,12 @@ export default function Slider2() {
               </p>
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
-                <Button
-                  size="lg"
-                  className="rounded-sm shadow-none hover:shadow-none"
-                  color="gray"
-                  variant="gradient"
+                <NavLink
+                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
+                  to="/innovations"
                 >
                   Discover
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outlined"
-                  className="rounded-sm shadow-none"
-                >
-                  Button
-                </Button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -152,21 +144,12 @@ export default function Slider2() {
               </p>
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
-                <Button
-                  size="lg"
-                  className="rounded-sm shadow-none hover:shadow-none"
-                  color="gray"
-                  variant="gradient"
+                <NavLink
+                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
+                  to="/innovations"
                 >
                   Discover
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outlined"
-                  className="rounded-sm shadow-none"
-                >
-                  Button
-                </Button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -215,21 +198,12 @@ export default function Slider2() {
               </p>
 
               <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
-                <Button
-                  size="lg"
-                  className="rounded-sm shadow-none hover:shadow-none"
-                  color="gray"
-                  variant="gradient"
+                <NavLink
+                  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
+                  to="/innovations"
                 >
                   Discover
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outlined"
-                  className="rounded-sm shadow-none"
-                >
-                  Button
-                </Button>
+                </NavLink>
               </div>
             </div>
           </div>

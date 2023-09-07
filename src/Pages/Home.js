@@ -117,13 +117,13 @@ const Home = () => {
           </NavLink>
         </div>
       </div> */}
-      <div
+      {/* <div
         className="w-[100vw] absolute overflow-hidden h-[200px] -translate-y-[200px]"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
         <BgElement1 className="lg:w-[200px] w-[150px] absolute origin-center -right-20 -translate-y-[20%]" />
-      </div>
+      </div> */}
       {/* *********************Intro ****************************** */}
 
       <div className="slider lg:w-[98.9vw] max-w-[98.9vw] lg:px-[7%] px-4 py-14 bg-[#f5f8fa] mt-28">
@@ -201,11 +201,11 @@ const Home = () => {
           </NavLink>
         </div>
       </div> */}
-      <div className="max-w-[100vw]  ">
+      {/* <div className="max-w-[100vw]  ">
         <div data-aos="fade-up" data-aos-duration="1500">
           <BgElement3 className="lg:w-[300px] w-[200px] absolute origin-center -right-36 -translate-y-[50%]" />
         </div>
-      </div>
+      </div> */}
 
       {/* *********************AboutUs ****************************** */}
       <div className="aboutUs w-[100%] px-[10%] flex flex-col justify-center items-center gap-5 py-14 bg-gradient-to-tr from-blue-600 to-blue-400 text-white">
