@@ -75,15 +75,15 @@ const NewsEvents = () => {
               ? newsData.data.map(({ content, image }) => {
                   return (
                     <div
-                      className="lg:flex rounded-md shadow-sm  w-[400px] bg-white"
+                      className="lg:flex rounded-md shadow-sm  w-[400px] bg-white group overflow-hidden"
                       data-aos="fade-up"
                     >
                       <div className="flex flex-col justify-start ">
                         <img
                           src={image}
-                          className="h-60 w-[100%] rounded-t-md"
+                          className="max-h-60 w-[100%] rounded-t-md group-hover:scale-105 duration-500 overflow-hidden"
                         />
-                        <p className="lg:text-[18px] lg:font-regular text-md text-blue-gray-800  mt-2 leading-relaxed py-2 px-2 ">
+                        <p className="lg:text-[16px] lg:font-regular text-md text-blue-gray-800   leading-relaxed py-4 px-2 ">
                           {content ? content : "Title"}
                         </p>
                       </div>
