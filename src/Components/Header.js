@@ -296,7 +296,7 @@ const Header = () => {
 
                     <div className="lg:min-w-[250px]  max-w-[300px]">
                       <NavLink to="/products/cyber-physical-system-and-signal-processing">
-                        <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
+                        <h2 className="text-[1.1rem] font-bold text-blue-gray-900 mb-6 hover:text-[#616161]">
                           Cyber Physical Systems <br />
                           and Artificial Intelligence
                         </h2>
@@ -304,18 +304,20 @@ const Header = () => {
                       <ul className="flex flex-col gap-5">
                         <NavLink to="/products/cyber-physical-system-and-signal-processing">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <MdSystemUpdateAlt className="text-[1.4rem]" />
+                            <div className="w-12 p-3  h-12 flex justify-center items-center text-red-500 bg-red-50 ">
+                              <MdSystemUpdateAlt className="text-[2rem]" />
                             </div>
-                            <p className="hover:text-[#616161]">WAIT System</p>
+                            <p className="hover:text-[#616161] text-blue-gray-700">
+                              WAIT System
+                            </p>
                           </li>
                         </NavLink>
                         <NavLink to="/products/ai-qube-data-core">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <AiCube className="w-5 h-5" />
+                            <div className="w-12  h-12 p-3 flex justify-center items-center  bg-blue-50">
+                              <AiCube className="text-[2rem] " />
                             </div>
-                            <p className="hover:text-[#616161]">
+                            <p className="hover:text-[#616161] text-blue-gray-700">
                               AI Qube Data Core
                             </p>
                           </li>
@@ -332,7 +334,7 @@ const Header = () => {
                       <ul className="flex flex-col gap-5">
                         <NavLink to="/products/blockchain">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
+                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] ">
                               <SiBlockchaindotcom className="w-5 h-5" />
                             </div>
                             <p className="hover:text-[#616161]">
@@ -342,7 +344,7 @@ const Header = () => {
                         </NavLink>
                         <NavLink to="/products/inventory-system">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
+                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] ">
                               <MdOutlineInventory2 className="text-[1.4rem]" />
                             </div>
                             <p className="hover:text-[#616161]">
@@ -352,7 +354,7 @@ const Header = () => {
                         </NavLink>
                         <NavLink to="/products/hrms">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
+                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] ">
                               <GiHumanPyramid className="w-5 h-5" />
                             </div>
                             <p className="hover:text-[#616161]">HRMS</p>
