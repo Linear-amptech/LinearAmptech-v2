@@ -74,10 +74,16 @@ const NewsEvents = () => {
             {newsData
               ? newsData.data.map(({ content, image }) => {
                   return (
-                    <div className="lg:flex border  w-[400px] bg-white">
-                      <div className="flex flex-col justify-start  ">
-                        <img src={image} className="h-60 w-[100%]" />
-                        <p className="lg:text-[20px] lg:font-regular text-md text-blue-gray-800  mt-2 leading-relaxed py-2 px-2 ">
+                    <div
+                      className="lg:flex rounded-md shadow-sm  w-[400px] bg-white"
+                      data-aos="fade-up"
+                    >
+                      <div className="flex flex-col justify-start ">
+                        <img
+                          src={image}
+                          className="h-60 w-[100%] rounded-t-md"
+                        />
+                        <p className="lg:text-[18px] lg:font-regular text-md text-blue-gray-800  mt-2 leading-relaxed py-2 px-2 ">
                           {content ? content : "Title"}
                         </p>
                       </div>
