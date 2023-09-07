@@ -89,122 +89,96 @@ const Innovations = () => {
               </h1>
 
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <div className="text-left  shadow-sm border-slate-200  p-8">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
-                      />
-                    </svg>
-                  </span>
+                <div
+                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col"
+                  data-aos="fade-up"
+                >
+                  <div className="">
+                    <img src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                  </div>
 
-                  <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                    Innovation that drives progress
-                  </h1>
+                  <div className="px-4 py-4">
+                    <h1 className="mt-0 text-[20px] font-bold font-Poppins text-blue-gray-900 px-2">
+                      Innovation that drives progress
+                    </h1>
 
-                  <p className="mt-2 text-black ">
-                    The present maintenance process has following limitations
-                  </p>
+                    <p className="mt-2 text-gray-900 px-2">
+                      The present maintenance process has following limitations
+                    </p>
 
-                  <div>
-                    <ul className="list-square ml-4">
-                      <li className="mt-4 ">
-                        Skilled operator are required for analyzing thousands of
-                        complex components
-                      </li>
-                      <li className=" mt-4">
-                        Phone to mistakes due to human error
-                      </li>{" "}
-                      <li className="mt-4">
-                        Sensor data can be utilized for predective maintenance
-                      </li>
-                    </ul>
+                    <div className="px-2 py-2 text-gray-700">
+                      <ul className="list-square ml-4">
+                        <li className="mt-4 ">
+                          Skilled operator are required for analyzing thousands
+                          of complex components
+                        </li>
+                        <li className=" mt-4">
+                          Phone to mistakes due to human error
+                        </li>{" "}
+                        <li className="mt-4">
+                          Sensor data can be utilized for predective maintenance
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
-                <div className="text-left p-8  shadow-sm border-slate-200 ">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288"
-                      />
-                    </svg>
-                  </span>
+                <div
+                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col"
+                  data-aos="fade-up"
+                >
+                  <div className="">
+                    <img src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                  </div>
 
-                  <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                    Increasing number of devices and sensors data
-                  </h1>
+                  <div className="px-4 py-4">
+                    <h1 className="mt-0 text-[20px] font-bold font-Poppins text-blue-gray-900 px-2">
+                      Increasing number of devices and sensors data
+                    </h1>
 
-                  <p className="mt-2 text-black ">
-                    The sheer volume of data being generated can be
-                  </p>
+                    <p className="mt-2 text-gray-900 px-2">
+                      The sheer volume of data being generated can be
+                    </p>
 
-                  <div>
-                    <ul className="list-square ml-4">
-                      <li className="mt-4 ">Overwhelming</li>
-
-                      <li className=" mt-4">
-                        Difficult to extract data for meaningful insights
-                      </li>
-
-                      <li className="mt-4">Data is not leveraged</li>
-                    </ul>
+                    <div className="px-2 py-2 text-gray-700">
+                      <ul className="list-square ml-4">
+                        <li className="mt-4 ">Overwhelming</li>
+                        <li className=" mt-4">
+                          Difficult to extract data for meaningful insights
+                        </li>{" "}
+                        <li className="mt-4">Data is not leveraged</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
-                <div className=" shadow-sm border-slate-200  p-8 ">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M2.25 6L9 12.75l4.286-4.286a11.948 11.948 0 014.306 6.43l.776 2.898m0 0l3.182-5.511m-3.182 5.51l-5.511-3.181"
-                      />
-                    </svg>
-                  </span>
+                <div
+                  className="text-left  shadow-sm border-slate-200  bg-white rounded-sm flex flex-col"
+                  data-aos="fade-up"
+                >
+                  <div className="">
+                    <img src="https://images.pexels.com/photos/442154/pexels-photo-442154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                  </div>
 
-                  <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                    Untimely maintenance can lead to machine failure
-                  </h1>
+                  <div className="px-4 py-4">
+                    <h1 className="mt-0 text-[20px] font-bold font-Poppins text-blue-gray-900 px-2">
+                      Untimely maintenance can lead to machine failure
+                    </h1>
 
-                  <p className="mt-2 text-black ">
-                    At present maintenance is done periodically or after the
-                    device has been damaged, which leads to unwanted
-                  </p>
+                    <p className="mt-2 text-gray-900 px-2">
+                      At present maintenance is done periodically or after the
+                      device has been damaged, which leads to unwanted
+                    </p>
 
-                  <div>
-                    <ul className="list-square ml-4">
-                      <li className="mt-4 ">Downtime additional costs</li>
-
-                      <li className=" mt-4">Negatively affects productivity</li>
-
-                      <li className="mt-4"> Operational efficiency</li>
-                    </ul>
+                    <div className="px-2 py-2 text-gray-700">
+                      <ul className="list-square ml-4">
+                        <li className="mt-4 ">Downtime additional costs</li>
+                        <li className=" mt-4">
+                          Negatively affects productivity
+                        </li>{" "}
+                        <li className="mt-4">Operational efficiency</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
