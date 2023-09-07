@@ -146,7 +146,7 @@ const Header = () => {
               >
                 Products
                 {isDropDownOpen && (
-                  <div className=" ease-in duration-1000 border lg:w-[78vw] 2xl:max-w-[1145px] xl:max-w-[1145px] flex flex-wrap items-start lg:justify-between justify-start gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto lg:h-[60vh] xl:h-[60vh] 2xl:h-[60vh] h-[80vh]   lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-6 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
+                  <div className=" ease-in duration-1000 border lg:w-[78vw] 2xl:max-w-[1145px] xl:max-w-[1145px] flex flex-wrap items-start lg:justify-between justify-start gap-6 lg:gap-0 text-[#929292] absolute md:min-w-[768px] overflow-auto lg:h-[63vh] xl:h-[63vh] 2xl:h-[63vh] h-[80vh]   lg:left-64 md:left-[75%] left-[75%] -translate-x-[80%] translate-y-6 bg-white list-none shadow-xl rounded-xl px-10 py-12 ">
                     <div className="absolute w-[20px] right-4 top-4">
                       <MdClear
                         onClick={() => setIsDropDownOpen(false)}
@@ -171,7 +171,7 @@ const Header = () => {
                     </div>
                     <div className="lg:min-w-[250px] max-w-[300px]">
                       <NavLink to="/products/rf-design-and-signal-processing">
-                        <h2 className="text-[1.1rem] font-bold text-black mb-6 hover:text-[#616161]">
+                        <h2 className="text-[1.1rem] font-bold text-blue-gray-900 mb-6 hover:text-[#616161]">
                           Radio Frequency Design <br />
                           and Signal Processing
                         </h2>
@@ -186,10 +186,10 @@ const Header = () => {
                             onMouseEnter={() => setIsRFPowerAmp(true)}
                           >
                             <div className="flex gap-4 items-center justify-start w-[100%] hover:text-[#616161">
-                              <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                                <MdMicrowave className="text-[1.5rem]" />
+                              <div className="w-12  h-12 flex justify-center items-center text-teal-500 bg-teal-50 rounded-none p-3">
+                                <MdMicrowave className="text-[2rem] " />
                               </div>
-                              <p className="hover:text-[#616161">
+                              <p className="hover:text-[#616161] text-blue-gray-700">
                                 Radio Frequency Power <br /> Amplifier
                               </p>
                             </div>
@@ -227,11 +227,11 @@ const Header = () => {
                             to="/products/rf-passive-components"
                             onMouseEnter={() => setIsRFPassive(true)}
                           >
-                            <div className="flex gap-4 items-center justify-start w-[100%] hover:text-[#616161">
-                              <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                                <MdMicrowave className="text-[1.5rem]" />
+                            <div className="flex gap-4 items-center justify-start w-[100%] hover:text-[#616161]">
+                              <div className="w-12 h-12 flex justify-center items-center text-deep-purple-500 bg-deep-purple-50 p-3 ">
+                                <MdMicrowave className="text-[2rem]" />
                               </div>
-                              <p className="hover:text-[#616161">
+                              <p className="hover:text-[#616161] text-blue-gray-700">
                                 Radio Frequency Passive <br /> Components
                               </p>
                             </div>
@@ -262,19 +262,19 @@ const Header = () => {
                           )}
                         </li>
                         <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                          <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                            <MdDesignServices className="text-[1.5rem]" />
+                          <div className="w-12  h-12 flex justify-center items-center text-green-500 bg-green-50 p-3 ">
+                            <MdDesignServices className="text-[2rem]" />
                           </div>
                           <NavLink to="/products/rf-passive/GaN-MMIC">
-                            <p className="hover:text-[#616161]">
+                            <p className="hover:text-[#616161] text-blue-gray-700">
                               GaN MMIC Designs
                             </p>
                           </NavLink>
                         </li>
                         <NavLink to="/products/sdr-test-bed">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <SiPytest className="text-[1.2rem]" />
+                            <div className="w-12 p-3  h-12 flex justify-center items-center text-light-blue-500 bg-light-blue-50 ">
+                              <SiPytest className="text-[2rem]" />
                             </div>
                             <p className="hover:text-[#616161]">
                               SDR Test-Beds
@@ -283,10 +283,10 @@ const Header = () => {
                         </NavLink>
                         <NavLink to="/products/rf-design-and-signal-processing">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
-                            <div className="w-8  h-8 flex justify-center items-center text-[#0208A4] bg-[#04DBF8] rounded-md">
-                              <SiGoogleanalytics className="text-[1.2rem]" />
+                            <div className="w-12  h-12 p-3 flex justify-center items-center text-orange-500 bg-orange-50 ">
+                              <SiGoogleanalytics className="text-[2rem]" />
                             </div>
-                            <p className="hover:text-[#616161]">
+                            <p className="hover:text-[#616161] text-blue-gray-700">
                               Transmitter Linearization & Antenna Solutions
                             </p>
                           </li>
