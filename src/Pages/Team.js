@@ -11,7 +11,7 @@ import { hardwareTeam } from "../data/HardwareTeamData";
 
 const Team = () => {
   return (
-    <div>
+    <div className="bg-[#f5f8fa]">
       <Header />
 
       <div
@@ -31,7 +31,7 @@ const Team = () => {
       </div>
 
       <div>
-        <section className="bg-white ">
+        <section className="bg-[#f5f8fa] ">
           <div className="container px-6 py-10 mx-auto mt-12">
             <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-black capitalize ">
               Board Of Directors
@@ -59,7 +59,7 @@ const Team = () => {
       {/* core team  */}
       <div className="mt-2">
         <div>
-          <section className="bg-white ">
+          <section className="bg-[#f5f8fa] ">
             <div className="container px-4 py-10 mx-auto">
               <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-black capitalize ">
                 Core Team
@@ -86,7 +86,7 @@ const Team = () => {
       {/* Software team */}
       <div className="mt-8">
         <div>
-          <section className="bg-white ">
+          <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2 mx-auto">
               <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-black capitalize ">
                 Software Team
@@ -104,7 +104,7 @@ const Team = () => {
       {/* hardware team */}
       <div className="mt-12 mb-8">
         <div>
-          <section className="bg-white ">
+          <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2  mx-auto">
               <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-black capitalize ">
                 Hardware Team
