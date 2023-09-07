@@ -74,7 +74,7 @@ export default function Slider2() {
       )}
     >
       <div>
-        <div className="lg:flex bg-blue-gray-50/30 shadow-md">
+        <div className="lg:flex bg-[#f5f8fa] shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
