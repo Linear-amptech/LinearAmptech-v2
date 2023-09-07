@@ -72,7 +72,7 @@ const AboutUs = () => {
 
               <a
                 href="#moretag"
-                className="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 bg-gradient-to-tr from-blue-600 to-blue-400 text-white   active:opacity-[0.85] rounded-sm font-Poppins mt-20   hover:cursor-pointer"
+                className="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 bg-gradient-to-tr from-blue-600 to-blue-300 text-white   active:opacity-[0.85] rounded-sm font-Poppins mt-20   hover:cursor-pointer"
               >
                 Read More
               </a>
