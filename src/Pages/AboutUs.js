@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer, Header } from "../Components";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { AiFillTwitterCircle } from "react-icons/ai";
@@ -8,6 +8,8 @@ import rf from "../assets/rfpower/0.png";
 import sdr from "../assets/SDR/1.jpg";
 import poweramp from "../assets/PowerAmp/1.png";
 import { Button } from "@material-tailwind/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import BoardMember from "../Components/BoardMember";
 
@@ -15,6 +17,9 @@ import { boardMember } from "../data/BoardMemberData";
 import TeamMember from "../Components/TeamMember";
 
 const AboutUs = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, delay: 300 });
+  }, [AOS]);
   return (
     <div className="bg-[#f5f8fa]">
       <Header />
@@ -118,7 +123,10 @@ const AboutUs = () => {
           </h1>
         </div>
 
-        <div className="lg:flex lg:flex-row flex flex-col-reverse  ">
+        <div
+          className="lg:flex lg:flex-row flex flex-col-reverse  "
+          data-aos="fade-up"
+        >
           <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-gradient-to-tr from-gray-900 to-gray-700 text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0 flex gap-3 flex-col">
             <h1 className="text-[20px] font-semibold">RF Power Amplifiers</h1>
             <p className="">
@@ -150,7 +158,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="lg:flex  ">
+        <div className="lg:flex  " data-aos="fade-up">
           <div className="h-[282px] lg:w-[477px] max-w-[477px] ">
             <img src={sdr} className="h-[100%] " />
           </div>
@@ -176,7 +184,10 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="lg:flex lg:flex-row flex flex-col-reverse ">
+        <div
+          className="lg:flex lg:flex-row flex flex-col-reverse "
+          data-aos="fade-up"
+        >
           <div className="lg:h-[282px] lg:w-[477px] max-w-[477px] min-h-[282px] bg-gradient-to-tr from-gray-900 to-gray-700 text-white px-8 lg:pt-8 pt-4 pb-4 lg:pb-0 flex flex-col gap-3 ">
             <h1 className="text-[20px] font-semibold">
               RF linear and nonlinear characterization
@@ -197,7 +208,7 @@ const AboutUs = () => {
               </NavLink>
             </div>
           </div>
-          <div className="h-[282px] max-w-[477px]  border-b border-r border-black">
+          <div className="h-[282px] max-w-[477px]  border-b border-r border-gray-300">
             <img src={poweramp} className="h-[100%]" />
           </div>
         </div>
@@ -238,17 +249,16 @@ const AboutUs = () => {
           </h2>
 
           <div className="mt-8 lg:mt-0 ">
-            <div className="flex w-36 flex-col space-y-3 sm:space-y-0 sm:flex-row sm:-mx-2">
-              <div className="px-6 py-2 text-sm tracking-wide text-white   hover:scale-110 duration-300  border border-white font-semibold text-center ">
-                <NavLink
-                  to={
-                    "https://www.linkedin.com/company/linear-amptech/?originalSubdomain=in"
-                  }
-                  target="_blank"
-                >
-                  Read more
-                </NavLink>
-              </div>
+            <div className="flex  flex-col space-y-3 sm:space-y-0 sm:flex-row sm:-mx-2">
+              <NavLink
+                to={
+                  "https://www.linkedin.com/company/linear-amptech/?originalSubdomain=in"
+                }
+                className="align-middle select-none  text-base text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3.5 px-7 bg-gradient-to-tr from-gray-900 to-gray-700 text-white shadow-md  active:opacity-[0.85] rounded-sm uppercase"
+                target="_blank"
+              >
+                Read more
+              </NavLink>
             </div>
           </div>
         </div>
