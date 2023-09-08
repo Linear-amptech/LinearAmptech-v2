@@ -445,7 +445,7 @@ const Innovations = () => {
         </div>
       </div> */}
 
-      <div className="mx-[12%]">
+      <div className="mx-[12%] bg-white px-4 py-12 rounded-sm">
         <h2 className="text-[2.5rem] font-bold ">AI Qube Data Core</h2>
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="w-[100%] lg:w-[50%]">
@@ -498,6 +498,7 @@ const Innovations = () => {
             <img
               src={require("../assets/AI&ML/2.png")}
               className="w-[100%] h-auto"
+              data-aos="zoom-in"
             ></img>
           </div>
         </div>
@@ -505,6 +506,7 @@ const Innovations = () => {
         <img
           src={require("../assets/falcon1.png")}
           className="my-[1.5rem] "
+          data-aos="zoom-in-up"
         ></img>
       </div>
       {/* new two big images */}
