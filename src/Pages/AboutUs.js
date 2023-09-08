@@ -55,7 +55,7 @@ const AboutUs = () => {
               <div
                 className="h-64 bg-cover lg:h-full lg:max-w-[588px] lg:h[480px] md:max-w-[480px] md:h-[500px]"
                 style={{
-                  backgroundImage: `url(${aboutbg})`,
+                  backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/005/296/417/non_2x/smart-business-engineer-free-photo.jpg")`,
                 }}
               ></div>
             </div>
