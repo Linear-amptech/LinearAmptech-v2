@@ -22,7 +22,7 @@ const Innovations = () => {
       <Header />
       <div className="z-10">
         <header>
-          <div className="w-full lg:h-[620px]  z-0 overflow-hidden  bg-cover py-12 lg:py-0  relative bg-[#2196f3]">
+          <div className="w-full lg:h-[620px]  z-0 overflow-hidden  bg-cover py-12 lg:py-0  relative bg-indigo-500">
             <video
               autoPlay
               muted
