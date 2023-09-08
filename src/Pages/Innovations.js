@@ -22,7 +22,7 @@ const Innovations = () => {
       <Header />
       <div className="z-10">
         <header>
-          <div className="w-full lg:h-[620px]  z-0 overflow-hidden  bg-cover py-12 lg:py-0  relative">
+          <div className="w-full lg:h-[620px]  z-0 overflow-hidden  bg-cover py-12 lg:py-0  relative bg-[#2196f3]">
             <video
               autoPlay
               muted
@@ -30,7 +30,7 @@ const Innovations = () => {
               src={video}
               className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
             />
-            <div className=" relative z-10  lg:h-[612px] w-[100%] text-white flex justify-center items-center flex-col lg:-mt-12 ">
+            <div className=" relative z-10  lg:h-[612px] w-[100%] text-white  flex justify-center items-center flex-col lg:-mt-12 ">
               <h2
                 className=" lg:text-[5rem] text-4xl font-bold drop-shadow-2xl  "
                 data-aos="fade-up"
