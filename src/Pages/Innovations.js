@@ -498,7 +498,7 @@ const Innovations = () => {
             <img
               src={require("../assets/AI&ML/2.png")}
               className="w-[100%] h-auto"
-              data-aos="zoom-in"
+              data-aos="zoom-out"
             ></img>
           </div>
         </div>
@@ -506,12 +506,12 @@ const Innovations = () => {
         <img
           src={require("../assets/falcon1.png")}
           className="my-[1.5rem] "
-          data-aos="zoom-in-up"
+          data-aos="zoom-out-up"
         ></img>
       </div>
       {/* new two big images */}
-      <div className="lg:pr-44 lg:pl-44 my-20 px-4">
-        <h1 className="lg:text-[40px] text-3xl font-bold text-black capitalize mb-10 lg:pl-8   ">
+      <div className="mx-[12%] px-4 py-12 bg-white my-12">
+        <h1 className="lg:text-[40px] text-3xl font-bold text-black capitalize mb-10  rounded-sm  ">
           WAIT System
         </h1>
         <section className="bg-[#6A6A6A] max-w-[1085px] m-auto max-h-[564px] border ">
@@ -523,7 +523,7 @@ const Innovations = () => {
             poster={require("../assets/banner.png")}
           />
         </section>
-        <p className=" leading-relaxed max-w-[1085px] m-auto mt-20 text-[1.1rem] text-justify text-gray-800">
+        <p className=" leading-relaxed max-w-[1085px] m-auto mt-6 text-[1.1rem] text-justify text-gray-800">
           WAIT System stands for Warning Ahead Of Intersections and Turns.
           <br />
           Driving on rural roads in India can be risky, especially during
@@ -537,6 +537,8 @@ const Innovations = () => {
           infrastructure to automatically manage traffic in remote locations
           prone to traffic jams, making driving safer and more efficient.
         </p>
+      </div>
+      <div className="lg:pr-44 lg:pl-44 my-20 px-4">
         <h2 className="lg:text-[2.5rem] text-3xl font-bold mb-5 mt-14">
           LoraWAN
         </h2>
