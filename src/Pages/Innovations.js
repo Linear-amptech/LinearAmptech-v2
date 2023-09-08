@@ -538,10 +538,8 @@ const Innovations = () => {
           prone to traffic jams, making driving safer and more efficient.
         </p>
       </div>
-      <div className="lg:pr-44 lg:pl-44 my-20 px-4">
-        <h2 className="lg:text-[2.5rem] text-3xl font-bold mb-5 mt-14">
-          LoraWAN
-        </h2>
+      <div className="py-12 mx-[12%] bg-white my-20 px-4 rounded-sm">
+        <h2 className="lg:text-[2.5rem] text-3xl font-bold mb-5 ">LoraWAN</h2>
         <div className="lg:flex justify-between">
           <div className="lg:w-[50%]">
             <h2 className="text-[1.8rem] font-bold mt-5 text-blue-gray-900">
@@ -573,32 +571,28 @@ const Innovations = () => {
             </ul>
           </div>
           <div className="rightBox lg:w-[50%] flex">
-            <img src={require("../assets/lorawan1.png")}></img>
+            <img
+              src={require("../assets/lorawan1.png")}
+              data-aos="zoom-out-up"
+            ></img>
           </div>
         </div>
         <div data-aos="fade-up" data-aos-duration="1500">
           <BgElement3 className="lg:w-[300px] w-[200px] absolute origin-center -right-[340px] -translate-y-[50%]" />
         </div>
-        {/* <div className="text-[1.8rem] font-bold mt-5">Diagrams</div> */}
+
         <div className="imgContainer flex flex-col lg:flex-row md:flex-col justify-between items-center gap-5 mt-9">
           <img
             src={require("../assets/InnovationE.png")}
-            className="w-[550px]"
+            className="w-[530px]"
+            data-aos="fade-up"
           ></img>
           <img
             src={require("../assets/lorawan2.png")}
-            className="w-[550px] lg:h-[376px]"
+            className="w-[530px] lg:h-[376px]"
+            data-aos="fade-up"
           ></img>
         </div>
-        {/* <div className="text-[1.8rem] font-bold mt-16 mb-12">
-          Frequency Hopping
-        </div>
-        <div className="imgContainer flex justify-center items-center gap-24">
-          <img
-            src={require("../assets/InnovationE2.png")}
-            className="w-[900px]"
-          ></img>
-        </div> */}
       </div>
       {/* BLUE BOX */}
       <div className="lg:pr-48 lg:pl-48 h-[324px] max-w-[100%] bg-gradient-to-tr from-blue-600 to-blue-400  flex justify-center my-4 px-4 lg:m-0 lg:mt-6 justify-items-center mt-20  items-center content-center">
