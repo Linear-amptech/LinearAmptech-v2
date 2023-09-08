@@ -506,7 +506,7 @@ const Innovations = () => {
         <img
           src={require("../assets/falcon1.png")}
           className="my-[1.5rem] "
-          data-aos="zoom-out-up"
+          data-aos="zoom-out"
         ></img>
       </div>
       {/* new two big images */}
