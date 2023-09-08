@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 import { BgElement1, BgElement2, BgElement3 } from "../assets";
 import bgImg from "../assets/video/img1.jpg";
 import solutionBg from "../assets/solutionBg.jpg";
-import innovationBg from "../assets/innovationBg.jpg";
+
 import video from "../assets/video/innovation.mp4";
 
 const Innovations = () => {
