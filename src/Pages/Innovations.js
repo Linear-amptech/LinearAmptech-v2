@@ -31,10 +31,16 @@ const Innovations = () => {
               className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
             />
             <div className=" relative z-10  lg:h-[612px] w-[100%] text-white flex justify-center items-center flex-col lg:-mt-12 ">
-              <h2 className=" lg:text-[5rem] text-4xl font-bold drop-shadow-2xl  ">
+              <h2
+                className=" lg:text-[5rem] text-4xl font-bold drop-shadow-2xl  "
+                data-aos="fade-up"
+              >
                 Innovations
               </h2>
-              <p className="text-[1.5rem] text-2xl font-normal mb-6 lg:mt-8 ">
+              <p
+                className="text-[1.5rem] text-2xl font-normal mb-6 lg:mt-8 "
+                data-aos="fade-up"
+              >
                 Innovation that drives progress
               </p>
               <NavLink
