@@ -23,7 +23,9 @@ const Blockchain = () => {
         </div>
 
         <img
-          src={require("../../assets/video/bg-product.jpg")}
+          src={
+            "https://static.vecteezy.com/system/resources/previews/001/114/777/non_2x/perspective-grid-background-vector.jpg"
+          }
           className="w-[100%] "
         ></img>
       </div>
