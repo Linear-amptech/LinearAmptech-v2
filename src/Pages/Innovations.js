@@ -4,11 +4,14 @@ import Footer from "../Components/Footer";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import waitSysVideo from "../assets/video/waitSysVideo.mp4";
+import { Button } from "@material-tailwind/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BgElement1, BgElement2, BgElement3 } from "../assets";
 import bgImg from "../assets/video/img1.jpg";
 import solutionBg from "../assets/solutionBg.jpg";
+import innovationBg from "../assets/innovationBg.jpg";
+import video from "../assets/video/innovation.mp4";
 
 const Innovations = () => {
   useEffect(() => {
@@ -19,21 +22,23 @@ const Innovations = () => {
       <Header />
       <div className="z-10">
         <header>
-          <div
-            className="w-full lg:h-[620px]  z-0 overflow-hidden  bg-cover py-12 lg:py-0 "
-            style={{
-              backgroundImage: `url(${bgImg})`,
-            }}
-          >
-            <div className="  z-10  lg:h-[612px] w-[100%] text-white flex justify-center items-center flex-col lg:-mt-12 ">
+          <div className="w-full lg:h-[620px]  z-0 overflow-hidden  bg-cover py-12 lg:py-0  relative">
+            <video
+              autoPlay
+              muted
+              loop
+              src={video}
+              className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
+            />
+            <div className=" relative z-10  lg:h-[612px] w-[100%] text-white flex justify-center items-center flex-col lg:-mt-12 ">
               <h2 className=" lg:text-[5rem] text-4xl font-bold drop-shadow-2xl  ">
                 Innovations
               </h2>
-              <p className="text-[1.5rem] text-2xl font-normal mb-6 lg:mt-8">
+              <p className="text-[1.5rem] text-2xl font-normal mb-6 lg:mt-8 ">
                 Innovation that drives progress
               </p>
               <NavLink
-                className=" lg:border-[3px] border rounded-sm border-white text-white text-[1.1rem] lg:py-3 lg:px-5 py-2 px-4 hover:scale-110 duration-300"
+                className="align-middle select-none text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3.5 px-7 border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] rounded-sm font-Poppins capitalize border-2 text-[1.1rem] font-normal"
                 to="/about-us"
               >
                 Read more
