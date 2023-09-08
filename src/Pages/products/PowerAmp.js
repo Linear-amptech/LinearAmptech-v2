@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Header } from "../../Components";
+import { Footer, Header, OurProduct } from "../../Components";
 
 const PowerAmp = () => {
   return (
@@ -7,18 +7,7 @@ const PowerAmp = () => {
       <Header />
       {/* *****************************HERO SECTION***************** */}
 
-      <div className="heroSection z-0  h-[400px] overflow-hidden ">
-        <div className="absolute z-10 w-[100%] h-[400px] flex flex-col justify-center items-center gap-2 text-white">
-          <h2 className="text-[4rem] font-bold ">Our Products</h2>
-          <p className="text-[1.5rem] font-mnormal mb-4">
-            Solutions for a smarter, more connected
-          </p>
-        </div>
-        <img
-          src={require("../../assets/video/bg-product.jpg")}
-          className="w-[100%] -translate-y-64"
-        ></img>
-      </div>
+      <OurProduct />
 
       {/* *****************************CONTENT SECTION***************** */}
       <div className="content w-[100%] px-[10%] py-20 text-[1.2rem] leading-relaxed">

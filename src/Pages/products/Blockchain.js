@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Footer, Header } from "../../Components";
+import { Footer, Header, OurProduct } from "../../Components";
 import { BgElement1, BgElement2, BgElement3, Blockchain5 } from "../../assets";
 import blockchainVideo from "../../assets/video/final4.mp4";
 
@@ -12,23 +12,8 @@ const Blockchain = () => {
   return (
     <div>
       <Header />
-      <div className="heroSection z-0 w-[100%]  h-[400px] overflow-hidden flex  ">
-        <div className=" absolute z-10 w-[100%] h-[400px] flex flex-col justify-center items-center gap-2  text-white">
-          <h2 className="lg:text-[4rem] sm:text-[3rem] text-[2.5rem] font-bold  ">
-            Our Products
-          </h2>
-          <p className="lg:text-[1.8rem] font-normal mb-4 ">
-            Solutions for a smarter, more connected future
-          </p>
-        </div>
+      <OurProduct />
 
-        <img
-          src={
-            "https://static.vecteezy.com/system/resources/previews/001/114/777/non_2x/perspective-grid-background-vector.jpg"
-          }
-          className="w-[100%] "
-        ></img>
-      </div>
       <div>
         <div className="container mx-auto lg:mt-16 mt-4 xl:mt-20">
           <h2 className="text-center font-bold text-[2rem] mb-10">
