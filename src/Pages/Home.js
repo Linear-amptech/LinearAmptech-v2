@@ -66,16 +66,22 @@ const Home = () => {
           className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
         />
         <div
-          className="relative z-50 w-[100%]   gap-4  overflow-hidden flex flex-col justify-center items-center leading-none px-6"
+          className="relative z-50 w-[100%]     overflow-hidden flex flex-col justify-center items-center leading-none px-6"
           data-aos="fade-up"
         >
           <h2 className=" lg:text-[5rem] md:text-5xl text-4xl font-bold drop-shadow-2xl bg-transparent text-center">
-            <TextTransition springConfig={presets.gentle}>
+            <TextTransition
+              springConfig={presets.gentle}
+              className="leading-snug flex justify-center items-center"
+            >
               {heading[index % heading.length]}
             </TextTransition>
           </h2>
-          <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-none pb-10  text-center">
-            <TextTransition springConfig={presets.gentle}>
+          <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-loose   text-center">
+            <TextTransition
+              springConfig={presets.gentle}
+              className="leading-snug flex justify-center items-center"
+            >
               {TEXTS[index % TEXTS.length]}
             </TextTransition>
           </h2>
