@@ -78,7 +78,7 @@ export default function Slider2() {
         <div className="lg:flex bg-[#f5f8fa] shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
+              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 Cyber physical system
               </h2>
 
@@ -130,7 +130,7 @@ export default function Slider2() {
         <div className="lg:flex bg-blue-gray-50 shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
+              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 Artificial Intelligence and Machine Learning
               </h2>
 
@@ -182,7 +182,7 @@ export default function Slider2() {
         <div className="lg:flex bg-blue-gray-50 shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-none ">
+              <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 The Radio Frequency Components
               </h2>
 
