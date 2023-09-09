@@ -56,7 +56,7 @@ const Slider = () => {
         // dynamicBullets: true,
       }}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper h-[500px] flex items-center"
+      className="mySwiper h-[600px] flex items-center"
     >
       {sliderData.map(({ img, title, content }) => {
         return (
@@ -64,12 +64,10 @@ const Slider = () => {
             <div className="bg-[black] w-full h-full">
               <div className="slide container  text-white bg-cover bg-center flex  lg:flex-row gap-20 justify-start items-center w-[100%] h-[100%]  py-20 px-6 mx-auto">
                 <div className=" gap-4">
-                  <h2 className="lg:text-[3rem] text-2xl lg:leading-normal font-bold">
+                  <h2 className="lg:text-[3rem] text-4xl lg:leading-normal font-bold">
                     {title}
                   </h2>
-                  <p className=" text-[2rem] leading-loose min-h-[200px] text-justify">
-                    {content}
-                  </p>
+                  <p className=" text-[2rem]  min-h-[200px] ">{content}</p>
                   <div></div>
                 </div>
               </div>
