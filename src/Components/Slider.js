@@ -11,8 +11,8 @@ import { homeProduct } from "../data/HomeData";
 const Slider = () => {
   return (
     <Swiper
-      spaceBetween={30}
       centeredSlides={true}
+      direction={"vertical"}
       loop={true}
       speed={800}
       autoplay={{
@@ -24,12 +24,12 @@ const Slider = () => {
         // dynamicBullets: true,
       }}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper h-[100%]"
+      className="mySwiper h-[500px]"
     >
       {homeProduct.map(({ img, title, tag, content, link }) => {
         return (
           <SwiperSlide>
-            <div className="slide bg-[url('https://cdn.pixabay.com/photo/2023/07/19/22/28/amur-tiger-8138017_1280.jpg')] bg-cover bg-center flex flex-col lg:flex-row gap-20 justify-center items-center w-[82%] h-[100%] py-20 mx-auto bg-red-600">
+            <div className="slide bg-[url('https://cdn.pixabay.com/photo/2023/07/19/22/28/amur-tiger-8138017_1280.jpg')] bg-cover bg-center flex flex-col lg:flex-row gap-20 justify-center items-center w-[100%] h-[100%] py-20 mx-auto bg-red-600">
               <div className="lg:h-[400px] h-[100px] max-w-[450px] flex justify-center  items-center ">
                 <img src={img} className="min-w-[400px] "></img>
               </div>
