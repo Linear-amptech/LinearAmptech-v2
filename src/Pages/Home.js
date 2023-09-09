@@ -66,13 +66,13 @@ const Home = () => {
           className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
         />
         <div
-          className="relative z-50 w-[100%]     overflow-hidden flex flex-col justify-center items-center leading-none px-6"
+          className="relative z-50 max-w-[1536px]     overflow-hidden flex flex-col justify-center items-center leading-none px-6"
           data-aos="fade-up"
         >
           <h2 className=" lg:text-[5rem] md:text-5xl text-4xl font-bold drop-shadow-2xl bg-transparent text-center">
             <TextTransition
               springConfig={presets.default}
-              className="leading-snug flex justify-center items-center"
+              className="leading-snug flex justify-center items-center max-w-[1536px]"
             >
               {heading[index % heading.length]}
             </TextTransition>
@@ -80,7 +80,7 @@ const Home = () => {
           <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-loose   text-center">
             <TextTransition
               springConfig={presets.default}
-              className="leading-snug flex justify-center items-center"
+              className="leading-snug flex justify-center items-center max-w-[1536px] "
             >
               {TEXTS[index % TEXTS.length]}
             </TextTransition>
