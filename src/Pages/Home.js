@@ -56,7 +56,7 @@ const Home = () => {
       {/* </div> */}
       {/* *********************Hero Section ****************************** */}
 
-      <div className="heroSection gap-2  h-[calc(100vh-71.98px)] flex flex-col justify-center items-center text-white bg-black z-0 overflow-hidden relative ">
+      <div className="heroSection gap-2  h-[calc(100vh-71.98px)] flex flex-col w-full mx-auto justify-center items-center text-white bg-black z-0 overflow-hidden relative ">
         {/* <div className=" bg-slate-600 z-10"></div> */}
         <video
           autoPlay
@@ -66,13 +66,13 @@ const Home = () => {
           className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
         />
         <div
-          className="relative z-50 max-w-[1536px]     overflow-hidden flex flex-col justify-center items-center leading-none px-6"
+          className="relative z-50 w-[100%]     overflow-hidden flex flex-col justify-center items-center leading-none px-6"
           data-aos="fade-up"
         >
           <h2 className=" lg:text-[5rem] md:text-5xl text-4xl font-bold drop-shadow-2xl bg-transparent text-center">
             <TextTransition
               springConfig={presets.default}
-              className="leading-snug flex justify-center items-center max-w-[1536px]"
+              className="leading-snug flex justify-center items-center w-screen"
             >
               {heading[index % heading.length]}
             </TextTransition>
@@ -80,7 +80,7 @@ const Home = () => {
           <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-loose   text-center">
             <TextTransition
               springConfig={presets.default}
-              className="leading-snug flex justify-center items-center max-w-[1536px] "
+              className="leading-snug flex justify-center items-center w-screen px-6"
             >
               {TEXTS[index % TEXTS.length]}
             </TextTransition>
