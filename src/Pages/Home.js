@@ -71,7 +71,7 @@ const Home = () => {
         >
           <h2 className=" lg:text-[5rem] md:text-5xl text-4xl font-bold drop-shadow-2xl bg-transparent text-center">
             <TextTransition
-              springConfig={presets.gentle}
+              springConfig={presets.default}
               className="leading-snug flex justify-center items-center"
             >
               {heading[index % heading.length]}
@@ -79,7 +79,7 @@ const Home = () => {
           </h2>
           <h2 className="lg:text-[3rem] md:text-3xl text-2xl font-bold drop-shadow-2xl bg-transparent  leading-loose   text-center">
             <TextTransition
-              springConfig={presets.gentle}
+              springConfig={presets.default}
               className="leading-snug flex justify-center items-center"
             >
               {TEXTS[index % TEXTS.length]}
