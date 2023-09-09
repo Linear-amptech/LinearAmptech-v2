@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { homeProduct } from "../data/HomeData";
+import "./Styles.css";
 
 const Slider = () => {
   return (
@@ -21,6 +22,7 @@ const Slider = () => {
       }}
       pagination={{
         clickable: true,
+
         // dynamicBullets: true,
       }}
       modules={[Autoplay, Pagination, Navigation]}
