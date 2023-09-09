@@ -23,14 +23,13 @@ const Slider = () => {
         clickable: true,
         // dynamicBullets: true,
       }}
-      navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper h-[100%]"
     >
       {homeProduct.map(({ img, title, tag, content, link }) => {
         return (
           <SwiperSlide>
-            <div className="slide flex flex-col lg:flex-row gap-20 justify-center items-center w-[82%] h-[100%] py-20 mx-auto">
+            <div className="slide bg-[url('https://cdn.pixabay.com/photo/2023/07/19/22/28/amur-tiger-8138017_1280.jpg')] bg-cover bg-center flex flex-col lg:flex-row gap-20 justify-center items-center w-[82%] h-[100%] py-20 mx-auto bg-red-600">
               <div className="lg:h-[400px] h-[100px] max-w-[450px] flex justify-center  items-center ">
                 <img src={img} className="min-w-[400px] "></img>
               </div>
@@ -62,3 +61,26 @@ const Slider = () => {
 };
 
 export default Slider;
+
+// Import Swiper React components
+// import { Swiper, SwiperSlide } from "swiper/react";
+
+// // Import Swiper styles
+// import "swiper/css";
+
+// export default () => {
+//   return (
+//     <Swiper
+//       spaceBetween={50}
+//       slidesPerView={3}
+//       onSlideChange={() => console.log("slide change")}
+//       onSwiper={(swiper) => console.log(swiper)}
+//     >
+//       <SwiperSlide>Slide 1</SwiperSlide>
+//       <SwiperSlide>Slide 2</SwiperSlide>
+//       <SwiperSlide>Slide 3</SwiperSlide>
+//       <SwiperSlide>Slide 4</SwiperSlide>
+//       ...
+//     </Swiper>
+//   );
+// };
