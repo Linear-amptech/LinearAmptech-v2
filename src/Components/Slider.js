@@ -20,7 +20,7 @@ const sliderData = [
   {
     title: "Empowering Automation",
     content: "Integrating Machine Learning into Real-World Systems",
-    img: "https://static.vecteezy.com/system/resources/previews/017/075/645/non_2x/digital-transformation-technology-strategy-digitization-and-digitalization-of-business-processes-and-data-optimize-and-automate-operations-customer-service-management-internet-and-cloud-computing-free-photo.jpg",
+    img: "https://static.vecteezy.com/system/resources/previews/016/850/482/non_2x/digital-transformation-technology-strategy-digitization-and-digitalization-of-business-processes-and-data-optimize-and-automate-operations-customer-service-management-internet-and-cloud-computing-free-photo.jpg",
   },
   {
     title: "Leading in RF Technology",
@@ -67,13 +67,15 @@ const Slider = () => {
                 backgroundImage: `url("${img}")`,
               }}
             >
-              <div className="h-full w-full absolute bg-black/50"></div>
+              <div className="h-full w-full absolute bg-black/40"></div>
               <div className="slide container  text-white bg-cover bg-center flex  lg:flex-row gap-20 justify-start items-center w-[100%] h-[100%]  py-20 px-6 mx-auto">
                 <div className=" gap-4 relative z-50">
                   <h2 className="lg:text-[3rem] text-4xl lg:leading-normal ">
                     {title}
                   </h2>
-                  <p className=" text-[2rem]  min-h-[200px] ">{content}</p>
+                  <p className=" lg:text-[2rem] text-[1.5rem]  min-h-[200px] ">
+                    {content}
+                  </p>
                   <div></div>
                 </div>
               </div>
