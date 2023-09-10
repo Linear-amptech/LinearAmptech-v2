@@ -47,7 +47,7 @@ const Slider = () => {
       loop={true}
       speed={800}
       autoplay={{
-        delay: 3500,
+        delay: 4000,
         disableOnInteraction: false,
       }}
       pagination={{
