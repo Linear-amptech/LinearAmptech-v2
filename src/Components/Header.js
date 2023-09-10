@@ -63,7 +63,7 @@ const Header = () => {
         visible ? "top-0  duration-500 opacity-100" : ""
       } `}
     >
-      <nav className="relative shadow-lg   ">
+      <nav className="relative   ">
         <div className="container px-6 py-1 mx-auto lg:flex lg:justify-between lg:items-center">
           <div className="flex items-center justify-between">
             <NavLink to="/">
