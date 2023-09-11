@@ -113,16 +113,6 @@ export default function Slider2() {
             >
               <div className="w-full h-full bg-black opacity-25"></div>
             </div>
-            {/* <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
-              <h3 className=" text-2xl font-semibold text-blue-gray-900">
-                Hello Guest
-              </h3>
-
-              <p className=" text-gray-900">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
-                eum modi incidunt adipisci quod porro et non
-              </p>
-            </div> */}
           </div>
         </div>
       </div>
@@ -163,18 +153,6 @@ export default function Slider2() {
             >
               <div className="w-full h-full bg-black opacity-25"></div>
             </div>
-            {/* <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
-              <h3 className=" text-2xl font-semibold text-blue-gray-900">
-                Hello Guest
-              </h3>
-
-              <p className=" text-gray-900">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
-                eum modi incidunt adipisci quod porro et non exercitationem
-                quasi, maxime culpa ut nemo ab delectus saepe iste nostrum
-                explicabo a?
-              </p>
-            </div> */}
           </div>
         </div>
       </div>
@@ -217,18 +195,6 @@ export default function Slider2() {
             >
               <div className="w-full h-full bg-black opacity-25"></div>
             </div>
-            {/* <div className="h-[200px] w-full bg-blue-gray-100 px-8 py-2">
-              <h3 className=" text-2xl font-semibold text-blue-gray-900">
-                Hello Guest
-              </h3>
-
-              <p className=" text-gray-900">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
-                eum modi incidunt adipisci quod porro et non exercitationem
-                quasi, maxime culpa ut nemo ab delectus saepe iste nostrum
-                explicabo a?
-              </p>
-            </div> */}
           </div>
         </div>
       </div>
