@@ -96,7 +96,7 @@ const AiCube = () => {
 
               <div className="text-left  bg-white rounded-sm shadow-sm  ">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/016/708/510/non_2x/futuristic-blue-wave-of-dots-and-lines-the-concept-of-big-data-network-connection-cybernetics-and-technology-abstract-blue-background-3d-rendering-free-photo.jpg"
                   className="h-[236px] w-full object-cover"
                 />
                 <div className="p-4">
@@ -132,7 +132,7 @@ const AiCube = () => {
 
               <div className="bg-white rounded-sm shadow-sm   ">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/009/377/476/non_2x/managing-and-planning-business-processes-and-workflows-for-higher-goals-free-photo.jpg"
                   className="h-[236px] w-full object-cover"
                 />
                 <div className="p-4">
@@ -182,7 +182,7 @@ const AiCube = () => {
               <div className="grid w-full grid-cols-1 gap-8  xl:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <div className="space-y-2 bg-white rounded-sm  shadow-sm   ">
                   <img
-                    src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/011/376/717/non_2x/isometric-technology-3d-design-abstract-futuristic-cubes-design-and-different-geometric-shapes-digital-and-artificial-intelligence-blockchain-tech-illustration-free-vector.jpg"
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
@@ -212,7 +212,7 @@ const AiCube = () => {
 
                 <div className="space-y-2 bg-white rounded-sm shadow-sm ">
                   <img
-                    src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/011/378/907/non_2x/a-young-businessman-uses-cloud-networking-technology-to-communicate-and-connect-data-servers-around-the-world-with-the-innovation-of-online-internet-from-virtual-screen-through-wireless-free-photo.jpg"
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
@@ -247,7 +247,7 @@ const AiCube = () => {
 
                 <div className="space-y-2  bg-white rounded-sm shadow-sm   ">
                   <img
-                    src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/020/837/695/non_2x/chat-ai-technology-background-free-vector.jpg"
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
@@ -276,7 +276,7 @@ const AiCube = () => {
 
                 <div className="space-y-2 bg-white rounded-sm shadow-sm   ">
                   <img
-                    src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/025/503/471/non_2x/cloud-storage-for-downloading-digital-service-or-application-with-data-transmission-network-computing-technologies-futuristic-server-digital-space-data-storage-generative-ai-illustration-free-photo.jpg"
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
@@ -304,7 +304,7 @@ const AiCube = () => {
                 </div>
                 <div className="space-y-2 bg-white rounded-sm shadow-sm ">
                   <img
-                    src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/011/885/186/non_2x/big-data-analytics-bi-intelligence-business-concept-with-chart-and-graph-icons-on-interface-and-businessman-holding-pen-touching-virtual-screen-free-photo.jpg"
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
@@ -332,7 +332,7 @@ const AiCube = () => {
                 </div>
                 <div className="space-y-2 bg-white rounded-sm  shadow-sm">
                   <img
-                    src="https://static.vecteezy.com/system/resources/previews/002/089/475/non_2x/isometric-artificial-intelligence-free-vector.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/022/819/862/non_2x/artificial-intelligence-server-free-photo.JPG"
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
