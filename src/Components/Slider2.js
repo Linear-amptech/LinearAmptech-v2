@@ -108,7 +108,7 @@ export default function Slider2() {
             <div
               className="w-full  bg-cover h-[700px]"
               style={{
-                backgroundImage: `url(${first})`,
+                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/027/187/520/non_2x/reinventing-industry-3d-insights-into-industrial-iot-s-data-revolution-ai-generated-free-photo.jpg")`,
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
@@ -158,7 +158,7 @@ export default function Slider2() {
             <div
               className="w-full  bg-cover h-[700px]"
               style={{
-                backgroundImage: `url(${second})`,
+                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/001/255/052/non_2x/artificial-intelligence-chip-and-network-connection-lines-vector.jpg")`,
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
@@ -212,7 +212,7 @@ export default function Slider2() {
             <div
               className="w-full  bg-cover h-[700px]"
               style={{
-                backgroundImage: `url(${third})`,
+                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/011/557/896/non_2x/satellite-dish-background-free-photo.jpg")`,
               }}
             >
               <div className="w-full h-full bg-black opacity-25"></div>
