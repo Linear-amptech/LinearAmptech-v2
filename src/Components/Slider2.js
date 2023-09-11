@@ -74,15 +74,15 @@ export default function Slider2() {
         </IconButton>
       )}
     >
-      <div>
-        <div className="lg:flex bg-[#f5f8fa] shadow-md">
+      <div className="bg-white">
+        <div className="lg:flex  shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 Cyber physical system
               </h2>
 
-              <p className="mt-4 text-sm text-blue-gray-600 dark:text-gray-400 lg:text-lg">
+              <p className="mt-4 text-sm text-blue-gray-600  lg:text-lg">
                 Refers to a system that integrates physical devices with a cyber
                 interface for monitoring and controlling the physical world. The
                 company is focusing on innovation in CPS for various
@@ -117,14 +117,14 @@ export default function Slider2() {
         </div>
       </div>
       <div>
-        <div className="lg:flex bg-blue-gray-50 shadow-md">
+        <div className="lg:flex  shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 Artificial Intelligence and Machine Learning
               </h2>
 
-              <p className="mt-4 text-sm text-blue-gray-600 dark:text-gray-400 lg:text-lg">
+              <p className="mt-4 text-sm text-blue-gray-600  lg:text-lg">
                 We are committed to evolving as Deep Tech Comapany. Artificial
                 Intelligence and Machine Learning is one the innovative areas to
                 which we are keen to contribute. Our recent innovation involves
@@ -157,14 +157,14 @@ export default function Slider2() {
         </div>
       </div>
       <div>
-        <div className="lg:flex bg-blue-gray-50 shadow-md">
+        <div className="lg:flex  shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 The Radio Frequency Components
               </h2>
 
-              <p className="mt-4 text-sm text-blue-gray-600 dark:text-gray-400 lg:text-lg">
+              <p className="mt-4 text-sm text-blue-gray-600  lg:text-lg">
                 The company has a strong research background, with directors
                 from I.I.T-Roorkee who are working in cutting-edge radio
                 frequency technologies. Their recent R&D focus includes
