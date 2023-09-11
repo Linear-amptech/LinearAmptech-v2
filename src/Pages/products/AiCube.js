@@ -64,7 +64,7 @@ const AiCube = () => {
                   className="h-[236px] w-full object-cover"
                 />
                 <div className="px-4 py-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                  <span className="inline-block p-3  text-[#451952] bg-[#451952]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -100,7 +100,7 @@ const AiCube = () => {
                   className="h-[236px] w-full object-cover"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                  <span className="inline-block p-3  text-[#0F2C59] bg-[#0F2C59]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -136,7 +136,7 @@ const AiCube = () => {
                   className="h-[236px] w-full object-cover"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                  <span className="inline-block p-3  text-[#57375D] bg-[#57375D]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -186,7 +186,7 @@ const AiCube = () => {
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
-                    <span className="inline-block p-3 text-[#0465F8] bg-blue-100   dark:bg-blue-500">
+                    <span className="inline-block p-3 text-[#27005D] bg-[#27005D]/10  ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-6 h-6"
@@ -216,7 +216,7 @@ const AiCube = () => {
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <span className="inline-block p-3  text-[#1D5D9B] bg-[#1D5D9B]/10   ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-6 h-6"
@@ -251,7 +251,7 @@ const AiCube = () => {
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <span className="inline-block p-3  text-[#016A70] bg-[#016A70]/10   ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-6 h-6"
@@ -280,7 +280,7 @@ const AiCube = () => {
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <span className="inline-block p-3  text-[#176B87] bg-[#176B87]/10   ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-6 h-6"
@@ -308,7 +308,7 @@ const AiCube = () => {
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <span className="inline-block p-3  text-[#E25E3E] bg-[#E25E3E]/10   ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -336,7 +336,7 @@ const AiCube = () => {
                     className="h-[236px] w-full object-cover"
                   />
                   <div className="p-4">
-                    <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <span className="inline-block p-3  text-[#435334] bg-[#435334]/10   ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
