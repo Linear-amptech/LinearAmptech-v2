@@ -70,7 +70,7 @@ const Home = () => {
 
       {/* *********************Intro ****************************** */}
 
-      <div className="slider lg:w-[98.9vw] max-w-[98.9vw] lg:px-[7%] px-4 py-14  mt-28">
+      <div className="slider lg:w-[98.9vw] max-w-[98.9vw] lg:px-[7%] px-4 py-14  mt-4">
         <h2 className="lg:text-[2.5rem] text-3xl font-bold text-center mb-12 text-blue-gray-900">
           Our Products
         </h2>
