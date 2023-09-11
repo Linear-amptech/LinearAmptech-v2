@@ -364,90 +364,84 @@ const AiCube = () => {
           </div>
         </section>
       </div>
-      <div className="w-[100vw] h-[100px]">
-        <div data-aos="fade-up" data-aos-duration="1000">
-          <BgElement2 className="lg:w-[300px] absolute origin-center lg:-left-36 -translate-y-[30%] w-[180px] -left-20" />
+      <div className="bg-white  mx-[12%]">
+        <div>
+          <section className=" lg:mt-8 mt-4 xl:mt-12 ">
+            <div className="container lg:flex justify-center items-center  pt-12 mx-auto text-left px-4">
+              <div className="lg:w-[50%]">
+                <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-blue-gray-900 mb-2 ">
+                  E2E Machine Learning Platform
+                </h2>
+
+                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem] text-gray-700">
+                  Our solution streamlines the entire deployment process,
+                  including seamless integration with various data sources
+                  including hardware sensors or data streams allowing
+                  organizations to fully harness the power of AI and IoT in
+                  their operations.
+                </p>
+              </div>
+              <div className="lg:w-[50%] flex justify-center items-center">
+                <img
+                  src={require("../../assets/AIQube/2.png")}
+                  className="w-[750px]"
+                ></img>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div>
+          <section className=" lg:mt-8 mt-4 xl:mt-12 ">
+            <div className="container lg:flex justify-center items-center gap-10  pt-12 mx-auto text-left px-4">
+              <div className="lg:w-[50%] flex justify-center items-center">
+                <img
+                  src={require("../../assets/AIQube/3.png")}
+                  className="w-[750px]"
+                ></img>
+              </div>
+              <div className="lg:w-[50%]">
+                <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-blue-gray-900 mb-2 ">
+                  Hybrid Cloud Management
+                </h2>
+
+                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem] text-gray-700">
+                  We offer the flexibility of cloud based on premise or hybrid
+                  deployment options, allowing companies to choose the best
+                  solution for their unique data security and cost efficiency
+                  needs. It offers a scalable and adaptable solution that meets
+                  the evolving needs of organizations.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div className="mb-20">
+          <section className=" lg:mt-8 mt-4 xl:mt-12 ">
+            <div className="container lg:flex justify-center items-center gap-10  pt-12 mx-auto text-left px-4">
+              <div className="lg:w-[50%]">
+                <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-blue-gray-900 mb-2 ">
+                  IoT Data Analytics
+                </h2>
+
+                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem] text-gray-700">
+                  Harness the power of AI-driven analytics to optimize
+                  production processes, improve predictive maintenance, and gain
+                  valuable insights into your operations. Leverage AI-generated
+                  insights to make data-driven decisions, enabling better
+                  resource allocation and risk mitigation.
+                </p>
+              </div>
+              <div className="lg:w-[50%] flex justify-center items-center">
+                <img
+                  src={require("../../assets/AIQube/4.png")}
+                  className="w-[750px]"
+                ></img>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-      <div>
-        <section className=" lg:mt-8 mt-4 xl:mt-12 ">
-          <div className="container lg:flex justify-center items-center lg:px-[12%] pt-12 mx-auto text-left px-4">
-            <div className="lg:w-[50%]">
-              <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-black mb-2 ">
-                E2E Machine Learning Platform
-              </h2>
-
-              <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                Our solution streamlines the entire deployment process,
-                including seamless integration with various data sources
-                including hardware sensors or data streams allowing
-                organizations to fully harness the power of AI and IoT in their
-                operations.
-              </p>
-            </div>
-            <div className="lg:w-[50%] flex justify-center items-center">
-              <img
-                src={require("../../assets/AIQube/2.png")}
-                className="w-[750px]"
-              ></img>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div>
-        <section className=" lg:mt-8 mt-4 xl:mt-12 ">
-          <div className="container lg:flex justify-center items-center gap-10 lg:px-[12%] pt-12 mx-auto text-left px-4">
-            <div className="lg:w-[50%] flex justify-center items-center">
-              <img
-                src={require("../../assets/AIQube/3.png")}
-                className="w-[750px]"
-              ></img>
-            </div>
-            <div className="lg:w-[50%]">
-              <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-black mb-2 ">
-                Hybrid Cloud Management
-              </h2>
-
-              <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                We offer the flexibility of cloud based on premise or hybrid
-                deployment options, allowing companies to choose the best
-                solution for their unique data security and cost efficiency
-                needs. It offers a scalable and adaptable solution that meets
-                the evolving needs of organizations.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div data-aos="fade-up" data-aos-duration="1500">
-        <BgElement3 className="lg:w-[300px] w-[200px] absolute origin-center -right-[340px] -translate-y-[50%]" />
-      </div>
-      <div className="mb-20">
-        <section className=" lg:mt-8 mt-4 xl:mt-12 ">
-          <div className="container lg:flex justify-center items-center gap-10 lg:px-[12%] pt-12 mx-auto text-left px-4">
-            <div className="lg:w-[50%]">
-              <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-black mb-2 ">
-                IoT Data Analytics
-              </h2>
-
-              <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                Harness the power of AI-driven analytics to optimize production
-                processes, improve predictive maintenance, and gain valuable
-                insights into your operations. Leverage AI-generated insights to
-                make data-driven decisions, enabling better resource allocation
-                and risk mitigation.
-              </p>
-            </div>
-            <div className="lg:w-[50%] flex justify-center items-center">
-              <img
-                src={require("../../assets/AIQube/4.png")}
-                className="w-[750px]"
-              ></img>
-            </div>
-          </div>
-        </section>
-      </div>
-
       <Footer />
     </div>
   );
