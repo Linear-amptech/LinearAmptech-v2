@@ -1,6 +1,6 @@
 .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   text-align: center;
   line-height: 20px;
   font-size: 12px;
@@ -11,5 +11,5 @@
 
 .swiper-pagination-bullet-active {
   color: #fff;
-  background: #2196f3;
+  background: #fff;
 }
