@@ -71,7 +71,7 @@ const Blockchain = () => {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/007/603/043/non_2x/complex-transparent-polygon-3d-illustration-on-black-background-free-photo.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
@@ -111,7 +111,7 @@ const Blockchain = () => {
 
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/010/304/109/non_2x/businessman-and-team-analyzing-financial-statement-finance-task-with-smart-phone-and-laptop-and-tablet-wealth-management-concept-free-photo.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
@@ -147,7 +147,7 @@ const Blockchain = () => {
 
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/005/307/460/non_2x/businessman-hand-shows-gear-to-success-concept-free-photo.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
@@ -181,7 +181,7 @@ const Blockchain = () => {
               </div>
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/006/744/977/non_2x/business-write-growth-graph-losses-on-the-stock-market-chart-concept-business-use-pen-touch-line-market-chart-and-red-arrows-fall-to-the-ground-indicating-the-economic-recession-free-photo.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
@@ -217,7 +217,7 @@ const Blockchain = () => {
 
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/024/579/183/non_2x/close-up-of-businessman-hand-showing-virtual-icon-of-media-screen-3d-rendering-a-businessman-clicking-on-a-hologram-computer-ai-generated-free-photo.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
