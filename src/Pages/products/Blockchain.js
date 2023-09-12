@@ -10,7 +10,7 @@ const Blockchain = () => {
     AOS.init({ duration: 500, delay: 300 });
   }, [AOS]);
   return (
-    <div>
+    <div className="bg-[#f5f8fa]">
       <Header />
       <OurProduct />
 
@@ -22,11 +22,11 @@ const Blockchain = () => {
           <div className="lg:flex lg:mt-16 mt-4 xl:mt-20" data-aos="fade-up">
             <div className="flex items-center justify-center w-full px-6  lg:w-1/2">
               <div className="max-w-xl ">
-                <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-2 ">
+                <h2 className="font-bold lg:text-[40px]  text-3xl text-blue-gray-900 mb-2 ">
                   Private Blockchain Network
                 </h2>
 
-                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
+                <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem] text-gray-700">
                   The blockchain-based management system offers a range of
                   applications across various industries. In the military and
                   defense sector, it ensures accurate tracking and efficient
@@ -43,14 +43,6 @@ const Blockchain = () => {
                   broad potential and advantages of implementing the
                   blockchain-based management system in various industries.
                 </p>
-
-                <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
-                  <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
-                    <a href="#" target="_blank">
-                      Live Demo
-                    </a>
-                  </li>
-                </div>
               </div>
             </div>
             <div className="w-full  lg:w-1/2 lg:h-auto lg:mt-0 mt-4  ">
@@ -69,13 +61,6 @@ const Blockchain = () => {
         </div>
       </div>
 
-      <div
-        className="absolute w-[100vw] overflow-hidden h-[200px]"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        <BgElement1 className="lg:w-[300px] absolute origin-center w-[180px] -right-20 lg:-right-36 -translate-y-[20%]" />
-      </div>
       <div className="lg:pr-44 lg:pl-44 mt-16 " data-aos="fade-up">
         <section className="bg-transparent ">
           <div className="container px-4 py-12  mx-auto">
@@ -84,155 +69,187 @@ const Blockchain = () => {
             </h1>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="text-left border-2 shadow-md border-slate-200  p-8">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </span>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Limited Visibility
-                </h1>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Limited Visibility
+                  </h1>
 
-                <p className="mt-2 text-black ">
-                  The current system of asset manufacturing, shipment, storage,
-                  and issue lacks adequate visibility and transparency among
-                  stakeholders.
-                </p>
+                  <p className="mt-2 text-gray-700 ">
+                    The current system of asset manufacturing, shipment,
+                    storage, and issue lacks adequate visibility and
+                    transparency among stakeholders.
+                  </p>
+                </div>
               </div>
 
-              <div className="text-left p-8 border-2 shadow-md border-slate-200 ">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11.412 15.655L9.75 21.75l3.745-4.012M9.257 13.5H3.75l2.659-2.849m2.048-2.194L14.25 2.25 12 10.5h8.25l-4.707 5.043M8.457 8.457L3 3m5.457 5.457l7.086 7.086m0 0L21 21"
-                    />
-                  </svg>
-                </span>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M11.412 15.655L9.75 21.75l3.745-4.012M9.257 13.5H3.75l2.659-2.849m2.048-2.194L14.25 2.25 12 10.5h8.25l-4.707 5.043M8.457 8.457L3 3m5.457 5.457l7.086 7.086m0 0L21 21"
+                      />
+                    </svg>
+                  </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Asset Management Complexity
-                </h1>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Asset Management Complexity
+                  </h1>
 
-                <p className="mt-2 text-black ">
-                  Asset management across many industries involves multiple
-                  agencies, from manufacturers to storage facilities and
-                  deployment in various locations, leading to complexities in
-                  coordination and oversight.
-                </p>
+                  <p className="mt-2 text-gray-700 ">
+                    Asset management across many industries involves multiple
+                    agencies, from manufacturers to storage facilities and
+                    deployment in various locations, leading to complexities in
+                    coordination and oversight.
+                  </p>
+                </div>
               </div>
 
-              <div className="border-2 shadow-md border-slate-200  p-8 ">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-                    />
-                  </svg>
-                </span>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                  </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Manual Dependency
-                </h1>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Manual Dependency
+                  </h1>
 
-                <p className="mt-2 text-black ">
-                  Presently, the process is heavily reliant on manual
-                  intervention, making it both time-consuming and susceptible to
-                  errors
-                </p>
+                  <p className="mt-2 text-gray-700 ">
+                    Presently, the process is heavily reliant on manual
+                    intervention, making it both time-consuming and susceptible
+                    to errors
+                  </p>
+                </div>
               </div>
-              <div className="border-2 shadow-md border-slate-200  p-8 ">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
-                    />
-                  </svg>
-                </span>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
+                      />
+                    </svg>
+                  </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Critical Need for Improvement
-                </h1>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Critical Need for Improvement
+                  </h1>
 
-                <p className="mt-2 text-black ">
-                  Efficient asset management is vital to defense readiness and
-                  operations. Inefficient supply chain management can adversely
-                  impact activities like recycling, segregation, and repair of
-                  assets.
-                </p>
+                  <p className="mt-2 text-gray-700 ">
+                    Efficient asset management is vital to defense readiness and
+                    operations. Inefficient supply chain management can
+                    adversely impact activities like recycling, segregation, and
+                    repair of assets.
+                  </p>
+                </div>
               </div>
-              <div className="border-2 shadow-md border-slate-200  p-8 ">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
-                    />
-                  </svg>
-                </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Potential of Distributed Ledger Technology and Smart Contracts
-                </h1>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+                      />
+                    </svg>
+                  </span>
 
-                <p className="mt-2 text-black ">
-                  These technologies can provide real-time access to
-                  information, increase the efficiency of supply chain
-                  management, and provide a solution to the aforementioned
-                  issues
-                </p>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Potential of Distributed Ledger Technology and Smart
+                    Contracts
+                  </h1>
+
+                  <p className="mt-2 text-gray-700 ">
+                    These technologies can provide real-time access to
+                    information, increase the efficiency of supply chain
+                    management, and provide a solution to the aforementioned
+                    issues
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -253,7 +270,7 @@ const Blockchain = () => {
               className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
               data-aos="fade-up"
             >
-              <div className="text-left border-2 shadow-md border-slate-200  p-8">
+              <div className="text-left shadow-sm rounded-sm bg-white  p-8">
                 <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -286,7 +303,7 @@ const Blockchain = () => {
                 </p>
               </div>
 
-              <div className="text-left p-8 border-2 shadow-md border-slate-200 ">
+              <div className="text-left p-8 shadow-sm rounded-sm bg-white ">
                 <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -318,7 +335,7 @@ const Blockchain = () => {
                 </p>
               </div>
 
-              <div className="border-2 shadow-md border-slate-200  p-8 ">
+              <div className="shadow-sm rounded-sm bg-white  p-8 ">
                 <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -388,7 +405,7 @@ const Blockchain = () => {
 
             <div className="mt-2 lg:flex lg:items-stretch">
               <div className="grid w-full grid-cols-1 gap-4 lg:w-1/2 xl:gap-8 md:grid-cols-2">
-                {/* <div className="space-y-2 border-2 shadow-md border-slate-200  p-4">
+                {/* <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3 text-[#0465F8] bg-blue-100   dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -418,7 +435,7 @@ const Blockchain = () => {
                   </p>
                 </div> */}
 
-                <div className="space-y-2 border-2 shadow-md border-slate-200  p-4">
+                <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -449,7 +466,7 @@ const Blockchain = () => {
                   </p>
                 </div>
 
-                <div className="space-y-2  border-2 shadow-md border-slate-200  p-4">
+                <div className="space-y-2  shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -480,7 +497,7 @@ const Blockchain = () => {
                   </p>
                 </div>
 
-                <div className="space-y-2 border-2 shadow-md border-slate-200  p-4">
+                <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -511,7 +528,7 @@ const Blockchain = () => {
                     security and trust in the system.
                   </p>
                 </div>
-                {/* <div className="space-y-2 border-2 shadow-md border-slate-200  p-4">
+                {/* <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -540,7 +557,7 @@ const Blockchain = () => {
                     to include different metrics and filters.
                   </p>
                 </div> */}
-                <div className="space-y-2 border-2 shadow-md border-slate-200  p-4">
+                <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
