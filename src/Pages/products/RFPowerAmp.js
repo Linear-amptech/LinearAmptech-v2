@@ -13,19 +13,19 @@ const RFPowerAmp = () => {
     <div>
       <Header />
       <OurProduct />
-      <div className="text-[1.3rem] leading-relaxed lg:px-[15%] px-6 text-center font-medium">
+      <div className="text-[1.3rem] leading-relaxed lg:px-[15%] px-6 text-center font-medium bg-[#f5f8fa]">
         <h2
-          className="text-[2.5rem] text-center font-bold mt-5 mb-10"
+          className="text-[2.5rem] text-center font-bold pt-5 mb-10"
           //   data-aos="fade-up"
         >
           Radio Frequency Power Amplifier
         </h2>
-        <p className="my-10">
+        <p className="my-10 text-gray-800">
           The company has varieties of Radio Frequency Power Amplifiers for L, S
           and C band in their product line. These Amplifiers are power stages as
           well as complete unit with DC/DC converters.
         </p>
-        <p>
+        <p className="text-gray-800">
           These amplifiers powered by Gallium Nitride device technology presents
           high efficiency (more than 60%) upto 100 W CW output power. Some of
           these involves most advanced Power Amplifiers design techniques such
