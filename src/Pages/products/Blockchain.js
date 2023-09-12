@@ -72,7 +72,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -112,7 +112,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -148,7 +148,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -182,7 +182,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -218,7 +218,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -273,7 +273,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -312,7 +312,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -350,7 +350,7 @@ const Blockchain = () => {
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
-                  className="h-[236px] object-cover"
+                  className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
@@ -597,25 +597,25 @@ const Blockchain = () => {
 
               <div className=" lg:flex lg:w-1/2 lg:justify-between lg:ml-8 mt-4 lg:mt-0 shadow-md flex-col ">
                 <img
-                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
+                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover rounded-t-sm  "
                   src={require("../../assets/blockchain1.png")}
                   alt=""
                   data-aos="fade-up"
                 />
                 <img
-                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
+                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover rounded-t-sm  "
                   src={require("../../assets/blockchain2.png")}
                   alt=""
                   data-aos="fade-up"
                 />
                 <img
-                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover  "
+                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover rounded-t-sm  "
                   src={require("../../assets/blockchain3.png")}
                   alt=""
                   data-aos="fade-up"
                 />
                 <img
-                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover p-2  "
+                  className="  flex-shrink-0 lg:flex-shrink-0 object-cover rounded-t-sm p-2  "
                   src={require("../../assets/blockchain4.png")}
                   alt=""
                   data-aos="fade-up"
