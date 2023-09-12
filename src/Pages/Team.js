@@ -11,7 +11,7 @@ import { hardwareTeam } from "../data/HardwareTeamData";
 
 const Team = () => {
   return (
-    <div>
+    <div className="bg-[#f5f8fa]">
       <Header />
 
       <div
@@ -21,50 +21,68 @@ const Team = () => {
         }}
       >
         <div className=" ">
-          <p className="font-bold lg:text-[64px] text-4xl text-white text-center">
+          <p
+            className="font-bold lg:text-[64px] text-4xl text-white text-center"
+            data-aos="fade-up"
+          >
             Meet Our Team
           </p>
-          <p className="text-[24px] lg:mt-6 text-white font-medium text-center">
+          <p
+            className="text-[24px] lg:mt-6 text-white font-medium text-center"
+            data-aos="fade-up"
+          >
             Solutions for a smarter, more connected future
           </p>
         </div>
       </div>
 
       <div>
-        <section className="bg-white ">
+        <section className="bg-[#f5f8fa] ">
           <div className="container px-6 py-10 mx-auto mt-12">
-            <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-black capitalize ">
-              Board Of Directors
+            <div class="lineStyle h-[6px] w-[111px] bg-[#2196f3] relative top-7 left-72"></div>
+            <h1 className="lg:text-[40px]  text-4xl font-semibold mx-auto  text-gray-900 capitalize max-w-6xl">
+              Our Team
             </h1>
 
-            <p className="max-w-6xl text-[20px] mx-auto my-6 text-center text-black ">
-              Our board of directors comprises seasoned professionals who
-              possess a wealth of knowledge and expertise in various fields. We
-              are honored to have a world-renowned power amplifier expert Dr.
-              Karun Rawat, a professor from IIT Roorkee, and an experienced
-              member in the field of electronics communication on our board.
-              With their diverse skill sets and leadership, we are well-equipped
-              to steer our organization towards success and deliver outstanding
-              outcomes to our stakeholders
+            <p className="max-w-6xl text-[20px] mx-auto my-6  text-blue-gray-800 ">
+              Our team is a diverse and talented group of individuals, each
+              bringing their unique strengths and perspectives to the table.
+              Together, we form a cohesive unit that thrives on innovation and
+              creativity. We are committed to continuous growth and learning,
+              always striving to exceed expectations and tackle challenges
+              head-on. Our strong communication and teamwork ensure that we can
+              tackle even the most complex projects with ease. With a shared
+              vision and a passion for excellence, our team is poised for
+              success in every endeavor we undertake. Together, we are
+              unstoppable.
             </p>
 
-            <div className="flex flex-wrap gap-2 justify-center mt-2 xl:mt-12 ">
+            <div className="flex flex-wrap gap-12 justify-center mt-2 xl:mt-12 ">
               {boardMember.map((member) => {
-                return <BoardMember member={member} />;
+                return <TeamMember member={member} />;
+              })}
+              {coreTeam.map((member) => {
+                return <TeamMember member={member} />;
+              })}
+              {softwareTeam.map((member) => {
+                return <TeamMember member={member} />;
+              })}
+              {hardwareTeam.map((member) => {
+                return <TeamMember member={member} />;
               })}
             </div>
           </div>
         </section>
       </div>
       {/* core team  */}
-      <div className="mt-2">
+      {/* <div className="mt-2">
         <div>
-          <section className="bg-white ">
+          <section className="bg-[#f5f8fa] ">
             <div className="container px-4 py-10 mx-auto">
-              <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-black capitalize ">
+              <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-gray-900 capitalize ">
                 Core Team
               </h1>
-              <p className="max-w-6xl text-[20px] mx-auto my-3 text-center text-black ">
+              <p className="max-w-6xl text-[20px] mx-auto my-3 text-center text-blue-gray-800 ">
                 Our core team comprises talented individuals with diverse
                 backgrounds and experiences. Our members hail from some of the
                 largest software companies in the world, including JPMC,
@@ -82,13 +100,13 @@ const Team = () => {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
       {/* Software team */}
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <div>
-          <section className="bg-white ">
+          <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2 mx-auto">
-              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-black capitalize ">
+              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-gray-900 capitalize ">
                 Software Team
               </h1>
 
@@ -100,13 +118,13 @@ const Team = () => {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
       {/* hardware team */}
-      <div className="mt-12 mb-8">
+      {/* <div className="mt-12 mb-8">
         <div>
-          <section className="bg-white ">
+          <section className="bg-[#f5f8fa]  ">
             <div className="container px-6 py-2  mx-auto">
-              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-black capitalize ">
+              <h1 className="lg:text-[40px] text-4xl mb-4 font-semibold text-center text-gray-900 capitalize ">
                 Hardware Team
               </h1>
 
@@ -118,7 +136,7 @@ const Team = () => {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

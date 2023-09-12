@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Footer, Header } from "../../Components";
+import { Footer, Header, OurProduct } from "../../Components";
 import { NavLink } from "react-router-dom";
 import { BgElement2, BgElement1, BgElement3 } from "../../assets";
 import AOS from "aos";
@@ -12,35 +12,21 @@ const GanMMIC = () => {
   return (
     <div>
       <Header />
-      <div className="heroSection z-0 w-[100%]  h-[400px] overflow-hidden flex  ">
-        <div className=" absolute z-10 w-[100%] h-[400px] flex flex-col justify-center items-center gap-2  text-white">
-          <h2 className="lg:text-[4rem] sm:text-[3rem] text-[2.5rem] font-bold font-Roboto ">
-            Our Products
-          </h2>
-          <p className="lg:text-[1.8rem] font-normal mb-4 ">
-            Solutions for a smarter, more connected
-          </p>
-        </div>
-
-        <img
-          src={require("../../assets/video/bg-product.jpg")}
-          className="w-[100%]  "
-        ></img>
-      </div>
+      <OurProduct />
 
       <div className="text-[1.3rem] leading-relaxed lg:px-[15%] px-6 text-center font-medium">
         <h2
-          className="text-[2.5rem] text-center font-bold mt-5 mb-10"
+          className="text-[2.5rem] text-center font-bold mt-5 mb-10 text-blue-gray-900"
           //   data-aos="fade-up"
         >
           GaN MMIC for T/R Modules
         </h2>
-        <p className="my-10">
+        <p className="my-10 text-blue-gray-600">
           The company has a strong research background in various RF components
           including Radio Frequency Power Amplifier Design, MMICs, Transmitter
           Linearization, SDR test beds and Radio frequency passive components.
         </p>
-        <p>
+        <p className="text-blue-gray-600">
           We are dedicated to innovating in the area of many active and passive
           radio frequency components. These include broadband high-power
           amplifiers, waveguide-based combining, cavity filters, etc. Some
@@ -69,7 +55,7 @@ const GanMMIC = () => {
           C-Ku Band (5-18 GHz) GaN MMIC LNA Results
         </h2>
         <table class="w-full text-sm text-left text-gray-500">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+          <thead class="text-xs text-blue-gray-700 uppercase bg-gray-50 ">
             <tr>
               <th scope="col" class="px-6 py-3 ">
                 Input Return Loss (dB)

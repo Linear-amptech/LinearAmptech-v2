@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Header } from "../../Components";
+import { Footer, Header, OurProduct } from "../../Components";
 
 const RFPower = () => {
   return (
@@ -7,21 +7,7 @@ const RFPower = () => {
       <Header />
       {/* *****************************HERO SECTION***************** */}
 
-      <div className="heroSection z-0 w-[100%]  h-[400px] overflow-hidden flex  ">
-        <div className=" absolute z-10 w-[100%] h-[400px] flex flex-col justify-center items-center gap-2  text-white">
-          <h2 className="lg:text-[4rem] sm:text-[3rem] text-[2.5rem] font-bold font-Roboto ">
-            Our Products
-          </h2>
-          <p className="lg:text-[1.8rem] font-normal mb-4 ">
-            Solutions for a smarter, more connected
-          </p>
-        </div>
-
-        <img
-          src={require("../../assets/video/bg-product.jpg")}
-          className="w-[100%]  "
-        ></img>
-      </div>
+      <OurProduct />
 
       {/* *****************************CONTENT SECTION***************** */}
 
@@ -76,9 +62,7 @@ const RFPower = () => {
       </div>
       {/* *******************Product Orverview  ************************/}
       <div className="w-[100%] px-[10%]">
-        <h2 className="text-[3rem] font-bold font-Roboto mb-10">
-          Products Overview
-        </h2>
+        <h2 className="text-[3rem] font-bold  mb-10">Products Overview</h2>
         <div className="container flex flex-col gap-10 pb-16">
           <div className="productContent lg:px-12 px-7 py-8 lg:flex  justify-center items-center gap-10 bg-[#EFF6FF] ">
             <div className="imgContainer h-[250px] lg:min-w-[330px] max-w-[330px] bg-gray-400 border-[1px] border-black overflow-hidden">

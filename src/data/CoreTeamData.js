@@ -3,12 +3,21 @@ import suyash from "../assets/profile/suyash.jfif";
 import devansh from "../assets/profile/devansh.jfif";
 import achal from "../assets/profile/achal.jfif";
 import vishu from "../assets/profile/vishu.jfif";
-import aditya from "../assets/profile/aditya.jfif";
+import shaleen from "../assets/profile/shaleen.jpeg";
 export const coreTeam = [
+  {
+    photo: shaleen,
+    name: "Shaleen Bansal",
+    position: "Cisco",
+    linkedin: "https://www.linkedin.com/in/shaleen-bansal-a40b801a2/",
+    twitter: "https://twitter.com/shaleenbansal",
+    facebook: "https://www.facebook.com/bansal.shaleen/",
+  },
+
   {
     photo: kanhaiya,
     name: "Kanhaiya Kumar",
-    position: "Alpha Stocks",
+    position: "Enphase Energy",
     linkedin: "https://www.linkedin.com/in/kanhaiya-kumar-1ba2b81a1/",
     twitter: "#",
     facebook: "#",

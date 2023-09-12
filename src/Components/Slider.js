@@ -7,50 +7,76 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { homeProduct } from "../data/HomeData";
+import "./Styles.css";
+const heading = ["", ,];
+const TEXTS = [""];
+
+const sliderData = [
+  {
+    title: "Linear Amptech",
+    content: "Innovating the Future of Cyber-Physical Systems",
+    img: "https://static.vecteezy.com/system/resources/previews/005/301/851/non_2x/businessman-success-with-his-board-room-free-photo.jpg",
+  },
+  {
+    title: "Empowering Automation",
+    content: "Integrating Machine Learning into Real-World Systems",
+    img: "https://static.vecteezy.com/system/resources/previews/016/850/482/non_2x/digital-transformation-technology-strategy-digitization-and-digitalization-of-business-processes-and-data-optimize-and-automate-operations-customer-service-management-internet-and-cloud-computing-free-photo.jpg",
+  },
+  {
+    title: "Leading in RF Technology",
+    content: "Transforming Interactions with our Cyber-Physical System Designs",
+    img: "https://static.vecteezy.com/system/resources/previews/004/656/020/non_2x/transmitting-signals-through-communications-satellites-in-the-sky-and-the-capital-city-with-tall-buildings-free-photo.jpg",
+  },
+  {
+    title: "Bridging the Digital and Physical",
+    content: "Innovating the Future of Cyber-Physical Systems",
+    img: "https://static.vecteezy.com/system/resources/previews/027/100/018/non_2x/the-idea-of-a-global-social-network-and-business-connection-is-a-concept-that-combines-the-future-free-photo.jpg",
+  },
+  {
+    title: "Your Tech Partner for Tomorrow",
+    content: "Linear Amptech - Pioneering Breakthrough Solutions",
+    img: "https://static.vecteezy.com/system/resources/previews/007/252/575/non_2x/businessman-holding-global-internet-connection-technology-business-and-digital-marketing-free-photo.jpg",
+  },
+];
 
 const Slider = () => {
   return (
     <Swiper
-      spaceBetween={30}
       centeredSlides={true}
+      direction={"vertical"}
       loop={true}
       speed={800}
       autoplay={{
-        delay: 5000,
+        delay: 4000,
         disableOnInteraction: false,
       }}
       pagination={{
         clickable: true,
+
         // dynamicBullets: true,
       }}
-      navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper h-[100%]"
+      className="mySwiper h-[600px] flex items-center relative"
     >
-      {homeProduct.map(({ img, title, tag, content, link }) => {
+      {sliderData.map(({ title, content, img }) => {
         return (
           <SwiperSlide>
-            <div className="slide flex flex-col lg:flex-row gap-20 justify-center items-center w-[82%] h-[100%] py-20 mx-auto">
-              <div className="lg:h-[400px] h-[100px] max-w-[450px] flex justify-center  items-center ">
-                <img src={img} className="min-w-[400px] "></img>
-              </div>
-              <div className="lg:right lg:max-w-[650px] flex flex-col gap-4">
-                <p className="tag text-[#0346B5] text-[1.1rem] font-medium ">
-                  {tag}
-                </p>
-                <h2 className="lg:text-[2.5rem] text-2xl lg:leading-normal font-bold">
-                  {title}
-                </h2>
-                <p className=" text-[0.9rem] leading-loose min-h-[200px] text-justify">
-                  {content}
-                </p>
-                <div>
-                  <a
-                    className="text-blue-900 underline font-medium cursor-pointer"
-                    href={link}
-                  >
-                    Read more
-                  </a>
+            <div
+              className={` h-full w-full bg-cover bg-black`}
+              style={{
+                backgroundImage: `url("${img}")`,
+              }}
+            >
+              <div className="h-full w-full absolute bg-black/40"></div>
+              <div className="slide container  text-white bg-cover bg-center flex  lg:flex-row gap-20 justify-start items-center w-[100%] h-[100%]  py-20 px-6 mx-auto">
+                <div className=" gap-4 relative z-50">
+                  <h2 className="lg:text-[3rem] text-4xl lg:leading-normal ">
+                    {title}
+                  </h2>
+                  <p className=" lg:text-[2rem] text-[1.5rem]  min-h-[200px] ">
+                    {content}
+                  </p>
+                  <div></div>
                 </div>
               </div>
             </div>
@@ -62,3 +88,26 @@ const Slider = () => {
 };
 
 export default Slider;
+
+// Import Swiper React components
+// import { Swiper, SwiperSlide } from "swiper/react";
+
+// // Import Swiper styles
+// import "swiper/css";
+
+// export default () => {
+//   return (
+//     <Swiper
+//       spaceBetween={50}
+//       slidesPerView={3}
+//       onSlideChange={() => console.log("slide change")}
+//       onSwiper={(swiper) => console.log(swiper)}
+//     >
+//       <SwiperSlide>Slide 1</SwiperSlide>
+//       <SwiperSlide>Slide 2</SwiperSlide>
+//       <SwiperSlide>Slide 3</SwiperSlide>
+//       <SwiperSlide>Slide 4</SwiperSlide>
+//       ...
+//     </Swiper>
+//   );
+// };

@@ -4,6 +4,7 @@ import { AboutUs, Home, Team, Innovations, NewsEvents } from "./Pages";
 import { AiCube, GanMMIC, RFPassive, RFPowerAmp, SDR } from "./Pages/products";
 import InventorySystem from "./Pages/products/InventorySystem";
 import Hrms from "./Pages/products/HRMS";
+import Blockchain from "./Pages/products/Blockchain";
 import AIandML from "./Pages/products/AIandML";
 import CyberSystem from "./Pages/products/CyberSystem";
 import { LAMP1, LAMP2, LAMP3, LAMP4 } from "./Pages/products/RFAmplifier";
@@ -17,7 +18,7 @@ import {
 
 function App() {
   return (
-    <div className="App">
+    <div className="App mx-auto">
       <Router>
         <ScrollToTop />
         <Routes>
@@ -114,6 +115,7 @@ function App() {
             element={<InventorySystem />}
           />
           <Route path="/products/hrms" exact element={<Hrms />} />
+          <Route path="/products/blockchain" exact element={<Blockchain />} />
 
           {/* ******************unsued ************************ */}
           {/* <Route

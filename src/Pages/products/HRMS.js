@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Footer, Header } from "../../Components";
+import { Footer, Header, OurProduct } from "../../Components";
 import { BgElement1, BgElement2, BgElement3 } from "../../assets";
 
 const Hrms = () => {
@@ -11,27 +11,17 @@ const Hrms = () => {
   return (
     <div>
       <Header />
-      <div className="heroSection z-0 w-[100%]  h-[400px] overflow-hidden flex  ">
-        <div className=" absolute z-10 w-[100%] h-[400px] flex flex-col justify-center items-center gap-2  text-white">
-          <h2 className="lg:text-[4rem] sm:text-[3rem] text-[2.5rem] font-bold font-Roboto ">
-            Our Products
-          </h2>
-          <p className="lg:text-[1.8rem] font-normal mb-4 ">
-            Solutions for a smarter, more connected
-          </p>
-        </div>
+      <OurProduct />
 
-        <img
-          src={require("../../assets/video/bg-product.jpg")}
-          className="w-[100%] "
-        ></img>
-      </div>
       <div>
         <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
           <h2 className="text-center font-bold text-[2rem] mb-10">
             Human Resource Management System
           </h2>
-          <div className="container lg:flex lg:px-[12%] pt-12 mx-auto text-left px-4">
+          <div
+            className="container lg:flex lg:px-[12%] pt-12 mx-auto text-left px-4"
+            data-aos="fade-up"
+          >
             <div className="lg:w-[50%]">
               <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-2 ">
                 Revolutionize Your HR Management with HRM Software
@@ -47,7 +37,7 @@ const Hrms = () => {
                 software today and see how it can help your business succeed.
               </p>
 
-              <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 mt-4 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
+              <li className="max-w-[148.8px] h-[47px] list-none bg-[#0465F8] px-5 py-2 my-4 lg:text-[18.8px] text-center  text-white  hover:scale-110  duration-300 rounded-none lg:w-auto ">
                 <a href="https://hrms.linear-amptech.com/" target="_blank">
                   Live Demo
                 </a>
@@ -56,7 +46,7 @@ const Hrms = () => {
             <div className="lg:w-[50%] flex justify-center items-center">
               <img
                 src={require("../../assets/hrms1.png")}
-                className="w-[500px]  shadow-md "
+                className="w-[auto]  shadow-md "
               ></img>
             </div>
           </div>
@@ -71,7 +61,7 @@ const Hrms = () => {
       </div>
 
       <div className="lg:pr-44 lg:pl-44 mt-16">
-        <section className="bg-white ">
+        <section className="bg-white " data-aos="fade-up">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
               Problems in traditional HRM Software
@@ -180,7 +170,7 @@ const Hrms = () => {
         </section>
       </div>
 
-      <div className="lg:pr-44 lg:pl-44 mt-16">
+      <div className="lg:pr-44 lg:pl-44 mt-16" data-aos="fade-up">
         <section className="bg-white ">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
@@ -279,7 +269,7 @@ const Hrms = () => {
         </section>
       </div>
 
-      <div className="lg:pr-40 lg:pl-40 mt-16">
+      <div className="lg:pr-40 lg:pl-40 mt-16" data-aos="fade-up">
         <section className="bg-white ">
           <div className="container px-4 py-10 mx-auto">
             <h1 className="lg:text-[40px] text-3xl font-bold text-black capitalize mb-8   ">
@@ -463,9 +453,9 @@ const Hrms = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:flex lg:w-1/2 lg:justify-around ml-8 shadow-md ">
+              <div className=" lg:flex lg:w-1/2 lg:justify-around lg:ml-8 mt-4 lg:mt-0 shadow-md ">
                 <img
-                  className="w-[28rem]  flex-shrink-0 lg:flex-shrink-0 object-cover xl:w-[34rem] xl:h-[760px] "
+                  className=" flex-shrink-0 lg:flex-shrink-0 object-cover xl:w-[34rem] xl:h-[760px] "
                   src={
                     "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80"
                   }
