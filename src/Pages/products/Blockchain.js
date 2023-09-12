@@ -75,7 +75,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#071952] bg-[#071952]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -115,7 +115,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#FFCC70] bg-[#FFCC70]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -151,7 +151,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#64CCC5] bg-[#64CCC5]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -185,7 +185,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#FFBB5C] bg-[#FFBB5C]/10  ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-6 w-6"
@@ -221,7 +221,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#793FDF] bg-[#793FDF]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -276,7 +276,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#FF6969] bg-[#FF6969]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-6 w-6"
@@ -315,7 +315,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#1450A3] bg-[#1450A3]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-6 w-6"
@@ -353,7 +353,7 @@ const Blockchain = () => {
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#F29727] bg-[#F29727]/10  ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-6 w-6"
@@ -414,7 +414,7 @@ const Blockchain = () => {
             <div className="mt-2 lg:flex lg:items-stretch">
               <div className="grid w-full grid-cols-1 gap-4 lg:w-1/2 xl:gap-8 md:grid-cols-2">
                 <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#0079FF] bg-[#0079FF]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-6 w-6"
@@ -445,7 +445,7 @@ const Blockchain = () => {
                 </div>
 
                 <div className="space-y-2  shadow-sm rounded-sm bg-white  p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#116A7B] bg-[#116A7B]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-6 w-6"
@@ -476,7 +476,7 @@ const Blockchain = () => {
                 </div>
 
                 <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#00DFA2] bg-[#00DFA2]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -508,7 +508,7 @@ const Blockchain = () => {
                 </div>
 
                 <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    ">
+                  <span className="inline-block p-3  text-[#FFD93D] bg-[#FFD93D]/10   ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
