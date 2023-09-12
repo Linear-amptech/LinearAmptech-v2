@@ -257,7 +257,7 @@ const Blockchain = () => {
       </div>
 
       <div className="lg:pr-44 lg:pl-44 mt-16">
-        <section className="bg-white ">
+        <section className=" ">
           <div className="container px-4 py-12  mx-auto">
             <h1
               className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   "
@@ -270,120 +270,128 @@ const Blockchain = () => {
               className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
               data-aos="fade-up"
             >
-              <div className="text-left shadow-sm rounded-sm bg-white  p-8">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Decentralization and Transparency
-                </h1>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Decentralization and Transparency
+                  </h1>
 
-                <p className="mt-2 text-black ">
-                  In typical blockchain systems, decentralization implies that
-                  data is stored across multiple servers/nodes. However, for our
-                  specific use-case involving sensitive data, we propose a
-                  centralized blockchain network that would be solely operated
-                  by the designated organization. This approach will ensure that
-                  all data is transparent and visible only within the
-                  organization, maintaining the utmost confidentiality.
-                </p>
+                  <p className="mt-2 text-gray-700 ">
+                    In typical blockchain systems, decentralization implies that
+                    data is stored across multiple servers/nodes. However, for
+                    our specific use-case involving sensitive data, we propose a
+                    centralized blockchain network that would be solely operated
+                    by the designated organization. This approach will ensure
+                    that all data is transparent and visible only within the
+                    organization, maintaining the utmost confidentiality.
+                  </p>
+                </div>
               </div>
 
-              <div className="text-left p-8 shadow-sm rounded-sm bg-white ">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
-                    />
-                  </svg>
-                </span>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
+                      />
+                    </svg>
+                  </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Immutability
-                </h1>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Immutability
+                  </h1>
 
-                <p className="mt-2 text-black ">
-                  The intrinsic nature of blockchain's immutability provides a
-                  secure and unalterable record of transactions. Consequently,
-                  any attempted modification of ownership transfer or asset
-                  creation data becomes extremely challenging. This will enhance
-                  the precision of asset tracking and assure the integrity of
-                  data.
-                </p>
+                  <p className="mt-2 text-gray-700 ">
+                    The intrinsic nature of blockchain's immutability provides a
+                    secure and unalterable record of transactions. Consequently,
+                    any attempted modification of ownership transfer or asset
+                    creation data becomes extremely challenging. This will
+                    enhance the precision of asset tracking and assure the
+                    integrity of data.
+                  </p>
+                </div>
               </div>
 
-              <div className="shadow-sm rounded-sm bg-white  p-8 ">
-                <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    />
-                  </svg>
-                </span>
+              <div className="text-left shadow-sm rounded-sm bg-white">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  className="h-[236px] object-cover"
+                />
+                <div className="p-4">
+                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
+                    </svg>
+                  </span>
 
-                <h1 className="mt-4 text-[20px] font-bold font-Poppins text-black ">
-                  Security
-                </h1>
+                  <h1 className=" text-[20px] font-bold font-Poppins text-blue-gray-900 ">
+                    Security
+                  </h1>
 
-                <p className="mt-2 text-black ">
-                  Even within the already secure private network of the
-                  designated organization, the blockchain provides an additional
-                  layer of protection. Its cryptographic algorithms, combined
-                  with the consensus mechanism for transaction validation, make
-                  it highly resistant to fraud and cyberattacks. Centralizing
-                  the blockchain network within the organization and ensuring
-                  data transparency only within this network would address the
-                  existing asset management and tracking challenges effectively.
-                </p>
+                  <p className="mt-2 text-gray-700 ">
+                    Even within the already secure private network of the
+                    designated organization, the blockchain provides an
+                    additional layer of protection. Its cryptographic
+                    algorithms, combined with the consensus mechanism for
+                    transaction validation, make it highly resistant to fraud
+                    and cyberattacks. Centralizing the blockchain network within
+                    the organization and ensuring data transparency only within
+                    this network would address the existing asset management and
+                    tracking challenges effectively.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </div>
       <section className=" container py-12 mx-auto mt-12 flex justify-center  ">
-        {/* <h2 className="font-bold lg:text-[40px]  text-3xl text-black mb-8 ">
-          Video
-        </h2> */}
-        {/* <video
-          data-aos="zoom-out"
-          src={blockchainVideo}
-          controls
-          className="z-10"
-          preload
-          poster={require("../../assets/blockchainBanner.png")}
-        /> */}
         <iframe
           data-aos="zoom-out"
           width="1005"
