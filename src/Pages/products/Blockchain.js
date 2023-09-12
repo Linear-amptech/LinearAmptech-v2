@@ -405,7 +405,7 @@ const Blockchain = () => {
       </section>
 
       <div className="lg:pr-40 lg:pl-40 mt-16" data-aos="fade-up">
-        <section className="bg-white ">
+        <section className=" ">
           <div className="container px-4 py-10 mx-auto">
             <h1 className="lg:text-[40px] text-3xl font-bold text-black capitalize mb-8   ">
               Features
@@ -413,36 +413,6 @@ const Blockchain = () => {
 
             <div className="mt-2 lg:flex lg:items-stretch">
               <div className="grid w-full grid-cols-1 gap-4 lg:w-1/2 xl:gap-8 md:grid-cols-2">
-                {/* <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
-                  <span className="inline-block p-3 text-[#0465F8] bg-blue-100   dark:bg-blue-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                      />
-                    </svg>
-                  </span>
-
-                  <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    User Management
-                  </h1>
-
-                  <p className="text-black">
-                    A feature that allows the creation, editing, and deletion of
-                    users in the app. Each user can have their own set of
-                    permissions, such as the ability to view, assign, or return
-                    products.
-                  </p>
-                </div> */}
-
                 <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                     <svg
@@ -536,35 +506,7 @@ const Blockchain = () => {
                     security and trust in the system.
                   </p>
                 </div>
-                {/* <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
-                  <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                      />
-                    </svg>
-                  </span>
 
-                  <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
-                    Reporting
-                  </h1>
-
-                  <p className="text-black">
-                    A feature that generates reports on product assignments,
-                    returns, and inventory levels. Reports can be exported in
-                    various formats, such as CSV or PDF, and can be customized
-                    to include different metrics and filters.
-                  </p>
-                </div> */}
                 <div className="space-y-2 shadow-sm rounded-sm bg-white  p-4">
                   <span className="inline-block p-3  text-[#0465F8] bg-blue-100    dark:bg-blue-500">
                     <svg
@@ -625,90 +567,6 @@ const Blockchain = () => {
           </div>
         </section>
       </div>
-
-      <div className="w-[100vw] h-[100px]">
-        <div data-aos="fade-up" data-aos-duration="1000">
-          <BgElement2 className="lg:w-[300px] absolute origin-center lg:-left-36 -translate-y-[30%] w-[180px] -left-20" />
-        </div>
-      </div>
-      <div>
-        {/* <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
-          <div className="container lg:flex justify-center items-center lg:px-[12%] pt-12 mx-auto text-left px-4">
-            <div className="lg:w-[50%]">
-              <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-black mb-2 ">
-                E2E Machine Learning Platform
-              </h2>
-
-              <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                Our solution streamlines the entire deployment process,
-                including seamless integration with various data sources
-                including hardware sensors or data streams allowing
-                organizations to fully harness the power of AI and IoT in their
-                operations.
-              </p>
-            </div>
-            <div className="lg:w-[50%] flex justify-center items-center">
-              <img
-                src={require("../../assets/AIQube/2.png")}
-                className="w-[750px]"
-              ></img>
-            </div>
-          </div>
-        </section> */}
-      </div>
-      <div>
-        {/* <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
-          <div className="container lg:flex justify-center items-center gap-10 lg:px-[12%] pt-12 mx-auto text-left px-4">
-            <div className="lg:w-[50%] flex justify-center items-center">
-              <img
-                src={require("../../assets/AIQube/3.png")}
-                className="w-[750px]"
-              ></img>
-            </div>
-            <div className="lg:w-[50%]">
-              <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-black mb-2 ">
-                Hybrid Cloud Management
-              </h2>
-
-              <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                We offer the flexibility of cloud based on premise or hybrid
-                deployment options, allowing companies to choose the best
-                solution for their unique data security and cost efficiency
-                needs. It offers a scalable and adaptable solution that meets
-                the evolving needs of organizations.
-              </p>
-            </div>
-          </div>
-        </section> */}
-      </div>
-      <div data-aos="fade-up" data-aos-duration="1500">
-        <BgElement3 className="lg:w-[300px] w-[200px] absolute origin-center -right-[340px] -translate-y-[50%]" />
-      </div>
-      {/* <div className="mb-20">
-        <section className="bg-white  lg:mt-8 mt-4 xl:mt-12 ">
-          <div className="container lg:flex justify-center items-center gap-10 lg:px-[12%] pt-12 mx-auto text-left px-4">
-            <div className="lg:w-[50%]">
-              <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-black mb-2 ">
-                IoT Data Analytics
-              </h2>
-
-              <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem]">
-                Harness the power of AI-driven analytics to optimize production
-                processes, improve predictive maintenance, and gain valuable
-                insights into your operations. Leverage AI-generated insights to
-                make data-driven decisions, enabling better resource allocation
-                and risk mitigation.
-              </p>
-            </div>
-            <div className="lg:w-[50%] flex justify-center items-center">
-              <img
-                src={require("../../assets/AIQube/4.png")}
-                className="w-[750px]"
-              ></img>
-            </div>
-          </div>
-        </section>
-      </div> */}
 
       <Footer />
     </div>
