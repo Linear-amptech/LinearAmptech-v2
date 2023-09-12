@@ -272,7 +272,7 @@ const Blockchain = () => {
             >
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/005/307/211/non_2x/top-view-of-double-exposure-of-businessman-hand-working-with-new-modern-computer-and-business-strategy-as-concept-free-photo.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
@@ -311,7 +311,7 @@ const Blockchain = () => {
 
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/004/870/739/non_2x/blockchain-concept-banner-isometric-digital-blocks-connection-with-each-other-and-shapes-crypto-chain-blocks-or-cubes-connection-consists-digits-abstract-technology-background-illustration-free-vector.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
@@ -349,7 +349,7 @@ const Blockchain = () => {
 
               <div className="text-left shadow-sm rounded-sm bg-white">
                 <img
-                  src="https://static.vecteezy.com/system/resources/previews/007/024/701/non_2x/technology-artificial-intelligence-mechanical-free-vector.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/003/497/182/non_2x/internet-cyber-security-connection-concept-background-free-vector.jpg"
                   className="h-[236px] object-cover rounded-t-sm"
                 />
                 <div className="p-4">
