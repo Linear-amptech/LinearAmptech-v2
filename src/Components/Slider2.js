@@ -10,6 +10,7 @@ export default function Slider2() {
       className="rounded-none bg-white  "
       loop={true}
       autoplay={true}
+      autoplayDelay={"9000"}
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
