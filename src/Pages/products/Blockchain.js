@@ -431,11 +431,11 @@ const Blockchain = () => {
                     </svg>
                   </span>
 
-                  <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
+                  <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
                     Transparent and Tamper-proof Record Keeping
                   </h1>
 
-                  <p className="text-black">
+                  <p className="text-gray-700">
                     Every transaction made within the system, including
                     procurement, storage, usage, and transfer of assets, is
                     recorded on the blockchain. This secure, transparent, and
@@ -462,11 +462,11 @@ const Blockchain = () => {
                     </svg>
                   </span>
 
-                  <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
+                  <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
                     Automated Transactions through Smart Contracts
                   </h1>
 
-                  <p className="text-black">
+                  <p className="text-gray-700">
                     Smart contracts enable the automatic execution of
                     transactions based on predefined rules, thus automating
                     processes such as updating inventory after procurement or
@@ -491,11 +491,11 @@ const Blockchain = () => {
                     </svg>
                   </span>
 
-                  <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
+                  <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
                     Single Authority Control
                   </h1>
 
-                  <p className="text-black">
+                  <p className="text-gray-700">
                     Our blockchain network operates on a Proof-of-Authority
                     (PoA) consensus model. Since we have set up only a single
                     node, this model assigns the designated organization as the
@@ -523,11 +523,11 @@ const Blockchain = () => {
                     </svg>
                   </span>
 
-                  <h1 className="text-[20px] font-bold font-Poppins  text-black capitalize ">
+                  <h1 className="text-[20px] font-bold font-Poppins  text-blue-gray-900 capitalize ">
                     User-Friendly Interface
                   </h1>
 
-                  <p className="text-black">
+                  <p className="text-gray-700">
                     Despite the advanced technology and features, our blockchain
                     network remains accessible through its intuitive and
                     user-friendly interface. This makes it possible for users of
@@ -537,7 +537,7 @@ const Blockchain = () => {
                 </div>
               </div>
 
-              <div className=" lg:flex lg:w-1/2 lg:justify-between lg:ml-8 mt-4 lg:mt-0 shadow-md flex-col ">
+              <div className=" lg:flex lg:w-1/2 lg:justify-between lg:ml-8 mt-4 lg:mt-0 shadow-sm flex-col ">
                 <img
                   className="  flex-shrink-0 lg:flex-shrink-0 object-cover rounded-t-sm  "
                   src={require("../../assets/blockchain1.png")}
