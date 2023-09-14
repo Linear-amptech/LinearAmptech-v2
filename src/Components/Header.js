@@ -68,7 +68,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <NavLink to="/">
               <img
-                className="w-auto h-10 sm:h-16 sm:w-auto"
+                className="w-auto h-14 sm:h-16 sm:w-auto"
                 src={require("../assets/logo.png")}
                 alt="linear-amptec-logo"
               />
