@@ -12,7 +12,7 @@ export default function Slider2() {
       autoplay={true}
       autoplayDelay={"9000"}
       navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2">
+        <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2 w-full">
           {new Array(length).fill("").map((_, i) => (
             <span
               key={i}
@@ -94,7 +94,7 @@ export default function Slider2() {
                 Correlation Interferometry, amonog others.
               </p>
 
-              <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
+              <div className="flex flex-col my-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
                 <NavLink
                   className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-blue-900/10 hover:shadow-gray-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
                   to="/innovations"
@@ -105,18 +105,15 @@ export default function Slider2() {
             </div>
           </div>
 
-          <div className="w-full h-64 lg:w-1/2 lg:h-full">
-            <div
-              className="w-full  bg-cover h-[700px]"
-              style={{
-                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/027/187/520/non_2x/reinventing-industry-3d-insights-into-industrial-iot-s-data-revolution-ai-generated-free-photo.jpg")`,
-              }}
-            >
-              <div className="w-full h-full bg-black opacity-25"></div>
-            </div>
+          <div className="w-full  lg:w-1/2 lg:h-full ">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/027/187/520/non_2x/reinventing-industry-3d-insights-into-industrial-iot-s-data-revolution-ai-generated-free-photo.jpg"
+              className="lg:h-[700px] md:h-[500px] h-[320px] w-full object-fill "
+            />
           </div>
         </div>
       </div>
+
       <div>
         <div className="lg:flex  shadow-md">
           <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
@@ -134,7 +131,7 @@ export default function Slider2() {
                 background algorithms.
               </p>
 
-              <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
+              <div className="flex flex-col my-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
                 <NavLink
                   className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-blue-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
                   to="/innovations"
@@ -145,15 +142,11 @@ export default function Slider2() {
             </div>
           </div>
 
-          <div className="w-full h-64 lg:w-1/2 lg:h-full">
-            <div
-              className="w-full  bg-cover h-[700px]"
-              style={{
-                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/001/255/052/non_2x/artificial-intelligence-chip-and-network-connection-lines-vector.jpg")`,
-              }}
-            >
-              <div className="w-full h-full bg-black opacity-25"></div>
-            </div>
+          <div className="w-full  lg:w-1/2 lg:h-full bg-black">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/001/255/052/non_2x/artificial-intelligence-chip-and-network-connection-lines-vector.jpg"
+              className="lg:h-[700px] md:h-[500px] h-[300px] w-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -176,7 +169,7 @@ export default function Slider2() {
                 clients.
               </p>
 
-              <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
+              <div className="flex flex-col my-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
                 <NavLink
                   className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-gray-900/10 hover:shadow-blue-900/20 active:opacity-[0.85] rounded-sm shadow-none hover:shadow-none"
                   to="/innovations"
@@ -187,15 +180,11 @@ export default function Slider2() {
             </div>
           </div>
 
-          <div className="w-full h-64 lg:w-1/2 lg:h-full">
-            <div
-              className="w-full  bg-cover h-[700px]"
-              style={{
-                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/011/557/896/non_2x/satellite-dish-background-free-photo.jpg")`,
-              }}
-            >
-              <div className="w-full h-full bg-black opacity-25"></div>
-            </div>
+          <div className="w-full  lg:w-1/2 lg:h-full bg-black">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/011/557/896/non_2x/satellite-dish-background-free-photo.jpg"
+              className="lg:h-[700px] md:h-[500px] h-[300px] w-full object-cover"
+            />
           </div>
         </div>
       </div>
