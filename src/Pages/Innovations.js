@@ -213,7 +213,7 @@ const Innovations = () => {
                     <div className="inline-block ">
                       <img
                         src="https://static.vecteezy.com/system/resources/previews/010/422/007/non_2x/artificial-intelligence-cybernetic-circuit-brain-inside-high-technology-to-create-artificial-intelligence-ai-concept-illustration-free-vector.jpg"
-                        className="rounded-t-sm h-[236px] w-full object-cover"
+                        className="rounded-t-sm h-[236px]w-[600px] object-cover"
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
@@ -251,7 +251,7 @@ const Innovations = () => {
                     <div className="inline-block  ">
                       <img
                         src="https://static.vecteezy.com/system/resources/previews/024/928/388/non_2x/modern-computer-equipment-illuminates-dark-office-for-futuristic-research-generated-by-ai-free-photo.jpg"
-                        className="rounded-t-sm h-[236px]"
+                        className="rounded-t-sm h-[236px] w-[600px] object-cover"
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
@@ -297,7 +297,7 @@ const Innovations = () => {
                     <div className="inline-block ">
                       <img
                         src="https://static.vecteezy.com/system/resources/previews/007/126/117/non_2x/businessman-throwing-red-arrow-dart-to-virtual-target-dart-board-setup-objectives-and-target-for-business-investment-concept-free-photo.jpg"
-                        className="rounded-t-sm h-[236px]"
+                        className="rounded-t-sm h-[236px] w-[600px] object-cover"
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
@@ -336,7 +336,7 @@ const Innovations = () => {
                     <div className="inline-block ">
                       <img
                         src="https://static.vecteezy.com/system/resources/previews/017/185/955/non_2x/business-intelligence-and-big-data-analysis-technology-with-chart-and-graph-icons-on-a-digital-screen-interface-innovation-in-statistics-and-analytics-insights-and-predictions-free-photo.jpg"
-                        className="rounded-t-sm h-[236px]"
+                        className="rounded-t-sm h-[236px] w-[600px] object-cover"
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
@@ -374,7 +374,7 @@ const Innovations = () => {
                     <div className="inline-block ">
                       <img
                         src="https://images.pexels.com/photos/17483874/pexels-photo-17483874/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-by-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        className="rounded-t-sm h-[236px]"
+                        className="rounded-t-sm h-[236px] w-[600px] object-cover"
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
@@ -413,7 +413,7 @@ const Innovations = () => {
                     <div className="inline-block ">
                       <img
                         src="https://static.vecteezy.com/system/resources/previews/000/663/811/non_2x/data-security-vector.jpg"
-                        className="rounded-t-sm h-[236px]"
+                        className="rounded-t-sm h-[236px] w-[600px] object-cover"
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
