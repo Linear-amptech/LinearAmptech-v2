@@ -551,7 +551,7 @@ const Innovations = () => {
         </div>
       </div>
       <div className="lg:pr-40 lg:pl-40 ">
-        <div className="py-12 container bg-white my-20 px-4 rounded-sm">
+        <div className="py-12 container bg-white my-12 px-4 rounded-sm">
           <h2 className="lg:text-[2.5rem] text-3xl font-bold mb-5 ">LoraWAN</h2>
           <div className="lg:flex justify-between">
             <div className="lg:w-[50%]">
