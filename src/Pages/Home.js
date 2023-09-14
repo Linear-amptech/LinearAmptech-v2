@@ -79,7 +79,7 @@ const Home = () => {
       {/* *********************Innovation ****************************** */}
 
       {/* *********************AboutUs ****************************** */}
-      <div className="aboutUs w-[100%] px-[10%] flex flex-col justify-center items-center gap-5 py-14 bg-gradient-to-tr from-blue-600 to-blue-400 text-white">
+      <div className="aboutUs w-[100%] lg:px-[10%] md:px-[6%] px-4 flex flex-col justify-center items-center gap-5 py-14 bg-gradient-to-tr from-blue-600 to-blue-400 text-white">
         <h2 className="lg:text-[2.5rem] text-3xl font-bold text-center">
           About Us
         </h2>
