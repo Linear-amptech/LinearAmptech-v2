@@ -213,7 +213,7 @@ const Innovations = () => {
                     <div className="inline-block ">
                       <img
                         src="https://static.vecteezy.com/system/resources/previews/010/422/007/non_2x/artificial-intelligence-cybernetic-circuit-brain-inside-high-technology-to-create-artificial-intelligence-ai-concept-illustration-free-vector.jpg"
-                        className="rounded-t-sm h-[236px]w-[600px] object-cover"
+                        className="rounded-t-sm h-[236px] w-[600px] object-cover"
                       />
                     </div>
                     <div className="px-4 pt-0 pb-4">
