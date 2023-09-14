@@ -44,7 +44,7 @@ const Innovations = () => {
                 Innovation that drives progress
               </p>
               <NavLink
-                className="align-middle select-none text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3.5 px-7 border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] rounded-sm font-Poppins capitalize border-2 text-[1.1rem] font-normal"
+                className="align-middle select-none text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none lg:py-3.5 lg:px-7 py-2 px-5 border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] rounded-sm font-Poppins capitalize border-2 lg:text-[1.1rem] text-[1rem] font-normal"
                 to="/about-us"
               >
                 Read more
