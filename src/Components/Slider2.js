@@ -12,7 +12,7 @@ export default function Slider2() {
       autoplay={true}
       autoplayDelay={"9000"}
       navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-8 left-[55%] z-50 flex -translate-x-2/4 gap-2 w-full">
+        <div className="absolute bottom-12 left-[55%] z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
             <span
               key={i}
@@ -32,7 +32,7 @@ export default function Slider2() {
           color="white"
           size="md"
           onClick={handlePrev}
-          className="!absolute bottom-1 right-16 rounded-full bg-white/10  -translate-y-2/4"
+          className="!absolute bottom-4 right-16 rounded-full bg-white/10  -translate-y-2/4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export default function Slider2() {
           color="white"
           size="md"
           onClick={handleNext}
-          className="!absolute bottom-1 !right-4 rounded-full bg-white/10 -translate-y-2/4"
+          className="!absolute bottom-4 !right-4 rounded-full bg-white/10 -translate-y-2/4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export default function Slider2() {
     >
       <div className="bg-white">
         <div className="lg:flex  shadow-md">
-          <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
+          <div className="flex items-center justify-center w-full px-6 md:pt-0 py-4  lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 Cyber physical system
@@ -105,18 +105,21 @@ export default function Slider2() {
             </div>
           </div>
 
-          <div className="w-full  lg:w-1/2 lg:h-full ">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/027/187/520/non_2x/reinventing-industry-3d-insights-into-industrial-iot-s-data-revolution-ai-generated-free-photo.jpg"
-              className="lg:h-[700px] md:h-[500px] h-[320px] w-full object-fill "
-            />
+          <div className="w-full h-[256px] lg:w-1/2 lg:h-[700px] md:[h-600px] ">
+            <div
+              className="w-full h-full bg-cover "
+              style={{
+                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/027/187/520/non_2x/reinventing-industry-3d-insights-into-industrial-iot-s-data-revolution-ai-generated-free-photo.jpg")`,
+              }}
+            >
+              <div className="w-full h-full bg-black opacity-25"></div>
+            </div>
           </div>
         </div>
       </div>
-
       <div>
         <div className="lg:flex  shadow-md">
-          <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
+          <div className="flex items-center justify-center w-full px-6 md:pt-0 pt-4   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 Artificial Intelligence and Machine Learning
@@ -142,17 +145,21 @@ export default function Slider2() {
             </div>
           </div>
 
-          <div className="w-full  lg:w-1/2 lg:h-full bg-black">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/001/255/052/non_2x/artificial-intelligence-chip-and-network-connection-lines-vector.jpg"
-              className="lg:h-[700px] md:h-[500px] h-[300px] w-full object-cover"
-            />
+          <div className="w-full h-[256px] lg:w-1/2 lg:h-[700px] md:[h-600px]">
+            <div
+              className="w-full  bg-contain h-full"
+              style={{
+                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/001/255/052/non_2x/artificial-intelligence-chip-and-network-connection-lines-vector.jpg")`,
+              }}
+            >
+              <div className="w-full h-full bg-black opacity-25"></div>
+            </div>
           </div>
         </div>
       </div>
       <div>
         <div className="lg:flex  shadow-md">
-          <div className="flex items-center justify-center w-full px-6   lg:w-1/2">
+          <div className="flex items-center justify-center w-full px-6 md:pt-0 pt-4   lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
                 The Radio Frequency Components
@@ -180,11 +187,15 @@ export default function Slider2() {
             </div>
           </div>
 
-          <div className="w-full  lg:w-1/2 lg:h-full bg-black">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/011/557/896/non_2x/satellite-dish-background-free-photo.jpg"
-              className="lg:h-[700px] md:h-[500px] h-[300px] w-full object-cover"
-            />
+          <div className="w-full h-[256px] lg:w-1/2 lg:h-[700px] md:[h-600px] md">
+            <div
+              className="w-full h-full bg-cover "
+              style={{
+                backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/011/557/896/non_2x/satellite-dish-background-free-photo.jpg")`,
+              }}
+            >
+              <div className="w-full h-full bg-black opacity-25"></div>
+            </div>
           </div>
         </div>
       </div>
