@@ -94,7 +94,7 @@ const Innovations = () => {
         </div> */}
         <div className="lg:pr-44 lg:pl-44 mt-16">
           <section className=" ">
-            <div className="container py-12  mx-auto">
+            <div className="container py-12 px-4  mx-auto">
               <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-black capitalize   ">
                 Problems
               </h1>
