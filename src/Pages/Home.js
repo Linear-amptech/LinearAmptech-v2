@@ -20,6 +20,7 @@ import "aos/dist/aos.css";
 
 import TextTransition, { presets } from "react-text-transition";
 import Products from "../Components/Products";
+import Partners from "../Components/Partners";
 const heading = [
   "Linear Amptech",
   "Empowering Automation",
@@ -76,7 +77,8 @@ const Home = () => {
         </h2>
         <Products />
       </div>
-      {/* *********************Innovation ****************************** */}
+      {/* *********************Partners ****************************** */}
+      <Partners />
 
       {/* *********************AboutUs ****************************** */}
       <div className="aboutUs w-[100%] lg:px-[10%] md:px-[6%] px-4 flex flex-col justify-center items-center gap-5 py-14 bg-gradient-to-tr from-blue-600 to-blue-400 text-white">
@@ -99,6 +101,7 @@ const Home = () => {
           Read more
         </NavLink>
       </div>
+
       {/* *********************Footer ****************************** */}
       <Footer />
     </div>
