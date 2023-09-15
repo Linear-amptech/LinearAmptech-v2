@@ -12,7 +12,7 @@ const partners = [
 
 const Partner = ({ logo, name }) => {
   return (
-    <div className="  flex  justify-center  items-center lg:w-[300px] lg:h-[260px] md:w-[260px] md:h-[260px] w-[120px] h-[auto] nested-div py-[2.5rem]">
+    <div className="  flex  justify-center  items-center lg:w-[300px] lg:h-[260px] w-[260px] h-[220px]  nested-div py-[2.5rem]">
       <div className="w-auto h-[120px] flex justify-center items-center">
         <img
           src={logo}
@@ -34,7 +34,7 @@ const Partners = () => {
       </div>
 
       <div className=" bg-[white] mx-auto">
-        <div className="container  mx-auto mt-[2rem] mb-[6rem] px-0 flex justify-center items-center divide-x">
+        <div className="container  mx-auto mt-[2rem] mb-[6rem] px-0 flex flex-wrap justify-center items-center lg:divide-x">
           {partners.map((partner, index) => (
             <Partner key={index} logo={partner.logo} name={partner.name} />
           ))}
