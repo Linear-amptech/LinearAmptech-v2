@@ -2,6 +2,7 @@ import rahul from "../assets/profile/rahul.jpg";
 import bipul from "../assets/profile/bipul.jpg";
 import azhar from "../assets/profile/azhar.jfif";
 import himanshi from "../assets/profile/himanshi.jfif";
+import kavish from "../assets/profile/kavish.jpg";
 
 export const hardwareTeam = [
   {
@@ -33,6 +34,14 @@ export const hardwareTeam = [
     name: "Himanshi Bagel",
     position: "Linear AmpTech",
     linkedin: "https://www.linkedin.com/in/himanshi-baghel-846747234",
+    twitter: "#",
+    facebook: "#",
+  },
+  {
+    photo: kavish,
+    name: "Kavish Lodha",
+    position: "Paytm",
+    linkedin: "https://www.linkedin.com/in/kvishldha/",
     twitter: "#",
     facebook: "#",
   },
