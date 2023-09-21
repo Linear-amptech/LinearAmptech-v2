@@ -1,4 +1,4 @@
-import karun from "../assets/profile/karun.png";
+import karun from "../assets/profile/karun.jpeg";
 import minakshi from "../assets/profile/minakshi.png";
 import vivek from "../assets/profile/vivek.jpeg";
 import gowrish from "../assets/profile/gowrish.jpg";
