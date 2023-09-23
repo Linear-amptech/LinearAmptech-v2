@@ -5,6 +5,7 @@ import himanshi from "../assets/profile/himanshi.jfif";
 import kavish from "../assets/profile/kavish.jpg";
 import parthsarthi from "../assets/profile/parthsarthi.jpg";
 import amitkumar from "../assets/profile/amitkumar.jpg";
+import harshkumar from "../assets/profile/harshKumar.jpg";
 
 export const hardwareTeam = [
   {
@@ -60,6 +61,14 @@ export const hardwareTeam = [
     name: "Amit Kumar ",
     position: "Linear AmpTech",
     linkedin: "https://www.linkedin.com/in/amit-kumar-730491226/",
+    twitter: "#",
+    facebook: "#",
+  },
+  {
+    photo: harshkumar,
+    name: "Harsh Kumar",
+    position: "Linear AmpTech",
+    linkedin: "https://www.linkedin.com/in/harsh-kumar-a92878233/",
     twitter: "#",
     facebook: "#",
   },
