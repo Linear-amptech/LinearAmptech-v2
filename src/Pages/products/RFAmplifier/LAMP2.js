@@ -15,13 +15,13 @@ const LAMP2 = () => {
         <h2 className="text-[3rem] font-bold mb-5">
           Power Amplifier: LAMP-PAMOCBJ-10W
         </h2>
-        <p className="font-semibold text-[1.5rem]">
+        <p className="font-semibold text-[1.5rem] text-blue-gray-900">
           50 Ω, Wideband, 1.5 to 2.5 GHz, 7.7-10 W, 28V, SMA.
         </p>
         <div className="lg:flex justify-between">
           <div className="lg:w-[50%]">
             <h2 className="text-[1.8rem] font-bold mt-5">Key Features</h2>
-            <ul className="list-disc my-3 ml-8 flex flex-col gap-1">
+            <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-blue-gray-700">
               <li> Frequency:0.55-3.25GHz</li>
               <li> Drain efficiency: 60-70.1%</li>
               <li> Output power: 39.1-41.55dBm</li>
@@ -30,7 +30,7 @@ const LAMP2 = () => {
               <li> C/IMD3,{"< "} -28 dBc at 3dB back-off of output power</li>
             </ul>
             <h2 className="text-[1.8rem] font-bold mt-5">Applications</h2>
-            <ul className="list-disc my-3 ml-8 flex flex-col gap-1">
+            <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-blue-gray-700">
               <li> Transmitters</li>
               <li> Laboratory use</li>
               <li> Defense</li>
