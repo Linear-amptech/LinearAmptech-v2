@@ -27,10 +27,10 @@ const Innovations = () => {
               autoPlay
               muted
               loop
-              src={video}
+              src="https://static.vecteezy.com/system/resources/previews/024/126/266/mp4/advanced-technology-concept-visualization-circuit-board-cpu-processor-microchip-starting-artificial-intelligence-digitalization-of-neural-networking-and-cloud-computing-data-digital-lines-move-data-free-video.mp4"
               className="absolute top-0 left-0 w-screen h-screen object-cover z-0 "
             />
-            <div className=" relative z-10  lg:h-[612px] w-[100%] text-white  flex justify-center items-center flex-col lg:-mt-12 ">
+            <div className=" relative z-10  lg:h-[612px] w-[100%] text-white  flex justify-center items-center flex-col lg:-mt-12 bg-black/20 ">
               <h2
                 className=" lg:text-[5rem] text-4xl font-bold drop-shadow-2xl  "
                 data-aos="fade-up"
