@@ -16,13 +16,13 @@ const LAMP3 = () => {
         <h2 className="text-[3rem] font-bold mb-5">
           Power Amplifier: LAMP-PAMOCCE-10W
         </h2>
-        <p className="font-semibold text-[1.5rem]">
+        <p className="font-semibold text-[1.5rem] text-blue-gray-900">
           50 Ω, Wideband, 0.45 to 2.9 GHz, 10W, 28V, SMA.
         </p>
         <div className="lg:flex justify-between">
           <div className="lg:w-[50%]">
             <h2 className="text-[1.8rem] font-bold mt-5">Key Features</h2>
-            <ul className="list-disc my-3 ml-8 flex flex-col gap-1">
+            <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-blue-gray-700">
               <li> Frequency:0.45-2.9GHz</li>
               <li> Drain efficiency: 60-72.9%</li>
               <li> Output power: 39.6-41.7dBm</li>
@@ -32,7 +32,7 @@ const LAMP3 = () => {
               <li> C/IMD3, {"<"} -26 dBc at 3dB back-off of output power</li>
             </ul>
             <h2 className="text-[1.8rem] font-bold mt-5">Applications</h2>
-            <ul className="list-disc my-3 ml-8 flex flex-col gap-1">
+            <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-blue-gray-700">
               <li> Transmitters</li>
               <li> Laboratory use</li>
               <li> Defense</li>
