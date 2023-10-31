@@ -67,7 +67,7 @@ const AboutUs = () => {
               </h2>
 
               <p className="mt-4 lg:text-[20px] md:text-[18px] text-base text-blue-gray-800 leading-loose pb-10 ">
-                Linear Amplifier Technology & Services private ltd (Linear
+                Linearized Amplifier Technology & Services private ltd (Linear
                 Amp-tech) is a company formed and driven by innovative minds of
                 Indian I.I.T Roorkee. The company is Incubated in I.I.T Roorkee
                 and includes students and professors on the board of directors.
