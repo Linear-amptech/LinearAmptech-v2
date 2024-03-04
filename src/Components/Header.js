@@ -302,7 +302,7 @@ const Header = () => {
                         </h2>
                       </NavLink>
                       <ul className="flex flex-col gap-5">
-                        <NavLink to="/products/cyber-physical-system-and-signal-processing">
+                        <NavLink to="/products/wait-system">
                           <li className="flex gap-4 justify-start items-center text-[0.95rem]">
                             <div className="w-12 p-3  h-12 flex justify-center items-center text-red-500 bg-red-50 ">
                               <MdSystemUpdateAlt className="text-[2rem]" />

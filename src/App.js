@@ -15,6 +15,7 @@ import {
   PassiveC,
   PassiveD,
 } from "./Pages/products/RFPassiveComp";
+import WaitSystem from "./Pages/waitSystem/WaitSystem";
 
 function App() {
   return (
@@ -92,11 +93,7 @@ function App() {
             exact
             element={<TempProduct />}
           />
-          <Route
-            path="/products/cyber-physical-system-and-signal-processing"
-            exact
-            element={<CyberSystem />}
-          />
+          <Route path="/products/wait-system" exact element={<WaitSystem />} />
           <Route path="/products/ai-and-ml" exact element={<AIandML />} />
 
           <Route
