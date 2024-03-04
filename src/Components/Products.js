@@ -79,7 +79,7 @@ export default function Products() {
         </CardBody>
         <CardFooter className="pt-0">
           <NavLink
-            to="/products/cyber-physical-system-and-signal-processing"
+            to="/products/wait-system"
             className="align-middle select-none  font-semibold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-700 text-white shadow-md shadow-gray-900/10  h active:opacity-[0.85] rounded-sm capitalize hover:shadow-blue-900/20 hover:bg-gradient-to-tr hover:from-blue-600 hover:to-blue-300 "
           >
             Read More
