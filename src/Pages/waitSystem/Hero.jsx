@@ -49,12 +49,12 @@ export default function Hero() {
               traffic rules and regulations which can also help reduce accidents
               by promoting safer driving practices and deterring reckless
               behavior on the road. <br />
-              Controlling traffic flow with WAIT system: by using a bi-color
+              Controlling traffic flow with WAIT system: by using a blinker
               light we can use the WAIT system to stop vehicles coming in a
               region where traffic congestion is already high. By using LoRa
               nodes for communication in the WAIT system, a LoRaWAN network can
-              be used as a base layer for smart city communications among the
-              different IoT devices
+              be used as a base layer for traffic management and regulations in
+              remote locations where regular human intervention is difficult.
             </p>
           </div>
         </div>
