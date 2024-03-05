@@ -1,5 +1,6 @@
 import logo from "../../assets/WaitSystem/logo.png";
 import wait1 from "../../assets/WaitSystem/wait1.png";
+import broucher from "../../assets/media/PRIVACY-POLICY.pdf";
 
 export default function Header() {
   return (
@@ -41,11 +42,11 @@ export default function Header() {
                   </a>
                   <div>
                     <a
-                      href="https://waitsystem.vercel.app/"
-                      className="flex justify-center items-center font-semibold text-base w-[162px] h-[62px] tracking-wider transition-colors duration-300 transform bg-transparent lg:mx-4 hover:bg-[#38354B] border border-[#555174] text-[#5F5F5F] hover:border-none hover:text-white relative group/btn box-border"
+                      href={broucher}
+                      className="flex justify-center items-center font-semibold text-base w-[240px] h-[62px] tracking-wider transition-colors duration-300 transform bg-transparent lg:mx-4 hover:bg-[#38354B] border border-[#555174] text-[#5F5F5F] hover:border-none hover:text-white relative group/btn box-border"
                       target="_blank"
                     >
-                      Visit Site
+                      Download Broucher
                       <span className=" absolute right-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover/btn:opacity-100">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

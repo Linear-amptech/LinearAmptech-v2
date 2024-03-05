@@ -5,6 +5,7 @@ export default function Animation() {
     <>
       <div className="container mx-auto ">
         <video
+          playsInline
           autoPlay
           muted
           loop

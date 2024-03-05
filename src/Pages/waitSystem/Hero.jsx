@@ -1,6 +1,7 @@
 import wait2 from "../../assets/WaitSystem/wait2.png";
 import wait3 from "../../assets/WaitSystem/wait3.png";
 import wait4 from "../../assets/WaitSystem/wait4.png";
+import waitNew from "../../assets/WaitSystem/wait-new2.png";
 export default function Hero() {
   return (
     <div id="about">
@@ -35,7 +36,7 @@ export default function Hero() {
         <div className=" container mx-auto flex justify-between gap-4 items-center  lg:flex-row flex-col-reverse   xl:px-12 2xl:px-36 md:px-8 px-4 py-12 group">
           <div className="lg:max-w-[520px] lg:max-h-[375px] w-full overflow-hidden shrink">
             <img
-              src={wait3}
+              src={waitNew}
               className="group-hover:scale-125 transition-all duration-500 cursor-pointer"
             />
           </div>
