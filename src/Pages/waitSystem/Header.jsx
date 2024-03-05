@@ -1,6 +1,6 @@
 import logo from "../../assets/WaitSystem/logo.png";
 import wait1 from "../../assets/WaitSystem/wait1.jpeg";
-import broucher from "../../assets/media/PRIVACY-POLICY.pdf";
+import broucher from "../../assets/WaitSystem/broucher.pdf";
 
 export default function Header() {
   return (

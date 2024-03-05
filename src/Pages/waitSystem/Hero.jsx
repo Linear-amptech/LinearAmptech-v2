@@ -62,6 +62,10 @@ export default function Hero() {
       </div>
       <div className="container  xl:px-12 2xl:px-36 md:px-8 px-4 mx-auto py-20 ">
         <img src={wait4} className="bg-white" />
+        <p className="mx-auto text-center italic">
+          The actual placement of units and their form factor may differ from
+          this schematic
+        </p>
       </div>
       <div className="">
         <h1 className="text-4xl font-bold text-[#0A093D] leading-none container  xl:px-12 2xl:px-36 md:px-8 px-4 mx-auto py-12">
