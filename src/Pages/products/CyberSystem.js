@@ -64,7 +64,7 @@ const CyberSystem = () => {
         <div className="lg:flex  justify-center gap-16 my-36 px-[10%]">
           <div className="lg:w-[400px] lg:h-[400px] md:w-[600px] md:h-[600px] h-[350px] w-[350px] bg-[#F2F2F2] flex justify-center rounded-2xl shadow-md">
             <img
-              src={require("../../assets/WaitSystem/wait1.png")}
+              src={require("../../assets/WaitSystem/wait1.jpeg")}
               className="w-[100%]  "
             ></img>
           </div>
