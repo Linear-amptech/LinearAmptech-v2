@@ -1,7 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AboutUs, Home, Team, Innovations, NewsEvents } from "./Pages";
-import { AiCube, GanMMIC, RFPassive, RFPowerAmp, SDR } from "./Pages/products";
+import {
+  AiCube,
+  GanMMIC,
+  RFPassive,
+  RFPowerAmp,
+  SDR,
+  ShotScope,
+} from "./Pages/products";
 import InventorySystem from "./Pages/products/InventorySystem";
 import Hrms from "./Pages/products/HRMS";
 import Blockchain from "./Pages/products/Blockchain";
@@ -95,6 +102,7 @@ function App() {
           />
           <Route path="/products/wait-system" exact element={<WaitSystem />} />
           <Route path="/products/ai-and-ml" exact element={<AIandML />} />
+          <Route path="/products/shotscope" exact element={<ShotScope />} />
 
           <Route
             path="/products/rf-power-amplifiers"

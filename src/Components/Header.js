@@ -18,6 +18,7 @@ import {
   MdMicrowave,
   MdClear,
 } from "react-icons/md";
+import { RiScan2Line } from "react-icons/ri";
 import { IoMdAnalytics } from "react-icons/io";
 import { TbDeviceDesktopAnalytics } from "react-icons/tb";
 import { AiCube } from "../assets";
@@ -319,6 +320,16 @@ const Header = () => {
                             </div>
                             <p className="hover:text-[#616161] text-blue-gray-700">
                               AI Qube Data Core
+                            </p>
+                          </li>
+                        </NavLink>
+                        <NavLink to="/products/shotscope">
+                          <li className="flex gap-4 justify-start items-center text-[0.95rem]">
+                            <div className="w-12  h-12 p-3 flex justify-center items-center  bg-blue-gray-50">
+                              <RiScan2Line className="text-[2rem] text-blue-gray-900" />
+                            </div>
+                            <p className="hover:text-[#616161] text-blue-gray-700">
+                              ShotScope
                             </p>
                           </li>
                         </NavLink>

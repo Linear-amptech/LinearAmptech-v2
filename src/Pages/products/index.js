@@ -6,3 +6,4 @@ export { default as RFPowerAmp } from "./RFPowerAmp";
 export { default as RFPassive } from "./RFPassive";
 export { default as GanMMIC } from "./GanMMIC";
 export { default as AiCube } from "./AiCube";
+export { default as ShotScope } from "./shotScope/ShotScope";
