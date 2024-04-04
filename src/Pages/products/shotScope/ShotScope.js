@@ -65,7 +65,7 @@ const ShotScope = () => {
         <section className="">
           <div className="container px-4 py-12  mx-auto">
             <h1 className="lg:text-[40px] text-3xl mb-8 font-bold text-gray-900 capitalize   ">
-              Problem and Challanges
+              Problems
             </h1>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
