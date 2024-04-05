@@ -392,7 +392,7 @@ const ShotScope = () => {
               <div className="lg:w-[50%] flex justify-center items-center">
                 <img
                   src={require("../../../assets/shotscope/shotscope2.png")}
-                  className="w-[750px] rounded-md shadow-lg"
+                  className="w-[750px] h-auto  rounded-md shadow-lg"
                 ></img>
               </div>
             </div>
@@ -401,23 +401,24 @@ const ShotScope = () => {
         <div>
           <section className=" lg:mt-8 mt-4 xl:mt-12 mb-12 pb-12">
             <div className="container lg:flex justify-center items-center gap-10  pt-12 mx-auto text-left px-4">
-              <div className="lg:w-[50%] flex justify-center items-center">
+              <div className="lg:w-[50%]  flex justify-center items-center">
                 <img
                   src={require("../../../assets/shotscope/shotscope.png")}
-                  className="w-[650px] max-h-[400px] bg-contain shadow-md rounded-md"
+                  className="w-[400px] h-auto lg:px-20 px-4 shadow-md rounded-md"
                 ></img>
               </div>
               <div className="lg:w-[50%]">
                 <h2 className="font-bold lg:text-[40px] leading-relaxed text-3xl text-blue-gray-900 mb-2 ">
-                  Next-Gen Sniper Detection Integration
+                  Next-Gen Gunshot Detection Integration
                 </h2>
 
                 <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem] text-gray-700">
-                  Experience the future of security with our cutting-edge Sniper
-                  Detection System. Seamlessly connecting to central control via
-                  LoRA technology, this system revolutionizes threat response.
-                  Upon detection, it instantly pinpoints shooter locations on an
-                  intuitive map GUI, providing immediate situational awareness.
+                  Experience the future of security with our cutting-edge
+                  Gunshot Detection System. Seamlessly connecting to central
+                  control via LoRA technology, this system revolutionizes threat
+                  response. Upon detection, it instantly pinpoints shooter
+                  locations on an intuitive map GUI, providing immediate
+                  situational awareness.
                 </p>
               </div>
             </div>
