@@ -26,16 +26,26 @@ const ShotScope = () => {
           <h2 className="text-center font-bold text-[2rem] mb-10 text-gray-900">
             ShotScope
           </h2>
-          <div className="">
+          <div className="mx-auto">
             <div className="container lg:flex lg:px-[12%] pt-12 mx-auto text-left px-4">
-              <div className="lg:w-full relative">
-                <Player
+              <div className="lg:w-full relative mx-auto flex justify-center">
+                <iframe
+                  width="1479"
+                  height="634"
+                  src="https://www.youtube.com/embed/RJX4447zhQ8"
+                  title="ShotScope"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                {/* <Player
                   playsInline
                   poster={poster}
-                  src="https://videos.pexels.com/video-files/4440937/4440937-hd_1920_1080_25fps.mp4"
+                  src="https://videos.pexels.com/video-files/19757074/19757074-uhd_3840_2160_30fps.mp4"
                 >
                   <BigPlayButton position="center" />
-                </Player>
+                </Player>*/}
               </div>
             </div>
           </div>

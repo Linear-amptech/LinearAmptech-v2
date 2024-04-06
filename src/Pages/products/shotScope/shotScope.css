@@ -43,11 +43,13 @@
   transition: all 0s;
 }
 .video-react-big-play-button:hover {
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
-  transform: scale(1.4);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  transition: transform 0.3s ease;
+
+  transform: scale(1.1);
 }
 
 .video-react .video-react-poster {
