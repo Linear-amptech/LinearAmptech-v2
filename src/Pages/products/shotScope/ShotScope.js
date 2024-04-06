@@ -4,8 +4,11 @@ import AOS from "aos";
 import { FaPlayCircle } from "react-icons/fa";
 import "aos/dist/aos.css";
 import "../../../../node_modules/react-modal-video/css/modal-video.css";
+import "../../../../node_modules/video-react/dist/video-react.css";
+import { Player, BigPlayButton } from "video-react";
 import { Footer, Header, OurProduct } from "../../../Components";
 import { BgElement1, BgElement2, BgElement3 } from "../../../assets";
+import poster from "../../../assets/shotscope/banner_last.webp";
 import "./shotScope.css";
 
 const ShotScope = () => {
@@ -23,31 +26,16 @@ const ShotScope = () => {
           <h2 className="text-center font-bold text-[2rem] mb-10 text-gray-900">
             ShotScope
           </h2>
-          <div className="full-width-modal">
+          <div className="">
             <div className="container lg:flex lg:px-[12%] pt-12 mx-auto text-left px-4">
               <div className="lg:w-full relative">
-                <img
-                  src={require("../../../assets/shotscope/shotscopeBg.jpg")}
-                  className="w-full max-h-[600px]"
-                  alt="Demo Background"
-                />
-                <p className="absolute top-[68%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-gray-50 lg:text-4xl md:3xl 3xl font-bold text-center italic">
-                  Precision Protection, Hear the Threat Before It Strikes.
-                </p>
-                <button className="play-button" onClick={() => setOpen(true)}>
-                  <FaPlayCircle className="play-icon text-4xl z-30" />
-                </button>
-                {/* <p className="absolute top-[60%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-bl-50 text-5xl font-bold text-center ">
-                  ShotScope
-                </p> */}
-
-                <ModalVideo
-                  channel="youtube"
-                  youtube={{ autoplay: 1 }}
-                  isOpen={isOpen}
-                  videoId="RJX4447zhQ8"
-                  onClose={() => setOpen(false)}
-                />
+                <Player
+                  playsInline
+                  poster={poster}
+                  src="https://videos.pexels.com/video-files/4440937/4440937-hd_1920_1080_25fps.mp4"
+                >
+                  <BigPlayButton position="center" />
+                </Player>
               </div>
             </div>
           </div>
