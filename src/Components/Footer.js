@@ -128,7 +128,8 @@ const Footer = () => {
             </a>
 
             <p className="mt-4 text-sm text-gray-50 sm:mt-0 ">
-              © Linear Amp-Tech 2023. All Rights Reserved.
+              © Linear Amp-Tech {new Date().getYear() + 1900}. All Rights
+              Reserved.
             </p>
           </div>
         </div>
