@@ -4,6 +4,9 @@ import devansh from "../assets/profile/devansh.jfif";
 import achal from "../assets/profile/achal.jfif";
 import vishu from "../assets/profile/vishu.jfif";
 import shaleen from "../assets/profile/shaleen.jpeg";
+import hafizur from "../assets/profile/hafizur.jpg";
+import kavish from "../assets/profile/kavish.jpg";
+import azhar from "../assets/profile/azhar.jfif";
 export const coreTeam = [
   {
     photo: shaleen,
@@ -19,6 +22,32 @@ export const coreTeam = [
     name: "Kanhaiya Kumar",
     position: "Enphase Energy",
     linkedin: "https://www.linkedin.com/in/kanhaiya-kumar-1ba2b81a1/",
+    twitter: "#",
+    facebook: "#",
+  },
+  {
+    photo: hafizur,
+    name: "Hafizur Rahman",
+    position: "Linear AmpTech",
+    linkedin: "https://www.linkedin.com/in/hafeez25/",
+    twitter: "#",
+    facebook: "#",
+  },
+
+  {
+    photo: azhar,
+    name: "Azhar Ansari",
+    position: "Linear AmpTech",
+    linkedin: "https://www.linkedin.com/in/azhar-ansari-767a85215/",
+    twitter: "#",
+    facebook: "#",
+  },
+
+  {
+    photo: kavish,
+    name: "Kavish Lodha",
+    position: "Paytm",
+    linkedin: "https://www.linkedin.com/in/kvishldha/",
     twitter: "#",
     facebook: "#",
   },

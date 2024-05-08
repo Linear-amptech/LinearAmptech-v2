@@ -1,8 +1,8 @@
 import rahul from "../assets/profile/rahul.jpg";
 import bipul from "../assets/profile/bipul.jpg";
+import kavish from "../assets/profile/kavish.jpg";
 import azhar from "../assets/profile/azhar.jfif";
 import himanshi from "../assets/profile/himanshi.jfif";
-import kavish from "../assets/profile/kavish.jpg";
 import parthsarthi from "../assets/profile/parthsarthi.jpg";
 import amitkumar from "../assets/profile/amitkumar.jpg";
 import harshkumar from "../assets/profile/harshKumar.jpg";
@@ -25,14 +25,14 @@ export const hardwareTeam = [
   //   twitter: "",
   //   facebook: "",
   // },
-  {
-    photo: azhar,
-    name: "Azhar Ansari",
-    position: "Linear AmpTech",
-    linkedin: "https://www.linkedin.com/in/azhar-ansari-767a85215/",
-    twitter: "#",
-    facebook: "#",
-  },
+  // {
+  //   photo: azhar,
+  //   name: "Azhar Ansari",
+  //   position: "Linear AmpTech",
+  //   linkedin: "https://www.linkedin.com/in/azhar-ansari-767a85215/",
+  //   twitter: "#",
+  //   facebook: "#",
+  // },
   {
     photo: himanshi,
     name: "Himanshi Bagel",
@@ -41,14 +41,14 @@ export const hardwareTeam = [
     twitter: "#",
     facebook: "#",
   },
-  {
-    photo: kavish,
-    name: "Kavish Lodha",
-    position: "Paytm",
-    linkedin: "https://www.linkedin.com/in/kvishldha/",
-    twitter: "#",
-    facebook: "#",
-  },
+  // {
+  //   photo: kavish,
+  //   name: "Kavish Lodha",
+  //   position: "Paytm",
+  //   linkedin: "https://www.linkedin.com/in/kvishldha/",
+  //   twitter: "#",
+  //   facebook: "#",
+  // },
   {
     photo: parthsarthi,
     name: "Parthsarthi Mishra",
