@@ -149,9 +149,9 @@ const AML = () => {
       <div>
         <img src={logo} alt="logo" className="w-16 absolute top-4 " />
         {data.map((data, index) => (
-          <div key={index}>
-            <h2>{data.title}</h2>
-            <p>{data.text}</p>
+          <div key={index} className="mt-2">
+            <h2 className="text-xl font-bold">{data.title}</h2>
+            <p className="text-base pl-2">{data.text}</p>
           </div>
         ))}
       </div>
