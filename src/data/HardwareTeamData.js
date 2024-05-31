@@ -41,7 +41,7 @@ export const hardwareTeam = [
   //   twitter: "#",
   //   facebook: "#",
   // },
-  // {
+  // {/'/'/'/'/'/'/'
   //   photo: kavish,
   //   name: "Kavish Lodha",
   //   position: "Paytm",

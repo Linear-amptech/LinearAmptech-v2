@@ -16,6 +16,7 @@ import AIandML from "./Pages/products/AIandML";
 import CyberSystem from "./Pages/products/CyberSystem";
 import { LAMP1, LAMP2, LAMP3, LAMP4 } from "./Pages/products/RFAmplifier";
 import TempProduct from "./Pages/products/TempProduct";
+import CompanyPolicies from "./Pages/CompanyPolicies";
 import {
   PassiveA,
   PassiveB,
@@ -141,6 +142,7 @@ function App() {
           {/* ****************************************** */}
 
           <Route path="/team" exact element={<Team />} />
+          <Route path="/company-policies" exact element={<CompanyPolicies />} />
         </Routes>
       </Router>
     </div>
