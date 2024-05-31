@@ -5,6 +5,7 @@ import AML from "../assets/media/AML.pdf";
 import KYC from "../assets/media/KYC.pdf";
 import { SlDocs } from "react-icons/sl";
 import { CgFileDocument } from "react-icons/cg";
+import { NavLink } from "react-router-dom";
 const CompanyPolicies = () => {
   return (
     <div className="bg-[#f2f2f2] h-screen">
@@ -28,17 +29,17 @@ const CompanyPolicies = () => {
           </li>
           <li className="py-1">
             <div className="flex items-start justify-start gap-2">
-              <a href={AML} target="_blank" className="hover:underline">
+              <NavLink to="/policies/AML" className="hover:underline">
                 Anti Money Laundering (AML)
-              </a>
+              </NavLink>
               <CgFileDocument className="text-xl  " />
             </div>
           </li>
           <li className="py-1">
             <div className="flex items-start justify-start gap-1">
-              <a href={KYC} target="_blank" className="hover:underline block">
+              <NavLink to="/policies/KYC" className="hover:underline ">
                 ⁠Know your customer (KyC) policy related to AML
-              </a>
+              </NavLink>
               <CgFileDocument className="text-xl  " />
             </div>
           </li>
