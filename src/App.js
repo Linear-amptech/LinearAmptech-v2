@@ -16,7 +16,7 @@ import AIandML from "./Pages/products/AIandML";
 import CyberSystem from "./Pages/products/CyberSystem";
 import { LAMP1, LAMP2, LAMP3, LAMP4 } from "./Pages/products/RFAmplifier";
 import TempProduct from "./Pages/products/TempProduct";
-import CompanyPolicies from "./Pages/CompanyPolicies";
+import InvestorRelations from "./Pages/InvestorRelations";
 import AML from "./Pages/policies/AML/AML";
 import KYC from "./Pages/policies/KYC/KYC";
 import {
@@ -144,7 +144,11 @@ function App() {
           {/* ****************************************** */}
 
           <Route path="/team" exact element={<Team />} />
-          <Route path="/company-policies" exact element={<CompanyPolicies />} />
+          <Route
+            path="/investor-relations"
+            exact
+            element={<InvestorRelations />}
+          />
           <Route path="/policies/AML" exact element={<AML />} />
           <Route path="/policies/KYC" exact element={<KYC />} />
         </Routes>

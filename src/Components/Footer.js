@@ -35,12 +35,6 @@ const Footer = () => {
                 >
                   Privacy Policy
                 </a>
-                <NavLink
-                  to="/company-policies"
-                  className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
-                >
-                  Company Policies
-                </NavLink>
               </div>
             </div>
 

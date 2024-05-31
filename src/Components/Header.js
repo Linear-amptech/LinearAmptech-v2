@@ -397,6 +397,12 @@ const Header = () => {
               >
                 About us
               </NavLink>
+              <NavLink
+                className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
+                to="/investor-relations"
+              >
+                Investor Relations
+              </NavLink>
             </div>
           </div>
         </div>

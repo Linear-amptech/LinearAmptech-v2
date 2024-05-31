@@ -181,7 +181,8 @@ const AML = () => {
             <div className="flex flex-col items-center justify-center h-full">
               <img src={logo} alt="logo" className="w-36 absolute top-4 " />
               <h1 className="text-4xl font-bold">
-                Anti-Money Laundering Policy
+                Anti-Money Laundering/Combating the Financing of Terrorism
+                Policy
               </h1>
             </div>
           </PageCover>
