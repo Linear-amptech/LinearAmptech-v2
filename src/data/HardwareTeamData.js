@@ -33,14 +33,14 @@ export const hardwareTeam = [
   //   twitter: "#",
   //   facebook: "#",
   // },
-  {
-    photo: himanshi,
-    name: "Himanshi Bagel",
-    position: "Linear AmpTech",
-    linkedin: "https://www.linkedin.com/in/himanshi-baghel-846747234",
-    twitter: "#",
-    facebook: "#",
-  },
+  // {
+  //   photo: himanshi,
+  //   name: "Himanshi Bagel",
+  //   position: "Linear AmpTech",
+  //   linkedin: "https://www.linkedin.com/in/himanshi-baghel-846747234",
+  //   twitter: "#",
+  //   facebook: "#",
+  // },
   // {
   //   photo: kavish,
   //   name: "Kavish Lodha",
