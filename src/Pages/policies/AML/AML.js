@@ -3,7 +3,7 @@ import HTMLFlipBook from "react-pageflip";
 import "./AML.css"; // Assuming you have a CSS file for styles
 import { Header } from "../../../Components";
 import { Footer } from "../../../Components";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/gfr-logo.png";
 
 const PageCover = React.forwardRef((props, ref) => {
   return (
@@ -147,7 +147,7 @@ const AML = () => {
   const pages = bookData.map((data, index) => (
     <Page number={index + 1} key={index}>
       <div>
-        <img src={logo} alt="logo" className="w-16 absolute top-4 " />
+        <img src={logo} alt="logo" className="h-[32px] absolute top-4 " />
         {data.map((data, index) => (
           <div key={index} className="mt-2">
             <h2 className="text-xl font-bold">{data.title}</h2>
@@ -179,7 +179,7 @@ const AML = () => {
         >
           <PageCover>
             <div className="flex flex-col items-center justify-center h-full">
-              <img src={logo} alt="logo" className="w-36 absolute top-4 " />
+              <img src={logo} alt="logo" className="h-[48px] absolute top-4 " />
               <h1 className="text-4xl font-bold">
                 Anti-Money Laundering/Combating the Financing of Terrorism
                 Policy
