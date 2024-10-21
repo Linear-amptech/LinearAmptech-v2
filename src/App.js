@@ -143,8 +143,8 @@ function App() {
           /> */}
           {/* ****************************************** */}
 
-          {/* <Route path="/team" exact element={<Team />} />
-          <Route
+          <Route path="/team" exact element={<Team />} />
+          {/*   <Route
             path="/investor-relations"
             exact
             element={<InvestorRelations />}
