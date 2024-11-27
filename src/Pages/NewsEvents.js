@@ -81,7 +81,7 @@ const NewsEvents = () => {
                       >
                         <img
                           src={image}
-                          className="max-h-60 w-[100%] rounded-t-md group-hover:scale-105 duration-500 overflow-hidden"
+                          className="max-h-60 w-[100%] object-cover rounded-t-md group-hover:scale-105 duration-500 overflow-hidden"
                         />
                         <p className="lg:text-[16px] lg:font-regular text-md text-blue-gray-800   leading-relaxed py-4 px-2 ">
                           {content ? content : "Title"}

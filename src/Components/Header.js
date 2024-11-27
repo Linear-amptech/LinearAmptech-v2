@@ -397,6 +397,15 @@ const Header = () => {
               >
                 About us
               </NavLink>
+              <NavLink
+                className="my-1 relative text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
+                to="/careers"
+              >
+                Careers
+                {/* <span className="text-[white] text-[8px] bg-[#2196f3] absolute -top-4 -right-8 py-0 rounded-sm px-1">
+                  Hiring
+                </span> */}
+              </NavLink>
               {/* <NavLink
                 className="my-1 text-blue-gray-900 transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
                 to="/investor-relations"

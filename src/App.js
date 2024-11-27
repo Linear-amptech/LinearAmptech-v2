@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop";
-import { AboutUs, Home, Team, Innovations, NewsEvents } from "./Pages";
+import { AboutUs, Home, Team, Innovations, NewsEvents, Careers } from "./Pages";
 import {
   AiCube,
   GanMMIC,
@@ -144,6 +144,7 @@ function App() {
           {/* ****************************************** */}
 
           <Route path="/team" exact element={<Team />} />
+          <Route path="/careers" exact element={<Careers />} />
           {/*   <Route
             path="/investor-relations"
             exact
