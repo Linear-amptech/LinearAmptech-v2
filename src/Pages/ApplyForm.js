@@ -298,7 +298,7 @@ const ApplyForm = () => {
 
             {/* Resume URL */}
             <div className="relative">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center flex-wrap">
                 <label className="block text-gray-700 mb-1" htmlFor="resumeUrl">
                   Resume URL
                 </label>
