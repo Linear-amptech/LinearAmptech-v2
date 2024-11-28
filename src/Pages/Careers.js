@@ -205,7 +205,7 @@ const Careers = () => {
         <div className="w-full lg:w-1/3">
           <h2 className="text-2xl font-semibold mb-2">
             Job Listings
-            {isFilterApplied && searchClicked && (
+            {(isFilterApplied || searchClicked) && (
               <span className="text-lg text-gray-600 ml-2">
                 ({filteredJobs.length} result
                 {filteredJobs.length !== 1 ? "s" : ""} found)
