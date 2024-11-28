@@ -70,7 +70,7 @@ const ApplyForm = () => {
     if (resumeAccessibility !== "accessible") {
       setIsSubmitting(false);
       alert(
-        "Please provide a public Google Drive or Google Docs resume link. Make sure the link is accessible to anyone with the link, or maybe url wrong. Please check again."
+        "Please provide a public Google Drive or Google Docs resume link. Make sure the link is accessible to anyone, or maybe url invalid. Please check again."
       );
       return;
     }
@@ -338,8 +338,8 @@ const ApplyForm = () => {
                 <p className="text-sm text-red-600 mt-2">
                   <i>
                     Please provide a public Google Drive or Google Docs resume
-                    link. Make sure the link is accessible to anyone with the
-                    link, or maybe url wrong. Please check again.
+                    link. Make sure the link is accessible to anyone, or maybe
+                    url invalid. Please check again.
                   </i>
                 </p>
               )}
