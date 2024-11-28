@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import careersbg from "../assets/careerBg.jpg";
 import Header from "../Components/Header";
-import jobsData from "./jobsData";
-
+import jobsData from "../data/jobsData";
+import { useNavigate } from "react-router-dom";
 const Careers = () => {
+  const navigate = useNavigate();
   const [selectedJob, setSelectedJob] = useState(null);
   const [searchClicked, setSearchClicked] = useState(false);
 
@@ -21,15 +21,29 @@ const Careers = () => {
       appliedSearchKeyword === "" ||
       job.title.toLowerCase().includes(appliedSearchKeyword.toLowerCase()) ||
       job.location.toLowerCase().includes(appliedSearchKeyword.toLowerCase()) ||
-      job.profession.toLowerCase().includes(appliedSearchKeyword.toLowerCase());
+      job.jobTitle.toLowerCase().includes(appliedSearchKeyword.toLowerCase());
+
+    const matchesExperience =
+      experience === "" ||
+      job.experienceLevel.some((level) =>
+        level.toLowerCase().includes(experience.toLowerCase())
+      );
+
+    const matchesWorkSite =
+      workSite === "" ||
+      job.workType.some((type) =>
+        type.toLowerCase().includes(workSite.toLowerCase())
+      );
+
+    const matchesEmploymentType =
+      employmentType === "" ||
+      job.employmentType.toLowerCase().includes(employmentType.toLowerCase());
 
     return (
       matchesSearchKeyword &&
-      (experience === "" || job.experience.toLowerCase() === experience) &&
-      (workSite === "" || job.workType.toLowerCase() === workSite) &&
-      (profession === "" || job.profession.toLowerCase() === profession) &&
-      (employmentType === "" ||
-        job.employmentType.toLowerCase() === employmentType)
+      matchesExperience &&
+      matchesWorkSite &&
+      matchesEmploymentType
     );
   });
 
@@ -90,19 +104,14 @@ const Careers = () => {
           backgroundImage: `url(${"https://cdn.pixabay.com/photo/2021/07/20/06/13/businessmen-6479839_1280.jpg"})`,
         }}
       >
-        <div className="z-10">
-          <p
-            className="font-bold lg:text-[64px] text-4xl text-white text-center"
-            // data-aos="fade-up"
-          >
+        <div className="z-10 -mt-20 px-2">
+          <p className="font-bold lg:text-[64px] text-4xl text-white text-center">
             Careers
           </p>
-          <p
-            className="text-[24px] lg:mt-6 text-white font-medium text-center"
-            // data-aos="fade-up"
-          >
-            This is a place to grow, learn and connect. Everything that makes
-            you who you are is welcome here.
+          <p className="text-[24px] lg:mt-6 text-white font-medium text-center max-w-[800px]">
+            We specialize in advancing technology through innovative solutions,
+            and we are looking for passionate engineers to join our team and
+            make a meaningful impact.
           </p>
         </div>
       </div>
@@ -143,67 +152,43 @@ const Careers = () => {
           <hr className="my-7" />
 
           {/* Filters Section */}
-          <div className="flex flex-wrap justify-between gap-6 mb-2">
-            <label className="w-48">
+          <div className="flex flex-col md:flex-row justify-between gap-4 mb-2">
+            <label className="w-full">
               <span className="block text-gray-700 mb-1">Experience</span>
               <select
                 className="border px-3 py-3 rounded-md bg-white w-full"
                 value={experience}
                 onChange={(e) => setExperience(e.target.value)}
               >
-                <option value="" disabled>
-                  Select type
-                </option>
-                <option value="entry">Entry Level</option>
-                <option value="mid">Mid Level</option>
-                <option value="senior">Senior Level</option>
+                <option value="">Select type</option>
+                <option value="entry-level">Entry Level</option>
+                <option value="mid-level">Mid Level</option>
+                <option value="senior-level">Senior Level</option>
               </select>
             </label>
 
-            <label className="w-48">
+            <label className="w-full">
               <span className="block text-gray-700 mb-1">Work Site</span>
               <select
                 className="border px-3 py-3 rounded-md bg-white w-full"
                 value={workSite}
                 onChange={(e) => setWorkSite(e.target.value)}
               >
-                <option value="" disabled>
-                  Select type
-                </option>
+                <option value="">Select type</option>
                 <option value="remote">Remote</option>
                 <option value="on-site">On-site</option>
                 <option value="hybrid">Hybrid</option>
               </select>
             </label>
 
-            <label className="w-48">
-              <span className="block text-gray-700 mb-1">Profession</span>
-              <select
-                className="border px-3 py-3 rounded-md bg-white w-full"
-                value={profession}
-                onChange={(e) => setProfession(e.target.value)}
-              >
-                <option value="" disabled>
-                  Select type
-                </option>
-                <option value="software">Software Engineering</option>
-                <option value="sales">Sales</option>
-                <option value="marketing">Marketing</option>
-                <option value="design">Design</option>
-                <option value="customer support">Customer Support</option>
-              </select>
-            </label>
-
-            <label className="w-48">
+            <label className="w-full">
               <span className="block text-gray-700 mb-1">Employment Type</span>
               <select
                 className="border px-3 py-3 rounded-md bg-white w-full"
                 value={employmentType}
                 onChange={(e) => setEmploymentType(e.target.value)}
               >
-                <option value="" disabled>
-                  Select type
-                </option>
+                <option value="">Select type</option>
                 <option value="full-time">Full-Time</option>
                 <option value="part-time">Part-Time</option>
                 <option value="contract">Contract</option>
@@ -263,17 +248,6 @@ const Careers = () => {
                   </button>
                 </div>
               )}
-              {profession && (
-                <div className="bg-purple-200 text-purple-900 px-3 py-1 rounded-full flex items-center">
-                  <span>Profession: {profession}</span>
-                  <button
-                    className="ml-2 text-purple-900 hover:text-purple-700"
-                    onClick={() => handleRemoveTag("profession")}
-                  >
-                    ✕
-                  </button>
-                </div>
-              )}
               {employmentType && (
                 <div className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full flex items-center">
                   <span>Employment Type: {employmentType}</span>
@@ -293,7 +267,7 @@ const Careers = () => {
               ? filteredJobs.map((job) => (
                   <div
                     key={job.id}
-                    className={`p-4 border rounded-lg shadow-sm cursor-pointer  hover:bg-blue-100 hover:shadow-blue-100 hover:border-blue-200 ${
+                    className={`p-4 border rounded-lg shadow-sm cursor-pointer hover:bg-blue-100 hover:shadow-blue-100 hover:border-blue-200 ${
                       selectedJob?.id === job.id
                         ? "bg-blue-50 shadow-blue-50 border-blue-100 "
                         : "bg-white"
@@ -302,14 +276,14 @@ const Careers = () => {
                   >
                     <h3 className="text-lg font-bold">{job.title}</h3>
                     <p className="text-sm text-gray-600">
-                      {job.location} - {job.workType}
+                      {job.location} - {job.workType.join(", ")}
                     </p>
                     <p className="text-xs text-gray-500">
                       Posted on: {job.datePosted}
                     </p>
                     <button
                       onClick={() => setSelectedJob(job)}
-                      className="text-blue-700 underline mt-2 hover:text-blue-500"
+                      className="text-blue-700 underline mt-2 text-sm hover:text-blue-500"
                     >
                       View Details
                     </button>
@@ -328,39 +302,80 @@ const Careers = () => {
             <div className="border p-6 rounded-lg shadow-sm bg-white">
               <h2 className="text-3xl font-bold mb-4">{selectedJob.title}</h2>
               {/* Job Information in Two Columns */}
-              <div className="text-sm text-gray-600 mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="text-sm text-gray-600 mb-8 mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <p>
                   <span className="font-semibold">Location:</span>{" "}
                   {selectedJob.location}
                 </p>
+
                 <p>
-                  <span className="font-semibold">Work Type:</span>{" "}
-                  {selectedJob.workType}
-                </p>
-                <p>
-                  <span className="font-semibold">Profession:</span>{" "}
-                  {selectedJob.profession}
+                  <span className="font-semibold">Job Title:</span>{" "}
+                  {selectedJob.jobTitle}
                 </p>
                 <p>
                   <span className="font-semibold">Employment Type:</span>{" "}
                   {selectedJob.employmentType}
                 </p>
                 <p>
+                  <span className="font-semibold">Date Posted:</span>{" "}
+                  {selectedJob.datePosted}
+                </p>
+                <p>
+                  <span className="font-semibold">Work Type:</span>{" "}
+                  {selectedJob.workType.join(", ")}{" "}
+                  <span className="text-gray-500 text-[12px]">
+                    {selectedJob.workTypeText
+                      ? `(${selectedJob.workTypeText})`
+                      : ""}
+                  </span>
+                </p>
+
+                <p>
                   <span className="font-semibold">Travel:</span>{" "}
                   {selectedJob.travel}
                 </p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Overview</h3>
-              <p className="mb-4">{selectedJob.description}</p>
-              <h3 className="text-xl font-semibold mb-2">Qualifications</h3>
+
+              <hr className="my-6 " />
+              <h3 className="text-xl font-semibold mb-1">Overview</h3>
+              <p className="mb-4 text-gray-800">{selectedJob.description}</p>
+
+              <h3 className="text-xl font-semibold mb-1 mt-4">
+                Key Responsibilities
+              </h3>
               <ul className="list-disc pl-5">
-                {selectedJob.qualifications.map((qualification, index) => (
-                  <li key={index} className="mb-2">
-                    {qualification}
+                {selectedJob.keyResponsibilities.map(
+                  (responsibility, index) => (
+                    <li key={index} className="mb-2 text-gray-800">
+                      {responsibility}
+                    </li>
+                  )
+                )}
+              </ul>
+
+              <h3 className="text-xl font-semibold mb-1 mt-4">Requirements</h3>
+              <ul className="list-disc pl-5">
+                {selectedJob.requirements.map((requirement, index) => (
+                  <li key={index} className="mb-2 text-gray-800">
+                    {requirement}
                   </li>
                 ))}
               </ul>
-              <button className="mt-6 bg-gradient-to-tr from-blue-600 to-blue-300 text-white py-2 px-4 rounded-md hover:cursor-pointer ">
+
+              <h3 className="text-xl font-semibold mb-1 mt-4">
+                Desired Skills
+              </h3>
+              <ul className="list-disc pl-5">
+                {selectedJob.desiredSkills.map((skill, index) => (
+                  <li key={index} className="mb-2 text-gray-800">
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => navigate(`/jobs/apply/job-id/${selectedJob.id}`)}
+                className="mt-4 bg-gradient-to-tr from-blue-600 to-blue-300 text-white py-2 px-4 rounded-md hover:cursor-pointer"
+              >
                 Apply Now
               </button>
             </div>
