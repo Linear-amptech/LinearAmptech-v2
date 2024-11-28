@@ -94,17 +94,17 @@ const Careers = () => {
     employmentType;
 
   return (
-    <div className="bg-[#f5f8fa]">
+    <div className="bg-[#f5f8fa] relative">
       <Header />
 
       {/* Background Section */}
       <div
-        className="h-[464px] w-[100%] flex justify-center items-center bg-black bg-cover bg-center"
+        className="relative  h-[464px] w-[100%] flex justify-center items-center bg-black bg-cover bg-center"
         style={{
           backgroundImage: `url(${"https://cdn.pixabay.com/photo/2021/07/20/06/13/businessmen-6479839_1280.jpg"})`,
         }}
       >
-        <div className="z-10 -mt-20 px-2">
+        <div className="z-50 -mt-20 px-2">
           <p className="font-bold lg:text-[64px] text-4xl text-white text-center">
             Careers
           </p>
@@ -114,10 +114,11 @@ const Careers = () => {
             make a meaningful impact.
           </p>
         </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-[10]"></div>
       </div>
 
       {/* Search Bar Section */}
-      <div className="container max-w-screen-lg mx-auto p-6 -mt-40">
+      <div className="relative container max-w-screen-lg mx-auto p-6 -mt-40 z-[100]">
         <div className="bg-white rounded-lg shadow-md p-6">
           {/* Search Job Section */}
           <div className="flex flex-col lg:flex-row gap-4 items-end mb-4">

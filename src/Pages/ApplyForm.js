@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Header from "../Components/Header";
 import { useParams } from "react-router-dom";
 import jobsData from "../data/jobsData";
+import { FaCheckCircle, FaTimesCircle, FaSpinner } from "react-icons/fa";
+import { FiLoader } from "react-icons/fi";
 
 const ApplyForm = () => {
   const { jobId } = useParams(); // Get jobId from URL
@@ -15,22 +17,54 @@ const ApplyForm = () => {
   const [resumeUrl, setResumeUrl] = useState("");
   const [linkedInProfile, setLinkedInProfile] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false); // Loader state
+  const [resumeAccessibility, setResumeAccessibility] = useState(null); // null, "checking", "accessible", "notAccessible"
+  const [formSubmitted, setFormSubmitted] = useState(false); // State for form submission
+
+  const handleResumeUrlChange = (e) => {
+    const url = e.target.value;
+    setResumeUrl(url);
+    if (url) {
+      checkResumeAccessibility(url);
+    } else {
+      setResumeAccessibility(null);
+    }
+  };
+
+  const checkResumeAccessibility = async (url) => {
+    setResumeAccessibility("checking");
+
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+      });
+
+      if (response.status === 200) {
+        setResumeAccessibility("accessible");
+      } else {
+        setResumeAccessibility("notAccessible");
+      }
+    } catch (error) {
+      setResumeAccessibility("notAccessible");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     // Endpoint URL from Google Apps Script deployment
-    const scriptURL = "http://localhost:3001/submit";
+    // const scriptURL = "http://localhost:3001/job/apply";
+    const scriptURL = "https://api.linear-amptech.com/job/apply";
 
     const formData = {
       fullName,
-      gender,
       email,
       mobileNumber,
       educationQualification,
-      linkedInProfile,
+      jobTitle: job.jobTitle,
       resumeUrl,
+      linkedInProfile,
+      gender,
     };
 
     try {
@@ -42,18 +76,8 @@ const ApplyForm = () => {
         body: JSON.stringify(formData),
       });
 
-      console.log(response);
-
       if (response.ok) {
-        alert("Application submitted successfully!");
-        // Clear the form fields
-        setFullName("");
-        setGender("");
-        setEmail("");
-        setMobileNumber("");
-        setEducationQualification("");
-        setResumeUrl("");
-        setLinkedInProfile("");
+        setFormSubmitted(true); // Show thank you card on success
       } else {
         alert("Failed to submit application. Please try again later.");
       }
@@ -73,20 +97,41 @@ const ApplyForm = () => {
     );
   }
 
+  if (formSubmitted) {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <div className="bg-[#f5f8fa]  flex items-center justify-center h-[calc(100vh-72px)] px-4">
+          <div className="bg-white rounded-lg shadow-md p-10 max-w-lg text-center ">
+            <FaCheckCircle className="text-green-600 text-6xl mx-auto mb-4" />
+            <h2 className="text-3xl font-bold mb-2">Thank You!</h2>
+            <p className="text-gray-700 text-lg">
+              Your application has been successfully submitted. We appreciate
+              your interest in joining our team. Our team will review your
+              application and get back to you soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="bg-[#f5f8fa] min-h-screen">
+    <div className="bg-[#f5f8fa] min-h-screen relative">
       <Header />
 
       {/* Background Section */}
       <div
-        className="h-[300px] w-[100%] flex justify-center items-center bg-black bg-cover bg-center"
+        className="relative  h-[300px] w-[100%] flex justify-center items-center bg-black bg-cover bg-center"
         style={{
           backgroundImage: `url(${"https://cdn.pixabay.com/photo/2021/07/20/06/13/businessmen-6479839_1280.jpg"})`,
         }}
-      ></div>
+      >
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-[10]"></div>
+      </div>
 
       {/* Form Section */}
-      <div className="container max-w-screen-md mx-auto p-6 -mt-[188px]">
+      <div className="relative container max-w-screen-md mx-auto p-6 -mt-[188px] z-[100]">
         <div className="bg-white rounded-lg shadow-md p-8">
           {/* Job Information */}
           <div className="mb-6">
@@ -141,9 +186,9 @@ const ApplyForm = () => {
                   <option value="" hidden disabled>
                     Select Gender
                   </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="non-binary">Non-binary</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+
                   <option value="prefer-not-to-say">Prefer not to say</option>
                 </select>
               </div>
@@ -202,10 +247,9 @@ const ApplyForm = () => {
                 <option value="" hidden>
                   Select Qualification
                 </option>
-
-                <option value="bachelor">Graduate</option>
-                <option value="master">Post Graduate</option>
-                <option value="phd">PhD</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+                <option value="PhD">PhD</option>
               </select>
             </div>
 
@@ -215,41 +259,78 @@ const ApplyForm = () => {
                 className="block text-gray-700 mb-1"
                 htmlFor="linkedInProfile"
               >
-                LinkedIn Profile URL (Optional)
+                LinkedIn Profile URL
               </label>
               <input
                 type="url"
                 id="linkedInProfile"
                 value={linkedInProfile}
                 onChange={(e) => setLinkedInProfile(e.target.value)}
+                required
                 placeholder="Enter LinkedIn profile URL"
                 className="w-full p-3 border border-gray-300 rounded-md"
               />
             </div>
 
             {/* Resume URL */}
-            <div>
-              <label className="block text-gray-700 mb-1" htmlFor="resumeUrl">
-                Resume URL
-              </label>
+            <div className="relative">
+              <div className="flex justify-between items-center">
+                <label className="block text-gray-700 mb-1" htmlFor="resumeUrl">
+                  Resume URL
+                </label>
+                {/* Accessibility Message */}
+                <div className="flex items-center">
+                  {resumeAccessibility === "checking" && (
+                    <div className="flex items-center text-gray-800">
+                      <FaSpinner className="animate-spin mr-1 text-gray-800" />
+                      <span>Checking Accessibility...</span>
+                    </div>
+                  )}
+                  {resumeAccessibility === "accessible" && (
+                    <div className="flex items-center text-green-600">
+                      <FaCheckCircle className="mr-1" />
+                      <span>Accessible</span>
+                    </div>
+                  )}
+                  {resumeAccessibility === "notAccessible" && (
+                    <div className="flex items-center text-red-600">
+                      <FaTimesCircle className="mr-1" />
+                      <span>Not Accessible</span>
+                    </div>
+                  )}
+                </div>
+              </div>
               <input
                 type="url"
                 id="resumeUrl"
                 value={resumeUrl}
-                onChange={(e) => setResumeUrl(e.target.value)}
+                onChange={handleResumeUrlChange}
                 placeholder="Enter Google Drive link to your resume"
                 className="w-full p-3 border border-gray-300 rounded-md"
                 required
               />
+              {/* Hint Message for Resume URL */}
+              {resumeAccessibility === "notAccessible" && (
+                <p className="text-sm text-red-600 mt-2">
+                  <i>
+                    Please check if the resume is accessible or not. Make sure
+                    the URL is correct.
+                  </i>
+                </p>
+              )}
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white py-3 px-6 rounded-md shadow-md hover:bg-blue-500 hover:cursor-pointer disabled:opacity-50"
+              className="w-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white py-3 px-6 rounded-md shadow-md hover:bg-blue-500 hover:cursor-pointer text-center disabled:opacity-50 flex items-center justify-center"
               disabled={isSubmitting} // Disable button when submitting
             >
-              {isSubmitting ? "Submitting..." : "Submit Application"}
+              {isSubmitting ? (
+                <FaSpinner className="animate-spin mr-2" size={20} />
+              ) : (
+                "Submit Application"
+              )}
             </button>
           </form>
         </div>
