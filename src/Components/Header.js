@@ -71,7 +71,7 @@ const Header = () => {
           </div>
 
           <div
-            className={` absolute inset-x-0 z-20 w-full px-6 py-0 transition-all duration-300 ease-in-out  bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
+            className={` absolute inset-x-0 z-20 w-full px-6 py-0 transition-all duration-300 ease-in-out  bg-white  xl:mt-0 xl:p-0 xl:top-0 xl:relative xl:bg-transparent xl:w-auto xl:opacity-100 xl:translate-x-0 xl:flex xl:items-center ${
               isOpen
                 ? " translate-x-0 opacity-100 "
                 : "opacity-0 -translate-x-full"
