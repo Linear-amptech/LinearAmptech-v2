@@ -3,7 +3,6 @@ import Header from "../Components/Header";
 import { useParams } from "react-router-dom";
 import jobsData from "../data/jobsData";
 import { FaCheckCircle, FaTimesCircle, FaSpinner } from "react-icons/fa";
-import { FiLoader } from "react-icons/fi";
 
 const ApplyForm = () => {
   const { jobId } = useParams(); // Get jobId from URL
@@ -32,6 +31,13 @@ const ApplyForm = () => {
 
   const checkResumeAccessibility = async (url) => {
     setResumeAccessibility("checking");
+
+    // Validate if URL is from Google Drive or Google Docs
+    const isGoogleUrl = url.match(/^https:\/\/(drive|docs)\.google\.com/);
+    if (!isGoogleUrl) {
+      setResumeAccessibility("notAccessible");
+      return;
+    }
 
     try {
       const response = await fetch(url, {
@@ -313,7 +319,7 @@ const ApplyForm = () => {
                 id="resumeUrl"
                 value={resumeUrl}
                 onChange={handleResumeUrlChange}
-                placeholder="Enter Google Drive link to your resume"
+                placeholder="Enter Google Drive or Google Docs resume link"
                 className="w-full p-3 border border-gray-300 rounded-md"
                 required
               />
@@ -321,8 +327,9 @@ const ApplyForm = () => {
               {resumeAccessibility === "notAccessible" && (
                 <p className="text-sm text-red-600 mt-2">
                   <i>
-                    You may be entering a private resume link, or the resume
-                    link is incorrect. Please check again.
+                    Please provide a public Google Drive or Google Docs resume
+                    link. Make sure the link is accessible to anyone with the
+                    link, or maybe url wrong. Please check again.
                   </i>
                 </p>
               )}
