@@ -14,11 +14,55 @@ const ApplyForm = () => {
   const [educationQualification, setEducationQualification] = useState("");
   const [resumeUrl, setResumeUrl] = useState("");
   const [linkedInProfile, setLinkedInProfile] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false); // Loader state
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    alert("Application submitted successfully!");
+    setIsSubmitting(true);
+
+    // Endpoint URL from Google Apps Script deployment
+    const scriptURL = "http://localhost:3001/submit";
+
+    const formData = {
+      fullName,
+      gender,
+      email,
+      mobileNumber,
+      educationQualification,
+      linkedInProfile,
+      resumeUrl,
+    };
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log(response);
+
+      if (response.ok) {
+        alert("Application submitted successfully!");
+        // Clear the form fields
+        setFullName("");
+        setGender("");
+        setEmail("");
+        setMobileNumber("");
+        setEducationQualification("");
+        setResumeUrl("");
+        setLinkedInProfile("");
+      } else {
+        alert("Failed to submit application. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while submitting the form.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!job) {
@@ -39,13 +83,7 @@ const ApplyForm = () => {
         style={{
           backgroundImage: `url(${"https://cdn.pixabay.com/photo/2021/07/20/06/13/businessmen-6479839_1280.jpg"})`,
         }}
-      >
-        {/* <div className="z-10">
-          <p className="font-bold lg:text-[48px] text-4xl text-white text-center">
-            Apply for the Job
-          </p>
-        </div> */}
-      </div>
+      ></div>
 
       {/* Form Section */}
       <div className="container max-w-screen-md mx-auto p-6 -mt-[188px]">
@@ -100,7 +138,9 @@ const ApplyForm = () => {
                   className="w-full p-3 border border-gray-300 rounded-md bg-white"
                   required
                 >
-                  <option value="">Select Gender</option>
+                  <option value="" hidden disabled>
+                    Select Gender
+                  </option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="non-binary">Non-binary</option>
@@ -206,9 +246,10 @@ const ApplyForm = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white py-3 px-6 rounded-md shadow-md hover:bg-blue-500 hover:cursor-pointer"
+              className="w-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white py-3 px-6 rounded-md shadow-md hover:bg-blue-500 hover:cursor-pointer disabled:opacity-50"
+              disabled={isSubmitting} // Disable button when submitting
             >
-              Submit Application
+              {isSubmitting ? "Submitting..." : "Submit Application"}
             </button>
           </form>
         </div>
