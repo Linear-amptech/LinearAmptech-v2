@@ -57,10 +57,20 @@ const ApplyForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate LinkedIn URL format
+    const linkedInUrlPattern =
+      /^https:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-]+\/?$/;
+    if (linkedInProfile && !linkedInUrlPattern.test(linkedInProfile)) {
+      alert(
+        "Please enter a valid LinkedIn profile URL (e.g., https://www.linkedin.com/in/username)"
+      );
+      return;
+    }
+
     if (resumeAccessibility !== "accessible") {
       setIsSubmitting(false);
       alert(
-        "You may be entering a private resume link, or the resume link is incorrect. Please check again."
+        "Please provide a public Google Drive or Google Docs resume link. Make sure the link is accessible to anyone with the link, or maybe url wrong. Please check again."
       );
       return;
     }
