@@ -104,7 +104,7 @@ const Careers = () => {
           backgroundImage: `url(${"https://cdn.pixabay.com/photo/2021/07/20/06/13/businessmen-6479839_1280.jpg"})`,
         }}
       >
-        <div className="z-50 -mt-20 px-2">
+        <div className="z-10 -mt-20 px-2">
           <p className="font-bold lg:text-[64px] text-4xl text-white text-center">
             Careers
           </p>
@@ -114,14 +114,14 @@ const Careers = () => {
             make a meaningful impact.
           </p>
         </div>
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-[10]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-1"></div>
       </div>
 
       {/* Search Bar Section */}
-      <div className="relative container max-w-screen-lg mx-auto p-6 -mt-40 z-[100]">
+      <div className="relative container max-w-screen-lg mx-auto p-6 -mt-40 z-0">
         <div className="bg-white rounded-lg shadow-md p-6">
           {/* Search Job Section */}
-          <div className="flex flex-col lg:flex-row gap-4 items-end mb-4">
+          <div className="flex flex-col sm:flex-row gap-4 items-end mb-4">
             <label className="relative w-full lg:w-full">
               <span className="block text-gray-700 mb-1">Search Jobs</span>
               <input
@@ -143,7 +143,7 @@ const Careers = () => {
             </label>
             <button
               onClick={handleFindJobs}
-              className="bg-gradient-to-tr from-gray-900 to-gray-700 w-[240px] px-6 py-3 rounded-md hover:cursor-pointer text-white shadow-md shadow-gray-900/10 "
+              className="bg-gradient-to-tr from-gray-900 to-gray-700 sm:w-[184px] w-full md:w-[240px] px-6 py-3 rounded-md hover:cursor-pointer text-white shadow-md shadow-gray-900/10 "
             >
               Find Jobs
             </button>

@@ -50,6 +50,14 @@ const ApplyForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (resumeAccessibility !== "accessible") {
+      setIsSubmitting(false);
+      alert(
+        "Please check if the resume is accessible or not. Also make sure the URL is correct!"
+      );
+      return;
+    }
     setIsSubmitting(true);
 
     // Endpoint URL from Google Apps Script deployment
@@ -61,7 +69,7 @@ const ApplyForm = () => {
       email,
       mobileNumber,
       educationQualification,
-      jobTitle: job.jobTitle,
+      jobTitle: job.title,
       resumeUrl,
       linkedInProfile,
       gender,
@@ -127,11 +135,11 @@ const ApplyForm = () => {
           backgroundImage: `url(${"https://cdn.pixabay.com/photo/2021/07/20/06/13/businessmen-6479839_1280.jpg"})`,
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-[10]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 "></div>
       </div>
 
       {/* Form Section */}
-      <div className="relative container max-w-screen-md mx-auto p-6 -mt-[188px] z-[100]">
+      <div className="relative container max-w-screen-md mx-auto p-6 -mt-[188px] z-1">
         <div className="bg-white rounded-lg shadow-md p-8">
           {/* Job Information */}
           <div className="mb-6">
@@ -172,7 +180,7 @@ const ApplyForm = () => {
                   required
                 />
               </div>
-              <div className="w-1/3">
+              <div className="w-full lg:w-1/3">
                 <label className="block text-gray-700 mb-1" htmlFor="gender">
                   Gender
                 </label>
@@ -289,13 +297,13 @@ const ApplyForm = () => {
                   {resumeAccessibility === "accessible" && (
                     <div className="flex items-center text-green-600">
                       <FaCheckCircle className="mr-1" />
-                      <span>Accessible</span>
+                      <span>Resume Accessible</span>
                     </div>
                   )}
                   {resumeAccessibility === "notAccessible" && (
                     <div className="flex items-center text-red-600">
                       <FaTimesCircle className="mr-1" />
-                      <span>Not Accessible</span>
+                      <span> Resume Not Accessible</span>
                     </div>
                   )}
                 </div>
@@ -313,8 +321,8 @@ const ApplyForm = () => {
               {resumeAccessibility === "notAccessible" && (
                 <p className="text-sm text-red-600 mt-2">
                   <i>
-                    Please check if the resume is accessible or not. Make sure
-                    the URL is correct.
+                    You may be entering a private resume link, or the resume
+                    link is incorrect. Please check again.
                   </i>
                 </p>
               )}
@@ -327,7 +335,7 @@ const ApplyForm = () => {
               disabled={isSubmitting} // Disable button when submitting
             >
               {isSubmitting ? (
-                <FaSpinner className="animate-spin mr-2" size={20} />
+                <FaSpinner className="animate-spin mr-2" size={24} />
               ) : (
                 "Submit Application"
               )}
