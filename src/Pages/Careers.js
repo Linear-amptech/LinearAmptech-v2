@@ -118,7 +118,7 @@ const Careers = () => {
       </div>
 
       {/* Search Bar Section */}
-      <div className="relative container max-w-screen-lg mx-auto p-6 -mt-40 z-0">
+      <div className="relative container max-w-screen-lg mx-auto p-6 sm:-mt-40 -mt-36 z-0">
         <div className="bg-white rounded-lg shadow-md p-6">
           {/* Search Job Section */}
           <div className="flex flex-col sm:flex-row gap-4 items-end mb-4">
@@ -298,7 +298,7 @@ const Careers = () => {
         </div>
 
         {/* Right Section - Job Description */}
-        <div className="w-full lg:w-2/3 lg:pl-4 mt-8 lg:mt-0 sticky top-0 right-0 ">
+        <div className="w-full lg:w-2/3 lg:pl-4 mt-8 lg:mt-0  ">
           {selectedJob ? (
             <div className="border  md:py-6 md:px-6 p-4 py-6 rounded-lg shadow-sm bg-white">
               <h2 className="text-3xl font-bold mb-4">{selectedJob.title}</h2>

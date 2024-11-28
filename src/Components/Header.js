@@ -11,16 +11,14 @@ import { GiHumanPyramid } from "react-icons/gi";
 import {
   MdDesignServices,
   MdOutlineInventory2,
-  MdAnalytics,
   MdSystemUpdateAlt,
-  MdTrackChanges,
-  MdSettingsSystemDaydream,
   MdMicrowave,
   MdClear,
+  MdClose,
+  MdMenu,
 } from "react-icons/md";
 import { RiScan2Line } from "react-icons/ri";
-import { IoMdAnalytics } from "react-icons/io";
-import { TbDeviceDesktopAnalytics } from "react-icons/tb";
+
 import { AiCube } from "../assets";
 
 const Header = () => {
@@ -29,14 +27,13 @@ const Header = () => {
   const [isRFPowerAmp, setIsRFPowerAmp] = useState(false);
   const [isRFPassive, setIsRFPassive] = useState(false);
 
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
   // useEffect(() => {
-  console.log(window.innerWidth);
+  // console.log(window.innerWidth);
   // }, [window.innerWidth]);
 
   return (
@@ -47,17 +44,17 @@ const Header = () => {
       } `}
     >
       <nav className="relative   ">
-        <div className="container px-6 py-1 mx-auto lg:flex lg:justify-between lg:items-center">
+        <div className="container px-6 py-1 mx-auto xl:flex xl:justify-between xl:items-center ">
           <div className="flex items-center justify-between">
             <NavLink to="/">
               <img
-                className="w-auto h-14 sm:h-16 sm:w-auto"
+                className="md:w-[110px] h-auto w-[88px]"
                 src={require("../assets/logo.png")}
                 alt="linear-amptec-logo"
               />
             </NavLink>
 
-            <div className="flex lg:hidden">
+            <div className="flex xl:hidden">
               <button
                 onClick={() => handleClick()}
                 type="button"
@@ -65,35 +62,9 @@ const Header = () => {
                 aria-label="toggle menu"
               >
                 {isOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                  <MdClose className="text-[1.5rem] text-gray-900" />
                 ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                  </svg>
+                  <MdMenu className="text-[1.5rem] text-gray-900" />
                 )}
               </button>
             </div>
@@ -106,7 +77,7 @@ const Header = () => {
                 : "opacity-0 -translate-x-full"
             }`}
           >
-            <div className="flex flex-col lg:flex-row lg:mx-6 lg:my-0 my-8  lg:text-[16px] text-base  lg:gap-4 gap-2">
+            <div className="flex flex-col xl:flex-row xl:mx-6 xl:my-0 my-8  xl:text-[16px] text-base  xl:gap-4 gap-2">
               <NavLink
                 className="my-1 text-blue-gray-900  transition-colors duration-300 transform  hover:text-[#2196f3]  md:mx-4 md:my-0"
                 to="/"
