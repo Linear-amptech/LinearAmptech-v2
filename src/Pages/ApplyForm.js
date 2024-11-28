@@ -54,7 +54,7 @@ const ApplyForm = () => {
     if (resumeAccessibility !== "accessible") {
       setIsSubmitting(false);
       alert(
-        "Please check if the resume is accessible or not. Also make sure the URL is correct!"
+        "You may be entering a private resume link, or the resume link is incorrect. Please check again."
       );
       return;
     }
@@ -140,7 +140,7 @@ const ApplyForm = () => {
 
       {/* Form Section */}
       <div className="relative container max-w-screen-md mx-auto p-6 -mt-[188px] z-1">
-        <div className="bg-white rounded-lg shadow-md p-8">
+        <div className="bg-white rounded-lg shadow-md p-4 md:p-8">
           {/* Job Information */}
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-1 text-center">

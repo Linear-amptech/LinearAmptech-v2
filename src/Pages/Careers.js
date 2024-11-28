@@ -298,9 +298,9 @@ const Careers = () => {
         </div>
 
         {/* Right Section - Job Description */}
-        <div className="w-full lg:w-2/3 lg:pl-8 mt-8 lg:mt-0 sticky top-0 right-0 ">
+        <div className="w-full lg:w-2/3 lg:pl-4 mt-8 lg:mt-0 sticky top-0 right-0 ">
           {selectedJob ? (
-            <div className="border p-6 rounded-lg shadow-sm bg-white">
+            <div className="border  md:py-6 md:px-6 p-4 py-6 rounded-lg shadow-sm bg-white">
               <h2 className="text-3xl font-bold mb-4">{selectedJob.title}</h2>
               {/* Job Information in Two Columns */}
               <div className="text-sm text-gray-600 mb-8 mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
