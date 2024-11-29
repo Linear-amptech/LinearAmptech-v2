@@ -335,7 +335,7 @@ const ApplyForm = () => {
               />
               {/* Hint Message for Resume URL */}
               {resumeAccessibility === "notAccessible" && (
-                <p className="text-sm text-red-600 mt-2">
+                <p className="text-sm text-gray-600 mt-2">
                   <i>
                     Please provide a public Google Drive or Google Docs resume
                     link. Make sure the link is accessible to anyone, or maybe
