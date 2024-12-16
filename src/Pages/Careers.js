@@ -330,11 +330,6 @@ const Careers = () => {
                       : ""}
                   </span>
                 </p>
-
-                <p>
-                  <span className="font-semibold">Travel:</span>{" "}
-                  {selectedJob.travel}
-                </p>
               </div>
 
               <hr className="my-6 " />

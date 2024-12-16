@@ -6,10 +6,10 @@ const jobsData = [
     workType: ["On-Site", "Remote"],
     workTypeText: "Considered on case to case basis",
     datePosted: "Dec 16, 2024",
-    jobTitle: "Analog Layout Engineer",
+    jobTitle: "Analog Circuit Design Engineer",
     employmentType: "Full-Time",
     experienceLevel: ["Entry-level", "Mid-level"],
-    travel: "0-10%",
+
     description: `We are seeking a mid-level Analog Circuit Design Engineer with 2–4 years of experience to contribute to block-level to full-chip analog designs. The ideal candidate will bring a strong track record of design innovation and industry best practices to our cutting-edge projects.`,
 
     keyResponsibilities: [
@@ -49,7 +49,7 @@ const jobsData = [
     jobTitle: "Analog Layout Engineer",
     employmentType: "Full-Time",
     experienceLevel: ["Entry-Level", "Mid-Level"],
-    travel: "0-10%",
+
     description: `We are seeking a skilled Analog Layout Engineer to join our team and contribute to the design and development of cutting-edge integrated circuits (ICs). The ideal candidate will have a strong understanding of analog layout techniques and semiconductor process technologies, ensuring optimal performance, reliability, and manufacturability of our IC designs.`,
     qualifications: [
       "Bachelor's/Master's degree in computer science.",
