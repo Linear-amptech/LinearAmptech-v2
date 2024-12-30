@@ -17,7 +17,7 @@ export const boardMember = [
   },
   {
     photo: minakshi,
-    name: "Dr. Meenakshi Rawat",
+    name: "Prof. Meenakshi Rawat",
     position: [
       "Founder & Director ",
       "Prof. IIT Roorkee, YFRF,",
