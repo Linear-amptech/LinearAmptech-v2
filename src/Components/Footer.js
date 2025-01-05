@@ -105,7 +105,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
-                  hello@linearamptech.com
+                  sales@linearamptech.com
                 </a>
                 <p className="mt-4 text-md text-gray-50 sm:mt-0 ">
                   Incubation building IHUB DivyaSampark <br /> (Near Wind Tunnel
