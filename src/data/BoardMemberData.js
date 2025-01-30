@@ -1,6 +1,6 @@
 import karun from "../assets/profile/karun.jpeg";
 import minakshi from "../assets/profile/minakshi.png";
-import vivek from "../assets/profile/vivek.jpeg";
+import vivek from "../assets/profile/vivek.JPG";
 import gowrish from "../assets/profile/gowrish.jpg";
 export const boardMember = [
   {
