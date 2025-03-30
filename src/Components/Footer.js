@@ -99,7 +99,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
-                  +91 7060089044
+                  +91 89796 17318
                 </a>
                 <a
                   href="#"
