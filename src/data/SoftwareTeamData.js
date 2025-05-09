@@ -11,14 +11,6 @@ export const softwareTeam = [
   //   twitter: "#",
   //   facebook: "#",
   // },
-  {
-    photo: omkar,
-    name: "Omkar Darde",
-    position: "Linear AmpTech",
-    linkedin: "https://www.linkedin.com/in/omkar-darde-680041215/",
-    twitter: "#",
-    facebook: "#",
-  },
 
   {
     photo: manav,

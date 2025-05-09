@@ -35,15 +35,6 @@ export const coreTeam = [
   },
 
   {
-    photo: azhar,
-    name: "Azhar Ansari",
-    position: "Linear AmpTech",
-    linkedin: "https://www.linkedin.com/in/azhar-ansari-767a85215/",
-    twitter: "#",
-    facebook: "#",
-  },
-
-  {
     photo: kavish,
     name: "Kavish Lodha",
     position: "Paytm",
@@ -51,37 +42,12 @@ export const coreTeam = [
     twitter: "#",
     facebook: "#",
   },
-  {
-    photo: vishu,
-    name: "Vishu Saxena",
-    position: "Critix Systems, Flookup",
-    linkedin: "https://www.linkedin.com/in/vishu-saxena-73432818b/",
-    twitter: "#",
-    facebook: "#",
-  },
 
-  {
-    photo: achal,
-    name: "Achal Talati",
-    position: "Oracle, PowerPlay",
-    linkedin: "https://www.linkedin.com/in/achal-talati-45a9631b2/",
-    twitter: "#",
-    facebook: "#",
-  },
   {
     photo: devansh,
     name: "Devansh Joshi",
     position: "Sprinklr",
     linkedin: "https://www.linkedin.com/in/jdevansh/",
-    twitter: "#",
-    facebook: "#",
-  },
-
-  {
-    photo: suyash,
-    name: "Suyash Jain",
-    position: "Intuit",
-    linkedin: "https://www.linkedin.com/in/jainsuyash/",
     twitter: "#",
     facebook: "#",
   },

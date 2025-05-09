@@ -40,7 +40,7 @@ export const boardMember = [
     photo: vivek,
     name: "Mr. Vivek Sharma",
     position: [`Director`, `IHC Holding, IITR ECE`],
-    linkedin: "https://www.linkedin.com/in/vivek-sharma-986950121/",
+    linkedin: "#",
     twitter: "#",
     facebook: "#",
   },
