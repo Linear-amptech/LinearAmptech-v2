@@ -51,7 +51,7 @@ const Footer = () => {
                   AI Qube Data Core
                 </NavLink>
                 <NavLink
-                  to="/products/cyber-physical-system-and-signal-processing"
+                  to="/products/wait-system"
                   className="text-gray-50 transition-colors duration-300    hover:text-[#2196f3]"
                 >
                   WAIT System
