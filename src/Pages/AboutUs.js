@@ -220,7 +220,7 @@ const AboutUs = () => {
         </div>
       </div>
       {/* BOARD of Directors */}
-      <div className="lg:mt-64 mb-20">
+      {/* <div className="lg:mt-64 mb-20">
         <section className=" ">
           <div className="container px-6 py-10 mx-auto mt-12">
             <h1 className="lg:text-[40px] text-4xl font-semibold text-center text-blue-gray-900 capitalize ">
@@ -245,7 +245,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
       {/* GET to know */}
       <hr />
       <section className=" bg-gradient-to-tr from-blue-600 to-blue-400">
