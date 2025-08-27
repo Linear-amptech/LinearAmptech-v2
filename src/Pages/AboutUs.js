@@ -248,7 +248,7 @@ const AboutUs = () => {
       </div> */}
       {/* GET to know */}
       <hr />
-      <section className=" bg-gradient-to-tr from-blue-600 to-blue-400">
+      <section className=" bg-gradient-to-tr from-blue-600 to-blue-400 lg:mt-64 ">
         <div className="container px-4 lg:py-16 py-8 mx-auto lg:flex lg:items-center lg:justify-between">
           <h2 className="lg:text-4xl text-3xl  font-medium tracking-tight  text-white">
             Get to know today!
