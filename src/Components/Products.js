@@ -218,7 +218,7 @@ export default function Products() {
           <Typography className="font-Poppins">
             With the advent of Software Defined Radio (SDR) the radio hardware
             scaled down to software and most of the features is pushed into
-            software. In the scenario of war...
+            software. In the modern...
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">

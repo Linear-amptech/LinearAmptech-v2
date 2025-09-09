@@ -87,9 +87,13 @@ const Home = () => {
         </h2>
         <p className="text-[1.1rem] leading-loose text-center">
           A technology service company that provides innovative solutions to
-          help businesses stay ahead of the curve. We specialize in AI, ML, IoT,
-          Lora Network for asset tracking, power amplifiers, and SDR. Our team
-          of experts is dedicated to providing the best possible service to our
+          help businesses stay ahead of the curve. We specialize in entire cyber
+          physical domain including sensors, network and analytics. Having
+          strong research background from IIT, we are capable of developing AI,
+          ML based solutions , IoT applications, Lora Network for long range
+          communication etc. The company has unique capability of developing
+          various radio frequency frontend components for SDRs. Our team of
+          experts is dedicated to providing the best possible service to our
           clients. We believe in the power of technology to transform businesses
           and industries. We are passionate about using our skills and knowledge
           to help our clients harness the full potential of technology to

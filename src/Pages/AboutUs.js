@@ -67,13 +67,19 @@ const AboutUs = () => {
               </h2>
 
               <p className="mt-4 lg:text-[20px] md:text-[18px] text-base text-blue-gray-800 leading-loose pb-10 ">
-                Linearized Amplifier Technology & Services private ltd (Linear
-                Amp-tech) is a company formed and driven by innovative minds of
-                Indian I.I.T Roorkee. The company is Incubated in I.I.T Roorkee
-                and includes students and professors on the board of directors.
-                The company is focused on innovation to cater to various
-                technical challenges in the area of Electronics and Software
-                Engineering.
+                A technology service company that provides innovative solutions
+                to help businesses stay ahead of the curve. We specialize in
+                entire cyber physical domain including sensors, network and
+                analytics. Having strong research background from IIT, we are
+                capable of developing AI, ML based solutions , IoT applications,
+                Lora Network for long range communication etc. The company has
+                unique capability of developing various radio frequency frontend
+                components for SDRs. Our team of experts is dedicated to
+                providing the best possible service to our clients. We believe
+                in the power of technology to transform businesses and
+                industries. We are passionate about using our skills and
+                knowledge to help our clients harness the full potential of
+                technology to achieve their goals.
               </p>
 
               <a
@@ -92,11 +98,6 @@ const AboutUs = () => {
                 className="mt-0 md:mt-8  text-blue-gray-800  lg:text-[20px] md:text-[18px] text-base leading-loose "
                 id="moretag"
               >
-                The company is geared up to take on new technology development
-                projects in the relevant areas. The company is primarily
-                focusing on various aspects of cyber-physical system design
-                including radio-frequency sensors development and addressing the
-                cyber domain with Artificial intelligence and Machine Learning.
                 The company is geared up to take on new technology development
                 projects in the relevant areas. The company is primarily
                 focusing on various aspects of cyber-physical system design
@@ -137,9 +138,9 @@ const AboutUs = () => {
             <h1 className="text-[20px] font-semibold">RF Power Amplifiers</h1>
             <p className="">
               Linear Amptech provides excellent indigenous power amplifier
-              solution for Cellular application and variety of military and
-              space applications. We provide vast range of high performance
-              power amplifiers with frequency coverage from Dc to 18 GHz.
+              solution for Cellular application. We provide vast range of high
+              performance power amplifiers with frequency coverage from Dc to 18
+              GHz.
             </p>
             <div>
               <NavLink

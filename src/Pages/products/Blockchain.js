@@ -28,20 +28,20 @@ const Blockchain = () => {
 
                 <p className=" leading-relaxed w-[95%] mt-8 text-[1.1rem] text-gray-700">
                   The blockchain-based management system offers a range of
-                  applications across various industries. In the military and
-                  defense sector, it ensures accurate tracking and efficient
-                  management of ammunition, weapons, and critical assets. For
-                  supply chain management, the system enables real-time tracking
-                  of inventory, improving efficiency and trust among
-                  stakeholders. In healthcare, it facilitates the efficient
-                  management of medical supplies, pharmaceuticals, and
-                  equipment. Government agencies benefit from accurate tracking
-                  and transparent information for managing public infrastructure
-                  and assets. In the energy and utilities sector, the system
-                  supports effective management of equipment, spare parts, and
-                  maintenance schedules. These applications demonstrate the
-                  broad potential and advantages of implementing the
-                  blockchain-based management system in various industries.
+                  applications across various industries. In the modern
+                  scenario, it ensures accurate tracking and efficient
+                  management of various critical assets. For supply chain
+                  management, the system enables real-time tracking of
+                  inventory, improving efficiency and trust among stakeholders.
+                  In healthcare, it facilitates the efficient management of
+                  medical supplies, pharmaceuticals, and equipment. Government
+                  agencies benefit from accurate tracking and transparent
+                  information for managing public infrastructure and assets. In
+                  the energy and utilities sector, the system supports effective
+                  management of equipment, spare parts, and maintenance
+                  schedules. These applications demonstrate the broad potential
+                  and advantages of implementing the blockchain-based management
+                  system in various industries.
                 </p>
               </div>
             </div>
@@ -207,8 +207,8 @@ const Blockchain = () => {
                   </h1>
 
                   <p className="mt-2 text-gray-700 ">
-                    Efficient asset management is vital to defense readiness and
-                    operations. Inefficient supply chain management can
+                    Efficient asset management is vital to industry readiness
+                    and operations. Inefficient supply chain management can
                     adversely impact activities like recycling, segregation, and
                     repair of assets.
                   </p>

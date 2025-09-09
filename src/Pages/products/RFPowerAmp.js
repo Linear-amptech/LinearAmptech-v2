@@ -21,23 +21,13 @@ const RFPowerAmp = () => {
           Radio Frequency Power Amplifier
         </h2>
         <p className="my-10 text-gray-800">
-          The company has varieties of Radio Frequency Power Amplifiers for L, S
-          and C band in their product line. These Amplifiers are power stages as
-          well as complete unit with DC/DC converters.
-        </p>
-        <p className="text-gray-800">
-          These amplifiers powered by Gallium Nitride device technology presents
-          high efficiency (more than 60%) upto 100 W CW output power. Some of
-          these involves most advanced Power Amplifiers design techniques such
-          as continuum of classes (Class B/J, continuum of Class E/F ) enabling
-          very high efficiency operation over the octave and even multi-octave
-          frequency range. Such wideband designs with single discrete device and
-          high efficiency operations together provides a reliable operation with
-          small form factor. The company in-house R&D is also capable of
-          customized design of the entire power amplifier units with VSWR
-          monitoring, high Gain stages and supply cards for biasing. The company
-          also provides the power amplifiers for Wireless communication such as
-          Doherty Power Amplifiers.
+          The company has a strong research background, with directors from
+          I.I.T-Roorkee who are working in cutting-edge radio frequency
+          technologies. Their recent R&D focus includes intelligent reflecting
+          surfaces, multi-octave GAN MMICs, and millimeter-wave RFICs in CMOS
+          and SiGe BiCMOS. Overall, the company is dedicated to pushing the
+          boundaries of radio frequency technology and providing innovative
+          solutions to their clients.
         </p>
         <div className="w-[200px] h-[2px] bg-black inline-block mt-24"></div>
       </div>{" "}

@@ -19,17 +19,14 @@ const SDR = () => {
         <p className="my-10">
           With the advent of Software Defined Radio (SDR) the radio hardware
           scaled down to software and most of the features is pushed into
-          software. In the scenario of war, the communication significantly
-          depends on flexibility, interoperability, accuracy, and promptness.
-          SDR having digital control and algorithms developed by us to
-          compensate hardware imperfection apart from baseband can effectively
-          increase flexibility, interoperability, accuracy, and promptness.
-          Therefore in the scenario of conflict it can use as communication
-          repeater. Moreover the conventional equipment supports defense
-          personnel the ability to adjust only one frequency and single
-          protocol. With the help of the SDR, defense personnel are able to
-          monitor and communicate over an enormous percentage of the spectrum
-          and support multiple protocols.
+          software. In the modern era, the communication significantly depends
+          on flexibility, interoperability, accuracy, and promptness. SDR having
+          digital control and algorithms developed by us to compensate hardware
+          imperfection apart from baseband can effectively increase flexibility,
+          interoperability, accuracy, and promptness. With the multi standard
+          and multi mode capabilities of SDR the wireless communication
+          infrastructure can support multiple protocols with backward
+          compatibility.
         </p>
         <div className="w-[200px] h-[2px] bg-black inline-block mt-24"></div>
       </div>

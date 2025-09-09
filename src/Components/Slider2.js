@@ -80,18 +80,17 @@ export default function Slider2() {
           <div className="flex items-center justify-center w-full px-6 md:pt-0 py-4  lg:w-1/2">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold text-blue-gray-900  lg:text-[56px] leading-snug ">
-                Cyber physical system
+                Cyber physical system (CPS)
               </h2>
 
               <p className="mt-4 text-sm text-blue-gray-600  lg:text-lg">
                 Refers to a system that integrates physical devices with a cyber
                 interface for monitoring and controlling the physical world. The
-                company is focusing on innovation in CPS for various
-                applications such as
-                <span className="">Traffic Solutions</span>, Industry 4.0, and
-                Defence Platforms, and is seeking unique sensors for innovative
-                solutions such as Gun-Shot Detection, RF Location-Finding, and
-                Correlation Interferometry, amonog others.
+                company is focusing on innovation in cyber physical system for
+                various applications such as Traffic Solutions, Industry 4.0
+                etc. and is developing unique sensors for innovative solutions
+                such as Correlative Interferometry for acoustic and radio
+                frequency source location estimation.
               </p>
 
               <div className="flex flex-col my-6 space-y-3 lg:space-y-0 lg:flex-row gap-2">
@@ -126,10 +125,10 @@ export default function Slider2() {
               </h2>
 
               <p className="mt-4 text-sm text-blue-gray-600  lg:text-lg">
-                We are committed to evolving as Deep Tech Comapany. Artificial
-                Intelligence and Machine Learning is one the innovative areas to
-                which we are keen to contribute. Our recent innovation involves
-                the development of and ML Pipleline in our own Network-Attached
+                We are committed to evolving as Deep Tech Company. Artificial
+                Intelligence and Machine Learning (ML) is one of the innovative
+                areas where we are contributing. Our recent innovation involves
+                the development of and ML Pipeline in our own Network-Attached
                 Storage (NAS) and computational Platform for executing all the
                 background algorithms.
               </p>

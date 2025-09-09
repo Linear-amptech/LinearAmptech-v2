@@ -632,19 +632,17 @@ const Innovations = () => {
                 />
 
                 <h1 className="text-[20px] font-bold  text-blue-gray-900 capitalize  px-4 pt-2">
-                  Cyber physical system
+                  Cyber physical system (CPS)
                 </h1>
 
                 <p className="text-gray-700 tracking-wide px-4 pb-6">
                   Refers to a system that integrates physical devices with a
                   cyber interface for monitoring and controlling the physical
-                  world. The company is focusing on innovation in CPS for
-                  various applications such as
-                  <span className="">Traffic Solutions</span>, Industry 4.0, and
-                  Defence Platforms, and is seeking unique sensors for
-                  innovative solutions such as Gun-Shot Detection, RF
-                  Location-Finding, and Correlation Interferometry, amonog
-                  others.
+                  world. The company is focusing on innovation in cyber physical
+                  system for various applications such as Traffic Solutions,
+                  Industry 4.0 etc. and is developing unique sensors for
+                  innovative solutions such as Correlative Interferometry for
+                  acoustic and radio frequency source location estimation.
                 </p>
               </div>
 
@@ -660,12 +658,12 @@ const Innovations = () => {
                 </h1>
 
                 <p className="text-gray-700 px-4 pb-6">
-                  We are committed to evolving as Deep Tech Comapany. Artificial
-                  Intelligence and Machine Learning is one the innovative areas
-                  to which we are keen to contribute. Our recent innovation
-                  involves the development of and ML Pipleline in our own
-                  Network-Attached Storage (NAS) and computational Platform for
-                  executing all the background algorithms.
+                  We are committed to evolving as Deep Tech Company. Artificial
+                  Intelligence and Machine Learning (ML) is one of the
+                  innovative areas where we are contributing. Our recent
+                  innovation involves the development of and ML Pipeline in our
+                  own Network-Attached Storage (NAS) and computational Platform
+                  for executing all the background algorithms.
                 </p>
               </div>
 

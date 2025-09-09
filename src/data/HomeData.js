@@ -19,7 +19,7 @@ export const homeProduct = [
     tag: "SDR",
     title: "Software Defined Point to Point Radio Applications",
     content:
-      "With the advent of Software Defined Radio (SDR) the radio hardware scaled down to software and most of the features is pushed into software. In the scenario of war, the communication significantly depends on flexibility, interoperability, accuracy, and promptness. SDR having digital control and algorithms developed by us to compensate hardware imperfection apart from baseband can effectively increase flexibility, interoperability and promptness. ",
+      "In the modern era, the communication significantly depends on flexibility, interoperability, accuracy, and promptness. SDR having digital control and algorithms developed by us to compensate hardware imperfection apart from baseband can effectively increase flexibility, interoperability, accuracy, and promptness. ",
     link: "/products/rf-design-and-signal-processing",
   },
 
