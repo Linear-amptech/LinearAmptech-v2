@@ -109,8 +109,8 @@ export default function Products() {
           </Typography>
           <Typography className="font-Poppins">
             The blockchain-based management system offers a range of
-            applications across various industries. In the military and defense
-            sector, it ensures accurate tracking and...
+            applications across various industries. In the modern scenario, it
+            ensures accurate tracking and ...
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
