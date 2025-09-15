@@ -35,7 +35,6 @@ const LAMP3 = () => {
             <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-blue-gray-700">
               <li> Transmitters</li>
               <li> Laboratory use</li>
-              <li> Defense</li>
               <li>Cellular</li>
               <li> communication systems</li>
             </ul>

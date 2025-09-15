@@ -239,7 +239,7 @@ const Innovations = () => {
 
                     <p className="text-gray-700">
                       It is a generalized ML platform to provide personalized
-                      solution for defence and industries.
+                      solution for  industries.
                     </p>
                   </div>
                 </div>

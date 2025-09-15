@@ -30,7 +30,6 @@ const LAMP1 = () => {
             </ul>
             <h2 className="text-[1.8rem] font-bold mt-5">Applications</h2>
             <ul className="list-disc my-3 ml-8 flex flex-col gap-1 text-blue-gray-700">
-              <li>Defense</li>
               <li>Cellular</li>
               <li>SDRs</li>
               <li>Radars</li>

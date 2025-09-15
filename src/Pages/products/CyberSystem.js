@@ -44,7 +44,7 @@ const CyberSystem = () => {
           {/* </p> */}
           {/* <p> */} The company is focusing on innovations related to new CPS
           for many multi-disciplinary applications such as intelligent traffic
-          solutions, industry 4.0, and defense situation awareness platforms.
+          solutions, industry 4.0, and  situation awareness platforms.
           Accordingly, some sensors which are unique and not readily available
           are also in the wish list of our innovation teams such as Gun-shot
           detection, RF location-finding (LF), and direction- finding (DF)
