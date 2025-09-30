@@ -86,11 +86,12 @@ const Home = () => {
           About Us
         </h2>
         <p className="text-[1.1rem] leading-loose text-center">
-          A technology service company that provides innovative solutions to
-          help businesses stay ahead of the curve. We specialize in entire cyber
-          physical domain including sensors, network and analytics. Having
-          strong research background from IIT, we are capable of developing AI,
-          ML based solutions , IoT applications, Lora Network for long range
+          Linearized Amplifier Technologies and Services Private Ltd. is a
+          company that provides innovative solutions to help businesses stay
+          ahead of the curve. We specialize in entire cyber physical domain
+          including sensors, network and analytics. Having strong research
+          background from IIT, we are capable of developing AI, ML based
+          solutions , IoT applications, Lora Network for long range
           communication etc. The company has unique capability of developing
           various radio frequency frontend components for SDRs. Our team of
           experts is dedicated to providing the best possible service to our

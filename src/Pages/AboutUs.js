@@ -1,20 +1,14 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Footer, Header } from "../Components";
-import { BsFacebook, BsLinkedin } from "react-icons/bs";
-import { AiFillTwitterCircle } from "react-icons/ai";
+
 import { NavLink } from "react-router-dom";
-import aboutbg from "../assets/aboutbg.jpg";
+
 import rf from "../assets/rfpower/0.png";
 import sdr from "../assets/SDR/1.jpg";
 import poweramp from "../assets/PowerAmp/1.png";
-import { Button } from "@material-tailwind/react";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-import BoardMember from "../Components/BoardMember";
-
-import { boardMember } from "../data/BoardMemberData";
-import TeamMember from "../Components/TeamMember";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -67,19 +61,19 @@ const AboutUs = () => {
               </h2>
 
               <p className="mt-4 lg:text-[20px] md:text-[18px] text-base text-blue-gray-800 leading-loose pb-10 ">
-                A technology service company that provides innovative solutions
-                to help businesses stay ahead of the curve. We specialize in
-                entire cyber physical domain including sensors, network and
-                analytics. Having strong research background from IIT, we are
-                capable of developing AI, ML based solutions , IoT applications,
-                Lora Network for long range communication etc. The company has
-                unique capability of developing various radio frequency frontend
-                components for SDRs. Our team of experts is dedicated to
-                providing the best possible service to our clients. We believe
-                in the power of technology to transform businesses and
-                industries. We are passionate about using our skills and
-                knowledge to help our clients harness the full potential of
-                technology to achieve their goals.
+                Linearized Amplifier Technologies and Services Private Ltd. is a
+                company that provides innovative solutions to help businesses
+                stay ahead of the curve. We specialize in entire cyber physical
+                domain including sensors, network and analytics. Having strong
+                research background from IIT, we are capable of developing AI,
+                ML based solutions , IoT applications, Lora Network for long
+                range communication etc. The company has unique capability of
+                developing various radio frequency frontend components for SDRs.
+                Our team of experts is dedicated to providing the best possible
+                service to our clients. We believe in the power of technology to
+                transform businesses and industries. We are passionate about
+                using our skills and knowledge to help our clients harness the
+                full potential of technology to achieve their goals.
               </p>
 
               <a

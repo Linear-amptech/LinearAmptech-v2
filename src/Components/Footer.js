@@ -128,8 +128,8 @@ const Footer = () => {
             </a>
 
             <p className="mt-4 text-sm text-gray-50 sm:mt-0 ">
-              © Linear Amp-Tech {new Date().getYear() + 1900}. All Rights
-              Reserved.
+              © Linearized Amplifier Technologies and Services Private Ltd.{" "}
+              {new Date().getYear() + 1900}. All Rights Reserved.
             </p>
           </div>
         </div>
