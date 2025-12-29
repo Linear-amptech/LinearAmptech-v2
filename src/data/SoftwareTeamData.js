@@ -1,15 +1,6 @@
-import manav from "../assets/profile/manav.jpeg";
 import anupam from "../assets/profile/anupam.jpeg";
 import shreyansh from "../assets/profile/shreyansh.jpeg";
 export const softwareTeam = [
-  {
-    photo: manav,
-    name: "Manav Singh",
-    position: "Linear AmpTech",
-    linkedin: "https://www.linkedin.com/in/manav-chauhan-430379267/",
-    twitter: "#",
-    facebook: "#",
-  },
   {
     photo: anupam,
     name: "Anupam Bansal",
