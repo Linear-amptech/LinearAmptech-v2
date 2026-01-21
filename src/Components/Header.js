@@ -50,7 +50,7 @@ const Header = () => {
               <img
                 className="md:w-[110px] h-auto w-[88px]"
                 src={require("../assets/logo.png")}
-                alt="linear-amptec-logo"
+                alt="Linear Amptech"
               />
             </NavLink>
 
