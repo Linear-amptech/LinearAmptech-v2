@@ -271,6 +271,7 @@ const ApplyForm = () => {
                 <option value="" hidden>
                   Select Qualification
                 </option>
+                <option value="Diploma">Diploma</option>
                 <option value="Graduate">Graduate</option>
                 <option value="Post Graduate">Post Graduate</option>
                 <option value="PhD">PhD</option>
