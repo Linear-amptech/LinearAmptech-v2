@@ -2,6 +2,7 @@
   "name": "linearamptechv2",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.0.8",
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.1.1",
@@ -52,5 +53,11 @@
   "devDependencies": {
     "install": "^0.13.0",
     "tailwindcss": "^3.2.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "core-js",
+      "core-js-pure"
+    ]
   }
 }
