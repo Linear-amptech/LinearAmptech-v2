@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@11.0.8",
+  "engines": {
+    "node": "22.x",
+    "pnpm": "11.0.8"
+  },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.1.1",
