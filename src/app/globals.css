@@ -244,6 +244,54 @@
     @apply block h-2.5 w-full rounded-full bg-cyan-200 shadow-[0_0_18px_rgba(103,232,249,0.75)];
   }
 
+  .hero-chip-background {
+    @apply pointer-events-none absolute inset-0 z-[1] overflow-hidden;
+  }
+
+  .hero-chip-background img {
+    animation: heroImageDrift 12s ease-in-out infinite;
+    filter: saturate(1.08) contrast(1.06);
+    object-position: 64% 50%;
+  }
+
+  .hero-chip-background::before {
+    background:
+      radial-gradient(
+        circle at 66% 44%,
+        rgb(34 211 238 / 16%),
+        transparent 28%
+      ),
+      linear-gradient(
+        90deg,
+        rgb(3 6 13 / 96%) 0%,
+        rgb(3 6 13 / 78%) 34%,
+        rgb(3 6 13 / 42%) 63%,
+        rgb(3 6 13 / 74%) 100%
+      ),
+      linear-gradient(180deg, rgb(3 6 13 / 58%), rgb(3 6 13 / 82%));
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .hero-chip-background::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(103 232 249 / 20%),
+      transparent
+    );
+    content: "";
+    height: 1px;
+    left: 0;
+    opacity: 0.75;
+    position: absolute;
+    right: 0;
+    top: 63%;
+    z-index: 3;
+  }
+
   .image-panel {
     @apply relative overflow-hidden rounded-lg border border-cyan-200/20 bg-slate-950/65 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_34px_120px_rgba(0,0,0,0.42)];
   }
@@ -601,6 +649,16 @@
   50% {
     box-shadow: 0 0 88px rgb(34 211 238 / 24%);
     opacity: 0.75;
+  }
+}
+
+@keyframes heroImageDrift {
+  0%,
+  100% {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.1) translate3d(-1.2%, -0.8%, 0);
   }
 }
 

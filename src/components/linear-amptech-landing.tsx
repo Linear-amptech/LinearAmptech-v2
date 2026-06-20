@@ -30,6 +30,9 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import type { Mesh } from "three";
 
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+
 const assets = {
   heroChip: "/assets/hero-chip.png",
   siliconWafer: "/assets/silicon-wafer.png",
@@ -312,35 +315,6 @@ function BackgroundTexture({
   );
 }
 
-function FloatingImage({
-  src,
-  alt,
-  priority = false,
-  className = "",
-}: {
-  src: string;
-  alt: string;
-  priority?: boolean;
-  className?: string;
-}) {
-  return (
-    <motion.div
-      className={`floating-image ${className}`}
-      animate={{ y: [0, -18, 0], rotate: [0, 1.4, 0], scale: [1, 1.015, 1] }}
-      transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        width={900}
-        height={900}
-        priority={priority}
-        className="h-full w-full object-contain"
-      />
-    </motion.div>
-  );
-}
-
 function ParallaxImage({
   src,
   alt,
@@ -434,28 +408,7 @@ export default function LinearAmptechLanding() {
         style={{ x: glowX, y: glowY }}
       />
       <div aria-hidden="true" className="particle-field" />
-      <header className="fixed left-0 right-0 top-0 z-40 border-b border-white/10 bg-[#03060d]/72 backdrop-blur-xl">
-        <nav
-          className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8"
-          aria-label="Primary navigation"
-        >
-          <a
-            href="#hero"
-            className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.26em] text-white"
-          >
-            <span className="grid size-9 place-items-center rounded-lg border border-cyan-300/35 bg-cyan-300/10 text-cyan-200">
-              <Cpu className="size-4" aria-hidden="true" />
-            </span>
-            Linear Amptech
-          </a>
-          <div className="hidden items-center gap-7 text-xs font-medium uppercase tracking-[0.18em] text-slate-300 md:flex">
-            <a href="#capabilities">Capabilities</a>
-            <a href="#products">Products</a>
-            <a href="#technology">Technology</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <section
         id="hero"
@@ -473,6 +426,20 @@ export default function LinearAmptechLanding() {
           <ChipScene />
         </motion.div>
         <div aria-hidden="true" className="circuit-traces" />
+        <motion.div
+          aria-hidden="true"
+          className="hero-chip-background"
+          style={{ y: heroY }}
+        >
+          <Image
+            src={assets.heroChip}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </motion.div>
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
             <div className="max-w-4xl">
@@ -501,14 +468,7 @@ export default function LinearAmptechLanding() {
               </div>
             </div>
           </Reveal>
-          <Reveal className="hero-visual-wrap">
-            <FloatingImage
-              src={assets.heroChip}
-              alt="Futuristic semiconductor chip designed by Linear Amptech"
-              priority
-              className="mx-auto h-[360px] sm:h-[480px] lg:h-[620px]"
-            />
-          </Reveal>
+          <div className="hidden lg:block" aria-hidden="true" />
         </div>
         <motion.a
           href="#about"
@@ -831,6 +791,7 @@ export default function LinearAmptechLanding() {
           </Reveal>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }
