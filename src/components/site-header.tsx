@@ -19,19 +19,19 @@ export function SiteHeader() {
       >
         <Link
           href="/"
-          className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-white"
+          className="flex items-center text-white"
+          aria-label="Linear Amptech home"
         >
-          <span className="grid size-10 place-items-center rounded-lg border border-cyan-300/35 bg-white text-cyan-950 shadow-[0_0_28px_rgba(34,211,238,0.18)]">
+          <span className="grid h-12 w-[82px] place-items-center rounded-md border border-cyan-300/30 bg-white/95 shadow-[0_0_30px_rgba(34,211,238,0.18)]">
             <Image
               src="/assets/linear-amptech-logo.png"
               alt="Linear Amptech logo"
-              width={34}
-              height={34}
-              className="h-8 w-auto object-contain"
+              width={74}
+              height={43}
+              className="h-11 w-auto object-contain"
               priority
             />
           </span>
-          <span className="hidden sm:inline">Linear Amptech</span>
         </Link>
         <div className="hidden items-center gap-7 text-xs font-medium uppercase tracking-[0.18em] text-slate-300 md:flex">
           {navItems.map((item) => (

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import { companyContact, footerProducts } from "@/lib/company-data";
+import { companyContact } from "@/lib/company-data";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -14,7 +14,7 @@ export function SiteFooter() {
         className="absolute inset-0 bg-[url('/assets/circuit-background.png')] bg-cover bg-center opacity-[0.06]"
       />
       <div className="relative mx-auto max-w-7xl px-5 py-14 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
               Quick Links
@@ -32,16 +32,6 @@ export function SiteFooter() {
               <Link href="/careers" className="hover:text-cyan-100">
                 Careers
               </Link>
-            </div>
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
-              Products
-            </p>
-            <div className="mt-5 grid gap-3 text-sm text-slate-300">
-              {footerProducts.map((product) => (
-                <span key={product}>{product}</span>
-              ))}
             </div>
           </div>
           <div>
@@ -86,18 +76,19 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-5 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <span className="grid size-12 place-items-center rounded-lg bg-white">
+          <Link
+            href="/"
+            className="inline-flex items-center"
+            aria-label="Linear Amptech home"
+          >
+            <span className="grid h-14 w-[96px] place-items-center rounded-md bg-white/95">
               <Image
                 src="/assets/linear-amptech-logo.png"
                 alt="Linear Amptech logo"
-                width={42}
-                height={42}
-                className="h-10 w-auto object-contain"
+                width={88}
+                height={51}
+                className="h-[52px] w-auto object-contain"
               />
-            </span>
-            <span className="text-sm font-semibold text-white">
-              Linear Amptech
             </span>
           </Link>
           <p className="text-sm text-slate-400">

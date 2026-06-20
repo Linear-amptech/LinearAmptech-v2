@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Linkedin, Mail, Radar, ShieldCheck, Waves } from "lucide-react";
+import { ExternalLink, Mail, Radar, ShieldCheck, Waves } from "lucide-react";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -83,7 +83,7 @@ export default function TeamPage() {
           {team.map((member) => (
             <article
               key={member.name}
-              className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] shadow-[0_28px_100px_rgba(0,0,0,0.32)] backdrop-blur-xl"
+              className="team-card group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] shadow-[0_28px_100px_rgba(0,0,0,0.32)] backdrop-blur-xl"
             >
               <div className="relative h-80 overflow-hidden border-b border-white/10">
                 <Image
@@ -130,7 +130,7 @@ export default function TeamPage() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Linkedin className="size-4" aria-hidden="true" />
+                    <ExternalLink className="size-4" aria-hidden="true" />
                     Profile
                   </a>
                 </div>

@@ -341,10 +341,16 @@ function ParallaxImage({
   );
 }
 
-function ProductImageCard({ product }: { product: (typeof products)[number] }) {
+function ProductImageCard({
+  product,
+  index,
+}: {
+  product: (typeof products)[number];
+  index: number;
+}) {
   return (
     <motion.article
-      className="product-card product-image-card"
+      className={`product-card product-image-card geo-${index % 4}`}
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 220, damping: 20 }}
     >
@@ -536,7 +542,7 @@ export default function LinearAmptechLanding() {
             {capabilities.map(([title, Icon], index) => (
               <Reveal key={title as string}>
                 <motion.article
-                  className="tech-card min-h-44"
+                  className={`tech-card geo-${index % 4} min-h-44`}
                   whileHover={{ y: -8, rotateX: 2.5, rotateY: -2.5 }}
                   transition={{ type: "spring", stiffness: 260, damping: 22 }}
                 >
@@ -575,9 +581,9 @@ export default function LinearAmptechLanding() {
             </p>
           </Reveal>
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {products.map((product) => (
+            {products.map((product, index) => (
               <Reveal key={product.name}>
-                <ProductImageCard product={product} />
+                <ProductImageCard product={product} index={index} />
               </Reveal>
             ))}
           </div>
