@@ -3,8 +3,6 @@ import Image from "next/image";
 import { ExternalLink, Mail, Radar, ShieldCheck, Waves } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 
 export const metadata: Metadata = {
   title: "Team | Linear Amptech",
@@ -52,7 +50,6 @@ const team = [
 export default function TeamPage() {
   return (
     <main className="min-h-screen bg-[#03060d] text-slate-100">
-      <SiteHeader />
       <section className="relative overflow-hidden pb-20 pt-32">
         <Image
           src="/assets/particle-background.png"
@@ -139,7 +136,6 @@ export default function TeamPage() {
           ))}
         </div>
       </section>
-      <SiteFooter />
     </main>
   );
 }

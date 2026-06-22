@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+
 export const metadata: Metadata = {
   title: "Linear Amptech | Semiconductor, RF, Analog and Mixed-Signal R&D",
   description:
@@ -24,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[#03060d] text-slate-100">
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

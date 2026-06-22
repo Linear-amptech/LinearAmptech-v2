@@ -4,8 +4,6 @@ import { BackgroundTexture } from "@/components/landing/background-texture";
 import { assets, products } from "@/components/landing/data";
 import { ProductImageCard } from "@/components/landing/product-image-card";
 import { Reveal } from "@/components/landing/reveal";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 
 export const metadata: Metadata = {
   title: "Products | Linear Amptech",
@@ -16,7 +14,6 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-[#03060d] text-slate-100">
-      <SiteHeader />
       <section className="section-shell relative border-b border-white/10 pb-16 pt-32">
         <BackgroundTexture
           src={assets.circuitBackground}
@@ -48,7 +45,6 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
-      <SiteFooter />
     </main>
   );
 }

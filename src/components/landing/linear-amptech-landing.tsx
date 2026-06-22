@@ -10,8 +10,6 @@ import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProductsSection } from "@/components/landing/products-section";
 import { ResearchSection } from "@/components/landing/research-section";
 import { TechnologySection } from "@/components/landing/technology-section";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 
 export default function LinearAmptechLanding() {
   const mouseX = useMotionValue(0);
@@ -36,7 +34,6 @@ export default function LinearAmptechLanding() {
         style={{ x: glowX, y: glowY }}
       />
       <div aria-hidden="true" className="particle-field" />
-      <SiteHeader />
       <HeroSection />
       <AboutSection />
       <CapabilitiesSection />
@@ -44,7 +41,6 @@ export default function LinearAmptechLanding() {
       <TechnologySection />
       <IndustriesSection />
       <ResearchSection />
-      <SiteFooter />
     </main>
   );
 }

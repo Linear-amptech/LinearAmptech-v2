@@ -7,8 +7,6 @@ import { notFound } from "next/navigation";
 import { BackgroundTexture } from "@/components/landing/background-texture";
 import { assets, products } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -48,7 +46,6 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
   return (
     <main className="min-h-screen bg-[#03060d] text-slate-100">
-      <SiteHeader />
       <section className="section-shell relative pb-20 pt-32">
         <BackgroundTexture
           src={assets.circuitBackground}
@@ -162,7 +159,6 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
           </div>
         </div>
       </section>
-      <SiteFooter />
     </main>
   );
 }

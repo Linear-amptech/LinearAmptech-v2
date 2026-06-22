@@ -3,8 +3,6 @@ import Image from "next/image";
 
 import { CareersBoard } from "@/components/careers/careers-board";
 import { Reveal } from "@/components/landing/reveal";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 
 export const metadata: Metadata = {
   title: "Careers | Linear Amptech",
@@ -15,7 +13,6 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <main className="min-h-screen bg-[#03060d] text-slate-100">
-      <SiteHeader />
       <section className="relative overflow-hidden px-5 pb-20 pt-32 lg:px-8">
         <Image
           src="/assets/rd-lab.png"
@@ -43,7 +40,6 @@ export default function CareersPage() {
       </section>
 
       <CareersBoard />
-      <SiteFooter />
     </main>
   );
 }

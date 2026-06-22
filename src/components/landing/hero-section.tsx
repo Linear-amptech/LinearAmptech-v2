@@ -10,9 +10,8 @@ import {
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import { BackgroundTexture } from "@/components/landing/background-texture";
 import { ChipScene } from "@/components/landing/chip-scene";
-import { assets, heroSlides } from "@/components/landing/data";
+import { heroSlides } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 
 export function HeroSection() {
@@ -46,7 +45,6 @@ export function HeroSection() {
       id="hero"
       className="hero-grid relative flex min-h-screen items-center overflow-hidden pb-20 pt-28"
     >
-      <BackgroundTexture src={assets.particleBackground} opacity="opacity-25" />
       <motion.div
         aria-hidden="true"
         className="absolute inset-0 z-0 opacity-30"
@@ -84,7 +82,7 @@ export function HeroSection() {
       </motion.div>
       <div className="container relative z-10 mx-auto grid w-full items-center gap-12 px-5 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
         <Reveal>
-          <div className="max-w-[98rem]">
+          <div className="max-w-[198rem]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeSlide.title}
@@ -97,7 +95,7 @@ export function HeroSection() {
                   {/* <Sparkles className="size-4" aria-hidden="true" /> */}
                   {activeSlide.eyebrow}
                 </div>
-                <h1 className="max-w-6xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
+                <h1 className="max-w-[98rem] text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
                   {activeSlide.title}
                 </h1>
                 <p className="mt-7 max-w-4xl text-lg leading-8 text-slate-300">
