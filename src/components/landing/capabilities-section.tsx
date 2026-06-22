@@ -11,7 +11,7 @@ export function CapabilitiesSection() {
     <section id="capabilities" className="section-shell">
       <BackgroundTexture
         src={assets.circuitBackground}
-        opacity="opacity-25"
+        opacity="opacity-20"
         className="animate-circuit-background-linear"
       />
       <div className="container mx-auto px-5 py-24 lg:px-8">
