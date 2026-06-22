@@ -84,7 +84,7 @@ export function HeroSection() {
                 Explore Products
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>
-              <a className="secondary-button" href="#contact">
+              <a className="secondary-button" href="/contact">
                 Start a Project
                 <Zap className="size-4" aria-hidden="true" />
               </a>

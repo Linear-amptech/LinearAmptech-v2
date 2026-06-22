@@ -15,7 +15,7 @@ export function ProductImageCard({ product, index }: ProductImageCardProps) {
   return (
     <motion.article
       className={`product-card product-image-card geo-${index % 4}`}
-      whileHover={{ y: -8, scale: 1.02 }}
+      whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 220, damping: 20 }}
     >
       <div className="product-visual">
@@ -32,7 +32,7 @@ export function ProductImageCard({ product, index }: ProductImageCardProps) {
           <div className="product-icon">
             <product.icon className="size-7" aria-hidden="true" />
           </div>
-          <a href="#contact" className="learn-button product-learn">
+          <a href="/contact" className="learn-button product-learn">
             Learn More
             <ArrowRight className="size-4" aria-hidden="true" />
           </a>

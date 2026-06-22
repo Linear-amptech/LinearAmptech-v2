@@ -7,12 +7,12 @@ const navItems = [
   { href: "/#products", label: "Products" },
   { href: "/team", label: "Team" },
   { href: "/careers", label: "Careers" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 border-b border-cyan-300/20 bg-[#02050a]/85  backdrop-blur-sm">
+    <header className="fixed left-0 right-0 top-0 z-40 border-b border-cyan-300/0 bg-[#02050a]/85  backdrop-blur-sm">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8"
         aria-label="Primary navigation"
@@ -45,7 +45,7 @@ export function SiteHeader() {
           ))}
         </div>
         <Link
-          href="/#contact"
+          href="/contact"
           className="grid size-10 place-items-center rounded-lg border border-cyan-300/25 bg-cyan-300/10 text-cyan-100 transition-colors hover:bg-cyan-300/20 md:hidden"
           aria-label="Contact Linear Amptech"
         >

@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 import { AboutSection } from "@/components/landing/about-section";
 import { CapabilitiesSection } from "@/components/landing/capabilities-section";
-import { ContactSection } from "@/components/landing/contact-section";
 import { HeroSection } from "@/components/landing/hero-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProductsSection } from "@/components/landing/products-section";
@@ -45,7 +44,6 @@ export default function LinearAmptechLanding() {
       <TechnologySection />
       <IndustriesSection />
       <ResearchSection />
-      <ContactSection />
       <SiteFooter />
     </main>
   );
