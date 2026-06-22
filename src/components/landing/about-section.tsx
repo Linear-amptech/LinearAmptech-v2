@@ -1,6 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+
 import { assets, metrics } from "@/components/landing/data";
 import { Metric } from "@/components/landing/metric";
-import { ParallaxImage } from "@/components/landing/parallax-image";
 import { Reveal } from "@/components/landing/reveal";
 
 export function AboutSection() {
@@ -9,7 +13,23 @@ export function AboutSection() {
       id="about"
       className="section-shell border-y border-white/10 bg-[#07101d]/70"
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <motion.div
+        aria-hidden="true"
+        className="about-wafer-bg"
+        initial={{ opacity: 0, filter: "blur(14px)" }}
+        whileInView={{ opacity: 0.35, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: 1.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+      >
+        <Image
+          src={assets.siliconWafer}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 54vw, 100vw"
+          className="object-cover"
+        />
+      </motion.div>
+      <div className="container relative z-10 mx-auto grid items-center gap-10 px-5 py-24 lg:grid-cols-[0.62fr_0.38fr] lg:px-8">
         <Reveal className="space-y-8">
           <p className="section-kicker">Company</p>
           <h2 className="section-title">
@@ -33,13 +53,7 @@ export function AboutSection() {
             ))}
           </div>
         </Reveal>
-        <Reveal>
-          <ParallaxImage
-            src={assets.siliconWafer}
-            alt="Blue silicon wafer used for Linear Amptech semiconductor research"
-            className="min-h-[360px] lg:min-h-[520px]"
-          />
-        </Reveal>
+        <div className="hidden lg:block" aria-hidden="true" />
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ export function CapabilitiesSection() {
         opacity="opacity-25"
         className="animate-circuit-background-linear"
       />
-      <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div className="container mx-auto px-5 py-24 lg:px-8">
         <Reveal className="max-w-3xl">
           <p className="section-kicker">Capabilities</p>
           <h2 className="section-title">

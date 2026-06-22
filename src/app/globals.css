@@ -190,6 +190,9 @@
   .platform-card::before,
   .application-card::before,
   .rd-panel::before,
+  .system-row::before,
+  .industry-row::before,
+  .research-cell::before,
   .team-card::before {
     background:
       linear-gradient(
@@ -341,7 +344,12 @@
 
   .platform-card,
   .application-card {
-    @apply relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_90px_rgba(0,0,0,0.25)] backdrop-blur-xl;
+    @apply relative overflow-hidden rounded-lg border border-cyan-200/15 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_28px_100px_rgba(0,0,0,0.32)] backdrop-blur-2xl;
+    background:
+      linear-gradient(180deg, rgb(15 23 42 / 0.82), rgb(2 6 23 / 0.78)),
+      rgb(2 6 23 / 0.82);
+    -webkit-backdrop-filter: blur(28px) saturate(1.16);
+    backdrop-filter: blur(28px) saturate(1.16);
   }
 
   .product-category-rail {
@@ -417,53 +425,6 @@
     z-index: -1;
   }
 
-  .scroll-indicator {
-    @apply absolute bottom-8 left-1/2 z-20 hidden h-16 w-8 -translate-x-1/2 md:block;
-  }
-
-  .scroll-indicator::before {
-    background: linear-gradient(
-      180deg,
-      transparent,
-      rgb(103 232 249 / 70%),
-      transparent
-    );
-    content: "";
-    height: 100%;
-    left: 50%;
-    position: absolute;
-    top: 0;
-    transform: translateX(-50%);
-    width: 1px;
-  }
-
-  .scroll-indicator::after {
-    border: 1px solid rgb(103 232 249 / 42%);
-    border-left-color: transparent;
-    border-top-color: transparent;
-    content: "";
-    height: 9px;
-    left: 50%;
-    position: absolute;
-    top: 48px;
-    transform: translateX(-50%) rotate(45deg);
-    width: 9px;
-  }
-
-  .scroll-indicator span {
-    animation: scrollNode 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    background: rgb(165 243 252);
-    border-radius: 999px;
-    box-shadow: 0 0 18px rgb(103 232 249 / 82%);
-    display: block;
-    height: 6px;
-    left: 50%;
-    position: absolute;
-    top: 5px;
-    transform: translateX(-50%);
-    width: 6px;
-  }
-
   .hero-chip-background {
     @apply pointer-events-none absolute inset-0 z-[1] overflow-hidden;
   }
@@ -513,15 +474,20 @@
   }
 
   .hero-slider-nav {
-    @apply mt-12 grid gap-3 sm:grid-cols-5;
+    @apply mt-12 grid gap-2 rounded-lg border border-cyan-200/15 bg-slate-950/55 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:grid-cols-5;
   }
 
   .hero-slider-nav button {
-    @apply relative min-h-20 overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] p-3 text-left text-slate-400 transition-all duration-300 hover:border-cyan-200/40 hover:bg-cyan-200/10 hover:text-white;
+    @apply relative min-h-24 overflow-hidden rounded-md border border-white/10 bg-white/[0.035] p-3 text-left text-slate-400 transition-all duration-300 hover:border-cyan-200/40 hover:bg-cyan-200/10 hover:text-white;
   }
 
   .hero-slider-nav button::before {
-    background: linear-gradient(90deg, rgb(103 232 249 / 85%), transparent);
+    background: linear-gradient(
+      90deg,
+      rgb(103 232 249 / 92%),
+      rgb(59 130 246 / 70%),
+      transparent
+    );
     content: "";
     height: 2px;
     left: 0;
@@ -533,21 +499,39 @@
     width: 100%;
   }
 
+  .hero-slider-nav button::after {
+    background: radial-gradient(
+      circle at 20% 0%,
+      rgb(34 211 238 / 18%),
+      transparent 48%
+    );
+    content: "";
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: opacity 0.3s ease;
+  }
+
   .hero-slider-nav button.is-active {
-    @apply border-cyan-200/45 bg-cyan-200/12 text-white shadow-[0_0_32px_rgba(34,211,238,0.13)];
+    @apply border-cyan-200/50 bg-cyan-200/12 text-white shadow-[0_0_34px_rgba(34,211,238,0.16)];
+  }
+
+  .hero-slider-nav button.is-active::after {
+    opacity: 1;
   }
 
   .hero-slider-nav button.is-active::before {
-    animation: heroProgress 6.2s linear;
+    animation: heroProgress 4.2s linear;
     transform: scaleX(1);
   }
 
   .hero-slider-nav span {
-    @apply block text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200;
+    @apply relative z-10 block text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-cyan-200;
   }
 
   .hero-slider-nav strong {
-    @apply mt-2 block text-xs font-semibold leading-5;
+    @apply relative z-10 mt-3 block text-xs font-semibold leading-5;
   }
 
   .image-panel {
@@ -637,7 +621,12 @@
   .system-row,
   .industry-row,
   .research-cell {
-    @apply relative overflow-hidden flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.04] p-5 text-slate-200 backdrop-blur-xl;
+    @apply relative overflow-hidden flex items-center gap-4 rounded-lg border border-cyan-200/15 p-5 text-slate-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-2xl;
+    background:
+      linear-gradient(180deg, rgb(15 23 42 / 0.8), rgb(2 6 23 / 0.76)),
+      rgb(2 6 23 / 0.8);
+    -webkit-backdrop-filter: blur(28px) saturate(1.16);
+    backdrop-filter: blur(28px) saturate(1.16);
   }
 
   .system-row span {
@@ -694,6 +683,16 @@
   .contact-wafer-bg {
     @apply pointer-events-none absolute bottom-0 right-0 top-0 w-full opacity-20 lg:w-[48%];
     mask-image: linear-gradient(to left, black, transparent);
+  }
+
+  .about-wafer-bg {
+    @apply pointer-events-none absolute bottom-0 right-0 top-0 hidden w-[54%] lg:block;
+    mask-image: linear-gradient(to left, black 34%, transparent);
+  }
+
+  .about-wafer-bg img {
+    filter: saturate(1.08) contrast(1.08) brightness(1.05);
+    object-position: 68% 50%;
   }
 
   .tech-image-panel {
@@ -958,23 +957,6 @@
     background-position:
       180px 0,
       0 180px;
-  }
-}
-
-@keyframes scrollNode {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(0) scale(0.75);
-  }
-  18% {
-    opacity: 1;
-  }
-  72% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(42px) scale(1);
   }
 }
 

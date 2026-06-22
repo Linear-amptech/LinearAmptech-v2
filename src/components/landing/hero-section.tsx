@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ export function HeroSection() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
-    }, 6200);
+    }, 4200);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -53,7 +53,7 @@ export function HeroSection() {
               opacity: activeHeroSlide === index ? 1 : 0,
               scale: activeHeroSlide === index ? 1 : 1.035,
             }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.82, ease: [0.22, 1, 0.36, 1] }}
           >
             <Image
               src={slide.image}
@@ -66,27 +66,23 @@ export function HeroSection() {
           </motion.div>
         ))}
       </motion.div>
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="container relative z-10 mx-auto grid w-full items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         <Reveal>
-          <div className="max-w-4xl">
+          <div className="max-w-[88rem]">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
               <Sparkles className="size-4" aria-hidden="true" />
               {activeSlide.eyebrow}
             </div>
-            <h1 className="max-w-5xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-[88rem] text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
               {activeSlide.title}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+            <p className="mt-7 max-w-4xl text-lg leading-8 text-slate-300">
               {activeSlide.description}
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a className="premium-button" href="#products">
                 Explore Products
                 <ArrowRight className="size-4" aria-hidden="true" />
-              </a>
-              <a className="secondary-button" href="/contact">
-                Start a Project
-                <Zap className="size-4" aria-hidden="true" />
               </a>
             </div>
             <div className="hero-slider-nav" aria-label="Hero slides">
@@ -108,15 +104,6 @@ export function HeroSection() {
         </Reveal>
         <div className="hidden lg:block" aria-hidden="true" />
       </div>
-      <motion.a
-        href="#about"
-        className="scroll-indicator"
-        aria-label="Scroll to about section"
-        animate={{ y: [0, 9, 0], opacity: [0.55, 1, 0.55] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <span />
-      </motion.a>
     </section>
   );
 }

@@ -17,7 +17,7 @@ export function IndustriesSection() {
         opacity="opacity-15"
         className="animate-texture-drift"
       />
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-24 lg:grid-cols-[0.45fr_0.55fr] lg:px-8">
+      <div className="container mx-auto grid gap-10 px-5 py-24 lg:grid-cols-[0.45fr_0.55fr] lg:px-8">
         <Reveal>
           <p className="section-kicker">Applications</p>
           <h2 className="section-title">
@@ -43,7 +43,7 @@ export function IndustriesSection() {
           </div>
         </Reveal>
       </div>
-      <div className="relative mx-auto grid max-w-7xl gap-5 px-5 pb-24 lg:grid-cols-4 lg:px-8">
+      <div className="container relative mx-auto grid gap-5 px-5 pb-24 lg:grid-cols-4 lg:px-8">
         {applications.map((application) => (
           <Reveal key={application.title}>
             <article className="application-card">

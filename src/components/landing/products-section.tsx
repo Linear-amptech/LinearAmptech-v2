@@ -8,7 +8,7 @@ export function ProductsSection() {
       id="products"
       className="section-shell border-y border-white/10 bg-[#050b15]"
     >
-      <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div className="container mx-auto px-5 py-24 lg:px-8">
         <Reveal className="max-w-4xl">
           <p className="section-kicker">Products</p>
           <h2 className="section-title">

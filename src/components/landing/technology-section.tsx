@@ -1,13 +1,13 @@
 import Image from "next/image";
 
 import { ipPlatforms, technologySystemRows } from "@/components/landing/data";
-import { RfRadarPanel } from "@/components/landing/rf-radar-panel";
+// import { RfRadarPanel } from "@/components/landing/rf-radar-panel";
 import { Reveal } from "@/components/landing/reveal";
 
 export function TechnologySection() {
   return (
     <section id="technology" className="section-shell">
-      <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div className="container mx-auto px-5 py-24 lg:px-8">
         <Reveal className="max-w-4xl">
           <p className="section-kicker">IP Strategy</p>
           <h2 className="section-title">
@@ -15,9 +15,9 @@ export function TechnologySection() {
             application domains.
           </h2>
         </Reveal>
-        <Reveal>
+        {/* <Reveal>
           <RfRadarPanel />
-        </Reveal>
+        </Reveal> */}
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {ipPlatforms.map((platform, index) => (
             <Reveal key={platform.name}>

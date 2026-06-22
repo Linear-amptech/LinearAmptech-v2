@@ -21,7 +21,7 @@ export function ContactSection() {
           className="object-cover"
         />
       </div>
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="container mx-auto grid gap-10 px-5 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <Reveal>
           <p className="section-kicker">Contact</p>
           <h2 className="section-title">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink, Mail, Radar, ShieldCheck, Waves } from "lucide-react";
 
+import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 
@@ -65,7 +66,7 @@ export default function TeamPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-b from-[#03060d]/75 via-[#03060d]/85 to-[#03060d]"
         />
-        <div className="relative mx-auto max-w-7xl">
+        <Reveal className="relative mx-auto max-w-7xl">
           <p className="section-kicker">Team</p>
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
             Engineers building silicon, RF, and intelligent electronics.
@@ -75,67 +76,66 @@ export default function TeamPage() {
             mixed-signal IC design, semiconductor prototyping, and lab-grade
             validation.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="relative px-5 pb-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
           {team.map((member) => (
-            <article
-              key={member.name}
-              className="team-card group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] shadow-[0_28px_100px_rgba(0,0,0,0.32)] backdrop-blur-xl"
-            >
-              <div className="relative h-80 overflow-hidden border-b border-white/10">
-                <Image
-                  src={member.image}
-                  alt={`${member.name}, ${member.role}`}
-                  fill
-                  unoptimized
-                  sizes="(min-width: 1024px) 33vw, 100vw"
-                  className="object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#03060d] via-[#03060d]/18 to-transparent" />
-                <div className="absolute bottom-5 left-5 grid size-12 place-items-center rounded-lg border border-cyan-200/25 bg-cyan-200/10 text-cyan-100">
-                  <member.icon className="size-5" aria-hidden="true" />
+            <Reveal key={member.name}>
+              <article className="team-card group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] shadow-[0_28px_100px_rgba(0,0,0,0.32)] backdrop-blur-xl">
+                <div className="relative h-80 overflow-hidden border-b border-white/10">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name}, ${member.role}`}
+                    fill
+                    unoptimized
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#03060d] via-[#03060d]/18 to-transparent" />
+                  <div className="absolute bottom-5 left-5 grid size-12 place-items-center rounded-lg border border-cyan-200/25 bg-cyan-200/10 text-cyan-100">
+                    <member.icon className="size-5" aria-hidden="true" />
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold text-white">
-                  {member.name}
-                </h2>
-                <p className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-cyan-200">
-                  {member.role}
-                </p>
-                <p className="mt-5 text-base leading-7 text-slate-300">
-                  {member.summary}
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {member.details.map((detail) => (
-                    <span key={detail} className="feature-pill">
-                      {detail}
-                    </span>
-                  ))}
+                <div className="p-6">
+                  <h2 className="text-2xl font-semibold text-white">
+                    {member.name}
+                  </h2>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-cyan-200">
+                    {member.role}
+                  </p>
+                  <p className="mt-5 text-base leading-7 text-slate-300">
+                    {member.summary}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {member.details.map((detail) => (
+                      <span key={detail} className="feature-pill">
+                        {detail}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-7 flex gap-3">
+                    <a
+                      className="learn-button"
+                      href="mailto:sales@linearamptech.com"
+                    >
+                      <Mail className="size-4" aria-hidden="true" />
+                      Contact
+                    </a>
+                    <a
+                      className="learn-button"
+                      href="https://www.linkedin.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <ExternalLink className="size-4" aria-hidden="true" />
+                      Profile
+                    </a>
+                  </div>
                 </div>
-                <div className="mt-7 flex gap-3">
-                  <a
-                    className="learn-button"
-                    href="mailto:sales@linearamptech.com"
-                  >
-                    <Mail className="size-4" aria-hidden="true" />
-                    Contact
-                  </a>
-                  <a
-                    className="learn-button"
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <ExternalLink className="size-4" aria-hidden="true" />
-                    Profile
-                  </a>
-                </div>
-              </div>
-            </article>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>

@@ -15,7 +15,7 @@ export function ResearchSection() {
         className="object-cover"
       />
       <div aria-hidden="true" className="absolute inset-0 bg-[#02050a]/72" />
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-5 py-28 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
+      <div className="container relative z-10 mx-auto grid gap-10 px-5 py-24 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
         <Reveal className="rd-panel">
           <Shield className="size-8 text-cyan-200" aria-hidden="true" />
           <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">

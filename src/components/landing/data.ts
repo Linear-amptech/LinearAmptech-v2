@@ -263,7 +263,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     eyebrow: "mm-Wave Packaging and Integration",
-    title: "Chip-to-PCB-to-Waveguide Integration for High Frequencies.",
+    title: "Chip-to-PCB-to-Waveguide Integration for HF.",
     description:
       "Packaging, transitions, and combining networks for mm-wave assemblies where IC, PCB, waveguide, and measurement constraints meet.",
     image: assets.mmwavePackaging,
@@ -280,9 +280,9 @@ export const technologySystemRows = [
 export const researchFocusRows = [
   "MIC and MMIC PA Design",
   "GaN HEMT Device Research",
-  "Doherty and Waveform Engineering PA",
   "RIS and Active Antenna Validation",
   "FPGA and DPD Linearization",
+  "Doherty and Waveform Engineering PA",
 ];
 
 export const projectTypeOptions = [
