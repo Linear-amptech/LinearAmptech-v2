@@ -9,7 +9,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative isolate overflow-hidden border-t border-cyan-200/20 bg-[#02050a] text-slate-100 shadow-[0_-28px_120px_rgba(34,211,238,0.16)]">
+    <footer className="relative isolate overflow-hidden ">
       <FooterShaderBackground />
       <div className="absolute inset-0 bg-[#02050a]/45" aria-hidden="true" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" />
@@ -75,7 +75,7 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-5 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-5  pt-7 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/"
             className="inline-flex items-center"
@@ -87,7 +87,7 @@ export function SiteFooter() {
                 alt="Linear Amptech logo"
                 width={88}
                 height={51}
-                className="h-[52px] w-auto object-contain brightness-0 invert"
+                className="h-[52px] w-auto object-contain "
               />
             </span>
           </Link>
