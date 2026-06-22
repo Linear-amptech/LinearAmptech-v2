@@ -563,11 +563,6 @@ export default function LinearAmptechLanding() {
         className="pointer-events-none fixed left-0 top-0 z-30 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/12 blur-3xl"
         style={{ x: glowX, y: glowY }}
       />
-      <motion.div
-        aria-hidden="true"
-        className="scroll-progress"
-        style={{ scaleX: scrollYProgress }}
-      />
       <div aria-hidden="true" className="animated-circuit-layer" />
       <div aria-hidden="true" className="particle-field" />
       <SiteHeader />
@@ -712,6 +707,7 @@ export default function LinearAmptechLanding() {
         <BackgroundTexture
           src={assets.circuitBackground}
           opacity="opacity-10"
+          className="animate-circuit-background-linear"
         />
         <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
           <Reveal className="max-w-3xl">

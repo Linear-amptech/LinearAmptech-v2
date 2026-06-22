@@ -696,18 +696,6 @@
   }
 }
 
-.scroll-progress {
-  background: linear-gradient(90deg, #0891b2, #67e8f9, #e2e8f0);
-  box-shadow: 0 0 22px rgb(34 211 238 / 45%);
-  height: 3px;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transform-origin: left;
-  z-index: 60;
-}
-
 .animated-circuit-layer {
   inset: 0;
   opacity: 0.22;
@@ -787,6 +775,13 @@
 
 .animate-texture-drift {
   animation: textureDrift 18s ease-in-out infinite alternate;
+}
+
+.animate-circuit-background-linear img {
+  animation: circuitBackgroundLinear 24s linear infinite;
+  height: 112%;
+  max-width: none;
+  width: 112%;
 }
 
 .circuit-traces {
@@ -991,6 +986,15 @@
     background-position:
       440px 180px,
       -220px 360px;
+  }
+}
+
+@keyframes circuitBackgroundLinear {
+  from {
+    transform: translate3d(-5%, -5%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 

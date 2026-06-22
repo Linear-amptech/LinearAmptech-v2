@@ -81,13 +81,13 @@ export function SiteFooter() {
             className="inline-flex items-center"
             aria-label="Linear Amptech home"
           >
-            <span className="grid h-14 w-[96px] place-items-center rounded-md bg-white/95">
+            <span className="grid h-14 w-[96px] place-items-center">
               <Image
                 src="/assets/linear-amptech-logo.png"
                 alt="Linear Amptech logo"
                 width={88}
                 height={51}
-                className="h-[52px] w-auto object-contain"
+                className="h-[52px] w-auto object-contain brightness-0 invert"
               />
             </span>
           </Link>
