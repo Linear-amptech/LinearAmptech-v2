@@ -1,4 +1,4 @@
-import LinearAmptechLanding from "@/components/linear-amptech-landing";
+import LinearAmptechLanding from "@/components/landing/linear-amptech-landing";
 
 export default function Home() {
   return <LinearAmptechLanding />;

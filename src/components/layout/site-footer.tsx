@@ -13,8 +13,8 @@ export function SiteFooter() {
         aria-hidden="true"
         className="absolute inset-0 bg-[url('/assets/circuit-background.png')] bg-cover bg-center opacity-[0.06]"
       />
-      <div className="relative mx-auto max-w-7xl px-5 py-14 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
+      <div className="relative mx-auto container px-5 py-14 lg:px-8">
+        <div className="flex justify-between flex-wrap gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
               Quick Links
@@ -87,7 +87,7 @@ export function SiteFooter() {
                 alt="Linear Amptech logo"
                 width={88}
                 height={51}
-                className="h-[52px] w-auto object-contain brightness-0 invert"
+                className="h-[52px] w-auto object-contain "
               />
             </span>
           </Link>
