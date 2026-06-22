@@ -87,7 +87,7 @@ export function SiteFooter() {
                 alt="Linear Amptech logo"
                 width={88}
                 height={51}
-                className="h-[52px] w-auto object-contain "
+                className="h-[52px] w-auto object-contain"
               />
             </span>
           </Link>

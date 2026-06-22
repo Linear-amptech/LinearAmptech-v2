@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 import type { Product } from "@/components/landing/data";
 
@@ -32,10 +33,13 @@ export function ProductImageCard({ product, index }: ProductImageCardProps) {
           <div className="product-icon">
             <product.icon className="size-7" aria-hidden="true" />
           </div>
-          <a href="/contact" className="learn-button product-learn">
+          <Link
+            href={`/products/${product.slug}`}
+            className="learn-button product-learn"
+          >
             Learn More
             <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
+          </Link>
         </div>
         <h3 className="text-2xl font-semibold text-white">{product.name}</h3>
         <p className="mt-3 text-base leading-7 text-slate-300">

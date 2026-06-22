@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -24,6 +24,14 @@ export function HeroSection() {
   }, []);
 
   const activeSlide = heroSlides[activeHeroSlide];
+  const showPreviousSlide = () => {
+    setActiveHeroSlide(
+      (current) => (current - 1 + heroSlides.length) % heroSlides.length,
+    );
+  };
+  const showNextSlide = () => {
+    setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
+  };
 
   return (
     <section
@@ -103,6 +111,24 @@ export function HeroSection() {
           </div>
         </Reveal>
         <div className="hidden lg:block" aria-hidden="true" />
+      </div>
+      <div className="absolute bottom-8 right-5 z-20 flex items-center gap-3 lg:right-8">
+        <button
+          type="button"
+          className="grid size-12 place-items-center rounded-lg border border-white/15 bg-white/[0.055] text-white shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-200/45 hover:bg-cyan-200/12"
+          onClick={showPreviousSlide}
+          aria-label="Show previous hero slide"
+        >
+          <ChevronLeft className="size-5" aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          className="grid size-12 place-items-center rounded-lg border border-cyan-200/35 bg-cyan-200/12 text-cyan-50 shadow-[0_18px_70px_rgba(34,211,238,0.16)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-100/65 hover:bg-cyan-200/20"
+          onClick={showNextSlide}
+          aria-label="Show next hero slide"
+        >
+          <ChevronRight className="size-5" aria-hidden="true" />
+        </button>
       </div>
     </section>
   );
