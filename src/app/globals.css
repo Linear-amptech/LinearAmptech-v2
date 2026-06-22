@@ -354,7 +354,7 @@
   }
 
   .product-category-rail {
-    @apply grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4;
+    @apply grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3;
   }
 
   .category-link {

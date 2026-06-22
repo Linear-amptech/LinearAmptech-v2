@@ -22,9 +22,9 @@ export function ResearchSection() {
             R&D pipeline from circuit architecture to measured prototypes.
           </h2>
           <p className="mt-5 text-base leading-7 text-slate-300">
-            Linear Amptech&apos;s deck shows a practical development path:
-            RFIC/MMIC design, simulation, GDS/specification handoff, tapeout,
-            packaging, module integration, chamber testing, and measurement.
+            Linear Amptech follows a practical development path: RFIC/MMIC
+            design, simulation, GDS/specification handoff, tapeout, packaging,
+            module integration, chamber testing, and measurement.
           </p>
         </Reveal>
         <Reveal className="grid content-center gap-4 sm:grid-cols-2">

@@ -184,7 +184,7 @@ export const products: Product[] = [
     category: "Hybrid MIC PA Modules",
     icon: RadioTower,
     image: assets.sourceHybridMicModule,
-    alt: "Hybrid MIC PA module bench hardware from Linear Amptech PPT",
+    alt: "Hybrid MIC PA module bench hardware",
     description:
       "Complete power amplifier module capability with gain-chain budgeting, power conditioning, VSWR protection, and multiple units in the 0.5-3.25 GHz range.",
     features: [
@@ -208,14 +208,14 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT presents Linear-AmpTech's complete PA module work as a gain-chain and module-level capability, separate from the fully integrated PA chip.",
+        body: "The product information presents Linear-AmpTech's complete PA module work as a gain-chain and module-level capability, separate from the fully integrated PA chip.",
       },
       {
         title: "Module scope",
         body: "The module scope includes complete gain-chain power budgeting, power conditioning using DC/DC converters, and VSWR protection.",
       },
       {
-        title: "PPT source",
+        title: "Product source",
         body: "This product maps to the Hybrid MIC PA Module content on the Power Amplifier modules and Chip slide.",
       },
     ],
@@ -232,8 +232,8 @@ export const products: Product[] = [
       },
       {
         src: assets.sourceGanModuleNews,
-        alt: "News clipping and module proof for RF power amplifiers",
-        caption: "Module development proof from PPT",
+        alt: "News clipping and module reference for RF power amplifiers",
+        caption: "Module development reference",
       },
     ],
   },
@@ -243,7 +243,7 @@ export const products: Product[] = [
     category: "Fully Integrated PA Chips",
     icon: Cpu,
     image: assets.sourceGanPaPackagedHardware,
-    alt: "Fully integrated C-Ku band power amplifier chip hardware from PPT",
+    alt: "Fully integrated C-Ku band power amplifier chip hardware",
     description:
       "5W fully integrated C-Ku band GaN-on-SiC PA chip family with QFN44 and QFN56 variants, completed simulation, tapeout, and measurement.",
     features: [
@@ -267,7 +267,7 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT includes two fully integrated C-Ku band power amplifier chip variants, both using UMS 250nm GaN-on-SiC MMIC technology.",
+        body: "The product information includes two fully integrated C-Ku band power amplifier chip variants, both using UMS 250nm GaN-on-SiC MMIC technology.",
       },
       {
         title: "Integration and interface",
@@ -275,7 +275,7 @@ export const products: Product[] = [
       },
       {
         title: "Licensing and validation",
-        body: "The deck states GDS and design specification files, customization options, readiness for integration, simulation complete, tapeout completed, and measurement completed.",
+        body: "Available information states GDS and design specification files, customization options, readiness for integration, simulation complete, tapeout completed, and measurement completed.",
       },
     ],
     gallery: [
@@ -317,7 +317,7 @@ export const products: Product[] = [
     category: "Fully Integrated Transmitter Chips",
     icon: Waves,
     image: assets.sourceTxRxLayout,
-    alt: "Fully integrated transmitter chip layout from PPT",
+    alt: "Fully integrated transmitter chip layout",
     description:
       "47.2-48.2 GHz fully integrated transmitter chip in GF 130nm SiGe BiCMOS with 20 dB conversion gain and 15 dBm output power.",
     features: ["47.2-48.2 GHz", "20 dB conversion gain", "15 dBm output power"],
@@ -340,7 +340,7 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT presents the transmitter as a separate fully integrated chip in the 47.2-48.2 GHz band.",
+        body: "The product information presents the transmitter as a separate fully integrated chip in the 47.2-48.2 GHz band.",
       },
       {
         title: "Performance",
@@ -348,7 +348,7 @@ export const products: Product[] = [
       },
       {
         title: "Technology",
-        body: "The deck identifies GF 130nm SiGe BiCMOS technology for this chip.",
+        body: "The process information identifies GF 130nm SiGe BiCMOS technology for this chip.",
       },
       {
         title: "Pin-compatible IC platform",
@@ -364,7 +364,7 @@ export const products: Product[] = [
       {
         src: assets.sourceTransceiverCollage,
         alt: "Transmitter and receiver chip collage from portfolio slide",
-        caption: "Tx/Rx portfolio proof",
+        caption: "Tx/Rx portfolio reference",
       },
     ],
   },
@@ -374,7 +374,7 @@ export const products: Product[] = [
     category: "Fully Integrated Receiver Chips",
     icon: Waves,
     image: assets.sourceTxRxLayout,
-    alt: "Fully integrated receiver chip layout from PPT",
+    alt: "Fully integrated receiver chip layout",
     description:
       "47.2-48.2 GHz fully integrated receiver chip in GF 130nm SiGe BiCMOS with 36.3-37 dB voltage gain.",
     features: ["47.2-48.2 GHz", "36.3-37 dB voltage gain", "16.5-20.5 dB NF"],
@@ -397,7 +397,7 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT presents the receiver as a separate fully integrated chip in the 47.2-48.2 GHz band.",
+        body: "The product information presents the receiver as a separate fully integrated chip in the 47.2-48.2 GHz band.",
       },
       {
         title: "Performance",
@@ -405,7 +405,7 @@ export const products: Product[] = [
       },
       {
         title: "Technology",
-        body: "The deck identifies GF 130nm SiGe BiCMOS technology for this chip.",
+        body: "The process information identifies GF 130nm SiGe BiCMOS technology for this chip.",
       },
       {
         title: "Pin-compatible IC platform",
@@ -421,7 +421,7 @@ export const products: Product[] = [
       {
         src: assets.sourceTransceiverCollage,
         alt: "Transmitter and receiver chip collage from portfolio slide",
-        caption: "Tx/Rx portfolio proof",
+        caption: "Tx/Rx portfolio reference",
       },
     ],
   },
@@ -431,7 +431,7 @@ export const products: Product[] = [
     category: "Fully Integrated Radar Front-End Chips",
     icon: Radar,
     image: assets.sourceRadarFrontEndChip,
-    alt: "Fully integrated radar front-end chip from PPT",
+    alt: "Fully integrated radar front-end chip",
     description:
       "71-81 GHz fully integrated radar front-end chip in GF 130nm SiGe BiCMOS with 10.5 dBm Tx output power and 37 dB receiver conversion gain.",
     features: [
@@ -451,7 +451,7 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT lists this as a separate fully integrated radar front-end chip under fully integrated front-end chips.",
+        body: "The product information lists this as a separate fully integrated radar front-end chip under fully integrated front-end chips.",
       },
       {
         title: "Performance",
@@ -459,7 +459,7 @@ export const products: Product[] = [
       },
       {
         title: "Technology",
-        body: "The deck identifies GF 130nm SiGe BiCMOS technology for this chip.",
+        body: "The process information identifies GF 130nm SiGe BiCMOS technology for this chip.",
       },
     ],
     gallery: [
@@ -471,7 +471,7 @@ export const products: Product[] = [
       {
         src: assets.sourcePortfolioFrontEndChip,
         alt: "Front-end chip portfolio image",
-        caption: "Portfolio front-end chip proof",
+        caption: "Portfolio front-end chip reference",
       },
     ],
   },
@@ -481,7 +481,7 @@ export const products: Product[] = [
     category: "8-Bit Phase Shifter Chips",
     icon: ScanLine,
     image: assets.sourcePhaseShifterChip,
-    alt: "8-bit phase shifter chip from PPT",
+    alt: "8-bit phase shifter chip",
     description:
       "13-17 GHz 8-bit phase shifter chip in TSMC 65nm Bulk CMOS with 1.5 degree phase resolution.",
     features: [
@@ -499,7 +499,7 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT lists the 8-bit phase shifter chip as a separate product beside the radar front-end chip.",
+        body: "The product information lists the 8-bit phase shifter chip as a separate product beside the radar front-end chip.",
       },
       {
         title: "Performance",
@@ -507,7 +507,7 @@ export const products: Product[] = [
       },
       {
         title: "Technology",
-        body: "The deck identifies TSMC 65nm Bulk CMOS technology for this chip.",
+        body: "The process information identifies TSMC 65nm Bulk CMOS technology for this chip.",
       },
     ],
     gallery: [
@@ -524,7 +524,7 @@ export const products: Product[] = [
     category: "Active Antenna",
     icon: Satellite,
     image: assets.sourceActiveAntennaPrototype,
-    alt: "Active antenna prototype from PPT",
+    alt: "Active antenna prototype",
     description:
       "Antenna integrated with active matching network and LNA section for LF/DF applications.",
     features: [
@@ -549,7 +549,7 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT presents Active Antenna: Non Foster Circuits with antenna, active matching network, and LNA section proof objects.",
+        body: "The product information presents Active Antenna: Non Foster Circuits with antenna, active matching network, and LNA section hardware and measurement images.",
       },
       {
         title: "Measured response",
@@ -557,7 +557,7 @@ export const products: Product[] = [
       },
       {
         title: "Pattern and gain",
-        body: "The deck lists a figure-of-eight E-pattern, omni-direction H-pattern, 0.2 dB peak gain without LNA, and more than 40 dB enhanced gain after LNA integration.",
+        body: "The product information lists a figure-of-eight E-pattern, omni-direction H-pattern, 0.2 dB peak gain without LNA, and more than 40 dB enhanced gain after LNA integration.",
       },
     ],
     gallery: [
@@ -584,7 +584,7 @@ export const products: Product[] = [
       {
         src: assets.sourceActiveAntennaPattern,
         alt: "Radiation pattern plot",
-        caption: "Radiation pattern proof",
+        caption: "Radiation pattern reference",
       },
       {
         src: assets.sourceActiveAntennaGain,
@@ -609,29 +609,29 @@ export const products: Product[] = [
     category: "RIS Prototype",
     icon: Layers3,
     image: assets.sourceRisFrontSideArray,
-    alt: "RIS prototype front side from PPT",
+    alt: "RIS prototype front side",
     description:
-      "Reconfigurable intelligent surface prototype hardware with front-side and back-side proof images from the PPT.",
+      "Reconfigurable intelligent surface prototype hardware with front-side and back-side images.",
     features: ["Front side", "Back side", "Prototype developed"],
     specs: [
       { label: "Prototype status", value: "RIS prototype developed" },
       {
         label: "Front side",
-        value: "Front-side array and close-up hardware shown in PPT",
+        value: "Front-side array and close-up hardware",
       },
       {
         label: "Back side",
-        value: "Back-side array and close-up hardware shown in PPT",
+        value: "Back-side array and close-up hardware",
       },
     ],
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT presents the RIS prototype as developed hardware, with separate front-side and back-side images.",
+        body: "The product information presents the RIS prototype as developed hardware, with separate front-side and back-side images.",
       },
       {
-        title: "Hardware proof",
-        body: "The frontend now uses the actual front-side and back-side RIS images extracted from slide 12.",
+        title: "Hardware images",
+        body: "Front-side and back-side RIS hardware views are shown for validation context.",
       },
     ],
     gallery: [
@@ -663,7 +663,7 @@ export const products: Product[] = [
     category: "Packaging & Integration at mm-wave",
     icon: Layers3,
     image: assets.sourcePackagingChipPcbWaveguide,
-    alt: "Chip-PCB-waveguide packaging integration from PPT",
+    alt: "Chip-PCB-waveguide packaging integration",
     description:
       "2-way power combining, chip-PCB-waveguide transitions at 47 GHz, and 4-way radial power divider/combiner concepts.",
     features: [
@@ -689,7 +689,7 @@ export const products: Product[] = [
     detailSections: [
       {
         title: "Product brief",
-        body: "The PPT lists three mm-wave packaging and integration proof objects: 2-way power combining, 47 GHz chip-PCB-waveguide transition, and 4-way radial power divider/combiner.",
+        body: "The product information lists three mm-wave packaging and integration hardware and measurement images: 2-way power combining, 47 GHz chip-PCB-waveguide transition, and 4-way radial power divider/combiner.",
       },
       {
         title: "Transition design",
@@ -697,7 +697,7 @@ export const products: Product[] = [
       },
       {
         title: "Power combining",
-        body: "The deck includes 2-way power combining and 4-way radial power divider/combiner for chip-to-PCB-to-waveguide systems.",
+        body: "The product information includes 2-way power combining and 4-way radial power divider/combiner for chip-to-PCB-to-waveguide systems.",
       },
     ],
     gallery: [

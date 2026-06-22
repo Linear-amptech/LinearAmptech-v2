@@ -138,11 +138,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
             <Reveal>
               <div className="product-card p-6">
-                <p className="section-kicker">PPT Visual Proof</p>
-                <h2 className="text-2xl font-semibold text-white">
-                  Images from the source product deck
-                </h2>
-                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                <div className="grid gap-4 md:grid-cols-2">
                   {product.gallery.map((item) => (
                     <figure
                       key={`${item.src}-${item.caption}`}

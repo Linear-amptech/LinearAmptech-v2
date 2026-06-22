@@ -211,13 +211,13 @@ export default function TeamPage() {
         <Reveal className="container relative mx-auto px-5 lg:px-8">
           <p className="section-kicker">Team</p>
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-            Leadership, development, R&D, and support teams from the source
-            deck.
+            Leadership, development, R&D, and support teams driving
+            Linear-AmpTech.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Team members, roles, and research interests are taken from the
-            Linear-AmpTech PPT leadership, development, R&D, and support team
-            slides.
+            Linear-AmpTech leadership, development, R&D, and support team
+            profile.
           </p>
         </Reveal>
       </section>
