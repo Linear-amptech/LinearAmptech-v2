@@ -1,7 +1,4 @@
-"use client";
-
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,8 +11,8 @@ type ProductImageCardProps = {
 
 export function ProductImageCard({ product, index }: ProductImageCardProps) {
   return (
-    <motion.article
-      className={`product-card product-image-card geo-${index % 4}`}
+    <article
+      className={`product-card product-image-card geo-${index % 4} h-full`}
     >
       <div className="product-visual">
         <Image
@@ -26,7 +23,7 @@ export function ProductImageCard({ product, index }: ProductImageCardProps) {
           className="object-cover"
         />
       </div>
-      <div className="relative z-10 p-6 sm:p-7">
+      <div className="relative z-10 flex flex-1 flex-col p-6 sm:p-7">
         <div className="mb-5 flex items-center justify-between gap-4">
           <div className="product-icon">
             <product.icon className="size-7" aria-hidden="true" />
@@ -43,7 +40,7 @@ export function ProductImageCard({ product, index }: ProductImageCardProps) {
         <p className="mt-3 text-base leading-7 text-slate-300">
           {product.description}
         </p>
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-auto flex flex-wrap gap-2 pt-6">
           {product.features.map((feature) => (
             <span key={feature} className="feature-pill">
               {feature}
@@ -51,6 +48,6 @@ export function ProductImageCard({ product, index }: ProductImageCardProps) {
           ))}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }

@@ -30,9 +30,9 @@ export function ProductsSection() {
             ))}
           </div>
         </Reveal>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
           {products.map((product, index) => (
-            <Reveal key={product.name}>
+            <Reveal key={product.name} className="h-full">
               <ProductImageCard product={product} index={index} />
             </Reveal>
           ))}

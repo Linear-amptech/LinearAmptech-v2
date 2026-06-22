@@ -1,7 +1,12 @@
 "use client";
 
 import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -79,17 +84,27 @@ export function HeroSection() {
       </motion.div>
       <div className="container relative z-10 mx-auto grid w-full items-center gap-12 px-5 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
         <Reveal>
-          <div className="max-w-6xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
-              <Sparkles className="size-4" aria-hidden="true" />
-              {activeSlide.eyebrow}
-            </div>
-            <h1 className="max-w-6xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
-              {activeSlide.title}
-            </h1>
-            <p className="mt-7 max-w-4xl text-lg leading-8 text-slate-300">
-              {activeSlide.description}
-            </p>
+          <div className="max-w-[98rem]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSlide.title}
+                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
+                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
+                  {/* <Sparkles className="size-4" aria-hidden="true" /> */}
+                  {activeSlide.eyebrow}
+                </div>
+                <h1 className="max-w-6xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
+                  {activeSlide.title}
+                </h1>
+                <p className="mt-7 max-w-4xl text-lg leading-8 text-slate-300">
+                  {activeSlide.description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
             <div className="mt-9 flex w-full max-w-6xl items-center justify-between gap-4">
               <a className="premium-button" href="#products">
                 Explore Products

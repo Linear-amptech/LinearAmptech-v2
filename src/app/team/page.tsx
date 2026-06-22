@@ -53,7 +53,7 @@ export default function TeamPage() {
   return (
     <main className="min-h-screen bg-[#03060d] text-slate-100">
       <SiteHeader />
-      <section className="relative overflow-hidden px-5 pb-20 pt-32 lg:px-8">
+      <section className="relative overflow-hidden pb-20 pt-32">
         <Image
           src="/assets/particle-background.png"
           alt=""
@@ -66,7 +66,7 @@ export default function TeamPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-b from-[#03060d]/75 via-[#03060d]/85 to-[#03060d]"
         />
-        <Reveal className="relative mx-auto max-w-7xl">
+        <Reveal className="container relative mx-auto px-5 lg:px-8">
           <p className="section-kicker">Team</p>
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
             Engineers building silicon, RF, and intelligent electronics.
@@ -79,11 +79,11 @@ export default function TeamPage() {
         </Reveal>
       </section>
 
-      <section className="relative px-5 pb-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
+      <section className="relative pb-24">
+        <div className="container mx-auto grid items-stretch gap-5 px-5 lg:grid-cols-3 lg:px-8">
           {team.map((member) => (
-            <Reveal key={member.name}>
-              <article className="team-card group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] shadow-[0_28px_100px_rgba(0,0,0,0.32)] backdrop-blur-xl">
+            <Reveal key={member.name} className="h-full">
+              <article className="team-card group flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] shadow-[0_28px_100px_rgba(0,0,0,0.32)] backdrop-blur-xl">
                 <div className="relative h-80 overflow-hidden border-b border-white/10">
                   <Image
                     src={member.image}
@@ -98,7 +98,7 @@ export default function TeamPage() {
                     <member.icon className="size-5" aria-hidden="true" />
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h2 className="text-2xl font-semibold text-white">
                     {member.name}
                   </h2>
@@ -108,7 +108,7 @@ export default function TeamPage() {
                   <p className="mt-5 text-base leading-7 text-slate-300">
                     {member.summary}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
                     {member.details.map((detail) => (
                       <span key={detail} className="feature-pill">
                         {detail}

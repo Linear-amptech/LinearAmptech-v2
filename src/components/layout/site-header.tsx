@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Cpu, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Cpu, Menu, X } from "lucide-react";
 
 import { products } from "@/components/landing/data";
 import { Button } from "@/components/ui/button";
@@ -86,7 +86,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.16em] text-slate-200 md:flex">
           <Link
-            href="/#products"
+            href="/products"
             className="inline-flex items-center gap-1.5 py-7 transition-colors hover:text-cyan-100"
             onMouseEnter={openProducts}
             onMouseLeave={closeProductsSoon}
@@ -129,12 +129,25 @@ export function SiteHeader() {
         >
           <div className="mt-1 overflow-hidden rounded-lg border border-cyan-200/18 bg-[#04101d]/96 shadow-[0_34px_110px_rgba(0,0,0,0.56)] backdrop-blur-2xl">
             <div className="border-b border-white/10 bg-white/[0.035] px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
-                RF Products
-              </p>
-              <p className="mt-1 text-sm normal-case tracking-normal text-slate-400">
-                Direct links to product details and specifications.
-              </p>
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+                    RF Products
+                  </p>
+                  <p className="mt-1 text-sm normal-case tracking-normal text-slate-400">
+                    Direct links to product details and specifications.
+                  </p>
+                </div>
+                <Link
+                  href="/products"
+                  className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-cyan-200/25 bg-cyan-200/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100 transition-colors hover:bg-cyan-200/18"
+                  role="menuitem"
+                  onClick={() => setProductsOpen(false)}
+                >
+                  View All
+                  <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
             <div className="grid gap-1 p-2 sm:grid-cols-2">
               {products.map((product) => (
@@ -215,6 +228,14 @@ export function SiteHeader() {
           >
             <div className="min-h-0">
               <div className="grid gap-1 border-t border-white/10 px-1 py-2">
+                <Link
+                  href="/products"
+                  className="flex items-center justify-between rounded-md border border-cyan-200/16 bg-cyan-200/8 px-3 py-3 text-sm font-semibold text-cyan-100 transition-colors hover:bg-cyan-200/14"
+                  onClick={closeMobileMenu}
+                >
+                  All Products
+                  <ArrowUpRight className="size-4" aria-hidden="true" />
+                </Link>
                 {products.map((product) => (
                   <Link
                     key={product.slug}
