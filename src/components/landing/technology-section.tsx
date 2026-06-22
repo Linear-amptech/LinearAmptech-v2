@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { ipPlatforms, technologySystemRows } from "@/components/landing/data";
+import { RfRadarPanel } from "@/components/landing/rf-radar-panel";
 import { Reveal } from "@/components/landing/reveal";
 
 export function TechnologySection() {
@@ -13,6 +14,9 @@ export function TechnologySection() {
             Three semiconductor technology tracks mapped to frequency and
             application domains.
           </h2>
+        </Reveal>
+        <Reveal>
+          <RfRadarPanel />
         </Reveal>
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {ipPlatforms.map((platform, index) => (
