@@ -136,6 +136,36 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </div>
             </Reveal>
 
+            <Reveal>
+              <div className="product-card p-6">
+                <p className="section-kicker">PPT Visual Proof</p>
+                <h2 className="text-2xl font-semibold text-white">
+                  Images from the source product deck
+                </h2>
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  {product.gallery.map((item) => (
+                    <figure
+                      key={`${item.src}-${item.caption}`}
+                      className="overflow-hidden rounded-lg border border-white/10 bg-slate-950/55"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden bg-slate-950">
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          sizes="(min-width: 1024px) 28vw, 100vw"
+                          className="object-contain p-2"
+                        />
+                      </div>
+                      <figcaption className="border-t border-white/10 px-4 py-3 text-sm text-slate-300">
+                        {item.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
             {product.detailSections.map((section) => (
               <Reveal key={section.title}>
                 <article className="product-card p-6">

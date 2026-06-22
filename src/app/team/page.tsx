@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ExternalLink, Mail, Radar, ShieldCheck, Waves } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Cpu,
+  Microscope,
+  Radar,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
 
@@ -12,38 +19,176 @@ export const metadata: Metadata = {
 
 const team = [
   {
-    name: "Dr. Aarav Mehta",
-    role: "Director, RF Systems",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80",
+    name: "Dr. Karun Rawat",
+    role: "Founder & Chairman",
+    group: "Leadership Team",
+    image: "/assets/ppt-team/karun-rawat.png",
+    icon: ShieldCheck,
+    details: ["Founder", "Chairman", "Linear-AmpTech leadership"],
+  },
+  {
+    name: "Dr. Meenakshi Rawat",
+    role: "Founder & Director",
+    group: "Leadership Team",
+    image: "/assets/ppt-team/meenakshi-rawat.png",
+    icon: ShieldCheck,
+    details: ["Founder", "Director", "Linear-AmpTech leadership"],
+  },
+  {
+    name: "Mr. Vivek Sharma",
+    role: "Director",
+    group: "Leadership Team",
+    image: "/assets/ppt-team/vivek-sharma.png",
+    icon: BriefcaseBusiness,
+    details: ["Director", "Leadership Team"],
+  },
+  {
+    name: "Dr. Aditya Pal",
+    role: "Chief Operating Officer",
+    group: "Leadership Team",
+    image: "/assets/ppt-team/aditya-pal.jpg",
+    icon: BriefcaseBusiness,
+    details: ["Chief Operating Officer", "Operations"],
+  },
+  {
+    name: "Dr. Garima Shukla",
+    role: "Senior RF Design Engineer",
+    group: "Development Team",
+    image: "/assets/ppt-team/garima-shukla.jpg",
     icon: Radar,
-    summary:
-      "Leads high-frequency architecture programs across RF front ends, radar chains, satellite links, and microwave validation.",
+    details: ["Senior RF Design Engineer", "Development Team"],
+  },
+  {
+    name: "Dr. Pawan Shukla",
+    role: "Senior RF Design Engineer",
+    group: "Development Team",
+    image: "/assets/ppt-team/pawan-shukla.jpeg",
+    icon: Radar,
+    details: ["Senior RF Design Engineer", "Development Team"],
+  },
+  {
+    name: "Shreyansh Bansal",
+    role: "Embedded Engineer",
+    group: "Development Team",
+    image: "/assets/ppt-team/shreyansh-bansal.jpeg",
+    icon: Cpu,
+    details: ["Embedded Engineer", "Development Team"],
+  },
+  {
+    name: "Pravesh Chamoli",
+    role: "Software Engineer",
+    group: "Development Team",
+    image: "/assets/ppt-team/pravesh-chamoli.jpeg",
+    icon: Cpu,
+    details: ["Software Engineer", "Development Team"],
+  },
+  {
+    name: "Nupoor Sood",
+    role: "Research Scholar",
+    group: "R&D Team",
+    image: "/assets/ppt-team/nupoor-sood.png",
+    icon: Microscope,
+    details: ["MIC, MMIC PA Design", "GaN HEMT Device", "Doherty PA"],
+  },
+  {
+    name: "Dr. Abdul Sukoor",
+    role: "Post-Doc Fellow",
+    group: "R&D Team",
+    image: "/assets/ppt-team/abdul-sukoor.png",
+    icon: Microscope,
+    details: ["Doherty PA", "Active Antenna", "RIS", "RF passive structures"],
+  },
+  {
+    name: "Ahmed Zakaria",
+    role: "Scientist DRDO, Research Scholar (Part Time)",
+    group: "R&D Team",
+    image: "/assets/ppt-team/ahmed-zakaria.png",
+    icon: Microscope,
+    details: ["High Efficiency PA", "Waveform Engineering PA"],
+  },
+  {
+    name: "Amit Singh",
+    role: "Research Scholar (Part-time)",
+    group: "R&D Team",
+    image: "/assets/ppt-team/amit-singh.jpeg",
+    icon: Microscope,
+    details: ["High Efficiency & Linearized PA Modules"],
+  },
+  {
+    name: "Amrit Panigrahi",
+    role: "Research Scholar",
+    group: "R&D Team",
+    image: "/assets/ppt-team/amrit-panigrahi.png",
+    icon: Microscope,
     details: [
-      "RF and microwave design",
-      "Aerospace communication",
-      "Measurement strategy",
+      "Waveform Engineering PA",
+      "Broadband matching techniques",
+      "CMOS PA",
     ],
   },
   {
-    name: "Nisha Rao",
-    role: "Principal Analog IC Engineer",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80",
-    icon: Waves,
-    summary:
-      "Designs precision analog and mixed-signal blocks for amplifiers, converters, sensing systems, and power-aware silicon.",
-    details: ["Low-noise analog", "Mixed-signal ICs", "Signal integrity"],
+    name: "Kamini Singh",
+    role: "Research Scholar",
+    group: "R&D Team",
+    image: "/assets/ppt-team/kamini-singh.png",
+    icon: Microscope,
+    details: ["Doherty PA Design", "High efficiency at back-off PA"],
   },
   {
-    name: "Kabir Sen",
-    role: "Head of Silicon R&D",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
-    icon: ShieldCheck,
-    summary:
-      "Connects semiconductor prototyping, ASIC exploration, lab validation, and product engineering for next-generation electronics.",
-    details: ["ASIC architecture", "Prototype validation", "R&D operations"],
+    name: "Chaitanya Reddy",
+    role: "Research Scholar",
+    group: "R&D Team",
+    image: "/assets/ppt-team/chaitanya-reddy.png",
+    icon: Microscope,
+    details: [
+      "DPD",
+      "Linearization techniques",
+      "FPGA based embedded system design",
+    ],
+  },
+  {
+    name: "B Ganesh P",
+    role: "Research Scholar",
+    group: "R&D Team",
+    image: "/assets/ppt-team/b-ganesh-p.png",
+    icon: Microscope,
+    details: [
+      "Device characterization & modeling",
+      "High efficiency PA",
+      "MIC/MMIC",
+    ],
+  },
+  {
+    name: "Tarun Kumar Suretia",
+    role: "Research Scholar",
+    group: "R&D Team",
+    image: "/assets/ppt-team/tarun-kumar-suretia.png",
+    icon: Microscope,
+    details: ["In-band harmonic cancellation based PA", "RFIC PA"],
+  },
+  {
+    name: "Sankhraj Suriya",
+    role: "Project Assistant (Admin)",
+    group: "Support Team",
+    image: "/assets/ppt-team/sankhraj-suriya.png",
+    icon: Users,
+    details: ["Project Assistant", "Admin"],
+  },
+  {
+    name: "Abhishek Chaurasia",
+    role: "Technical Assistant",
+    group: "Support Team",
+    image: "/assets/ppt-team/abhishek-chaurasia.png",
+    icon: Users,
+    details: ["Technical Assistant"],
+  },
+  {
+    name: "Nitin Verma",
+    role: "Lab Assistant",
+    group: "Support Team",
+    image: "/assets/ppt-team/nitin-verma.png",
+    icon: Users,
+    details: ["Lab Assistant"],
   },
 ];
 
@@ -66,12 +211,13 @@ export default function TeamPage() {
         <Reveal className="container relative mx-auto px-5 lg:px-8">
           <p className="section-kicker">Team</p>
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-            Engineers building silicon, RF, and intelligent electronics.
+            Leadership, development, R&D, and support teams from the source
+            deck.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            A focused deep-tech group bringing together RF systems, analog and
-            mixed-signal IC design, semiconductor prototyping, and lab-grade
-            validation.
+            Team members, roles, and research interests are taken from the
+            Linear-AmpTech PPT leadership, development, R&D, and support team
+            slides.
           </p>
         </Reveal>
       </section>
@@ -102,8 +248,8 @@ export default function TeamPage() {
                   <p className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-cyan-200">
                     {member.role}
                   </p>
-                  <p className="mt-5 text-base leading-7 text-slate-300">
-                    {member.summary}
+                  <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    {member.group}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-2 pt-6">
                     {member.details.map((detail) => (
@@ -111,24 +257,6 @@ export default function TeamPage() {
                         {detail}
                       </span>
                     ))}
-                  </div>
-                  <div className="mt-7 flex gap-3">
-                    <a
-                      className="learn-button"
-                      href="mailto:sales@linearamptech.com"
-                    >
-                      <Mail className="size-4" aria-hidden="true" />
-                      Contact
-                    </a>
-                    <a
-                      className="learn-button"
-                      href="https://www.linkedin.com"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ExternalLink className="size-4" aria-hidden="true" />
-                      Profile
-                    </a>
                   </div>
                 </div>
               </article>
