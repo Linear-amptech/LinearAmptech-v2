@@ -177,7 +177,12 @@
   }
 
   .tech-card {
-    @apply relative overflow-hidden p-6;
+    @apply relative overflow-hidden p-6 backdrop-blur-2xl;
+    background:
+      linear-gradient(180deg, rgb(15 23 42 / 0.9), rgb(2 6 23 / 0.86)),
+      rgb(2 6 23 / 0.88);
+    -webkit-backdrop-filter: blur(28px) saturate(1.18);
+    backdrop-filter: blur(28px) saturate(1.18);
   }
 
   .tech-card::before,
@@ -696,49 +701,6 @@
   }
 }
 
-.animated-circuit-layer {
-  inset: 0;
-  opacity: 0.22;
-  pointer-events: none;
-  position: fixed;
-  z-index: 0;
-}
-
-.animated-circuit-layer::before,
-.animated-circuit-layer::after {
-  animation: circuitCurrent 9s linear infinite;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0 18%,
-      rgb(34 211 238 / 0.34) 18% 18.35%,
-      transparent 18.35% 38%,
-      rgb(59 130 246 / 0.28) 38% 38.35%,
-      transparent 38.35%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 0 22%,
-      rgb(103 232 249 / 0.26) 22% 22.35%,
-      transparent 22.35% 66%,
-      rgb(148 163 184 / 0.18) 66% 66.35%,
-      transparent 66.35%
-    );
-  background-size: 220px 180px;
-  content: "";
-  inset: -12%;
-  position: absolute;
-  transform: rotate(-8deg);
-}
-
-.animated-circuit-layer::after {
-  animation-direction: reverse;
-  animation-duration: 14s;
-  background-size: 340px 260px;
-  opacity: 0.45;
-  transform: rotate(12deg);
-}
-
 .hero-grid {
   background:
     linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
@@ -779,6 +741,7 @@
 
 .animate-circuit-background-linear img {
   animation: circuitBackgroundLinear 24s linear infinite;
+  filter: brightness(1.28) contrast(1.22) saturate(1.18);
   height: 112%;
   max-width: none;
   width: 112%;
@@ -973,19 +936,6 @@
   }
   to {
     transform: scaleX(1);
-  }
-}
-
-@keyframes circuitCurrent {
-  from {
-    background-position:
-      0 0,
-      0 0;
-  }
-  to {
-    background-position:
-      440px 180px,
-      -220px 360px;
   }
 }
 

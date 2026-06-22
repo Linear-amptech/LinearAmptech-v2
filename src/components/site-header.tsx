@@ -12,7 +12,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 border-b border-cyan-300/20 bg-[#02050a]/85 shadow-[0_0_34px_rgba(34,211,238,0.16)] backdrop-blur-xl">
+    <header className="fixed left-0 right-0 top-0 z-40 border-b border-cyan-300/20 bg-[#02050a]/85  backdrop-blur-sm">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8"
         aria-label="Primary navigation"
@@ -28,7 +28,7 @@ export function SiteHeader() {
               alt="Linear Amptech logo"
               width={96}
               height={56}
-              className="h-14 w-auto object-contain brightness-0 invert"
+              className="h-14 w-auto object-contain "
               priority
             />
           </span>
