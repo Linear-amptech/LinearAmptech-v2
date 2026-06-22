@@ -16,8 +16,6 @@ export function ProductImageCard({ product, index }: ProductImageCardProps) {
   return (
     <motion.article
       className={`product-card product-image-card geo-${index % 4}`}
-      whileHover={{ y: -8 }}
-      transition={{ type: "spring", stiffness: 220, damping: 20 }}
     >
       <div className="product-visual">
         <Image

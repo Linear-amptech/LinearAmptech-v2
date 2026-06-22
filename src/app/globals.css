@@ -383,7 +383,7 @@
   }
 
   .product-icon {
-    @apply grid size-16 place-items-center rounded-lg border border-cyan-200/25 bg-cyan-200/10 text-cyan-100 shadow-[0_0_35px_rgba(34,211,238,0.14)];
+    @apply grid size-12 place-items-center rounded-lg border border-cyan-200/25 bg-cyan-200/10 text-cyan-100 shadow-[0_0_35px_rgba(34,211,238,0.14)];
   }
 
   .feature-pill {
@@ -474,7 +474,7 @@
   }
 
   .hero-slider-nav {
-    @apply mt-12 grid gap-2 rounded-lg border border-cyan-200/15 bg-slate-950/55 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:grid-cols-5;
+    @apply mt-12 hidden gap-2 rounded-lg border border-cyan-200/15 bg-slate-950/55 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl md:grid md:grid-cols-5;
   }
 
   .hero-slider-nav button {
@@ -524,6 +524,10 @@
   .hero-slider-nav button.is-active::before {
     animation: heroProgress 4.2s linear;
     transform: scaleX(1);
+  }
+
+  .hero-slider-nav[data-paused="true"] button.is-active::before {
+    animation-play-state: paused;
   }
 
   .hero-slider-nav span {
