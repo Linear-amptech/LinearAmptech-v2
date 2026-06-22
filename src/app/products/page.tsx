@@ -17,7 +17,7 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-[#03060d] text-slate-100">
       <SiteHeader />
-      <section className="section-shell relative border-b border-white/10 px-5 pb-16 pt-32 lg:px-8">
+      <section className="section-shell relative border-b border-white/10 pb-16 pt-32">
         <BackgroundTexture
           src={assets.circuitBackground}
           opacity="opacity-18"
@@ -26,7 +26,7 @@ export default function ProductsPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(34,211,238,0.14),transparent_30%),linear-gradient(180deg,rgba(3,6,13,0.74),#03060d_86%)]"
         />
-        <Reveal className="container relative z-10 mx-auto">
+        <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
           <p className="section-kicker">All Products</p>
           <h1 className="max-w-5xl text-5xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
             RF front-end products for amplifier, RFIC, radar, antenna, and
@@ -39,8 +39,8 @@ export default function ProductsPage() {
         </Reveal>
       </section>
 
-      <section className="relative px-5 py-24 lg:px-8">
-        <div className="container mx-auto grid items-stretch gap-5 lg:grid-cols-3">
+      <section className="relative py-24">
+        <div className="container mx-auto grid max-w-7xl items-stretch gap-5 px-5 lg:grid-cols-3 lg:px-8">
           {products.map((product, index) => (
             <Reveal key={product.slug} className="h-full">
               <ProductImageCard product={product} index={index} />

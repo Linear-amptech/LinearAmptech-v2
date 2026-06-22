@@ -49,7 +49,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
   return (
     <main className="min-h-screen bg-[#03060d] text-slate-100">
       <SiteHeader />
-      <section className="section-shell relative px-5 pb-20 pt-32 lg:px-8">
+      <section className="section-shell relative pb-20 pt-32">
         <BackgroundTexture
           src={assets.circuitBackground}
           opacity="opacity-20"
@@ -58,7 +58,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(34,211,238,0.14),transparent_32%),linear-gradient(180deg,rgba(3,6,13,0.68),#03060d_88%)]"
         />
-        <div className="container relative z-10 mx-auto grid gap-10 lg:grid-cols-[0.58fr_0.42fr] lg:items-center">
+        <div className="container relative z-10 mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.58fr_0.42fr] lg:items-center lg:px-8">
           <Reveal>
             <Link
               href="/#products"
@@ -103,8 +103,8 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
         </div>
       </section>
 
-      <section className="relative px-5 pb-24 lg:px-8">
-        <div className="container mx-auto grid gap-8 lg:grid-cols-[0.38fr_0.62fr]">
+      <section className="relative pb-24">
+        <div className="container mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.38fr_0.62fr] lg:px-8">
           <Reveal>
             <aside className="product-card p-6 lg:sticky lg:top-28">
               <p className="section-kicker">Product Specs</p>
