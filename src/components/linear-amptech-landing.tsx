@@ -5,9 +5,7 @@ import {
   ArrowRight,
   Atom,
   Cpu,
-  Gauge,
   Layers3,
-  Microscope,
   Orbit,
   RadioTower,
   Radar,
@@ -44,77 +42,180 @@ const assets = {
   laSiliconLab: "/assets/la-silicon-lab.png",
   circuitBackground: "/assets/circuit-background.png",
   particleBackground: "/assets/particle-background.png",
+  hybridPaModule: "/assets/ppt-products/hybrid-pa-module.png",
+  ganPaModulePhoto: "/assets/ppt-products/gan-pa-module-photo.png",
+  transceiverChipLayout: "/assets/ppt-products/transceiver-chip-layout.png",
+  radarFrontEndLayout: "/assets/ppt-products/radar-front-end-layout.png",
+  risFrontSide: "/assets/ppt-products/ris-front-side.png",
+  risLabValidation: "/assets/ppt-products/ris-lab-validation.png",
+  mmwavePackaging: "/assets/ppt-products/mmwave-packaging.png",
+  chipPcbWaveguide: "/assets/ppt-products/chip-pcb-waveguide.png",
+  dieProbeMicroscope: "/assets/ppt-products/die-probe-microscope.png",
+  bondedDieCloseup: "/assets/ppt-products/bonded-die-closeup.png",
 };
 
 const capabilities: [string, LucideIcon][] = [
-  ["RF and microwave design", RadioTower],
-  ["Analog IC design", Gauge],
-  ["Mixed-signal systems", Waves],
-  ["ASIC and custom silicon", Cpu],
-  ["PCB and system-level prototyping", Layers3],
-  ["Simulation, testing, and validation", ScanLine],
-  ["Semiconductor R&D", Atom],
-  ["High-frequency communication systems", Radar],
+  ["GaN PA MMIC and high-power module design", RadioTower],
+  ["CMOS and BiCMOS RFIC IP-core development", Cpu],
+  ["mm-wave and sub-THz transmitter/receiver ICs", Waves],
+  ["Radar front-end and phased-array RF electronics", Radar],
+  ["Active antenna and RIS prototype development", Satellite],
+  ["Chip-to-PCB-to-waveguide packaging", Layers3],
+  ["Simulation, tapeout, measurement, and validation", ScanLine],
+  ["Custom RF product engineering and licensing", Atom],
+];
+
+const productCategories = [
+  "Hybrid MIC PA Modules",
+  "Fully Integrated PA Chips",
+  "Fully Integrated Transmitter Chips",
+  "Fully Integrated Receiver Chips",
+  "Radar Front-End Chips",
+  "8-Bit Phase Shifter Chips",
+  "Active Antenna / RIS Prototypes",
+  "mm-Wave Packaging & Integration",
+];
+
+const ipPlatforms = [
+  {
+    name: "III-V GaN Technology",
+    icon: RadioTower,
+    image: assets.ganPaModulePhoto,
+    description:
+      "High-power-density PA MMICs and T/R front-end modules up to Ku-band, built for resilient defense and aerospace RF systems.",
+    focus: "Standalone PA MMIC chips and T/R front-end modules up to Ku-band.",
+  },
+  {
+    name: "Si CMOS Technology",
+    icon: Cpu,
+    image: assets.bondedDieCloseup,
+    description:
+      "Scalable RFIC IP for lower 5G FR2 and 6G FR3 bands, including RF-SOI switch concepts for 6G reconfigurable intelligent surfaces.",
+    focus:
+      "mm-wave FR2 PA IP-core, 6G FR3 transceivers, and analog predistorters for massive MIMO Tx.",
+  },
+  {
+    name: "SiGe BiCMOS Technology",
+    icon: Waves,
+    image: assets.transceiverChipLayout,
+    description:
+      "mm-wave and sub-THz performance for wireless transceivers, phased-array 6G ICs, MIMO radar, and D-band front-end research.",
+    focus:
+      "mm-wave FR2 PA, D-band PA, and sub-THz transceivers for radar applications.",
+  },
 ];
 
 const products = [
   {
-    name: "LA-RF Core",
+    name: "C-Ku Band GaN Power Amplifier",
     icon: RadioTower,
-    image: assets.laRfCore,
-    alt: "LA-RF Core RF front-end semiconductor module with glowing signal field",
+    image: assets.ganPaModulePhoto,
+    alt: "Linear Amptech C-Ku band GaN power amplifier module hardware",
     description:
-      "High-performance RF front-end design platform for wireless, satellite, radar, and 5G/6G applications.",
+      "Fully integrated 5W C-Ku band power amplifier with completed simulation, tapeout, packaging, and measurement.",
     features: [
-      "Wideband front-end blocks",
-      "Radar-grade link budgets",
-      "EM-aware RF validation",
+      "5-18 GHz / 4-19.5 GHz variants",
+      "35-39.6 dBm peak power",
+      "UMS 250nm GaN-on-SiC",
     ],
   },
   {
-    name: "LA-Analog Nexus",
+    name: "47 GHz Tx / Rx RFIC Chips",
     icon: Waves,
-    image: assets.laAnalogNexus,
-    alt: "LA-Analog Nexus precision analog semiconductor platform with metallic mixed-signal components",
+    image: assets.transceiverChipLayout,
+    alt: "Linear Amptech fully integrated transmitter and receiver chip layout",
     description:
-      "Precision analog and mixed-signal IC design solution for amplifiers, data converters, sensors, and power-aware electronics.",
+      "Pin-compatible transmitter and receiver ICs developed in GF 130nm SiGe BiCMOS for 47.2-48.2 GHz systems.",
     features: [
-      "Low-noise signal chains",
-      "Converter architecture support",
-      "Power-aware analog modeling",
+      "20 dB Tx conversion gain",
+      "36.3-37 dB Rx voltage gain",
+      "GF 130nm SiGe BiCMOS",
     ],
   },
   {
-    name: "LA-Silicon Lab",
-    icon: Microscope,
-    image: assets.laSiliconLab,
-    alt: "LA-Silicon Lab layered silicon architecture and semiconductor prototyping visualization",
+    name: "Radar Front-End and Phase Shifter Chips",
+    icon: Radar,
+    image: assets.radarFrontEndLayout,
+    alt: "Linear Amptech radar front-end and phase shifter chip layout",
     description:
-      "Advanced R&D platform for custom ASIC, semiconductor prototyping, RF simulation, and chip architecture development.",
+      "Integrated radar front-end and 8-bit phase shifter chip capabilities for phased-array and high-frequency radar systems.",
     features: [
-      "Custom ASIC exploration",
-      "Prototype-to-validation flow",
-      "RF simulation workbench",
+      "71-81 GHz radar front end",
+      "8.5 dB noise figure",
+      "1.5 degree phase resolution",
+    ],
+  },
+  {
+    name: "Active Antenna and RIS Prototype",
+    icon: Satellite,
+    image: assets.risFrontSide,
+    alt: "Linear Amptech RIS prototype front-side antenna array",
+    description:
+      "Prototype work in active antennas, non-Foster matching networks, and reconfigurable intelligent surface validation.",
+    features: [
+      "60 MHz-1.31 GHz return loss band",
+      "8x8 RIS prototype",
+      "Anechoic chamber validation",
+    ],
+  },
+  {
+    name: "mm-Wave Packaging and Integration",
+    icon: Layers3,
+    image: assets.mmwavePackaging,
+    alt: "Linear Amptech chip-to-PCB-to-waveguide packaging integration diagram",
+    description:
+      "Packaging and transition design for chip-to-PCB-to-waveguide mm-wave assemblies and power combining networks.",
+    features: [
+      "47 GHz chip-PCB-waveguide transitions",
+      "2-way power combining",
+      "4-way radial divider/combiner",
     ],
   },
 ];
 
 const industries = [
-  "Wireless communication",
-  "Aerospace and defense",
-  "Satellite systems",
-  "Automotive electronics",
-  "Industrial automation",
-  "IoT and edge devices",
-  "Research labs",
-  "Consumer electronics",
+  "Defense RF front ends",
+  "MIMO radar",
+  "6G FR2 / FR3 wireless",
+  "Satellite and aerospace links",
+  "Massive MIMO transmitters",
+  "Reconfigurable intelligent surfaces",
+  "mm-wave phased arrays",
+  "Cyber-physical systems",
 ];
 
 const metrics = [
-  ["28+", "Silicon and RF domains"],
-  ["6G", "Communication-ready research"],
-  ["120GHz", "High-frequency exploration"],
-  ["ASIC", "Prototype acceleration"],
+  ["0.5-81GHz", "Portfolio frequency span"],
+  ["GaN", "High-power MMIC focus"],
+  ["CMOS", "6G FR2 / FR3 RFIC IP"],
+  ["SiGe", "mm-wave and sub-THz ICs"],
+];
+
+const applications = [
+  {
+    title: "Defense and Aerospace RF",
+    image: assets.hybridPaModule,
+    description:
+      "Resilient PA modules, T/R front-end modules, and Ku-band RF electronics for high-reliability mission systems.",
+  },
+  {
+    title: "6G and Massive MIMO",
+    image: assets.dieProbeMicroscope,
+    description:
+      "FR2/FR3 PA IP cores, analog predistorters, and transceiver blocks for scalable high-frequency communication.",
+  },
+  {
+    title: "MIMO Radar and Phased Arrays",
+    image: assets.chipPcbWaveguide,
+    description:
+      "mm-wave radar front-end chips, phase shifting, packaging transitions, and power combining for array systems.",
+  },
+  {
+    title: "RIS and Active Antenna Systems",
+    image: assets.risLabValidation,
+    description:
+      "Prototype development and chamber validation for active antenna matching networks and reconfigurable surfaces.",
+  },
 ];
 
 function FloatingChip() {
@@ -451,16 +552,16 @@ export default function LinearAmptechLanding() {
             <div className="max-w-4xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
                 <Sparkles className="size-4" aria-hidden="true" />
-                Semiconductor R&D / RF Systems / ASIC Innovation
+                IP Core / RF Front-End Components / MMIC Products
               </div>
               <h1 className="max-w-5xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
-                Engineering the Future of Silicon, RF, and Intelligent
-                Electronics.
+                Creating Difference with RF Front-End Technology.
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-                Linear Amptech designs advanced semiconductor, RF, analog, and
-                mixed-signal technologies for next-generation communication,
-                aerospace, industrial, and intelligent systems.
+                Linear Amptech develops indigenous RF front-end components,
+                GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores,
+                and silicon-validated systems for cyber-physical and
+                high-frequency electronics.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <a className="premium-button" href="#products">
@@ -495,15 +596,16 @@ export default function LinearAmptechLanding() {
           <Reveal className="space-y-8">
             <p className="section-kicker">Company</p>
             <h2 className="section-title">
-              Deep semiconductor engineering from architecture to validation.
+              IIT Roorkee-origin deep-tech company focused on RF circuit and
+              system design.
             </h2>
             <p className="text-xl leading-9 text-slate-300">
-              Linear Amptech is a chip design and R&D company focused on RF,
-              analog, mixed-signal ICs, semiconductor innovation, prototyping,
-              and product engineering. The team blends silicon architecture,
-              electromagnetic design, circuit-level rigor, and lab-grade
-              validation for systems that operate at the edge of frequency,
-              precision, and reliability.
+              Linearised Amplifier Technology & Services Pvt. Ltd. is founded
+              and driven by innovative minds from IIT Roorkee. The company
+              targets cyber-physical system design with a focus on
+              radio-frequency circuit and system design, spanning GaN MMICs,
+              high-power modules, CMOS/BiCMOS RFIC IP cores, and silicon
+              validation.
             </p>
             <div className="grid gap-3 sm:grid-cols-4">
               {metrics.map(([value, label], index) => (
@@ -569,16 +671,26 @@ export default function LinearAmptechLanding() {
         className="section-shell border-y border-white/10 bg-[#050b15]"
       >
         <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-4xl">
             <p className="section-kicker">Products</p>
             <h2 className="section-title">
-              Three premium platforms for RF, analog, and custom silicon R&D.
+              RF front-end product portfolio from PA modules to mm-wave ICs.
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-400">
-              Productized engineering workflows for teams building
-              high-frequency communication, intelligent sensing, aerospace
-              electronics, and custom semiconductor systems.
+              The portfolio is organized like a semiconductor product catalogue:
+              component families, validated chip/module options, integration
+              readiness, and customization paths for customer programs.
             </p>
+          </Reveal>
+          <Reveal className="mt-10">
+            <div className="product-category-rail">
+              {productCategories.map((category, index) => (
+                <a key={category} href="#products" className="category-link">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {category}
+                </a>
+              ))}
+            </div>
           </Reveal>
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {products.map((product, index) => (
@@ -592,59 +704,48 @@ export default function LinearAmptechLanding() {
 
       <section id="technology" className="section-shell">
         <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-          <Reveal className="max-w-3xl">
-            <p className="section-kicker">Technology</p>
+          <Reveal className="max-w-4xl">
+            <p className="section-kicker">IP Strategy</p>
             <h2 className="section-title">
-              Layered silicon visuals, signal waves, traces, and architecture
-              systems.
+              Three semiconductor technology tracks mapped to frequency and
+              application domains.
             </h2>
           </Reveal>
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <Reveal>
-              <div className="tech-image-panel">
-                <ParallaxImage
-                  src={assets.rfSignalWave}
-                  alt="RF signal waveform and radar visualization for microwave systems"
-                  className="min-h-[330px]"
-                />
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-white">
-                    RF and microwave systems
-                  </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-300">
-                    High-frequency design workflows for signal integrity,
-                    front-end architecture, satellite links, radar chains, and
-                    next-generation wireless systems.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal>
-              <div className="tech-image-panel">
-                <ParallaxImage
-                  src={assets.analogCircuit}
-                  alt="Analog and mixed-signal circuit architecture with glowing schematic overlays"
-                  className="min-h-[330px]"
-                />
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-white">
-                    Analog and mixed-signal design
-                  </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-300">
-                    Precision circuit design, simulation and validation loops,
-                    custom semiconductor architecture, converters, amplifiers,
-                    sensors, and power-aware electronics.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {ipPlatforms.map((platform, index) => (
+              <Reveal key={platform.name}>
+                <article className={`platform-card geo-${index % 4}`}>
+                  <div className="platform-image">
+                    <Image
+                      src={platform.image}
+                      alt={`${platform.name} technology visual`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <platform.icon className="mb-5 size-6 text-cyan-200" />
+                    <h3 className="text-2xl font-semibold text-white">
+                      {platform.name}
+                    </h3>
+                    <p className="mt-4 text-sm leading-6 text-slate-300">
+                      {platform.description}
+                    </p>
+                    <p className="mt-5 border-t border-white/10 pt-5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100">
+                      {platform.focus}
+                    </p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
           <Reveal className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              "Signal integrity",
-              "Simulation and validation",
-              "Custom semiconductor architecture",
-              "Mixed-signal verification",
+              "GDS and design specification files",
+              "Customization and integration readiness",
+              "Simulation, tapeout, and measurement",
+              "Build-to-stock and custom development",
             ].map((item, index) => (
               <div key={item} className="system-row">
                 <span>{String(index + 1).padStart(2, "0")}</span>
@@ -670,10 +771,15 @@ export default function LinearAmptechLanding() {
         />
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-24 lg:grid-cols-[0.45fr_0.55fr] lg:px-8">
           <Reveal>
-            <p className="section-kicker">Industries</p>
+            <p className="section-kicker">Applications</p>
             <h2 className="section-title">
-              Built for demanding electronic environments.
+              RF products shaped around real deployment domains.
             </h2>
+            <p className="mt-5 text-base leading-7 text-slate-400">
+              Competitor sites organize around application fit. Linear
+              Amptech&apos;s application framing is anchored in defense RF, 6G,
+              radar, phased arrays, active antennas, and RIS research.
+            </p>
           </Reveal>
           <Reveal>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -688,6 +794,31 @@ export default function LinearAmptechLanding() {
               ))}
             </div>
           </Reveal>
+        </div>
+        <div className="relative mx-auto grid max-w-7xl gap-5 px-5 pb-24 lg:grid-cols-4 lg:px-8">
+          {applications.map((application) => (
+            <Reveal key={application.title}>
+              <article className="application-card">
+                <div className="application-image">
+                  <Image
+                    src={application.image}
+                    alt={`${application.title} application visual`}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-xl font-semibold text-white">
+                    {application.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">
+                    {application.description}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -704,21 +835,21 @@ export default function LinearAmptechLanding() {
           <Reveal className="rd-panel">
             <Shield className="size-8 text-cyan-200" aria-hidden="true" />
             <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">
-              R&D for future silicon programs.
+              R&D pipeline from circuit architecture to measured prototypes.
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-300">
-              Linear Amptech advances innovation through simulation, lab
-              testing, semiconductor prototyping, measurement, validation, and
-              future technology development.
+              Linear Amptech&apos;s deck shows a practical development path:
+              RFIC/MMIC design, simulation, GDS/specification handoff, tapeout,
+              packaging, module integration, chamber testing, and measurement.
             </p>
           </Reveal>
           <Reveal className="grid content-center gap-4 sm:grid-cols-2">
             {[
-              "Custom IC Architecture",
-              "RF Simulation",
-              "Prototype Validation",
-              "Lab Measurement",
-              "Silicon Research",
+              "MIC and MMIC PA Design",
+              "GaN HEMT Device Research",
+              "Doherty and Waveform Engineering PA",
+              "RIS and Active Antenna Validation",
+              "FPGA and DPD Linearization",
             ].map((item) => (
               <div key={item} className="research-cell">
                 <Orbit className="size-5 text-cyan-200" aria-hidden="true" />
@@ -779,10 +910,12 @@ export default function LinearAmptechLanding() {
                   <option value="" disabled>
                     Select project type
                   </option>
-                  <option>RF front-end design</option>
-                  <option>Analog or mixed-signal IC</option>
-                  <option>ASIC or custom silicon</option>
-                  <option>Simulation and validation</option>
+                  <option>GaN PA MMIC or module</option>
+                  <option>CMOS / BiCMOS RFIC IP core</option>
+                  <option>mm-wave transmitter or receiver chip</option>
+                  <option>Radar front-end or phase shifter</option>
+                  <option>RIS / active antenna prototype</option>
+                  <option>Packaging, integration, and validation</option>
                 </select>
               </label>
               <label className="sm:col-span-2">
