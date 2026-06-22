@@ -384,7 +384,7 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "IP Core / RF Front-End Components / MMIC Products",
     title: "Creating Difference with RF Front-End Technology.",
     description:
-      "Indigenous RF front-end components, GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores, and silicon-validated systems for cyber-physical electronics.",
+      "Indigenous RF front-end components, GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores, and silicon-validated systems for cyber-physical.",
     image: assets.heroChip,
   },
   {

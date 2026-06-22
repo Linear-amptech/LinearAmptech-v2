@@ -21,11 +21,11 @@ export function CapabilitiesSection() {
             A full-stack lab for next-generation electronic systems.
           </h2>
         </Reveal>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {capabilities.map(({ title, icon: Icon }, index) => (
-            <Reveal key={title}>
+            <Reveal key={title} className="h-full">
               <motion.article
-                className={`tech-card geo-${index % 4} min-h-44`}
+                className={`tech-card geo-${index % 4} flex h-full min-h-64 flex-col`}
                 whileHover={{ y: -8, rotateX: 2.5, rotateY: -2.5 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
               >
@@ -36,7 +36,9 @@ export function CapabilitiesSection() {
                   <Icon className="size-6" aria-hidden="true" />
                 </motion.div>
                 <h3 className="text-lg font-semibold text-white">{title}</h3>
-                <span className="mt-6 block h-px w-full bg-gradient-to-r from-cyan-300/70 via-blue-500/40 to-transparent" />
+                <span className="mt-auto block pt-6">
+                  <span className="block h-px w-full bg-gradient-to-r from-cyan-300/70 via-blue-500/40 to-transparent" />
+                </span>
                 <span className="mt-4 block text-xs uppercase tracking-[0.18em] text-slate-500">
                   Node {String(index + 1).padStart(2, "0")}
                 </span>

@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import { ChipScene } from "@/components/landing/chip-scene";
 import { heroSlides } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 
@@ -50,7 +49,7 @@ export function HeroSection() {
         className="absolute inset-0 z-0 opacity-30"
         style={{ y: heroY }}
       >
-        <ChipScene />
+        {/* <ChipScene /> */}
       </motion.div>
       <div aria-hidden="true" className="circuit-traces" />
       <motion.div
@@ -80,9 +79,9 @@ export function HeroSection() {
           </motion.div>
         ))}
       </motion.div>
-      <div className="container relative z-10 mx-auto grid w-full items-center gap-12 px-5 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+      <div className="container relative z-10 mx-auto  w-full items-center gap-12 px-5  lg:px-8">
         <Reveal>
-          <div className="max-w-[198rem]">
+          <div className="max-w-[44rem]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeSlide.title}
@@ -95,15 +94,15 @@ export function HeroSection() {
                   {/* <Sparkles className="size-4" aria-hidden="true" /> */}
                   {activeSlide.eyebrow}
                 </div>
-                <h1 className="max-w-[98rem] text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
+                <h1 className="max-w-[44rem] text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
                   {activeSlide.title}
                 </h1>
-                <p className="mt-7 max-w-4xl text-lg leading-8 text-slate-300">
+                <p className="mt-7 max-w-[44rem] text-lg leading-8 text-slate-300">
                   {activeSlide.description}
                 </p>
               </motion.div>
             </AnimatePresence>
-            <div className="mt-9 flex w-full max-w-6xl items-center justify-between gap-4">
+            <div className="mt-9 flex w-full max-w-[44rem] items-center justify-between gap-4">
               <a className="premium-button" href="#products">
                 Explore Products
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -140,7 +139,9 @@ export function HeroSection() {
                 <button
                   key={slide.title}
                   type="button"
-                  className={activeHeroSlide === index ? "is-active" : ""}
+                  className={
+                    activeHeroSlide === index ? "is-active text-md" : "text-md"
+                  }
                   onClick={() => setActiveHeroSlide(index)}
                   onMouseEnter={() => setActiveHeroSlide(index)}
                   aria-label={`Show hero slide ${index + 1}`}
