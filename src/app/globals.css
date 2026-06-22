@@ -354,7 +354,14 @@
   }
 
   .product-category-rail {
-    @apply grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3;
+    @apply grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .product-category-rail {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .category-link {
