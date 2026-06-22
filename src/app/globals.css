@@ -466,7 +466,7 @@
   .hero-chip-background img {
     animation: heroImageDrift 22s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     filter: saturate(1.08) contrast(1.06);
-    object-position: 64% 50%;
+    object-position: 66% 50%;
   }
 
   .hero-chip-background::before {
@@ -505,6 +505,44 @@
     right: 0;
     top: 63%;
     z-index: 3;
+  }
+
+  .hero-slider-nav {
+    @apply mt-12 grid gap-3 sm:grid-cols-5;
+  }
+
+  .hero-slider-nav button {
+    @apply relative min-h-20 overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] p-3 text-left text-slate-400 transition-all duration-300 hover:border-cyan-200/40 hover:bg-cyan-200/10 hover:text-white;
+  }
+
+  .hero-slider-nav button::before {
+    background: linear-gradient(90deg, rgb(103 232 249 / 85%), transparent);
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    width: 100%;
+  }
+
+  .hero-slider-nav button.is-active {
+    @apply border-cyan-200/45 bg-cyan-200/12 text-white shadow-[0_0_32px_rgba(34,211,238,0.13)];
+  }
+
+  .hero-slider-nav button.is-active::before {
+    animation: heroProgress 6.2s linear;
+    transform: scaleX(1);
+  }
+
+  .hero-slider-nav span {
+    @apply block text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200;
+  }
+
+  .hero-slider-nav strong {
+    @apply mt-2 block text-xs font-semibold leading-5;
   }
 
   .image-panel {
@@ -658,6 +696,61 @@
   }
 }
 
+.scroll-progress {
+  background: linear-gradient(90deg, #0891b2, #67e8f9, #e2e8f0);
+  box-shadow: 0 0 22px rgb(34 211 238 / 45%);
+  height: 3px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform-origin: left;
+  z-index: 60;
+}
+
+.animated-circuit-layer {
+  inset: 0;
+  opacity: 0.22;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+.animated-circuit-layer::before,
+.animated-circuit-layer::after {
+  animation: circuitCurrent 9s linear infinite;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 18%,
+      rgb(34 211 238 / 0.34) 18% 18.35%,
+      transparent 18.35% 38%,
+      rgb(59 130 246 / 0.28) 38% 38.35%,
+      transparent 38.35%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0 22%,
+      rgb(103 232 249 / 0.26) 22% 22.35%,
+      transparent 22.35% 66%,
+      rgb(148 163 184 / 0.18) 66% 66.35%,
+      transparent 66.35%
+    );
+  background-size: 220px 180px;
+  content: "";
+  inset: -12%;
+  position: absolute;
+  transform: rotate(-8deg);
+}
+
+.animated-circuit-layer::after {
+  animation-direction: reverse;
+  animation-duration: 14s;
+  background-size: 340px 260px;
+  opacity: 0.45;
+  transform: rotate(12deg);
+}
+
 .hero-grid {
   background:
     linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
@@ -706,7 +799,9 @@
 
 .circuit-traces::before,
 .circuit-traces::after {
-  animation: tracePulse 4.8s ease-in-out infinite;
+  animation:
+    tracePulse 4.8s ease-in-out infinite,
+    traceTravel 11s linear infinite;
   background:
     linear-gradient(
       90deg,
@@ -874,6 +969,41 @@
   }
   50% {
     transform: scale(1.1) translate3d(-1.2%, -0.8%, 0);
+  }
+}
+
+@keyframes heroProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes circuitCurrent {
+  from {
+    background-position:
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      440px 180px,
+      -220px 360px;
+  }
+}
+
+@keyframes traceTravel {
+  from {
+    background-position:
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      180px 0,
+      0 180px;
   }
 }
 

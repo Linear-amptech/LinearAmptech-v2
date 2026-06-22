@@ -25,7 +25,7 @@ import {
   useTransform,
 } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Mesh } from "three";
 
 import { SiteFooter } from "@/components/site-footer";
@@ -218,6 +218,44 @@ const applications = [
   },
 ];
 
+const heroSlides = [
+  {
+    eyebrow: "IP Core / RF Front-End Components / MMIC Products",
+    title: "Creating Difference with RF Front-End Technology.",
+    description:
+      "Indigenous RF front-end components, GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores, and silicon-validated systems for cyber-physical electronics.",
+    image: assets.heroChip,
+  },
+  {
+    eyebrow: "GaN Power Amplifier Modules",
+    title: "C-Ku Band Power Built for Demanding RF Systems.",
+    description:
+      "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense front ends.",
+    image: assets.ganPaModulePhoto,
+  },
+  {
+    eyebrow: "SiGe BiCMOS RFIC Development",
+    title: "47 GHz Transmitter and Receiver IC Capability.",
+    description:
+      "Pin-compatible transmitter and receiver ICs for mm-wave systems, backed by silicon layout, simulation, packaging, and validation workflows.",
+    image: assets.transceiverChipLayout,
+  },
+  {
+    eyebrow: "Active Antenna / RIS Prototype",
+    title: "RF Prototyping from Array Hardware to Chamber Testing.",
+    description:
+      "RIS and active antenna development with prototype arrays, RF measurement setups, and validation in controlled lab environments.",
+    image: assets.risLabValidation,
+  },
+  {
+    eyebrow: "mm-Wave Packaging and Integration",
+    title: "Chip-to-PCB-to-Waveguide Integration for High Frequencies.",
+    description:
+      "Packaging, transitions, and combining networks for mm-wave assemblies where IC, PCB, waveguide, and measurement constraints meet.",
+    image: assets.mmwavePackaging,
+  },
+];
+
 function FloatingChip() {
   const chipRef = useRef<Mesh>(null);
   const waferRef = useRef<Mesh>(null);
@@ -352,10 +390,10 @@ function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 34 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+      initial={{ opacity: 0, y: 42, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.22, margin: "0px 0px -80px 0px" }}
+      transition={{ duration: 0.82, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
       {children}
     </motion.div>
@@ -491,6 +529,7 @@ function ProductImageCard({
 }
 
 export default function LinearAmptechLanding() {
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const glowX = useSpring(mouseX, { stiffness: 90, damping: 28 });
@@ -507,6 +546,16 @@ export default function LinearAmptechLanding() {
     return () => window.removeEventListener("pointermove", handlePointerMove);
   }, [mouseX, mouseY]);
 
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
+    }, 6200);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const activeSlide = heroSlides[activeHeroSlide];
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#03060d] text-slate-100">
       <motion.div
@@ -514,6 +563,12 @@ export default function LinearAmptechLanding() {
         className="pointer-events-none fixed left-0 top-0 z-30 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/12 blur-3xl"
         style={{ x: glowX, y: glowY }}
       />
+      <motion.div
+        aria-hidden="true"
+        className="scroll-progress"
+        style={{ scaleX: scrollYProgress }}
+      />
+      <div aria-hidden="true" className="animated-circuit-layer" />
       <div aria-hidden="true" className="particle-field" />
       <SiteHeader />
 
@@ -538,30 +593,40 @@ export default function LinearAmptechLanding() {
           className="hero-chip-background"
           style={{ y: heroY }}
         >
-          <Image
-            src={assets.heroChip}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
+          {heroSlides.map((slide, index) => (
+            <motion.div
+              key={slide.title}
+              className="absolute inset-0"
+              initial={false}
+              animate={{
+                opacity: activeHeroSlide === index ? 1 : 0,
+                scale: activeHeroSlide === index ? 1 : 1.035,
+              }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Image
+                src={slide.image}
+                alt=""
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </motion.div>
+          ))}
         </motion.div>
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
             <div className="max-w-4xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
                 <Sparkles className="size-4" aria-hidden="true" />
-                IP Core / RF Front-End Components / MMIC Products
+                {activeSlide.eyebrow}
               </div>
               <h1 className="max-w-5xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
-                Creating Difference with RF Front-End Technology.
+                {activeSlide.title}
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-                Linear Amptech develops indigenous RF front-end components,
-                GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores,
-                and silicon-validated systems for cyber-physical and
-                high-frequency electronics.
+                {activeSlide.description}
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <a className="premium-button" href="#products">
@@ -572,6 +637,21 @@ export default function LinearAmptechLanding() {
                   Start a Project
                   <Zap className="size-4" aria-hidden="true" />
                 </a>
+              </div>
+              <div className="hero-slider-nav" aria-label="Hero slides">
+                {heroSlides.map((slide, index) => (
+                  <button
+                    key={slide.title}
+                    type="button"
+                    className={activeHeroSlide === index ? "is-active" : ""}
+                    onClick={() => setActiveHeroSlide(index)}
+                    aria-label={`Show hero slide ${index + 1}`}
+                    aria-current={activeHeroSlide === index}
+                  >
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <strong>{slide.eyebrow.split("/")[0].trim()}</strong>
+                  </button>
+                ))}
               </div>
             </div>
           </Reveal>
