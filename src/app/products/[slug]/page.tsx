@@ -109,14 +109,15 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
             <aside className="product-card p-6 lg:sticky lg:top-28">
               <p className="section-kicker">Product Specs</p>
               <h2 className="text-3xl font-semibold text-white">
-                PPT-derived details
+                Request a Product Quote
               </h2>
               <p className="mt-4 text-sm leading-6 text-slate-400">
-                These details are summarized from the supplied Linear Amptech
-                product deck and kept brief for the website.
+                Share your frequency band, output-power target, package needs,
+                and integration timeline so the Linear Amptech team can respond
+                with the right product path.
               </p>
               <Link href="/contact" className="premium-button mt-7 w-full">
-                Discuss This Product
+                Get Quote
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
             </aside>

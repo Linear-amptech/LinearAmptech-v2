@@ -4,6 +4,7 @@ import Image from "next/image";
 import { BackgroundTexture } from "@/components/landing/background-texture";
 import { assets, projectTypeOptions } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
+import { AppSelect } from "@/components/ui/select";
 
 export function ContactSection() {
   return (
@@ -49,14 +50,14 @@ export function ContactSection() {
             </label>
             <label>
               <span>Project type</span>
-              <select name="projectType" defaultValue="">
-                <option value="" disabled>
-                  Select project type
-                </option>
-                {projectTypeOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
+              <AppSelect
+                name="projectType"
+                placeholder="Select project type"
+                options={projectTypeOptions.map((option) => ({
+                  value: option,
+                  label: option,
+                }))}
+              />
             </label>
             <label className="sm:col-span-2">
               <span>Message</span>

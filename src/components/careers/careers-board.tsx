@@ -10,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 
+import { AppSelect } from "@/components/ui/select";
 import { jobs } from "@/lib/company-data";
 
 const APPLICATION_ENDPOINT = "https://api.linear-amptech.com/job/apply";
@@ -194,42 +195,33 @@ export function CareersBoard() {
                 placeholder="Search job title or location"
               />
             </div>
-            <select
+            <AppSelect
               value={experience}
-              onChange={(event) => setExperience(event.target.value)}
-              className="h-12 rounded-lg border border-white/10 bg-slate-950/55 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-            >
-              <option value="">Experience</option>
-              {experienceOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-            <select
+              onValueChange={setExperience}
+              placeholder="Experience"
+              options={experienceOptions.map((option) => ({
+                value: option,
+                label: option,
+              }))}
+            />
+            <AppSelect
               value={workSite}
-              onChange={(event) => setWorkSite(event.target.value)}
-              className="h-12 rounded-lg border border-white/10 bg-slate-950/55 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-            >
-              <option value="">Work site</option>
-              {workSiteOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-            <select
+              onValueChange={setWorkSite}
+              placeholder="Work site"
+              options={workSiteOptions.map((option) => ({
+                value: option,
+                label: option,
+              }))}
+            />
+            <AppSelect
               value={employmentType}
-              onChange={(event) => setEmploymentType(event.target.value)}
-              className="h-12 rounded-lg border border-white/10 bg-slate-950/55 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-            >
-              <option value="">Employment</option>
-              {employmentTypeOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
+              onValueChange={setEmploymentType}
+              placeholder="Employment"
+              options={employmentTypeOptions.map((option) => ({
+                value: option,
+                label: option,
+              }))}
+            />
             <button
               type="button"
               className="premium-button"
@@ -427,19 +419,21 @@ export function CareersBoard() {
                       className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
                       placeholder="Full name"
                     />
-                    <select
+                    <AppSelect
                       required
                       value={form.gender}
-                      onChange={(event) =>
-                        updateForm("gender", event.target.value)
+                      onValueChange={(nextValue) =>
+                        updateForm("gender", nextValue)
                       }
-                      className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-                    >
-                      <option value="">Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
+                      name="gender"
+                      placeholder="Gender"
+                      className="bg-slate-950/70"
+                      options={[
+                        { value: "Male", label: "Male" },
+                        { value: "Female", label: "Female" },
+                        { value: "Other", label: "Other" },
+                      ]}
+                    />
                     <input
                       required
                       type="email"
