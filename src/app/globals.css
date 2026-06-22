@@ -223,6 +223,7 @@
     background:
       linear-gradient(135deg, rgb(34 211 238 / 42%), transparent 34%),
       linear-gradient(315deg, rgb(148 163 184 / 18%), transparent 38%);
+    border-top-left-radius: inherit;
     clip-path: polygon(0 0, 72px 0, 44px 10px, 10px 10px, 10px 44px, 0 72px);
     content: "";
     height: 86px;
