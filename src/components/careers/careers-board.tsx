@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -271,7 +272,7 @@ export function CareersBoard() {
                     setStatus("idle");
                     setError("");
                   }}
-                  className={`product-card p-5 text-left transition-all duration-300 hover:border-cyan-200/35 ${
+                  className={`product-card flex min-h-52 flex-col p-5 text-left transition-all duration-300 hover:border-cyan-200/35 ${
                     visibleSelectedJob?.id === job.id
                       ? "border-cyan-200/40 bg-cyan-200/[0.08]"
                       : ""
@@ -296,216 +297,231 @@ export function CareersBoard() {
                       {job.employmentType}
                     </span>
                   </div>
+                  <span className="mt-auto self-end pt-5 text-sm font-semibold text-cyan-100 underline decoration-cyan-200/55 underline-offset-4 transition-colors hover:text-white">
+                    View details
+                  </span>
                 </button>
               ))
             )}
           </div>
 
-          {visibleSelectedJob && (
-            <article className="product-card p-6 md:p-7">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200">
-                    {visibleSelectedJob.jobTitle}
-                  </p>
-                  <h2 className="mt-2 text-3xl font-semibold text-white">
-                    {visibleSelectedJob.title}
-                  </h2>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActiveApplyJob(visibleSelectedJob);
-                    setStatus("idle");
-                    setError("");
-                  }}
-                  className="premium-button"
-                >
-                  Apply Now
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </button>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-2 text-sm text-slate-300">
-                <span className="feature-pill">
-                  <MapPin className="inline size-3.5" aria-hidden="true" />{" "}
-                  {visibleSelectedJob.location}
-                </span>
-                <span className="feature-pill">
-                  <BriefcaseBusiness
-                    className="inline size-3.5"
-                    aria-hidden="true"
-                  />{" "}
-                  {visibleSelectedJob.employmentType}
-                </span>
-                <span className="feature-pill">
-                  <CalendarDays
-                    className="inline size-3.5"
-                    aria-hidden="true"
-                  />{" "}
-                  Posted {visibleSelectedJob.datePosted}
-                </span>
-                {visibleSelectedJob.workType.map((type) => (
-                  <span key={type} className="feature-pill">
-                    {type}
-                  </span>
-                ))}
-              </div>
-
-              <p className="mt-6 text-base leading-7 text-slate-300">
-                {visibleSelectedJob.description}
-              </p>
-
-              <div className="mt-8 grid gap-7 md:grid-cols-2">
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Key responsibilities
-                  </h3>
-                  <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
-                    {visibleSelectedJob.keyResponsibilities.map((item) => (
-                      <li key={item}>- {item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Requirements
-                  </h3>
-                  <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
-                    {visibleSelectedJob.requirements.map((item) => (
-                      <li key={item}>- {item}</li>
-                    ))}
-                  </ul>
-                  <h3 className="mt-7 text-lg font-semibold text-white">
-                    Desired skills
-                  </h3>
-                  <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
-                    {visibleSelectedJob.desiredSkills.map((item) => (
-                      <li key={item}>- {item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {activeApplyJob && (
-                <form
-                  onSubmit={submitApplication}
-                  className="mt-8 rounded-lg border border-white/10 bg-slate-950/45 p-5"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="section-kicker">Application</p>
-                      <h3 className="text-2xl font-semibold text-white">
-                        Apply for {activeApplyJob.title}
-                      </h3>
-                    </div>
-                    <button
-                      type="button"
-                      className="grid size-9 place-items-center rounded-lg border border-white/10 text-slate-300 transition-colors hover:border-cyan-200/35 hover:text-white"
-                      onClick={() => setActiveApplyJob(null)}
-                      aria-label="Close application form"
-                    >
-                      <X className="size-4" aria-hidden="true" />
-                    </button>
-                  </div>
-
-                  <div className="mt-6 grid gap-4 md:grid-cols-2">
-                    <input
-                      required
-                      value={form.fullName}
-                      onChange={(event) =>
-                        updateForm("fullName", event.target.value)
-                      }
-                      className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-                      placeholder="Full name"
-                    />
-                    <AppSelect
-                      required
-                      value={form.gender}
-                      onValueChange={(nextValue) =>
-                        updateForm("gender", nextValue)
-                      }
-                      name="gender"
-                      placeholder="Gender"
-                      className="bg-slate-950/70"
-                      options={[
-                        { value: "Male", label: "Male" },
-                        { value: "Female", label: "Female" },
-                        { value: "Other", label: "Other" },
-                      ]}
-                    />
-                    <input
-                      required
-                      type="email"
-                      value={form.email}
-                      onChange={(event) =>
-                        updateForm("email", event.target.value)
-                      }
-                      className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-                      placeholder="Email"
-                    />
-                    <input
-                      required
-                      value={form.mobileNumber}
-                      onChange={(event) =>
-                        updateForm("mobileNumber", event.target.value)
-                      }
-                      className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-                      placeholder="Mobile number"
-                    />
-                    <input
-                      required
-                      value={form.educationQualification}
-                      onChange={(event) =>
-                        updateForm("educationQualification", event.target.value)
-                      }
-                      className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-                      placeholder="Education qualification"
-                    />
-                    <input
-                      required
-                      value={form.linkedInProfile}
-                      onChange={(event) =>
-                        updateForm("linkedInProfile", event.target.value)
-                      }
-                      className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
-                      placeholder="LinkedIn profile URL"
-                    />
-                    <input
-                      required
-                      value={form.resumeUrl}
-                      onChange={(event) =>
-                        updateForm("resumeUrl", event.target.value)
-                      }
-                      className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55 md:col-span-2"
-                      placeholder="Public Google Drive or Docs resume URL"
-                    />
-                  </div>
-
-                  {error && (
-                    <p className="mt-4 rounded-lg border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
-                      {error}
+          <AnimatePresence mode="wait">
+            {visibleSelectedJob && (
+              <motion.article
+                key={visibleSelectedJob.id}
+                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
+                transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                className="product-card p-6 md:p-7"
+              >
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200">
+                      {visibleSelectedJob.jobTitle}
                     </p>
-                  )}
-                  {status === "success" && (
-                    <p className="mt-4 rounded-lg border border-cyan-200/25 bg-cyan-200/10 px-4 py-3 text-sm text-cyan-100">
-                      Application submitted successfully.
-                    </p>
-                  )}
+                    <h2 className="mt-2 text-3xl font-semibold text-white">
+                      {visibleSelectedJob.title}
+                    </h2>
+                  </div>
                   <button
-                    type="submit"
-                    disabled={status === "submitting"}
-                    className="premium-button mt-5 disabled:cursor-not-allowed disabled:opacity-60"
+                    type="button"
+                    onClick={() => {
+                      setActiveApplyJob(visibleSelectedJob);
+                      setStatus("idle");
+                      setError("");
+                    }}
+                    className="premium-button"
                   >
-                    {status === "submitting"
-                      ? "Submitting..."
-                      : "Submit Application"}
+                    Apply Now
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </button>
-                </form>
-              )}
-            </article>
-          )}
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-2 text-sm text-slate-300">
+                  <span className="feature-pill">
+                    <MapPin className="inline size-3.5" aria-hidden="true" />{" "}
+                    {visibleSelectedJob.location}
+                  </span>
+                  <span className="feature-pill">
+                    <BriefcaseBusiness
+                      className="inline size-3.5"
+                      aria-hidden="true"
+                    />{" "}
+                    {visibleSelectedJob.employmentType}
+                  </span>
+                  <span className="feature-pill">
+                    <CalendarDays
+                      className="inline size-3.5"
+                      aria-hidden="true"
+                    />{" "}
+                    Posted {visibleSelectedJob.datePosted}
+                  </span>
+                  {visibleSelectedJob.workType.map((type) => (
+                    <span key={type} className="feature-pill">
+                      {type}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="mt-6 text-base leading-7 text-slate-300">
+                  {visibleSelectedJob.description}
+                </p>
+
+                <div className="mt-8 grid gap-7 md:grid-cols-2">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      Key responsibilities
+                    </h3>
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
+                      {visibleSelectedJob.keyResponsibilities.map((item) => (
+                        <li key={item}>- {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      Requirements
+                    </h3>
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
+                      {visibleSelectedJob.requirements.map((item) => (
+                        <li key={item}>- {item}</li>
+                      ))}
+                    </ul>
+                    <h3 className="mt-7 text-lg font-semibold text-white">
+                      Desired skills
+                    </h3>
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
+                      {visibleSelectedJob.desiredSkills.map((item) => (
+                        <li key={item}>- {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {activeApplyJob && (
+                  <form
+                    onSubmit={submitApplication}
+                    className="mt-8 rounded-lg border border-white/10 bg-slate-950/45 p-5"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="section-kicker">Application</p>
+                        <h3 className="text-2xl font-semibold text-white">
+                          Apply for {activeApplyJob.title}
+                        </h3>
+                      </div>
+                      <button
+                        type="button"
+                        className="grid size-9 place-items-center rounded-lg border border-white/10 text-slate-300 transition-colors hover:border-cyan-200/35 hover:text-white"
+                        onClick={() => setActiveApplyJob(null)}
+                        aria-label="Close application form"
+                      >
+                        <X className="size-4" aria-hidden="true" />
+                      </button>
+                    </div>
+
+                    <div className="mt-6 grid gap-4 md:grid-cols-2">
+                      <input
+                        required
+                        value={form.fullName}
+                        onChange={(event) =>
+                          updateForm("fullName", event.target.value)
+                        }
+                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        placeholder="Full name"
+                      />
+                      <AppSelect
+                        required
+                        value={form.gender}
+                        onValueChange={(nextValue) =>
+                          updateForm("gender", nextValue)
+                        }
+                        name="gender"
+                        placeholder="Gender"
+                        className="bg-slate-950/70"
+                        options={[
+                          { value: "Male", label: "Male" },
+                          { value: "Female", label: "Female" },
+                          { value: "Other", label: "Other" },
+                        ]}
+                      />
+                      <input
+                        required
+                        type="email"
+                        value={form.email}
+                        onChange={(event) =>
+                          updateForm("email", event.target.value)
+                        }
+                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        placeholder="Email"
+                      />
+                      <input
+                        required
+                        value={form.mobileNumber}
+                        onChange={(event) =>
+                          updateForm("mobileNumber", event.target.value)
+                        }
+                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        placeholder="Mobile number"
+                      />
+                      <input
+                        required
+                        value={form.educationQualification}
+                        onChange={(event) =>
+                          updateForm(
+                            "educationQualification",
+                            event.target.value,
+                          )
+                        }
+                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        placeholder="Education qualification"
+                      />
+                      <input
+                        required
+                        value={form.linkedInProfile}
+                        onChange={(event) =>
+                          updateForm("linkedInProfile", event.target.value)
+                        }
+                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        placeholder="LinkedIn profile URL"
+                      />
+                      <input
+                        required
+                        value={form.resumeUrl}
+                        onChange={(event) =>
+                          updateForm("resumeUrl", event.target.value)
+                        }
+                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55 md:col-span-2"
+                        placeholder="Public Google Drive or Docs resume URL"
+                      />
+                    </div>
+
+                    {error && (
+                      <p className="mt-4 rounded-lg border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                        {error}
+                      </p>
+                    )}
+                    {status === "success" && (
+                      <p className="mt-4 rounded-lg border border-cyan-200/25 bg-cyan-200/10 px-4 py-3 text-sm text-cyan-100">
+                        Application submitted successfully.
+                      </p>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="premium-button mt-5 disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {status === "submitting"
+                        ? "Submitting..."
+                        : "Submit Application"}
+                      <ArrowRight className="size-4" aria-hidden="true" />
+                    </button>
+                  </form>
+                )}
+              </motion.article>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>

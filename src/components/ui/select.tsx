@@ -57,8 +57,14 @@ export function AppSelect({
         </Select.Icon>
       </Select.Trigger>
       <Select.Portal>
-        <Select.Positioner sideOffset={8} className="z-[80]">
-          <Select.Popup className="origin-[var(--transform-origin)] overflow-hidden rounded-lg border border-cyan-200/18 bg-[#04101d]/98 p-1.5 text-sm text-white shadow-[0_28px_90px_rgba(0,0,0,0.52)] outline-none backdrop-blur-2xl transition-[opacity,transform] duration-200 ease-out data-[ending-style]:scale-[0.98] data-[ending-style]:opacity-0 data-[starting-style]:scale-[0.98] data-[starting-style]:opacity-0">
+        <Select.Positioner
+          side="bottom"
+          align="start"
+          sideOffset={6}
+          alignItemWithTrigger={false}
+          className="z-[80]"
+        >
+          <Select.Popup className="min-w-[var(--anchor-width)] origin-[var(--transform-origin)] overflow-hidden rounded-lg border border-white/10 bg-[#06101d] p-1.5 text-sm text-white shadow-[0_18px_70px_rgba(0,0,0,0.46)] outline-none backdrop-blur-xl transition-[opacity,transform] duration-200 ease-out data-[ending-style]:-translate-y-1 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:-translate-y-1 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
             {options.map((option) => (
               <Select.Item
                 key={option.value}
