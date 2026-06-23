@@ -29,12 +29,9 @@ export function CapabilitiesSection() {
                 whileHover={{ y: -8, rotateX: 2.5, rotateY: -2.5 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
               >
-                <motion.div
-                  whileHover={{ rotate: 8, scale: 1.08 }}
-                  className="mb-8 text-cyan-200"
-                >
+                <div className="mb-8 text-cyan-200">
                   <Icon className="size-6" aria-hidden="true" />
-                </motion.div>
+                </div>
                 <h3 className="text-lg font-semibold text-white">{title}</h3>
                 <span className="mt-auto block pt-6">
                   <span className="block h-px w-full bg-gradient-to-r from-cyan-300/70 via-blue-500/40 to-transparent" />
