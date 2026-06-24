@@ -44,6 +44,10 @@ const heroImages = [
     imagePath: "/assets/hero-section-slider/c-ku-band-pa-chip.png",
     imageAlt: "Semiconductor wafer hero visual",
   },
+  {
+    imagePath: "/assets/hero-section-slider/6666.png",
+    imageAlt: "Semiconductor wafer hero visual",
+  },
 ];
 
 const heroSlides: HeroSlide[] = heroSlideContent.map((slide, index) => {
@@ -61,18 +65,20 @@ const heroSlides: HeroSlide[] = heroSlideContent.map((slide, index) => {
 export function LandingHeroSlider() {
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [isSliderPaused, setIsSliderPaused] = useState(false);
+  const [isNavHovered, setIsNavHovered] = useState(false);
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.45], [0, 170]);
+  const isPlaybackPaused = isSliderPaused || isNavHovered;
 
   useEffect(() => {
-    if (isSliderPaused) return;
+    if (isPlaybackPaused) return;
 
     const interval = window.setInterval(() => {
       setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
     }, 4200);
 
     return () => window.clearInterval(interval);
-  }, [isSliderPaused]);
+  }, [isPlaybackPaused]);
 
   const activeSlide = heroSlides[activeHeroSlide];
 
@@ -91,7 +97,7 @@ export function LandingHeroSlider() {
       <div aria-hidden="true" className="absolute inset-0 z-0 overflow-hidden">
         {heroSlides.map((slide, index) => (
           <motion.div
-            key={slide.imagePath}
+            key={`${slide.title}-${index}`}
             className="absolute inset-0 bg-cover bg-[position:66%_50%] bg-no-repeat will-change-transform"
             style={{ backgroundImage: `url(${slide.imagePath})` }}
             initial={false}
@@ -167,7 +173,7 @@ export function LandingHeroSlider() {
                     <span
                       key={activeHeroSlide}
                       className="hero-progress-fill"
-                      data-paused={isSliderPaused}
+                      data-paused={isPlaybackPaused}
                     />
                   </span>
                 </button>
@@ -192,8 +198,10 @@ export function LandingHeroSlider() {
 
             <div
               className="hero-slider-nav"
-              data-paused={isSliderPaused}
+              data-paused={isPlaybackPaused}
               aria-label="Hero slides"
+              onMouseEnter={() => setIsNavHovered(true)}
+              onMouseLeave={() => setIsNavHovered(false)}
             >
               {heroSlides.map((slide, index) => (
                 <button
@@ -201,7 +209,10 @@ export function LandingHeroSlider() {
                   type="button"
                   className={activeHeroSlide === index ? "is-active" : ""}
                   onClick={() => setActiveHeroSlide(index)}
-                  onMouseEnter={() => setActiveHeroSlide(index)}
+                  onMouseEnter={() => {
+                    setIsNavHovered(true);
+                    setActiveHeroSlide(index);
+                  }}
                   aria-label={`Show hero slide ${index + 1}`}
                   aria-current={activeHeroSlide === index}
                 >

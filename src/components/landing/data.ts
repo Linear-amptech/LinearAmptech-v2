@@ -25,10 +25,6 @@ export const assets = {
   ganPaModulePhoto: "/assets/ppt-products/gan-pa-module-photo.png",
   transceiverChipLayout: "/assets/ppt-products/transceiver-chip-layout.png",
   radarFrontEndLayout: "/assets/ppt-products/radar-front-end-layout.png",
-  risFrontSide: "/assets/ppt-products/ris-front-side.png",
-  risLabValidation: "/assets/ppt-products/ris-lab-validation.png",
-  mmwavePackaging: "/assets/ppt-products/mmwave-packaging.png",
-  chipPcbWaveguide: "/assets/ppt-products/chip-pcb-waveguide.png",
   dieProbeMicroscope: "/assets/ppt-products/die-probe-microscope.png",
   bondedDieCloseup: "/assets/ppt-products/bonded-die-closeup.png",
   sourceHybridMicModule: "/assets/ppt-products/source/pa-module-bench.png",
@@ -53,36 +49,6 @@ export const assets = {
     "/assets/ppt-products/source/gan-pa-qfn44-performance.png",
   sourceGanPaQfn56Performance:
     "/assets/ppt-products/source/gan-pa-qfn56-performance.png",
-  sourceActiveAntennaPrototype:
-    "/assets/ppt-products/source/active-antenna-prototype.png",
-  sourceActiveMatchingNetwork:
-    "/assets/ppt-products/source/active-matching-network.png",
-  sourceActiveAntennaLnaSection:
-    "/assets/ppt-products/source/active-antenna-lna-section.png",
-  sourceActiveAntennaReturnLoss:
-    "/assets/ppt-products/source/active-antenna-return-loss.png",
-  sourceActiveAntennaPattern:
-    "/assets/ppt-products/source/active-antenna-pattern.png",
-  sourceActiveAntennaGain:
-    "/assets/ppt-products/source/active-antenna-gain.png",
-  sourceActiveAntennaEPattern:
-    "/assets/ppt-products/source/active-antenna-e-pattern.png",
-  sourceActiveAntennaHPattern:
-    "/assets/ppt-products/source/active-antenna-h-pattern.png",
-  sourceRisFrontSideArray:
-    "/assets/ppt-products/source/ris-front-side-array.png",
-  sourceRisFrontSideClose:
-    "/assets/ppt-products/source/ris-front-side-close.png",
-  sourceRisBackSideClose: "/assets/ppt-products/source/ris-back-side-close.png",
-  sourceRisBackSideArray: "/assets/ppt-products/source/ris-back-side-array.png",
-  sourcePackagingTransitionDiagram:
-    "/assets/ppt-products/source/packaging-transition-diagram.png",
-  sourcePackagingPrototypePhoto:
-    "/assets/ppt-products/source/packaging-prototype-photo.jpg",
-  sourcePackagingChipPcbWaveguide:
-    "/assets/ppt-products/source/packaging-chip-pcb-waveguide.png",
-  sourcePackagingRadialCombiner:
-    "/assets/ppt-products/source/packaging-radial-combiner.png",
 } as const;
 
 export type Capability = {
@@ -133,18 +99,6 @@ export const capabilities: Capability[] = [
   { title: "Chip-to-PCB-to-waveguide packaging", icon: Layers3 },
   { title: "Simulation, tapeout, measurement, and validation", icon: ScanLine },
   { title: "Custom RF product engineering and licensing", icon: Atom },
-];
-
-export const productCategories = [
-  "Hybrid MIC PA Modules",
-  "Fully Integrated PA Chips",
-  "Fully Integrated Transmitter Chips",
-  "Fully Integrated Receiver Chips",
-  "Radar Front-End Chips",
-  "8-Bit Phase Shifter Chips",
-  "Active Antenna",
-  "RIS Prototype",
-  "mm-Wave Packaging & Integration",
 ];
 
 export const ipPlatforms: IpPlatform[] = [
@@ -546,13 +500,13 @@ export const applications: Application[] = [
   },
   {
     title: "MIMO Radar and Phased Arrays",
-    image: assets.chipPcbWaveguide,
+    image: assets.radarFrontEndLayout,
     description:
       "mm-wave radar front-end chips, phase shifting, packaging transitions, and power combining for array systems.",
   },
   {
     title: "RIS and Active Antenna Systems",
-    image: assets.risLabValidation,
+    image: assets.rdLab,
     description:
       "Prototype development and chamber validation for active antenna matching networks and reconfigurable surfaces.",
   },
@@ -585,14 +539,14 @@ export const heroSlides: HeroSlide[] = [
     title: "RF Prototyping from Array Hardware to Chamber Testing.",
     description:
       "RIS and active antenna development with prototype arrays, RF measurement setups, and validation in controlled lab environments.",
-    image: assets.risLabValidation,
+    image: assets.rdLab,
   },
   {
     eyebrow: "mm-Wave Packaging and Integration",
     title: "Chip-to-PCB-to-Waveguide Integration for HF.",
     description:
       "Packaging, transitions, and combining networks for mm-wave assemblies where IC, PCB, waveguide, and measurement constraints meet.",
-    image: assets.mmwavePackaging,
+    image: assets.radarFrontEndLayout,
   },
 ];
 
