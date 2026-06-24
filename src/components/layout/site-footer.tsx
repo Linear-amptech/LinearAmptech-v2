@@ -9,7 +9,7 @@ const footerLinks = [
   { href: "/#technology", label: "Technology" },
   { href: "/#applications", label: "Applications" },
   { href: "/#company", label: "Company" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteFooter() {

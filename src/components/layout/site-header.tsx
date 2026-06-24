@@ -14,7 +14,7 @@ const navItems = [
   { href: "/#applications", label: "Applications" },
   { href: "/#company", label: "Company" },
   { href: "/careers", label: "Careers" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 type Theme = "light" | "dark";
