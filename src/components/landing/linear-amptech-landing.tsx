@@ -13,6 +13,8 @@ import {
   Layers3,
   Microscope,
   PackageCheck,
+  Pause,
+  Play,
   Radar,
   RadioTower,
   ScanLine,
@@ -57,39 +59,44 @@ type HeroSlide = {
 
 const heroSlides: HeroSlide[] = [
   {
-    eyebrow: "RF Front-End Technologies",
-    title:
-      "RF Front-End Technologies for Next-Generation Wireless, Radar, and Defense Systems",
+    eyebrow: "IP Core / RF Front-End Components / MMIC Products",
+    title: "Creating Difference with RF Front-End Technology.",
     description:
-      "Linear-AmpTech develops GaN power amplifier modules, CMOS/BiCMOS RFICs, mm-wave transceivers, active antennas, and packaging solutions from design to measured prototypes.",
+      "Indigenous RF front-end components, GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores, and silicon-validated systems for cyber-physical.",
     imagePath: "/assets/hero-section-slider/hero-linear-amptech-rfic-chip.png",
-    imageAlt:
-      "Premium 3D RFIC semiconductor chip graphic placeholder for the Linear-AmpTech hero",
+    imageAlt: "Linear-AmpTech RFIC chip hero visual",
   },
   {
-    eyebrow: "GaN PA Modules",
-    title:
-      "High-power GaN platforms from module architecture to measured PA hardware.",
+    eyebrow: "GaN Power Amplifier Modules",
+    title: "C-Ku Band Power Built for Demanding RF Systems.",
     description:
-      "Hybrid MIC PA modules and C-Ku band GaN-on-SiC PA chip families support demanding communication, radar, aerospace, and defense front ends.",
-    imagePath: "/assets/hero-section-slider/c-ku-band-pa-chip.png",
-    imageAlt: "GaN C-Ku band PA chip hero slide placeholder",
+      "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense front ends.",
+    imagePath: "/assets/hero-section-slider/rf-lab-validation.png",
+    imageAlt: "Hybrid MIC PA module hero visual",
   },
   {
-    eyebrow: "CMOS / BiCMOS RFICs",
-    title: "mm-wave transmitter, receiver, and radar IC capability.",
+    eyebrow: "SiGe BiCMOS RFIC Development",
+    title: "47 GHz Transmitter and Receiver IC Capability.",
     description:
-      "Si CMOS and SiGe BiCMOS development paths support RFIC IP, 47 GHz transceiver blocks, radar front ends, phase shifting, and phased-array systems.",
+      "Pin-compatible transmitter and receiver ICs for mm-wave systems, backed by silicon layout, simulation, packaging, and validation workflows.",
     imagePath: "/assets/hero-section-slider/ghz-transmitter-chip.png",
-    imageAlt: "mm-wave SiGe BiCMOS RFIC hero slide placeholder",
+    imageAlt: "47 GHz transmitter chip hero visual",
   },
   {
-    eyebrow: "Packaging & Validation",
-    title: "Chip-to-package-to-prototype workflows for RF deployment.",
+    eyebrow: "Active Antenna / RIS Prototype",
+    title: "RF Prototyping from Array Hardware to Chamber Testing.",
     description:
-      "Packaging, integration, measurement, chamber validation, RIS prototypes, and active antenna workflows close the loop from architecture to deployable hardware.",
+      "RIS and active antenna development with prototype arrays, RF measurement setups, and validation in controlled lab environments.",
     imagePath: "/assets/hero-section-slider/c-ku-band-pa-chip.png",
-    imageAlt: "Semiconductor wafer packaging and validation hero slide visual",
+    imageAlt: "Semiconductor wafer hero visual",
+  },
+  {
+    eyebrow: "mm-Wave Packaging and Integration",
+    title: "Chip-to-PCB-to-Waveguide Integration for HF.",
+    description:
+      "Packaging, transitions, and combining networks for mm-wave assemblies where IC, PCB, waveguide, and measurement constraints meet.",
+    imagePath: "/assets/hero-section-slider/hero-linear-amptech-rfic-chip.png",
+    imageAlt: "Linear-AmpTech RFIC packaging hero visual",
   },
 ];
 
@@ -523,7 +530,31 @@ function HeroSliderSection() {
               <div className="flex items-center gap-3">
                 <button
                   type="button"
-                  className="grid size-12 place-items-center rounded-lg border border-white/15 bg-white/[0.055] text-white shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-200/45 hover:bg-cyan-200/12"
+                  className="hero-play-toggle"
+                  onClick={() => setIsSliderPaused((current) => !current)}
+                  aria-label={
+                    isSliderPaused
+                      ? "Play hero slideshow"
+                      : "Pause hero slideshow"
+                  }
+                  aria-pressed={isSliderPaused}
+                >
+                  {isSliderPaused ? (
+                    <Play className="size-4" aria-hidden="true" />
+                  ) : (
+                    <Pause className="size-4" aria-hidden="true" />
+                  )}
+                  <span className="hero-progress-track" aria-hidden="true">
+                    <span
+                      key={activeHeroSlide}
+                      className="hero-progress-fill"
+                      data-paused={isSliderPaused}
+                    />
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  className="hero-arrow-button"
                   onClick={showPreviousSlide}
                   aria-label="Show previous hero slide"
                 >
@@ -531,7 +562,7 @@ function HeroSliderSection() {
                 </button>
                 <button
                   type="button"
-                  className="grid size-12 place-items-center rounded-lg border border-cyan-200/35 bg-cyan-200/12 text-cyan-50 shadow-[0_18px_70px_rgba(34,211,238,0.16)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-100/65 hover:bg-cyan-200/20"
+                  className="hero-arrow-button is-primary"
                   onClick={showNextSlide}
                   aria-label="Show next hero slide"
                 >
@@ -544,10 +575,6 @@ function HeroSliderSection() {
               className="hero-slider-nav"
               data-paused={isSliderPaused}
               aria-label="Hero slides"
-              onMouseEnter={() => setIsSliderPaused(true)}
-              onMouseLeave={() => setIsSliderPaused(false)}
-              onFocus={() => setIsSliderPaused(true)}
-              onBlur={() => setIsSliderPaused(false)}
             >
               {heroSlides.map((slide, index) => (
                 <button
