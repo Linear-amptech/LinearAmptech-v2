@@ -480,6 +480,10 @@ function HeroSliderSection() {
           />
         ))}
       </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(5_11_18_/_0.9)_0%,rgb(5_11_18_/_0.76)_32%,rgb(5_11_18_/_0.32)_58%,transparent_82%)]"
+      />
       <motion.div
         aria-hidden="true"
         className="absolute right-[-18%] top-12 z-[2] h-[640px] w-[640px] rounded-full border border-cyan-200/10 bg-cyan-200/5 blur-3xl"
