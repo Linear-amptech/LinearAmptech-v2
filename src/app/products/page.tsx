@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 };
 
 function ProductListingCard({ product }: { product: Product }) {
-  const Icon = product.icon;
-
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-primary)]/70">
       <Link
@@ -31,10 +29,7 @@ function ProductListingCard({ product }: { product: Product }) {
         />
       </Link>
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-5 flex items-start justify-between gap-4">
-          <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
-            <Icon className="size-5" aria-hidden="true" />
-          </div>
+        <div className="mb-5 flex items-start justify-end gap-4">
           <Link
             href={`/products/${product.slug}`}
             className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"

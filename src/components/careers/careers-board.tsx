@@ -177,13 +177,13 @@ export function CareersBoard() {
   };
 
   return (
-    <section className="relative px-5 pb-24 lg:px-8">
-      <div className="container mx-auto grid gap-7">
-        <div className="product-card p-5 md:p-6">
+    <section className="mt-12">
+      <div className="grid gap-7">
+        <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)] md:p-6">
           <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_auto]">
             <div className="relative">
               <Search
-                className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-cyan-200"
+                className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[color:var(--color-primary-deep)]"
                 aria-hidden="true"
               />
               <input
@@ -192,7 +192,7 @@ export function CareersBoard() {
                 onKeyDown={(event) => {
                   if (event.key === "Enter") applySearch();
                 }}
-                className="h-12 w-full rounded-lg border border-white/10 bg-slate-950/55 pl-11 pr-4 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-200/55"
+                className="h-12 w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] pl-11 pr-4 text-sm text-[color:var(--color-text)] outline-none transition-colors placeholder:text-[color:var(--color-text-muted)] focus:border-[color:var(--color-primary)]/60"
                 placeholder="Search job title or location"
               />
             </div>
@@ -200,6 +200,7 @@ export function CareersBoard() {
               value={experience}
               onValueChange={setExperience}
               placeholder="Experience"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-primary)]/40 focus-visible:border-[color:var(--color-primary)]/60 data-[popup-open]:border-[color:var(--color-primary)]/60 data-[popup-open]:bg-[color:var(--color-surface-soft)]"
               options={experienceOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -209,6 +210,7 @@ export function CareersBoard() {
               value={workSite}
               onValueChange={setWorkSite}
               placeholder="Work site"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-primary)]/40 focus-visible:border-[color:var(--color-primary)]/60 data-[popup-open]:border-[color:var(--color-primary)]/60 data-[popup-open]:bg-[color:var(--color-surface-soft)]"
               options={workSiteOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -218,6 +220,7 @@ export function CareersBoard() {
               value={employmentType}
               onValueChange={setEmploymentType}
               placeholder="Employment"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-primary)]/40 focus-visible:border-[color:var(--color-primary)]/60 data-[popup-open]:border-[color:var(--color-primary)]/60 data-[popup-open]:bg-[color:var(--color-surface-soft)]"
               options={employmentTypeOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -240,7 +243,7 @@ export function CareersBoard() {
                   key={`${filter.clear}-${filter.label}`}
                   type="button"
                   onClick={() => clearFilter(filter.clear)}
-                  className="feature-pill inline-flex items-center gap-2"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]"
                 >
                   {filter.label}
                   <X className="size-3.5" aria-hidden="true" />
@@ -253,11 +256,11 @@ export function CareersBoard() {
         <div className="grid gap-6 lg:grid-cols-[0.4fr_0.6fr]">
           <div className="grid gap-4 lg:self-start">
             {filteredJobs.length === 0 ? (
-              <article className="product-card p-6">
-                <h2 className="text-2xl font-semibold text-white">
+              <article className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
+                <h2 className="font-heading text-2xl font-semibold text-[color:var(--color-text)]">
                   No matching roles
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-slate-400">
+                <p className="mt-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
                   Clear one or more filters to view all current openings.
                 </p>
               </article>
@@ -272,24 +275,24 @@ export function CareersBoard() {
                     setStatus("idle");
                     setError("");
                   }}
-                  className={`product-card flex min-h-52 flex-col p-5 text-left transition-all duration-300 hover:border-cyan-200/35 ${
+                  className={`flex min-h-52 flex-col rounded-[var(--radius-card)] border bg-[color:var(--color-surface)] p-5 text-left shadow-[var(--shadow-card)] transition-all duration-300 ${
                     visibleSelectedJob?.id === job.id
-                      ? "border-cyan-200/40 bg-cyan-200/[0.08]"
-                      : ""
+                      ? "border-[color:var(--color-primary)]/60 bg-[color:var(--color-surface-soft)]"
+                      : "border-[color:var(--color-border)] hover:border-[color:var(--color-primary)]/40"
                   }`}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     {job.jobTitle}
                   </p>
-                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                  <h2 className="font-heading mt-2 text-2xl font-semibold text-[color:var(--color-text)]">
                     {job.title}
                   </h2>
-                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-300">
-                    <span className="feature-pill">
+                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-[color:var(--color-text-muted)]">
+                    <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
                       <MapPin className="inline size-3.5" aria-hidden="true" />{" "}
                       {job.location}
                     </span>
-                    <span className="feature-pill">
+                    <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
                       <BriefcaseBusiness
                         className="inline size-3.5"
                         aria-hidden="true"
@@ -297,7 +300,7 @@ export function CareersBoard() {
                       {job.employmentType}
                     </span>
                   </div>
-                  <span className="mt-auto self-end pt-5 text-sm font-semibold text-cyan-100 underline decoration-cyan-200/55 underline-offset-4 transition-colors hover:text-white">
+                  <span className="mt-auto self-end pt-5 text-sm font-semibold text-[color:var(--color-primary-deep)] underline decoration-[color:var(--color-primary)]/45 underline-offset-4 transition-colors hover:text-[color:var(--color-primary)]">
                     View details
                   </span>
                 </button>
@@ -313,14 +316,14 @@ export function CareersBoard() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
                 transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-                className="product-card p-6 md:p-7"
+                className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] md:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                       {visibleSelectedJob.jobTitle}
                     </p>
-                    <h2 className="mt-2 text-3xl font-semibold text-white">
+                    <h2 className="font-heading mt-2 text-3xl font-semibold text-[color:var(--color-text)]">
                       {visibleSelectedJob.title}
                     </h2>
                   </div>
@@ -338,19 +341,19 @@ export function CareersBoard() {
                   </button>
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-2 text-sm text-slate-300">
-                  <span className="feature-pill">
+                <div className="mt-6 flex flex-wrap gap-2 text-sm text-[color:var(--color-text-muted)]">
+                  <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
                     <MapPin className="inline size-3.5" aria-hidden="true" />{" "}
                     {visibleSelectedJob.location}
                   </span>
-                  <span className="feature-pill">
+                  <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
                     <BriefcaseBusiness
                       className="inline size-3.5"
                       aria-hidden="true"
                     />{" "}
                     {visibleSelectedJob.employmentType}
                   </span>
-                  <span className="feature-pill">
+                  <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
                     <CalendarDays
                       className="inline size-3.5"
                       aria-hidden="true"
@@ -358,40 +361,43 @@ export function CareersBoard() {
                     Posted {visibleSelectedJob.datePosted}
                   </span>
                   {visibleSelectedJob.workType.map((type) => (
-                    <span key={type} className="feature-pill">
+                    <span
+                      key={type}
+                      className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]"
+                    >
                       {type}
                     </span>
                   ))}
                 </div>
 
-                <p className="mt-6 text-base leading-7 text-slate-300">
+                <p className="mt-6 text-base leading-7 text-[color:var(--color-text-muted)]">
                   {visibleSelectedJob.description}
                 </p>
 
                 <div className="mt-8 grid gap-7 md:grid-cols-2">
                   <div>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="font-heading text-lg font-semibold text-[color:var(--color-text)]">
                       Key responsibilities
                     </h3>
-                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.keyResponsibilities.map((item) => (
                         <li key={item}>- {item}</li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="font-heading text-lg font-semibold text-[color:var(--color-text)]">
                       Requirements
                     </h3>
-                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.requirements.map((item) => (
                         <li key={item}>- {item}</li>
                       ))}
                     </ul>
-                    <h3 className="mt-7 text-lg font-semibold text-white">
+                    <h3 className="font-heading mt-7 text-lg font-semibold text-[color:var(--color-text)]">
                       Desired skills
                     </h3>
-                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.desiredSkills.map((item) => (
                         <li key={item}>- {item}</li>
                       ))}
@@ -402,18 +408,20 @@ export function CareersBoard() {
                 {activeApplyJob && (
                   <form
                     onSubmit={submitApplication}
-                    className="mt-8 rounded-lg border border-white/10 bg-slate-950/45 p-5"
+                    className="mt-8 rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-5"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="section-kicker">Application</p>
-                        <h3 className="text-2xl font-semibold text-white">
+                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                          Application
+                        </p>
+                        <h3 className="font-heading text-2xl font-semibold text-[color:var(--color-text)]">
                           Apply for {activeApplyJob.title}
                         </h3>
                       </div>
                       <button
                         type="button"
-                        className="grid size-9 place-items-center rounded-lg border border-white/10 text-slate-300 transition-colors hover:border-cyan-200/35 hover:text-white"
+                        className="grid size-9 place-items-center rounded-lg border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-primary)]/40 hover:text-[color:var(--color-text)]"
                         onClick={() => setActiveApplyJob(null)}
                         aria-label="Close application form"
                       >
@@ -428,7 +436,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("fullName", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary)]/60"
                         placeholder="Full name"
                       />
                       <AppSelect
@@ -439,7 +447,7 @@ export function CareersBoard() {
                         }
                         name="gender"
                         placeholder="Gender"
-                        className="bg-slate-950/70"
+                        className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-primary)]/40 focus-visible:border-[color:var(--color-primary)]/60 data-[popup-open]:border-[color:var(--color-primary)]/60 data-[popup-open]:bg-[color:var(--color-surface)]"
                         options={[
                           { value: "Male", label: "Male" },
                           { value: "Female", label: "Female" },
@@ -453,7 +461,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("email", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary)]/60"
                         placeholder="Email"
                       />
                       <input
@@ -462,7 +470,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("mobileNumber", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary)]/60"
                         placeholder="Mobile number"
                       />
                       <input
@@ -474,7 +482,7 @@ export function CareersBoard() {
                             event.target.value,
                           )
                         }
-                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary)]/60"
                         placeholder="Education qualification"
                       />
                       <input
@@ -483,7 +491,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("linkedInProfile", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary)]/60"
                         placeholder="LinkedIn profile URL"
                       />
                       <input
@@ -492,18 +500,18 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("resumeUrl", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-white/10 bg-slate-950/70 px-4 text-sm text-white outline-none focus:border-cyan-200/55 md:col-span-2"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary)]/60 md:col-span-2"
                         placeholder="Public Google Drive or Docs resume URL"
                       />
                     </div>
 
                     {error && (
-                      <p className="mt-4 rounded-lg border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                      <p className="mt-4 rounded-lg border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-700 dark:text-red-100">
                         {error}
                       </p>
                     )}
                     {status === "success" && (
-                      <p className="mt-4 rounded-lg border border-cyan-200/25 bg-cyan-200/10 px-4 py-3 text-sm text-cyan-100">
+                      <p className="mt-4 rounded-lg border border-cyan-200/25 bg-cyan-200/10 px-4 py-3 text-sm text-cyan-700 dark:text-cyan-100">
                         Application submitted successfully.
                       </p>
                     )}

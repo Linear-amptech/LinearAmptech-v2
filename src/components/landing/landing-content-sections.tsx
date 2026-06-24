@@ -2,15 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Boxes,
   CircuitBoard,
   Factory,
   Layers3,
   Microscope,
   PackageCheck,
-  Radar,
-  RadioTower,
-  ShieldCheck,
 } from "lucide-react";
 
 import {
@@ -25,8 +21,6 @@ import {
   type Product,
 } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
-
-const applicationIcons = [ShieldCheck, RadioTower, Radar, Boxes] as const;
 
 const workflowSteps = [
   { title: "Architecture & Specification", icon: Factory },
@@ -79,8 +73,6 @@ function SectionHeader({
 }
 
 function ProductPortfolioCard({ product }: { product: Product }) {
-  const Icon = product.icon;
-
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-primary)]/70">
       <Link
@@ -97,10 +89,7 @@ function ProductPortfolioCard({ product }: { product: Product }) {
         />
       </Link>
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-5 flex items-start justify-between gap-4">
-          <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
-            <Icon className="size-5" aria-hidden="true" />
-          </div>
+        <div className="mb-5 flex items-start justify-end gap-4">
           <Link
             href={`/products/${product.slug}`}
             className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
@@ -134,8 +123,6 @@ function ProductPortfolioCard({ product }: { product: Product }) {
 }
 
 function TechnologyCard({ platform }: { platform: IpPlatform }) {
-  const Icon = platform.icon;
-
   return (
     <article className="h-full overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
       <div className="relative aspect-[4/3] bg-[color:var(--color-surface-soft)]">
@@ -148,10 +135,7 @@ function TechnologyCard({ platform }: { platform: IpPlatform }) {
         />
       </div>
       <div className="p-5">
-        <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
-          <Icon className="size-5" aria-hidden="true" />
-        </div>
-        <h3 className="mt-5 font-heading text-xl font-bold text-[color:var(--color-text)]">
+        <h3 className="font-heading text-xl font-bold text-[color:var(--color-text)]">
           {platform.name}
         </h3>
         <p className="mt-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -165,15 +149,7 @@ function TechnologyCard({ platform }: { platform: IpPlatform }) {
   );
 }
 
-function ApplicationCard({
-  application,
-  index,
-}: {
-  application: Application;
-  index: number;
-}) {
-  const Icon = applicationIcons[index % applicationIcons.length];
-
+function ApplicationCard({ application }: { application: Application }) {
   return (
     <article className="h-full overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
       <div className="relative aspect-[4/3] bg-[color:var(--color-surface-soft)]">
@@ -186,10 +162,7 @@ function ApplicationCard({
         />
       </div>
       <div className="p-5">
-        <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
-          <Icon className="size-5" aria-hidden="true" />
-        </div>
-        <h3 className="mt-5 font-heading text-xl font-bold text-[color:var(--color-text)]">
+        <h3 className="font-heading text-xl font-bold text-[color:var(--color-text)]">
           {application.title}
         </h3>
         <p className="mt-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -282,11 +255,10 @@ export function LandingContentSections() {
             intro="Linear-AmpTech's application framing is anchored in defense RF, 6G, radar, phased arrays, active antennas, and RIS research."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {applications.map((application, index) => (
+            {applications.map((application) => (
               <ApplicationCard
                 key={application.title}
                 application={application}
-                index={index}
               />
             ))}
           </div>
