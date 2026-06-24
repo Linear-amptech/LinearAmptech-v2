@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -17,11 +18,7 @@ import {
   Play,
   Radar,
   RadioTower,
-  ScanLine,
   ShieldCheck,
-  Sparkles,
-  Waves,
-  type LucideIcon,
 } from "lucide-react";
 import {
   AnimatePresence,
@@ -30,24 +27,19 @@ import {
   useTransform,
 } from "framer-motion";
 
+import {
+  applications,
+  assets,
+  heroSlides as heroSlideContent,
+  ipPlatforms,
+  metrics,
+  products,
+  researchFocusRows,
+  type Application,
+  type IpPlatform,
+  type Product,
+} from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
-
-type ProductCard = {
-  slug?: string;
-  title: string;
-  description: string;
-  tags: string[];
-  imagePath: string;
-  icon: LucideIcon;
-};
-
-type StandardCard = {
-  title: string;
-  description: string;
-  imagePath?: string;
-  footer?: string;
-  icon: LucideIcon;
-};
 
 type HeroSlide = {
   eyebrow: string;
@@ -57,209 +49,38 @@ type HeroSlide = {
   imageAlt: string;
 };
 
-const heroSlides: HeroSlide[] = [
+const heroImages = [
   {
-    eyebrow: "IP Core / RF Front-End Components / MMIC Products",
-    title: "Creating Difference with RF Front-End Technology.",
-    description:
-      "Indigenous RF front-end components, GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores, and silicon-validated systems for cyber-physical.",
     imagePath: "/assets/hero-section-slider/hero-linear-amptech-rfic-chip.png",
     imageAlt: "Linear-AmpTech RFIC chip hero visual",
   },
   {
-    eyebrow: "GaN Power Amplifier Modules",
-    title: "C-Ku Band Power Built for Demanding RF Systems.",
-    description:
-      "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense front ends.",
     imagePath: "/assets/hero-section-slider/rf-lab-validation.png",
     imageAlt: "Hybrid MIC PA module hero visual",
   },
   {
-    eyebrow: "SiGe BiCMOS RFIC Development",
-    title: "47 GHz Transmitter and Receiver IC Capability.",
-    description:
-      "Pin-compatible transmitter and receiver ICs for mm-wave systems, backed by silicon layout, simulation, packaging, and validation workflows.",
     imagePath: "/assets/hero-section-slider/ghz-transmitter-chip.png",
     imageAlt: "47 GHz transmitter chip hero visual",
   },
   {
-    eyebrow: "Active Antenna / RIS Prototype",
-    title: "RF Prototyping from Array Hardware to Chamber Testing.",
-    description:
-      "RIS and active antenna development with prototype arrays, RF measurement setups, and validation in controlled lab environments.",
     imagePath: "/assets/hero-section-slider/c-ku-band-pa-chip.png",
     imageAlt: "Semiconductor wafer hero visual",
   },
-  {
-    eyebrow: "mm-Wave Packaging and Integration",
-    title: "Chip-to-PCB-to-Waveguide Integration for HF.",
-    description:
-      "Packaging, transitions, and combining networks for mm-wave assemblies where IC, PCB, waveguide, and measurement constraints meet.",
-    imagePath: "/assets/hero-section-slider/hero-linear-amptech-rfic-chip.png",
-    imageAlt: "Linear-AmpTech RFIC packaging hero visual",
-  },
 ];
 
-const stats = [
-  ["0.5-81 GHz", "Wideband RF expertise"],
-  ["GaN", "High-power semiconductor platforms"],
-  ["CMOS / BiCMOS", "Scalable RFIC development"],
-  ["SiGe", "Ultra-high-frequency integrated solutions"],
-] as const;
+const heroSlides: HeroSlide[] = heroSlideContent.map((slide, index) => {
+  const image = heroImages[index % heroImages.length];
 
-const productCards: ProductCard[] = [
-  {
-    slug: "hybrid-mic-pa-modules",
-    title: "Hybrid MIC PA Modules",
-    description:
-      "Complete power amplifier module capability with gain-chain budgeting, power conditioning, VSWR protection, and multiple units in the 0.5-3.25 GHz range.",
-    tags: ["0.5-3.25 GHz", "Power conditioning", "VSWR protection"],
-    imagePath: "/assets/images/products/hybrid-mic-pa-module.png",
-    icon: RadioTower,
-  },
-  {
-    slug: "fully-integrated-c-ku-band-pa-chip",
-    title: "Fully Integrated C-Ku Band PA Chip",
-    description:
-      "5W fully integrated C-Ku band GaN-on-SiC PA chip family with QFN44 and QFN56 variants, completed simulation, tapeout, and measurement.",
-    tags: ["5-18 GHz", "4-19.5 GHz", "QFN44 / QFN56"],
-    imagePath: "/assets/images/products/c-ku-band-pa-chip.png",
-    icon: Cpu,
-  },
-  {
-    slug: "fully-integrated-transmitter-chip",
-    title: "Fully Integrated Transmitter Chip",
-    description:
-      "47.2-48.2 GHz fully integrated transmitter chip in GF 130nm SiGe BiCMOS with 20 dB conversion gain and 15 dBm output power.",
-    tags: ["47.2-48.2 GHz", "SiGe BiCMOS", "15 dBm output"],
-    imagePath: "/assets/images/products/47ghz-transmitter-chip.png",
-    icon: Waves,
-  },
-  {
-    slug: "fully-integrated-receiver-chip",
-    title: "Fully Integrated Receiver Chip",
-    description:
-      "mm-wave receiver IC capability for high-frequency RF front-end systems, radar, phased arrays, and advanced wireless platforms.",
-    tags: ["mm-wave", "Receiver IC", "Low noise"],
-    imagePath: "/assets/images/products/receiver-chip.png",
-    icon: ScanLine,
-  },
-  {
-    slug: "fully-integrated-radar-front-end-chip",
-    title: "Radar Front-End Chips",
-    description:
-      "Integrated radar front-end chip development for MIMO radar, phased-array systems, sensing, and high-frequency RF applications.",
-    tags: ["Radar", "MIMO", "Phased array"],
-    imagePath: "/assets/images/products/radar-front-end-chip.png",
-    icon: Radar,
-  },
-  {
-    slug: "8-bit-phase-shifter-chip",
-    title: "8-Bit Phase Shifter Chips",
-    description:
-      "Compact phase shifter IC solutions for beamforming, phased arrays, mm-wave systems, and active antenna architectures.",
-    tags: ["8-bit", "Beamforming", "Phased arrays"],
-    imagePath: "/assets/images/products/phase-shifter-chip.png",
-    icon: CircuitBoard,
-  },
-  {
-    slug: "active-antenna",
-    title: "Active Antenna",
-    description:
-      "Prototype active antenna systems with RF front-end integration, measurement, and chamber validation workflows.",
-    tags: ["Active antenna", "Prototype", "Validation"],
-    imagePath: "/assets/images/products/active-antenna.png",
-    icon: RadioTower,
-  },
-  {
-    slug: "ris-prototype",
-    title: "RIS Prototype",
-    description:
-      "Reconfigurable intelligent surface prototype capability for next-generation wireless, 6G, and advanced propagation research.",
-    tags: ["RIS", "6G", "Prototype"],
-    imagePath: "/assets/images/products/ris-prototype.png",
-    icon: Boxes,
-  },
-  {
-    slug: "mm-wave-packaging-integration",
-    title: "mm-Wave Packaging & Integration",
-    description:
-      "Advanced packaging and integration workflows for high-frequency chips, modules, antennas, and measured RF systems.",
-    tags: ["Packaging", "Integration", "mm-wave"],
-    imagePath: "/assets/images/products/mmwave-packaging.png",
-    icon: PackageCheck,
-  },
-];
+  return {
+    eyebrow: slide.eyebrow,
+    title: slide.title,
+    description: slide.description,
+    imagePath: image.imagePath,
+    imageAlt: image.imageAlt,
+  };
+});
 
-const technologyCards: StandardCard[] = [
-  {
-    title: "III-V GaN Technology",
-    description:
-      "High-power-density PA MMICs and T/R front-end modules up to Ku-band, built for resilient defense, aerospace, and high-power RF systems.",
-    footer: "Standalone PA MMIC chips and T/R front-end modules up to Ku-band.",
-    imagePath: "/assets/images/technology/gan-technology.png",
-    icon: RadioTower,
-  },
-  {
-    title: "Si CMOS Technology",
-    description:
-      "Scalable RFIC IP for lower 5G FR2 and 6G FR3 bands, including RF-SOI switch concepts, PA IP cores, and analog predistortion.",
-    footer:
-      "mm-wave FR2 PA IP-core, 6G FR3 transceivers, and analog predistorters.",
-    imagePath: "/assets/images/technology/si-cmos-technology.png",
-    icon: Cpu,
-  },
-  {
-    title: "SiGe BiCMOS Technology",
-    description:
-      "mm-wave and sub-THz performance for wireless transceivers, phased-array 6G ICs, MIMO radar, and D-band front-end research.",
-    footer:
-      "mm-wave FR2 PA, D-band PA, and sub-THz transceivers for radar applications.",
-    imagePath: "/assets/images/technology/sige-bicmos-technology.png",
-    icon: Waves,
-  },
-];
-
-const applicationCards: StandardCard[] = [
-  {
-    title: "Defense and Aerospace RF",
-    description:
-      "Resilient PA modules, T/R front-end technologies, and high-power RF systems for demanding environments.",
-    imagePath: "/assets/images/applications/defense-aerospace-rf.png",
-    icon: ShieldCheck,
-  },
-  {
-    title: "6G and Massive MIMO",
-    description:
-      "FR2/FR3 PA IP cores, analog predistorters, and transceiver blocks for next-generation wireless infrastructure.",
-    imagePath: "/assets/images/applications/6g-massive-mimo.png",
-    icon: RadioTower,
-  },
-  {
-    title: "MIMO Radar and Phased Arrays",
-    description:
-      "Radar front-end ICs, phase shifters, beamforming blocks, and high-frequency system integration.",
-    imagePath: "/assets/images/applications/mimo-radar-phased-array.png",
-    icon: Radar,
-  },
-  {
-    title: "RIS and Active Antenna Systems",
-    description:
-      "Prototype development, RF validation, chamber testing, and reconfigurable surface research.",
-    imagePath: "/assets/images/applications/ris-active-antenna.png",
-    icon: Boxes,
-  },
-];
-
-const capabilityPills = [
-  "MIC and MMIC PA Design",
-  "GaN HEMT Device Research",
-  "RIS and Active Antenna Validation",
-  "FPGA and DPD Linearization",
-  "Doherty and Waveform Engineering PA",
-  "mm-Wave Packaging",
-  "RF Measurement and Validation",
-];
+const applicationIcons = [ShieldCheck, RadioTower, Radar, Boxes] as const;
 
 const workflowSteps = [
   { title: "Architecture & Specification", icon: Factory },
@@ -267,6 +88,17 @@ const workflowSteps = [
   { title: "Layout & Tapeout", icon: Layers3 },
   { title: "Packaging & Integration", icon: PackageCheck },
   { title: "Measurement & Validation", icon: Microscope },
+] as const;
+
+const contactItems = [
+  {
+    href: "mailto:sales@linearamptech.com",
+    label: "sales@linearamptech.com",
+  },
+  {
+    href: "tel:+918979617318",
+    label: "+91 89796 17318",
+  },
 ];
 
 function SectionHeader({
@@ -311,83 +143,48 @@ function SectionHeader({
   );
 }
 
-function VisualPlaceholder({
-  path,
-  alt,
-  className = "",
-  dark = false,
-}: {
-  path: string;
-  alt: string;
-  className?: string;
-  dark?: boolean;
-}) {
-  return (
-    <div
-      className={`relative isolate grid min-h-56 overflow-hidden rounded-[var(--radius-card)] border ${
-        dark
-          ? "border-white/15 bg-slate-950"
-          : "border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)]"
-      } ${className}`}
-      role="img"
-      aria-label={alt}
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(16_199_232_/_0.16),transparent_34%,rgb(110_225_93_/_0.14)_72%,transparent)]" />
-      <div className="absolute inset-8 rounded-2xl border border-dashed border-[color:var(--color-primary)]/45" />
-      <div className="absolute left-8 top-8 h-2 w-16 rounded-full bg-[color:var(--color-primary)]" />
-      <div className="absolute bottom-8 right-8 h-2 w-12 rounded-full bg-[color:var(--color-secondary)]" />
-      <div className="relative z-10 flex h-full min-h-56 flex-col justify-end p-6">
-        <p
-          className={`font-heading text-lg font-semibold ${
-            dark ? "text-white" : "text-[color:var(--color-text)]"
-          }`}
-        >
-          Visual placeholder
-        </p>
-        <p
-          className={`mt-2 max-w-md text-sm leading-6 ${
-            dark ? "text-slate-300" : "text-[color:var(--color-text-muted)]"
-          }`}
-        >
-          {alt}
-        </p>
-        <code
-          className={`mt-4 rounded-lg border px-3 py-2 text-xs ${
-            dark
-              ? "border-white/15 bg-white/5 text-cyan-200"
-              : "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-primary-deep)]"
-          }`}
-        >
-          {path}
-        </code>
-      </div>
-    </div>
-  );
-}
-
-function ProductPortfolioCard({ product }: { product: ProductCard }) {
+function ProductPortfolioCard({ product }: { product: Product }) {
   const Icon = product.icon;
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-primary)]/70">
-      {/* Replace with final product visual: {product.imagePath} */}
-      <VisualPlaceholder
-        path={product.imagePath}
-        alt={`${product.title} product visual placeholder`}
-        className="min-h-48 rounded-none border-0 shadow-none"
-      />
+      <Link
+        href={`/products/${product.slug}`}
+        className="relative block aspect-[4/3] overflow-hidden bg-[color:var(--color-surface-soft)]"
+        aria-label={`View ${product.name}`}
+      >
+        <Image
+          src={product.image}
+          alt={product.alt}
+          fill
+          sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
+          className="object-contain p-4 transition duration-500 group-hover:scale-105"
+        />
+      </Link>
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-5 grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
-          <Icon className="size-5" aria-hidden="true" />
+        <div className="mb-5 flex items-start justify-between gap-4">
+          <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+            <Icon className="size-5" aria-hidden="true" />
+          </div>
+          <Link
+            href={`/products/${product.slug}`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
+          >
+            Learn More
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
         </div>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+          {product.category}
+        </p>
         <h3 className="font-heading text-xl font-bold text-[color:var(--color-text)]">
-          {product.title}
+          {product.name}
         </h3>
         <p className="mt-3 flex-1 text-sm leading-6 text-[color:var(--color-text-muted)]">
           {product.description}
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
-          {product.tags.map((tag) => (
+          {product.features.map((tag) => (
             <span
               key={tag}
               className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 text-xs font-medium text-[color:var(--color-text-muted)]"
@@ -396,47 +193,74 @@ function ProductPortfolioCard({ product }: { product: ProductCard }) {
             </span>
           ))}
         </div>
-        <Link
-          href={product.slug ? `/products/${product.slug}` : "/#contact"}
-          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
-        >
-          Learn More
-          <ArrowRight className="size-4" aria-hidden="true" />
-        </Link>
       </div>
     </article>
   );
 }
 
-function StandardImageCard({ card }: { card: StandardCard }) {
-  const Icon = card.icon;
+function TechnologyCard({ platform }: { platform: IpPlatform }) {
+  const Icon = platform.icon;
 
   return (
-    <article className="h-full rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
-      {card.imagePath ? (
-        <>
-          {/* Replace with final visual: {card.imagePath} */}
-          <VisualPlaceholder
-            path={card.imagePath}
-            alt={`${card.title} visual placeholder`}
-            className="mb-5 min-h-44"
-          />
-        </>
-      ) : null}
-      <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
-        <Icon className="size-5" aria-hidden="true" />
+    <article className="h-full overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
+      <div className="relative aspect-[4/3] bg-[color:var(--color-surface-soft)]">
+        <Image
+          src={platform.image}
+          alt={`${platform.name} technology visual`}
+          fill
+          sizes="(min-width: 1024px) 31vw, 100vw"
+          className="object-cover"
+        />
       </div>
-      <h3 className="mt-5 font-heading text-xl font-bold text-[color:var(--color-text)]">
-        {card.title}
-      </h3>
-      <p className="mt-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
-        {card.description}
-      </p>
-      {card.footer ? (
-        <p className="mt-5 border-t border-[color:var(--color-border)] pt-4 text-sm font-semibold leading-6 text-[color:var(--color-primary-deep)]">
-          {card.footer}
+      <div className="p-5">
+        <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+          <Icon className="size-5" aria-hidden="true" />
+        </div>
+        <h3 className="mt-5 font-heading text-xl font-bold text-[color:var(--color-text)]">
+          {platform.name}
+        </h3>
+        <p className="mt-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
+          {platform.description}
         </p>
-      ) : null}
+        <p className="mt-5 border-t border-[color:var(--color-border)] pt-4 text-sm font-semibold leading-6 text-[color:var(--color-primary-deep)]">
+          {platform.focus}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function ApplicationCard({
+  application,
+  index,
+}: {
+  application: Application;
+  index: number;
+}) {
+  const Icon = applicationIcons[index % applicationIcons.length];
+
+  return (
+    <article className="h-full overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
+      <div className="relative aspect-[4/3] bg-[color:var(--color-surface-soft)]">
+        <Image
+          src={application.image}
+          alt={`${application.title} application visual`}
+          fill
+          sizes="(min-width: 1280px) 23vw, (min-width: 768px) 45vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+      <div className="p-5">
+        <div className="grid size-11 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+          <Icon className="size-5" aria-hidden="true" />
+        </div>
+        <h3 className="mt-5 font-heading text-xl font-bold text-[color:var(--color-text)]">
+          {application.title}
+        </h3>
+        <p className="mt-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
+          {application.description}
+        </p>
+      </div>
     </article>
   );
 }
@@ -612,7 +436,7 @@ export default function LinearAmptechLanding() {
               intro="Linear-AmpTech transforms RF and semiconductor research into scalable products and deployable solutions across communication, radar, defense, aerospace, and next-generation wireless systems."
             />
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {stats.map(([value, label]) => (
+              {metrics.map(([value, label]) => (
                 <div
                   key={value}
                   className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
@@ -627,12 +451,15 @@ export default function LinearAmptechLanding() {
               ))}
             </div>
           </div>
-          {/* Replace with final company visual: /assets/images/company-wafer-clean.png */}
-          <VisualPlaceholder
-            path="/assets/images/company-wafer-clean.png"
-            alt="Clean semiconductor wafer or RF engineering lab-inspired visual placeholder"
-            className="min-h-[500px]"
-          />
+          <div className="relative min-h-[500px] overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] shadow-[var(--shadow-card)]">
+            <Image
+              src={assets.siliconWafer}
+              alt="Semiconductor wafer visual for Linear-AmpTech"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </Reveal>
       </section>
 
@@ -647,8 +474,8 @@ export default function LinearAmptechLanding() {
             intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {productCards.map((product) => (
-              <ProductPortfolioCard key={product.title} product={product} />
+            {products.map((product) => (
+              <ProductPortfolioCard key={product.slug} product={product} />
             ))}
           </div>
         </Reveal>
@@ -661,8 +488,8 @@ export default function LinearAmptechLanding() {
             title="Engineering across semiconductor technologies."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {technologyCards.map((card) => (
-              <StandardImageCard key={card.title} card={card} />
+            {ipPlatforms.map((platform) => (
+              <TechnologyCard key={platform.name} platform={platform} />
             ))}
           </div>
         </Reveal>
@@ -679,8 +506,12 @@ export default function LinearAmptechLanding() {
             intro="Linear-AmpTech's application framing is anchored in defense RF, 6G, radar, phased arrays, active antennas, and RIS research."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {applicationCards.map((card) => (
-              <StandardImageCard key={card.title} card={card} />
+            {applications.map((application, index) => (
+              <ApplicationCard
+                key={application.title}
+                application={application}
+                index={index}
+              />
             ))}
           </div>
         </Reveal>
@@ -697,7 +528,7 @@ export default function LinearAmptechLanding() {
               inverted
             />
             <div className="mt-8 flex flex-wrap gap-3">
-              {capabilityPills.map((pill) => (
+              {researchFocusRows.map((pill) => (
                 <span
                   key={pill}
                   className="rounded-xl border border-cyan-200/15 bg-cyan-200/10 px-3 py-2 text-sm font-medium text-cyan-50"
@@ -707,13 +538,15 @@ export default function LinearAmptechLanding() {
               ))}
             </div>
           </div>
-          {/* Replace with final capability visual: /assets/images/capability/rf-lab-validation.png */}
-          <VisualPlaceholder
-            path="/assets/images/capability/rf-lab-validation.png"
-            alt="Premium RF lab measurement and validation setup visual placeholder"
-            className="min-h-[440px] border-white/15 bg-white/[0.04]"
-            dark
-          />
+          <div className="relative min-h-[440px] overflow-hidden rounded-[var(--radius-card)] border border-white/15 bg-white/[0.04] shadow-[var(--shadow-card)]">
+            <Image
+              src={assets.rdLab}
+              alt="RF lab measurement and validation setup"
+              fill
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </Reveal>
       </section>
 
@@ -723,7 +556,6 @@ export default function LinearAmptechLanding() {
             label="Workflow"
             title="From architecture to measured prototype."
           />
-          {/* Replace with final workflow diagram: /assets/images/process/rf-development-workflow.svg */}
           <div className="mt-12 rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
             <div className="grid gap-4 lg:grid-cols-5">
               {workflowSteps.map((step, index) => {
@@ -749,9 +581,6 @@ export default function LinearAmptechLanding() {
                 );
               })}
             </div>
-            <code className="mt-5 block rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-bg)] px-4 py-3 text-xs text-[color:var(--color-text-muted)]">
-              /assets/images/process/rf-development-workflow.svg
-            </code>
           </div>
         </Reveal>
       </section>
@@ -783,18 +612,15 @@ export default function LinearAmptechLanding() {
               </a>
             </div>
             <div className="grid content-center gap-4 text-sm text-[color:var(--color-text-muted)]">
-              <a
-                href="mailto:sales@linearamptech.com"
-                className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4 transition-colors hover:text-[color:var(--color-primary-deep)]"
-              >
-                sales@linearamptech.com
-              </a>
-              <a
-                href="tel:+918979617318"
-                className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4 transition-colors hover:text-[color:var(--color-primary-deep)]"
-              >
-                +91 89796 17318
-              </a>
+              {contactItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4 transition-colors hover:text-[color:var(--color-primary-deep)]"
+                >
+                  {item.label}
+                </a>
+              ))}
               <p className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4 leading-6">
                 Incubation building IHUB DivyaSampark, I.I.T Roorkee, Roorkee,
                 Uttarakhand, India 247667
@@ -802,19 +628,6 @@ export default function LinearAmptechLanding() {
             </div>
           </div>
         </Reveal>
-      </section>
-
-      <section className="border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)] py-10">
-        <div className="container mx-auto flex flex-wrap items-center gap-4 px-5 text-sm text-[color:var(--color-text-muted)] lg:px-8">
-          <Sparkles
-            className="size-4 text-[color:var(--color-accent-orange)]"
-            aria-hidden="true"
-          />
-          <span>
-            Final graphics are intentionally represented as layout-ready
-            placeholders until Linear-AmpTech visual assets are supplied.
-          </span>
-        </div>
       </section>
     </main>
   );
