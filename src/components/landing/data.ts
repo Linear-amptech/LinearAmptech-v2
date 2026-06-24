@@ -729,7 +729,7 @@ export const applications: Application[] = [
 
 export const heroSlides: HeroSlide[] = [
   {
-    eyebrow: "IP Core / RF Front-End Components / MMIC Products",
+    eyebrow: "IP Core / RF / MMIC Products",
     title: "Creating Difference with RF Front-End Technology.",
     description:
       "Indigenous RF front-end components, GaN-based MMICs, high-power modules, CMOS/BiCMOS RFIC IP cores, and silicon-validated systems for cyber-physical.",
