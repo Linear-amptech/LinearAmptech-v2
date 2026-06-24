@@ -156,6 +156,7 @@ const productCards: ProductCard[] = [
     icon: CircuitBoard,
   },
   {
+    slug: "active-antenna",
     title: "Active Antenna",
     description:
       "Prototype active antenna systems with RF front-end integration, measurement, and chamber validation workflows.",
@@ -164,6 +165,7 @@ const productCards: ProductCard[] = [
     icon: RadioTower,
   },
   {
+    slug: "ris-prototype",
     title: "RIS Prototype",
     description:
       "Reconfigurable intelligent surface prototype capability for next-generation wireless, 6G, and advanced propagation research.",
@@ -172,6 +174,7 @@ const productCards: ProductCard[] = [
     icon: Boxes,
   },
   {
+    slug: "mm-wave-packaging-integration",
     title: "mm-Wave Packaging & Integration",
     description:
       "Advanced packaging and integration workflows for high-frequency chips, modules, antennas, and measured RF systems.",
