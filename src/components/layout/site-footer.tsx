@@ -2,66 +2,89 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import { FooterShaderBackground } from "@/components/ui/asd";
 import { companyContact } from "@/lib/company-data";
 
-export function SiteFooter() {
-  const year = new Date().getFullYear();
+const footerLinks = [
+  { href: "/#products", label: "Products" },
+  { href: "/#technology", label: "Technology" },
+  { href: "/#applications", label: "Applications" },
+  { href: "/#company", label: "Company" },
+  { href: "/#contact", label: "Contact" },
+];
 
+export function SiteFooter() {
   return (
-    <footer className="relative isolate overflow-hidden ">
-      <FooterShaderBackground />
-      <div className="absolute inset-0 bg-[#02050a]/45" aria-hidden="true" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" />
-      <div className="relative z-10 mx-auto container px-5 py-14 lg:px-8">
-        <div className="flex justify-between flex-wrap gap-4">
+    <footer className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
+      <div className="container mx-auto px-5 py-12 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr_1fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
-              Quick Links
+            <Link
+              href="/"
+              className="inline-flex items-center"
+              aria-label="Linear-AmpTech home"
+            >
+              <span className="grid h-14 w-[112px] place-items-center rounded-xl bg-white px-2 ring-1 ring-[color:var(--color-border)]">
+                <Image
+                  src="/assets/linear-amptech-logo.png"
+                  alt="Linear-AmpTech logo"
+                  width={104}
+                  height={58}
+                  className="h-12 w-auto object-contain"
+                />
+              </span>
+            </Link>
+            <p className="mt-5 max-w-md text-sm leading-6 text-[color:var(--color-text-muted)]">
+              Linear-AmpTech develops RF front-end technologies, GaN PA modules,
+              CMOS/BiCMOS RFICs, mm-wave transceivers, active antennas,
+              packaging, validation, and semiconductor R&D programs.
             </p>
-            <div className="mt-5 grid gap-3 text-sm text-slate-300">
-              <Link href="/" className="hover:text-cyan-100">
-                Home
-              </Link>
-              <Link href="/#technology" className="hover:text-cyan-100">
-                Technology
-              </Link>
-              <Link href="/team" className="hover:text-cyan-100">
-                Team
-              </Link>
-              <Link href="/careers" className="hover:text-cyan-100">
-                Careers
-              </Link>
+          </div>
+
+          <div>
+            <p className="font-heading text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--color-text)]">
+              Navigation
+            </p>
+            <div className="mt-5 grid gap-3 text-sm text-[color:var(--color-text-muted)]">
+              {footerLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="transition-colors hover:text-[color:var(--color-primary-deep)]"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
+
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
-              Contact Us
+            <p className="font-heading text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--color-text)]">
+              Contact
             </p>
-            <div className="mt-5 grid gap-4 text-sm text-slate-300">
+            <div className="mt-5 grid gap-4 text-sm text-[color:var(--color-text-muted)]">
               <a
                 href={`tel:${companyContact.phone.replaceAll(" ", "")}`}
-                className="flex gap-3 hover:text-cyan-100"
+                className="flex gap-3 transition-colors hover:text-[color:var(--color-primary-deep)]"
               >
                 <Phone
-                  className="mt-0.5 size-4 text-cyan-200"
+                  className="mt-0.5 size-4 text-[color:var(--color-primary-deep)]"
                   aria-hidden="true"
                 />
                 {companyContact.phone}
               </a>
               <a
                 href={`mailto:${companyContact.email}`}
-                className="flex gap-3 hover:text-cyan-100"
+                className="flex gap-3 transition-colors hover:text-[color:var(--color-primary-deep)]"
               >
                 <Mail
-                  className="mt-0.5 size-4 text-cyan-200"
+                  className="mt-0.5 size-4 text-[color:var(--color-primary-deep)]"
                   aria-hidden="true"
                 />
                 {companyContact.email}
               </a>
               <p className="flex gap-3 leading-6">
                 <MapPin
-                  className="mt-1 size-4 shrink-0 text-cyan-200"
+                  className="mt-1 size-4 shrink-0 text-[color:var(--color-primary-deep)]"
                   aria-hidden="true"
                 />
                 <span>
@@ -75,25 +98,10 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-5  pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <Link
-            href="/"
-            className="inline-flex items-center"
-            aria-label="Linear Amptech home"
-          >
-            <span className="grid h-14 w-[96px] place-items-center">
-              <Image
-                src="/assets/linear-amptech-logo.png"
-                alt="Linear Amptech logo"
-                width={88}
-                height={51}
-                className="h-[52px] w-auto object-contain"
-              />
-            </span>
-          </Link>
-          <p className="text-sm text-slate-400">
-            © {companyContact.legalName} {year}. All Rights Reserved.
-          </p>
+
+        <div className="mt-10 border-t border-[color:var(--color-border)] pt-6 text-sm text-[color:var(--color-text-muted)]">
+          © Linearized Amplifier Technologies and Services Private Ltd. 2026.
+          All Rights Reserved.
         </div>
       </div>
     </footer>

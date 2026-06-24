@@ -5,19 +5,34 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 
 export const metadata: Metadata = {
-  title: "Linear Amptech | Semiconductor, RF, Analog and Mixed-Signal R&D",
+  title: "Linear-AmpTech | RF Front-End Semiconductor Technologies",
   description:
-    "Linear Amptech designs advanced semiconductor, RF, analog, and mixed-signal technologies for next-generation communication, aerospace, industrial, and intelligent systems.",
+    "Linear-AmpTech develops GaN power amplifier modules, CMOS/BiCMOS RFICs, mm-wave transceivers, active antennas, packaging, and validation solutions.",
   keywords: [
-    "Linear Amptech",
-    "semiconductor chip design",
-    "RF design",
-    "analog IC design",
-    "mixed-signal IC",
-    "ASIC prototyping",
+    "Linear-AmpTech",
+    "RF front-end technologies",
+    "GaN power amplifier modules",
+    "CMOS RFIC",
+    "BiCMOS RFIC",
+    "mm-wave transceivers",
+    "phased arrays",
     "semiconductor R&D",
   ],
 };
+
+const themeBootstrap = `
+(() => {
+  try {
+    const savedTheme = localStorage.getItem("linearamptech-theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = savedTheme || (systemDark ? "dark" : "light");
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    document.documentElement.dataset.theme = theme;
+  } catch {
+    document.documentElement.dataset.theme = "light";
+  }
+})();
+`;
 
 export default function RootLayout({
   children,
@@ -25,8 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-[#03060d] text-slate-100">
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <body className="flex min-h-full flex-col bg-background text-foreground">
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
         <SiteHeader />
         {children}
         <SiteFooter />

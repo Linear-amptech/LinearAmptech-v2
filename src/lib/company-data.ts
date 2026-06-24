@@ -3,7 +3,7 @@ export const companyContact = {
   email: "sales@linearamptech.com",
   addressLines: [
     "Incubation building IHUB DivyaSampark",
-    "(Near Wind Tunnel Building) I.I.T Roorkee",
+    "I.I.T Roorkee",
     "Roorkee, Uttarakhand, India 247667",
   ],
   legalName: "Linearized Amplifier Technologies and Services Private Ltd.",
