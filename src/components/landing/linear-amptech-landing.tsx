@@ -88,8 +88,8 @@ const heroSlides: HeroSlide[] = [
     title: "Chip-to-package-to-prototype workflows for RF deployment.",
     description:
       "Packaging, integration, measurement, chamber validation, RIS prototypes, and active antenna workflows close the loop from architecture to deployable hardware.",
-    imagePath: "/assets/hero-section-slider/rf-lab-validation.png",
-    imageAlt: "RF lab validation and packaging hero slide placeholder",
+    imagePath: "/assets/hero-section-slider/c-ku-band-pa-chip.png",
+    imageAlt: "Semiconductor wafer packaging and validation hero slide visual",
   },
 ];
 
@@ -439,7 +439,6 @@ function HeroSliderSection() {
   const [isSliderPaused, setIsSliderPaused] = useState(false);
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.45], [0, 170]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.38], [1, 0.72]);
 
   useEffect(() => {
     if (isSliderPaused) return;
@@ -481,15 +480,6 @@ function HeroSliderSection() {
           />
         ))}
       </div>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.94)_31%,rgb(5_11_18_/_0.56)_58%,rgb(5_11_18_/_0.28)_76%,rgb(5_11_18_/_0.72)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.42),rgb(5_11_18_/_0.82))]"
-      />
-      <motion.div
-        aria-hidden="true"
-        className="absolute inset-0 z-[2] bg-[linear-gradient(120deg,rgb(16_199_232_/_0.13),transparent_32%,rgb(110_225_93_/_0.08)_78%,transparent)]"
-        style={{ y: heroY, opacity: heroOpacity }}
-      />
       <motion.div
         aria-hidden="true"
         className="absolute right-[-18%] top-12 z-[2] h-[640px] w-[640px] rounded-full border border-cyan-200/10 bg-cyan-200/5 blur-3xl"
