@@ -1,8 +1,13 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
   Boxes,
+  ChevronLeft,
+  ChevronRight,
   CircuitBoard,
   Cpu,
   Factory,
@@ -17,6 +22,14 @@ import {
   Waves,
   type LucideIcon,
 } from "lucide-react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+
+import { Reveal } from "@/components/landing/reveal";
 
 type ProductCard = {
   title: string;
@@ -34,6 +47,14 @@ type StandardCard = {
   icon: LucideIcon;
 };
 
+type HeroSlide = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  imagePath: string;
+  imageAlt: string;
+};
+
 const trustItems = [
   {
     title: "Broad Portfolio",
@@ -49,6 +70,44 @@ const trustItems = [
     title: "Mission-Ready",
     body: "Built for advanced RF systems",
     icon: ShieldCheck,
+  },
+];
+
+const heroSlides: HeroSlide[] = [
+  {
+    eyebrow: "RF Front-End Technologies",
+    title:
+      "RF Front-End Technologies for Next-Generation Wireless, Radar, and Defense Systems",
+    description:
+      "Linear-AmpTech develops GaN power amplifier modules, CMOS/BiCMOS RFICs, mm-wave transceivers, active antennas, and packaging solutions from design to measured prototypes.",
+    imagePath: "/assets/images/hero-linear-amptech-rfic-chip.png",
+    imageAlt:
+      "Premium 3D RFIC semiconductor chip graphic placeholder for the Linear-AmpTech hero",
+  },
+  {
+    eyebrow: "GaN PA Modules",
+    title:
+      "High-power GaN platforms from module architecture to measured PA hardware.",
+    description:
+      "Hybrid MIC PA modules and C-Ku band GaN-on-SiC PA chip families support demanding communication, radar, aerospace, and defense front ends.",
+    imagePath: "/assets/images/products/c-ku-band-pa-chip.png",
+    imageAlt: "GaN C-Ku band PA chip hero slide placeholder",
+  },
+  {
+    eyebrow: "CMOS / BiCMOS RFICs",
+    title: "mm-wave transmitter, receiver, and radar IC capability.",
+    description:
+      "Si CMOS and SiGe BiCMOS development paths support RFIC IP, 47 GHz transceiver blocks, radar front ends, phase shifting, and phased-array systems.",
+    imagePath: "/assets/images/products/47ghz-transmitter-chip.png",
+    imageAlt: "mm-wave SiGe BiCMOS RFIC hero slide placeholder",
+  },
+  {
+    eyebrow: "Packaging & Validation",
+    title: "Chip-to-package-to-prototype workflows for RF deployment.",
+    description:
+      "Packaging, integration, measurement, chamber validation, RIS prototypes, and active antenna workflows close the loop from architecture to deployable hardware.",
+    imagePath: "/assets/images/capability/rf-lab-validation.png",
+    imageAlt: "RF lab validation and packaging hero slide placeholder",
   },
 ];
 
@@ -384,73 +443,185 @@ function StandardImageCard({ card }: { card: StandardCard }) {
   );
 }
 
-export default function LinearAmptechLanding() {
+function HeroSliderSection() {
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
+  const [isSliderPaused, setIsSliderPaused] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const heroY = useTransform(scrollYProgress, [0, 0.45], [0, 170]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.38], [1, 0.72]);
+
+  useEffect(() => {
+    if (isSliderPaused) return;
+
+    const interval = window.setInterval(() => {
+      setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
+    }, 4200);
+
+    return () => window.clearInterval(interval);
+  }, [isSliderPaused]);
+
+  const activeSlide = heroSlides[activeHeroSlide];
+  const showPreviousSlide = () => {
+    setActiveHeroSlide(
+      (current) => (current - 1 + heroSlides.length) % heroSlides.length,
+    );
+  };
+  const showNextSlide = () => {
+    setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
+  };
+
   return (
-    <main className="overflow-hidden bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
-      <section className="relative isolate min-h-[92vh] overflow-hidden bg-[#050b12] pt-32 text-white">
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgb(16_199_232_/_0.13),transparent_32%,rgb(110_225_93_/_0.08)_78%,transparent)]" />
-        <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgb(255_255_255_/_0.06)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255_/_0.06)_1px,transparent_1px)] [background-size:72px_72px]" />
-        <div className="container relative z-10 mx-auto grid items-center gap-12 px-5 pb-16 lg:grid-cols-[1fr_0.9fr] lg:px-8">
-          <div>
-            <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
-              Linear-AmpTech RF front-end systems
-            </p>
-            <h1 className="font-heading max-w-5xl text-4xl font-bold leading-[1.02] tracking-normal sm:text-5xl lg:text-7xl">
-              RF Front-End Technologies for Next-Generation Wireless, Radar, and
-              Defense Systems
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Linear-AmpTech develops GaN power amplifier modules, CMOS/BiCMOS
-              RFICs, mm-wave transceivers, active antennas, and packaging
-              solutions from design to measured prototypes.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="#products"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-deep))] px-5 text-sm font-bold text-slate-950 shadow-[0_18px_48px_rgb(16_199_232_/_0.22)] transition hover:-translate-y-0.5"
+    <section className="relative isolate min-h-screen overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(120deg,rgb(16_199_232_/_0.13),transparent_32%,rgb(110_225_93_/_0.08)_78%,transparent)]"
+        style={{ y: heroY, opacity: heroOpacity }}
+      />
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgb(255_255_255_/_0.06)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255_/_0.06)_1px,transparent_1px)] [background-size:72px_72px]"
+        style={{ y: heroY }}
+      />
+      <motion.div
+        aria-hidden="true"
+        className="absolute right-[-18%] top-12 h-[640px] w-[640px] rounded-full border border-cyan-200/10 bg-cyan-200/5 blur-3xl"
+        style={{ y: heroY }}
+      />
+
+      <div className="container relative z-10 mx-auto grid min-h-[calc(100vh-8rem)] items-center gap-12 px-5 lg:grid-cols-[1fr_0.92fr] lg:px-8">
+        <Reveal>
+          <div className="max-w-[47rem]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSlide.title}
+                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
+                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
-                Explore Products
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
-              <Link
-                href="#contact"
-                className="inline-flex h-12 items-center justify-center rounded-[var(--radius-control)] border border-cyan-200/45 px-5 text-sm font-bold text-cyan-50 transition hover:-translate-y-0.5 hover:bg-cyan-200/10"
-              >
-                Contact Engineering Team
-              </Link>
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
+                  {activeSlide.eyebrow}
+                </div>
+                <h1 className="font-heading max-w-[47rem] text-balance text-4xl font-bold leading-[1.02] tracking-normal text-white sm:text-5xl lg:text-7xl">
+                  {activeSlide.title}
+                </h1>
+                <p className="mt-7 max-w-[44rem] text-base leading-8 text-slate-300 sm:text-lg">
+                  {activeSlide.description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="mt-9 flex w-full max-w-[47rem] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="#products"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-deep))] px-5 text-sm font-bold text-slate-950 shadow-[0_18px_48px_rgb(16_199_232_/_0.22)] transition hover:-translate-y-0.5"
+                >
+                  Explore Products
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="#contact"
+                  className="inline-flex h-12 items-center justify-center rounded-[var(--radius-control)] border border-cyan-200/45 px-5 text-sm font-bold text-cyan-50 transition hover:-translate-y-0.5 hover:bg-cyan-200/10"
+                >
+                  Contact Engineering Team
+                </Link>
+              </div>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  className="grid size-12 place-items-center rounded-lg border border-white/15 bg-white/[0.055] text-white shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-200/45 hover:bg-cyan-200/12"
+                  onClick={showPreviousSlide}
+                  aria-label="Show previous hero slide"
+                >
+                  <ChevronLeft className="size-5" aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  className="grid size-12 place-items-center rounded-lg border border-cyan-200/35 bg-cyan-200/12 text-cyan-50 shadow-[0_18px_70px_rgba(34,211,238,0.16)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-100/65 hover:bg-cyan-200/20"
+                  onClick={showNextSlide}
+                  aria-label="Show next hero slide"
+                >
+                  <ChevronRight className="size-5" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+
+            <div
+              className="hero-slider-nav"
+              data-paused={isSliderPaused}
+              aria-label="Hero slides"
+              onMouseEnter={() => setIsSliderPaused(true)}
+              onMouseLeave={() => setIsSliderPaused(false)}
+              onFocus={() => setIsSliderPaused(true)}
+              onBlur={() => setIsSliderPaused(false)}
+            >
+              {heroSlides.map((slide, index) => (
+                <button
+                  key={slide.title}
+                  type="button"
+                  className={activeHeroSlide === index ? "is-active" : ""}
+                  onClick={() => setActiveHeroSlide(index)}
+                  onMouseEnter={() => setActiveHeroSlide(index)}
+                  aria-label={`Show hero slide ${index + 1}`}
+                  aria-current={activeHeroSlide === index}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{slide.eyebrow}</strong>
+                </button>
+              ))}
             </div>
           </div>
+        </Reveal>
 
-          {/* Replace with final hero graphic: /assets/images/hero-linear-amptech-rfic-chip.png */}
-          <VisualPlaceholder
-            path="/assets/images/hero-linear-amptech-rfic-chip.png"
-            alt="Premium 3D RFIC semiconductor chip graphic placeholder for the Linear-AmpTech hero"
-            className="min-h-[420px] border-white/15 bg-white/[0.04]"
-            dark
-          />
-        </div>
+        <motion.div style={{ y: heroY }} className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeSlide.imagePath}
+              initial={{ opacity: 0, scale: 0.965, filter: "blur(8px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 1.025, filter: "blur(8px)" }}
+              transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* Replace with final hero slide visual: {activeSlide.imagePath} */}
+              <VisualPlaceholder
+                path={activeSlide.imagePath}
+                alt={activeSlide.imageAlt}
+                className="min-h-[420px] border-white/15 bg-white/[0.04] lg:min-h-[560px]"
+                dark
+              />
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+      </div>
 
-        <div className="container relative z-10 mx-auto grid gap-4 px-5 pb-20 sm:grid-cols-3 lg:px-8">
-          {trustItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-white/12 bg-white/[0.055] p-5 backdrop-blur"
-              >
+      <div className="container relative z-10 mx-auto grid gap-4 px-5 sm:grid-cols-3 lg:px-8">
+        {trustItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <Reveal key={item.title}>
+              <div className="rounded-2xl border border-white/12 bg-white/[0.055] p-5 backdrop-blur">
                 <Icon className="size-5 text-[color:var(--color-secondary)]" />
                 <p className="mt-4 font-heading text-lg font-semibold">
                   {item.title}
                 </p>
                 <p className="mt-1 text-sm text-slate-300">{item.body}</p>
               </div>
-            );
-          })}
-        </div>
-      </section>
+            </Reveal>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+export default function LinearAmptechLanding() {
+  return (
+    <main className="overflow-hidden bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
+      <HeroSliderSection />
 
       <section id="company" className="py-24">
-        <div className="container mx-auto grid gap-12 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <Reveal className="container mx-auto grid gap-12 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <div>
             <SectionHeader
               label="Company"
@@ -479,14 +650,14 @@ export default function LinearAmptechLanding() {
             alt="Clean semiconductor wafer or RF engineering lab-inspired visual placeholder"
             className="min-h-[500px]"
           />
-        </div>
+        </Reveal>
       </section>
 
       <section
         id="products"
         className="bg-[color:var(--color-surface-soft)] py-24"
       >
-        <div className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-5 lg:px-8">
           <SectionHeader
             label="Products"
             title="RF front-end product portfolio from PA modules to mm-wave ICs."
@@ -497,11 +668,11 @@ export default function LinearAmptechLanding() {
               <ProductPortfolioCard key={product.title} product={product} />
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section id="technology" className="py-24">
-        <div className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-5 lg:px-8">
           <SectionHeader
             label="Technology"
             title="Engineering across semiconductor technologies."
@@ -511,14 +682,14 @@ export default function LinearAmptechLanding() {
               <StandardImageCard key={card.title} card={card} />
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section
         id="applications"
         className="bg-[color:var(--color-surface)] py-24"
       >
-        <div className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-5 lg:px-8">
           <SectionHeader
             label="Applications"
             title="RF products shaped around real deployment domains."
@@ -529,12 +700,12 @@ export default function LinearAmptechLanding() {
               <StandardImageCard key={card.title} card={card} />
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="relative isolate overflow-hidden bg-[#050b12] py-24 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgb(16_199_232_/_0.16),transparent_34%),radial-gradient(circle_at_80%_80%,rgb(110_225_93_/_0.1),transparent_30%)]" />
-        <div className="container relative z-10 mx-auto grid gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <Reveal className="container relative z-10 mx-auto grid gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <SectionHeader
               label="R&D Engine"
@@ -560,11 +731,11 @@ export default function LinearAmptechLanding() {
             className="min-h-[440px] border-white/15 bg-white/[0.04]"
             dark
           />
-        </div>
+        </Reveal>
       </section>
 
       <section className="py-24">
-        <div className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-5 lg:px-8">
           <SectionHeader
             label="Workflow"
             title="From architecture to measured prototype."
@@ -599,14 +770,14 @@ export default function LinearAmptechLanding() {
               /assets/images/process/rf-development-workflow.svg
             </code>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section
         id="contact"
         className="bg-[color:var(--color-surface-soft)] py-24"
       >
-        <div className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-5 lg:px-8">
           <div className="grid gap-10 rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:grid-cols-[1fr_0.8fr] lg:p-10">
             <div>
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
@@ -647,7 +818,7 @@ export default function LinearAmptechLanding() {
               </p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)] py-10">
