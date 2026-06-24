@@ -93,7 +93,6 @@ export type Capability = {
 export type Product = {
   slug: string;
   name: string;
-  category: string;
   icon: LucideIcon;
   image: string;
   alt: string;
@@ -181,7 +180,6 @@ export const products: Product[] = [
   {
     slug: "hybrid-mic-pa-modules",
     name: "Hybrid MIC PA Modules",
-    category: "Hybrid MIC PA Modules",
     icon: RadioTower,
     image: assets.sourceHybridMicModule,
     alt: "Hybrid MIC PA module bench hardware",
@@ -240,7 +238,6 @@ export const products: Product[] = [
   {
     slug: "fully-integrated-c-ku-band-pa-chip",
     name: "Fully Integrated C-Ku Band PA Chip",
-    category: "Fully Integrated PA Chips",
     icon: Cpu,
     image: assets.sourceGanPaPackagedHardware,
     alt: "Fully integrated C-Ku band power amplifier chip hardware",
@@ -314,7 +311,6 @@ export const products: Product[] = [
   {
     slug: "fully-integrated-transmitter-chip",
     name: "Fully Integrated Transmitter Chip",
-    category: "Fully Integrated Transmitter Chips",
     icon: Waves,
     image: assets.sourceTxRxLayout,
     alt: "Fully integrated transmitter chip layout",
@@ -371,7 +367,6 @@ export const products: Product[] = [
   {
     slug: "fully-integrated-receiver-chip",
     name: "Fully Integrated Receiver Chip",
-    category: "Fully Integrated Receiver Chips",
     icon: Waves,
     image: assets.sourceTxRxLayout,
     alt: "Fully integrated receiver chip layout",
@@ -428,7 +423,6 @@ export const products: Product[] = [
   {
     slug: "fully-integrated-radar-front-end-chip",
     name: "Fully Integrated Radar Front-End Chip",
-    category: "Fully Integrated Radar Front-End Chips",
     icon: Radar,
     image: assets.sourceRadarFrontEndChip,
     alt: "Fully integrated radar front-end chip",
@@ -478,7 +472,6 @@ export const products: Product[] = [
   {
     slug: "8-bit-phase-shifter-chip",
     name: "8-Bit Phase Shifter Chip",
-    category: "8-Bit Phase Shifter Chips",
     icon: ScanLine,
     image: assets.sourcePhaseShifterChip,
     alt: "8-bit phase shifter chip",
@@ -521,7 +514,6 @@ export const products: Product[] = [
   {
     slug: "active-antenna",
     name: "Active Antenna",
-    category: "Active Antenna",
     icon: Satellite,
     image: assets.sourceActiveAntennaPrototype,
     alt: "Active antenna prototype hardware",
@@ -574,7 +566,6 @@ export const products: Product[] = [
   {
     slug: "ris-prototype",
     name: "RIS Prototype",
-    category: "RIS Prototype",
     icon: RadioTower,
     image: assets.sourceRisFrontSideArray,
     alt: "RIS prototype front-side array",
@@ -630,7 +621,6 @@ export const products: Product[] = [
   {
     slug: "mm-wave-packaging-integration",
     name: "mm-Wave Packaging & Integration",
-    category: "mm-Wave Packaging & Integration",
     icon: Layers3,
     image: assets.sourcePackagingChipPcbWaveguide,
     alt: "Chip-to-PCB-to-waveguide packaging transition",

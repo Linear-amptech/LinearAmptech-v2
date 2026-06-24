@@ -38,10 +38,7 @@ function ProductListingCard({ product }: { product: Product }) {
             <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-          {product.category}
-        </p>
-        <h2 className="mt-3 font-heading text-xl font-bold leading-7 text-[color:var(--color-text)]">
+        <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
           {product.name}
         </h2>
         <p className="mt-3 flex-1 text-sm leading-6 text-[color:var(--color-text-muted)]">

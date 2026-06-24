@@ -98,10 +98,7 @@ function ProductPortfolioCard({ product }: { product: Product }) {
             <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-          {product.category}
-        </p>
-        <h3 className="font-heading text-xl font-bold text-[color:var(--color-text)]">
+        <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
           {product.name}
         </h3>
         <p className="mt-3 flex-1 text-sm leading-6 text-[color:var(--color-text-muted)]">

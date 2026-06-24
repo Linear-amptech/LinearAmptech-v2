@@ -74,7 +74,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </Link>
               <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
                 <Icon className="size-4" aria-hidden="true" />
-                {product.category}
+                Product
               </div>
               <h1 className="font-heading max-w-5xl text-balance text-4xl font-bold leading-[1.02] tracking-normal text-white sm:text-5xl lg:text-7xl">
                 {product.name}
