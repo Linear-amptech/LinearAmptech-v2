@@ -31,6 +31,7 @@ import {
 import { Reveal } from "@/components/landing/reveal";
 
 type ProductCard = {
+  slug?: string;
   title: string;
   description: string;
   tags: string[];
@@ -61,7 +62,7 @@ const heroSlides: HeroSlide[] = [
       "RF Front-End Technologies for Next-Generation Wireless, Radar, and Defense Systems",
     description:
       "Linear-AmpTech develops GaN power amplifier modules, CMOS/BiCMOS RFICs, mm-wave transceivers, active antennas, and packaging solutions from design to measured prototypes.",
-    imagePath: "/assets/images/hero-linear-amptech-rfic-chip.png",
+    imagePath: "/assets/hero-section-slider/hero-linear-amptech-rfic-chip.png",
     imageAlt:
       "Premium 3D RFIC semiconductor chip graphic placeholder for the Linear-AmpTech hero",
   },
@@ -71,7 +72,7 @@ const heroSlides: HeroSlide[] = [
       "High-power GaN platforms from module architecture to measured PA hardware.",
     description:
       "Hybrid MIC PA modules and C-Ku band GaN-on-SiC PA chip families support demanding communication, radar, aerospace, and defense front ends.",
-    imagePath: "/assets/images/products/c-ku-band-pa-chip.png",
+    imagePath: "/assets/hero-section-slider/c-ku-band-pa-chip.png",
     imageAlt: "GaN C-Ku band PA chip hero slide placeholder",
   },
   {
@@ -79,7 +80,7 @@ const heroSlides: HeroSlide[] = [
     title: "mm-wave transmitter, receiver, and radar IC capability.",
     description:
       "Si CMOS and SiGe BiCMOS development paths support RFIC IP, 47 GHz transceiver blocks, radar front ends, phase shifting, and phased-array systems.",
-    imagePath: "/assets/images/products/47ghz-transmitter-chip.png",
+    imagePath: "/assets/hero-section-slider/ghz-transmitter-chip.png",
     imageAlt: "mm-wave SiGe BiCMOS RFIC hero slide placeholder",
   },
   {
@@ -87,7 +88,7 @@ const heroSlides: HeroSlide[] = [
     title: "Chip-to-package-to-prototype workflows for RF deployment.",
     description:
       "Packaging, integration, measurement, chamber validation, RIS prototypes, and active antenna workflows close the loop from architecture to deployable hardware.",
-    imagePath: "/assets/images/capability/rf-lab-validation.png",
+    imagePath: "/assets/hero-section-slider/rf-lab-validation.png",
     imageAlt: "RF lab validation and packaging hero slide placeholder",
   },
 ];
@@ -101,6 +102,7 @@ const stats = [
 
 const productCards: ProductCard[] = [
   {
+    slug: "hybrid-mic-pa-modules",
     title: "Hybrid MIC PA Modules",
     description:
       "Complete power amplifier module capability with gain-chain budgeting, power conditioning, VSWR protection, and multiple units in the 0.5-3.25 GHz range.",
@@ -109,6 +111,7 @@ const productCards: ProductCard[] = [
     icon: RadioTower,
   },
   {
+    slug: "fully-integrated-c-ku-band-pa-chip",
     title: "Fully Integrated C-Ku Band PA Chip",
     description:
       "5W fully integrated C-Ku band GaN-on-SiC PA chip family with QFN44 and QFN56 variants, completed simulation, tapeout, and measurement.",
@@ -117,6 +120,7 @@ const productCards: ProductCard[] = [
     icon: Cpu,
   },
   {
+    slug: "fully-integrated-transmitter-chip",
     title: "Fully Integrated Transmitter Chip",
     description:
       "47.2-48.2 GHz fully integrated transmitter chip in GF 130nm SiGe BiCMOS with 20 dB conversion gain and 15 dBm output power.",
@@ -125,6 +129,7 @@ const productCards: ProductCard[] = [
     icon: Waves,
   },
   {
+    slug: "fully-integrated-receiver-chip",
     title: "Fully Integrated Receiver Chip",
     description:
       "mm-wave receiver IC capability for high-frequency RF front-end systems, radar, phased arrays, and advanced wireless platforms.",
@@ -133,6 +138,7 @@ const productCards: ProductCard[] = [
     icon: ScanLine,
   },
   {
+    slug: "fully-integrated-radar-front-end-chip",
     title: "Radar Front-End Chips",
     description:
       "Integrated radar front-end chip development for MIMO radar, phased-array systems, sensing, and high-frequency RF applications.",
@@ -141,6 +147,7 @@ const productCards: ProductCard[] = [
     icon: Radar,
   },
   {
+    slug: "8-bit-phase-shifter-chip",
     title: "8-Bit Phase Shifter Chips",
     description:
       "Compact phase shifter IC solutions for beamforming, phased arrays, mm-wave systems, and active antenna architectures.",
@@ -380,7 +387,7 @@ function ProductPortfolioCard({ product }: { product: ProductCard }) {
           ))}
         </div>
         <Link
-          href="#contact"
+          href={product.slug ? `/products/${product.slug}` : "/#contact"}
           className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
         >
           Learn More
@@ -453,23 +460,40 @@ function HeroSliderSection() {
 
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
+      <div aria-hidden="true" className="absolute inset-0 z-0 overflow-hidden">
+        {heroSlides.map((slide, index) => (
+          <motion.div
+            key={slide.imagePath}
+            className="absolute inset-0 bg-cover bg-[position:66%_50%] bg-no-repeat will-change-transform"
+            style={{ backgroundImage: `url(${slide.imagePath})` }}
+            initial={false}
+            animate={{
+              opacity: activeHeroSlide === index ? 1 : 0,
+              scale: activeHeroSlide === index ? 1.08 : 1,
+            }}
+            transition={{
+              opacity: { duration: 0.95, ease: [0.22, 1, 0.36, 1] },
+              scale: { duration: 4.2, ease: "linear" },
+            }}
+          />
+        ))}
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.94)_31%,rgb(5_11_18_/_0.56)_58%,rgb(5_11_18_/_0.28)_76%,rgb(5_11_18_/_0.72)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.42),rgb(5_11_18_/_0.82))]"
+      />
       <motion.div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(120deg,rgb(16_199_232_/_0.13),transparent_32%,rgb(110_225_93_/_0.08)_78%,transparent)]"
+        className="absolute inset-0 z-[2] bg-[linear-gradient(120deg,rgb(16_199_232_/_0.13),transparent_32%,rgb(110_225_93_/_0.08)_78%,transparent)]"
         style={{ y: heroY, opacity: heroOpacity }}
       />
       <motion.div
         aria-hidden="true"
-        className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgb(255_255_255_/_0.06)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255_/_0.06)_1px,transparent_1px)] [background-size:72px_72px]"
-        style={{ y: heroY }}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="absolute right-[-18%] top-12 h-[640px] w-[640px] rounded-full border border-cyan-200/10 bg-cyan-200/5 blur-3xl"
+        className="absolute right-[-18%] top-12 z-[2] h-[640px] w-[640px] rounded-full border border-cyan-200/10 bg-cyan-200/5 blur-3xl"
         style={{ y: heroY }}
       />
 
-      <div className="container relative z-10 mx-auto grid min-h-[calc(100vh-8rem)] items-center gap-12 px-5 lg:grid-cols-[1fr_0.92fr] lg:px-8">
+      <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] items-center px-5 lg:px-8">
         <Reveal>
           <div className="max-w-[47rem]">
             <AnimatePresence mode="wait">
@@ -545,26 +569,6 @@ function HeroSliderSection() {
             </div>
           </div>
         </Reveal>
-
-        <motion.div style={{ y: heroY }} className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeSlide.imagePath}
-              initial={{ opacity: 0, scale: 0.965, filter: "blur(8px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, scale: 1.025, filter: "blur(8px)" }}
-              transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {/* Replace with final hero slide visual: {activeSlide.imagePath} */}
-              <VisualPlaceholder
-                path={activeSlide.imagePath}
-                alt={activeSlide.imageAlt}
-                className="min-h-[420px] border-white/15 bg-white/[0.04] lg:min-h-[560px]"
-                dark
-              />
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
       </div>
     </section>
   );
