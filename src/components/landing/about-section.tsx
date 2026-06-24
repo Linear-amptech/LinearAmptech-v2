@@ -29,18 +29,25 @@ export function AboutSection() {
           className="object-cover"
         />
       </motion.div>
-      <div className="container relative z-10 mx-auto grid items-center gap-10 px-5 py-24 lg:grid-cols-[0.62fr_0.38fr] lg:px-8">
+      <div className="container relative z-10 mx-auto grid items-center gap-4 px-5 py-24 lg:grid-cols-[0.62fr_0.38fr] lg:px-8">
         <Reveal className="space-y-8">
           <p className="section-kicker">Company</p>
           <h2 className="section-title">
-            Deep-tech company focused on RF circuit and system design.
+            Building the Future of RF Semiconductor Innovation
           </h2>
           <p className="text-xl leading-9 text-slate-300">
-            Linearised Amplifier Technology & Services Pvt. Ltd. is founded and
-            driven by innovative minds from IIT Roorkee. The company targets
-            cyber-physical system design with a focus on radio-frequency circuit
-            and system design, spanning GaN MMICs, high-power modules,
-            CMOS/BiCMOS RFIC IP cores, and silicon validation.
+            Linear-AmpTech is a deep-tech semiconductor company advancing RF
+            front-end technologies for communication, radar, and next-generation
+            wireless systems.
+          </p>
+          <p className="text-xl leading-9 text-slate-300">
+            From{" "}
+            <span className="font-semibold">
+              high-power GaN modules to CMOS/BiCMOS RFICs and silicon
+              validation,
+            </span>{" "}
+            we transform research-driven innovation into scalable products and
+            deployable solutions.
           </p>
           <div className="grid gap-3 sm:grid-cols-4">
             {metrics.map(([value, label], index) => (

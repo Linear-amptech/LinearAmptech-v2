@@ -1,8 +1,8 @@
-import { Satellite } from "lucide-react";
+// import { Satellite } from "lucide-react";
 import Image from "next/image";
 
 import { BackgroundTexture } from "@/components/landing/background-texture";
-import { applications, assets, industries } from "@/components/landing/data";
+import { applications, assets } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 
 export function IndustriesSection() {
@@ -28,19 +28,6 @@ export function IndustriesSection() {
             Amptech&apos;s application framing is anchored in defense RF, 6G,
             radar, phased arrays, active antennas, and RIS research.
           </p>
-        </Reveal>
-        <Reveal>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {industries.map((industry) => (
-              <div key={industry} className="industry-row">
-                <Satellite
-                  className="size-4 text-cyan-200"
-                  aria-hidden="true"
-                />
-                <span>{industry}</span>
-              </div>
-            ))}
-          </div>
         </Reveal>
       </div>
       <div className="container relative mx-auto grid gap-5 px-5 pb-24 lg:grid-cols-4 lg:px-8">

@@ -66,130 +66,6 @@ const team = [
     icon: Radar,
     details: ["Senior RF Design Engineer", "Development Team"],
   },
-  {
-    name: "Shreyansh Bansal",
-    role: "Embedded Engineer",
-    group: "Development Team",
-    image: "/assets/ppt-team/shreyansh-bansal.jpeg",
-    icon: Cpu,
-    details: ["Embedded Engineer", "Development Team"],
-  },
-  {
-    name: "Pravesh Chamoli",
-    role: "Software Engineer",
-    group: "Development Team",
-    image: "/assets/ppt-team/pravesh-chamoli.jpeg",
-    icon: Cpu,
-    details: ["Software Engineer", "Development Team"],
-  },
-  {
-    name: "Nupoor Sood",
-    role: "Research Scholar",
-    group: "R&D Team",
-    image: "/assets/ppt-team/nupoor-sood.png",
-    icon: Microscope,
-    details: ["MIC, MMIC PA Design", "GaN HEMT Device", "Doherty PA"],
-  },
-  {
-    name: "Dr. Abdul Sukoor",
-    role: "Post-Doc Fellow",
-    group: "R&D Team",
-    image: "/assets/ppt-team/abdul-sukoor.png",
-    icon: Microscope,
-    details: ["Doherty PA", "Active Antenna", "RIS", "RF passive structures"],
-  },
-  {
-    name: "Ahmed Zakaria",
-    role: "Scientist DRDO, Research Scholar (Part Time)",
-    group: "R&D Team",
-    image: "/assets/ppt-team/ahmed-zakaria.png",
-    icon: Microscope,
-    details: ["High Efficiency PA", "Waveform Engineering PA"],
-  },
-  {
-    name: "Amit Singh",
-    role: "Research Scholar (Part-time)",
-    group: "R&D Team",
-    image: "/assets/ppt-team/amit-singh.jpeg",
-    icon: Microscope,
-    details: ["High Efficiency & Linearized PA Modules"],
-  },
-  {
-    name: "Amrit Panigrahi",
-    role: "Research Scholar",
-    group: "R&D Team",
-    image: "/assets/ppt-team/amrit-panigrahi.png",
-    icon: Microscope,
-    details: [
-      "Waveform Engineering PA",
-      "Broadband matching techniques",
-      "CMOS PA",
-    ],
-  },
-  {
-    name: "Kamini Singh",
-    role: "Research Scholar",
-    group: "R&D Team",
-    image: "/assets/ppt-team/kamini-singh.png",
-    icon: Microscope,
-    details: ["Doherty PA Design", "High efficiency at back-off PA"],
-  },
-  {
-    name: "Chaitanya Reddy",
-    role: "Research Scholar",
-    group: "R&D Team",
-    image: "/assets/ppt-team/chaitanya-reddy.png",
-    icon: Microscope,
-    details: [
-      "DPD",
-      "Linearization techniques",
-      "FPGA based embedded system design",
-    ],
-  },
-  {
-    name: "B Ganesh P",
-    role: "Research Scholar",
-    group: "R&D Team",
-    image: "/assets/ppt-team/b-ganesh-p.png",
-    icon: Microscope,
-    details: [
-      "Device characterization & modeling",
-      "High efficiency PA",
-      "MIC/MMIC",
-    ],
-  },
-  {
-    name: "Tarun Kumar Suretia",
-    role: "Research Scholar",
-    group: "R&D Team",
-    image: "/assets/ppt-team/tarun-kumar-suretia.png",
-    icon: Microscope,
-    details: ["In-band harmonic cancellation based PA", "RFIC PA"],
-  },
-  {
-    name: "Sankhraj Suriya",
-    role: "Project Assistant (Admin)",
-    group: "Support Team",
-    image: "/assets/ppt-team/sankhraj-suriya.png",
-    icon: Users,
-    details: ["Project Assistant", "Admin"],
-  },
-  {
-    name: "Abhishek Chaurasia",
-    role: "Technical Assistant",
-    group: "Support Team",
-    image: "/assets/ppt-team/abhishek-chaurasia.png",
-    icon: Users,
-    details: ["Technical Assistant"],
-  },
-  {
-    name: "Nitin Verma",
-    role: "Lab Assistant",
-    group: "Support Team",
-    image: "/assets/ppt-team/nitin-verma.png",
-    icon: Users,
-    details: ["Lab Assistant"],
-  },
 ];
 
 export default function TeamPage() {
@@ -211,14 +87,8 @@ export default function TeamPage() {
         <Reveal className="container relative mx-auto px-5 lg:px-8">
           <p className="section-kicker">Team</p>
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-            Leadership, development, R&D, and support teams driving
-            Linear-AmpTech.
+            Meet our Leadership team
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Team members, roles, and research interests are taken from the
-            Linear-AmpTech leadership, development, R&D, and support team
-            profile.
-          </p>
         </Reveal>
       </section>
 

@@ -26,12 +26,12 @@ export default function ProductsPage() {
         <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
           <p className="section-kicker">All Products</p>
           <h1 className="max-w-5xl text-5xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-            RF front-end products for amplifier, RFIC, radar, antenna, and
-            packaging programs.
+            RF Front-End Solutions for High-Performance Wireless Systems
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Browse the product portfolio and open each product page for brief
-            specifications, integration notes, and quote requests.
+            Explore our portfolio of RF semiconductor products and integrated
+            front-end solutions designed for communication, radar, sensing, and
+            aerospace applications.
           </p>
         </Reveal>
       </section>

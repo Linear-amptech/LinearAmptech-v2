@@ -11,8 +11,7 @@ export function TechnologySection() {
         <Reveal className="max-w-4xl">
           <p className="section-kicker">IP Strategy</p>
           <h2 className="section-title">
-            Three semiconductor technology tracks mapped to frequency and
-            application domains.
+            Engineering Across Semiconductor Technologies
           </h2>
         </Reveal>
         {/* <Reveal>

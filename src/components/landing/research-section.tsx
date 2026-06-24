@@ -19,12 +19,12 @@ export function ResearchSection() {
         <Reveal className="rd-panel">
           <Shield className="size-8 text-cyan-200" aria-hidden="true" />
           <h2 className="mt-8 text-3xl font-semibold text-white sm:text-4xl">
-            R&D pipeline from circuit architecture to measured prototypes.
+            Semiconductor R&D Engine for Next-Generation RF Systems
           </h2>
           <p className="mt-5 text-base leading-7 text-slate-300">
-            Linear Amptech follows a practical development path: RFIC/MMIC
-            design, simulation, GDS/specification handoff, tapeout, packaging,
-            module integration, chamber testing, and measurement.
+            From RF architecture and silicon realization to packaged hardware
+            and measured prototypes, we deliver complete development capability
+            across the RF semiconductor value chain.
           </p>
         </Reveal>
         <Reveal className="grid content-center gap-4 sm:grid-cols-2">

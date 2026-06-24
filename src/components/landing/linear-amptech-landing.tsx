@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
 
 import { AboutSection } from "@/components/landing/about-section";
-import { CapabilitiesSection } from "@/components/landing/capabilities-section";
+// import { CapabilitiesSection } from "@/components/landing/capabilities-section";
 import { HeroSection } from "@/components/landing/hero-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProductsSection } from "@/components/landing/products-section";
@@ -36,7 +36,7 @@ export default function LinearAmptechLanding() {
       <div aria-hidden="true" className="particle-field" />
       <HeroSection />
       <AboutSection />
-      <CapabilitiesSection />
+      {/* <CapabilitiesSection /> */}
       <ProductsSection />
       <TechnologySection />
       <IndustriesSection />
