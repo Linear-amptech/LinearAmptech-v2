@@ -63,7 +63,7 @@ function ThemeToggle({ className }: { className?: string }) {
       variant="outline"
       size="icon-lg"
       className={cn(
-        "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] shadow-sm hover:border-[color:var(--color-primary)] hover:bg-[color:var(--color-surface-soft)]",
+        "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] rounded-full  hover:bg-[color:var(--color-surface-soft)] cursor-pointer",
         className,
       )}
       onClick={toggleTheme}
@@ -111,7 +111,7 @@ export function SiteHeader() {
           aria-label="Linear-AmpTech home"
           onClick={closeMobileMenu}
         >
-          <span className="grid h-14 w-[112px] place-items-center rounded-xl bg-white/70 px-2 ring-1 ring-[color:var(--color-border)] dark:bg-white/95">
+          <span className="grid h-14 w-[112px] place-items-center ">
             <Image
               src="/assets/linear-amptech-logo.png"
               alt="Linear-AmpTech logo"

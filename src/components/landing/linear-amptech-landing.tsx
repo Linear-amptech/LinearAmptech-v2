@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
-  BadgeCheck,
   Boxes,
   ChevronLeft,
   ChevronRight,
@@ -54,24 +53,6 @@ type HeroSlide = {
   imagePath: string;
   imageAlt: string;
 };
-
-const trustItems = [
-  {
-    title: "Broad Portfolio",
-    body: "DC to 110 GHz",
-    icon: Waves,
-  },
-  {
-    title: "High Performance",
-    body: "Efficiency, Linearity, Reliability",
-    icon: BadgeCheck,
-  },
-  {
-    title: "Mission-Ready",
-    body: "Built for advanced RF systems",
-    icon: ShieldCheck,
-  },
-];
 
 const heroSlides: HeroSlide[] = [
   {
@@ -499,9 +480,6 @@ function HeroSliderSection() {
                 exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
                 transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
-                  {activeSlide.eyebrow}
-                </div>
                 <h1 className="font-heading max-w-[47rem] text-balance text-4xl font-bold leading-[1.02] tracking-normal text-white sm:text-5xl lg:text-7xl">
                   {activeSlide.title}
                 </h1>
@@ -515,16 +493,10 @@ function HeroSliderSection() {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="#products"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-deep))] px-5 text-sm font-bold text-slate-950 shadow-[0_18px_48px_rgb(16_199_232_/_0.22)] transition hover:-translate-y-0.5"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[color:var(--color-primary)] px-5 text-sm font-bold text-slate-950 shadow-[0_16px_36px_rgb(16_199_232_/_0.18)] transition hover:-translate-y-0.5 hover:bg-[color:var(--color-primary-deep)]"
                 >
                   Explore Products
                   <ArrowRight className="size-4" aria-hidden="true" />
-                </Link>
-                <Link
-                  href="#contact"
-                  className="inline-flex h-12 items-center justify-center rounded-[var(--radius-control)] border border-cyan-200/45 px-5 text-sm font-bold text-cyan-50 transition hover:-translate-y-0.5 hover:bg-cyan-200/10"
-                >
-                  Contact Engineering Team
                 </Link>
               </div>
               <div className="flex items-center gap-3">
@@ -593,23 +565,6 @@ function HeroSliderSection() {
             </motion.div>
           </AnimatePresence>
         </motion.div>
-      </div>
-
-      <div className="container relative z-10 mx-auto grid gap-4 px-5 sm:grid-cols-3 lg:px-8">
-        {trustItems.map((item) => {
-          const Icon = item.icon;
-          return (
-            <Reveal key={item.title}>
-              <div className="rounded-2xl border border-white/12 bg-white/[0.055] p-5 backdrop-blur">
-                <Icon className="size-5 text-[color:var(--color-secondary)]" />
-                <p className="mt-4 font-heading text-lg font-semibold">
-                  {item.title}
-                </p>
-                <p className="mt-1 text-sm text-slate-300">{item.body}</p>
-              </div>
-            </Reveal>
-          );
-        })}
       </div>
     </section>
   );
@@ -793,7 +748,7 @@ export default function LinearAmptechLanding() {
               </p>
               <a
                 href="mailto:sales@linearamptech.com"
-                className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-deep))] px-5 text-sm font-bold text-slate-950 shadow-[0_18px_48px_rgb(16_199_232_/_0.22)] transition hover:-translate-y-0.5"
+                className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[color:var(--color-primary)] px-5 text-sm font-bold text-slate-950 shadow-[0_16px_36px_rgb(16_199_232_/_0.18)] transition hover:-translate-y-0.5 hover:bg-[color:var(--color-primary-deep)]"
               >
                 Contact Engineering Team
                 <ArrowRight className="size-4" aria-hidden="true" />
