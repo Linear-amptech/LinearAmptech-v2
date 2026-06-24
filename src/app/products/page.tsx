@@ -29,18 +29,9 @@ function ProductListingCard({ product }: { product: Product }) {
         />
       </Link>
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-5 flex items-start justify-end gap-4">
-          <Link
-            href={`/products/${product.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
-          >
-            Learn More
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
-        </div>
-        <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
           {product.name}
-        </h2>
+        </p>
         <p className="mt-3 flex-1 text-sm leading-6 text-[color:var(--color-text-muted)]">
           {product.description}
         </p>
@@ -53,6 +44,15 @@ function ProductListingCard({ product }: { product: Product }) {
               {feature}
             </span>
           ))}
+        </div>
+        <div className="mt-auto pt-5">
+          <Link
+            href={`/products/${product.slug}`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
+          >
+            Learn More
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </article>
