@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Reveal } from "@/components/landing/reveal";
-
+// some changes
 export const metadata: Metadata = {
   title: "Team | Linear Amptech",
   description:
