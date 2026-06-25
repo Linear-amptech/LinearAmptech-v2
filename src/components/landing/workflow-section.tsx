@@ -31,21 +31,23 @@ export function WorkflowSection() {
               return (
                 <div
                   key={step.title}
-                  className="group relative aspect-square overflow-hidden rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)]"
+                  className="group overflow-hidden rounded-md border border-[color:var(--color-border)] bg-white shadow-[var(--shadow-soft)]"
                 >
-                  <Image
-                    src={step.image}
-                    alt={`${step.title} workflow background`}
-                    fill
-                    sizes="(min-width: 1024px) 13vw, 100vw"
-                    className="scale-110 object-cover transition-transform duration-700 ease-out group-hover:scale-100"
-                  />
-                  <div className="absolute inset-0 bg-black/4 transition-colors duration-500 group-hover:bg-black/8" />
-                  <div className="relative flex h-full flex-col items-center justify-end px-2 pb-2 pt-2">
+                  <div className="relative aspect-square overflow-hidden bg-[color:var(--color-surface-soft)]">
+                    <Image
+                      src={step.image}
+                      alt={`${step.title} workflow background`}
+                      fill
+                      sizes="(min-width: 1024px) 13vw, 100vw"
+                      className=" object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/3 transition-colors duration-500 group-hover:bg-black/1" />
                     <span className="absolute left-2 top-2 font-heading text-sm font-bold leading-none text-[color:var(--color-primary-deep)] transition-transform duration-500 ease-out group-hover:scale-110">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-center font-heading text-lg font-bold leading-6 text-[color:var(--color-text)] transition-transform duration-500 ease-out group-hover:scale-110">
+                  </div>
+                  <div className="bg-white py-3 transition-transform duration-500 ease-out group-hover:scale-105">
+                    <h3 className="text-center font-heading text-lg font-bold leading-6 text-[color:var(--color-text)]">
                       {step.title}
                     </h3>
                   </div>
