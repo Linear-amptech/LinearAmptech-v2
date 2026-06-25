@@ -137,7 +137,7 @@ export function SiteHeader() {
       <nav
         className={cn(
           "container mx-auto flex items-center justify-between px-5 transition-[height,padding] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-8",
-          isCondensed ? "h-16" : "h-20",
+          isCondensed ? "h-14" : "h-20",
         )}
         aria-label="Primary navigation"
       >
