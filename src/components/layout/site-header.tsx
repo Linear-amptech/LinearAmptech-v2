@@ -86,6 +86,7 @@ function ThemeToggle({ className }: { className?: string }) {
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isCondensed, setIsCondensed] = useState(false);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -98,12 +99,46 @@ export function SiteHeader() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const updateHeaderState = () => {
+      const currentScrollY = window.scrollY;
+
+      setIsCondensed((current) => {
+        if (currentScrollY <= 24) {
+          return false;
+        }
+
+        if (currentScrollY < lastScrollY) {
+          return false;
+        }
+
+        if (currentScrollY > lastScrollY) {
+          return true;
+        }
+
+        return current;
+      });
+
+      lastScrollY = currentScrollY;
+    };
+
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateHeaderState);
+  }, []);
+
   const closeMobileMenu = () => setMobileOpen(false);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)] backdrop-blur-xl">
       <nav
-        className="container mx-auto flex h-20 items-center justify-between px-5 lg:px-8"
+        className={cn(
+          "container mx-auto flex items-center justify-between px-5 transition-[height,padding] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-8",
+          isCondensed ? "h-16" : "h-20",
+        )}
         aria-label="Primary navigation"
       >
         <Link
@@ -112,13 +147,16 @@ export function SiteHeader() {
           aria-label="Linear-AmpTech home"
           onClick={closeMobileMenu}
         >
-          <span className="grid h-14 w-[112px] place-items-center ">
+          <span className="grid h-12 w-[110px] place-items-center">
             <Image
               src="/assets/linear-amptech-logo.png"
               alt="Linear-AmpTech logo"
               width={104}
               height={58}
-              className="h-12 w-auto object-contain"
+              className={cn(
+                "w-auto object-contain transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                isCondensed ? "h-12" : "h-14",
+              )}
               priority
             />
           </span>
@@ -166,7 +204,9 @@ export function SiteHeader() {
         className={cn(
           "container mx-auto overflow-hidden px-5 transition-[max-height,opacity,transform] duration-300 ease-out lg:px-8 md:hidden",
           mobileOpen
-            ? "max-h-[calc(100dvh-5rem)] translate-y-0 opacity-100"
+            ? isCondensed
+              ? "max-h-[calc(100dvh-4rem)] translate-y-0 opacity-100"
+              : "max-h-[calc(100dvh-5rem)] translate-y-0 opacity-100"
             : "max-h-0 -translate-y-2 opacity-0",
         )}
       >
