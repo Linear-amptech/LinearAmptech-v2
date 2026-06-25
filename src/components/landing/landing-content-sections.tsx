@@ -24,11 +24,14 @@ import { ChipAnimation } from "@/components/landing/chip-animation";
 import { Reveal } from "@/components/landing/reveal";
 
 const workflowSteps = [
-  { title: "Architecture & Specification", icon: Factory },
-  { title: "Circuit Design & Simulation", icon: CircuitBoard },
-  { title: "Layout & Tapeout", icon: Layers3 },
-  { title: "Packaging & Integration", icon: PackageCheck },
-  { title: "Measurement & Validation", icon: Microscope },
+  { title: "Design", icon: Factory },
+  { title: "Simulation", icon: CircuitBoard },
+  { title: "Tapeout", icon: Layers3 },
+  { title: "Packaging", icon: PackageCheck },
+  { title: "Integration", icon: PackageCheck },
+  { title: "Characterization", icon: PackageCheck },
+
+  { title: "Validation", icon: Microscope },
 ] as const;
 
 function SectionHeader({
@@ -304,15 +307,15 @@ export function LandingContentSections() {
             label="Workflow"
             title="From architecture to measured prototype."
           />
-          <div className="mt-12 rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
-            <div className="grid gap-4 lg:grid-cols-5">
+          <div className="mt-12 ">
+            <div className="grid gap-2 lg:grid-cols-7">
               {workflowSteps.map((step, index) => {
                 const Icon = step.icon;
 
                 return (
                   <div
                     key={step.title}
-                    className="relative rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-5"
+                    className="relative rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2 py-4"
                   >
                     <div className="mb-8 flex items-center justify-between">
                       <span className="font-heading text-sm font-bold text-[color:var(--color-primary-deep)]">
@@ -323,7 +326,7 @@ export function LandingContentSections() {
                         aria-hidden="true"
                       />
                     </div>
-                    <h3 className="font-heading text-lg font-bold leading-6 text-[color:var(--color-text)]">
+                    <h3 className="font-heading text-lg text-center font-bold leading-6 text-[color:var(--color-text)]">
                       {step.title}
                     </h3>
                   </div>

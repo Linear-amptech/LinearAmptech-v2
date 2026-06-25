@@ -23,6 +23,8 @@ export const assets = {
   particleBackground: "/assets/particle-background.png",
   hybridPaModule: "/assets/ppt-products/hybrid-pa-module.png",
   ganPaModulePhoto: "/assets/ppt-products/gan-pa-module-photo.png",
+  ganPaModuleNewPhoto: "/assets/technology/gan-pa-module-photo-new.png",
+
   transceiverChipLayout: "/assets/ppt-products/transceiver-chip-layout.png",
   radarFrontEndLayout: "/assets/ppt-products/radar-front-end-layout.png",
   dieProbeMicroscope: "/assets/ppt-products/die-probe-microscope.png",
@@ -49,6 +51,10 @@ export const assets = {
     "/assets/ppt-products/source/gan-pa-qfn44-performance.png",
   sourceGanPaQfn56Performance:
     "/assets/ppt-products/source/gan-pa-qfn56-performance.png",
+  defense: "/assets/applications/defense.png",
+  sixG: "/assets/applications/6g.png",
+  mimoRadar: "/assets/applications/mimo_radar.png",
+  risActive: "/assets/applications/ris_active.png",
 } as const;
 
 export type Capability = {
@@ -105,7 +111,7 @@ export const ipPlatforms: IpPlatform[] = [
   {
     name: "III-V GaN Technology",
     icon: RadioTower,
-    image: assets.ganPaModulePhoto,
+    image: assets.ganPaModuleNewPhoto,
     description:
       "High-power-density PA MMICs and T/R front-end modules up to Ku-band, built for resilient defense and aerospace RF systems.",
     focus: "Standalone PA MMIC chips and T/R front-end modules up to Ku-band.",
@@ -488,25 +494,25 @@ export const metrics = [
 export const applications: Application[] = [
   {
     title: "Defense and Aerospace RF",
-    image: assets.hybridPaModule,
+    image: assets.defense,
     description:
       "Resilient PA modules, T/R front-end modules, and Ku-band RF electronics for high-reliability mission systems.",
   },
   {
     title: "6G and Massive MIMO",
-    image: assets.dieProbeMicroscope,
+    image: assets.sixG,
     description:
       "FR2/FR3 PA IP cores, analog predistorters, and transceiver blocks for scalable high-frequency communication.",
   },
   {
     title: "MIMO Radar and Phased Arrays",
-    image: assets.radarFrontEndLayout,
+    image: assets.mimoRadar,
     description:
       "mm-wave radar front-end chips, phase shifting, packaging transitions, and power combining for array systems.",
   },
   {
     title: "RIS and Active Antenna Systems",
-    image: assets.rdLab,
+    image: assets.risActive,
     description:
       "Prototype development and chamber validation for active antenna matching networks and reconfigurable surfaces.",
   },
@@ -525,7 +531,7 @@ export const heroSlides: HeroSlide[] = [
     title: "C-Ku Band Power Built for Demanding RF Systems.",
     description:
       "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense front ends.",
-    image: assets.ganPaModulePhoto,
+    image: assets.ganPaModuleNewPhoto,
   },
   {
     eyebrow: "SiGe BiCMOS RFIC Development",
