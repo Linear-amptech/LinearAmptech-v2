@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 import { products, type Product } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
+import { rfPowerAmplifierProducts } from "@/components/products/rf-power-amplifiers-data";
 
 export const metadata: Metadata = {
   title: "Products | Linear Amptech",
@@ -83,6 +84,66 @@ export default function ProductsPage() {
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
+        <Reveal className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="mb-10 overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
+            <div className="grid gap-0 lg:grid-cols-[0.38fr_0.62fr]">
+              <div className="border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-6 lg:border-b-0 lg:border-r">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  Imported Legacy Catalog
+                </p>
+                <h2 className="mt-4 font-heading text-3xl font-bold leading-tight text-[color:var(--color-text)]">
+                  RF Power Amplifiers
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">
+                  Exact migrated RF PA table, detail pages, and product images
+                  from the older Linear-AmpTech website.
+                </p>
+                <Link
+                  href="/products/rf/power-amplifiers"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
+                >
+                  Open RF Power Amplifiers
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </div>
+
+              <div className="grid gap-0 divide-y divide-[color:var(--color-border)] md:grid-cols-2 md:divide-x md:divide-y-0">
+                {rfPowerAmplifierProducts.map((product) => (
+                  <Link
+                    key={product.slug}
+                    href={`/products/rf/power-amplifiers/${product.slug}`}
+                    className="group p-5 transition-colors hover:bg-[color:var(--color-surface-soft)]"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-white">
+                        <Image
+                          src={product.heroImage}
+                          alt={product.partNumber}
+                          fill
+                          sizes="80px"
+                          className="object-contain p-2"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="font-heading text-lg font-bold text-[color:var(--color-text)]">
+                          {product.partNumber}
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-[color:var(--color-text-muted)]">
+                          {product.shortSpec}
+                        </p>
+                        <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors group-hover:text-[color:var(--color-primary)]">
+                          View page
+                          <ChevronRight className="size-4" aria-hidden="true" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         <div className="container mx-auto grid max-w-7xl items-stretch gap-6 px-5 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
           {products.map((product) => (
             <Reveal key={product.slug} className="h-full">

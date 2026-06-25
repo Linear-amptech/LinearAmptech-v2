@@ -3,13 +3,14 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
 
+import { ProductsMegaMenu } from "@/components/layout/products-mega-menu";
+import { productMenuGroups } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/products", label: "Products" },
   { href: "/#technology", label: "Technology" },
   { href: "/#applications", label: "Applications" },
   { href: "/#company", label: "Company" },
@@ -86,6 +87,7 @@ function ThemeToggle({ className }: { className?: string }) {
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [isCondensed, setIsCondensed] = useState(false);
 
   useEffect(() => {
@@ -130,7 +132,10 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", updateHeaderState);
   }, []);
 
-  const closeMobileMenu = () => setMobileOpen(false);
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setMobileProductsOpen(false);
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)] backdrop-blur-xl">
@@ -163,6 +168,7 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden items-center gap-7 text-sm font-medium text-[color:var(--color-text-muted)] md:flex">
+          <ProductsMegaMenu />
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -211,6 +217,73 @@ export function SiteHeader() {
         )}
       >
         <div className="mb-4 grid gap-1 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2 shadow-[var(--shadow-card)]">
+          <div className="rounded-xl border border-[color:var(--color-border)]">
+            <button
+              type="button"
+              className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-[color:var(--color-text)]"
+              onClick={() => setMobileProductsOpen((current) => !current)}
+              aria-expanded={mobileProductsOpen}
+            >
+              <span>Products</span>
+              <ChevronDown
+                className={cn(
+                  "size-4 transition-transform duration-200",
+                  mobileProductsOpen && "rotate-180",
+                )}
+                aria-hidden="true"
+              />
+            </button>
+
+            <div
+              className={cn(
+                "overflow-hidden transition-[max-height,opacity] duration-300",
+                mobileProductsOpen
+                  ? "max-h-[420px] opacity-100"
+                  : "max-h-0 opacity-0",
+              )}
+            >
+              <div className="border-t border-[color:var(--color-border)] px-2 py-2">
+                {productMenuGroups.map((group) => (
+                  <div
+                    key={group.id}
+                    className="rounded-xl bg-[color:var(--color-surface-soft)] p-3"
+                  >
+                    <Link
+                      href={group.href}
+                      className="block text-sm font-semibold text-[color:var(--color-text)]"
+                      onClick={closeMobileMenu}
+                    >
+                      {group.title}
+                    </Link>
+                    {group.panels.map((panel) => (
+                      <div key={panel.title} className="mt-3">
+                        <Link
+                          href={panel.href}
+                          className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]"
+                          onClick={closeMobileMenu}
+                        >
+                          {panel.title}
+                        </Link>
+                        <div className="mt-2 space-y-1">
+                          {panel.links.map((link) => (
+                            <Link
+                              key={link.href}
+                              href={link.href}
+                              className="block rounded-lg px-2 py-2 text-sm text-[color:var(--color-text-muted)] transition-colors hover:bg-[color:var(--color-surface)] hover:text-[color:var(--color-text)]"
+                              onClick={closeMobileMenu}
+                            >
+                              {link.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {navItems.map((item) => (
             <Link
               key={item.href}
