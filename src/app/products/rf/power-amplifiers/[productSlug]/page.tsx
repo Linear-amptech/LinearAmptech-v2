@@ -5,7 +5,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { Reveal } from "@/components/landing/reveal";
-import { ProductsCatalogSidebar } from "@/components/products/products-catalog-sidebar";
 import {
   getRfPowerAmplifier,
   rfPowerAmplifierTableRows,
@@ -93,89 +92,120 @@ export default async function RfPowerAmplifierProductPage({
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
-        <div className="container mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[320px_1fr] lg:px-8">
+        <div className="container mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.34fr_0.66fr] lg:px-8">
           <Reveal>
-            <ProductsCatalogSidebar
-              activeGroupId="rf-design-signal-processing"
-              activeHref={`/products/rf/power-amplifiers/${product.slug}`}
-            />
+            <aside className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
+              <Link
+                href="/products/rf/power-amplifiers"
+                className="mb-7 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
+              >
+                <ArrowLeft className="size-4" aria-hidden="true" />
+                RF Power Amplifiers
+              </Link>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                Product Specs
+              </p>
+              <h2 className="font-heading text-3xl font-bold leading-tight text-[color:var(--color-text)]">
+                Product inquiry
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)]">
+                Share frequency band, output-power target, package needs, and
+                integration timeline so the Linear Amptech team can respond with
+                the right RF amplifier path.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[color:var(--color-primary)] px-5 text-sm font-bold text-slate-950 shadow-[0_16px_36px_rgb(16_199_232_/_0.18)] transition hover:-translate-y-0.5 hover:bg-[color:var(--color-primary-deep)]"
+              >
+                Get Quote
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+            </aside>
           </Reveal>
 
           <div className="grid gap-8">
-            <Reveal>
-              <section className="grid gap-8 rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] xl:grid-cols-[1.05fr_0.95fr]">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                    Key Features
-                  </p>
-                  <ul className="mt-5 space-y-3 text-base leading-7 text-[color:var(--color-text-muted)]">
-                    {product.keyFeatures.map((feature) => (
-                      <li key={feature} className="flex gap-3">
-                        <span className="mt-2 size-2 shrink-0 rounded-full bg-[color:var(--color-primary-deep)]" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="mt-10 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                    Applications
-                  </p>
-                  <ul className="mt-5 space-y-3 text-base leading-7 text-[color:var(--color-text-muted)]">
-                    {product.applications.map((application) => (
-                      <li key={application} className="flex gap-3">
-                        <span className="mt-2 size-2 shrink-0 rounded-full bg-[color:var(--color-secondary)]" />
-                        <span>{application}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {tableRow ? (
-                    <div className="mt-10 grid gap-4 md:grid-cols-2">
-                      <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4">
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                          Center Frequency
-                        </p>
-                        <p className="mt-2 text-lg font-bold text-[color:var(--color-text)]">
-                          {tableRow.centerFrequencyGhz} GHz
-                        </p>
-                      </div>
-                      <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4">
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                          Output Power
-                        </p>
-                        <p className="mt-2 text-lg font-bold text-[color:var(--color-text)]">
-                          {tableRow.outputPowerW} W
-                        </p>
-                      </div>
-                      <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4">
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                          Efficiency
-                        </p>
-                        <p className="mt-2 text-lg font-bold text-[color:var(--color-text)]">
-                          {tableRow.efficiency}
-                        </p>
-                      </div>
-                      <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4">
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                          Gain
-                        </p>
-                        <p className="mt-2 text-lg font-bold text-[color:var(--color-text)]">
-                          {tableRow.gainDb} dB
-                        </p>
-                      </div>
-                    </div>
-                  ) : null}
+            {tableRow ? (
+              <Reveal>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                      Center Frequency
+                    </p>
+                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                      {tableRow.centerFrequencyGhz} GHz
+                    </p>
+                  </div>
+                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                      Output Power
+                    </p>
+                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                      {tableRow.outputPowerW} W
+                    </p>
+                  </div>
+                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                      Efficiency
+                    </p>
+                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                      {tableRow.efficiency}
+                    </p>
+                  </div>
+                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                      Gain
+                    </p>
+                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                      {tableRow.gainDb} dB
+                    </p>
+                  </div>
                 </div>
+              </Reveal>
+            ) : null}
 
-                <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
-                    <Image
-                      src={product.heroImage}
-                      alt={product.partNumber}
-                      fill
-                      sizes="(min-width: 1280px) 34vw, 100vw"
-                      className="object-contain p-3"
-                    />
+            <Reveal>
+              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[var(--shadow-card)]">
+                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[color:var(--color-surface-soft)]">
+                  <Image
+                    src={product.heroImage}
+                    alt={product.partNumber}
+                    fill
+                    sizes="(min-width: 1024px) 56vw, 100vw"
+                    className="object-contain p-3"
+                  />
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal>
+              <section className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
+                <div className="grid gap-8 md:grid-cols-2">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                      Key Features
+                    </p>
+                    <ul className="mt-5 space-y-3 text-base leading-7 text-[color:var(--color-text-muted)]">
+                      {product.keyFeatures.map((feature) => (
+                        <li key={feature} className="flex gap-3">
+                          <span className="mt-2 size-2 shrink-0 rounded-full bg-[color:var(--color-primary-deep)]" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                      Applications
+                    </p>
+                    <ul className="mt-5 space-y-3 text-base leading-7 text-[color:var(--color-text-muted)]">
+                      {product.applications.map((application) => (
+                        <li key={application} className="flex gap-3">
+                          <span className="mt-2 size-2 shrink-0 rounded-full bg-[color:var(--color-secondary)]" />
+                          <span>{application}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </section>
@@ -189,13 +219,6 @@ export default async function RfPowerAmplifierProductPage({
                       Diagrams
                     </p>
                   </div>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] px-4 py-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:border-[color:var(--color-primary-deep)] hover:bg-[color:var(--color-surface-soft)]"
-                  >
-                    Request Product Quote
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </Link>
                 </div>
 
                 <div className="mt-6 grid gap-6 md:grid-cols-2">
