@@ -97,17 +97,19 @@ export default async function RfPowerAmplifierProductPage({
   return (
     <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
       <section className="relative isolate min-h-[78vh] overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
-        <Image
-          src={product.heroImage}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-contain object-[78%_50%] p-8 opacity-45 sm:p-12 lg:p-20"
-        />
+        <div className="absolute inset-y-0 right-0 z-0 w-full opacity-85 lg:w-[58%] lg:opacity-100">
+          <Image
+            src={product.heroImage}
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            className="object-contain object-center p-8 drop-shadow-[0_24px_60px_rgb(0_0_0_/_0.42)] sm:p-12 lg:p-16"
+          />
+        </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_35%,rgb(5_11_18_/_0.72)_62%,rgb(5_11_18_/_0.4)_100%),radial-gradient(circle_at_76%_24%,rgb(16_199_232_/_0.18),transparent_30%),linear-gradient(180deg,rgb(5_11_18_/_0.18),#050b12_96%)]"
+          className="absolute inset-0 z-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_36%,rgb(5_11_18_/_0.68)_56%,rgb(5_11_18_/_0.18)_78%,rgb(5_11_18_/_0.06)_100%),radial-gradient(circle_at_76%_24%,rgb(16_199_232_/_0.16),transparent_30%),linear-gradient(180deg,rgb(5_11_18_/_0.08),#050b12_98%)]"
         />
         <div className="container relative z-10 mx-auto flex min-h-[calc(78vh-8rem)] max-w-7xl items-center px-5 lg:px-8">
           <Reveal>
