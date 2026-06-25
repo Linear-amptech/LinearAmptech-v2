@@ -225,7 +225,7 @@ export default async function RfPowerAmplifierProductPage({
                   Key Features
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
-                  {product.keyFeatures.map((feature, index) => (
+                  {product.keyFeatures.map((feature) => (
                     <article
                       key={feature}
                       className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
@@ -233,10 +233,7 @@ export default async function RfPowerAmplifierProductPage({
                       <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
                         <CheckCircle2 className="size-5" aria-hidden="true" />
                       </div>
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                        Feature {String(index + 1).padStart(2, "0")}
-                      </p>
-                      <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                      <p className="text-lg font-bold leading-7 text-[color:var(--color-text)]">
                         {feature}
                       </p>
                     </article>
