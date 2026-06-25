@@ -260,13 +260,13 @@ export const productMenuGroups = [
     id: "rf-design-signal-processing",
     title: "RF Design and Signal Processing",
     href: "/products/rf/power-amplifiers",
-    description: "Legacy RF catalog migrated into the new product experience.",
+    description: "RF systems, amplifier modules, and signal-chain products.",
     panels: [
       {
         title: "Radio Frequency Power Amplifiers",
         href: "/products/rf/power-amplifiers",
         description:
-          "Exact migrated RF PA lineup, images, and table data from the legacy Linear-AmpTech site.",
+          "Wideband RF power amplifier modules with product pages, diagrams, and table data.",
         links: rfPowerAmplifierProducts.map((product) => ({
           label: product.partNumber,
           href: `/products/rf/power-amplifiers/${product.slug}`,

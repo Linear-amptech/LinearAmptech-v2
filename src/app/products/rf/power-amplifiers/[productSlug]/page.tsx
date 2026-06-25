@@ -188,9 +188,6 @@ export default async function RfPowerAmplifierProductPage({
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
                       Diagrams
                     </p>
-                    <h2 className="mt-3 font-heading text-3xl font-bold text-[color:var(--color-text)]">
-                      Imported legacy diagrams
-                    </h2>
                   </div>
                   <Link
                     href="/contact"

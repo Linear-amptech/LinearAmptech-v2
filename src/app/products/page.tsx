@@ -89,14 +89,14 @@ export default function ProductsPage() {
             <div className="grid gap-0 lg:grid-cols-[0.38fr_0.62fr]">
               <div className="border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-6 lg:border-b-0 lg:border-r">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                  Imported Legacy Catalog
+                  RF Product Line
                 </p>
                 <h2 className="mt-4 font-heading text-3xl font-bold leading-tight text-[color:var(--color-text)]">
                   RF Power Amplifiers
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">
-                  Exact migrated RF PA table, detail pages, and product images
-                  from the older Linear-AmpTech website.
+                  Explore the RF power amplifier lineup with detailed pages,
+                  product images, and performance data.
                 </p>
                 <Link
                   href="/products/rf/power-amplifiers"

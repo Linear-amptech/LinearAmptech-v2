@@ -15,7 +15,7 @@ import { Reveal } from "@/components/landing/reveal";
 export const metadata: Metadata = {
   title: "RF Power Amplifiers | Linear Amptech",
   description:
-    "Legacy Linear-AmpTech RF power amplifier catalog with migrated product images, table data, and detailed pages.",
+    "Linear Amptech RF power amplifier catalog with product images, table data, and detailed pages.",
 };
 
 export default function RfPowerAmplifiersPage() {
@@ -57,10 +57,6 @@ export default function RfPowerAmplifiersPage() {
                       RF power amplifier lineup
                     </h2>
                   </div>
-                  <p className="max-w-xl text-sm leading-6 text-[color:var(--color-text-muted)]">
-                    Imported from the legacy Linear-AmpTech RF power amplifier
-                    catalog with the same part numbers and table values.
-                  </p>
                 </div>
 
                 <div className="mt-6 overflow-x-auto">
