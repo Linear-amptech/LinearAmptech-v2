@@ -12,15 +12,15 @@ const workflowSteps = [
   { title: "Validation", image: "/assets/workflow/77.png" },
 ] as const;
 
-const workflowSteps2 = [
-  { title: "Design", image: "/assets/workflow/111.png" },
-  { title: "Simulation", image: "/assets/workflow/222.png" },
-  { title: "Tapeout", image: "/assets/workflow/333.png" },
-  { title: "Packaging", image: "/assets/workflow/444.png" },
-  { title: "Integration", image: "/assets/workflow/555.png" },
-  { title: "Characterization", image: "/assets/workflow/666.png" },
-  { title: "Validation", image: "/assets/workflow/777.png" },
-] as const;
+// const workflowSteps2 = [
+//   { title: "Design", image: "/assets/workflow/111.png" },
+//   { title: "Simulation", image: "/assets/workflow/222.png" },
+//   { title: "Tapeout", image: "/assets/workflow/333.png" },
+//   { title: "Packaging", image: "/assets/workflow/444.png" },
+//   { title: "Integration", image: "/assets/workflow/555.png" },
+//   { title: "Characterization", image: "/assets/workflow/666.png" },
+//   { title: "Validation", image: "/assets/workflow/777.png" },
+// ] as const;
 
 export function WorkflowSection() {
   return (
@@ -67,7 +67,7 @@ export function WorkflowSection() {
           </div>
         </div>
 
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <div className="grid gap-2 lg:grid-cols-7">
             {workflowSteps2.map((step, index) => {
               return (
@@ -97,7 +97,7 @@ export function WorkflowSection() {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </Reveal>
     </section>
   );
