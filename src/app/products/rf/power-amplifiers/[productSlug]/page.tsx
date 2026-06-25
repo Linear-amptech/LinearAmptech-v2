@@ -96,38 +96,48 @@ export default async function RfPowerAmplifierProductPage({
 
   return (
     <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
-      <section className="relative isolate overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
+      <section className="relative isolate min-h-[78vh] overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
+        <Image
+          src={product.heroImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-contain object-[78%_50%] p-8 opacity-45 sm:p-12 lg:p-20"
+        />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_76%_24%,rgb(16_199_232_/_0.18),transparent_30%),linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_35%,rgb(5_11_18_/_0.72)_62%,rgb(5_11_18_/_0.4)_100%),radial-gradient(circle_at_76%_24%,rgb(16_199_232_/_0.18),transparent_30%),linear-gradient(180deg,rgb(5_11_18_/_0.18),#050b12_96%)]"
         />
-        <div className="container relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="container relative z-10 mx-auto flex min-h-[calc(78vh-8rem)] max-w-7xl items-center px-5 lg:px-8">
           <Reveal>
-            <Link
-              href="/products/rf/power-amplifiers"
-              className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-100 transition-colors hover:text-white"
-            >
-              <ArrowLeft className="size-4" aria-hidden="true" />
-              Back to RF Power Amplifiers
-            </Link>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-secondary)]">
-              Power Amplifier
-            </p>
-            <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
-              {product.partNumber}
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              {product.summary}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {product.applications.map((application) => (
-                <span
-                  key={application}
-                  className="rounded-xl border border-cyan-200/15 bg-cyan-200/10 px-3 py-2 text-sm font-medium text-cyan-50"
-                >
-                  {application}
-                </span>
-              ))}
+            <div className="max-w-5xl">
+              <Link
+                href="/products/rf/power-amplifiers"
+                className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-100 transition-colors hover:text-white"
+              >
+                <ArrowLeft className="size-4" aria-hidden="true" />
+                Back to RF Power Amplifiers
+              </Link>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-secondary)]">
+                Power Amplifier
+              </p>
+              <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
+                {product.partNumber}
+              </h1>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+                {product.summary}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {product.applications.map((application) => (
+                  <span
+                    key={application}
+                    className="rounded-xl border border-cyan-200/15 bg-cyan-200/10 px-3 py-2 text-sm font-medium text-cyan-50"
+                  >
+                    {application}
+                  </span>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
