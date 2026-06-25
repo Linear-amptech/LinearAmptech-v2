@@ -15,6 +15,7 @@ import {
 } from "@/components/landing/data";
 
 import { Reveal } from "@/components/landing/reveal";
+import { RdEngineBackgroundSlider } from "@/components/landing/rd-engine-background-slider";
 import { WorkflowSection } from "@/components/landing/workflow-section";
 
 function SectionHeader({
@@ -250,9 +251,17 @@ export function LandingContentSections() {
       </section>
 
       <section className="relative isolate overflow-hidden bg-[#050b12] py-24 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgb(16_199_232_/_0.16),transparent_34%),radial-gradient(circle_at_80%_80%,rgb(110_225_93_/_0.1),transparent_30%)]" />
-        <Reveal className="container relative z-10 mx-auto grid gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
+        <RdEngineBackgroundSlider />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(5_11_18_/_0.93)_0%,rgb(5_11_18_/_0.78)_36%,rgb(5_11_18_/_0.36)_68%,rgb(5_11_18_/_0.16)_100%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_20%_20%,rgb(16_199_232_/_0.14),transparent_34%),radial-gradient(circle_at_80%_80%,rgb(110_225_93_/_0.1),transparent_30%)]"
+        />
+        <Reveal className="container relative z-10 mx-auto min-h-[480px] px-5 lg:px-8">
+          <div className="flex min-h-[480px] max-w-3xl flex-col justify-center">
             <SectionHeader
               label="R&D Engine"
               title="Semiconductor R&D engine for next-generation RF systems."
@@ -269,15 +278,6 @@ export function LandingContentSections() {
                 </span>
               ))}
             </div>
-          </div>
-          <div className="relative min-h-[440px] overflow-hidden rounded-[var(--radius-card)] border border-white/15 bg-white/[0.04] shadow-[var(--shadow-card)]">
-            <Image
-              src={assets.rdLab}
-              alt="RF lab measurement and validation setup"
-              fill
-              sizes="(min-width: 1024px) 52vw, 100vw"
-              className="object-cover"
-            />
           </div>
         </Reveal>
       </section>
