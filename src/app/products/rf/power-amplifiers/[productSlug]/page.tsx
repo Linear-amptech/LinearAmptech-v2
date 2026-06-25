@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  Antenna,
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  Cpu,
+  FlaskConical,
+  MessageSquare,
+  Radar,
+  RadioTower,
+  Smartphone,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { Reveal } from "@/components/landing/reveal";
@@ -13,6 +25,36 @@ import {
 type ProductPageProps = {
   params: Promise<{ productSlug: string }>;
 };
+
+function getApplicationIcon(application: string): LucideIcon {
+  const value = application.toLowerCase();
+
+  if (value.includes("transmitter")) {
+    return RadioTower;
+  }
+
+  if (value.includes("laboratory") || value.includes("lab")) {
+    return FlaskConical;
+  }
+
+  if (value.includes("cellular")) {
+    return Smartphone;
+  }
+
+  if (value.includes("communication")) {
+    return MessageSquare;
+  }
+
+  if (value.includes("radar")) {
+    return Radar;
+  }
+
+  if (value.includes("sdr")) {
+    return Cpu;
+  }
+
+  return Antenna;
+}
 
 export function generateStaticParams() {
   return rfPowerAmplifierTableRows
@@ -178,35 +220,60 @@ export default async function RfPowerAmplifierProductPage({
             </Reveal>
 
             <Reveal>
-              <section className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
-                <div className="grid gap-8 md:grid-cols-2">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                      Key Features
-                    </p>
-                    <ul className="mt-5 space-y-3 text-base leading-7 text-[color:var(--color-text-muted)]">
-                      {product.keyFeatures.map((feature) => (
-                        <li key={feature} className="flex gap-3">
-                          <span className="mt-2 size-2 shrink-0 rounded-full bg-[color:var(--color-primary-deep)]" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <section>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  Key Features
+                </p>
+                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                  {product.keyFeatures.map((feature, index) => (
+                    <article
+                      key={feature}
+                      className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
+                    >
+                      <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+                        <CheckCircle2 className="size-5" aria-hidden="true" />
+                      </div>
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                        Feature {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                        {feature}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </Reveal>
 
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
-                      Applications
-                    </p>
-                    <ul className="mt-5 space-y-3 text-base leading-7 text-[color:var(--color-text-muted)]">
-                      {product.applications.map((application) => (
-                        <li key={application} className="flex gap-3">
-                          <span className="mt-2 size-2 shrink-0 rounded-full bg-[color:var(--color-secondary)]" />
-                          <span>{application}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            <Reveal>
+              <section>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  Applications
+                </p>
+                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                  {product.applications.map((application) => {
+                    const ApplicationIcon = getApplicationIcon(application);
+
+                    return (
+                      <article
+                        key={application}
+                        className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
+                      >
+                        <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+                          <ApplicationIcon
+                            className="size-5"
+                            aria-hidden="true"
+                          />
+                        </div>
+                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                          Application
+                        </p>
+                        <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                          {application}
+                        </p>
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
             </Reveal>
