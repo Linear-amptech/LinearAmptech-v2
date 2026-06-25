@@ -1,13 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CircuitBoard,
-  Factory,
-  Layers3,
-  Microscope,
-  PackageCheck,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import {
   applications,
@@ -22,17 +15,7 @@ import {
 } from "@/components/landing/data";
 import { ChipAnimation } from "@/components/landing/chip-animation";
 import { Reveal } from "@/components/landing/reveal";
-
-const workflowSteps = [
-  { title: "Design", icon: Factory },
-  { title: "Simulation", icon: CircuitBoard },
-  { title: "Tapeout", icon: Layers3 },
-  { title: "Packaging", icon: PackageCheck },
-  { title: "Integration", icon: PackageCheck },
-  { title: "Characterization", icon: PackageCheck },
-
-  { title: "Validation", icon: Microscope },
-] as const;
+import { WorkflowSection } from "@/components/landing/workflow-section";
 
 function SectionHeader({
   label,
@@ -301,41 +284,7 @@ export function LandingContentSections() {
         </Reveal>
       </section>
 
-      <section className="py-24">
-        <Reveal className="container mx-auto px-5 lg:px-8">
-          <SectionHeader
-            label="Workflow"
-            title="From architecture to measured prototype."
-          />
-          <div className="mt-12 ">
-            <div className="grid gap-2 lg:grid-cols-7">
-              {workflowSteps.map((step, index) => {
-                const Icon = step.icon;
-
-                return (
-                  <div
-                    key={step.title}
-                    className="relative rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2 py-4"
-                  >
-                    <div className="mb-8 flex items-center justify-between">
-                      <span className="font-heading text-sm font-bold text-[color:var(--color-primary-deep)]">
-                        0{index + 1}
-                      </span>
-                      <Icon
-                        className="size-5 text-[color:var(--color-secondary)]"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <h3 className="font-heading text-lg text-center font-bold leading-6 text-[color:var(--color-text)]">
-                      {step.title}
-                    </h3>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </Reveal>
-      </section>
+      <WorkflowSection />
     </>
   );
 }
