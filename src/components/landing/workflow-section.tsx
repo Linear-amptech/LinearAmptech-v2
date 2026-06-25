@@ -12,6 +12,16 @@ const workflowSteps = [
   { title: "Validation", image: "/assets/workflow/77.png" },
 ] as const;
 
+const workflowSteps2 = [
+  { title: "Design", image: "/assets/workflow/111.png" },
+  { title: "Simulation", image: "/assets/workflow/222.png" },
+  { title: "Tapeout", image: "/assets/workflow/333.png" },
+  { title: "Packaging", image: "/assets/workflow/444.png" },
+  { title: "Integration", image: "/assets/workflow/555.png" },
+  { title: "Characterization", image: "/assets/workflow/666.png" },
+  { title: "Validation", image: "/assets/workflow/777.png" },
+] as const;
+
 export function WorkflowSection() {
   return (
     <section className="py-24">
@@ -41,7 +51,39 @@ export function WorkflowSection() {
                       sizes="(min-width: 1024px) 13vw, 100vw"
                       className=" object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-black/3 transition-colors duration-500 group-hover:bg-black/1" />
+                    <div className="absolute inset-0 bg-black/2 transition-colors duration-500 group-hover:bg-black/1" />
+                    <span className="absolute left-2 top-2 font-heading text-sm font-bold leading-none text-[color:var(--color-primary-deep)] transition-transform duration-500 ease-out group-hover:scale-110">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="bg-white py-3 transition-transform duration-500 ease-out group-hover:scale-105">
+                    <h3 className="text-center font-heading text-lg font-bold leading-6 text-[color:var(--color-text)]">
+                      {step.title}
+                    </h3>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <div className="grid gap-2 lg:grid-cols-7">
+            {workflowSteps2.map((step, index) => {
+              return (
+                <div
+                  key={step.title}
+                  className="group overflow-hidden rounded-md border border-[color:var(--color-border)] bg-white shadow-[var(--shadow-soft)]"
+                >
+                  <div className="relative aspect-square overflow-hidden bg-[color:var(--color-surface-soft)]">
+                    <Image
+                      src={step.image}
+                      alt={`${step.title} workflow background`}
+                      fill
+                      sizes="(min-width: 1024px) 13vw, 100vw"
+                      className=" scale-110 object-cover transition-transform duration-700 ease-out group-hover:scale-120"
+                    />
+                    <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/1" />
                     <span className="absolute left-2 top-2 font-heading text-sm font-bold leading-none text-[color:var(--color-primary-deep)] transition-transform duration-500 ease-out group-hover:scale-110">
                       {String(index + 1).padStart(2, "0")}
                     </span>
