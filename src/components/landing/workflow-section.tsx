@@ -40,12 +40,12 @@ export function WorkflowSection() {
                     sizes="(min-width: 1024px) 13vw, 100vw"
                     className="scale-110 object-cover transition-transform duration-700 ease-out group-hover:scale-100"
                   />
-                  <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/10" />
+                  <div className="absolute inset-0 bg-black/8 transition-colors duration-500 group-hover:bg-black/4" />
                   <div className="relative flex h-full flex-col items-center justify-center px-2 py-4">
-                    <span className="absolute left-2 top-2 font-heading text-sm font-bold leading-none text-white transition-transform duration-500 ease-out group-hover:scale-110">
+                    <span className="absolute left-2 top-2 font-heading text-sm font-bold leading-none text-[color:var(--color-primary-deep)] transition-transform duration-500 ease-out group-hover:scale-110">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-center font-heading text-lg font-bold leading-6 text-white transition-transform duration-500 ease-out group-hover:scale-110">
+                    <h3 className="text-center font-heading text-lg font-bold leading-6 text-[color:var(--color-text)] transition-transform duration-500 ease-out group-hover:scale-110">
                       {step.title}
                     </h3>
                   </div>
