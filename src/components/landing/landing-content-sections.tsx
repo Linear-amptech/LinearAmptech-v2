@@ -20,6 +20,7 @@ import {
   type IpPlatform,
   type Product,
 } from "@/components/landing/data";
+import { ChipAnimation } from "@/components/landing/chip-animation";
 import { Reveal } from "@/components/landing/reveal";
 
 const workflowSteps = [
@@ -208,6 +209,8 @@ export function LandingContentSections() {
           </div>
         </Reveal>
       </section>
+
+      <ChipAnimation />
 
       <section
         id="products"
