@@ -24,8 +24,7 @@ const themeBootstrap = `
 (() => {
   try {
     const savedTheme = localStorage.getItem("linearamptech-theme");
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const theme = savedTheme || (systemDark ? "dark" : "light");
+    const theme = savedTheme || "light";
     document.documentElement.classList.toggle("dark", theme === "dark");
     document.documentElement.dataset.theme = theme;
   } catch {
