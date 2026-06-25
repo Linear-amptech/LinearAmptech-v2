@@ -31,20 +31,21 @@ export function WorkflowSection() {
               return (
                 <div
                   key={step.title}
-                  className="relative aspect-square overflow-hidden rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)]"
+                  className="group relative aspect-square overflow-hidden rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)]"
                 >
                   <Image
                     src={step.image}
                     alt={`${step.title} workflow background`}
                     fill
                     sizes="(min-width: 1024px) 13vw, 100vw"
-                    className="object-cover"
+                    className="scale-110 object-cover transition-transform duration-700 ease-out group-hover:scale-100"
                   />
-                  <div className="relative flex h-full flex-col items-center justify-center  px-2 py-4">
-                    <span className="font-heading text-sm font-bold leading-none absolute left-2 top-2 text-[color:var(--color-primary-deep)]">
+                  <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/10" />
+                  <div className="relative flex h-full flex-col items-center justify-center px-2 py-4">
+                    <span className="absolute left-2 top-2 font-heading text-sm font-bold leading-none text-white transition-transform duration-500 ease-out group-hover:scale-110">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-center font-heading text-lg font-bold leading-6 text-[color:var(--color-text)]">
+                    <h3 className="text-center font-heading text-lg font-bold leading-6 text-white transition-transform duration-500 ease-out group-hover:scale-110">
                       {step.title}
                     </h3>
                   </div>
