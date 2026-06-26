@@ -205,11 +205,8 @@ function ApplicationCard({
           sizes="(min-width: 768px) 45vw, 100vw"
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
-        <span className="absolute left-4 top-4 rounded-md border border-white/15 bg-[#050b12]/40 px-2 py-1 font-mono text-[0.7rem] tracking-widest text-white backdrop-blur-md">
-          {String(index + 1).padStart(2, "0")}
-        </span>
       </div>
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-4">
         <h3 className="font-heading text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
           {application.title}
         </h3>
@@ -237,21 +234,17 @@ export function LandingContentSections() {
           />
           <div className="mt-8 grid auto-rows-fr gap-3 sm:grid-cols-2">
             {metrics.map(([value, label], index) => {
-              const Icon = statIcons[index] ?? Waves;
               return (
                 <div
                   key={value}
                   className="group relative flex h-full items-center overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgb(15_23_42/0.08)]"
                 >
-                  <span className="absolute right-4 top-4 font-mono text-[0.7rem] tracking-widest text-slate-300">
+                  <span className="absolute right-4 top-4 text-[0.7rem] tracking-widest text-slate-300">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div className="flex items-center gap-3.5">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)] transition-colors duration-300 group-hover:text-[color:var(--color-text)]">
-                      <Icon className="size-5" aria-hidden="true" />
-                    </span>
                     <div className="min-w-0">
-                      <p className="font-mono text-xl font-semibold leading-tight tracking-tight text-[color:var(--color-text)]">
+                      <p className="text-xl font-semibold leading-tight tracking-tight text-[color:var(--color-text)]">
                         {value}
                       </p>
                       <p className="mt-1 text-[0.82rem] leading-snug text-[color:var(--color-text-muted)]">
@@ -312,7 +305,7 @@ export function LandingContentSections() {
             title="RF products shaped around real deployment domains."
             intro="Linear-AmpTech's application framing is anchored in defense RF, 6G, radar, phased arrays, active antennas, and RIS research."
           />
-          <div className="mt-12 grid auto-rows-fr gap-6 md:grid-cols-2">
+          <div className="mt-12 grid auto-rows-fr gap-6 md:grid-cols-4">
             {applications.map((application, index) => (
               <ApplicationCard
                 key={application.title}
