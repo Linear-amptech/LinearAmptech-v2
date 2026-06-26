@@ -250,7 +250,7 @@ export function LandingContentSections() {
         </Reveal>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#050b12] py-24 text-white">
+      <section className="relative isolate min-h-[calc(100vh-2rem)] overflow-hidden flex items-center bg-[#050b12]  text-white">
         <RdEngineBackgroundSlider />
         <div
           aria-hidden="true"
@@ -260,8 +260,8 @@ export function LandingContentSections() {
           aria-hidden="true"
           className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_20%_20%,rgb(16_199_232_/_0.14),transparent_34%),radial-gradient(circle_at_80%_80%,rgb(110_225_93_/_0.1),transparent_30%)]"
         />
-        <Reveal className="container relative z-10 mx-auto min-h-[480px] px-5 lg:px-8">
-          <div className="flex min-h-[480px] max-w-3xl flex-col justify-center">
+        <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100vh-17rem)] px-5 lg:px-8">
+          <div className="flex max-w-3xl flex-col justify-center">
             <SectionHeader
               label="R&D Engine"
               title="Semiconductor R&D engine for next-generation RF systems."
