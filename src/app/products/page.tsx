@@ -48,7 +48,7 @@ function ProductListingCard({ product }: { product: Product }) {
             <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
               Operating band
             </p>
-            <p className="mt-1 font-mono text-2xl font-semibold tracking-tight text-[color:var(--color-text)]">
+            <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
               {band.label}
             </p>
           </div>

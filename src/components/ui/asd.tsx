@@ -62,7 +62,7 @@ float majorGridAA(vec2 uv, float scale, float stepN, float width){
   return gridLineAA(uv, sMajor, width);
 }
 
-// mesh-gradient: dark blue/deep control points
+// mesh-gradient: deep control points
 vec3 meshGradient(vec2 uv){
   vec2 p0=vec2(-0.70,-0.45), p1=vec2(0.75,-0.35), p2=vec2(-0.65,0.65), p3=vec2(0.80,0.55);
   vec3 c0=vec3(0.05,0.10,0.26);
@@ -455,7 +455,7 @@ export function FooterShaderBackground() {
     >
       <ShaderCanvas fragSource={SHADER_SRC} pixelRatio={1.25} />
       <div className="absolute inset-0 bg-[#02050a]/35" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(103,232,249,0.20),transparent_34%),radial-gradient(circle_at_88%_74%,rgba(59,130,246,0.18),transparent_38%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(34,197,94,0.20),transparent_34%),radial-gradient(circle_at_88%_74%,rgba(22,101,52,0.18),transparent_38%)]" />
     </div>
   );
 }

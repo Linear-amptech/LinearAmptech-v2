@@ -40,19 +40,6 @@ export const metadata: Metadata = {
   ],
 };
 
-const themeBootstrap = `
-(() => {
-  try {
-    const savedTheme = localStorage.getItem("linearamptech-theme");
-    const theme = savedTheme || "light";
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    document.documentElement.dataset.theme = theme;
-  } catch {
-    document.documentElement.dataset.theme = "light";
-  }
-})();
-`;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,7 +52,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
-        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
         <SmoothScroll />
         <SiteHeader />
         {children}

@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import { ArrowRight, Moon, Sun } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { products } from "@/components/landing/data";
+import { rfPowerAmplifierProducts } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import {
@@ -21,74 +22,14 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/#technology", label: "Technology" },
   { href: "/#applications", label: "Applications" },
-  { href: "/#company", label: "Company" },
   { href: "/team", label: "Team" },
   { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
 ];
 
-/* ------------------------------------------------------------------ */
-/* Theme toggle (light/dark) — preserves existing storage + behavior   */
-/* ------------------------------------------------------------------ */
-
-type Theme = "light" | "dark";
-const themeStorageKey = "linearamptech-theme";
-const themeChangeEvent = "linearamptech-theme-change";
-
-function getCurrentTheme(): Theme {
-  if (typeof document === "undefined") return "light";
-  return document.documentElement.classList.contains("dark") ? "dark" : "light";
-}
-
-function applyTheme(theme: Theme) {
-  document.documentElement.classList.toggle("dark", theme === "dark");
-  document.documentElement.dataset.theme = theme;
-  window.localStorage.setItem(themeStorageKey, theme);
-  window.dispatchEvent(new Event(themeChangeEvent));
-}
-
-function subscribeToThemeChange(onStoreChange: () => void) {
-  window.addEventListener(themeChangeEvent, onStoreChange);
-  window.addEventListener("storage", onStoreChange);
-  return () => {
-    window.removeEventListener(themeChangeEvent, onStoreChange);
-    window.removeEventListener("storage", onStoreChange);
-  };
-}
-
-function ThemeToggle({ solid }: { solid: boolean }) {
-  const theme = React.useSyncExternalStore(
-    subscribeToThemeChange,
-    getCurrentTheme,
-    () => "light",
-  );
-
-  return (
-    <Button
-      type="button"
-      variant="outline"
-      size="icon-lg"
-      className={cn(
-        "rounded-full transition-colors",
-        solid
-          ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:bg-[color:var(--color-surface-soft)]"
-          : "border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20",
-      )}
-      onClick={() => applyTheme(theme === "dark" ? "light" : "dark")}
-      aria-label={
-        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-      }
-    >
-      <Sun className={cn("size-4", theme === "dark" && "hidden")} aria-hidden />
-      <Moon
-        className={cn("size-4", theme === "light" && "hidden")}
-        aria-hidden
-      />
-    </Button>
-  );
-}
+type ProductCategoryId = "rf" | "ic";
 
 /* ------------------------------------------------------------------ */
 /* Scroll state                                                        */
@@ -117,17 +58,13 @@ function useScrolled(threshold: number) {
 /* Products mega-menu item                                             */
 /* ------------------------------------------------------------------ */
 
-function ProductListItem({
+function ProductMenuLink({
   href,
-  icon: Icon,
   title,
-  description,
   onNavigate,
 }: {
   href: string;
-  icon: (typeof products)[number]["icon"];
   title: string;
-  description: string;
   onNavigate?: () => void;
 }) {
   return (
@@ -135,21 +72,51 @@ function ProductListItem({
       <Link
         href={href}
         onClick={onNavigate}
-        className="group/item flex flex-row gap-x-3 rounded-xl p-3 transition-colors hover:bg-[color:var(--color-surface-soft)] focus:bg-[color:var(--color-surface-soft)] focus:outline-none"
+        className="group/item flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-[color:var(--color-text-muted)] transition-colors hover:bg-[color:var(--color-surface-soft)] hover:text-[color:var(--color-text)] focus:bg-[color:var(--color-surface-soft)] focus:text-[color:var(--color-text)] focus:outline-none"
       >
-        <div className="flex aspect-square size-11 shrink-0 items-center justify-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)] transition-colors group-hover/item:text-[color:var(--color-text)]">
-          <Icon className="size-5" aria-hidden />
-        </div>
-        <div className="flex flex-col items-start justify-center">
-          <span className="font-heading text-sm font-semibold text-[color:var(--color-text)]">
-            {title}
-          </span>
-          <span className="line-clamp-2 text-xs leading-5 text-[color:var(--color-text-muted)]">
-            {description}
-          </span>
-        </div>
+        <span>{title}</span>
+        <ArrowRight
+          className="size-4 shrink-0 text-[color:var(--color-primary-deep)] transition-transform duration-300 group-hover/item:translate-x-1 group-focus/item:translate-x-1"
+          aria-hidden
+        />
       </Link>
     </NavigationMenuLink>
+  );
+}
+
+function ProductCategoryButton({
+  title,
+  active,
+  onSelect,
+}: {
+  title: string;
+  active: boolean;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className={cn(
+        "group/category flex w-full items-center justify-between gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold transition-colors",
+        active
+          ? "bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)]"
+          : "text-[color:var(--color-text-muted)] hover:bg-[color:var(--color-surface-soft)] hover:text-[color:var(--color-text)]",
+      )}
+      onMouseEnter={onSelect}
+      onFocus={onSelect}
+      onClick={onSelect}
+    >
+      <span>{title}</span>
+      <ArrowRight
+        className={cn(
+          "size-4 shrink-0 transition-transform duration-300",
+          active
+            ? "translate-x-1 text-[color:var(--color-primary-deep)]"
+            : "text-[color:var(--color-text-muted)] group-hover/category:translate-x-1",
+        )}
+        aria-hidden
+      />
+    </button>
   );
 }
 
@@ -185,6 +152,8 @@ function MobileMenu({
 
 export function SiteHeader() {
   const [open, setOpen] = React.useState(false);
+  const [activeProductCategory, setActiveProductCategory] =
+    React.useState<ProductCategoryId>("rf");
   const scrolled = useScrolled(12);
   const pathname = usePathname();
 
@@ -233,7 +202,7 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      {/* Legibility scrim while transparent over the dark hero */}
+      {/* Legibility scrim while transparent over the hero */}
       {!solid ? (
         <div
           aria-hidden
@@ -242,8 +211,7 @@ export function SiteHeader() {
       ) : null}
 
       <nav className="container relative mx-auto flex h-16 items-center justify-between gap-4 px-5 lg:px-8">
-        {/* Left: logo + desktop nav */}
-        <div className="flex items-center gap-7">
+        <div className="flex items-center">
           <Link
             href="/"
             aria-label="Linear-AmpTech home"
@@ -259,71 +227,125 @@ export function SiteHeader() {
               priority
             />
           </Link>
+        </div>
 
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="gap-5 xl:gap-6">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(
-                    "group h-9 gap-1 bg-transparent px-1 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
-                    solid
-                      ? "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] data-[state=open]:text-[color:var(--color-text)]"
-                      : "text-white/75 hover:text-white focus:text-white data-[state=open]:text-white",
-                  )}
-                >
-                  Products
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-transparent p-0">
-                  <div className="w-[min(36rem,calc(100vw-2rem))] rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2 shadow-[0_24px_70px_rgb(11_18_32_/_0.16)]">
-                    <ul className="grid grid-cols-2 gap-1">
-                      {products.map((product) => (
-                        <li key={product.slug}>
-                          <ProductListItem
-                            href={`/products/${product.slug}`}
-                            icon={product.icon}
-                            title={product.name}
-                            description={product.description}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        href="/products"
-                        className="mt-1 flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
-                      >
-                        View all products
-                        <ArrowRight className="size-4" aria-hidden />
-                      </Link>
-                    </NavigationMenuLink>
+        <NavigationMenu className="absolute left-1/2 hidden -translate-x-1/2 lg:flex">
+          <NavigationMenuList className="gap-5 xl:gap-6">
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link href="/" className={deskLink(isActive("/"))}>
+                  Home
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger
+                className={cn(
+                  "group h-9 gap-1 bg-transparent px-1 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
+                  solid
+                    ? "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] data-[state=open]:text-[color:var(--color-text)]"
+                    : "text-white/75 hover:text-white focus:text-white data-[state=open]:text-white",
+                )}
+              >
+                Products
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-transparent p-0">
+                <div className="grid w-[min(52rem,calc(100vw-2rem))] gap-3 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[0_24px_70px_rgb(11_18_32_/_0.16)] md:grid-cols-[0.42fr_0.58fr]">
+                  <div className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2">
+                    <p className="px-3 pb-2 pt-1 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                      Product categories
+                    </p>
+                    <div className="grid gap-1">
+                      <ProductCategoryButton
+                        title="RF Power Amplifiers"
+                        active={activeProductCategory === "rf"}
+                        onSelect={() => setActiveProductCategory("rf")}
+                      />
+                      <ProductCategoryButton
+                        title="IC Chips and Modules"
+                        active={activeProductCategory === "ic"}
+                        onSelect={() => setActiveProductCategory("ic")}
+                      />
+                    </div>
                   </div>
-                </NavigationMenuContent>
+
+                  <div className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2">
+                    <p className="px-3 pb-2 pt-1 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                      {activeProductCategory === "rf"
+                        ? "RF Power Amplifiers"
+                        : "IC Chips and Modules"}
+                    </p>
+                    <div className="grid gap-1">
+                      {activeProductCategory === "rf"
+                        ? rfPowerAmplifierProducts.map((product) => (
+                            <ProductMenuLink
+                              key={product.slug}
+                              href={`/products/rf/power-amplifiers/${product.slug}`}
+                              title={product.partNumber}
+                            />
+                          ))
+                        : products.map((product) => (
+                            <ProductMenuLink
+                              key={product.slug}
+                              href={`/products/${product.slug}`}
+                              title={product.name}
+                            />
+                          ))}
+                    </div>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            {navLinks.slice(1).map((item) => (
+              <NavigationMenuItem key={item.href}>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href={item.href}
+                    className={deskLink(isActive(item.href))}
+                  >
+                    {item.label}
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
 
-              {navLinks.map((item) => (
-                <NavigationMenuItem key={item.href}>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href={item.href}
-                      className={deskLink(isActive(item.href))}
-                    >
-                      {item.label}
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+        <Link
+          href="/contact"
+          className={cn(
+            "group hidden h-10 items-center gap-2 rounded-full border px-4 text-sm font-semibold transition-colors lg:inline-flex",
+            solid
+              ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-primary)]/60 hover:bg-[color:var(--color-surface-soft)]"
+              : "border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20",
+          )}
+        >
+          Contact Us
+          <ArrowRight
+            className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden
+          />
+        </Link>
 
-        {/* Right: theme toggle (desktop) */}
-        <div className="hidden lg:flex">
-          <ThemeToggle solid={solid} />
-        </div>
-
-        {/* Right: theme toggle + hamburger (mobile/tablet) */}
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle solid={solid} />
+          <Link
+            href="/contact"
+            onClick={closeMobile}
+            className={cn(
+              "group inline-flex h-9 items-center gap-1.5 rounded-full border px-3 text-xs font-semibold transition-colors",
+              solid
+                ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)]"
+                : "border-white/25 bg-white/10 text-white",
+            )}
+          >
+            Contact
+            <ArrowRight
+              className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
+              aria-hidden
+            />
+          </Link>
           <Button
             size="icon-lg"
             variant="outline"
@@ -345,31 +367,53 @@ export function SiteHeader() {
 
       <MobileMenu open={open}>
         <div className="flex flex-col gap-1">
+          <Link
+            href="/"
+            onClick={closeMobile}
+            className="rounded-xl px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
+          >
+            Home
+          </Link>
           <p className="px-1 pb-1 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
             Products
           </p>
-          {products.map((product) => (
-            <ProductListItem
-              key={product.slug}
-              href={`/products/${product.slug}`}
-              icon={product.icon}
-              title={product.name}
-              description={product.description}
-              onNavigate={closeMobile}
+          <div className="grid gap-2">
+            <ProductCategoryButton
+              title="RF Power Amplifiers"
+              active={activeProductCategory === "rf"}
+              onSelect={() => setActiveProductCategory("rf")}
             />
-          ))}
-          <Link
-            href="/products"
-            onClick={closeMobile}
-            className="mt-1 flex items-center gap-2 px-3 py-2 text-sm font-semibold text-[color:var(--color-text)]"
-          >
-            View all products
-            <ArrowRight className="size-4" aria-hidden />
-          </Link>
+            <ProductCategoryButton
+              title="IC Chips and Modules"
+              active={activeProductCategory === "ic"}
+              onSelect={() => setActiveProductCategory("ic")}
+            />
+          </div>
+          <div className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2">
+            <div className="grid gap-1">
+              {activeProductCategory === "rf"
+                ? rfPowerAmplifierProducts.map((product) => (
+                    <ProductMenuLink
+                      key={product.slug}
+                      href={`/products/rf/power-amplifiers/${product.slug}`}
+                      title={product.partNumber}
+                      onNavigate={closeMobile}
+                    />
+                  ))
+                : products.map((product) => (
+                    <ProductMenuLink
+                      key={product.slug}
+                      href={`/products/${product.slug}`}
+                      title={product.name}
+                      onNavigate={closeMobile}
+                    />
+                  ))}
+            </div>
+          </div>
         </div>
 
         <div className="grid border-t border-[color:var(--color-border)] pt-3">
-          {navLinks.map((item) => (
+          {navLinks.slice(1).map((item) => (
             <Link
               key={item.href}
               href={item.href}

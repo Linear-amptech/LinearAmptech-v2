@@ -86,7 +86,7 @@ function ProductPortfolioCard({ product }: { product: Product }) {
             <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
               Operating band
             </p>
-            <p className="mt-1 font-mono text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
+            <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
               {band.label}
             </p>
           </div>
@@ -174,11 +174,29 @@ export function LandingContentSections() {
     <>
       <CompanySection>
         <Reveal>
-          <SectionHeader
-            label="Company"
-            title="Engineering RF semiconductor products from research to deployment."
-            intro="Linear-AmpTech transforms RF and semiconductor research into scalable products and deployable solutions across communication, radar, defense, aerospace, and next-generation wireless systems."
-          />
+          <div className="max-w-3xl">
+            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+              Company
+            </p>
+            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+              Engineering RF semiconductor products from research to deployment.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
+              Linear-AmpTech transforms RF and semiconductor research into
+              scalable products and deployable solutions across communication,
+              radar, defense, aerospace, and next-generation wireless systems.{" "}
+              <Link
+                href="/team"
+                className="group/read-more inline-flex items-center gap-1.5 whitespace-nowrap font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-text)]"
+              >
+                Read more
+                <ArrowRight
+                  className="size-4 transition-transform duration-300 group-hover/read-more:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+            </p>
+          </div>
           <div className="mt-6 grid auto-rows-fr grid-cols-2 gap-3 sm:mt-8">
             {metrics.map(([value, label], index) => {
               return (
