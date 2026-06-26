@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Cpu, Radio, Waves, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import {
   applications,
@@ -18,9 +18,6 @@ import { Reveal } from "@/components/landing/reveal";
 import { CompanySection } from "@/components/landing/company-section";
 import { RdEngineBackgroundSlider } from "@/components/landing/rd-engine-background-slider";
 import { WorkflowSection } from "@/components/landing/workflow-section";
-
-// Aligned to the `metrics` order: wideband RF, GaN power, CMOS RFIC, SiGe mm-wave.
-const statIcons = [Waves, Zap, Cpu, Radio];
 
 function SectionHeader({
   label,
@@ -188,13 +185,7 @@ function TechnologyCard({ platform }: { platform: IpPlatform }) {
   );
 }
 
-function ApplicationCard({
-  application,
-  index,
-}: {
-  application: Application;
-  index: number;
-}) {
+function ApplicationCard({ application }: { application: Application }) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
       <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--color-surface-soft)]">
@@ -247,7 +238,7 @@ export function LandingContentSections() {
                       <p className="text-xl font-semibold leading-tight tracking-tight text-[color:var(--color-text)]">
                         {value}
                       </p>
-                      <p className="mt-1 text-[0.82rem] leading-snug text-[color:var(--color-text-muted)]">
+                      <p className="mt-1 font-[family-name:var(--font-sora)] text-[0.82rem] leading-snug text-[color:var(--color-text-muted)]">
                         {label}
                       </p>
                     </div>
@@ -306,11 +297,10 @@ export function LandingContentSections() {
             intro="Linear-AmpTech's application framing is anchored in defense RF, 6G, radar, phased arrays, active antennas, and RIS research."
           />
           <div className="mt-12 grid auto-rows-fr gap-6 md:grid-cols-4">
-            {applications.map((application, index) => (
+            {applications.map((application) => (
               <ApplicationCard
                 key={application.title}
                 application={application}
-                index={index}
               />
             ))}
           </div>
