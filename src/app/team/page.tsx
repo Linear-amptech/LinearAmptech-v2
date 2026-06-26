@@ -141,7 +141,7 @@ export default function TeamPage() {
             className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgba(5,11,18,0.7)_38%,rgba(5,11,18,0)_100%)]"
           />
         </div>
-        <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 pb-20 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 pb-20 lg:px-4">
           <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/45">
             Team
           </p>
@@ -155,7 +155,7 @@ export default function TeamPage() {
           </p>
         </Reveal>
         <div className="relative z-10 border-t border-white/10">
-          <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-4">
             <dl className="grid grid-cols-1 sm:grid-cols-3">
               {specStrip.map((item, index) => (
                 <div
@@ -178,7 +178,7 @@ export default function TeamPage() {
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
-        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="container mx-auto max-w-7xl px-4 lg:px-4">
           <Reveal className="max-w-3xl">
             <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               People

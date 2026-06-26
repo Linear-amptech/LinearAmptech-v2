@@ -15,7 +15,7 @@ const footerLinks = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
-      <div className="container mx-auto px-5 py-12 lg:px-8">
+      <div className="container mx-auto px-4 py-12 lg:px-4">
         <div className="grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link

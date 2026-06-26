@@ -61,7 +61,7 @@ export default function ContactPage() {
           </p>
         </Reveal>
         <div className="relative z-10 border-t border-white/10">
-          <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-4">
             <dl className="grid grid-cols-1 sm:grid-cols-3">
               {specStrip.map((item, index) => (
                 <div

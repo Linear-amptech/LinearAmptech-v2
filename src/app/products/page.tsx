@@ -79,7 +79,7 @@ export default function ProductsPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-[linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
         />
-        <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 lg:px-4">
           <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
             All Products
           </p>
@@ -95,7 +95,7 @@ export default function ProductsPage() {
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
-        <Reveal className="container mx-auto max-w-7xl px-5 lg:px-8">
+        <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
           <div className="mb-10 overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
             <div className="grid gap-0 lg:grid-cols-[0.38fr_0.62fr]">
               <div className="border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-6 lg:border-b-0 lg:border-r">
@@ -155,7 +155,7 @@ export default function ProductsPage() {
           </div>
         </Reveal>
 
-        <div className="container mx-auto grid max-w-7xl auto-rows-fr items-stretch gap-6 px-5 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
+        <div className="container mx-auto grid max-w-7xl auto-rows-fr items-stretch gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 lg:px-4">
           {products.map((product) => (
             <Reveal key={product.slug} className="h-full">
               <ProductListingCard product={product} />

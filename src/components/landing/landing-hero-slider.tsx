@@ -129,7 +129,7 @@ export function LandingHeroSlider() {
         className="absolute inset-x-0 bottom-0 z-[1] h-72 bg-[linear-gradient(180deg,transparent_0%,rgba(5,11,18,0.92)_92%)]"
       />
 
-      <div className="container relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] flex-col px-5 sm:min-h-[calc(100svh-7rem)] lg:px-8">
+      <div className="container relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] flex-col px-4 sm:min-h-[calc(100svh-7rem)] lg:px-4">
         {/* Headline block — vertically centered */}
         <div className="flex flex-1 items-center">
           <Reveal>

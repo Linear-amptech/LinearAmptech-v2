@@ -255,7 +255,7 @@ export function SiteHeader() {
 
       <nav
         className={cn(
-          "container relative mx-auto flex items-center justify-between gap-4 px-5 transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-8",
+          "container relative mx-auto flex items-center justify-between gap-4 px-4 transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-4",
           condensed && !open ? "h-13" : "h-16",
         )}
       >

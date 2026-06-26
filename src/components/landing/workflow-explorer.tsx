@@ -138,7 +138,7 @@ export function WorkflowExplorer() {
     // Tall track on desktop so the inner panel pins while stages advance on scroll.
     <section ref={sectionRef} className="relative lg:h-[700vh]">
       <div className="flex min-h-[100svh] flex-col justify-center pb-10 pt-16 lg:sticky lg:top-0 lg:h-[100svh]">
-        <Reveal className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-4 lg:px-4">
           <div className="max-w-3xl">
             <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
               Workflow

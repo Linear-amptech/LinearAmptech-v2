@@ -24,7 +24,7 @@ export function CompanySection({ children }: CompanySectionProps) {
   if (reduced) {
     return (
       <section id="company" className="py-24">
-        <div className="container mx-auto grid gap-12 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.95fr_1.05fr] lg:px-4">
           <div>{children}</div>
           <div className="relative min-h-[500px] overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] shadow-[var(--shadow-card)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -42,7 +42,7 @@ export function CompanySection({ children }: CompanySectionProps) {
   return (
     <section id="company" ref={sectionRef} className="relative lg:h-[300vh]">
       <div className="flex items-center pt-20 pb-12 lg:sticky lg:top-0 lg:min-h-screen lg:pb-10 lg:pt-20 bg-[#f1f2f5]">
-        <div className="container mx-auto flex w-full flex-col justify-between items-center gap-8 px-5 lg:flex-row lg:gap-12 lg:px-8 bg-[#f1f2f5]">
+        <div className="container mx-auto flex w-full flex-col justify-between items-center gap-8 px-4 lg:flex-row lg:gap-12 lg:px-4 bg-[#f1f2f5]">
           {/* On mobile the video leads (order-1) so the scrubbing frame stays in
               view while pinned; on desktop it returns to the right column. */}
           <div className="order-2 w-full lg:order-1">{children}</div>

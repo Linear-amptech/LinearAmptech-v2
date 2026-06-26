@@ -22,7 +22,7 @@ export default function RfPowerAmplifiersPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-[linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
         />
-        <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 lg:px-4">
           <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
             RF Product Line
           </p>
@@ -36,7 +36,7 @@ export default function RfPowerAmplifiersPage() {
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
-        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="container mx-auto max-w-7xl px-4 lg:px-4">
           <Reveal>
             <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
               <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[color:var(--color-border)] pb-5">

@@ -232,7 +232,7 @@ export function LandingContentSections() {
         id="products"
         className="bg-[color:var(--color-surface-soft)] py-16 sm:py-24"
       >
-        <Reveal className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-4 lg:px-4">
           <SectionHeader
             label="Products"
             title="RF front-end product portfolio from PA modules to mm-wave ICs."
@@ -247,7 +247,7 @@ export function LandingContentSections() {
       </section>
 
       <section id="technology" className="py-16 sm:py-24">
-        <Reveal className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-4 lg:px-4">
           <SectionHeader
             label="Technology"
             title="Engineering across semiconductor technologies."
@@ -264,7 +264,7 @@ export function LandingContentSections() {
         id="applications"
         className="bg-[color:var(--color-surface)] py-16 sm:py-24"
       >
-        <Reveal className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-4 lg:px-4">
           <SectionHeader
             label="Applications"
             title="RF products shaped around real deployment domains."
@@ -287,7 +287,7 @@ export function LandingContentSections() {
           aria-hidden="true"
           className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(5_11_18_/_0.93)_0%,rgb(5_11_18_/_0.78)_36%,rgb(5_11_18_/_0.36)_68%,rgb(5_11_18_/_0.16)_100%)]"
         />
-        <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100svh-17rem)] px-5 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100svh-17rem)] px-4 lg:px-4">
           <div className="flex max-w-3xl flex-col justify-center">
             <SectionHeader
               label="R&D Engine"

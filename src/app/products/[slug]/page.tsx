@@ -66,7 +66,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
           aria-hidden="true"
           className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.96)_34%,rgb(5_11_18_/_0.66)_64%,rgb(5_11_18_/_0.4)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.3),#050b12_94%)]"
         />
-        <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 pb-20 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 pb-20 lg:px-4">
           <Link
             href="/products"
             className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-white/60 transition-colors hover:text-white"
@@ -103,7 +103,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
           </Link>
         </Reveal>
         <div className="relative z-10 border-t border-white/10">
-          <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-4">
             <dl className="grid grid-cols-1 sm:grid-cols-3">
               {heroStrip.map((item, index) => (
                 <div
@@ -126,7 +126,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
-        <div className="container mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.34fr_0.66fr] lg:px-8">
+        <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.34fr_0.66fr] lg:px-4">
           <Reveal>
             <aside className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:sticky lg:top-28">
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
