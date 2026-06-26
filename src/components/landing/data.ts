@@ -26,9 +26,12 @@ export const assets = {
   ganPaModuleNewPhoto: "/assets/technology/gan-pa-module-photo-new.png",
 
   transceiverChipLayout: "/assets/ppt-products/transceiver-chip-layout.png",
+  transceiverChipLayout2: "/assets/technology/sige-bicmos.png",
+
   radarFrontEndLayout: "/assets/ppt-products/radar-front-end-layout.png",
   dieProbeMicroscope: "/assets/ppt-products/die-probe-microscope.png",
   bondedDieCloseup: "/assets/ppt-products/bonded-die-closeup.png",
+  bondedDieCloseup2: "/assets/technology/si-cmos.png",
   sourceHybridMicModule: "/assets/ppt-products/source/pa-module-bench.png",
   sourceHybridMicModule2: "/assets/products/hybrid-mic-pa/1.png",
 
@@ -127,7 +130,7 @@ export const ipPlatforms: IpPlatform[] = [
   {
     name: "Si CMOS Technology",
     icon: Cpu,
-    image: assets.bondedDieCloseup,
+    image: assets.bondedDieCloseup2,
     description:
       "Scalable RFIC IP for lower 5G FR2 and 6G FR3 bands, including RF-SOI switch concepts for 6G reconfigurable intelligent surfaces.",
     focus:
@@ -136,7 +139,7 @@ export const ipPlatforms: IpPlatform[] = [
   {
     name: "SiGe BiCMOS Technology",
     icon: Waves,
-    image: assets.transceiverChipLayout,
+    image: assets.transceiverChipLayout2,
     description:
       "mm-wave and sub-THz performance for wireless transceivers, phased-array 6G ICs, MIMO radar, and D-band front-end research.",
     focus:

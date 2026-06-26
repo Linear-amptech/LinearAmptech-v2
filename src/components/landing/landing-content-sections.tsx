@@ -73,7 +73,7 @@ function ProductPortfolioCard({ product }: { product: Product }) {
           alt={product.alt}
           fill
           sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
-          className="object-contain p-4 transition duration-500 group-hover:scale-105"
+          className="object-cover transition duration-500 group-hover:scale-105"
         />
       </Link>
       <div className="flex flex-1 flex-col p-6">
