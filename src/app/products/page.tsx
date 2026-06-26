@@ -25,7 +25,7 @@ export default function ProductsPage() {
           <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
             All Products
           </p>
-          <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+          <h1 className="font-heading max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
             RF Front-End Solutions for High-Performance Wireless Systems
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
@@ -65,7 +65,7 @@ export default function ProductsPage() {
                   <Link
                     key={product.slug}
                     href={`/products/rf/power-amplifiers/${product.slug}`}
-                    className="group p-5 transition-colors hover:bg-[color:var(--color-surface-soft)]"
+                    className="group p-5 transition-colors "
                   >
                     <div className="flex items-start gap-4">
                       <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-white">

@@ -26,7 +26,7 @@ export default function RfPowerAmplifiersPage() {
           <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
             RF Product Line
           </p>
-          <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+          <h1 className="font-heading max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
             {rfPowerAmplifierIntro.title}
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">

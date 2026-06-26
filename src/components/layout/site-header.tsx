@@ -306,7 +306,7 @@ export function SiteHeader() {
             <NavigationMenuItem>
               <NavigationMenuTrigger
                 className={cn(
-                  "group h-9 gap-1 bg-transparent px-1 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
+                  "group h-9 gap-1 bg-transparent px-1 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent cursor-pointer",
                   solid
                     ? "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] data-[state=open]:text-[color:var(--color-text)]"
                     : "text-white/75 hover:text-white focus:text-white data-[state=open]:text-white",
