@@ -12,7 +12,7 @@ import { useScroll, useMotionValueEvent } from "framer-motion";
 // ─────────────────────────────────────────────────────────────────────────────
 // Number of frames in the scroll-scrubbed clip. The real count is patched in
 // once frame generation finishes — keep this a single, one-line edit.
-const FRAME_COUNT = 193;
+const FRAME_COUNT = 173;
 // ─────────────────────────────────────────────────────────────────────────────
 
 const BASE = "/assets/company-scrub";
