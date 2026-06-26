@@ -29,7 +29,7 @@ export default function RfPowerAmplifiersPage() {
           <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-7xl">
             {rfPowerAmplifierIntro.title}
           </h1>
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">
             {rfPowerAmplifierIntro.description}
           </p>
         </Reveal>

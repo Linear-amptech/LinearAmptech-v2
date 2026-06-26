@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 type TeamMember = {
   name: string;
   role: string;
-  group: "Leadership" | "Development" | "R&D" | "Support";
+  group: "Leadership" | "Development";
   image: string;
 };
 
@@ -71,96 +71,10 @@ const team: TeamMember[] = [
     group: "Development",
     image: "/assets/ppt-team/pawan-shukla.jpeg",
   },
-  {
-    name: "Shreyansh Bansal",
-    role: "Embedded Engineer",
-    group: "Development",
-    image: "/assets/ppt-team/shreyansh-bansal.jpeg",
-  },
-  {
-    name: "Pravesh Chamoli",
-    role: "Software Engineer",
-    group: "Development",
-    image: "/assets/ppt-team/pravesh-chamoli.jpeg",
-  },
-  {
-    name: "Nupoor Sood",
-    role: "Post-Doc Fellow",
-    group: "R&D",
-    image: "/assets/ppt-team/nupoor-sood.png",
-  },
-  {
-    name: "Dr. Abdul Sukoor",
-    role: "Scientist DRDO, Research Scholar (Part Time)",
-    group: "R&D",
-    image: "/assets/ppt-team/abdul-sukoor.png",
-  },
-  {
-    name: "Ahmed Zakaria",
-    role: "Research Scholar",
-    group: "R&D",
-    image: "/assets/ppt-team/ahmed-zakaria.png",
-  },
-  {
-    name: "Amit Singh",
-    role: "Research Scholar (Part-time)",
-    group: "R&D",
-    image: "/assets/ppt-team/amit-singh.jpeg",
-  },
-  {
-    name: "Amrit Panigrahi",
-    role: "Research Scholar",
-    group: "R&D",
-    image: "/assets/ppt-team/amrit-panigrahi.png",
-  },
-  {
-    name: "Kamini Singh",
-    role: "Research Scholar",
-    group: "R&D",
-    image: "/assets/ppt-team/kamini-singh.png",
-  },
-  {
-    name: "Chaitanya Reddy",
-    role: "Research Scholar",
-    group: "R&D",
-    image: "/assets/ppt-team/chaitanya-reddy.png",
-  },
-  {
-    name: "B Ganesh P",
-    role: "Research Scholar",
-    group: "R&D",
-    image: "/assets/ppt-team/b-ganesh-p.png",
-  },
-  {
-    name: "Tarun Kumar Suretia",
-    role: "Research Scholar",
-    group: "R&D",
-    image: "/assets/ppt-team/tarun-kumar-suretia.png",
-  },
-  {
-    name: "Sankhraj Suriya",
-    role: "Project Assistant (Admin)",
-    group: "Support",
-    image: "/assets/ppt-team/sankhraj-suriya.png",
-  },
-  {
-    name: "Abhishek Chaurasia",
-    role: "Technical Assistant",
-    group: "Support",
-    image: "/assets/ppt-team/abhishek-chaurasia.png",
-  },
-  {
-    name: "Nitin Verma",
-    role: "Lab Assistant",
-    group: "Support",
-    image: "/assets/ppt-team/nitin-verma.png",
-  },
 ];
 
 const leadership = team.filter((member) => member.group === "Leadership");
 const development = team.filter((member) => member.group === "Development");
-const research = team.filter((member) => member.group === "R&D");
-const support = team.filter((member) => member.group === "Support");
 
 const specStrip = [
   { label: "Team", value: `${String(team.length).padStart(2, "0")} Members` },
@@ -326,8 +240,6 @@ export default function TeamPage() {
           <div className="mt-16 space-y-16">
             <MemberGroup label="Leadership" members={leadership} />
             <MemberGroup label="Development" members={development} />
-            <MemberGroup label="R&D Team" members={research} />
-            <MemberGroup label="Support" members={support} />
           </div>
         </div>
       </section>

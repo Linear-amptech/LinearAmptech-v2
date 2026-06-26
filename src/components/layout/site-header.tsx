@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import { ArrowRight, Cpu, RadioTower } from "lucide-react";
+import { ArrowRight, Cpu, Package, RadioTower } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import { products } from "@/components/landing/data";
@@ -114,7 +114,7 @@ function ProductMenuLink({
       >
         <span>{title}</span>
         <ArrowRight
-          className="size-4 shrink-0 text-[#0b1220] opacity-0 transition-[opacity,transform] duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
+          className="size-4 shrink-0 -translate-x-2 text-[#0b1220] opacity-0 transition-[opacity,transform] duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
           aria-hidden
         />
       </Link>
@@ -122,20 +122,24 @@ function ProductMenuLink({
   );
 }
 
-function ProductCategoryButton({
+function ProductCategoryLink({
+  href,
   title,
   icon: Icon,
   active,
   onSelect,
+  onNavigate,
 }: {
+  href: string;
   title: string;
   icon: LucideIcon;
   active: boolean;
   onSelect: () => void;
+  onNavigate?: () => void;
 }) {
   return (
-    <button
-      type="button"
+    <Link
+      href={href}
       className={cn(
         "group/category flex w-full items-center justify-between gap-3 py-3 text-left text-sm font-semibold transition-colors",
         active
@@ -144,7 +148,7 @@ function ProductCategoryButton({
       )}
       onMouseEnter={onSelect}
       onFocus={onSelect}
-      onClick={onSelect}
+      onClick={onNavigate}
     >
       <span className="flex items-center gap-2.5">
         <Icon className="size-4 text-[#0b1220]" aria-hidden="true" />
@@ -156,7 +160,7 @@ function ProductCategoryButton({
           aria-hidden
         />
       ) : null}
-    </button>
+    </Link>
   );
 }
 
@@ -311,13 +315,22 @@ export function SiteHeader() {
                       Product categories
                     </p>
                     <div className="mt-3 divide-y divide-[color:var(--color-border)]">
-                      <ProductCategoryButton
+                      <ProductCategoryLink
+                        href="/products"
+                        title="All Products"
+                        icon={Package}
+                        active={false}
+                        onSelect={() => undefined}
+                      />
+                      <ProductCategoryLink
+                        href="/products/rf/power-amplifiers"
                         title="RF Power Amplifiers"
                         icon={RadioTower}
                         active={activeProductCategory === "rf"}
                         onSelect={() => setActiveProductCategory("rf")}
                       />
-                      <ProductCategoryButton
+                      <ProductCategoryLink
+                        href="/products"
                         title="IC Chips and Modules"
                         icon={Cpu}
                         active={activeProductCategory === "ic"}
@@ -434,17 +447,29 @@ export function SiteHeader() {
             Products
           </p>
           <div className="grid gap-2">
-            <ProductCategoryButton
+            <ProductCategoryLink
+              href="/products"
+              title="All Products"
+              icon={Package}
+              active={false}
+              onSelect={() => undefined}
+              onNavigate={closeMobile}
+            />
+            <ProductCategoryLink
+              href="/products/rf/power-amplifiers"
               title="RF Power Amplifiers"
               icon={RadioTower}
               active={activeProductCategory === "rf"}
               onSelect={() => setActiveProductCategory("rf")}
+              onNavigate={closeMobile}
             />
-            <ProductCategoryButton
+            <ProductCategoryLink
+              href="/products"
               title="IC Chips and Modules"
               icon={Cpu}
               active={activeProductCategory === "ic"}
               onSelect={() => setActiveProductCategory("ic")}
+              onNavigate={closeMobile}
             />
           </div>
           <div className="border-y border-[color:var(--color-border)]">

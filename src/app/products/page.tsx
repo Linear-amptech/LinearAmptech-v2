@@ -28,7 +28,7 @@ export default function ProductsPage() {
           <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-7xl">
             RF Front-End Solutions for High-Performance Wireless Systems
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
             Explore our portfolio of RF semiconductor products and integrated
             front-end solutions designed for communication, radar, sensing, and
             aerospace applications.

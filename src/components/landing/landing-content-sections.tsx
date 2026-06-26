@@ -7,7 +7,6 @@ import {
   ipPlatforms,
   metrics,
   productBands,
-  products,
   researchFocusRows,
   type Application,
   type IpPlatform,
