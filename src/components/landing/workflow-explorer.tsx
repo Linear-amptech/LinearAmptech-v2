@@ -143,7 +143,7 @@ export function WorkflowExplorer() {
             <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
               Workflow
             </p>
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
               From architecture to measured prototype.
             </h2>
           </div>

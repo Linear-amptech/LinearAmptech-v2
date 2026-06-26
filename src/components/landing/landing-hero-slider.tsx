@@ -94,7 +94,7 @@ export function LandingHeroSlider() {
     setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
 
   return (
-    <section className="relative isolate min-h-screen overflow-hidden bg-[#050b12] pb-14 pt-28 text-white">
+    <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#050b12] pb-12 pt-24 text-white sm:pb-14 sm:pt-28">
       {/* Photography */}
       <motion.div
         aria-hidden="true"
@@ -104,7 +104,7 @@ export function LandingHeroSlider() {
         {heroSlides.map((slide, index) => (
           <motion.div
             key={`${slide.title}-${index}`}
-            className="absolute inset-0 bg-cover bg-[position:64%_50%] bg-no-repeat will-change-transform"
+            className="absolute inset-0 bg-cover bg-[position:60%_50%] bg-no-repeat will-change-transform sm:bg-[position:64%_50%]"
             style={{ backgroundImage: `url(${slide.imagePath})` }}
             initial={false}
             animate={{
@@ -129,7 +129,7 @@ export function LandingHeroSlider() {
         className="absolute inset-x-0 bottom-0 z-[1] h-72 bg-[linear-gradient(180deg,transparent_0%,rgba(5,11,18,0.92)_92%)]"
       />
 
-      <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] flex-col px-5 lg:px-8">
+      <div className="container relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] flex-col px-5 sm:min-h-[calc(100svh-7rem)] lg:px-8">
         {/* Headline block — vertically centered */}
         <div className="flex flex-1 items-center">
           <Reveal>

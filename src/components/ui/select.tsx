@@ -68,7 +68,7 @@ export function AppSelect({
           alignItemWithTrigger={false}
           className="z-[80]"
         >
-          <Select.Popup className="min-w-[var(--anchor-width)] origin-[var(--transform-origin)] overflow-hidden rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-1.5 text-sm text-[color:var(--color-text)] shadow-[0_18px_50px_rgba(15,23,42,0.16)] outline-none transition-[opacity,transform] duration-200 ease-out data-[ending-style]:-translate-y-1 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:-translate-y-1 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
+          <Select.Popup className="min-w-[var(--anchor-width)] max-w-[calc(100vw-2rem)] origin-[var(--transform-origin)] overflow-hidden rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-1.5 text-sm text-[color:var(--color-text)] shadow-[0_18px_50px_rgba(15,23,42,0.16)] outline-none transition-[opacity,transform] duration-200 ease-out data-[ending-style]:-translate-y-1 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:-translate-y-1 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
             {options.map((option) => (
               <Select.Item
                 key={option.value}

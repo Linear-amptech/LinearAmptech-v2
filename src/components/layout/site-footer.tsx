@@ -16,8 +16,8 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
       <div className="container mx-auto px-5 py-12 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr_1fr]">
-          <div>
+        <div className="grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:gap-10">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
               className="inline-flex items-center"
@@ -67,7 +67,7 @@ export function SiteFooter() {
                 className="flex gap-3 transition-colors hover:text-[color:var(--color-text)]"
               >
                 <Phone
-                  className="mt-0.5 size-4 text-[color:var(--color-text-muted)]"
+                  className="mt-0.5 size-4 shrink-0 text-[color:var(--color-text-muted)]"
                   aria-hidden="true"
                 />
                 {companyContact.phone}
@@ -77,7 +77,7 @@ export function SiteFooter() {
                 className="flex gap-3 transition-colors hover:text-[color:var(--color-text)]"
               >
                 <Mail
-                  className="mt-0.5 size-4 text-[color:var(--color-text-muted)]"
+                  className="mt-0.5 size-4 shrink-0 text-[color:var(--color-text-muted)]"
                   aria-hidden="true"
                 />
                 {companyContact.email}

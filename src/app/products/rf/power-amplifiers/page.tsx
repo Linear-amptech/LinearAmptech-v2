@@ -47,7 +47,73 @@ export default function RfPowerAmplifiersPage() {
                 </div>
               </div>
 
-              <div className="mt-6 overflow-x-auto">
+              {/* Mobile: each amplifier becomes a labeled card */}
+              <div className="mt-6 grid gap-4 md:hidden">
+                {rfPowerAmplifierTableRows.map((row) => (
+                  <article
+                    key={row.partNumber}
+                    className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="min-w-0 break-words font-mono text-sm font-semibold text-[color:var(--color-text)]">
+                        {row.slug ? (
+                          <Link
+                            href={`/products/rf/power-amplifiers/${row.slug}`}
+                            className="transition-colors hover:text-[color:var(--color-text-muted)]"
+                          >
+                            {row.partNumber}
+                          </Link>
+                        ) : (
+                          row.partNumber
+                        )}
+                      </p>
+                      {row.slug ? (
+                        <Link
+                          href={`/products/rf/power-amplifiers/${row.slug}`}
+                          className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+                        >
+                          Details
+                          <ChevronRight
+                            className="size-3.5"
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      ) : null}
+                    </div>
+                    <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3">
+                      {[
+                        {
+                          label: "Center Freq (GHz)",
+                          value: row.centerFrequencyGhz,
+                        },
+                        { label: "Output Power (W)", value: row.outputPowerW },
+                        { label: "Efficiency", value: row.efficiency },
+                        { label: "Gain (dB)", value: row.gainDb },
+                      ].map((field) => (
+                        <div key={field.label}>
+                          <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">
+                            {field.label}
+                          </dt>
+                          <dd className="mt-1 font-mono text-sm text-[color:var(--color-text)]">
+                            {field.value}
+                          </dd>
+                        </div>
+                      ))}
+                      <div className="col-span-2">
+                        <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">
+                          Mode of Operation
+                        </dt>
+                        <dd className="mt-1 text-sm leading-6 text-[color:var(--color-text-muted)]">
+                          {row.modeOfOperation}
+                        </dd>
+                      </div>
+                    </dl>
+                  </article>
+                ))}
+              </div>
+
+              {/* Desktop: full comparison table */}
+              <div className="mt-6 hidden overflow-x-auto md:block">
                 <table className="min-w-full border-collapse text-left text-sm">
                   <thead>
                     <tr className="border-b border-[color:var(--color-border)]">

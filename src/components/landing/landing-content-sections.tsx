@@ -223,7 +223,7 @@ export function LandingContentSections() {
             title="Engineering RF semiconductor products from research to deployment."
             intro="Linear-AmpTech transforms RF and semiconductor research into scalable products and deployable solutions across communication, radar, defense, aerospace, and next-generation wireless systems."
           />
-          <div className="mt-8 grid auto-rows-fr gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid auto-rows-fr grid-cols-2 gap-3 sm:mt-8">
             {metrics.map(([value, label], index) => {
               return (
                 <div
@@ -256,7 +256,7 @@ export function LandingContentSections() {
 
       <section
         id="products"
-        className="bg-[color:var(--color-surface-soft)] py-24"
+        className="bg-[color:var(--color-surface-soft)] py-16 sm:py-24"
       >
         <Reveal className="container mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -272,7 +272,7 @@ export function LandingContentSections() {
         </Reveal>
       </section>
 
-      <section id="technology" className="py-24">
+      <section id="technology" className="py-16 sm:py-24">
         <Reveal className="container mx-auto px-5 lg:px-8">
           <SectionHeader
             label="Technology"
@@ -288,7 +288,7 @@ export function LandingContentSections() {
 
       <section
         id="applications"
-        className="bg-[color:var(--color-surface)] py-24"
+        className="bg-[color:var(--color-surface)] py-16 sm:py-24"
       >
         <Reveal className="container mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -296,7 +296,7 @@ export function LandingContentSections() {
             title="RF products shaped around real deployment domains."
             intro="Linear-AmpTech's application framing is anchored in defense RF, 6G, radar, phased arrays, active antennas, and RIS research."
           />
-          <div className="mt-12 grid auto-rows-fr gap-6 md:grid-cols-4">
+          <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {applications.map((application) => (
               <ApplicationCard
                 key={application.title}
@@ -307,13 +307,13 @@ export function LandingContentSections() {
         </Reveal>
       </section>
 
-      <section className="relative isolate min-h-[calc(100vh-2rem)] overflow-hidden flex items-center bg-[#050b12]  text-white">
+      <section className="relative isolate min-h-[calc(100svh-2rem)] overflow-hidden flex items-center bg-[#050b12]  text-white">
         <RdEngineBackgroundSlider />
         <div
           aria-hidden="true"
           className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(5_11_18_/_0.93)_0%,rgb(5_11_18_/_0.78)_36%,rgb(5_11_18_/_0.36)_68%,rgb(5_11_18_/_0.16)_100%)]"
         />
-        <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100vh-17rem)] px-5 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100svh-17rem)] px-5 lg:px-8">
           <div className="flex max-w-3xl flex-col justify-center">
             <SectionHeader
               label="R&D Engine"

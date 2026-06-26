@@ -36,7 +36,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="bg-[color:var(--color-surface-soft)] py-24"
+      className="bg-[color:var(--color-surface-soft)] py-16 sm:py-24"
     >
       <div className="container mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -57,7 +57,7 @@ export function ContactSection() {
                 {directory.map((row) => {
                   const Icon = row.icon;
                   const value = (
-                    <div className="text-sm font-medium leading-6 text-[color:var(--color-text)]">
+                    <div className="text-sm font-medium leading-6 text-[color:var(--color-text)] break-words">
                       {row.lines.map((line) => (
                         <p key={line}>{line}</p>
                       ))}
@@ -79,7 +79,7 @@ export function ContactSection() {
                         {row.href ? (
                           <a
                             href={row.href}
-                            className="inline-block rounded-sm text-sm font-medium leading-6 text-[color:var(--color-text)] underline-offset-4 transition-colors hover:underline focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
+                            className="inline-block break-words rounded-sm text-sm font-medium leading-6 text-[color:var(--color-text)] underline-offset-4 transition-colors hover:underline focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
                           >
                             {row.lines[0]}
                           </a>

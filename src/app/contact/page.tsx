@@ -42,6 +42,10 @@ export default function ContactPage() {
             sizes="42vw"
             className="object-cover opacity-25"
           />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgba(5,11,18,0.7)_38%,rgba(5,11,18,0)_100%)]"
+          />
         </div>
         <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 pb-20 lg:px-8">
           <p className="font-mono mb-4 text-xs uppercase tracking-[0.18em] text-white/45">

@@ -190,8 +190,8 @@ export function CareersBoard() {
               {String(jobs.length).padStart(2, "0")}
             </p>
           </div>
-          <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_auto]">
-            <div className="relative">
+          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_auto]">
+            <div className="relative md:col-span-3 lg:col-span-1">
               <Search
                 className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[color:var(--color-text-muted)]"
                 aria-hidden="true"
@@ -202,7 +202,7 @@ export function CareersBoard() {
                 onKeyDown={(event) => {
                   if (event.key === "Enter") applySearch();
                 }}
-                className="h-12 w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] pl-11 pr-4 text-sm text-[color:var(--color-text)] outline-none transition-colors placeholder:text-[color:var(--color-text-muted)] focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                className="h-12 w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] pl-11 pr-4 text-base text-[color:var(--color-text)] outline-none transition-colors placeholder:text-[color:var(--color-text-muted)] focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                 placeholder="Search job title or location"
               />
             </div>
@@ -238,7 +238,7 @@ export function CareersBoard() {
             />
             <button
               type="button"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50 md:col-span-3 lg:col-span-1 lg:w-auto"
               onClick={applySearch}
             >
               Find Jobs
@@ -470,7 +470,7 @@ export function CareersBoard() {
                       </div>
                       <button
                         type="button"
-                        className="grid size-9 place-items-center rounded-lg border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)]"
+                        className="grid size-9 shrink-0 place-items-center rounded-lg border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)]"
                         onClick={() => setActiveApplyJob(null)}
                         aria-label="Close application form"
                       >
@@ -485,7 +485,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("fullName", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                         placeholder="Full name"
                       />
                       <AppSelect
@@ -510,7 +510,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("email", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                         placeholder="Email"
                       />
                       <input
@@ -519,7 +519,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("mobileNumber", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                         placeholder="Mobile number"
                       />
                       <input
@@ -531,7 +531,7 @@ export function CareersBoard() {
                             event.target.value,
                           )
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                         placeholder="Education qualification"
                       />
                       <input
@@ -540,7 +540,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("linkedInProfile", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                         placeholder="LinkedIn profile URL"
                       />
                       <input
@@ -549,7 +549,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("resumeUrl", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-sm text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10 md:col-span-2"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10 md:col-span-2"
                         placeholder="Public Google Drive or Docs resume URL"
                       />
                     </div>

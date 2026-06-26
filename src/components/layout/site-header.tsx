@@ -169,7 +169,7 @@ function MobileMenu({
   return createPortal(
     <div
       id="mobile-menu"
-      className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)]/95 backdrop-blur-xl md:hidden"
+      className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)]/95 backdrop-blur-xl lg:hidden"
     >
       <div className="animate-in fade-in slide-in-from-top-2 flex size-full flex-col gap-6 p-5 ease-out">
         {children}
@@ -260,8 +260,8 @@ export function SiteHeader() {
             />
           </Link>
 
-          <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList className="gap-6">
+          <NavigationMenu className="hidden lg:flex">
+            <NavigationMenuList className="gap-5 xl:gap-6">
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={cn(
@@ -274,7 +274,7 @@ export function SiteHeader() {
                   Products
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-transparent p-0">
-                  <div className="w-[36rem] rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2 shadow-[0_24px_70px_rgb(11_18_32_/_0.16)]">
+                  <div className="w-[min(36rem,calc(100vw-2rem))] rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2 shadow-[0_24px_70px_rgb(11_18_32_/_0.16)]">
                     <ul className="grid grid-cols-2 gap-1">
                       {products.map((product) => (
                         <li key={product.slug}>
@@ -317,12 +317,12 @@ export function SiteHeader() {
         </div>
 
         {/* Right: theme toggle (desktop) */}
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <ThemeToggle solid={solid} />
         </div>
 
-        {/* Right: theme toggle + hamburger (mobile) */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* Right: theme toggle + hamburger (mobile/tablet) */}
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle solid={solid} />
           <Button
             size="icon-lg"

@@ -109,7 +109,7 @@ export default async function RfPowerAmplifierProductPage({
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_36%,rgb(5_11_18_/_0.68)_56%,rgb(5_11_18_/_0.18)_78%,rgb(5_11_18_/_0.06)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.08),#050b12_98%)]"
+          className="absolute inset-0 z-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.92)_42%,rgb(5_11_18_/_0.72)_70%,rgb(5_11_18_/_0.55)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.42),#050b12_98%)] lg:bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_36%,rgb(5_11_18_/_0.68)_56%,rgb(5_11_18_/_0.18)_78%,rgb(5_11_18_/_0.06)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.08),#050b12_98%)]"
         />
         <div className="container relative z-10 mx-auto flex min-h-[calc(78vh-8rem)] max-w-7xl items-center px-5 lg:px-8">
           <Reveal>
