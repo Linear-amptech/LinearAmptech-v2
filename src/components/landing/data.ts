@@ -30,6 +30,8 @@ export const assets = {
   dieProbeMicroscope: "/assets/ppt-products/die-probe-microscope.png",
   bondedDieCloseup: "/assets/ppt-products/bonded-die-closeup.png",
   sourceHybridMicModule: "/assets/ppt-products/source/pa-module-bench.png",
+  sourceHybridMicModule2: "/assets/products/hybrid-mic-pa/1.png",
+
   sourcePortfolioHybridMicModule:
     "/assets/ppt-products/source/portfolio-hybrid-mic-pa-module.png",
   sourcePortfolioPaChip: "/assets/ppt-products/source/portfolio-pa-chip.png",
@@ -38,12 +40,18 @@ export const assets = {
   sourcePortfolioFrontEndChip:
     "/assets/ppt-products/source/portfolio-front-end-chip.png",
   sourceTxRxLayout: "/assets/ppt-products/source/tx-rx-layout.png",
+  sourceTxRxLayout2: "/assets/products/integrated-receiver-chip/1.png",
+  sourceTxRxLayout3: "/assets/products/integrated-transmitter-chip/1.png",
   sourceRadarFrontEndChip:
     "/assets/ppt-products/source/radar-front-end-chip.png",
+  sourceRadarFrontEndChip2: "/assets/products/radar-frontend-chip/1.png",
   sourcePhaseShifterChip: "/assets/ppt-products/source/phase-shifter-chip.jpg",
+  sourcePhaseShifterChip2: "/assets/products/8-bit-phase-shifter/1.png",
+
   sourceGanPackagedChip: "/assets/ppt-products/source/gan-packaged-chip.jpg",
   sourceGanPaPackagedHardware:
     "/assets/ppt-products/source/gan-pa-packaged-hardware.jpg",
+  sourceGanPaPackagedHardware2: "/assets/products/c-ku-band-chip/1.png",
   sourceGanModuleNews: "/assets/ppt-products/source/gan-module-news.jpg",
   sourceGanPaLayoutQfn44: "/assets/ppt-products/source/gan-pa-layout-qfn44.jpg",
   sourceGanPaPerformance: "/assets/ppt-products/source/gan-pa-performance.png",
@@ -141,7 +149,7 @@ export const products: Product[] = [
     slug: "hybrid-mic-pa-modules",
     name: "Hybrid MIC PA Modules",
     icon: RadioTower,
-    image: assets.sourceHybridMicModule,
+    image: assets.sourceHybridMicModule2,
     alt: "Hybrid MIC PA module bench hardware",
     description:
       "Complete power amplifier module capability with gain-chain budgeting, power conditioning, VSWR protection, and multiple units in the 0.5-3.25 GHz range.",
@@ -199,7 +207,7 @@ export const products: Product[] = [
     slug: "fully-integrated-c-ku-band-pa-chip",
     name: "Fully Integrated C-Ku Band PA Chip",
     icon: Cpu,
-    image: assets.sourceGanPaPackagedHardware,
+    image: assets.sourceGanPaPackagedHardware2,
     alt: "Fully integrated C-Ku band power amplifier chip hardware",
     description:
       "5W fully integrated C-Ku band GaN-on-SiC PA chip family with QFN44 and QFN56 variants, completed simulation, tapeout, and measurement.",
@@ -272,7 +280,7 @@ export const products: Product[] = [
     slug: "fully-integrated-transmitter-chip",
     name: "Fully Integrated Transmitter Chip",
     icon: Waves,
-    image: assets.sourceTxRxLayout,
+    image: assets.sourceTxRxLayout3,
     alt: "Fully integrated transmitter chip layout",
     description:
       "47.2-48.2 GHz fully integrated transmitter chip in GF 130nm SiGe BiCMOS with 20 dB conversion gain and 15 dBm output power.",
@@ -328,7 +336,7 @@ export const products: Product[] = [
     slug: "fully-integrated-receiver-chip",
     name: "Fully Integrated Receiver Chip",
     icon: Waves,
-    image: assets.sourceTxRxLayout,
+    image: assets.sourceTxRxLayout2,
     alt: "Fully integrated receiver chip layout",
     description:
       "47.2-48.2 GHz fully integrated receiver chip in GF 130nm SiGe BiCMOS with 36.3-37 dB voltage gain.",
@@ -384,7 +392,7 @@ export const products: Product[] = [
     slug: "fully-integrated-radar-front-end-chip",
     name: "Fully Integrated Radar Front-End Chip",
     icon: Radar,
-    image: assets.sourceRadarFrontEndChip,
+    image: assets.sourceRadarFrontEndChip2,
     alt: "Fully integrated radar front-end chip",
     description:
       "71-81 GHz fully integrated radar front-end chip in GF 130nm SiGe BiCMOS with 10.5 dBm Tx output power and 37 dB receiver conversion gain.",
@@ -433,7 +441,7 @@ export const products: Product[] = [
     slug: "8-bit-phase-shifter-chip",
     name: "8-Bit Phase Shifter Chip",
     icon: ScanLine,
-    image: assets.sourcePhaseShifterChip,
+    image: assets.sourcePhaseShifterChip2,
     alt: "8-bit phase shifter chip",
     description:
       "13-17 GHz 8-bit phase shifter chip in TSMC 65nm Bulk CMOS with 1.5 degree phase resolution.",
