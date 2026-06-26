@@ -62,7 +62,7 @@ export const assets = {
     "/assets/ppt-products/source/gan-pa-qfn44-performance.png",
   sourceGanPaQfn56Performance:
     "/assets/ppt-products/source/gan-pa-qfn56-performance.png",
-  defense: "/assets/applications/defense.png",
+  defense: "/assets/applications/defense1.png",
   sixG: "/assets/applications/6g.png",
   mimoRadar: "/assets/applications/mimo_radar.png",
   risActive: "/assets/applications/ris_active.png",
