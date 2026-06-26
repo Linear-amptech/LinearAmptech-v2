@@ -1,27 +1,23 @@
 "use client";
 
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type RefObject,
-} from "react";
+import { useCallback, useEffect, useRef, type RefObject } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Number of frames in the scroll-scrubbed clip. The real count is patched in
-// once frame generation finishes — keep this a single, one-line edit.
-const FRAME_COUNT = 173;
+// The scroll-scrubbed clip lives on disk as frame-003.webp … frame-176.webp.
+// FIRST_FRAME is the number of the first file; FRAME_COUNT is how many there are.
+const FIRST_FRAME = 3;
+const FRAME_COUNT = 174;
 // ─────────────────────────────────────────────────────────────────────────────
 
 const BASE = "/assets/company-scrub";
+const POSTER = `${BASE}/poster.webp`;
 
 const clamp = (n: number, lo: number, hi: number): number =>
   Math.min(hi, Math.max(lo, n));
 
 const frameUrl = (i: number): string =>
-  `${BASE}/frame-${String(i + 1).padStart(3, "0")}.webp`;
+  `${BASE}/frame-${String(i + FIRST_FRAME).padStart(3, "0")}.webp`;
 
 type CompanyScrollVideoProps = {
   scrollTargetRef: RefObject<HTMLElement | null>;
@@ -35,35 +31,49 @@ export function CompanyScrollVideo({
   const targetIndexRef = useRef(0);
   const currentIndexRef = useRef(0);
   const rafRef = useRef<number | null>(null);
-  const readyRef = useRef(false);
   // Holds the latest loop step so the rAF callback can re-schedule itself
   // without a self-referencing useCallback (which the lint rules reject).
   const tickRef = useRef<() => void>(() => {});
-
-  const [loadedCount, setLoadedCount] = useState(0);
-  const [ready, setReady] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: scrollTargetRef,
     offset: ["start start", "end end"],
   });
 
-  // Draw the current (rounded) frame with COVER-FIT crop math. Reads only refs,
-  // so it stays referentially stable across renders.
+  const frameReady = (i: number): boolean => {
+    const img = imagesRef.current[i];
+    return !!img && img.complete && img.naturalWidth > 0;
+  };
+
+  // Nearest already-decoded frame to `index`, searching outward. Returns -1 when
+  // nothing has decoded yet (the poster stays visible underneath the canvas).
+  const nearestLoaded = useCallback((index: number): number => {
+    if (frameReady(index)) return index;
+    for (let r = 1; r < FRAME_COUNT; r += 1) {
+      const lo = index - r;
+      const hi = index + r;
+      if (lo >= 0 && frameReady(lo)) return lo;
+      if (hi < FRAME_COUNT && frameReady(hi)) return hi;
+    }
+    return -1;
+  }, []);
+
+  // Draw the nearest loaded frame with COVER-FIT crop math. Reads only refs, so
+  // it stays referentially stable across renders.
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const index = clamp(
+    const target = clamp(
       Math.round(currentIndexRef.current),
       0,
       FRAME_COUNT - 1,
     );
+    const index = nearestLoaded(target);
+    if (index < 0) return; // nothing decoded yet — poster shows through
     const img = imagesRef.current[index];
-    // Never draw an unloaded or failed frame.
-    if (!img || !img.complete || img.naturalWidth === 0) return;
 
     const canvasW = canvas.width;
     const canvasH = canvas.height;
@@ -85,11 +95,10 @@ export function CompanyScrollVideo({
 
     ctx.clearRect(0, 0, canvasW, canvasH);
     ctx.drawImage(img, dx, dy, drawW, drawH);
-  }, []);
+  }, [nearestLoaded]);
 
   // Single coalesced rAF loop: lerp current → target by 0.2, draw, and stop
-  // (snap + final draw) once we're within half a frame. Re-schedules via the
-  // ref so it never references its own binding.
+  // (snap + final draw) once we're within half a frame.
   const step = useCallback(() => {
     const current = currentIndexRef.current;
     const target = targetIndexRef.current;
@@ -118,8 +127,7 @@ export function CompanyScrollVideo({
     }
   }, []);
 
-  // Size the backing store to CSS pixels × dpr and redraw. Observing the parent;
-  // measuring the canvas's own rendered box (it fills the parent via CSS).
+  // Size the backing store to CSS pixels × dpr and redraw.
   const resize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -138,72 +146,64 @@ export function CompanyScrollVideo({
     draw();
   }, [draw]);
 
-  // PRELOAD + GATE: build an Image for every frame, decode where supported,
-  // gate `ready` on settled (not just fulfilled) count so a missing frame
-  // can't wedge the loader behind the overlay forever.
+  // PRELOAD — non-blocking, no loader UI. Decode frame 0 first and paint it the
+  // moment it's ready (the poster covers the gap before then); stream the rest
+  // in the background, repainting cheaply as better frames arrive.
   useEffect(() => {
     let cancelled = false;
     const images: HTMLImageElement[] = new Array(FRAME_COUNT);
     imagesRef.current = images;
-    let settled = 0;
 
-    const finish = () => {
-      if (cancelled) return;
-      settled += 1;
-      setLoadedCount(settled);
-    };
-
-    const load = (i: number): Promise<void> => {
+    const makeImage = (i: number): HTMLImageElement => {
       const img = new Image();
-      images[i] = img;
+      img.decoding = "async";
       img.src = frameUrl(i);
-
-      if (typeof img.decode === "function") {
-        // decode() rejects on a broken image — count it as settled either way.
-        return img.decode().then(finish, finish);
-      }
-      return new Promise<void>((resolve) => {
-        const onDone = () => {
-          finish();
-          resolve();
-        };
-        img.onload = onDone;
-        img.onerror = onDone;
-      });
+      images[i] = img;
+      return img;
     };
 
-    const tasks = Array.from({ length: FRAME_COUNT }, (_, i) => load(i));
-    Promise.allSettled(tasks).then(() => {
+    const first = makeImage(0);
+    const onFirst = () => {
       if (cancelled) return;
-      readyRef.current = true;
-      setReady(true);
-    });
+      targetIndexRef.current = clamp(
+        Math.round(scrollYProgress.get() * (FRAME_COUNT - 1)),
+        0,
+        FRAME_COUNT - 1,
+      );
+      resize();
+      requestTick();
+    };
+    if (typeof first.decode === "function") {
+      first.decode().then(onFirst, onFirst);
+    } else {
+      first.onload = onFirst;
+      first.onerror = onFirst;
+    }
+
+    for (let i = 1; i < FRAME_COUNT; i += 1) {
+      const img = makeImage(i);
+      const onArrive = () => {
+        if (!cancelled) requestTick();
+      };
+      if (typeof img.decode === "function") {
+        img.decode().then(onArrive, () => {});
+      } else {
+        img.onload = onArrive;
+      }
+    }
 
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [resize, requestTick, scrollYProgress]);
 
-  // ARM: once every frame has settled, size the canvas, paint frame 0 so there's
-  // a first frame before any scroll, then animate toward the current scroll
-  // position. Run the size routine explicitly (don't rely on RO having fired).
+  // Observe the parent for size changes; clean up the rAF loop on unmount.
   useEffect(() => {
-    if (!ready) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const parent = canvas.parentElement;
 
     resize();
-    currentIndexRef.current = 0;
-    draw(); // frame 0
-
-    targetIndexRef.current = clamp(
-      Math.round(scrollYProgress.get() * (FRAME_COUNT - 1)),
-      0,
-      FRAME_COUNT - 1,
-    );
-    requestTick();
-
     const observer = new ResizeObserver(() => resize());
     if (parent) observer.observe(parent);
 
@@ -214,12 +214,10 @@ export function CompanyScrollVideo({
         rafRef.current = null;
       }
     };
-  }, [ready, resize, draw, requestTick, scrollYProgress]);
+  }, [resize]);
 
   // Map scroll progress → target frame, never setState per frame.
-  // (useMotionValueEvent auto-unsubscribes on unmount.)
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    if (!readyRef.current) return;
     targetIndexRef.current = clamp(
       Math.round(v * (FRAME_COUNT - 1)),
       0,
@@ -228,34 +226,21 @@ export function CompanyScrollVideo({
     requestTick();
   });
 
-  const progress = clamp(Math.round((loadedCount / FRAME_COUNT) * 100), 0, 100);
-
   return (
     <>
+      {/* Instant first frame: shows immediately, sits behind the canvas, and is
+          covered the moment a real frame is drawn. No blocking loader. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={POSTER}
+        alt="Linear-AmpTech RF semiconductor module"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <canvas
         ref={canvasRef}
         aria-hidden="true"
         className="absolute inset-0 h-full w-full"
       />
-      {!ready ? (
-        <div className="absolute inset-0 flex items-center justify-center bg-[color:var(--color-surface-soft)]">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 animate-pulse bg-[linear-gradient(110deg,transparent_35%,rgb(255_255_255_/_0.06)_50%,transparent_65%)]"
-          />
-          <div className="relative flex flex-col items-center gap-3">
-            <div className="h-1 w-40 overflow-hidden rounded-full bg-[color:var(--color-border)]">
-              <div
-                className="h-full rounded-full bg-[color:var(--color-primary)] transition-[width] duration-200 ease-out"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <p className="text-xs font-medium tracking-wide text-[color:var(--color-text-muted)]">
-              Loading {progress}%
-            </p>
-          </div>
-        </div>
-      ) : null}
     </>
   );
 }

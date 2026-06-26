@@ -29,7 +29,7 @@ export function ContactSection() {
       <div className="container mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+            <p className="font-mono mb-4 text-xs uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
               Contact
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
@@ -50,14 +50,14 @@ export function ContactSection() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)] transition-colors hover:border-[color:var(--color-primary)]/50"
+                    className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-colors hover:border-[color:var(--color-text)]/30"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="grid size-10 place-items-center rounded-lg bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+                      <div className="grid size-10 place-items-center rounded-lg bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
                         <Icon className="size-4" aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                        <p className="font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
                           {item.label}
                         </p>
                         <p className="mt-2 text-sm leading-6 text-[color:var(--color-text)]">
@@ -70,13 +70,13 @@ export function ContactSection() {
               })}
             </div>
 
-            <div className="mt-4 rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
+            <div className="mt-4 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
               <div className="flex items-start gap-3">
-                <div className="grid size-10 place-items-center rounded-lg bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+                <div className="grid size-10 place-items-center rounded-lg bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
                   <MapPin className="size-4" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  <p className="font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
                     Address
                   </p>
                   <div className="mt-2 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -90,54 +90,57 @@ export function ContactSection() {
           </Reveal>
 
           <Reveal>
-            <form className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] md:p-7">
+            <form className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
               <div className="grid gap-4 md:grid-cols-2">
-                <label className="grid gap-2 text-sm font-medium text-[color:var(--color-text)]">
+                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
                   <span>Name</span>
                   <input
                     name="name"
                     autoComplete="name"
-                    className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 text-sm text-[color:var(--color-text)] outline-none transition-colors focus:border-[color:var(--color-primary)]/60"
+                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-[color:var(--color-text)]">
+                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
                   <span>Email</span>
                   <input
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 text-sm text-[color:var(--color-text)] outline-none transition-colors focus:border-[color:var(--color-primary)]/60"
+                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-[color:var(--color-text)]">
+                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
                   <span>Company</span>
                   <input
                     name="company"
                     autoComplete="organization"
-                    className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 text-sm text-[color:var(--color-text)] outline-none transition-colors focus:border-[color:var(--color-primary)]/60"
+                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-[color:var(--color-text)]">
+                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
                   <span>Project type</span>
                   <AppSelect
                     name="projectType"
                     placeholder="Select project type"
-                    className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-primary)]/40 focus-visible:border-[color:var(--color-primary)]/60 data-[popup-open]:border-[color:var(--color-primary)]/60 data-[popup-open]:bg-[color:var(--color-surface-soft)]"
+                    className="min-h-12 border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-base text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-text)]/30 data-[popup-open]:border-[color:var(--color-text)]/30 data-[popup-open]:bg-[color:var(--color-surface)]"
                     options={projectTypeOptions.map((option) => ({
                       value: option,
                       label: option,
                     }))}
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-[color:var(--color-text)] md:col-span-2">
+                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)] md:col-span-2">
                   <span>Message</span>
                   <textarea
                     name="message"
                     rows={6}
-                    className="min-h-40 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 py-3 text-sm text-[color:var(--color-text)] outline-none transition-colors focus:border-[color:var(--color-primary)]/60"
+                    className="min-h-40 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <button className="premium-button md:col-span-2" type="submit">
+                <button
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50 md:col-span-2"
+                  type="submit"
+                >
                   Start a Project
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </button>

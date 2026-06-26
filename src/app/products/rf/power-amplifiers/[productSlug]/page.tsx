@@ -109,22 +109,22 @@ export default async function RfPowerAmplifierProductPage({
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_36%,rgb(5_11_18_/_0.68)_56%,rgb(5_11_18_/_0.18)_78%,rgb(5_11_18_/_0.06)_100%),radial-gradient(circle_at_76%_24%,rgb(16_199_232_/_0.16),transparent_30%),linear-gradient(180deg,rgb(5_11_18_/_0.08),#050b12_98%)]"
+          className="absolute inset-0 z-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_36%,rgb(5_11_18_/_0.68)_56%,rgb(5_11_18_/_0.18)_78%,rgb(5_11_18_/_0.06)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.08),#050b12_98%)]"
         />
         <div className="container relative z-10 mx-auto flex min-h-[calc(78vh-8rem)] max-w-7xl items-center px-5 lg:px-8">
           <Reveal>
             <div className="max-w-5xl">
               <Link
                 href="/products/rf/power-amplifiers"
-                className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-100 transition-colors hover:text-white"
+                className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-white"
               >
                 <ArrowLeft className="size-4" aria-hidden="true" />
                 Back to RF Power Amplifiers
               </Link>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-secondary)]">
+              <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
                 Power Amplifier
               </p>
-              <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
+              <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-7xl">
                 {product.partNumber}
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
@@ -134,7 +134,7 @@ export default async function RfPowerAmplifierProductPage({
                 {product.applications.map((application) => (
                   <span
                     key={application}
-                    className="rounded-xl border border-cyan-200/15 bg-cyan-200/10 px-3 py-2 text-sm font-medium text-cyan-50"
+                    className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-medium text-white/80"
                   >
                     {application}
                   </span>
@@ -148,18 +148,18 @@ export default async function RfPowerAmplifierProductPage({
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.34fr_0.66fr] lg:px-8">
           <Reveal>
-            <aside className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
+            <aside className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:sticky lg:top-28">
               <Link
                 href="/products/rf/power-amplifiers"
-                className="mb-7 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
+                className="mb-7 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
               >
                 <ArrowLeft className="size-4" aria-hidden="true" />
                 RF Power Amplifiers
               </Link>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+              <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                 Product Specs
               </p>
-              <h2 className="font-heading text-3xl font-bold leading-tight text-[color:var(--color-text)]">
+              <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
                 Product inquiry
               </h2>
               <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -169,7 +169,7 @@ export default async function RfPowerAmplifierProductPage({
               </p>
               <Link
                 href="/contact"
-                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[color:var(--color-primary)] px-5 text-sm font-bold text-slate-950 shadow-[0_16px_36px_rgb(16_199_232_/_0.18)] transition hover:-translate-y-0.5 hover:bg-[color:var(--color-primary-deep)]"
+                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 Get Quote
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -181,35 +181,35 @@ export default async function RfPowerAmplifierProductPage({
             {tableRow ? (
               <Reveal>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Center Frequency
                     </p>
-                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.centerFrequencyGhz} GHz
                     </p>
                   </div>
-                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Output Power
                     </p>
-                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.outputPowerW} W
                     </p>
                   </div>
-                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Efficiency
                     </p>
-                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.efficiency}
                     </p>
                   </div>
-                  <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Gain
                     </p>
-                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.gainDb} dB
                     </p>
                   </div>
@@ -218,7 +218,7 @@ export default async function RfPowerAmplifierProductPage({
             ) : null}
 
             <Reveal>
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[var(--shadow-card)]">
+              <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
                 <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[color:var(--color-surface-soft)]">
                   <Image
                     src={product.heroImage}
@@ -233,19 +233,19 @@ export default async function RfPowerAmplifierProductPage({
 
             <Reveal>
               <section>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                   Key Features
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
                   {product.keyFeatures.map((feature) => (
                     <article
                       key={feature}
-                      className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
+                      className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
                     >
-                      <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+                      <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
                         <CheckCircle2 className="size-5" aria-hidden="true" />
                       </div>
-                      <p className="text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                      <p className="text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                         {feature}
                       </p>
                     </article>
@@ -256,7 +256,7 @@ export default async function RfPowerAmplifierProductPage({
 
             <Reveal>
               <section>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                   Applications
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -266,18 +266,18 @@ export default async function RfPowerAmplifierProductPage({
                     return (
                       <article
                         key={application}
-                        className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
+                        className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
                       >
-                        <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-primary-deep)]">
+                        <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
                           <ApplicationIcon
                             className="size-5"
                             aria-hidden="true"
                           />
                         </div>
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                        <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                           Application
                         </p>
-                        <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                        <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                           {application}
                         </p>
                       </article>
@@ -288,10 +288,10 @@ export default async function RfPowerAmplifierProductPage({
             </Reveal>
 
             <Reveal>
-              <section className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
+              <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
                 <div className="flex items-end justify-between gap-4 border-b border-[color:var(--color-border)] pb-5">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Diagrams
                     </p>
                   </div>

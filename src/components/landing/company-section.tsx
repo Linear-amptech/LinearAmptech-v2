@@ -41,12 +41,12 @@ export function CompanySection({ children }: CompanySectionProps) {
 
   return (
     <section id="company" ref={sectionRef} className="relative h-[300vh]">
-      <div className="sticky top-0 flex min-h-screen items-center pt-20 pb-8 lg:pt-24 lg:pb-12 bg-[#f1f2f5]">
+      <div className="sticky top-0 flex min-h-screen items-center pt-20 pb-8 lg:pt-20 lg:pb-10 bg-[#f1f2f5]">
         <div className="container mx-auto flex w-full justify-between items-center gap-8 px-5 lg:gap-12 lg:px-8 bg-[#f1f2f5]">
           {/* On mobile the video leads (order-1) so the scrubbing frame stays in
               view while pinned; on desktop it returns to the right column. */}
           <div className="order-2 w-full lg:order-1">{children}</div>
-          <div className="relative order-1 w-full justify-end   h-[46vh] sm:h-[52vh] lg:order-2 lg:h-auto lg:aspect-[9/16] lg:max-h-[90vh] max-w-[500px]">
+          <div className="relative order-1 w-full justify-end   h-[46vh] sm:h-[52vh] lg:order-2 lg:h-auto lg:aspect-[9/16] lg:max-h-[78vh] max-w-[460px]">
             <CompanyScrollVideo scrollTargetRef={sectionRef} />
           </div>
         </div>

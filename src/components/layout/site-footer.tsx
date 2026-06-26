@@ -41,7 +41,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="font-heading text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--color-text)]">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               Navigation
             </p>
             <div className="mt-5 grid gap-3 text-sm text-[color:var(--color-text-muted)]">
@@ -49,7 +49,7 @@ export function SiteFooter() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="transition-colors hover:text-[color:var(--color-primary-deep)]"
+                  className="transition-colors hover:text-[color:var(--color-text)]"
                 >
                   {item.label}
                 </Link>
@@ -58,33 +58,33 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="font-heading text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--color-text)]">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               Contact
             </p>
             <div className="mt-5 grid gap-4 text-sm text-[color:var(--color-text-muted)]">
               <a
                 href={`tel:${companyContact.phone.replaceAll(" ", "")}`}
-                className="flex gap-3 transition-colors hover:text-[color:var(--color-primary-deep)]"
+                className="flex gap-3 transition-colors hover:text-[color:var(--color-text)]"
               >
                 <Phone
-                  className="mt-0.5 size-4 text-[color:var(--color-primary-deep)]"
+                  className="mt-0.5 size-4 text-[color:var(--color-text-muted)]"
                   aria-hidden="true"
                 />
                 {companyContact.phone}
               </a>
               <a
                 href={`mailto:${companyContact.email}`}
-                className="flex gap-3 transition-colors hover:text-[color:var(--color-primary-deep)]"
+                className="flex gap-3 transition-colors hover:text-[color:var(--color-text)]"
               >
                 <Mail
-                  className="mt-0.5 size-4 text-[color:var(--color-primary-deep)]"
+                  className="mt-0.5 size-4 text-[color:var(--color-text-muted)]"
                   aria-hidden="true"
                 />
                 {companyContact.email}
               </a>
               <p className="flex gap-3 leading-6">
                 <MapPin
-                  className="mt-1 size-4 shrink-0 text-[color:var(--color-primary-deep)]"
+                  className="mt-1 size-4 shrink-0 text-[color:var(--color-text-muted)]"
                   aria-hidden="true"
                 />
                 <span>
@@ -99,7 +99,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[color:var(--color-border)] pt-6 text-sm text-[color:var(--color-text-muted)]">
+        <div className="mt-10 border-t border-[color:var(--color-border)] pt-6 font-mono text-xs leading-5 tracking-wide text-[color:var(--color-text-muted)]">
           © Linearized Amplifier Technologies and Services Private Ltd. 2026.
           All Rights Reserved.
         </div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { notFound } from "next/navigation";
 
-import { products } from "@/components/landing/data";
+import { products, productBands } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 
 type ProductPageProps = {
@@ -42,6 +42,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
   }
 
   const Icon = product.icon;
+  const band = productBands[slug];
 
   return (
     <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
@@ -58,35 +59,42 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
           aria-hidden="true"
           className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.96)_34%,rgb(5_11_18_/_0.64)_62%,rgb(5_11_18_/_0.82)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.34),#050b12_92%)]"
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_74%_22%,rgb(16_199_232_/_0.2),transparent_30%),radial-gradient(circle_at_18%_76%,rgb(110_225_93_/_0.12),transparent_26%)]"
-        />
         <div className="container relative z-10 mx-auto flex min-h-[calc(78vh-8rem)] items-center px-5 lg:px-8">
           <Reveal>
             <div className="max-w-5xl">
               <Link
                 href="/products"
-                className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-100 transition-colors hover:text-white"
+                className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-white/70 transition-colors hover:text-white"
               >
                 <ArrowLeft className="size-4" aria-hidden="true" />
                 Back to products
               </Link>
-              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-cyan-300/25 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
+              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-white/75">
                 <Icon className="size-4" aria-hidden="true" />
                 Product
               </div>
-              <h1 className="font-heading max-w-5xl text-balance text-4xl font-bold leading-[1.02] tracking-normal text-white sm:text-5xl lg:text-7xl">
+              <h1 className="font-heading max-w-5xl text-balance text-4xl font-bold leading-[1.05] tracking-normal text-white sm:text-5xl lg:text-7xl">
                 {product.name}
               </h1>
               <p className="mt-7 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
                 {product.description}
               </p>
+              {band ? (
+                <p className="mt-6 font-mono text-sm text-white/45">
+                  <span className="uppercase tracking-[0.2em]">
+                    Operating band
+                  </span>
+                  <span className="mx-3 text-white/20">/</span>
+                  <span className="text-base font-semibold text-white/80">
+                    {band.label}
+                  </span>
+                </p>
+              ) : null}
               <div className="mt-8 flex flex-wrap gap-3">
                 {product.features.map((feature) => (
                   <span
                     key={feature}
-                    className="rounded-xl border border-cyan-200/15 bg-cyan-200/10 px-3 py-2 text-sm font-medium text-cyan-50"
+                    className="rounded-xl border border-white/12 bg-white/[0.05] px-3 py-2 text-sm font-medium text-white/75"
                   >
                     {feature}
                   </span>
@@ -94,7 +102,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </div>
               <Link
                 href="/contact"
-                className="mt-9 inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[color:var(--color-primary)] px-5 text-sm font-bold text-slate-950 shadow-[0_16px_36px_rgb(16_199_232_/_0.18)] transition hover:-translate-y-0.5 hover:bg-[color:var(--color-primary-deep)]"
+                className="mt-9 inline-flex h-12 items-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-[#050b12] transition-colors hover:bg-white/90"
               >
                 Request Product Quote
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -107,18 +115,18 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.34fr_0.66fr] lg:px-8">
           <Reveal>
-            <aside className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
+            <aside className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:sticky lg:top-28">
               <Link
                 href="/products"
-                className="mb-7 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
+                className="mb-7 inline-flex items-center gap-2 font-mono text-sm text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)]"
               >
                 <ArrowLeft className="size-4" aria-hidden="true" />
                 Products
               </Link>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+              <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                 Product Specs
               </p>
-              <h2 className="font-heading text-3xl font-bold leading-tight text-[color:var(--color-text)]">
+              <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
                 Product inquiry
               </h2>
               <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -128,7 +136,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </p>
               <Link
                 href="/contact"
-                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[color:var(--color-primary)] px-5 text-sm font-bold text-slate-950 shadow-[0_16px_36px_rgb(16_199_232_/_0.18)] transition hover:-translate-y-0.5 hover:bg-[color:var(--color-primary-deep)]"
+                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 Get Quote
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -142,12 +150,12 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                 {product.specs.map((spec) => (
                   <div
                     key={spec.label}
-                    className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
+                    className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
                   >
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
                       {spec.label}
                     </p>
-                    <p className="mt-3 text-lg font-bold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {spec.value}
                     </p>
                   </div>
@@ -156,7 +164,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
             </Reveal>
 
             <Reveal>
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[var(--shadow-card)]">
+              <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
                 <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[color:var(--color-surface-soft)]">
                   <Image
                     src={product.image}
@@ -170,7 +178,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
             </Reveal>
 
             <Reveal>
-              <div className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
+              <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
                 <div className="grid gap-4 md:grid-cols-2">
                   {product.gallery.map((item) => (
                     <figure
@@ -197,14 +205,14 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
             {product.detailSections.map((section) => (
               <Reveal key={section.title}>
-                <article className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
+                <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
                   <div className="flex items-start gap-4">
                     <CheckCircle2
-                      className="mt-1 size-6 shrink-0 text-[color:var(--color-primary-deep)]"
+                      className="mt-1 size-6 shrink-0 text-[color:var(--color-text-muted)]"
                       aria-hidden="true"
                     />
                     <div>
-                      <h2 className="font-heading text-2xl font-bold text-[color:var(--color-text)]">
+                      <h2 className="font-heading text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
                         {section.title}
                       </h2>
                       <p className="mt-3 text-base leading-7 text-[color:var(--color-text-muted)]">

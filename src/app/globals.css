@@ -50,11 +50,12 @@
 
 :root {
   --font-app-sans:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-app-heading:
-    "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
-  --font-app-mono: "Courier New", Courier, monospace;
+    var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-app-mono:
+    var(--font-jetbrains-mono), ui-monospace, "Courier New", Courier, monospace;
   --color-bg: #f7fafc;
   --color-surface: #ffffff;
   --color-surface-soft: #eef6f8;
@@ -164,6 +165,14 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-app-heading);
   }
   ::selection {
     background: rgb(16 199 232 / 30%);
@@ -514,74 +523,6 @@
     right: 0;
     top: 63%;
     z-index: 3;
-  }
-
-  .hero-slider-nav {
-    @apply mt-12 hidden gap-3 rounded-lg border border-white/10 bg-slate-950/45 p-3 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl md:grid md:grid-cols-5;
-  }
-
-  .hero-slider-nav button {
-    @apply relative flex min-h-24 flex-col items-start justify-start rounded-md border border-white/10 bg-white/[0.045] p-4 text-left text-slate-300 transition-all duration-300 hover:border-cyan-200/35 hover:bg-white/[0.075] hover:text-white;
-  }
-
-  .hero-slider-nav button::after {
-    background: linear-gradient(135deg, rgb(16 199 232 / 12%), transparent 58%);
-    content: "";
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    transition: opacity 0.3s ease;
-  }
-
-  .hero-slider-nav button.is-active {
-    @apply border-cyan-200/45 bg-white/[0.09] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)];
-  }
-
-  .hero-slider-nav button.is-active::after {
-    opacity: 1;
-  }
-
-  .hero-slider-nav span {
-    @apply relative z-10 block text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200;
-  }
-
-  .hero-slider-nav strong {
-    @apply relative z-10 mt-1 block text-sm font-semibold leading-6 text-inherit;
-  }
-
-  .hero-play-toggle {
-    @apply inline-flex h-12 min-w-36 items-center gap-3 rounded-lg border border-white/12 bg-white/[0.06] px-4 text-cyan-50 shadow-[0_16px_36px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-200/35 hover:bg-white/[0.09];
-  }
-
-  .hero-progress-track {
-    @apply relative h-2 flex-1 overflow-hidden rounded-full bg-white/15;
-  }
-
-  .hero-progress-fill {
-    animation: heroProgress 4.2s linear forwards;
-    background: linear-gradient(
-      90deg,
-      var(--color-primary),
-      var(--color-secondary)
-    );
-    border-radius: 999px;
-    display: block;
-    height: 100%;
-    transform-origin: left;
-    width: 100%;
-  }
-
-  .hero-progress-fill[data-paused="true"] {
-    animation-play-state: paused;
-  }
-
-  .hero-arrow-button {
-    @apply grid size-12 place-items-center rounded-lg border border-white/12 bg-white/[0.06] text-white shadow-[0_16px_36px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-200/35 hover:bg-white/[0.09];
-  }
-
-  .hero-arrow-button.is-primary {
-    @apply border-cyan-200/35 bg-cyan-200/12 text-cyan-50 hover:border-cyan-100/60 hover:bg-cyan-200/18;
   }
 
   .image-panel {

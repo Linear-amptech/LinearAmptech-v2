@@ -147,6 +147,31 @@ export const ipPlatforms: IpPlatform[] = [
   },
 ];
 
+// Operating frequency band per product (GHz), for the spectrum-band cards.
+export const productBands: Record<
+  string,
+  { min: number; max: number; label: string }
+> = {
+  "hybrid-mic-pa-modules": { min: 0.5, max: 3.25, label: "0.5–3.25 GHz" },
+  "fully-integrated-c-ku-band-pa-chip": { min: 4, max: 18, label: "4–18 GHz" },
+  "fully-integrated-transmitter-chip": {
+    min: 47.2,
+    max: 48.2,
+    label: "47.2–48.2 GHz",
+  },
+  "fully-integrated-receiver-chip": {
+    min: 47.2,
+    max: 48.2,
+    label: "47.2–48.2 GHz",
+  },
+  "fully-integrated-radar-front-end-chip": {
+    min: 71,
+    max: 81,
+    label: "71–81 GHz",
+  },
+  "8-bit-phase-shifter-chip": { min: 13, max: 17, label: "13–17 GHz" },
+};
+
 export const products: Product[] = [
   {
     slug: "hybrid-mic-pa-modules",

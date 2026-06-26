@@ -20,13 +20,13 @@ export default function RfPowerAmplifiersPage() {
       <section className="relative isolate overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_70%_22%,rgb(16_199_232_/_0.2),transparent_30%),radial-gradient(circle_at_16%_78%,rgb(110_225_93_/_0.1),transparent_26%),linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
         />
         <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-secondary)]">
+          <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
             RF Product Line
           </p>
-          <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-heading max-w-5xl text-4xl font-bold leading-tight tracking-normal text-white sm:text-5xl lg:text-7xl">
             {rfPowerAmplifierIntro.title}
           </h1>
           <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">
@@ -38,39 +38,53 @@ export default function RfPowerAmplifiersPage() {
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal>
-            <section className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
+            <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
               <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[color:var(--color-border)] pb-5">
                 <div>
-                  <h2 className="font-heading text-3xl font-bold text-[color:var(--color-text)]">
+                  <h2 className="font-heading text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
                     RF Power Amplifier Lineup
                   </h2>
                 </div>
               </div>
 
               <div className="mt-6 overflow-x-auto">
-                <table className="min-w-full text-left text-sm text-[color:var(--color-text-muted)]">
-                  <thead className="bg-[color:var(--color-surface-soft)] text-xs uppercase tracking-[0.18em] text-[color:var(--color-text)]">
-                    <tr>
-                      <th className="rounded-l-2xl px-4 py-4">Part Number</th>
-                      <th className="px-4 py-4">Center Frequency (Ghz)</th>
-                      <th className="px-4 py-4">Output Power (W)</th>
-                      <th className="px-4 py-4">Efficiency</th>
-                      <th className="px-4 py-4">Gain (dB)</th>
-                      <th className="px-4 py-4">Type Mode of Operation</th>
-                      <th className="rounded-r-2xl px-4 py-4">Details</th>
+                <table className="min-w-full border-collapse text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-[color:var(--color-border)]">
+                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+                        Part Number
+                      </th>
+                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+                        Center Frequency (GHz)
+                      </th>
+                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+                        Output Power (W)
+                      </th>
+                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+                        Efficiency
+                      </th>
+                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+                        Gain (dB)
+                      </th>
+                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+                        Type Mode of Operation
+                      </th>
+                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+                        Details
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {rfPowerAmplifierTableRows.map((row) => (
                       <tr
                         key={row.partNumber}
-                        className="border-b border-[color:var(--color-border)] last:border-b-0"
+                        className="border-b border-[color:var(--color-border)] transition-colors last:border-b-0 hover:bg-[color:var(--color-surface-soft)]"
                       >
-                        <td className="px-4 py-4 font-semibold text-[color:var(--color-text)]">
+                        <td className="px-4 py-4 font-mono font-medium text-[color:var(--color-text)]">
                           {row.slug ? (
                             <Link
                               href={`/products/rf/power-amplifiers/${row.slug}`}
-                              className="transition-colors hover:text-[color:var(--color-primary-deep)]"
+                              className="transition-colors hover:text-[color:var(--color-text-muted)]"
                             >
                               {row.partNumber}
                             </Link>
@@ -78,18 +92,28 @@ export default function RfPowerAmplifiersPage() {
                             row.partNumber
                           )}
                         </td>
-                        <td className="px-4 py-4">{row.centerFrequencyGhz}</td>
-                        <td className="px-4 py-4">{row.outputPowerW}</td>
-                        <td className="px-4 py-4">{row.efficiency}</td>
-                        <td className="px-4 py-4">{row.gainDb}</td>
-                        <td className="px-4 py-4">{row.modeOfOperation}</td>
+                        <td className="px-4 py-4 font-mono text-[color:var(--color-text)]">
+                          {row.centerFrequencyGhz}
+                        </td>
+                        <td className="px-4 py-4 font-mono text-[color:var(--color-text)]">
+                          {row.outputPowerW}
+                        </td>
+                        <td className="px-4 py-4 font-mono text-[color:var(--color-text)]">
+                          {row.efficiency}
+                        </td>
+                        <td className="px-4 py-4 font-mono text-[color:var(--color-text)]">
+                          {row.gainDb}
+                        </td>
+                        <td className="px-4 py-4 text-[color:var(--color-text-muted)]">
+                          {row.modeOfOperation}
+                        </td>
                         <td className="px-4 py-4">
                           {row.slug ? (
                             <Link
                               href={`/products/rf/power-amplifiers/${row.slug}`}
-                              className="inline-flex items-center gap-2 font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary)]"
+                              className="inline-flex items-center gap-2 font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
                             >
-                              Link
+                              Details
                               <ChevronRight
                                 className="size-4"
                                 aria-hidden="true"
