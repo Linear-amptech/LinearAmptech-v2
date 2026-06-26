@@ -187,7 +187,7 @@ export function LandingContentSections() {
               radar, defense, aerospace, and next-generation wireless systems.{" "}
               <Link
                 href="/team"
-                className="group/read-more inline-flex items-center gap-1.5 whitespace-nowrap font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-text)]"
+                className="group/read-more inline-flex items-center gap-1.5 whitespace-nowrap font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
               >
                 Read more
                 <ArrowRight

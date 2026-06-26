@@ -99,7 +99,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[color:var(--color-border)] pt-6 font-mono text-xs leading-5 tracking-wide text-[color:var(--color-text-muted)]">
+        <div className="mt-10 border-t border-[color:var(--color-border)] pt-6 text-center text-xs leading-5 text-[color:var(--color-text-muted)]">
           © Linearized Amplifier Technologies and Services Private Ltd. 2026.
           All Rights Reserved.
         </div>

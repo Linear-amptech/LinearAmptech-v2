@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Cpu, RadioTower } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import { products } from "@/components/landing/data";
 import { rfPowerAmplifierProducts } from "@/components/products/rf-power-amplifiers-data";
@@ -109,11 +110,11 @@ function ProductMenuLink({
       <Link
         href={href}
         onClick={onNavigate}
-        className="group/item flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-[color:var(--color-text-muted)] transition-colors hover:bg-[color:var(--color-surface-soft)] hover:text-[color:var(--color-text)] focus:bg-[color:var(--color-surface-soft)] focus:text-[color:var(--color-text)] focus:outline-none"
+        className="group/item flex items-center justify-between gap-3 py-3 text-sm font-medium text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] focus:outline-none"
       >
         <span>{title}</span>
         <ArrowRight
-          className="size-4 shrink-0 text-[color:var(--color-primary-deep)] transition-transform duration-300 group-hover/item:translate-x-1 group-focus/item:translate-x-1"
+          className="size-4 shrink-0 text-[#0b1220] transition-transform duration-300 group-hover/item:translate-x-1 group-focus/item:translate-x-1"
           aria-hidden
         />
       </Link>
@@ -123,10 +124,12 @@ function ProductMenuLink({
 
 function ProductCategoryButton({
   title,
+  icon: Icon,
   active,
   onSelect,
 }: {
   title: string;
+  icon: LucideIcon;
   active: boolean;
   onSelect: () => void;
 }) {
@@ -134,22 +137,25 @@ function ProductCategoryButton({
     <button
       type="button"
       className={cn(
-        "group/category flex w-full items-center justify-between gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold transition-colors",
+        "group/category flex w-full items-center justify-between gap-3 py-3 text-left text-sm font-semibold transition-colors",
         active
-          ? "bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)]"
-          : "text-[color:var(--color-text-muted)] hover:bg-[color:var(--color-surface-soft)] hover:text-[color:var(--color-text)]",
+          ? "text-[color:var(--color-text)]"
+          : "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)]",
       )}
       onMouseEnter={onSelect}
       onFocus={onSelect}
       onClick={onSelect}
     >
-      <span>{title}</span>
+      <span className="flex items-center gap-2.5">
+        <Icon className="size-4 text-[#0b1220]" aria-hidden="true" />
+        {title}
+      </span>
       <ArrowRight
         className={cn(
           "size-4 shrink-0 transition-transform duration-300",
           active
-            ? "translate-x-1 text-[color:var(--color-primary-deep)]"
-            : "text-[color:var(--color-text-muted)] group-hover/category:translate-x-1",
+            ? "translate-x-1 text-[#0b1220]"
+            : "text-[#0b1220] group-hover/category:translate-x-1",
         )}
         aria-hidden
       />
@@ -302,32 +308,34 @@ export function SiteHeader() {
                 Products
               </NavigationMenuTrigger>
               <NavigationMenuContent className="bg-transparent p-0">
-                <div className="grid w-[min(52rem,calc(100vw-2rem))] gap-3 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[0_24px_70px_rgb(11_18_32_/_0.16)] md:grid-cols-[0.42fr_0.58fr]">
-                  <div className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2">
-                    <p className="px-3 pb-2 pt-1 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                <div className="grid w-[min(52rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_24px_70px_rgb(11_18_32_/_0.16)] md:grid-cols-[0.38fr_0.62fr]">
+                  <div className="border-b border-[color:var(--color-border)] p-5 md:border-b-0 md:border-r">
+                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                       Product categories
                     </p>
-                    <div className="grid gap-1">
+                    <div className="mt-3 divide-y divide-[color:var(--color-border)]">
                       <ProductCategoryButton
                         title="RF Power Amplifiers"
+                        icon={RadioTower}
                         active={activeProductCategory === "rf"}
                         onSelect={() => setActiveProductCategory("rf")}
                       />
                       <ProductCategoryButton
                         title="IC Chips and Modules"
+                        icon={Cpu}
                         active={activeProductCategory === "ic"}
                         onSelect={() => setActiveProductCategory("ic")}
                       />
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2">
-                    <p className="px-3 pb-2 pt-1 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                  <div className="p-5">
+                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                       {activeProductCategory === "rf"
                         ? "RF Power Amplifiers"
                         : "IC Chips and Modules"}
                     </p>
-                    <div className="grid gap-1">
+                    <div className="mt-3 divide-y divide-[color:var(--color-border)]">
                       {activeProductCategory === "rf"
                         ? rfPowerAmplifierProducts.map((product) => (
                             <ProductMenuLink
@@ -367,10 +375,10 @@ export function SiteHeader() {
         <Link
           href="/contact"
           className={cn(
-            "group hidden h-10 items-center gap-2 rounded-full border px-4 text-sm font-semibold transition-colors lg:inline-flex",
+            "group hidden h-10 items-center gap-2 px-1 text-sm font-semibold transition-colors lg:inline-flex",
             solid
-              ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-primary)]/60 hover:bg-[color:var(--color-surface-soft)]"
-              : "border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20",
+              ? "text-[color:var(--color-text)] hover:text-[color:var(--color-text-muted)]"
+              : "text-white hover:text-white/75",
           )}
         >
           Contact Us
@@ -385,10 +393,10 @@ export function SiteHeader() {
             href="/contact"
             onClick={closeMobile}
             className={cn(
-              "group inline-flex h-9 items-center gap-1.5 rounded-full border px-3 text-xs font-semibold transition-colors",
+              "group inline-flex h-9 items-center gap-1.5 px-1 text-xs font-semibold transition-colors",
               solid
-                ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)]"
-                : "border-white/25 bg-white/10 text-white",
+                ? "text-[color:var(--color-text)] hover:text-[color:var(--color-text-muted)]"
+                : "text-white hover:text-white/75",
             )}
           >
             Contact
@@ -431,17 +439,19 @@ export function SiteHeader() {
           <div className="grid gap-2">
             <ProductCategoryButton
               title="RF Power Amplifiers"
+              icon={RadioTower}
               active={activeProductCategory === "rf"}
               onSelect={() => setActiveProductCategory("rf")}
             />
             <ProductCategoryButton
               title="IC Chips and Modules"
+              icon={Cpu}
               active={activeProductCategory === "ic"}
               onSelect={() => setActiveProductCategory("ic")}
             />
           </div>
-          <div className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2">
-            <div className="grid gap-1">
+          <div className="border-y border-[color:var(--color-border)]">
+            <div className="divide-y divide-[color:var(--color-border)]">
               {activeProductCategory === "rf"
                 ? rfPowerAmplifierProducts.map((product) => (
                     <ProductMenuLink
