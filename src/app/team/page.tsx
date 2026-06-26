@@ -12,9 +12,27 @@ export const metadata: Metadata = {
 type TeamMember = {
   name: string;
   role: string;
-  group: "Leadership" | "Development";
+  group: "Leadership" | "Development" | "R&D" | "Support";
   image: string;
 };
+
+const companyWriteups = [
+  {
+    label: "About us",
+    title: "Who we are",
+    body: "Linearised Amplifier Technology & Services Pvt. Ltd. (Linear-AmpTech) is founded and driven by innovative minds from IIT Roorkee, one of India's premier technical institutes. The deep-tech startup targets cyber-physical system design with a focus on radio-frequency circuit and system design.",
+  },
+  {
+    label: "Vision",
+    title: "Our vision",
+    body: "To drive disruptive innovation in cyber-physical systems, delivering high-performance, indigenous technology solutions that secure global traction.",
+  },
+  {
+    label: "Mission",
+    title: "Our mission",
+    body: "The company is focused on innovation to cater to technical challenges in radio-frequency electronics targeting cyber-physical systems, with strengths in RF front-end component design, GaN-based MMIC and high-power modules, and CMOS/BiCMOS RFIC IP cores with silicon validation.",
+  },
+];
 
 const team: TeamMember[] = [
   {
@@ -53,10 +71,96 @@ const team: TeamMember[] = [
     group: "Development",
     image: "/assets/ppt-team/pawan-shukla.jpeg",
   },
+  {
+    name: "Shreyansh Bansal",
+    role: "Embedded Engineer",
+    group: "Development",
+    image: "/assets/ppt-team/shreyansh-bansal.jpeg",
+  },
+  {
+    name: "Pravesh Chamoli",
+    role: "Software Engineer",
+    group: "Development",
+    image: "/assets/ppt-team/pravesh-chamoli.jpeg",
+  },
+  {
+    name: "Nupoor Sood",
+    role: "Post-Doc Fellow",
+    group: "R&D",
+    image: "/assets/ppt-team/nupoor-sood.png",
+  },
+  {
+    name: "Dr. Abdul Sukoor",
+    role: "Scientist DRDO, Research Scholar (Part Time)",
+    group: "R&D",
+    image: "/assets/ppt-team/abdul-sukoor.png",
+  },
+  {
+    name: "Ahmed Zakaria",
+    role: "Research Scholar",
+    group: "R&D",
+    image: "/assets/ppt-team/ahmed-zakaria.png",
+  },
+  {
+    name: "Amit Singh",
+    role: "Research Scholar (Part-time)",
+    group: "R&D",
+    image: "/assets/ppt-team/amit-singh.jpeg",
+  },
+  {
+    name: "Amrit Panigrahi",
+    role: "Research Scholar",
+    group: "R&D",
+    image: "/assets/ppt-team/amrit-panigrahi.png",
+  },
+  {
+    name: "Kamini Singh",
+    role: "Research Scholar",
+    group: "R&D",
+    image: "/assets/ppt-team/kamini-singh.png",
+  },
+  {
+    name: "Chaitanya Reddy",
+    role: "Research Scholar",
+    group: "R&D",
+    image: "/assets/ppt-team/chaitanya-reddy.png",
+  },
+  {
+    name: "B Ganesh P",
+    role: "Research Scholar",
+    group: "R&D",
+    image: "/assets/ppt-team/b-ganesh-p.png",
+  },
+  {
+    name: "Tarun Kumar Suretia",
+    role: "Research Scholar",
+    group: "R&D",
+    image: "/assets/ppt-team/tarun-kumar-suretia.png",
+  },
+  {
+    name: "Sankhraj Suriya",
+    role: "Project Assistant (Admin)",
+    group: "Support",
+    image: "/assets/ppt-team/sankhraj-suriya.png",
+  },
+  {
+    name: "Abhishek Chaurasia",
+    role: "Technical Assistant",
+    group: "Support",
+    image: "/assets/ppt-team/abhishek-chaurasia.png",
+  },
+  {
+    name: "Nitin Verma",
+    role: "Lab Assistant",
+    group: "Support",
+    image: "/assets/ppt-team/nitin-verma.png",
+  },
 ];
 
 const leadership = team.filter((member) => member.group === "Leadership");
 const development = team.filter((member) => member.group === "Development");
+const research = team.filter((member) => member.group === "R&D");
+const support = team.filter((member) => member.group === "Support");
 
 const specStrip = [
   { label: "Team", value: `${String(team.length).padStart(2, "0")} Members` },
@@ -74,7 +178,7 @@ function MemberCard({ member }: { member: TeamMember }) {
             alt={`${member.name}, ${member.role}`}
             fill
             unoptimized
-            sizes="(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 100vw"
+            sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
@@ -110,7 +214,7 @@ function MemberGroup({
           </span>
         </div>
       </Reveal>
-      <div className="mt-8 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {members.map((member) => (
           <MemberCard key={member.name} member={member} />
         ))}
@@ -181,6 +285,33 @@ export default function TeamPage() {
         <div className="container mx-auto max-w-7xl px-4 lg:px-4">
           <Reveal className="max-w-3xl">
             <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+              Company
+            </p>
+            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+              About Linear-AmpTech, our vision, and our mission.
+            </h2>
+          </Reveal>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {companyWriteups.map((item) => (
+              <Reveal key={item.label} className="h-full">
+                <article className="flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                    {item.label}
+                  </p>
+                  <h3 className="mt-4 font-heading text-2xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">
+                    {item.body}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="max-w-3xl">
+            <p className="mb-4 mt-20 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               People
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
@@ -195,6 +326,8 @@ export default function TeamPage() {
           <div className="mt-16 space-y-16">
             <MemberGroup label="Leadership" members={leadership} />
             <MemberGroup label="Development" members={development} />
+            <MemberGroup label="R&D Team" members={research} />
+            <MemberGroup label="Support" members={support} />
           </div>
         </div>
       </section>

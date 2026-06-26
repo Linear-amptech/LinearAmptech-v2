@@ -114,7 +114,7 @@ function ProductMenuLink({
       >
         <span>{title}</span>
         <ArrowRight
-          className="size-4 shrink-0 text-[#0b1220] transition-transform duration-300 group-hover/item:translate-x-1 group-focus/item:translate-x-1"
+          className="size-4 shrink-0 text-[#0b1220] opacity-0 transition-[opacity,transform] duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
           aria-hidden
         />
       </Link>
@@ -150,15 +150,12 @@ function ProductCategoryButton({
         <Icon className="size-4 text-[#0b1220]" aria-hidden="true" />
         {title}
       </span>
-      <ArrowRight
-        className={cn(
-          "size-4 shrink-0 transition-transform duration-300",
-          active
-            ? "translate-x-1 text-[#0b1220]"
-            : "text-[#0b1220] group-hover/category:translate-x-1",
-        )}
-        aria-hidden
-      />
+      {active ? (
+        <ArrowRight
+          className="size-4 shrink-0 translate-x-1 text-[#0b1220] transition-transform duration-300"
+          aria-hidden
+        />
+      ) : null}
     </button>
   );
 }

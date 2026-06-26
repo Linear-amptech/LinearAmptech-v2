@@ -18,6 +18,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { CompanySection } from "@/components/landing/company-section";
 import { RdEngineBackgroundSlider } from "@/components/landing/rd-engine-background-slider";
 import { WorkflowSection } from "@/components/landing/workflow-section";
+import { AllProdcuts } from "../products/AllProducts";
 
 function SectionHeader({
   label,
@@ -59,7 +60,7 @@ function SectionHeader({
   );
 }
 
-function ProductPortfolioCard({ product }: { product: Product }) {
+export function ProductPortfolioCard({ product }: { product: Product }) {
   const band = productBands[product.slug];
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
@@ -239,9 +240,7 @@ export function LandingContentSections() {
             intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {products.map((product) => (
-              <ProductPortfolioCard key={product.slug} product={product} />
-            ))}
+            <AllProdcuts />
           </div>
         </Reveal>
       </section>
