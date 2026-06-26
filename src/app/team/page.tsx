@@ -132,7 +132,7 @@ export default function TeamPage() {
           <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/45">
             Team
           </p>
-          <h1 className="font-heading max-w-5xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+          <h1 className="font-heading max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
             The engineers and operators building RF semiconductor systems.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
