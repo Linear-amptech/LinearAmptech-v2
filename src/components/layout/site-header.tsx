@@ -198,6 +198,7 @@ export function SiteHeader() {
   const [open, setOpen] = React.useState(false);
   const [activeProductCategory, setActiveProductCategory] =
     React.useState<ProductCategoryId>("rf");
+  const [desktopMenuValue, setDesktopMenuValue] = React.useState("");
   const scrolled = useScrolled(12);
   const condensed = useCondensedHeader();
   const pathname = usePathname();
@@ -221,6 +222,7 @@ export function SiteHeader() {
   }, []);
 
   const closeMobile = () => setOpen(false);
+  const closeDesktopMenu = () => setDesktopMenuValue("");
 
   const isActive = (href: string) =>
     href.startsWith("/#") ? false : pathname === href;
@@ -287,9 +289,13 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <NavigationMenu className="absolute left-1/2 hidden -translate-x-1/2 lg:flex">
+        <NavigationMenu
+          value={desktopMenuValue}
+          onValueChange={setDesktopMenuValue}
+          className="absolute left-1/2 hidden -translate-x-1/2 lg:flex"
+        >
           <NavigationMenuList className="gap-5 xl:gap-6">
-            <NavigationMenuItem>
+            <NavigationMenuItem value="products">
               <NavigationMenuLink asChild>
                 <Link href="/" className={deskLink(isActive("/"))}>
                   Home
@@ -321,6 +327,7 @@ export function SiteHeader() {
                         icon={Package}
                         active={false}
                         onSelect={() => undefined}
+                        onNavigate={closeDesktopMenu}
                       />
                       <ProductCategoryLink
                         href="/products/rf/power-amplifiers"
@@ -328,6 +335,7 @@ export function SiteHeader() {
                         icon={RadioTower}
                         active={activeProductCategory === "rf"}
                         onSelect={() => setActiveProductCategory("rf")}
+                        onNavigate={closeDesktopMenu}
                       />
                       <ProductCategoryLink
                         href="/products"
@@ -335,6 +343,7 @@ export function SiteHeader() {
                         icon={Cpu}
                         active={activeProductCategory === "ic"}
                         onSelect={() => setActiveProductCategory("ic")}
+                        onNavigate={closeDesktopMenu}
                       />
                     </div>
                   </div>
@@ -352,6 +361,7 @@ export function SiteHeader() {
                               key={product.slug}
                               href={`/products/rf/power-amplifiers/${product.slug}`}
                               title={product.partNumber}
+                              onNavigate={closeDesktopMenu}
                             />
                           ))
                         : products.map((product) => (
@@ -359,6 +369,7 @@ export function SiteHeader() {
                               key={product.slug}
                               href={`/products/${product.slug}`}
                               title={product.name}
+                              onNavigate={closeDesktopMenu}
                             />
                           ))}
                     </div>

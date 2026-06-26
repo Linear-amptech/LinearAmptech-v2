@@ -73,9 +73,6 @@ const team: TeamMember[] = [
   },
 ];
 
-const leadership = team.filter((member) => member.group === "Leadership");
-const development = team.filter((member) => member.group === "Development");
-
 const specStrip = [
   { label: "Team", value: `${String(team.length).padStart(2, "0")} Members` },
   { label: "Disciplines", value: "RF · Analog · Semiconductor" },
@@ -106,34 +103,6 @@ function MemberCard({ member }: { member: TeamMember }) {
         </div>
       </article>
     </Reveal>
-  );
-}
-
-function MemberGroup({
-  label,
-  members,
-}: {
-  label: string;
-  members: TeamMember[];
-}) {
-  return (
-    <div>
-      <Reveal>
-        <div className="flex items-baseline justify-between gap-4 border-b border-[color:var(--color-border)] pb-4">
-          <h3 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
-            {label}
-          </h3>
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-            {String(members.length).padStart(2, "0")}
-          </span>
-        </div>
-      </Reveal>
-      <div className="mt-8 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {members.map((member) => (
-          <MemberCard key={member.name} member={member} />
-        ))}
-      </div>
-    </div>
   );
 }
 
@@ -237,9 +206,10 @@ export default function TeamPage() {
             </p>
           </Reveal>
 
-          <div className="mt-16 space-y-16">
-            <MemberGroup label="Leadership" members={leadership} />
-            <MemberGroup label="Development" members={development} />
+          <div className="mt-16 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((member) => (
+              <MemberCard key={member.name} member={member} />
+            ))}
           </div>
         </div>
       </section>
