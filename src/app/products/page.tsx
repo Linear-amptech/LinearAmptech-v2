@@ -35,7 +35,7 @@ function ProductListingCard({ product }: { product: Product }) {
         </span>
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-heading text-lg font-bold leading-snug tracking-normal text-[color:var(--color-text)]">
+        <h3 className="font-[family-name:var(--font-sora)] text-lg font-bold leading-snug tracking-normal text-[color:var(--color-text)]">
           <Link
             href={`/products/${product.slug}`}
             className="after:absolute after:inset-0 after:content-['']"

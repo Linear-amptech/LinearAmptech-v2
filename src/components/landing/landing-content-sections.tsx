@@ -59,44 +59,7 @@ function SectionHeader({
   );
 }
 
-// Log-scale RF spectrum (0.1–100 GHz) with the product's operating band lit.
-function SpectrumBar({ min, max }: { min: number; max: number }) {
-  const LO = 0.1;
-  const HI = 100;
-  const span = Math.log10(HI) - Math.log10(LO);
-  const pos = (g: number) =>
-    Math.min(1, Math.max(0, (Math.log10(g) - Math.log10(LO)) / span));
-  const left = pos(min) * 100;
-  const width = Math.max(pos(max) * 100 - left, 2.5);
-
-  return (
-    <div className="mt-3">
-      <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
-        {[1, 10].map((tick) => (
-          <span
-            key={tick}
-            aria-hidden="true"
-            className="absolute inset-y-0 w-px bg-slate-300"
-            style={{ left: `${pos(tick) * 100}%` }}
-          />
-        ))}
-        <span
-          className="absolute inset-y-0 bg-[color:var(--color-text)]"
-          style={{ left: `${left}%`, width: `${width}%` }}
-        />
-      </div>
-      <div className="mt-1.5 flex justify-between font-mono text-[0.6rem] text-slate-400">
-        <span>0.1</span>
-        <span>1</span>
-        <span>10</span>
-        <span>100</span>
-      </div>
-    </div>
-  );
-}
-
 function ProductPortfolioCard({ product }: { product: Product }) {
-  const Icon = product.icon;
   const band = productBands[product.slug];
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
@@ -108,12 +71,9 @@ function ProductPortfolioCard({ product }: { product: Product }) {
           sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
-        <span className="absolute left-4 top-4 grid size-10 place-items-center rounded-lg border border-white/15 bg-[#050b12]/40 text-white backdrop-blur-md">
-          <Icon className="size-5" aria-hidden="true" />
-        </span>
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-heading text-lg font-semibold leading-snug tracking-tight text-[color:var(--color-text)]">
+        <h3 className="font-[family-name:var(--font-sora)] text-2xl font-semibold leading-snug tracking-tight text-[color:var(--color-text)]">
           <Link
             href={`/products/${product.slug}`}
             className="after:absolute after:inset-0 after:content-['']"
@@ -122,14 +82,13 @@ function ProductPortfolioCard({ product }: { product: Product }) {
           </Link>
         </h3>
         {band ? (
-          <div className="mt-5">
+          <div className="mt-4">
             <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
               Operating band
             </p>
-            <p className="mt-1 font-mono text-2xl font-semibold tracking-tight text-[color:var(--color-text)]">
+            <p className="mt-1 font-mono text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
               {band.label}
             </p>
-            <SpectrumBar min={band.min} max={band.max} />
           </div>
         ) : (
           <p className="mt-2 line-clamp-2 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -161,9 +120,6 @@ function TechnologyCard({ platform }: { platform: IpPlatform }) {
           sizes="(min-width: 1024px) 31vw, 100vw"
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
-        <span className="absolute left-4 top-4 grid size-10 place-items-center rounded-lg border border-white/15 bg-[#050b12]/40 text-white backdrop-blur-md">
-          <platform.icon className="size-5" aria-hidden="true" />
-        </span>
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="font-heading text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
