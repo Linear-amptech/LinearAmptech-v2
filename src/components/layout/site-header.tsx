@@ -54,6 +54,43 @@ function useScrolled(threshold: number) {
   return scrolled;
 }
 
+function useCondensedHeader() {
+  const [condensed, setCondensed] = React.useState(false);
+
+  React.useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const updateHeaderSize = () => {
+      const currentScrollY = window.scrollY;
+
+      setCondensed((current) => {
+        if (currentScrollY <= 24) {
+          return false;
+        }
+
+        if (currentScrollY < lastScrollY) {
+          return false;
+        }
+
+        if (currentScrollY > lastScrollY) {
+          return true;
+        }
+
+        return current;
+      });
+
+      lastScrollY = currentScrollY;
+    };
+
+    updateHeaderSize();
+    window.addEventListener("scroll", updateHeaderSize, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateHeaderSize);
+  }, []);
+
+  return condensed;
+}
+
 /* ------------------------------------------------------------------ */
 /* Products mega-menu item                                             */
 /* ------------------------------------------------------------------ */
@@ -155,6 +192,7 @@ export function SiteHeader() {
   const [activeProductCategory, setActiveProductCategory] =
     React.useState<ProductCategoryId>("rf");
   const scrolled = useScrolled(12);
+  const condensed = useCondensedHeader();
   const pathname = usePathname();
 
   // Solid chrome when scrolled past the hero, or when the mobile sheet is open.
@@ -195,6 +233,11 @@ export function SiteHeader() {
 
   return (
     <header
+      style={
+        {
+          "--site-header-height": condensed && !open ? "3rem" : "4rem",
+        } as React.CSSProperties
+      }
       className={cn(
         "fixed inset-x-0 top-0 z-50 w-full transition-[background-color,border-color,box-shadow] duration-300",
         solid
@@ -210,7 +253,12 @@ export function SiteHeader() {
         />
       ) : null}
 
-      <nav className="container relative mx-auto flex h-16 items-center justify-between gap-4 px-5 lg:px-8">
+      <nav
+        className={cn(
+          "container relative mx-auto flex items-center justify-between gap-4 px-5 transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-8",
+          condensed && !open ? "h-12" : "h-16",
+        )}
+      >
         <div className="flex items-center">
           <Link
             href="/"
@@ -223,7 +271,10 @@ export function SiteHeader() {
               alt="Linear-AmpTech logo"
               width={104}
               height={58}
-              className="h-10 w-auto object-contain"
+              className={cn(
+                "w-auto object-contain transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                condensed && !open ? "h-8" : "h-10",
+              )}
               priority
             />
           </Link>

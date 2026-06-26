@@ -87,7 +87,7 @@ const NavigationMenuViewport = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn(
-      "fixed left-1/2 top-16 flex -translate-x-1/2 justify-center pt-2",
+      "fixed left-1/2 top-[var(--site-header-height,4rem)] flex -translate-x-1/2 justify-center pt-2 transition-[top] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
     )}
   >
     <NavigationMenuPrimitive.Viewport
