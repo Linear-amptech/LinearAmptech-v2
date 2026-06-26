@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 
 import {
   applications,
-  assets,
   ipPlatforms,
   metrics,
   products,
@@ -15,6 +14,7 @@ import {
 } from "@/components/landing/data";
 
 import { Reveal } from "@/components/landing/reveal";
+import { CompanySection } from "@/components/landing/company-section";
 import { RdEngineBackgroundSlider } from "@/components/landing/rd-engine-background-slider";
 import { WorkflowSection } from "@/components/landing/workflow-section";
 
@@ -161,41 +161,30 @@ function ApplicationCard({ application }: { application: Application }) {
 export function LandingContentSections() {
   return (
     <>
-      <section id="company" className="py-24">
-        <Reveal className="container mx-auto grid gap-12 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-          <div>
-            <SectionHeader
-              label="Company"
-              title="Engineering RF semiconductor products from research to deployment."
-              intro="Linear-AmpTech transforms RF and semiconductor research into scalable products and deployable solutions across communication, radar, defense, aerospace, and next-generation wireless systems."
-            />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {metrics.map(([value, label]) => (
-                <div
-                  key={value}
-                  className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
-                >
-                  <p className="font-heading text-3xl font-bold text-[color:var(--color-text)]">
-                    {value}
-                  </p>
-                  <p className="mt-2 text-sm text-[color:var(--color-text-muted)]">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative min-h-[500px] overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] shadow-[var(--shadow-card)]">
-            <Image
-              src={assets.siliconWafer}
-              alt="Semiconductor wafer visual for Linear-AmpTech"
-              fill
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
-            />
+      <CompanySection>
+        <Reveal>
+          <SectionHeader
+            label="Company"
+            title="Engineering RF semiconductor products from research to deployment."
+            intro="Linear-AmpTech transforms RF and semiconductor research into scalable products and deployable solutions across communication, radar, defense, aerospace, and next-generation wireless systems."
+          />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {metrics.map(([value, label]) => (
+              <div
+                key={value}
+                className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-soft)]"
+              >
+                <p className="font-heading text-3xl font-bold text-[color:var(--color-text)]">
+                  {value}
+                </p>
+                <p className="mt-2 text-sm text-[color:var(--color-text-muted)]">
+                  {label}
+                </p>
+              </div>
+            ))}
           </div>
         </Reveal>
-      </section>
+      </CompanySection>
 
       <section
         id="products"

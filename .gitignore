@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# large source media (frames are extracted into public/assets/ and committed instead)
+/*.mp4
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
