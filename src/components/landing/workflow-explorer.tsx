@@ -1,10 +1,17 @@
 "use client";
 
-import { useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+} from "framer-motion";
 
+import { Reveal } from "@/components/landing/reveal";
 import { cn } from "@/lib/utils";
 
 type WorkflowStep = {
@@ -63,8 +70,34 @@ const count = workflowSteps.length;
 
 export function WorkflowExplorer() {
   const [active, setActive] = useState(0);
+  const [pinned, setPinned] = useState(false);
   const prefersReduced = useReducedMotion();
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  // Scroll progress across the tall pinning container.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  // Pin (scroll-driven stage advance) only on large screens with motion allowed.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setPinned(mq.matches && !prefersReduced);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, [prefersReduced]);
+
+  useMotionValueEvent(scrollYProgress, "change", (progress) => {
+    if (!pinned) return;
+    const index = Math.min(
+      count - 1,
+      Math.max(0, Math.floor(progress * count)),
+    );
+    setActive((prev) => (prev === index ? prev : index));
+  });
 
   const select = (index: number) => setActive((index + count) % count);
 
@@ -102,154 +135,174 @@ export function WorkflowExplorer() {
   const step = workflowSteps[active];
 
   return (
-    <div className="mt-8 grid gap-6 lg:mt-10 lg:h-[min(56vh,30rem)] lg:grid-cols-[0.8fr_1.2fr] lg:gap-8">
-      {/* Index — vertical list on desktop, horizontal scroll strip on mobile */}
-      <div
-        role="tablist"
-        aria-label="RF development workflow stages"
-        aria-orientation="vertical"
-        onKeyDown={onKeyDown}
-        className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-2 [scrollbar-width:none] lg:h-full lg:flex-col lg:gap-1.5 lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden"
-      >
-        {workflowSteps.map((item, index) => {
-          const isActive = active === index;
-          return (
-            <button
-              key={item.title}
-              ref={(el) => {
-                tabRefs.current[index] = el;
-              }}
-              type="button"
-              role="tab"
-              id={`workflow-tab-${index}`}
-              aria-selected={isActive}
-              aria-controls="workflow-panel"
-              tabIndex={isActive ? 0 : -1}
-              onClick={() => select(index)}
-              onMouseEnter={() => setActive(index)}
-              onFocus={() => setActive(index)}
-              className={cn(
-                "group relative flex shrink-0 snap-start items-center gap-3 rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20 lg:w-full lg:flex-1",
-                isActive
-                  ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
-                  : "border-transparent hover:bg-[color:var(--color-surface)]",
-              )}
-            >
-              <span
-                aria-hidden="true"
-                className={cn(
-                  "absolute left-0 top-1/2 hidden h-7 w-0.5 -translate-y-1/2 rounded-full transition-colors lg:block",
-                  isActive ? "bg-[color:var(--color-text)]" : "bg-transparent",
-                )}
-              />
-              <span
-                className={cn(
-                  "font-mono text-xs tabular-nums transition-colors",
-                  isActive
-                    ? "text-[color:var(--color-text)]"
-                    : "text-[color:var(--color-text-muted)]",
-                )}
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span
-                className={cn(
-                  "font-heading text-sm font-semibold leading-snug transition-colors",
-                  isActive
-                    ? "text-[color:var(--color-text)]"
-                    : "text-[color:var(--color-text-muted)] group-hover:text-[color:var(--color-text)]",
-                )}
-              >
-                {item.title}
-              </span>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Featured stage */}
-      <div
-        id="workflow-panel"
-        role="tabpanel"
-        aria-labelledby={`workflow-tab-${active}`}
-        className="overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:flex lg:h-full lg:flex-col"
-      >
-        <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--color-surface-soft)] sm:aspect-[16/9] lg:aspect-auto lg:min-h-0 lg:flex-1">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={active}
-              initial={
-                prefersReduced
-                  ? false
-                  : { opacity: 0, y: 12, filter: "blur(8px)" }
-              }
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={
-                prefersReduced
-                  ? { opacity: 0 }
-                  : { opacity: 0, y: -8, filter: "blur(6px)" }
-              }
-              transition={{ duration: prefersReduced ? 0.15 : 0.5, ease: EASE }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={step.image}
-                alt={`${step.title} stage schematic`}
-                fill
-                sizes="(min-width: 1024px) 55vw, 100vw"
-                className="object-contain p-6 [filter:grayscale(1)_contrast(1.04)]"
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        <div className="flex items-end justify-between gap-4 border-t border-[color:var(--color-border)] p-6">
-          <div className="min-w-0">
-            <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
-              Stage {String(active + 1).padStart(2, "0")} /{" "}
-              {String(count).padStart(2, "0")}
+    // Tall track on desktop so the inner panel pins while stages advance on scroll.
+    <section ref={sectionRef} className="relative lg:h-[700vh]">
+      <div className="flex min-h-[100svh] flex-col justify-center pb-10 pt-16 lg:sticky lg:top-0 lg:h-[100svh]">
+        <Reveal className="container mx-auto px-5 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+              Workflow
             </p>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={active}
-                initial={prefersReduced ? false : { opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{
-                  duration: prefersReduced ? 0.12 : 0.35,
-                  ease: EASE,
-                }}
-              >
-                <h3 className="mt-2 font-heading text-xl font-semibold text-[color:var(--color-text)] sm:text-2xl">
-                  {step.title}
-                </h3>
-                <p className="mt-2 max-w-md text-sm leading-6 text-[color:var(--color-text-muted)]">
-                  {step.description}
-                </p>
-              </motion.div>
-            </AnimatePresence>
+            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl">
+              From architecture to measured prototype.
+            </h2>
           </div>
 
-          <div className="flex shrink-0 items-center gap-2">
-            <button
-              type="button"
-              onClick={() => select(active - 1)}
-              aria-label="Previous stage"
-              className="grid size-10 place-items-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/40 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
+          <div className="mt-8 grid gap-6 lg:mt-10 lg:h-[min(56vh,30rem)] lg:grid-cols-[0.8fr_1.2fr] lg:gap-8">
+            {/* Index — vertical list on desktop, horizontal scroll strip on mobile */}
+            <div
+              role="tablist"
+              aria-label="RF development workflow stages"
+              aria-orientation="vertical"
+              onKeyDown={onKeyDown}
+              className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-2 [scrollbar-width:none] lg:h-full lg:flex-col lg:gap-1.5 lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden"
             >
-              <ChevronLeft className="size-5" aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              onClick={() => select(active + 1)}
-              aria-label="Next stage"
-              className="grid size-10 place-items-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/40 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
+              {workflowSteps.map((item, index) => {
+                const isActive = active === index;
+                return (
+                  <button
+                    key={item.title}
+                    ref={(el) => {
+                      tabRefs.current[index] = el;
+                    }}
+                    type="button"
+                    role="tab"
+                    id={`workflow-tab-${index}`}
+                    aria-selected={isActive}
+                    aria-controls="workflow-panel"
+                    tabIndex={isActive ? 0 : -1}
+                    onClick={() => select(index)}
+                    onFocus={() => setActive(index)}
+                    className={cn(
+                      "group relative flex shrink-0 snap-start items-center gap-3 rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20 lg:w-full lg:flex-1",
+                      isActive
+                        ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
+                        : "border-transparent hover:bg-[color:var(--color-surface)]",
+                    )}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        "absolute left-0 top-1/2 hidden h-7 w-0.5 -translate-y-1/2 rounded-full transition-colors lg:block",
+                        isActive
+                          ? "bg-[color:var(--color-text)]"
+                          : "bg-transparent",
+                      )}
+                    />
+                    <span
+                      className={cn(
+                        "font-mono text-xs tabular-nums transition-colors",
+                        isActive
+                          ? "text-[color:var(--color-text)]"
+                          : "text-[color:var(--color-text-muted)]",
+                      )}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={cn(
+                        "font-heading text-sm font-semibold leading-snug transition-colors",
+                        isActive
+                          ? "text-[color:var(--color-text)]"
+                          : "text-[color:var(--color-text-muted)] group-hover:text-[color:var(--color-text)]",
+                      )}
+                    >
+                      {item.title}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Featured stage */}
+            <div
+              id="workflow-panel"
+              role="tabpanel"
+              aria-labelledby={`workflow-tab-${active}`}
+              className="overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:flex lg:h-full lg:flex-col"
             >
-              <ChevronRight className="size-5" aria-hidden="true" />
-            </button>
+              <div className="relative aspect-[16/10] overflow-hidden bg-white sm:aspect-[16/9] lg:aspect-auto lg:min-h-0 lg:flex-1">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={active}
+                    initial={
+                      prefersReduced
+                        ? false
+                        : { opacity: 0, y: 12, filter: "blur(8px)" }
+                    }
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    exit={
+                      prefersReduced
+                        ? { opacity: 0 }
+                        : { opacity: 0, y: -8, filter: "blur(6px)" }
+                    }
+                    transition={{
+                      duration: prefersReduced ? 0.15 : 0.5,
+                      ease: EASE,
+                    }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={step.image}
+                      alt={`${step.title} stage schematic`}
+                      fill
+                      sizes="(min-width: 1024px) 55vw, 100vw"
+                      className="object-contain p-6 [filter:grayscale(1)_contrast(1.04)]"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              <div className="flex items-end justify-between gap-4 border-t border-[color:var(--color-border)] p-6">
+                <div className="min-w-0">
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+                    Stage {String(active + 1).padStart(2, "0")} /{" "}
+                    {String(count).padStart(2, "0")}
+                  </p>
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={active}
+                      initial={prefersReduced ? false : { opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{
+                        duration: prefersReduced ? 0.12 : 0.35,
+                        ease: EASE,
+                      }}
+                    >
+                      <h3 className="mt-2 font-heading text-xl font-semibold text-[color:var(--color-text)] sm:text-2xl">
+                        {step.title}
+                      </h3>
+                      <p className="mt-2 max-w-md text-sm leading-6 text-[color:var(--color-text-muted)]">
+                        {step.description}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                <div className="flex shrink-0 items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => select(active - 1)}
+                    aria-label="Previous stage"
+                    className="grid size-10 place-items-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/40 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
+                  >
+                    <ChevronLeft className="size-5" aria-hidden="true" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => select(active + 1)}
+                    aria-label="Next stage"
+                    className="grid size-10 place-items-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/40 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
+                  >
+                    <ChevronRight className="size-5" aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
-    </div>
+    </section>
   );
 }
