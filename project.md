@@ -29,7 +29,7 @@
 ## Layout Guidelines
 
 - Section wrappers should use Tailwind's `container` class consistently:
-  `container mx-auto px-5 py-24 lg:px-8`
+  `container mx-auto px-4 py-24 lg:px-4`
 - Keep the dark RF/circuit visual system across all pages.
 - Use glass panels for cards:
   `product-card`, `platform-card`, `application-card`, `research-cell`, `team-card`, or equivalent shared classes.

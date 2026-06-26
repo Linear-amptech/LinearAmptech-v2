@@ -256,7 +256,7 @@ export function SiteHeader() {
       <nav
         className={cn(
           "container relative mx-auto flex items-center justify-between gap-4 px-5 transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-8",
-          condensed && !open ? "h-12" : "h-16",
+          condensed && !open ? "h-13" : "h-16",
         )}
       >
         <div className="flex items-center">
@@ -273,7 +273,7 @@ export function SiteHeader() {
               height={58}
               className={cn(
                 "w-auto object-contain transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                condensed && !open ? "h-8" : "h-10",
+                condensed && !open ? "h-11" : "h-13",
               )}
               priority
             />
