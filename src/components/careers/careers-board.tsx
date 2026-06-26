@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -60,6 +60,7 @@ function isResumeUrl(value: string) {
 }
 
 export function CareersBoard() {
+  const prefersReducedMotion = useReducedMotion();
   const [selectedJob, setSelectedJob] = useState<Job | null>(jobs[0] ?? null);
   const [searchKeyword, setSearchKeyword] = useState("");
   const [appliedSearchKeyword, setAppliedSearchKeyword] = useState("");
@@ -180,6 +181,15 @@ export function CareersBoard() {
     <section className="mt-12">
       <div className="grid gap-7">
         <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)] md:p-6">
+          <div className="mb-5 flex items-center justify-between border-b border-[color:var(--color-border)] pb-4">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+              Filter Roles
+            </p>
+            <p className="font-mono text-xs tabular-nums uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+              {String(filteredJobs.length).padStart(2, "0")} /{" "}
+              {String(jobs.length).padStart(2, "0")}
+            </p>
+          </div>
           <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_auto]">
             <div className="relative">
               <Search
@@ -228,7 +238,7 @@ export function CareersBoard() {
             />
             <button
               type="button"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
               onClick={applySearch}
             >
               Find Jobs
@@ -243,7 +253,7 @@ export function CareersBoard() {
                   key={`${filter.clear}-${filter.label}`}
                   type="button"
                   onClick={() => clearFilter(filter.clear)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]"
+                  className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/15"
                 >
                   {filter.label}
                   <X className="size-3.5" aria-hidden="true" />
@@ -265,7 +275,7 @@ export function CareersBoard() {
                 </p>
               </article>
             ) : (
-              filteredJobs.map((job) => (
+              filteredJobs.map((job, index) => (
                 <button
                   key={job.id}
                   type="button"
@@ -275,34 +285,43 @@ export function CareersBoard() {
                     setStatus("idle");
                     setError("");
                   }}
-                  className={`flex min-h-52 flex-col rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgb(15_23_42/0.08)] ${
+                  className={`group/card relative flex flex-col rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgb(15_23_42/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/15 ${
                     visibleSelectedJob?.id === job.id
                       ? "border-[color:var(--color-text)]/20 bg-[color:var(--color-surface-soft)]"
                       : "border-[color:var(--color-border)]"
                   }`}
                 >
-                  <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                    {job.jobTitle}
-                  </p>
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                      {job.jobTitle}
+                    </p>
+                    <span className="font-mono text-xs tabular-nums tracking-[0.18em] text-[color:var(--color-text-muted)]">
+                      {String(index + 1).padStart(2, "0")} /{" "}
+                      {String(filteredJobs.length).padStart(2, "0")}
+                    </span>
+                  </div>
                   <h2 className="font-heading mt-2 text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
                     {job.title}
                   </h2>
-                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-[color:var(--color-text-muted)]">
-                    <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
-                      <MapPin className="inline size-3.5" aria-hidden="true" />{" "}
-                      {job.location}
-                    </span>
-                    <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
-                      <BriefcaseBusiness
-                        className="inline size-3.5"
-                        aria-hidden="true"
-                      />{" "}
-                      {job.employmentType}
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                        <MapPin className="size-3.5" aria-hidden="true" />
+                        {job.location}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                        <BriefcaseBusiness
+                          className="size-3.5"
+                          aria-hidden="true"
+                        />
+                        {job.employmentType}
+                      </span>
+                    </div>
+                    <span className="flex items-center gap-1.5 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)] transition-colors group-hover/card:text-[color:var(--color-text)]">
+                      View Details
+                      <ArrowRight className="size-3.5" aria-hidden="true" />
                     </span>
                   </div>
-                  <span className="mt-auto self-end pt-5 text-sm font-semibold text-[color:var(--color-text)] underline decoration-[color:var(--color-border)] underline-offset-4 transition-colors hover:decoration-[color:var(--color-text)]/40">
-                    View details
-                  </span>
                 </button>
               ))
             )}
@@ -312,10 +331,25 @@ export function CareersBoard() {
             {visibleSelectedJob && (
               <motion.article
                 key={visibleSelectedJob.id}
-                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
-                transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                initial={
+                  prefersReducedMotion
+                    ? { opacity: 0 }
+                    : { opacity: 0, y: 18, filter: "blur(8px)" }
+                }
+                animate={
+                  prefersReducedMotion
+                    ? { opacity: 1 }
+                    : { opacity: 1, y: 0, filter: "blur(0px)" }
+                }
+                exit={
+                  prefersReducedMotion
+                    ? { opacity: 0 }
+                    : { opacity: 0, y: -12, filter: "blur(8px)" }
+                }
+                transition={{
+                  duration: prefersReducedMotion ? 0.2 : 0.38,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] md:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -334,36 +368,33 @@ export function CareersBoard() {
                       setStatus("idle");
                       setError("");
                     }}
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   >
                     Apply Now
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </button>
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-2 text-sm text-[color:var(--color-text-muted)]">
-                  <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
-                    <MapPin className="inline size-3.5" aria-hidden="true" />{" "}
+                <div className="mt-6 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                    <MapPin className="size-3.5" aria-hidden="true" />
                     {visibleSelectedJob.location}
                   </span>
-                  <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
                     <BriefcaseBusiness
-                      className="inline size-3.5"
+                      className="size-3.5"
                       aria-hidden="true"
-                    />{" "}
+                    />
                     {visibleSelectedJob.employmentType}
                   </span>
-                  <span className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
-                    <CalendarDays
-                      className="inline size-3.5"
-                      aria-hidden="true"
-                    />{" "}
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                    <CalendarDays className="size-3.5" aria-hidden="true" />
                     Posted {visibleSelectedJob.datePosted}
                   </span>
                   {visibleSelectedJob.workType.map((type) => (
                     <span
                       key={type}
-                      className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-1 text-xs font-medium text-[color:var(--color-text-muted)]"
+                      className="inline-flex items-center rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]"
                     >
                       {type}
                     </span>
@@ -376,30 +407,48 @@ export function CareersBoard() {
 
                 <div className="mt-8 grid gap-7 md:grid-cols-2">
                   <div>
-                    <h3 className="font-heading text-lg font-bold text-[color:var(--color-text)]">
-                      Key responsibilities
+                    <h3 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
+                      Key Responsibilities
                     </h3>
-                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
+                    <ul className="mt-4 divide-y divide-[color:var(--color-border)] border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.keyResponsibilities.map((item) => (
-                        <li key={item}>- {item}</li>
+                        <li key={item} className="flex gap-3 py-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-[color:var(--color-text-muted)]"
+                          />
+                          <span>{item}</span>
+                        </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg font-bold text-[color:var(--color-text)]">
+                    <h3 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
                       Requirements
                     </h3>
-                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
+                    <ul className="mt-4 divide-y divide-[color:var(--color-border)] border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.requirements.map((item) => (
-                        <li key={item}>- {item}</li>
+                        <li key={item} className="flex gap-3 py-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-[color:var(--color-text-muted)]"
+                          />
+                          <span>{item}</span>
+                        </li>
                       ))}
                     </ul>
-                    <h3 className="font-heading mt-7 text-lg font-bold text-[color:var(--color-text)]">
-                      Desired skills
+                    <h3 className="mt-7 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
+                      Desired Skills
                     </h3>
-                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
+                    <ul className="mt-4 divide-y divide-[color:var(--color-border)] border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.desiredSkills.map((item) => (
-                        <li key={item}>- {item}</li>
+                        <li key={item} className="flex gap-3 py-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-[color:var(--color-text-muted)]"
+                          />
+                          <span>{item}</span>
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -518,7 +567,7 @@ export function CareersBoard() {
                     <button
                       type="submit"
                       disabled={status === "submitting"}
-                      className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface-soft)] disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {status === "submitting"
                         ? "Submitting..."

@@ -1,22 +1,34 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 
 import { projectTypeOptions } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 import { AppSelect } from "@/components/ui/select";
 import { companyContact } from "@/lib/company-data";
 
-const detailCards = [
+const directory = [
   {
     label: "Phone",
-    value: companyContact.phone,
-    href: `tel:${companyContact.phone.replaceAll(" ", "")}`,
     icon: Phone,
+    href: `tel:${companyContact.phone.replaceAll(" ", "")}`,
+    lines: [companyContact.phone],
   },
   {
     label: "Email",
-    value: companyContact.email,
-    href: `mailto:${companyContact.email}`,
     icon: Mail,
+    href: `mailto:${companyContact.email}`,
+    lines: [companyContact.email],
+  },
+  {
+    label: "Location",
+    icon: MapPin,
+    href: undefined,
+    lines: companyContact.addressLines,
+  },
+  {
+    label: "Response",
+    icon: Clock,
+    href: undefined,
+    lines: ["Within 2 business days · Mon–Fri IST"],
   },
 ] as const;
 
@@ -36,56 +48,49 @@ export function ContactSection() {
               Build your next silicon innovation with Linear Amptech.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
-              Share the system, frequency range, architecture target, or
-              prototype objective. Linear Amptech can scope RF, analog,
-              mixed-signal, and ASIC R&D programs from concept through
-              validation.
+              Tell us the band, architecture, and target. We scope RF, analog,
+              mixed-signal, and ASIC programs from concept to validation.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {detailCards.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-colors hover:border-[color:var(--color-text)]/30"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="grid size-10 place-items-center rounded-lg bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
-                        <Icon className="size-4" aria-hidden="true" />
-                      </div>
-                      <div>
-                        <p className="font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
-                          {item.label}
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-[color:var(--color-text)]">
-                          {item.value}
-                        </p>
-                      </div>
+            <div className="mt-8 overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+              <dl className="divide-y divide-[color:var(--color-border)]">
+                {directory.map((row) => {
+                  const Icon = row.icon;
+                  const value = (
+                    <div className="text-sm font-medium leading-6 text-[color:var(--color-text)]">
+                      {row.lines.map((line) => (
+                        <p key={line}>{line}</p>
+                      ))}
                     </div>
-                  </a>
-                );
-              })}
-            </div>
+                  );
 
-            <div className="mt-4 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
-              <div className="flex items-start gap-3">
-                <div className="grid size-10 place-items-center rounded-lg bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
-                  <MapPin className="size-4" aria-hidden="true" />
-                </div>
-                <div>
-                  <p className="font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
-                    Address
-                  </p>
-                  <div className="mt-2 text-sm leading-6 text-[color:var(--color-text-muted)]">
-                    {companyContact.addressLines.map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                  return (
+                    <div
+                      key={row.label}
+                      className="grid gap-2 px-5 py-4 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-5"
+                    >
+                      <dt className="flex items-center gap-2.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)] sm:pt-0.5">
+                        <span className="grid size-7 place-items-center rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
+                          <Icon className="size-3.5" aria-hidden="true" />
+                        </span>
+                        {row.label}
+                      </dt>
+                      <dd className="sm:text-right">
+                        {row.href ? (
+                          <a
+                            href={row.href}
+                            className="inline-block rounded-sm text-sm font-medium leading-6 text-[color:var(--color-text)] underline-offset-4 transition-colors hover:underline focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
+                          >
+                            {row.lines[0]}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </dd>
+                    </div>
+                  );
+                })}
+              </dl>
             </div>
           </Reveal>
 
@@ -137,13 +142,18 @@ export function ContactSection() {
                     className="min-h-40 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <button
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50 md:col-span-2"
-                  type="submit"
-                >
-                  Start a Project
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </button>
+                <div className="flex flex-col gap-4 md:col-span-2 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+                    Routed straight to our engineering team.
+                  </p>
+                  <button
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+                    type="submit"
+                  >
+                    Start a Project
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </button>
+                </div>
               </div>
             </form>
           </Reveal>
