@@ -88,7 +88,7 @@ export default function ProductsPage() {
                           {product.shortSpec}
                         </p>
                         <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-text-muted)]">
-                          View page
+                          View Details
                           <ChevronRight
                             className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                             aria-hidden="true"

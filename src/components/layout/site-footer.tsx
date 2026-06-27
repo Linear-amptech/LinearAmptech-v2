@@ -5,10 +5,10 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { companyContact } from "@/lib/company-data";
 
 const footerLinks = [
-  { href: "/#products", label: "Products" },
+  { href: "/products", label: "Products" },
   { href: "/#technology", label: "Technology" },
   { href: "/#applications", label: "Applications" },
-  { href: "/#company", label: "Company" },
+  { href: "/team", label: "Team" },
   { href: "/contact", label: "Contact" },
 ];
 
