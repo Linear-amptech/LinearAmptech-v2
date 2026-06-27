@@ -140,6 +140,12 @@
     @apply mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-green-700;
   }
 
+  .team-card-image-zoom {
+    animation: teamCardImageZoom 4.2s linear infinite alternate;
+    transform-origin: center;
+    will-change: transform;
+  }
+
   .section-title {
     @apply max-w-3xl text-3xl font-semibold leading-tight tracking-normal text-white sm:text-4xl lg:text-5xl;
   }
@@ -921,6 +927,15 @@
   }
   to {
     transform: scale(1.08) translate3d(1.5%, 1%, 0);
+  }
+}
+
+@keyframes teamCardImageZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
   }
 }
 

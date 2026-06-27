@@ -20,16 +20,19 @@ const companyWriteups = [
   {
     label: "About us",
     title: "Who we are",
+    image: "/assets/team/about.png",
     body: "Linearised Amplifier Technology & Services Pvt. Ltd. (Linear-AmpTech) is founded and driven by innovative minds from IIT Roorkee, one of India's premier technical institutes. The deep-tech startup targets cyber-physical system design with a focus on radio-frequency circuit and system design.",
   },
   {
     label: "Vision",
     title: "Our vision",
+    image: "/assets/team/vision.png",
     body: "To drive disruptive innovation in cyber-physical systems, delivering high-performance, indigenous technology solutions that secure global traction.",
   },
   {
     label: "Mission",
     title: "Our mission",
+    image: "/assets/team/mission.png",
     body: "The company is focused on innovation to cater to technical challenges in radio-frequency electronics targeting cyber-physical systems, with strengths in RF front-end component design, GaN-based MMIC and high-power modules, and CMOS/BiCMOS RFIC IP cores with silicon validation.",
   },
 ];
@@ -178,16 +181,22 @@ export default function TeamPage() {
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {companyWriteups.map((item) => (
               <Reveal key={item.label} className="h-full">
-                <article className="flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
-                  <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                    {item.label}
-                  </p>
-                  <h3 className="mt-4 font-heading text-2xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">
-                    {item.body}
-                  </p>
+                <article className="group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1280px) 30vw, (min-width: 1024px) 32vw, 100vw"
+                    className="team-card-image-zoom object-cover"
+                  />
+                  <div className="relative z-10">
+                    <h3 className="font-heading text-2xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">
+                      {item.body}
+                    </p>
+                  </div>
                 </article>
               </Reveal>
             ))}

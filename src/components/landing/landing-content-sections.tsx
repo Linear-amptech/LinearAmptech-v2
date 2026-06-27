@@ -179,7 +179,7 @@ export function LandingContentSections() {
         <Reveal>
           <div className="max-w-3xl">
             <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-              Company
+              About us
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
               Engineering RF semiconductor products from research to deployment.
@@ -190,7 +190,7 @@ export function LandingContentSections() {
               radar, defense, aerospace, and next-generation wireless systems.{" "}
               <Link
                 href="/team"
-                className="group/read-more inline-flex items-center gap-1.5 whitespace-nowrap font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+                className="group/read-more inline-flex items-center gap-1.5 whitespace-nowrap  text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
               >
                 Read more
                 <ArrowRight
