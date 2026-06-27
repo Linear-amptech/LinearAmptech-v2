@@ -275,7 +275,7 @@ export function CareersBoard() {
                 </p>
               </article>
             ) : (
-              filteredJobs.map((job, index) => (
+              filteredJobs.map((job) => (
                 <button
                   key={job.id}
                   type="button"
@@ -285,31 +285,28 @@ export function CareersBoard() {
                     setStatus("idle");
                     setError("");
                   }}
-                  className={`group/card relative flex flex-col rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgb(15_23_42/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/15 ${
+                  className={`group/card relative flex flex-col overflow-hidden rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgb(15_23_42/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/15 ${
                     visibleSelectedJob?.id === job.id
-                      ? "border-[color:var(--color-text)]/20 bg-[color:var(--color-surface-soft)]"
+                      ? "border-[color:var(--color-text)]/15 shadow-[0_16px_40px_rgb(15_23_42/0.08)]"
                       : "border-[color:var(--color-border)]"
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                      {job.jobTitle}
-                    </p>
-                    <span className="font-mono text-xs tabular-nums tracking-[0.18em] text-[color:var(--color-text-muted)]">
-                      {String(index + 1).padStart(2, "0")} /{" "}
-                      {String(filteredJobs.length).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h2 className="font-heading mt-2 text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
+                  {visibleSelectedJob?.id === job.id ? (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-y-0 left-0 w-0.5 bg-[color:var(--color-text)]"
+                    />
+                  ) : null}
+                  <h2 className="font-heading text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
                     {job.title}
                   </h2>
                   <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
                         <MapPin className="size-3.5" aria-hidden="true" />
                         {job.location}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 text-xs font-medium text-[color:var(--color-text-muted)]">
                         <BriefcaseBusiness
                           className="size-3.5"
                           aria-hidden="true"
@@ -317,9 +314,12 @@ export function CareersBoard() {
                         {job.employmentType}
                       </span>
                     </div>
-                    <span className="flex items-center gap-1.5 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)] transition-colors group-hover/card:text-[color:var(--color-text)]">
+                    <span className="group/view flex items-center gap-1.5 text-xs font-semibold text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)]">
                       View Details
-                      <ArrowRight className="size-3.5" aria-hidden="true" />
+                      <ArrowRight
+                        className="size-3.5 transition-transform duration-300 group-hover/view:translate-x-0.5"
+                        aria-hidden="true"
+                      />
                     </span>
                   </div>
                 </button>
@@ -353,14 +353,9 @@ export function CareersBoard() {
                 className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] md:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <p className="font-mono text-sm font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                      {visibleSelectedJob.jobTitle}
-                    </p>
-                    <h2 className="font-heading mt-2 text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
-                      {visibleSelectedJob.title}
-                    </h2>
-                  </div>
+                  <h2 className="font-heading text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
+                    {visibleSelectedJob.title}
+                  </h2>
                   <button
                     type="button"
                     onClick={() => {
@@ -410,7 +405,7 @@ export function CareersBoard() {
                     <h3 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
                       Key Responsibilities
                     </h3>
-                    <ul className="mt-4 divide-y divide-[color:var(--color-border)] border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
+                    <ul className="mt-4 border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.keyResponsibilities.map((item) => (
                         <li key={item} className="flex gap-3 py-2.5">
                           <span
@@ -426,7 +421,7 @@ export function CareersBoard() {
                     <h3 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
                       Requirements
                     </h3>
-                    <ul className="mt-4 divide-y divide-[color:var(--color-border)] border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
+                    <ul className="mt-4 border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.requirements.map((item) => (
                         <li key={item} className="flex gap-3 py-2.5">
                           <span
@@ -440,7 +435,7 @@ export function CareersBoard() {
                     <h3 className="mt-7 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
                       Desired Skills
                     </h3>
-                    <ul className="mt-4 divide-y divide-[color:var(--color-border)] border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
+                    <ul className="mt-4 border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
                       {visibleSelectedJob.desiredSkills.map((item) => (
                         <li key={item} className="flex gap-3 py-2.5">
                           <span

@@ -23,7 +23,7 @@ export function SiteFooter() {
               className="inline-flex items-center"
               aria-label="Linear-AmpTech home"
             >
-              <span className="grid h-14 w-[112px] place-items-center ">
+              <span className="grid h-14 w-[112px] place-items-left ">
                 <Image
                   src="/assets/linear-amptech-logo.png"
                   alt="Linear-AmpTech logo"

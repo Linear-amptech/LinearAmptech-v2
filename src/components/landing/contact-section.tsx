@@ -40,7 +40,7 @@ export function ContactSection() {
     >
       <div className="container mx-auto max-w-7xl px-4 lg:px-4">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal>
+          <Reveal className="flex h-full flex-col">
             <p className="font-mono mb-4 text-xs uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
               Contact
             </p>
@@ -52,8 +52,8 @@ export function ContactSection() {
               mixed-signal, and ASIC programs from concept to validation.
             </p>
 
-            <div className="mt-8 overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
-              <dl className="divide-y divide-[color:var(--color-border)]">
+            <div className="mt-8 flex flex-1 flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+              <dl className="flex flex-1 flex-col divide-y divide-[color:var(--color-border)]">
                 {directory.map((row) => {
                   const Icon = row.icon;
                   const value = (
@@ -67,9 +67,9 @@ export function ContactSection() {
                   return (
                     <div
                       key={row.label}
-                      className="grid gap-2 px-5 py-4 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-5"
+                      className="grid flex-1 content-center gap-2 px-5 py-4 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-5"
                     >
-                      <dt className="flex items-center gap-2.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)] sm:pt-0.5">
+                      <dt className="flex items-center gap-2.5 text-xs font-medium text-[color:var(--color-text-muted)] sm:pt-0.5">
                         <span className="grid size-7 place-items-center rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
                           <Icon className="size-3.5" aria-hidden="true" />
                         </span>
@@ -97,7 +97,7 @@ export function ContactSection() {
           <Reveal>
             <form className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
               <div className="grid gap-4 md:grid-cols-2">
-                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
+                <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Name</span>
                   <input
                     name="name"
@@ -105,7 +105,7 @@ export function ContactSection() {
                     className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
+                <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Email</span>
                   <input
                     name="email"
@@ -114,7 +114,7 @@ export function ContactSection() {
                     className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
+                <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Company</span>
                   <input
                     name="company"
@@ -122,7 +122,7 @@ export function ContactSection() {
                     className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)]">
+                <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Project type</span>
                   <AppSelect
                     name="projectType"
@@ -134,7 +134,7 @@ export function ContactSection() {
                     }))}
                   />
                 </label>
-                <label className="grid gap-2 font-mono text-[0.7rem] uppercase tracking-wider text-[color:var(--color-text-muted)] md:col-span-2">
+                <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)] md:col-span-2">
                   <span>Message</span>
                   <textarea
                     name="message"
@@ -142,10 +142,7 @@ export function ContactSection() {
                     className="min-h-40 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
                   />
                 </label>
-                <div className="flex flex-col gap-4 md:col-span-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
-                    Routed straight to our engineering team.
-                  </p>
+                <div className="flex flex-col gap-4 md:col-span-2 sm:flex-row sm:items-center sm:justify-end">
                   <button
                     className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                     type="submit"
