@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 __TRACKED_VAR__/scripts/with_server.py --server 'pnpm dev' --port 3000 --timeout 120 -- python3 __TRACKED_VAR__/shoot_all.py)"
+    ]
+  }
+}

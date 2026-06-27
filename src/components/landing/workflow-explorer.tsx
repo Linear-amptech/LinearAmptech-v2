@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -11,6 +10,7 @@ import {
 } from "framer-motion";
 
 import { Reveal } from "@/components/landing/reveal";
+import { StageSchematic } from "@/components/landing/workflow";
 import { cn } from "@/lib/utils";
 
 type WorkflowStep = {
@@ -149,8 +149,6 @@ export function WorkflowExplorer() {
     }
   };
 
-  const step = workflowSteps[active];
-
   return (
     // Tall track on desktop so the inner panel pins while stages advance on scroll.
     <section ref={sectionRef} className="relative lg:h-[280vh]">
@@ -246,7 +244,7 @@ export function WorkflowExplorer() {
               aria-labelledby={`workflow-tab-${active}`}
               className="overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:h-full"
             >
-              <div className="relative aspect-[16/10] h-full overflow-hidden bg-white sm:aspect-[16/9] lg:aspect-auto">
+              <div className="relative aspect-[16/10] h-full overflow-hidden bg-[color:var(--color-surface)] sm:aspect-[16/9] lg:aspect-auto">
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={active}
@@ -267,12 +265,9 @@ export function WorkflowExplorer() {
                     }}
                     className="absolute inset-0"
                   >
-                    <Image
-                      src={step.image}
-                      alt={`${step.title} stage schematic`}
-                      fill
-                      sizes="(min-width: 1024px) 55vw, 100vw"
-                      className="object-cover"
+                    <StageSchematic
+                      active={active}
+                      reduced={Boolean(prefersReduced)}
                     />
                   </motion.div>
                 </AnimatePresence>
