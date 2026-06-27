@@ -38,7 +38,7 @@ export function ContactSection() {
       id="contact"
       className="bg-[color:var(--color-surface-soft)] py-16 sm:py-24"
     >
-      <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+      <div className="container mx-auto max-w-7xl px-4 lg:px-4">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <p className="font-mono mb-4 text-xs uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">

@@ -7,7 +7,6 @@ import {
   ipPlatforms,
   metrics,
   productBands,
-  products,
   researchFocusRows,
   type Application,
   type IpPlatform,
@@ -18,6 +17,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { CompanySection } from "@/components/landing/company-section";
 import { RdEngineBackgroundSlider } from "@/components/landing/rd-engine-background-slider";
 import { WorkflowSection } from "@/components/landing/workflow-section";
+import { AllProdcuts } from "../products/AllProducts";
 
 function SectionHeader({
   label,
@@ -59,7 +59,7 @@ function SectionHeader({
   );
 }
 
-function ProductPortfolioCard({ product }: { product: Product }) {
+export function ProductPortfolioCard({ product }: { product: Product }) {
   const band = productBands[product.slug];
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
@@ -86,7 +86,7 @@ function ProductPortfolioCard({ product }: { product: Product }) {
             <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
               Operating band
             </p>
-            <p className="mt-1 font-mono text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
+            <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
               {band.label}
             </p>
           </div>
@@ -174,11 +174,29 @@ export function LandingContentSections() {
     <>
       <CompanySection>
         <Reveal>
-          <SectionHeader
-            label="Company"
-            title="Engineering RF semiconductor products from research to deployment."
-            intro="Linear-AmpTech transforms RF and semiconductor research into scalable products and deployable solutions across communication, radar, defense, aerospace, and next-generation wireless systems."
-          />
+          <div className="max-w-3xl">
+            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+              Company
+            </p>
+            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+              Engineering RF semiconductor products from research to deployment.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
+              Linear-AmpTech transforms RF and semiconductor research into
+              scalable products and deployable solutions across communication,
+              radar, defense, aerospace, and next-generation wireless systems.{" "}
+              <Link
+                href="/team"
+                className="group/read-more inline-flex items-center gap-1.5 whitespace-nowrap font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+              >
+                Read more
+                <ArrowRight
+                  className="size-4 transition-transform duration-300 group-hover/read-more:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+            </p>
+          </div>
           <div className="mt-6 grid auto-rows-fr grid-cols-2 gap-3 sm:mt-8">
             {metrics.map(([value, label], index) => {
               return (
@@ -214,22 +232,20 @@ export function LandingContentSections() {
         id="products"
         className="bg-[color:var(--color-surface-soft)] py-16 sm:py-24"
       >
-        <Reveal className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-4 lg:px-4">
           <SectionHeader
             label="Products"
             title="RF front-end product portfolio from PA modules to mm-wave ICs."
             intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {products.map((product) => (
-              <ProductPortfolioCard key={product.slug} product={product} />
-            ))}
+            <AllProdcuts />
           </div>
         </Reveal>
       </section>
 
       <section id="technology" className="py-16 sm:py-24">
-        <Reveal className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-4 lg:px-4">
           <SectionHeader
             label="Technology"
             title="Engineering across semiconductor technologies."
@@ -246,7 +262,7 @@ export function LandingContentSections() {
         id="applications"
         className="bg-[color:var(--color-surface)] py-16 sm:py-24"
       >
-        <Reveal className="container mx-auto px-5 lg:px-8">
+        <Reveal className="container mx-auto px-4 lg:px-4">
           <SectionHeader
             label="Applications"
             title="RF products shaped around real deployment domains."
@@ -269,7 +285,7 @@ export function LandingContentSections() {
           aria-hidden="true"
           className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(5_11_18_/_0.93)_0%,rgb(5_11_18_/_0.78)_36%,rgb(5_11_18_/_0.36)_68%,rgb(5_11_18_/_0.16)_100%)]"
         />
-        <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100svh-17rem)] px-5 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100svh-17rem)] px-4 lg:px-4">
           <div className="flex max-w-3xl flex-col justify-center">
             <SectionHeader
               label="R&D Engine"

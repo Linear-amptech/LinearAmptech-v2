@@ -33,7 +33,7 @@ export default function CareersPage() {
             className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgba(5,11,18,0.7)_38%,rgba(5,11,18,0)_100%)]"
           />
         </div>
-        <Reveal className="container relative z-10 mx-auto max-w-7xl px-5 pb-20 lg:px-8">
+        <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 pb-20 ">
           <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/45">
             Careers
           </p>
@@ -47,7 +47,7 @@ export default function CareersPage() {
           </p>
         </Reveal>
         <div className="relative z-10 border-t border-white/10">
-          <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="container mx-auto max-w-7xl px-4">
             <dl className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-3 sm:divide-y-0">
               <div className="border-white/10 py-6 sm:border-r sm:pr-6">
                 <dt className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-white/45">
@@ -79,7 +79,7 @@ export default function CareersPage() {
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
-        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="container mx-auto max-w-7xl px-4">
           <Reveal className="max-w-3xl">
             <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
               Open Roles

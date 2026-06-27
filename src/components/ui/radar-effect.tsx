@@ -45,7 +45,7 @@ export const Radar = ({ className }: { className?: string }) => {
         style={{ transformOrigin: "right center" }}
         className="animate-radar-spin absolute right-1/2 top-1/2 z-40 flex h-[5px] w-[400px] items-end justify-center overflow-hidden bg-transparent"
       >
-        <div className="relative z-40 h-px w-full bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
+        <div className="relative z-40 h-px w-full bg-gradient-to-r from-transparent via-green-600 to-transparent" />
       </div>
       {circles.map((_, idx) => (
         <Circle
@@ -81,10 +81,10 @@ export const IconContainer = ({
       transition={{ duration: 0.2, delay: delay ?? 0 }}
       className="relative z-50 flex flex-col items-center justify-center space-y-2"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-200/20 bg-slate-950/80 text-cyan-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_28px_rgba(34,211,238,0.14)] backdrop-blur-xl">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-green-700/20 bg-slate-950/80 text-green-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_28px_rgba(34,197,94,0.14)] backdrop-blur-xl">
         {icon || (
           <svg
-            className="h-8 w-8 text-cyan-200"
+            className="h-8 w-8 text-green-700"
             fill="currentColor"
             viewBox="0 0 20 20"
           >

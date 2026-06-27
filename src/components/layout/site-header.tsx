@@ -5,9 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import { ArrowRight, Moon, Sun } from "lucide-react";
+import { ArrowRight, Cpu, Package, RadioTower } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import { products } from "@/components/landing/data";
+import { rfPowerAmplifierProducts } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import {
@@ -21,74 +23,14 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/#technology", label: "Technology" },
   { href: "/#applications", label: "Applications" },
-  { href: "/#company", label: "Company" },
   { href: "/team", label: "Team" },
   { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
 ];
 
-/* ------------------------------------------------------------------ */
-/* Theme toggle (light/dark) — preserves existing storage + behavior   */
-/* ------------------------------------------------------------------ */
-
-type Theme = "light" | "dark";
-const themeStorageKey = "linearamptech-theme";
-const themeChangeEvent = "linearamptech-theme-change";
-
-function getCurrentTheme(): Theme {
-  if (typeof document === "undefined") return "light";
-  return document.documentElement.classList.contains("dark") ? "dark" : "light";
-}
-
-function applyTheme(theme: Theme) {
-  document.documentElement.classList.toggle("dark", theme === "dark");
-  document.documentElement.dataset.theme = theme;
-  window.localStorage.setItem(themeStorageKey, theme);
-  window.dispatchEvent(new Event(themeChangeEvent));
-}
-
-function subscribeToThemeChange(onStoreChange: () => void) {
-  window.addEventListener(themeChangeEvent, onStoreChange);
-  window.addEventListener("storage", onStoreChange);
-  return () => {
-    window.removeEventListener(themeChangeEvent, onStoreChange);
-    window.removeEventListener("storage", onStoreChange);
-  };
-}
-
-function ThemeToggle({ solid }: { solid: boolean }) {
-  const theme = React.useSyncExternalStore(
-    subscribeToThemeChange,
-    getCurrentTheme,
-    () => "light",
-  );
-
-  return (
-    <Button
-      type="button"
-      variant="outline"
-      size="icon-lg"
-      className={cn(
-        "rounded-full transition-colors",
-        solid
-          ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:bg-[color:var(--color-surface-soft)]"
-          : "border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20",
-      )}
-      onClick={() => applyTheme(theme === "dark" ? "light" : "dark")}
-      aria-label={
-        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-      }
-    >
-      <Sun className={cn("size-4", theme === "dark" && "hidden")} aria-hidden />
-      <Moon
-        className={cn("size-4", theme === "light" && "hidden")}
-        aria-hidden
-      />
-    </Button>
-  );
-}
+type ProductCategoryId = "rf" | "ic";
 
 /* ------------------------------------------------------------------ */
 /* Scroll state                                                        */
@@ -113,21 +55,54 @@ function useScrolled(threshold: number) {
   return scrolled;
 }
 
+function useCondensedHeader() {
+  const [condensed, setCondensed] = React.useState(false);
+
+  React.useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const updateHeaderSize = () => {
+      const currentScrollY = window.scrollY;
+
+      setCondensed((current) => {
+        if (currentScrollY <= 24) {
+          return false;
+        }
+
+        if (currentScrollY < lastScrollY) {
+          return false;
+        }
+
+        if (currentScrollY > lastScrollY) {
+          return true;
+        }
+
+        return current;
+      });
+
+      lastScrollY = currentScrollY;
+    };
+
+    updateHeaderSize();
+    window.addEventListener("scroll", updateHeaderSize, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateHeaderSize);
+  }, []);
+
+  return condensed;
+}
+
 /* ------------------------------------------------------------------ */
 /* Products mega-menu item                                             */
 /* ------------------------------------------------------------------ */
 
-function ProductListItem({
+function ProductMenuLink({
   href,
-  icon: Icon,
   title,
-  description,
   onNavigate,
 }: {
   href: string;
-  icon: (typeof products)[number]["icon"];
   title: string;
-  description: string;
   onNavigate?: () => void;
 }) {
   return (
@@ -135,21 +110,57 @@ function ProductListItem({
       <Link
         href={href}
         onClick={onNavigate}
-        className="group/item flex flex-row gap-x-3 rounded-xl p-3 transition-colors hover:bg-[color:var(--color-surface-soft)] focus:bg-[color:var(--color-surface-soft)] focus:outline-none"
+        className="group/item flex items-center justify-between gap-3 py-3 text-sm font-medium text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] focus:outline-none"
       >
-        <div className="flex aspect-square size-11 shrink-0 items-center justify-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)] transition-colors group-hover/item:text-[color:var(--color-text)]">
-          <Icon className="size-5" aria-hidden />
-        </div>
-        <div className="flex flex-col items-start justify-center">
-          <span className="font-heading text-sm font-semibold text-[color:var(--color-text)]">
-            {title}
-          </span>
-          <span className="line-clamp-2 text-xs leading-5 text-[color:var(--color-text-muted)]">
-            {description}
-          </span>
-        </div>
+        <span>{title}</span>
+        <ArrowRight
+          className="size-4 shrink-0 -translate-x-2 text-[#0b1220] opacity-0 transition-[opacity,transform] duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
+          aria-hidden
+        />
       </Link>
     </NavigationMenuLink>
+  );
+}
+
+function ProductCategoryLink({
+  href,
+  title,
+  icon: Icon,
+  active,
+  onSelect,
+  onNavigate,
+}: {
+  href: string;
+  title: string;
+  icon: LucideIcon;
+  active: boolean;
+  onSelect: () => void;
+  onNavigate?: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "group/category flex w-full items-center justify-between gap-3 py-3 text-left text-sm font-semibold transition-colors",
+        active
+          ? "text-[color:var(--color-text)]"
+          : "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)]",
+      )}
+      onMouseEnter={onSelect}
+      onFocus={onSelect}
+      onClick={onNavigate}
+    >
+      <span className="flex items-center gap-2.5">
+        <Icon className="size-4 text-[#0b1220]" aria-hidden="true" />
+        {title}
+      </span>
+      {active ? (
+        <ArrowRight
+          className="size-4 shrink-0 translate-x-1 text-[#0b1220] transition-transform duration-300"
+          aria-hidden
+        />
+      ) : null}
+    </Link>
   );
 }
 
@@ -185,7 +196,11 @@ function MobileMenu({
 
 export function SiteHeader() {
   const [open, setOpen] = React.useState(false);
+  const [activeProductCategory, setActiveProductCategory] =
+    React.useState<ProductCategoryId>("rf");
+  const [desktopMenuValue, setDesktopMenuValue] = React.useState("");
   const scrolled = useScrolled(12);
+  const condensed = useCondensedHeader();
   const pathname = usePathname();
 
   // Solid chrome when scrolled past the hero, or when the mobile sheet is open.
@@ -207,6 +222,7 @@ export function SiteHeader() {
   }, []);
 
   const closeMobile = () => setOpen(false);
+  const closeDesktopMenu = () => setDesktopMenuValue("");
 
   const isActive = (href: string) =>
     href.startsWith("/#") ? false : pathname === href;
@@ -226,6 +242,11 @@ export function SiteHeader() {
 
   return (
     <header
+      style={
+        {
+          "--site-header-height": condensed && !open ? "3rem" : "4rem",
+        } as React.CSSProperties
+      }
       className={cn(
         "fixed inset-x-0 top-0 z-50 w-full transition-[background-color,border-color,box-shadow] duration-300",
         solid
@@ -233,7 +254,7 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      {/* Legibility scrim while transparent over the dark hero */}
+      {/* Legibility scrim while transparent over the hero */}
       {!solid ? (
         <div
           aria-hidden
@@ -241,9 +262,13 @@ export function SiteHeader() {
         />
       ) : null}
 
-      <nav className="container relative mx-auto flex h-16 items-center justify-between gap-4 px-5 lg:px-8">
-        {/* Left: logo + desktop nav */}
-        <div className="flex items-center gap-7">
+      <nav
+        className={cn(
+          "container relative mx-auto flex items-center justify-between gap-4 px-4 transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-4",
+          condensed && !open ? "h-13" : "h-16",
+        )}
+      >
+        <div className="flex items-center">
           <Link
             href="/"
             aria-label="Linear-AmpTech home"
@@ -255,75 +280,152 @@ export function SiteHeader() {
               alt="Linear-AmpTech logo"
               width={104}
               height={58}
-              className="h-10 w-auto object-contain"
+              className={cn(
+                "w-auto object-contain transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                condensed && !open ? "h-11" : "h-13",
+              )}
               priority
             />
           </Link>
+        </div>
 
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="gap-5 xl:gap-6">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn(
-                    "group h-9 gap-1 bg-transparent px-1 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
-                    solid
-                      ? "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] data-[state=open]:text-[color:var(--color-text)]"
-                      : "text-white/75 hover:text-white focus:text-white data-[state=open]:text-white",
-                  )}
-                >
-                  Products
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-transparent p-0">
-                  <div className="w-[min(36rem,calc(100vw-2rem))] rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-2 shadow-[0_24px_70px_rgb(11_18_32_/_0.16)]">
-                    <ul className="grid grid-cols-2 gap-1">
-                      {products.map((product) => (
-                        <li key={product.slug}>
-                          <ProductListItem
-                            href={`/products/${product.slug}`}
-                            icon={product.icon}
-                            title={product.name}
-                            description={product.description}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                    <NavigationMenuLink asChild>
-                      <Link
+        <NavigationMenu
+          value={desktopMenuValue}
+          onValueChange={setDesktopMenuValue}
+          className="absolute left-1/2 hidden -translate-x-1/2 lg:flex"
+        >
+          <NavigationMenuList className="gap-5 xl:gap-6">
+            <NavigationMenuItem value="products">
+              <NavigationMenuLink asChild>
+                <Link href="/" className={deskLink(isActive("/"))}>
+                  Home
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger
+                className={cn(
+                  "group h-9 gap-1 bg-transparent px-1 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent cursor-pointer",
+                  solid
+                    ? "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] data-[state=open]:text-[color:var(--color-text)]"
+                    : "text-white/75 hover:text-white focus:text-white data-[state=open]:text-white",
+                )}
+              >
+                Products
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-transparent p-0">
+                <div className="grid w-[min(52rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_24px_70px_rgb(11_18_32_/_0.16)] md:grid-cols-[0.38fr_0.62fr]">
+                  <div className="border-b border-[color:var(--color-border)] p-5 md:border-b-0 md:border-r">
+                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                      Product categories
+                    </p>
+                    <div className="mt-3 divide-y divide-[color:var(--color-border)]">
+                      <ProductCategoryLink
                         href="/products"
-                        className="mt-1 flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
-                      >
-                        View all products
-                        <ArrowRight className="size-4" aria-hidden />
-                      </Link>
-                    </NavigationMenuLink>
+                        title="All Products"
+                        icon={Package}
+                        active={false}
+                        onSelect={() => undefined}
+                        onNavigate={closeDesktopMenu}
+                      />
+                      <ProductCategoryLink
+                        href="/products/rf/power-amplifiers"
+                        title="RF Power Amplifiers"
+                        icon={RadioTower}
+                        active={activeProductCategory === "rf"}
+                        onSelect={() => setActiveProductCategory("rf")}
+                        onNavigate={closeDesktopMenu}
+                      />
+                      <ProductCategoryLink
+                        href="/products"
+                        title="IC Chips and Modules"
+                        icon={Cpu}
+                        active={activeProductCategory === "ic"}
+                        onSelect={() => setActiveProductCategory("ic")}
+                        onNavigate={closeDesktopMenu}
+                      />
+                    </div>
                   </div>
-                </NavigationMenuContent>
+
+                  <div className="p-5">
+                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                      {activeProductCategory === "rf"
+                        ? "RF Power Amplifiers"
+                        : "IC Chips and Modules"}
+                    </p>
+                    <div className="mt-3 divide-y divide-[color:var(--color-border)]">
+                      {activeProductCategory === "rf"
+                        ? rfPowerAmplifierProducts.map((product) => (
+                            <ProductMenuLink
+                              key={product.slug}
+                              href={`/products/rf/power-amplifiers/${product.slug}`}
+                              title={product.partNumber}
+                              onNavigate={closeDesktopMenu}
+                            />
+                          ))
+                        : products.map((product) => (
+                            <ProductMenuLink
+                              key={product.slug}
+                              href={`/products/${product.slug}`}
+                              title={product.name}
+                              onNavigate={closeDesktopMenu}
+                            />
+                          ))}
+                    </div>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            {navLinks.slice(1).map((item) => (
+              <NavigationMenuItem key={item.href}>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href={item.href}
+                    className={deskLink(isActive(item.href))}
+                  >
+                    {item.label}
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
 
-              {navLinks.map((item) => (
-                <NavigationMenuItem key={item.href}>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href={item.href}
-                      className={deskLink(isActive(item.href))}
-                    >
-                      {item.label}
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+        <Link
+          href="/contact"
+          className={cn(
+            "group hidden h-10 items-center gap-2 px-1 text-sm font-semibold transition-colors lg:inline-flex",
+            solid
+              ? "text-[color:var(--color-text)] hover:text-[color:var(--color-text-muted)]"
+              : "text-white hover:text-white/75",
+          )}
+        >
+          Contact Us
+          <ArrowRight
+            className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden
+          />
+        </Link>
 
-        {/* Right: theme toggle (desktop) */}
-        <div className="hidden lg:flex">
-          <ThemeToggle solid={solid} />
-        </div>
-
-        {/* Right: theme toggle + hamburger (mobile/tablet) */}
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle solid={solid} />
+          <Link
+            href="/contact"
+            onClick={closeMobile}
+            className={cn(
+              "group inline-flex h-9 items-center gap-1.5 px-1 text-xs font-semibold transition-colors",
+              solid
+                ? "text-[color:var(--color-text)] hover:text-[color:var(--color-text-muted)]"
+                : "text-white hover:text-white/75",
+            )}
+          >
+            Contact
+            <ArrowRight
+              className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
+              aria-hidden
+            />
+          </Link>
           <Button
             size="icon-lg"
             variant="outline"
@@ -345,31 +447,67 @@ export function SiteHeader() {
 
       <MobileMenu open={open}>
         <div className="flex flex-col gap-1">
+          <Link
+            href="/"
+            onClick={closeMobile}
+            className="rounded-xl px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
+          >
+            Home
+          </Link>
           <p className="px-1 pb-1 text-xs font-bold uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
             Products
           </p>
-          {products.map((product) => (
-            <ProductListItem
-              key={product.slug}
-              href={`/products/${product.slug}`}
-              icon={product.icon}
-              title={product.name}
-              description={product.description}
+          <div className="grid gap-2">
+            <ProductCategoryLink
+              href="/products"
+              title="All Products"
+              icon={Package}
+              active={false}
+              onSelect={() => undefined}
               onNavigate={closeMobile}
             />
-          ))}
-          <Link
-            href="/products"
-            onClick={closeMobile}
-            className="mt-1 flex items-center gap-2 px-3 py-2 text-sm font-semibold text-[color:var(--color-text)]"
-          >
-            View all products
-            <ArrowRight className="size-4" aria-hidden />
-          </Link>
+            <ProductCategoryLink
+              href="/products/rf/power-amplifiers"
+              title="RF Power Amplifiers"
+              icon={RadioTower}
+              active={activeProductCategory === "rf"}
+              onSelect={() => setActiveProductCategory("rf")}
+              onNavigate={closeMobile}
+            />
+            <ProductCategoryLink
+              href="/products"
+              title="IC Chips and Modules"
+              icon={Cpu}
+              active={activeProductCategory === "ic"}
+              onSelect={() => setActiveProductCategory("ic")}
+              onNavigate={closeMobile}
+            />
+          </div>
+          <div className="border-y border-[color:var(--color-border)]">
+            <div className="divide-y divide-[color:var(--color-border)]">
+              {activeProductCategory === "rf"
+                ? rfPowerAmplifierProducts.map((product) => (
+                    <ProductMenuLink
+                      key={product.slug}
+                      href={`/products/rf/power-amplifiers/${product.slug}`}
+                      title={product.partNumber}
+                      onNavigate={closeMobile}
+                    />
+                  ))
+                : products.map((product) => (
+                    <ProductMenuLink
+                      key={product.slug}
+                      href={`/products/${product.slug}`}
+                      title={product.name}
+                      onNavigate={closeMobile}
+                    />
+                  ))}
+            </div>
+          </div>
         </div>
 
         <div className="grid border-t border-[color:var(--color-border)] pt-3">
-          {navLinks.map((item) => (
+          {navLinks.slice(1).map((item) => (
             <Link
               key={item.href}
               href={item.href}
