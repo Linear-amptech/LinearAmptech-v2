@@ -11,7 +11,6 @@ export const companyContact = {
 
 export const footerProducts = [
   "AI Qube Data Core",
-  "WAIT System",
   "Private Blockchain Network",
   "RF Power Amplifier",
   "RF Passive Components",

@@ -4,14 +4,10 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
-import {
-  products,
-  cyberPhysicalProducts,
-  productBands,
-} from "@/components/landing/data";
+import { products, productBands } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 
-const allProducts = [...products, ...cyberPhysicalProducts];
+const allProducts = [...products];
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;

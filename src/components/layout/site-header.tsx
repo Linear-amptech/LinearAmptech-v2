@@ -5,16 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import {
-  ArrowRight,
-  BrainCircuit,
-  Cpu,
-  Package,
-  RadioTower,
-} from "lucide-react";
+import { ArrowRight, Cpu, Package, RadioTower } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { products, cyberPhysicalProducts } from "@/components/landing/data";
+import { products } from "@/components/landing/data";
 import { rfPowerAmplifierProducts } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
@@ -36,7 +30,7 @@ const navLinks = [
   { href: "/careers", label: "Careers" },
 ];
 
-type ProductCategoryId = "rf" | "ic" | "cps";
+type ProductCategoryId = "rf" | "ic";
 
 /* ------------------------------------------------------------------ */
 /* Scroll state                                                        */
@@ -246,13 +240,6 @@ export function SiteHeader() {
         title: product.name,
       })),
     },
-    cps: {
-      label: "Cyber-Physical Systems & AI",
-      items: cyberPhysicalProducts.map((product) => ({
-        href: `/products/${product.slug}`,
-        title: product.name,
-      })),
-    },
   }[activeProductCategory];
 
   const isActive = (href: string) =>
@@ -374,14 +361,6 @@ export function SiteHeader() {
                         icon={Cpu}
                         active={activeProductCategory === "ic"}
                         onSelect={() => setActiveProductCategory("ic")}
-                        onNavigate={closeDesktopMenu}
-                      />
-                      <ProductCategoryLink
-                        href="/products/wait-system"
-                        title="Cyber-Physical Systems & AI"
-                        icon={BrainCircuit}
-                        active={activeProductCategory === "cps"}
-                        onSelect={() => setActiveProductCategory("cps")}
                         onNavigate={closeDesktopMenu}
                       />
                     </div>
@@ -508,14 +487,6 @@ export function SiteHeader() {
               icon={Cpu}
               active={activeProductCategory === "ic"}
               onSelect={() => setActiveProductCategory("ic")}
-              onNavigate={closeMobile}
-            />
-            <ProductCategoryLink
-              href="/products/wait-system"
-              title="Cyber-Physical Systems & AI"
-              icon={BrainCircuit}
-              active={activeProductCategory === "cps"}
-              onSelect={() => setActiveProductCategory("cps")}
               onNavigate={closeMobile}
             />
           </div>
