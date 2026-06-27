@@ -53,10 +53,13 @@ export default function ProductsPage() {
                 </p>
                 <Link
                   href="/products/rf/power-amplifiers"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+                  className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
                 >
                   Open RF Power Amplifiers
-                  <ArrowRight className="size-4" aria-hidden="true" />
+                  <ArrowRight
+                    className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
 
@@ -86,7 +89,10 @@ export default function ProductsPage() {
                         </p>
                         <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-text-muted)]">
                           View page
-                          <ChevronRight className="size-4" aria-hidden="true" />
+                          <ChevronRight
+                            className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                            aria-hidden="true"
+                          />
                         </span>
                       </div>
                     </div>

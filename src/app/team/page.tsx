@@ -39,7 +39,7 @@ const team: TeamMember[] = [
     name: "Dr. Karun Rawat",
     role: "Founder & Chairman",
     group: "Leadership",
-    image: "/assets/ppt-team/karun-rawat.png",
+    image: "/assets/ppt-team/karun.jpeg",
   },
   {
     name: "Dr. Meenakshi Rawat",
@@ -51,7 +51,7 @@ const team: TeamMember[] = [
     name: "Mr. Vivek Sharma",
     role: "Director",
     group: "Leadership",
-    image: "/assets/ppt-team/vivek-sharma.png",
+    image: "/assets/ppt-team/vivek_1.webp",
   },
   {
     name: "Dr. Aditya Pal",

@@ -149,15 +149,8 @@ export default async function RfPowerAmplifierProductPage({
         <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.34fr_0.66fr] lg:px-4">
           <Reveal>
             <aside className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:sticky lg:top-28">
-              <Link
-                href="/products/rf/power-amplifiers"
-                className="mb-7 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
-              >
-                <ArrowLeft className="size-4" aria-hidden="true" />
-                RF Power Amplifiers
-              </Link>
               <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-                Product Specs
+                Inquiry
               </p>
               <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
                 Product inquiry
@@ -185,7 +178,7 @@ export default async function RfPowerAmplifierProductPage({
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Center Frequency
                     </p>
-                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.centerFrequencyGhz} GHz
                     </p>
                   </div>
@@ -193,7 +186,7 @@ export default async function RfPowerAmplifierProductPage({
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Output Power
                     </p>
-                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.outputPowerW} W
                     </p>
                   </div>
@@ -201,7 +194,7 @@ export default async function RfPowerAmplifierProductPage({
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Efficiency
                     </p>
-                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.efficiency}
                     </p>
                   </div>
@@ -209,7 +202,7 @@ export default async function RfPowerAmplifierProductPage({
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Gain
                     </p>
-                    <p className="mt-3 font-mono text-lg font-semibold leading-7 text-[color:var(--color-text)]">
+                    <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                       {tableRow.gainDb} dB
                     </p>
                   </div>
@@ -237,19 +230,38 @@ export default async function RfPowerAmplifierProductPage({
                   Key Features
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
-                  {product.keyFeatures.map((feature) => (
-                    <article
-                      key={feature}
-                      className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
-                    >
-                      <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
-                        <CheckCircle2 className="size-5" aria-hidden="true" />
-                      </div>
-                      <p className="text-lg font-semibold leading-7 text-[color:var(--color-text)]">
-                        {feature}
-                      </p>
-                    </article>
-                  ))}
+                  {product.keyFeatures.map((feature) => {
+                    const splitAt = feature.indexOf(":");
+                    const label =
+                      splitAt >= 0
+                        ? feature.slice(0, splitAt).trim()
+                        : feature.trim();
+                    const value =
+                      splitAt >= 0 ? feature.slice(splitAt + 1).trim() : "";
+                    return (
+                      <article
+                        key={feature}
+                        className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
+                            <CheckCircle2
+                              className="size-5"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <p className="font-mono text-sm font-semibold leading-snug text-[color:var(--color-text-muted)]">
+                            {label}
+                          </p>
+                        </div>
+                        {value ? (
+                          <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
+                            {value}
+                          </p>
+                        ) : null}
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
             </Reveal>
@@ -268,15 +280,17 @@ export default async function RfPowerAmplifierProductPage({
                         key={application}
                         className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
                       >
-                        <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
-                          <ApplicationIcon
-                            className="size-5"
-                            aria-hidden="true"
-                          />
+                        <div className="flex items-center gap-3">
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
+                            <ApplicationIcon
+                              className="size-5"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                            Application
+                          </p>
                         </div>
-                        <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-                          Application
-                        </p>
                         <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
                           {application}
                         </p>

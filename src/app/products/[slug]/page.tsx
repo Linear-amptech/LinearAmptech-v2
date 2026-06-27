@@ -4,22 +4,28 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
-import { products, productBands } from "@/components/landing/data";
+import {
+  products,
+  cyberPhysicalProducts,
+  productBands,
+} from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
+
+const allProducts = [...products, ...cyberPhysicalProducts];
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return products.map((product) => ({ slug: product.slug }));
+  return allProducts.map((product) => ({ slug: product.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = products.find((item) => item.slug === slug);
+  const product = allProducts.find((item) => item.slug === slug);
 
   if (!product) {
     return {
@@ -35,13 +41,12 @@ export async function generateMetadata({
 
 export default async function ProductDetailsPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = products.find((item) => item.slug === slug);
+  const product = allProducts.find((item) => item.slug === slug);
 
   if (!product) {
     notFound();
   }
 
-  const Icon = product.icon;
   const band = productBands[slug];
 
   const heroStrip = [
@@ -74,10 +79,6 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
             <ArrowLeft className="size-4" aria-hidden="true" />
             Back to products
           </Link>
-          <div className="mb-6 inline-flex items-center gap-2.5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
-            <Icon className="size-4" aria-hidden="true" />
-            Product
-          </div>
           <h1 className="font-heading max-w-5xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
             {product.name}
           </h1>
@@ -136,33 +137,17 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                 Request a quote
               </h2>
               <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)]">
-                Share frequency band, output-power target, package needs, and
-                integration timeline so the Linear Amptech team can respond with
-                the right product path.
+                Share your application, target environment, integration needs,
+                and timeline so the Linear Amptech team can respond with the
+                right product path.
               </p>
-              {band ? (
-                <dl className="mt-6 border-t border-[color:var(--color-border)] pt-5">
-                  <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                    Operating band
-                  </dt>
-                  <dd className="mt-1.5 font-mono text-sm font-medium text-[color:var(--color-text)]">
-                    {band.label}
-                  </dd>
-                </dl>
-              ) : null}
+
               <Link
                 href="/contact"
                 className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 Get Quote
                 <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
-              <Link
-                href="/products"
-                className="mt-5 inline-flex items-center gap-2 font-mono text-sm text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)]"
-              >
-                <ArrowLeft className="size-4" aria-hidden="true" />
-                All products
               </Link>
             </aside>
           </Reveal>
@@ -184,10 +169,10 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                       key={spec.label}
                       className="grid gap-1 px-5 py-4 sm:grid-cols-[0.5fr_1fr] sm:items-baseline sm:gap-6"
                     >
-                      <dt className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+                      <dt className="text-[0.8em] text-[color:var(--color-text-muted)]">
                         {spec.label}
                       </dt>
-                      <dd className="font-mono text-sm font-medium leading-6 text-[color:var(--color-text)] sm:text-right">
+                      <dd className="text-sm font-medium leading-6 text-[color:var(--color-text)] sm:text-right">
                         {spec.value}
                       </dd>
                     </div>

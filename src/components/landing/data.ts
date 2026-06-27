@@ -1,11 +1,13 @@
 import {
   Atom,
   Cpu,
+  Crosshair,
   Layers3,
   RadioTower,
   Radar,
   Satellite,
   ScanLine,
+  TriangleAlert,
   Waves,
   type LucideIcon,
 } from "lucide-react";
@@ -504,6 +506,128 @@ export const products: Product[] = [
         src: assets.sourcePhaseShifterChip,
         alt: "8-bit phase shifter chip",
         caption: "8-Bit Phase Shifter Chip",
+      },
+    ],
+  },
+];
+
+// Cyber-physical systems & AI products. Kept separate from `products` so they
+// do not appear in the landing portfolio or the IC dropdown column; resolved by
+// the shared /products/[slug] detail route alongside `products`.
+export const cyberPhysicalProducts: Product[] = [
+  {
+    slug: "wait-system",
+    name: "WAIT System",
+    icon: TriangleAlert,
+    image: "/assets/products/wait-system/hero.png",
+    alt: "WAIT System roadside warning unit, front and side view",
+    description:
+      "WAIT — Warning Ahead of Intersections and Turns — is a radar-based early-warning system for blind turns and rural highway intersections that detects approaching vehicles and alerts drivers with dynamic warning signs.",
+    features: [
+      "Radar vehicle detection",
+      "Dynamic warning signage",
+      "LoRaWAN connectivity",
+      "Standalone roadside unit",
+    ],
+    specs: [
+      {
+        label: "Detection",
+        value: "Radar-based approaching-vehicle detection",
+      },
+      {
+        label: "Connectivity",
+        value: "LoRaWAN with end-to-end encryption and channel hopping",
+      },
+      { label: "Compute", value: "Jetson Xavier main unit" },
+      { label: "Alerting", value: "Warning light, horn, and dynamic signage" },
+      {
+        label: "Power",
+        value: "DC-DC converter, autonomous roadside operation",
+      },
+      {
+        label: "Application",
+        value: "Blind turns and rural highway intersections",
+      },
+    ],
+    detailSections: [
+      {
+        title: "Overview",
+        body: "Driving on rural roads can be risky, especially in winter when fog reduces visibility. Blind intersections and turns in hilly terrain are dangerous for drivers who may be slow to respond. The WAIT System uses radar to detect approaching vehicles and alert drivers with dynamic warning signs, and can be deployed with road infrastructure to automatically manage traffic in remote locations prone to jams.",
+      },
+      {
+        title: "How it works",
+        body: "Roadside units detect vehicles approaching each arm of a blind intersection or turn and trigger dynamic signage, a warning light, and a horn so drivers slow before the hazard. A Jetson Xavier main unit handles sensing and control, with a DC-DC converter and LoRaWAN backhaul for remote, autonomous operation.",
+      },
+      {
+        title: "Connectivity",
+        body: "Built on LoRaWAN: the application runs in seconds, with full control over gateway parameters, end-to-end encryption, spreading factors, and channel hopping — and no changes required on the network side.",
+      },
+      {
+        title: "Cyber-physical context",
+        body: "WAIT is part of Linear-AmpTech's cyber-physical systems work, integrating physical roadside devices with a cyber interface to monitor and control traffic for applications such as traffic solutions and Industry 4.0.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/assets/products/wait-system/architecture.png",
+        alt: "WAIT System unit component breakdown with camera, radar, light, horn, and Jetson Xavier",
+        caption: "System architecture",
+      },
+      {
+        src: "/assets/products/wait-system/deployment.png",
+        alt: "WAIT System deployed on a rural roadside",
+        caption: "Field deployment",
+      },
+    ],
+  },
+  {
+    slug: "shotscope",
+    name: "ShotScope",
+    icon: Crosshair,
+    image: "/assets/products/shotscope/hero.png",
+    alt: "ShotScope acoustic sensor array with control display",
+    description:
+      "ShotScope is an acoustic gunshot-detection and sniper-localization system that uses an array of acoustic sensors to detect and pinpoint the source of gunfire, reporting shooter locations to a central control map over LoRa.",
+    features: [
+      "Acoustic sensor array",
+      "Gunshot source localization",
+      "LoRa central control",
+      "Map-based situational awareness",
+    ],
+    specs: [
+      {
+        label: "Detection",
+        value: "Acoustic gunshot detection and source location",
+      },
+      { label: "Sensing", value: "Array of distributed acoustic sensors" },
+      { label: "Connectivity", value: "LoRa link to central control" },
+      { label: "Output", value: "Shooter location on a map GUI" },
+      { label: "Coverage", value: "Ground-level and high-rise threats" },
+      { label: "Use", value: "Border surveillance and combat operations" },
+    ],
+    detailSections: [
+      {
+        title: "The problem",
+        body: "A rising number of concealed threats near borders pose a critical security risk. Existing visual detection systems are slow and inaccurate, and current systems focus solely on ground-level threats, leaving high-rise shooters undetected.",
+      },
+      {
+        title: "Enhanced cross-border surveillance",
+        body: "In the chaos of cross-border firing, an array of acoustic sensors offers a comprehensive auditory landscape of the battlefield. Strategically positioned along the border, these sensors detect the telltale sounds of gunfire amidst the surrounding environment.",
+      },
+      {
+        title: "Next-gen gunshot detection",
+        body: "The system connects to central control via LoRa technology. On detection it instantly pinpoints shooter locations on an intuitive map GUI, providing immediate situational awareness for faster threat response.",
+      },
+      {
+        title: "Why it matters",
+        body: "Central control of gunshot incidents and their locations is crucial for national security. In combat, identifying the source of gunfire is essential — empowering human ears with technology to swiftly detect and locate hidden snipers.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/assets/products/shotscope/sensors.png",
+        alt: "Multiple ShotScope sensors operating during cross-border firing",
+        caption: "Multiple sensors in action",
       },
     ],
   },

@@ -5,10 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import { ArrowRight, Cpu, Package, RadioTower } from "lucide-react";
+import {
+  ArrowRight,
+  BrainCircuit,
+  Cpu,
+  Package,
+  RadioTower,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { products } from "@/components/landing/data";
+import { products, cyberPhysicalProducts } from "@/components/landing/data";
 import { rfPowerAmplifierProducts } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
@@ -30,7 +36,7 @@ const navLinks = [
   { href: "/careers", label: "Careers" },
 ];
 
-type ProductCategoryId = "rf" | "ic";
+type ProductCategoryId = "rf" | "ic" | "cps";
 
 /* ------------------------------------------------------------------ */
 /* Scroll state                                                        */
@@ -224,6 +230,31 @@ export function SiteHeader() {
   const closeMobile = () => setOpen(false);
   const closeDesktopMenu = () => setDesktopMenuValue("");
 
+  // Products shown in the right panel for the active category.
+  const productPanel = {
+    rf: {
+      label: "RF Power Amplifiers",
+      items: rfPowerAmplifierProducts.map((product) => ({
+        href: `/products/rf/power-amplifiers/${product.slug}`,
+        title: product.partNumber,
+      })),
+    },
+    ic: {
+      label: "IC Chips and Modules",
+      items: products.map((product) => ({
+        href: `/products/${product.slug}`,
+        title: product.name,
+      })),
+    },
+    cps: {
+      label: "Cyber-Physical Systems & AI",
+      items: cyberPhysicalProducts.map((product) => ({
+        href: `/products/${product.slug}`,
+        title: product.name,
+      })),
+    },
+  }[activeProductCategory];
+
   const isActive = (href: string) =>
     href.startsWith("/#") ? false : pathname === href;
 
@@ -315,7 +346,7 @@ export function SiteHeader() {
                 Products
               </NavigationMenuTrigger>
               <NavigationMenuContent className="bg-transparent p-0">
-                <div className="grid w-[min(52rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_24px_70px_rgb(11_18_32_/_0.16)] md:grid-cols-[0.38fr_0.62fr]">
+                <div className="grid w-[min(52rem,calc(100vw-2rem))] md:grid-cols-[0.38fr_0.62fr]">
                   <div className="border-b border-[color:var(--color-border)] p-5 md:border-b-0 md:border-r">
                     <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                       Product categories
@@ -345,33 +376,30 @@ export function SiteHeader() {
                         onSelect={() => setActiveProductCategory("ic")}
                         onNavigate={closeDesktopMenu}
                       />
+                      <ProductCategoryLink
+                        href="/products/wait-system"
+                        title="Cyber-Physical Systems & AI"
+                        icon={BrainCircuit}
+                        active={activeProductCategory === "cps"}
+                        onSelect={() => setActiveProductCategory("cps")}
+                        onNavigate={closeDesktopMenu}
+                      />
                     </div>
                   </div>
 
                   <div className="p-5">
                     <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                      {activeProductCategory === "rf"
-                        ? "RF Power Amplifiers"
-                        : "IC Chips and Modules"}
+                      {productPanel.label}
                     </p>
                     <div className="mt-3 divide-y divide-[color:var(--color-border)]">
-                      {activeProductCategory === "rf"
-                        ? rfPowerAmplifierProducts.map((product) => (
-                            <ProductMenuLink
-                              key={product.slug}
-                              href={`/products/rf/power-amplifiers/${product.slug}`}
-                              title={product.partNumber}
-                              onNavigate={closeDesktopMenu}
-                            />
-                          ))
-                        : products.map((product) => (
-                            <ProductMenuLink
-                              key={product.slug}
-                              href={`/products/${product.slug}`}
-                              title={product.name}
-                              onNavigate={closeDesktopMenu}
-                            />
-                          ))}
+                      {productPanel.items.map((item) => (
+                        <ProductMenuLink
+                          key={item.href}
+                          href={item.href}
+                          title={item.title}
+                          onNavigate={closeDesktopMenu}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -482,26 +510,25 @@ export function SiteHeader() {
               onSelect={() => setActiveProductCategory("ic")}
               onNavigate={closeMobile}
             />
+            <ProductCategoryLink
+              href="/products/wait-system"
+              title="Cyber-Physical Systems & AI"
+              icon={BrainCircuit}
+              active={activeProductCategory === "cps"}
+              onSelect={() => setActiveProductCategory("cps")}
+              onNavigate={closeMobile}
+            />
           </div>
           <div className="border-y border-[color:var(--color-border)]">
             <div className="divide-y divide-[color:var(--color-border)]">
-              {activeProductCategory === "rf"
-                ? rfPowerAmplifierProducts.map((product) => (
-                    <ProductMenuLink
-                      key={product.slug}
-                      href={`/products/rf/power-amplifiers/${product.slug}`}
-                      title={product.partNumber}
-                      onNavigate={closeMobile}
-                    />
-                  ))
-                : products.map((product) => (
-                    <ProductMenuLink
-                      key={product.slug}
-                      href={`/products/${product.slug}`}
-                      title={product.name}
-                      onNavigate={closeMobile}
-                    />
-                  ))}
+              {productPanel.items.map((item) => (
+                <ProductMenuLink
+                  key={item.href}
+                  href={item.href}
+                  title={item.title}
+                  onNavigate={closeMobile}
+                />
+              ))}
             </div>
           </div>
         </div>

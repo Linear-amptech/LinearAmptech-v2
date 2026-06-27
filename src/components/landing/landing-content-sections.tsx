@@ -73,7 +73,7 @@ export function ProductPortfolioCard({ product }: { product: Product }) {
         />
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-[family-name:var(--font-sora)] text-2xl font-semibold leading-snug tracking-tight text-[color:var(--color-text)]">
+        <h3 className="flex min-h-[2.75em] items-start font-[family-name:var(--font-sora)] text-2xl font-semibold leading-snug tracking-tight text-[color:var(--color-text)]">
           <Link
             href={`/products/${product.slug}`}
             className="after:absolute after:inset-0 after:content-['']"
@@ -96,13 +96,16 @@ export function ProductPortfolioCard({ product }: { product: Product }) {
           </p>
         )}
         <div className="mt-auto pt-6">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)]">
+          <Link
+            href={`/products/${product.slug}`}
+            className="group/view relative z-10 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+          >
             View product
             <ArrowRight
-              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"
+              className="size-4 transition-transform duration-300 group-hover/view:translate-x-0.5"
               aria-hidden="true"
             />
-          </span>
+          </Link>
         </div>
       </div>
     </article>
