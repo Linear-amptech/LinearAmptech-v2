@@ -516,6 +516,57 @@ export const products: Product[] = [
 // the shared /products/[slug] detail route alongside `products`.
 export const cyberPhysicalProducts: Product[] = [
   {
+    slug: "shotscope",
+    name: "ShotScope",
+    icon: Crosshair,
+    image: "/assets/products/shotscope/hero.png",
+    alt: "ShotScope acoustic sensor array with control display",
+    description:
+      "ShotScope is an acoustic gunshot-detection and sniper-localization system that uses an array of acoustic sensors to detect and pinpoint the source of gunfire, reporting shooter locations to a central control map over LoRa.",
+    features: [
+      "Acoustic sensor array",
+      "Gunshot source localization",
+      "LoRa central control",
+      "Map-based situational awareness",
+    ],
+    specs: [
+      {
+        label: "Detection",
+        value: "Acoustic gunshot detection and source location",
+      },
+      { label: "Sensing", value: "Array of distributed acoustic sensors" },
+      { label: "Connectivity", value: "LoRa link to central control" },
+      { label: "Output", value: "Shooter location on a map GUI" },
+      { label: "Coverage", value: "Ground-level and high-rise threats" },
+      { label: "Use", value: "Border surveillance and combat operations" },
+    ],
+    detailSections: [
+      {
+        title: "The problem",
+        body: "A rising number of concealed threats near borders pose a critical security risk. Existing visual detection systems are slow and inaccurate, and current systems focus solely on ground-level threats, leaving high-rise shooters undetected.",
+      },
+      {
+        title: "Enhanced cross-border surveillance",
+        body: "In the chaos of cross-border firing, an array of acoustic sensors offers a comprehensive auditory landscape of the battlefield. Strategically positioned along the border, these sensors detect the telltale sounds of gunfire amidst the surrounding environment.",
+      },
+      {
+        title: "Next-gen gunshot detection",
+        body: "The system connects to central control via LoRa technology. On detection it instantly pinpoints shooter locations on an intuitive map GUI, providing immediate situational awareness for faster threat response.",
+      },
+      {
+        title: "Why it matters",
+        body: "Central control of gunshot incidents and their locations is crucial for national security. In combat, identifying the source of gunfire is essential — empowering human ears with technology to swiftly detect and locate hidden snipers.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/assets/products/shotscope/sensors.png",
+        alt: "Multiple ShotScope sensors operating during cross-border firing",
+        caption: "Multiple sensors in action",
+      },
+    ],
+  },
+  {
     slug: "wait-system",
     name: "WAIT System",
     icon: TriangleAlert,
@@ -577,57 +628,6 @@ export const cyberPhysicalProducts: Product[] = [
         src: "/assets/products/wait-system/deployment.png",
         alt: "WAIT System deployed on a rural roadside",
         caption: "Field deployment",
-      },
-    ],
-  },
-  {
-    slug: "shotscope",
-    name: "ShotScope",
-    icon: Crosshair,
-    image: "/assets/products/shotscope/hero.png",
-    alt: "ShotScope acoustic sensor array with control display",
-    description:
-      "ShotScope is an acoustic gunshot-detection and sniper-localization system that uses an array of acoustic sensors to detect and pinpoint the source of gunfire, reporting shooter locations to a central control map over LoRa.",
-    features: [
-      "Acoustic sensor array",
-      "Gunshot source localization",
-      "LoRa central control",
-      "Map-based situational awareness",
-    ],
-    specs: [
-      {
-        label: "Detection",
-        value: "Acoustic gunshot detection and source location",
-      },
-      { label: "Sensing", value: "Array of distributed acoustic sensors" },
-      { label: "Connectivity", value: "LoRa link to central control" },
-      { label: "Output", value: "Shooter location on a map GUI" },
-      { label: "Coverage", value: "Ground-level and high-rise threats" },
-      { label: "Use", value: "Border surveillance and combat operations" },
-    ],
-    detailSections: [
-      {
-        title: "The problem",
-        body: "A rising number of concealed threats near borders pose a critical security risk. Existing visual detection systems are slow and inaccurate, and current systems focus solely on ground-level threats, leaving high-rise shooters undetected.",
-      },
-      {
-        title: "Enhanced cross-border surveillance",
-        body: "In the chaos of cross-border firing, an array of acoustic sensors offers a comprehensive auditory landscape of the battlefield. Strategically positioned along the border, these sensors detect the telltale sounds of gunfire amidst the surrounding environment.",
-      },
-      {
-        title: "Next-gen gunshot detection",
-        body: "The system connects to central control via LoRa technology. On detection it instantly pinpoints shooter locations on an intuitive map GUI, providing immediate situational awareness for faster threat response.",
-      },
-      {
-        title: "Why it matters",
-        body: "Central control of gunshot incidents and their locations is crucial for national security. In combat, identifying the source of gunfire is essential — empowering human ears with technology to swiftly detect and locate hidden snipers.",
-      },
-    ],
-    gallery: [
-      {
-        src: "/assets/products/shotscope/sensors.png",
-        alt: "Multiple ShotScope sensors operating during cross-border firing",
-        caption: "Multiple sensors in action",
       },
     ],
   },
