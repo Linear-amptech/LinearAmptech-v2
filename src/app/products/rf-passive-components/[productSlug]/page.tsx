@@ -9,7 +9,6 @@ import {
   RadioTower,
   Router,
   Satellite,
-  Signal,
   Split,
   Waves,
 } from "lucide-react";
@@ -310,26 +309,6 @@ export default async function RfPassiveComponentProductPage({
                       </div>
                     </figure>
                   ))}
-                </div>
-              </section>
-            </Reveal>
-
-            <Reveal>
-              <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
-                <div className="flex items-center gap-4">
-                  <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-slate-50 text-slate-700">
-                    <Signal className="size-6" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-                      Engineering note
-                    </p>
-                    <p className="mt-2 text-base leading-7 text-[color:var(--color-text-muted)]">
-                      Product details were migrated from the previous Linear
-                      Amptech passive RF component pages and organized for the
-                      revamped catalog experience.
-                    </p>
-                  </div>
                 </div>
               </section>
             </Reveal>

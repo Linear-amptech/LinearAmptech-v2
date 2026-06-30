@@ -82,7 +82,7 @@ export function ProductPortfolioCard({ product }: { product: Product }) {
         </h3>
         {band ? (
           <div className="mt-4">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
               Operating band
             </p>
             <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
@@ -157,7 +157,9 @@ function ApplicationCard({ application }: { application: Application }) {
               ? "object-[50%_18%]"
               : application.title === "5G/6G Wireless Infrastructure"
                 ? "object-[50%_38%]"
-                : "object-center"
+                : application.title === "Radar and AESA System"
+                  ? "object-[50%_18%]"
+                  : "object-center"
           }`}
         />
       </div>

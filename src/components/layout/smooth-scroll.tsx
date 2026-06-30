@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import { usePathname } from "next/navigation";
@@ -34,6 +34,43 @@ export function SmoothScroll() {
   const pathname = usePathname();
   const lenisRef = useRef<Lenis | null>(null);
   const previousPathnameRef = useRef<string | null>(null);
+
+  const scrollToHash = useCallback((hash: string, attempts = 14) => {
+    if (!hash) {
+      return;
+    }
+
+    const attemptScroll = (remainingAttempts: number) => {
+      requestAnimationFrame(() => {
+        const target = document.querySelector<HTMLElement>(hash);
+
+        if (!target) {
+          if (remainingAttempts > 0) {
+            window.setTimeout(() => attemptScroll(remainingAttempts - 1), 50);
+          }
+
+          return;
+        }
+
+        const lenis = lenisRef.current;
+        const scrollOptions = getAnchorScrollOptions(hash);
+
+        if (lenis) {
+          lenis.scrollTo(target, scrollOptions);
+          return;
+        }
+
+        const top =
+          target.getBoundingClientRect().top +
+          window.scrollY +
+          scrollOptions.offset;
+
+        window.scrollTo({ top, left: 0, behavior: "smooth" });
+      });
+    };
+
+    attemptScroll(attempts);
+  }, []);
 
   useEffect(() => {
     if (
@@ -69,42 +106,21 @@ export function SmoothScroll() {
 
   useEffect(() => {
     const scrollToCurrentHash = () => {
-      const hash = window.location.hash;
-
-      if (!hash) {
+      if (
+        window.location.hash === "#technology" ||
+        window.location.hash === "#applications"
+      ) {
         return;
       }
 
-      requestAnimationFrame(() => {
-        const target = document.querySelector<HTMLElement>(hash);
-
-        if (!target) {
-          return;
-        }
-
-        const lenis = lenisRef.current;
-
-        const scrollOptions = getAnchorScrollOptions(hash);
-
-        if (lenis) {
-          lenis.scrollTo(target, scrollOptions);
-          return;
-        }
-
-        const top =
-          target.getBoundingClientRect().top +
-          window.scrollY +
-          scrollOptions.offset;
-
-        window.scrollTo({ top, left: 0, behavior: "smooth" });
-      });
+      scrollToHash(window.location.hash);
     };
 
     window.addEventListener("hashchange", scrollToCurrentHash);
     scrollToCurrentHash();
 
     return () => window.removeEventListener("hashchange", scrollToCurrentHash);
-  }, []);
+  }, [scrollToHash]);
 
   useEffect(() => {
     if (previousPathnameRef.current === null) {
@@ -117,10 +133,14 @@ export function SmoothScroll() {
     previousPathnameRef.current = pathname;
 
     if (window.location.hash) {
-      const hash = window.location.hash;
-      requestAnimationFrame(() => {
-        lenisRef.current?.scrollTo(hash, getAnchorScrollOptions(hash));
-      });
+      if (
+        window.location.hash === "#technology" ||
+        window.location.hash === "#applications"
+      ) {
+        return;
+      }
+
+      scrollToHash(window.location.hash);
       return;
     }
 
@@ -131,7 +151,7 @@ export function SmoothScroll() {
     }
 
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [pathname]);
+  }, [pathname, scrollToHash]);
 
   return null;
 }

@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 import {
   ArrowRight,
@@ -128,7 +128,7 @@ function ProductMenuLink({
       >
         <span>{title}</span>
         <ArrowRight
-          className="size-4 shrink-0 -translate-x-2 text-[#0b1220] opacity-0 transition-[opacity,transform] duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
+          className="size-4 shrink-0 -translate-x-1 text-[#0b1220] opacity-0 transition-all duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
           aria-hidden
         />
       </Link>
@@ -168,12 +168,10 @@ function ProductCategoryLink({
         <Icon className="size-4 text-[#0b1220]" aria-hidden="true" />
         {title}
       </span>
-      {active ? (
-        <ArrowRight
-          className="size-4 shrink-0 translate-x-1 text-[#0b1220] transition-transform duration-300"
-          aria-hidden
-        />
-      ) : null}
+      <ArrowRight
+        className="size-4 shrink-0 -translate-x-1 text-[#0b1220] opacity-0 transition-all duration-300 group-hover/category:translate-x-1 group-hover/category:opacity-100 group-focus/category:translate-x-1 group-focus/category:opacity-100"
+        aria-hidden
+      />
     </Link>
   );
 }
@@ -216,6 +214,7 @@ export function SiteHeader() {
   const scrolled = useScrolled(12);
   const condensed = useCondensedHeader();
   const pathname = usePathname();
+  const router = useRouter();
 
   // Solid chrome when scrolled past the hero, or when the mobile sheet is open.
   const solid = scrolled || open;
@@ -257,11 +256,18 @@ export function SiteHeader() {
       closeMobile();
       closeDesktopMenu();
 
-      if (!href.startsWith("/#") || pathname !== "/") {
+      if (!href.startsWith("/#")) {
         return;
       }
 
       event.preventDefault();
+
+      if (pathname !== "/") {
+        sessionStorage.setItem("linearAmptechPendingHash", href.slice(1));
+        router.push("/");
+        return;
+      }
+
       window.history.pushState(null, "", href);
       window.dispatchEvent(new HashChangeEvent("hashchange"));
     };

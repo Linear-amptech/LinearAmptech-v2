@@ -85,7 +85,7 @@ export default function RfPowerAmplifiersPage() {
                     ))}
                   </div>
                   <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-slate-600">
-                    View family
+                    View
                     <ArrowRight
                       className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                       aria-hidden="true"

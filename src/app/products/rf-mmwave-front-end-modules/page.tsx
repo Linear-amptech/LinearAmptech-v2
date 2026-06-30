@@ -69,10 +69,7 @@ export default function RfMmWaveFrontEndModulesPage() {
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
           <div className="mb-10">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-              Subcategories
-            </p>
-            <h2 className="mt-3 font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
               Select an integrated front-end chip
             </h2>
           </div>
@@ -83,7 +80,6 @@ export default function RfMmWaveFrontEndModulesPage() {
                 categoryCopy[
                   product.slug as (typeof frontEndModuleSlugs)[number]
                 ];
-              const Icon = details.icon;
 
               return (
                 <Link
@@ -121,14 +117,9 @@ export default function RfMmWaveFrontEndModulesPage() {
                   ) : null}
 
                   <div className="flex flex-1 flex-col p-6">
-                    <div className="flex items-center gap-3">
-                      <div className="grid size-11 shrink-0 place-items-center rounded-xl border border-[color:var(--color-border)] bg-slate-50 text-slate-700">
-                        <Icon className="size-5" aria-hidden="true" />
-                      </div>
-                      <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                        {details.eyebrow}
-                      </p>
-                    </div>
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                      {details.eyebrow}
+                    </p>
 
                     <h3 className="mt-5 font-heading text-2xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
                       {product.name}

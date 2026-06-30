@@ -132,7 +132,7 @@ function MemberCard({ member }: { member: TeamMember }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`View ${member.name} on LinkedIn`}
-                className="grid size-8 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-[#0a66c2] shadow-[0_1px_2px_rgb(15_23_42/0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#0a66c2]/30 hover:bg-[#0a66c2] hover:text-white hover:shadow-[0_10px_24px_rgb(10_102_194/0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0a66c2]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className="grid size-8 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-950 shadow-[0_1px_2px_rgb(15_23_42/0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-950/20 hover:bg-slate-950 hover:text-white hover:shadow-[0_10px_24px_rgb(15_23_42/0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 <LinkedInIcon className="size-3.5" />
               </a>

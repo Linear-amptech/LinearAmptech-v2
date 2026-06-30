@@ -39,9 +39,6 @@ export default function RfPassiveComponentsPage() {
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto max-w-7xl px-4 lg:px-4">
           <Reveal className="max-w-3xl">
-            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-              Subcategories
-            </p>
             <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
               Radio Frequency Passive Components
             </h2>
