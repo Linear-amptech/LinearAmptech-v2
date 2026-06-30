@@ -38,15 +38,6 @@ export default function RfPowerAmplifiersPage() {
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
-          <div className="mb-10">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-              Categories
-            </p>
-            <h2 className="mt-3 font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
-              Select a power amplifier family
-            </h2>
-          </div>
-
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             {rfPowerAmplifierCategories.map((category) => (
               <Link

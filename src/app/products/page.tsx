@@ -10,7 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import { products } from "@/components/landing/data";
+import { products, productBands } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
 import { rfPowerAmplifierCategories } from "@/components/products/rf-power-amplifiers-data";
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 
 type ProductLink = {
   title: string;
-  description: string;
   href: string;
   image?: string;
+  operatingBand?: string;
 };
 
 type ProductCategory = {
@@ -61,8 +61,9 @@ const productCategories: ProductCategory[] = [
     icon: RadioTower,
     items: rfPowerAmplifierCategories.map((category) => ({
       title: category.title,
-      description: category.description,
       href: category.href,
+      image: category.image,
+      operatingBand: category.operatingBand,
     })),
   },
   {
@@ -74,9 +75,9 @@ const productCategories: ProductCategory[] = [
     icon: Cpu,
     items: frontEndModules.map((product) => ({
       title: product.name,
-      description: product.description,
       href: `/products/${product.slug}`,
       image: product.image,
+      operatingBand: productBands[product.slug]?.label,
     })),
   },
   {
@@ -90,9 +91,9 @@ const productCategories: ProductCategory[] = [
       ? [
           {
             title: phaseShifter.name,
-            description: phaseShifter.description,
             href: `/products/${phaseShifter.slug}`,
             image: phaseShifter.image,
+            operatingBand: productBands[phaseShifter.slug]?.label,
           },
         ]
       : [],
@@ -106,9 +107,11 @@ const productCategories: ProductCategory[] = [
     icon: Layers3,
     items: rfPassiveComponents.map((product) => ({
       title: product.name,
-      description: product.summary,
       href: `/products/rf-passive-components/${product.slug}`,
       image: product.heroImage,
+      operatingBand: product.specs.find(
+        (spec) => spec.label.toLowerCase() === "frequency",
+      )?.value,
     })),
   },
 ];
@@ -203,33 +206,40 @@ export default function ProductsPage() {
                         </Link>
                       </div>
 
-                      <div className="grid gap-4 md:grid-cols-2">
+                      <div className="grid auto-rows-fr gap-4 sm:grid-cols-2">
                         {category.items.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="group overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_44px_rgb(15_23_42/0.09)]"
+                            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_44px_rgb(15_23_42/0.09)]"
                           >
-                            {item.image ? (
-                              <div className="relative aspect-[16/9] border-b border-[color:var(--color-border)] bg-white">
+                            <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-surface-soft)]">
+                              {item.image ? (
                                 <Image
                                   src={item.image}
                                   alt={item.title}
                                   fill
                                   sizes="(min-width: 1024px) 34vw, 100vw"
-                                  className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.03]"
+                                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                                 />
-                              </div>
-                            ) : null}
-                            <div className="p-5">
-                              <h3 className="font-heading text-xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+                              ) : null}
+                            </div>
+                            <div className="flex flex-1 flex-col p-5">
+                              <h3 className="flex min-h-[2.5em] items-start font-heading text-xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
                                 {item.title}
                               </h3>
-                              <p className="mt-3 text-sm leading-7 text-[color:var(--color-text-muted)]">
-                                {item.description}
-                              </p>
-                              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-slate-600">
-                                View details
+                              {item.operatingBand ? (
+                                <div className="mt-4">
+                                  <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
+                                    Operating band
+                                  </p>
+                                  <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
+                                    {item.operatingBand}
+                                  </p>
+                                </div>
+                              ) : null}
+                              <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-slate-600">
+                                View product
                                 <ArrowRight
                                   className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                                   aria-hidden="true"

@@ -38,12 +38,6 @@ export default function RfPassiveComponentsPage() {
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto max-w-7xl px-4 lg:px-4">
-          <Reveal className="max-w-3xl">
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
-              Radio Frequency Passive Components
-            </h2>
-          </Reveal>
-
           <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {rfPassiveComponents.map((product) => {
               const operatingBand = product.specs.find(
