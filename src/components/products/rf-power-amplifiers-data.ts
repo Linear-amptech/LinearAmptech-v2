@@ -28,6 +28,9 @@ export type RfPowerAmplifierCategory = {
   description: string;
   href: string;
   highlights: string[];
+  image: string;
+  alt: string;
+  operatingBand: string;
 };
 
 export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
@@ -43,6 +46,9 @@ export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
       "8-50 W output options",
       "Detailed module lineup",
     ],
+    image: "/assets/products/hybrid-mic-pa/1.png",
+    alt: "Hybrid MIC PA module bench hardware",
+    operatingBand: "0.49-3.5 GHz",
   },
   {
     slug: "gan-on-sic-mmic-pa-chips",
@@ -56,6 +62,9 @@ export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
       "QFN44 / QFN56",
       "Tapeout and measurement complete",
     ],
+    image: "/assets/products/c-ku-band-chip/1.png",
+    alt: "Fully integrated C-Ku band power amplifier chip hardware",
+    operatingBand: "4-19.5 GHz",
   },
 ];
 

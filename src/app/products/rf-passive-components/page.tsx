@@ -44,66 +44,53 @@ export default function RfPassiveComponentsPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid auto-rows-fr gap-6 md:grid-cols-2">
-            {rfPassiveComponents.map((product) => (
-              <Reveal key={product.slug} className="h-full">
-                <Link
-                  href={`/products/rf-passive-components/${product.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)] sm:p-7"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="relative size-24 shrink-0 overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)]">
+          <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {rfPassiveComponents.map((product) => {
+              const operatingBand = product.specs.find(
+                (spec) => spec.label.toLowerCase() === "frequency",
+              )?.value;
+
+              return (
+                <Reveal key={product.slug} className="h-full">
+                  <Link
+                    href={`/products/rf-passive-components/${product.slug}`}
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-surface-soft)]">
                       <Image
                         src={product.heroImage}
                         alt={product.shortName}
                         fill
-                        sizes="96px"
-                        className="object-contain p-2"
+                        sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                       />
                     </div>
-                    <div className="min-w-0">
-                      <h3 className="font-heading text-2xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="flex min-h-[2.5em] items-start font-heading text-2xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
                         {product.shortName}
                       </h3>
-                      <p className="mt-3 text-sm leading-7 text-[color:var(--color-text-muted)]">
-                        {product.summary}
-                      </p>
+                      {operatingBand ? (
+                        <div className="mt-4">
+                          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
+                            Operating band
+                          </p>
+                          <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
+                            {operatingBand}
+                          </p>
+                        </div>
+                      ) : null}
+                      <span className="group/link mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-slate-600">
+                        View product
+                        <ArrowRight
+                          className="size-4 transition-transform duration-300 group-hover/link:translate-x-1"
+                          aria-hidden="true"
+                        />
+                      </span>
                     </div>
-                  </div>
-
-                  <div className="mt-7 grid gap-6">
-                    <div>
-                      <h4 className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-text)]">
-                        Key specifications
-                      </h4>
-                      <dl className="mt-3 grid gap-3 sm:grid-cols-2">
-                        {product.specs.slice(0, 4).map((spec) => (
-                          <div
-                            key={spec.label}
-                            className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2.5"
-                          >
-                            <dt className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[color:var(--color-text-muted)]">
-                              {spec.label}
-                            </dt>
-                            <dd className="mt-1 text-sm font-semibold leading-6 text-[color:var(--color-text)]">
-                              {spec.value}
-                            </dd>
-                          </div>
-                        ))}
-                      </dl>
-                    </div>
-                  </div>
-
-                  <span className="group/link mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-slate-600">
-                    View details
-                    <ArrowRight
-                      className="size-4 transition-transform duration-300 group-hover/link:translate-x-1"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
