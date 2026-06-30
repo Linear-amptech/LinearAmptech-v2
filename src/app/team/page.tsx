@@ -65,22 +65,22 @@ const team: TeamMember[] = [
     role: "Chief Operating Officer",
     group: "Leadership",
     image: "/assets/ppt-team/aditya-pal.jpg",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/dr-aditya-pal-a31872ab/",
   },
-  {
-    name: "Dr. Garima Shukla",
-    role: "Senior RF Design Engineer",
-    group: "Development",
-    image: "/assets/ppt-team/garima-shukla.jpg",
-    linkedinUrl: "",
-  },
-  {
-    name: "Dr. Pawan Shukla",
-    role: "Senior RF Design Engineer",
-    group: "Development",
-    image: "/assets/ppt-team/pawan-shukla.jpeg",
-    linkedinUrl: "",
-  },
+  // {
+  //   name: "Dr. Garima Shukla",
+  //   role: "Senior RF Design Engineer",
+  //   group: "Development",
+  //   image: "/assets/ppt-team/garima-shukla.jpg",
+  //   linkedinUrl: "",
+  // },
+  // {
+  //   name: "Dr. Pawan Shukla",
+  //   role: "Senior RF Design Engineer",
+  //   group: "Development",
+  //   image: "/assets/ppt-team/pawan-shukla.jpeg",
+  //   linkedinUrl: "",
+  // },
 ];
 
 const specStrip = [
@@ -102,10 +102,16 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function MemberCard({ member }: { member: TeamMember }) {
+function MemberCard({
+  member,
+  className = "",
+}: {
+  member: TeamMember;
+  className?: string;
+}) {
   return (
-    <Reveal className="h-full">
-      <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
+    <Reveal className={`h-full ${className}`}>
+      <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
         <div className="relative aspect-square overflow-hidden bg-[color:var(--color-surface-soft)]">
           <Image
             src={member.image}
@@ -113,7 +119,7 @@ function MemberCard({ member }: { member: TeamMember }) {
             fill
             unoptimized
             sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover grayscale transition-all duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0"
           />
         </div>
         <div className="flex flex-1 flex-col p-5">
@@ -259,8 +265,16 @@ export default function TeamPage() {
           </Reveal>
 
           <div className="mt-16 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member) => (
-              <MemberCard key={member.name} member={member} />
+            {team.map((member, index) => (
+              <MemberCard
+                key={member.name}
+                member={member}
+                className={
+                  index === team.length - 1 && team.length % 3 === 1
+                    ? "lg:col-start-2"
+                    : ""
+                }
+              />
             ))}
           </div>
         </div>
