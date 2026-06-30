@@ -47,12 +47,6 @@ export default function RfMmWaveFrontEndModulesPage() {
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
-          <div className="mb-10">
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
-              Select an integrated front-end chip
-            </h2>
-          </div>
-
           <div className="grid gap-6 lg:grid-cols-3">
             {frontEndModules.map((product) => (
               <ProductPortfolioCard key={product.slug} product={product} />
