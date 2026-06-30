@@ -132,7 +132,7 @@ function TechnologyCard({ platform }: { platform: IpPlatform }) {
           {platform.description}
         </p>
         <div className="mt-auto border-t border-[color:var(--color-border)] pt-4">
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
             Focus
           </p>
           <p className="mt-1.5 text-sm font-medium leading-6 text-[color:var(--color-text)]">
