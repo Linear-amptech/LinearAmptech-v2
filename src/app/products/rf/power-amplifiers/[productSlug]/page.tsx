@@ -17,14 +17,18 @@ import type { LucideIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { Reveal } from "@/components/landing/reveal";
+import { RfPowerAmplifierLineup } from "@/components/products/rf-power-amplifier-lineup";
 import {
   getRfPowerAmplifier,
+  rfPowerAmplifierCategories,
   rfPowerAmplifierTableRows,
 } from "@/components/products/rf-power-amplifiers-data";
 
 type ProductPageProps = {
   params: Promise<{ productSlug: string }>;
 };
+
+const hybridMicSlug = "hybrid-mic-power-amplifier-modules";
 
 function getApplicationIcon(application: string): LucideIcon {
   const value = application.toLowerCase();
@@ -57,15 +61,27 @@ function getApplicationIcon(application: string): LucideIcon {
 }
 
 export function generateStaticParams() {
-  return rfPowerAmplifierTableRows
-    .filter((row) => row.slug)
-    .map((row) => ({ productSlug: row.slug! }));
+  return [
+    { productSlug: hybridMicSlug },
+    ...rfPowerAmplifierTableRows
+      .filter((row) => row.slug)
+      .map((row) => ({ productSlug: row.slug! })),
+  ];
 }
 
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { productSlug } = await params;
+
+  if (productSlug === hybridMicSlug) {
+    return {
+      title: "Hybrid MIC Power Amplifier Modules | Linear Amptech",
+      description:
+        "Hybrid MIC PA module lineup with center frequency, output power, efficiency, gain, and mode-of-operation data.",
+    };
+  }
+
   const product = getRfPowerAmplifier(productSlug);
 
   if (!product) {
@@ -84,6 +100,51 @@ export default async function RfPowerAmplifierProductPage({
   params,
 }: ProductPageProps) {
   const { productSlug } = await params;
+
+  if (productSlug === hybridMicSlug) {
+    const category = rfPowerAmplifierCategories.find(
+      (item) => item.slug === hybridMicSlug,
+    );
+
+    return (
+      <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
+        <section className="relative isolate overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
+          />
+          <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 lg:px-4">
+            <Link
+              href="/products/rf/power-amplifiers"
+              className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-white/60 transition-colors hover:text-white"
+            >
+              <ArrowLeft className="size-4" aria-hidden="true" />
+              Back to RF & mm-Wave Power Amplifiers
+            </Link>
+            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
+              {category?.eyebrow ?? "Module lineup"}
+            </p>
+            <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+              {category?.title ?? "Hybrid MIC Power Amplifier Modules"}
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+              {category?.description ??
+                "Hybrid MIC PA modules with wideband operating ranges, output power, efficiency, gain, and mode-of-operation data."}
+            </p>
+          </Reveal>
+        </section>
+
+        <section className="bg-[color:var(--color-surface-soft)] py-24">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-4">
+            <Reveal>
+              <RfPowerAmplifierLineup />
+            </Reveal>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   const product = getRfPowerAmplifier(productSlug);
 
   if (!product) {
@@ -210,7 +271,7 @@ export default async function RfPowerAmplifierProductPage({
               </Reveal>
             ) : null}
 
-            <Reveal>
+            {/* <Reveal>
               <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
                 <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[color:var(--color-surface-soft)]">
                   <Image
@@ -222,7 +283,7 @@ export default async function RfPowerAmplifierProductPage({
                   />
                 </div>
               </div>
-            </Reveal>
+            </Reveal> */}
 
             <Reveal>
               <section>

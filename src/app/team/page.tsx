@@ -14,6 +14,7 @@ type TeamMember = {
   role: string;
   group: "Leadership" | "Development";
   image: string;
+  linkedinUrl?: string;
 };
 
 const companyWriteups = [
@@ -43,36 +44,42 @@ const team: TeamMember[] = [
     role: "Founder & Chairman",
     group: "Leadership",
     image: "/assets/ppt-team/karun.jpeg",
+    linkedinUrl: "https://www.linkedin.com/in/karun-rawat-b732784b/",
   },
   {
     name: "Dr. Meenakshi Rawat",
     role: "Founder & Director",
     group: "Leadership",
     image: "/assets/ppt-team/meenakshi-rawat.png",
+    linkedinUrl: "https://www.linkedin.com/in/meenakshi-rawat-66675a66/",
   },
   {
     name: "Mr. Vivek Sharma",
     role: "Director",
     group: "Leadership",
     image: "/assets/ppt-team/vivek_1.webp",
+    linkedinUrl: "https://www.linkedin.com/in/vivek-sharma-986950121/",
   },
   {
     name: "Dr. Aditya Pal",
     role: "Chief Operating Officer",
     group: "Leadership",
     image: "/assets/ppt-team/aditya-pal.jpg",
+    linkedinUrl: "",
   },
   {
     name: "Dr. Garima Shukla",
     role: "Senior RF Design Engineer",
     group: "Development",
     image: "/assets/ppt-team/garima-shukla.jpg",
+    linkedinUrl: "",
   },
   {
     name: "Dr. Pawan Shukla",
     role: "Senior RF Design Engineer",
     group: "Development",
     image: "/assets/ppt-team/pawan-shukla.jpeg",
+    linkedinUrl: "",
   },
 ];
 
@@ -81,6 +88,19 @@ const specStrip = [
   { label: "Disciplines", value: "RF · Analog · Semiconductor" },
   { label: "Based in", value: "Roorkee · IIT" },
 ];
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.26 8.03h4.48V23H.26V8.03ZM8.13 8.03h4.29v2.05h.06c.6-1.13 2.06-2.32 4.23-2.32 4.52 0 5.36 2.98 5.36 6.85V23h-4.47v-7.44c0-1.77-.03-4.05-2.47-4.05-2.47 0-2.85 1.93-2.85 3.92V23H8.13V8.03Z" />
+    </svg>
+  );
+}
 
 function MemberCard({ member }: { member: TeamMember }) {
   return (
@@ -97,12 +117,35 @@ function MemberCard({ member }: { member: TeamMember }) {
           />
         </div>
         <div className="flex flex-1 flex-col p-5">
-          <h3 className="font-heading text-lg font-semibold leading-snug text-[color:var(--color-text)]">
-            {member.name}
-          </h3>
-          <p className="mt-1.5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
-            {member.role}
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <div className="min-w-0">
+              <h3 className="font-heading text-lg font-semibold leading-snug text-[color:var(--color-text)]">
+                {member.name}
+              </h3>
+              <p className="mt-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+                {member.role}
+              </p>
+            </div>
+            {member.linkedinUrl ? (
+              <a
+                href={member.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`View ${member.name} on LinkedIn`}
+                className="grid size-8 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-950 shadow-[0_1px_2px_rgb(15_23_42/0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-950/20 hover:bg-slate-950 hover:text-white hover:shadow-[0_10px_24px_rgb(15_23_42/0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              >
+                <LinkedInIcon className="size-3.5" />
+              </a>
+            ) : (
+              <span
+                aria-disabled="true"
+                aria-label={`${member.name} LinkedIn profile pending`}
+                className="grid size-8 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-400 opacity-70"
+              >
+                <LinkedInIcon className="size-3.5" />
+              </span>
+            )}
+          </div>
         </div>
       </article>
     </Reveal>
@@ -136,12 +179,12 @@ export default function TeamPage() {
             Team
           </p>
           <h1 className="font-heading max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
-            The engineers and operators building RF semiconductor systems.
+            The team driving next-generation RF semiconductor technology.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Linear Amptech pairs leadership in RF systems and semiconductor
-            design with hands-on product engineering — from research and
-            prototyping through to deployed silicon.
+            Linear AmpTech brings together experienced RF engineers,
+            researchers, and system architects dedicated to developing
+            world-class RF and mm-wave front-end solutions.
           </p>
         </Reveal>
         <div className="relative z-10 border-t border-white/10">
@@ -174,14 +217,14 @@ export default function TeamPage() {
               Company
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
-              About Linear-AmpTech, our vision, and our mission.
+              About Linear-AmpTech
             </h2>
           </Reveal>
 
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {companyWriteups.map((item) => (
               <Reveal key={item.label} className="h-full">
-                <article className="group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                <article className="group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
                   <Image
                     src={item.image}
                     alt=""
@@ -190,10 +233,10 @@ export default function TeamPage() {
                     className="team-card-image-zoom object-cover"
                   />
                   <div className="relative z-10">
-                    <h3 className="font-heading text-2xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
+                    <h3 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                       {item.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">
+                    <p className="mt-5 text-[1.0625rem] leading-8 text-[color:var(--color-text-muted)] xl:text-lg xl:leading-9">
                       {item.body}
                     </p>
                   </div>
@@ -207,7 +250,7 @@ export default function TeamPage() {
               People
             </p>
             <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
-              Leadership and technical depth across the company.
+              Meet our Leadership Team
             </h2>
             <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
               The team spans company leadership, RF engineering, and product

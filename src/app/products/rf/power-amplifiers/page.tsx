@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-import {
-  rfPowerAmplifierIntro,
-  rfPowerAmplifierTableRows,
-} from "@/components/products/rf-power-amplifiers-data";
 import { Reveal } from "@/components/landing/reveal";
+import {
+  rfPowerAmplifierCategories,
+  rfPowerAmplifierIntro,
+} from "@/components/products/rf-power-amplifiers-data";
 
 export const metadata: Metadata = {
-  title: "RF Power Amplifiers | Linear Amptech",
+  title: "RF & mm-Wave Power Amplifiers | Linear Amptech",
   description:
-    "Linear Amptech RF power amplifier catalog with product images, table data, and detailed pages.",
+    "Linear Amptech RF and mm-wave power amplifier categories, including Hybrid MIC PA modules and GaN-on-SiC MMIC PA chips.",
 };
 
 export default function RfPowerAmplifiersPage() {
@@ -27,7 +28,7 @@ export default function RfPowerAmplifiersPage() {
             RF Product Line
           </p>
           <h1 className="font-heading max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
-            {rfPowerAmplifierIntro.title}
+            RF & mm-Wave Power Amplifiers
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
             {rfPowerAmplifierIntro.description}
@@ -36,167 +37,47 @@ export default function RfPowerAmplifiersPage() {
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
-        <div className="container mx-auto max-w-7xl px-4 lg:px-4">
-          <Reveal>
-            <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
-              <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[color:var(--color-border)] pb-5">
-                <div>
-                  <h2 className="font-heading text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
-                    RF Power Amplifier Lineup
-                  </h2>
+        <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+            {rfPowerAmplifierCategories.map((category) => (
+              <Link
+                key={category.slug}
+                href={category.href}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-surface-soft)]">
+                  <Image
+                    src={category.image}
+                    alt={category.alt}
+                    fill
+                    sizes="(min-width: 768px) 45vw, 100vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
                 </div>
-              </div>
-
-              {/* Mobile: each amplifier becomes a labeled card */}
-              <div className="mt-6 grid gap-4 md:hidden">
-                {rfPowerAmplifierTableRows.map((row) => (
-                  <article
-                    key={row.partNumber}
-                    className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-4"
-                  >
-                    <div className="flex items-start justify-between gap-3">
-                      <p className="min-w-0 break-words font-[family-name:var(--font-sora)] text-sm font-semibold text-[color:var(--color-text)]">
-                        {row.slug ? (
-                          <Link
-                            href={`/products/rf/power-amplifiers/${row.slug}`}
-                            className="transition-colors hover:text-[color:var(--color-text-muted)]"
-                          >
-                            {row.partNumber}
-                          </Link>
-                        ) : (
-                          row.partNumber
-                        )}
-                      </p>
-                      {row.slug ? (
-                        <Link
-                          href={`/products/rf/power-amplifiers/${row.slug}`}
-                          className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
-                        >
-                          Details
-                          <ChevronRight
-                            className="size-3.5"
-                            aria-hidden="true"
-                          />
-                        </Link>
-                      ) : null}
-                    </div>
-                    <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3">
-                      {[
-                        {
-                          label: "Center Freq (GHz)",
-                          value: row.centerFrequencyGhz,
-                        },
-                        { label: "Output Power (W)", value: row.outputPowerW },
-                        { label: "Efficiency", value: row.efficiency },
-                        { label: "Gain (dB)", value: row.gainDb },
-                      ].map((field) => (
-                        <div key={field.label}>
-                          <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">
-                            {field.label}
-                          </dt>
-                          <dd className="mt-1 text-sm text-[color:var(--color-text)]">
-                            {field.value}
-                          </dd>
-                        </div>
-                      ))}
-                      <div className="col-span-2">
-                        <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">
-                          Mode of Operation
-                        </dt>
-                        <dd className="mt-1 text-sm leading-6 text-[color:var(--color-text-muted)]">
-                          {row.modeOfOperation}
-                        </dd>
-                      </div>
-                    </dl>
-                  </article>
-                ))}
-              </div>
-
-              {/* Desktop: full comparison table */}
-              <div className="mt-6 hidden overflow-x-auto md:block">
-                <table className="min-w-full border-collapse text-left text-sm">
-                  <thead>
-                    <tr className="border-b border-[color:var(--color-border)]">
-                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                        Part Number
-                      </th>
-                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                        Center Frequency (GHz)
-                      </th>
-                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                        Output Power (W)
-                      </th>
-                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                        Efficiency
-                      </th>
-                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                        Gain (dB)
-                      </th>
-                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                        Type Mode of Operation
-                      </th>
-                      <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                        Details
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {rfPowerAmplifierTableRows.map((row) => (
-                      <tr
-                        key={row.partNumber}
-                        className="border-b border-[color:var(--color-border)] transition-colors last:border-b-0 hover:bg-[color:var(--color-surface-soft)]"
-                      >
-                        <td className="px-4 py-4 font-[family-name:var(--font-sora)] font-medium text-[color:var(--color-text)]">
-                          {row.slug ? (
-                            <Link
-                              href={`/products/rf/power-amplifiers/${row.slug}`}
-                              className="transition-colors hover:text-[color:var(--color-text-muted)]"
-                            >
-                              {row.partNumber}
-                            </Link>
-                          ) : (
-                            row.partNumber
-                          )}
-                        </td>
-                        <td className="px-4 py-4 text-[color:var(--color-text)]">
-                          {row.centerFrequencyGhz}
-                        </td>
-                        <td className="px-4 py-4 text-[color:var(--color-text)]">
-                          {row.outputPowerW}
-                        </td>
-                        <td className="px-4 py-4 text-[color:var(--color-text)]">
-                          {row.efficiency}
-                        </td>
-                        <td className="px-4 py-4 text-[color:var(--color-text)]">
-                          {row.gainDb}
-                        </td>
-                        <td className="px-4 py-4 text-[color:var(--color-text-muted)]">
-                          {row.modeOfOperation}
-                        </td>
-                        <td className="px-4 py-4">
-                          {row.slug ? (
-                            <Link
-                              href={`/products/rf/power-amplifiers/${row.slug}`}
-                              className="inline-flex items-center gap-2 font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
-                            >
-                              Details
-                              <ChevronRight
-                                className="size-4"
-                                aria-hidden="true"
-                              />
-                            </Link>
-                          ) : (
-                            "-"
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          </Reveal>
-        </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="flex min-h-[2.5em] items-start font-heading text-2xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+                    {category.title}
+                  </h3>
+                  <div className="mt-4">
+                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
+                      Operating band
+                    </p>
+                    <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
+                      {category.operatingBand}
+                    </p>
+                  </div>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-slate-600">
+                    View product
+                    <ArrowRight
+                      className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Reveal>
       </section>
     </main>
   );

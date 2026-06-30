@@ -3,13 +3,21 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
-import { ArrowRight, Cpu, Package, RadioTower } from "lucide-react";
+import {
+  ArrowRight,
+  Cpu,
+  Layers3,
+  Package,
+  RadioTower,
+  ScanLine,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import { products } from "@/components/landing/data";
-import { rfPowerAmplifierProducts } from "@/components/products/rf-power-amplifiers-data";
+import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
+import { rfPowerAmplifierCategories } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import {
@@ -30,7 +38,13 @@ const navLinks = [
   { href: "/careers", label: "Careers" },
 ];
 
-type ProductCategoryId = "rf" | "ic";
+type ProductCategoryId = "rf" | "ic" | "phase" | "passive";
+
+const frontEndModuleSlugs = new Set([
+  "fully-integrated-transmitter-chip",
+  "fully-integrated-receiver-chip",
+  "fully-integrated-radar-front-end-chip",
+]);
 
 /* ------------------------------------------------------------------ */
 /* Scroll state                                                        */
@@ -114,7 +128,7 @@ function ProductMenuLink({
       >
         <span>{title}</span>
         <ArrowRight
-          className="size-4 shrink-0 -translate-x-2 text-[#0b1220] opacity-0 transition-[opacity,transform] duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
+          className="size-4 shrink-0 -translate-x-1 text-[#0b1220] opacity-0 transition-all duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
           aria-hidden
         />
       </Link>
@@ -154,12 +168,10 @@ function ProductCategoryLink({
         <Icon className="size-4 text-[#0b1220]" aria-hidden="true" />
         {title}
       </span>
-      {active ? (
-        <ArrowRight
-          className="size-4 shrink-0 translate-x-1 text-[#0b1220] transition-transform duration-300"
-          aria-hidden
-        />
-      ) : null}
+      <ArrowRight
+        className="size-4 shrink-0 -translate-x-1 text-[#0b1220] opacity-0 transition-all duration-300 group-hover/category:translate-x-1 group-hover/category:opacity-100 group-focus/category:translate-x-1 group-focus/category:opacity-100"
+        aria-hidden
+      />
     </Link>
   );
 }
@@ -202,6 +214,7 @@ export function SiteHeader() {
   const scrolled = useScrolled(12);
   const condensed = useCondensedHeader();
   const pathname = usePathname();
+  const router = useRouter();
 
   // Solid chrome when scrolled past the hero, or when the mobile sheet is open.
   const solid = scrolled || open;
@@ -224,20 +237,73 @@ export function SiteHeader() {
   const closeMobile = () => setOpen(false);
   const closeDesktopMenu = () => setDesktopMenuValue("");
 
+  const handleHomeNavigate = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMobile();
+    closeDesktopMenu();
+
+    if (pathname !== "/") {
+      return;
+    }
+
+    event.preventDefault();
+    window.history.pushState(null, "", "/");
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  const handleSectionNavigate =
+    (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+      closeMobile();
+      closeDesktopMenu();
+
+      if (!href.startsWith("/#")) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (pathname !== "/") {
+        sessionStorage.setItem("linearAmptechPendingHash", href.slice(1));
+        router.push("/");
+        return;
+      }
+
+      window.history.pushState(null, "", href);
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    };
+
   // Products shown in the right panel for the active category.
   const productPanel = {
     rf: {
-      label: "RF Power Amplifiers",
-      items: rfPowerAmplifierProducts.map((product) => ({
-        href: `/products/rf/power-amplifiers/${product.slug}`,
-        title: product.partNumber,
+      label: "RF & mm-Wave Power Amplifier",
+      items: rfPowerAmplifierCategories.map((category) => ({
+        href: category.href,
+        title: category.title,
       })),
     },
     ic: {
-      label: "IC Chips and Modules",
-      items: products.map((product) => ({
-        href: `/products/${product.slug}`,
-        title: product.name,
+      label: "RF & mm-Wave Front End Modules",
+      items: products
+        .filter((product) => frontEndModuleSlugs.has(product.slug))
+        .map((product) => ({
+          href: `/products/${product.slug}`,
+          title: product.name,
+        })),
+    },
+    phase: {
+      label: "Phase Shifter IC",
+      items: products
+        .filter((product) => product.slug.includes("phase-shifter"))
+        .map((product) => ({
+          href: `/products/${product.slug}`,
+          title: product.name,
+        })),
+    },
+    passive: {
+      label: "RF Passive Components",
+      items: rfPassiveComponents.map((product) => ({
+        href: `/products/rf-passive-components/${product.slug}`,
+        title: product.shortName,
       })),
     },
   }[activeProductCategory];
@@ -290,7 +356,7 @@ export function SiteHeader() {
           <Link
             href="/"
             aria-label="Linear-AmpTech home"
-            onClick={closeMobile}
+            onClick={handleHomeNavigate}
             className="flex items-center"
           >
             <Image
@@ -313,9 +379,13 @@ export function SiteHeader() {
           className="absolute left-1/2 hidden -translate-x-1/2 lg:flex"
         >
           <NavigationMenuList className="gap-5 xl:gap-6">
-            <NavigationMenuItem value="products">
+            <NavigationMenuItem value="home">
               <NavigationMenuLink asChild>
-                <Link href="/" className={deskLink(isActive("/"))}>
+                <Link
+                  href="/"
+                  onClick={handleHomeNavigate}
+                  className={deskLink(isActive("/"))}
+                >
                   Home
                 </Link>
               </NavigationMenuLink>
@@ -349,18 +419,34 @@ export function SiteHeader() {
                       />
                       <ProductCategoryLink
                         href="/products/rf/power-amplifiers"
-                        title="RF Power Amplifiers"
+                        title="RF & mm-Wave Power Amplifier"
                         icon={RadioTower}
                         active={activeProductCategory === "rf"}
                         onSelect={() => setActiveProductCategory("rf")}
                         onNavigate={closeDesktopMenu}
                       />
                       <ProductCategoryLink
-                        href="/products"
-                        title="IC Chips and Modules"
+                        href="/products/rf-mmwave-front-end-modules"
+                        title="RF & mm-Wave Front End Modules"
                         icon={Cpu}
                         active={activeProductCategory === "ic"}
                         onSelect={() => setActiveProductCategory("ic")}
+                        onNavigate={closeDesktopMenu}
+                      />
+                      <ProductCategoryLink
+                        href="/products/8-bit-phase-shifter-chip"
+                        title="Phase Shifter IC"
+                        icon={ScanLine}
+                        active={activeProductCategory === "phase"}
+                        onSelect={() => setActiveProductCategory("phase")}
+                        onNavigate={closeDesktopMenu}
+                      />
+                      <ProductCategoryLink
+                        href="/products/rf-passive-components"
+                        title="RF Passive Components"
+                        icon={Layers3}
+                        active={activeProductCategory === "passive"}
+                        onSelect={() => setActiveProductCategory("passive")}
                         onNavigate={closeDesktopMenu}
                       />
                     </div>
@@ -390,6 +476,7 @@ export function SiteHeader() {
                 <NavigationMenuLink asChild>
                   <Link
                     href={item.href}
+                    onClick={handleSectionNavigate(item.href)}
                     className={deskLink(isActive(item.href))}
                   >
                     {item.label}
@@ -456,7 +543,7 @@ export function SiteHeader() {
         <div className="flex flex-col gap-1">
           <Link
             href="/"
-            onClick={closeMobile}
+            onClick={handleHomeNavigate}
             className="rounded-xl px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
           >
             Home
@@ -475,18 +562,34 @@ export function SiteHeader() {
             />
             <ProductCategoryLink
               href="/products/rf/power-amplifiers"
-              title="RF Power Amplifiers"
+              title="RF & mm-Wave Power Amplifier"
               icon={RadioTower}
               active={activeProductCategory === "rf"}
               onSelect={() => setActiveProductCategory("rf")}
               onNavigate={closeMobile}
             />
             <ProductCategoryLink
-              href="/products"
-              title="IC Chips and Modules"
+              href="/products/rf-mmwave-front-end-modules"
+              title="RF & mm-Wave Front End Modules"
               icon={Cpu}
               active={activeProductCategory === "ic"}
               onSelect={() => setActiveProductCategory("ic")}
+              onNavigate={closeMobile}
+            />
+            <ProductCategoryLink
+              href="/products/8-bit-phase-shifter-chip"
+              title="Phase Shifter IC"
+              icon={ScanLine}
+              active={activeProductCategory === "phase"}
+              onSelect={() => setActiveProductCategory("phase")}
+              onNavigate={closeMobile}
+            />
+            <ProductCategoryLink
+              href="/products/rf-passive-components"
+              title="RF Passive Components"
+              icon={Layers3}
+              active={activeProductCategory === "passive"}
+              onSelect={() => setActiveProductCategory("passive")}
               onNavigate={closeMobile}
             />
           </div>
@@ -509,11 +612,11 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={closeMobile}
+              onClick={handleSectionNavigate(item.href)}
               className={cn(
                 "rounded-xl px-3 py-3 text-sm font-semibold transition-colors hover:bg-[color:var(--color-surface-soft)]",
                 isActive(item.href)
-                  ? "text-[color:var(--color-primary-deep)]"
+                  ? "text-slate-900"
                   : "text-[color:var(--color-text)]",
               )}
             >

@@ -177,7 +177,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </div>
             </Reveal>
 
-            <Reveal>
+            {/* <Reveal>
               <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
                 <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-white">
                   <Image
@@ -189,7 +189,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                   />
                 </div>
               </div>
-            </Reveal>
+            </Reveal> */}
 
             <Reveal>
               <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
