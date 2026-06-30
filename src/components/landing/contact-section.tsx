@@ -94,8 +94,8 @@ export function ContactSection() {
             </div>
           </Reveal>
 
-          <Reveal>
-            <form className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
+          <Reveal className="h-full">
+            <form className="flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Name</span>
@@ -134,23 +134,23 @@ export function ContactSection() {
                     }))}
                   />
                 </label>
-                <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)] md:col-span-2">
-                  <span>Message</span>
-                  <textarea
-                    name="message"
-                    rows={6}
-                    className="min-h-40 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
-                  />
-                </label>
-                <div className="flex flex-col gap-4 md:col-span-2 sm:flex-row sm:items-center sm:justify-end">
-                  <button
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
-                    type="submit"
-                  >
-                    Start a Project
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </button>
-                </div>
+              </div>
+              <label className="mt-4 flex flex-1 flex-col gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
+                <span>Message</span>
+                <textarea
+                  name="message"
+                  rows={6}
+                  className="min-h-40 flex-1 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                />
+              </label>
+              <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
+                <button
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+                  type="submit"
+                >
+                  Start a Project
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </button>
               </div>
             </form>
           </Reveal>
