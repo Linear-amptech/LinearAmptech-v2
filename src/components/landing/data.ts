@@ -48,6 +48,22 @@ export const assets = {
   sourceRadarFrontEndChip:
     "/assets/ppt-products/source/radar-front-end-chip.png",
   sourceRadarFrontEndChip2: "/assets/products/radar-frontend-chip/1.png",
+  frontendReceiverChipPhoto:
+    "/assets/products/rf-mmwave-front-end-modules/receiver-chip-photo.png",
+  frontendReceiverLayout:
+    "/assets/products/rf-mmwave-front-end-modules/receiver-layout.png",
+  frontendReceiverEmSimulation1:
+    "/assets/products/rf-mmwave-front-end-modules/receiver-em-simulation-1.png",
+  frontendReceiverEmSimulation2:
+    "/assets/products/rf-mmwave-front-end-modules/receiver-em-simulation-2.png",
+  frontendTransmitterLayout:
+    "/assets/products/rf-mmwave-front-end-modules/transmitter-layout.png",
+  frontendTransmitterEmSimulation:
+    "/assets/products/rf-mmwave-front-end-modules/transmitter-em-simulation.png",
+  frontendRadarSystemLayout:
+    "/assets/products/rf-mmwave-front-end-modules/radar-system-layout.png",
+  frontendRadarChipLayout:
+    "/assets/products/rf-mmwave-front-end-modules/radar-chip-layout.png",
   sourcePhaseShifterChip: "/assets/ppt-products/source/phase-shifter-chip.jpg",
   sourcePhaseShifterChip2: "/assets/products/8-bit-phase-shifter/1.png",
 
@@ -349,9 +365,19 @@ export const products: Product[] = [
     ],
     gallery: [
       {
-        src: assets.sourceTxRxLayout,
+        src: assets.sourceTxRxLayout3,
         alt: "Fully integrated transmitter chip layout",
-        caption: "Transmitter chip layout",
+        caption: "Transmitter chip primary visual",
+      },
+      {
+        src: assets.frontendTransmitterLayout,
+        alt: "Transmitter chip layout from slide 9",
+        caption: "Layout from transmitter chip slide",
+      },
+      {
+        src: assets.frontendTransmitterEmSimulation,
+        alt: "Transmitter chip EM simulation result",
+        caption: "EM simulation result",
       },
       {
         src: assets.sourceTransceiverCollage,
@@ -405,9 +431,24 @@ export const products: Product[] = [
     ],
     gallery: [
       {
-        src: assets.sourceTxRxLayout,
-        alt: "Fully integrated receiver chip layout",
+        src: assets.frontendReceiverChipPhoto,
+        alt: "Receiver chip photo from slide 8",
+        caption: "Chip photo",
+      },
+      {
+        src: assets.frontendReceiverLayout,
+        alt: "Receiver chip layout from slide 8",
         caption: "Receiver chip layout",
+      },
+      {
+        src: assets.frontendReceiverEmSimulation1,
+        alt: "Receiver chip EM simulation result 1",
+        caption: "EM simulation result",
+      },
+      {
+        src: assets.frontendReceiverEmSimulation2,
+        alt: "Receiver chip EM simulation result 2",
+        caption: "EM simulation result",
       },
       {
         src: assets.sourceTransceiverCollage,
@@ -453,6 +494,16 @@ export const products: Product[] = [
       },
     ],
     gallery: [
+      {
+        src: assets.frontendRadarSystemLayout,
+        alt: "Radar front-end chip system layout from slide 10",
+        caption: "Radar front-end system layout",
+      },
+      {
+        src: assets.frontendRadarChipLayout,
+        alt: "Radar front-end chip layout from slide 10",
+        caption: "Radar chip layout",
+      },
       {
         src: assets.sourceRadarFrontEndChip,
         alt: "Radar front-end chip layout",
@@ -528,28 +579,28 @@ export const metrics = [
 
 export const applications: Application[] = [
   {
-    title: "Defense and Aerospace RF",
+    title: "Defense and Aerospace",
     image: assets.defense,
     description:
-      "Resilient PA modules, T/R front-end modules, and Ku-band RF electronics for high-reliability mission systems.",
+      "Mission-critical RF front-end solutions for secure communications, radar, EW, and aerospace platforms.",
   },
   {
-    title: "6G and Massive MIMO",
-    image: assets.sixG,
-    description:
-      "FR2/FR3 PA IP cores, analog predistorters, and transceiver blocks for scalable high-frequency communication.",
-  },
-  {
-    title: "MIMO Radar and Phased Arrays",
-    image: assets.mimoRadar,
-    description:
-      "mm-wave radar front-end chips, phase shifting, packaging transitions, and power combining for array systems.",
-  },
-  {
-    title: "RIS and Active Antenna Systems",
+    title: "Satellite Communications",
     image: assets.risActive,
     description:
-      "Prototype development and chamber validation for active antenna matching networks and reconfigurable surfaces.",
+      "High-efficiency RFICs and MMICs for satellite payloads, ground stations, and phased-array terminals.",
+  },
+  {
+    title: "5G/6G Wireless Infrastructure",
+    image: assets.sixG,
+    description:
+      "Power-efficient RF front-end solutions enabling next-generation wireless networks and Massive MIMO.",
+  },
+  {
+    title: "Radar and AESA System",
+    image: assets.mimoRadar,
+    description:
+      "High-linearity amplifiers and low-noise receivers for advanced phased-array and radar systems.",
   },
 ];
 
@@ -563,7 +614,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     eyebrow: "GaN Power Amplifier Modules",
-    title: "C-Ku Band Power Built for Demanding RF Systems.",
+    title: "C-Ku Band Power Amplifiers Built for Next Gen RF Systems",
     description:
       "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense front ends.",
     image: assets.ganPaModuleNewPhoto,
@@ -574,13 +625,6 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Pin-compatible transmitter and receiver ICs for mm-wave systems, backed by silicon layout, simulation, packaging, and validation workflows.",
     image: assets.transceiverChipLayout,
-  },
-  {
-    eyebrow: "Active Antenna / RIS Prototype",
-    title: "RF Prototyping from Array Hardware to Chamber Testing.",
-    description:
-      "RIS and active antenna development with prototype arrays, RF measurement setups, and validation in controlled lab environments.",
-    image: assets.rdLab,
   },
   {
     eyebrow: "mm-Wave Packaging and Integration",

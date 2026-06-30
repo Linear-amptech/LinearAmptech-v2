@@ -152,7 +152,13 @@ function ApplicationCard({ application }: { application: Application }) {
           alt={`${application.title} application visual`}
           fill
           sizes="(min-width: 768px) 45vw, 100vw"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          className={`object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
+            application.title === "Defense and Aerospace"
+              ? "object-[50%_18%]"
+              : application.title === "5G/6G Wireless Infrastructure"
+                ? "object-[50%_38%]"
+                : "object-center"
+          }`}
         />
       </div>
       <div className="flex flex-1 flex-col p-4">
@@ -237,7 +243,7 @@ export function LandingContentSections() {
         <Reveal className="container mx-auto px-4 lg:px-4">
           <SectionHeader
             label="Products"
-            title="RF front-end product portfolio from PA modules to mm-wave ICs."
+            title="RF front-end Product Portfolio—from power amplifier modules to advanced RFICs and MMICs."
             intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">

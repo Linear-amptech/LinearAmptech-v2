@@ -58,7 +58,7 @@
   --color-surface: #ffffff;
   --color-surface-soft: #eef6f8;
   --color-text: #0b1220;
-  --color-text-muted: #64748b;
+  --color-text-muted: #475569;
   --color-border: #e2e8f0;
   --color-primary: #16a34a;
   --color-primary-deep: #166534;
@@ -124,10 +124,6 @@
   h5,
   h6 {
     font-family: var(--font-app-heading);
-  }
-  ::selection {
-    background: rgb(34 197 94 / 24%);
-    color: var(--color-text);
   }
 }
 

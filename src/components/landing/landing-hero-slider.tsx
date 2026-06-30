@@ -34,16 +34,12 @@ const heroImages = [
     imageAlt: "Linear-AmpTech RFIC chip hero visual",
   },
   {
-    imagePath: "/assets/hero-section-slider/rf-lab-validation.png",
-    imageAlt: "Hybrid MIC PA module hero visual",
-  },
-  {
     imagePath: "/assets/hero-section-slider/ghz-transmitter-chip.png",
     imageAlt: "47 GHz transmitter chip hero visual",
   },
   {
-    imagePath: "/assets/hero-section-slider/c-ku-band-pa-chip.png",
-    imageAlt: "Semiconductor wafer hero visual",
+    imagePath: "/assets/hero-section-slider/rf-lab-validation.png",
+    imageAlt: "Hybrid MIC PA module hero visual",
   },
   {
     imagePath: "/assets/hero-section-slider/6666.png",
@@ -145,7 +141,7 @@ export function LandingHeroSlider() {
                   <p className="font-mono text-[0.72rem] uppercase tracking-[0.32em] text-white/45">
                     {activeSlide.eyebrow}
                   </p>
-                  <h1 className="mt-5 max-w-[36rem] text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+                  <h1 className="mt-5 max-w-[40rem] text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
                     {activeSlide.title}
                   </h1>
                   <p className="mt-6 max-w-[34rem] text-base leading-7 text-white/65 sm:text-lg">
@@ -243,7 +239,10 @@ export function LandingHeroSlider() {
 
           {/* Slide index — minimal progress tabs */}
           <div
-            className="hidden items-start gap-6 md:grid md:grid-cols-5"
+            className="hidden items-start gap-6 md:grid"
+            style={{
+              gridTemplateColumns: `repeat(${heroSlides.length}, minmax(0, 1fr))`,
+            }}
             onMouseEnter={() => setIsNavHovered(true)}
             onMouseLeave={() => setIsNavHovered(false)}
           >

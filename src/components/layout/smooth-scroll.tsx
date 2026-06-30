@@ -12,6 +12,17 @@ const anchorScrollOptions = {
   offset: -72,
 };
 
+function getAnchorScrollOptions(hash: string) {
+  if (hash === "#applications" || hash === "#technology") {
+    return {
+      ...anchorScrollOptions,
+      offset: 0,
+    };
+  }
+
+  return anchorScrollOptions;
+}
+
 /**
  * Page-wide smooth (inertial) scrolling via Lenis.
  *
@@ -57,6 +68,45 @@ export function SmoothScroll() {
   }, []);
 
   useEffect(() => {
+    const scrollToCurrentHash = () => {
+      const hash = window.location.hash;
+
+      if (!hash) {
+        return;
+      }
+
+      requestAnimationFrame(() => {
+        const target = document.querySelector<HTMLElement>(hash);
+
+        if (!target) {
+          return;
+        }
+
+        const lenis = lenisRef.current;
+
+        const scrollOptions = getAnchorScrollOptions(hash);
+
+        if (lenis) {
+          lenis.scrollTo(target, scrollOptions);
+          return;
+        }
+
+        const top =
+          target.getBoundingClientRect().top +
+          window.scrollY +
+          scrollOptions.offset;
+
+        window.scrollTo({ top, left: 0, behavior: "smooth" });
+      });
+    };
+
+    window.addEventListener("hashchange", scrollToCurrentHash);
+    scrollToCurrentHash();
+
+    return () => window.removeEventListener("hashchange", scrollToCurrentHash);
+  }, []);
+
+  useEffect(() => {
     if (previousPathnameRef.current === null) {
       previousPathnameRef.current = pathname;
       return;
@@ -69,7 +119,7 @@ export function SmoothScroll() {
     if (window.location.hash) {
       const hash = window.location.hash;
       requestAnimationFrame(() => {
-        lenisRef.current?.scrollTo(hash, anchorScrollOptions);
+        lenisRef.current?.scrollTo(hash, getAnchorScrollOptions(hash));
       });
       return;
     }

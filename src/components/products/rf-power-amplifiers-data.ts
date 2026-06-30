@@ -1,3 +1,5 @@
+import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
+
 export type RfPowerAmplifierSummary = {
   slug: string;
   partNumber: string;
@@ -18,6 +20,44 @@ export type RfPowerAmplifierTableRow = {
   modeOfOperation: string;
   slug?: string;
 };
+
+export type RfPowerAmplifierCategory = {
+  slug: string;
+  title: string;
+  eyebrow: string;
+  description: string;
+  href: string;
+  highlights: string[];
+};
+
+export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
+  {
+    slug: "hybrid-mic-power-amplifier-modules",
+    title: "Hybrid MIC Power Amplifier Modules",
+    eyebrow: "Module lineup",
+    description:
+      "Hybrid MIC PA modules with wideband operating ranges, output power, efficiency, gain, and mode-of-operation data.",
+    href: "/products/rf/power-amplifiers/hybrid-mic-power-amplifier-modules",
+    highlights: [
+      "0.49-3.5 GHz",
+      "8-50 W output options",
+      "Detailed module lineup",
+    ],
+  },
+  {
+    slug: "gan-on-sic-mmic-pa-chips",
+    title: "GaN-On-SiC MMIC PA Chips",
+    eyebrow: "Integrated PA chip",
+    description:
+      "Fully integrated C-Ku band GaN-on-SiC PA chip family with package, performance, and validation details.",
+    href: "/products/fully-integrated-c-ku-band-pa-chip",
+    highlights: [
+      "4-19.5 GHz variants",
+      "QFN44 / QFN56",
+      "Tapeout and measurement complete",
+    ],
+  },
+];
 
 export const rfPowerAmplifierOverviewImages = [
   {
@@ -263,14 +303,33 @@ export const productMenuGroups = [
     description: "RF systems, amplifier modules, and signal-chain products.",
     panels: [
       {
-        title: "Radio Frequency Power Amplifiers",
+        title: "RF & mm-Wave Power Amplifier Families",
         href: "/products/rf/power-amplifiers",
         description:
-          "Wideband RF power amplifier modules with product pages, diagrams, and table data.",
-        links: rfPowerAmplifierProducts.map((product) => ({
-          label: product.partNumber,
-          href: `/products/rf/power-amplifiers/${product.slug}`,
-          meta: product.shortSpec,
+          "Hybrid MIC modules and GaN-on-SiC MMIC PA chips organized by amplifier family.",
+        links: rfPowerAmplifierCategories.map((category) => ({
+          label: category.title,
+          href: category.href,
+          meta: category.description,
+        })),
+      },
+    ],
+  },
+  {
+    id: "rf-passive-components",
+    title: "RF Passive Components",
+    href: "/products/rf-passive-components",
+    description: "Passive RF filters, splitters, dividers, and combiners.",
+    panels: [
+      {
+        title: "Radio Frequency Passive Components",
+        href: "/products/rf-passive-components",
+        description:
+          "Low-loss passive RF components for filtering, splitting, and combining.",
+        links: rfPassiveComponents.map((product) => ({
+          label: product.shortName,
+          href: `/products/rf-passive-components/${product.slug}`,
+          meta: product.summary,
         })),
       },
     ],
