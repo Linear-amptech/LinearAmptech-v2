@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { HeroThreads } from "@/components/layout/hero-threads";
 import { Reveal } from "@/components/landing/reveal";
 
 export const metadata: Metadata = {
@@ -14,6 +15,8 @@ type TeamMember = {
   role: string;
   group: "Leadership" | "Development";
   image: string;
+  /** CSS object-position for headshots whose default center crop cuts the face. */
+  imagePosition?: string;
   linkedinUrl?: string;
 };
 
@@ -21,19 +24,19 @@ const companyWriteups = [
   {
     label: "About us",
     title: "Who we are",
-    image: "/assets/team/about.png",
+    image: "/assets/team/about-saffron.png",
     body: "Linearised Amplifier Technology & Services Pvt. Ltd. (Linear-AmpTech) is founded and driven by innovative minds from IIT Roorkee, one of India's premier technical institutes. The deep-tech startup targets cyber-physical system design with a focus on radio-frequency circuit and system design.",
   },
   {
     label: "Vision",
     title: "Our vision",
-    image: "/assets/team/vision.png",
+    image: "/assets/team/vision-saffron.png",
     body: "To drive disruptive innovation in cyber-physical systems, delivering high-performance, indigenous technology solutions that secure global traction.",
   },
   {
     label: "Mission",
     title: "Our mission",
-    image: "/assets/team/mission.png",
+    image: "/assets/team/mission-saffron.png",
     body: "The company is focused on innovation to cater to technical challenges in radio-frequency electronics targeting cyber-physical systems, with strengths in RF front-end component design, GaN-based MMIC and high-power modules, and CMOS/BiCMOS RFIC IP cores with silicon validation.",
   },
 ];
@@ -43,42 +46,43 @@ const team: TeamMember[] = [
     name: "Dr. Karun Rawat",
     role: "Founder & Chairman",
     group: "Leadership",
-    image: "/assets/ppt-team/karun.jpeg",
+    image: "/assets/team/headshots/karun-rawat.jpeg",
     linkedinUrl: "https://www.linkedin.com/in/karun-rawat-b732784b/",
   },
   {
     name: "Dr. Meenakshi Rawat",
     role: "Founder & Director",
     group: "Leadership",
-    image: "/assets/ppt-team/meenakshi-rawat.png",
+    image: "/assets/team/headshots/meenakshi-rawat.png",
     linkedinUrl: "https://www.linkedin.com/in/meenakshi-rawat-66675a66/",
   },
   {
     name: "Mr. Vivek Sharma",
     role: "Director",
     group: "Leadership",
-    image: "/assets/ppt-team/vivek_1.webp",
+    image: "/assets/team/headshots/vivek-sharma.webp",
     linkedinUrl: "https://www.linkedin.com/in/vivek-sharma-986950121/",
   },
   {
     name: "Dr. Aditya Pal",
     role: "Chief Operating Officer",
     group: "Leadership",
-    image: "/assets/ppt-team/aditya-pal.jpg",
+    image: "/assets/team/headshots/aditya-pal.jpg",
+    imagePosition: "50% 0%",
     linkedinUrl: "https://www.linkedin.com/in/dr-aditya-pal-a31872ab/",
   },
   // {
   //   name: "Dr. Garima Shukla",
   //   role: "Senior RF Design Engineer",
   //   group: "Development",
-  //   image: "/assets/ppt-team/garima-shukla.jpg",
+  //   image: "/assets/team/headshots/garima-shukla.jpg",
   //   linkedinUrl: "",
   // },
   // {
   //   name: "Dr. Pawan Shukla",
   //   role: "Senior RF Design Engineer",
   //   group: "Development",
-  //   image: "/assets/ppt-team/pawan-shukla.jpeg",
+  //   image: "/assets/team/headshots/pawan-shukla.jpeg",
   //   linkedinUrl: "",
   // },
 ];
@@ -111,7 +115,7 @@ function MemberCard({
 }) {
   return (
     <Reveal className={`h-full ${className}`}>
-      <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
+      <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
         <div className="relative aspect-square overflow-hidden bg-[color:var(--color-surface-soft)]">
           <Image
             src={member.image}
@@ -120,6 +124,11 @@ function MemberCard({
             unoptimized
             sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
             className="object-cover grayscale transition-all duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0"
+            style={
+              member.imagePosition
+                ? { objectPosition: member.imagePosition }
+                : undefined
+            }
           />
         </div>
         <div className="flex flex-1 flex-col p-5">
@@ -128,7 +137,7 @@ function MemberCard({
               <h3 className="font-heading text-lg font-semibold leading-snug text-[color:var(--color-text)]">
                 {member.name}
               </h3>
-              <p className="mt-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+              <p className="mt-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
                 {member.role}
               </p>
             </div>
@@ -138,7 +147,7 @@ function MemberCard({
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`View ${member.name} on LinkedIn`}
-                className="grid size-8 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-950 shadow-[0_1px_2px_rgb(15_23_42/0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-950/20 hover:bg-slate-950 hover:text-white hover:shadow-[0_10px_24px_rgb(15_23_42/0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className="grid size-8 shrink-0 place-items-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-deep)] shadow-[var(--shadow-card)] transition-colors duration-200 hover:border-transparent hover:bg-[#EA7317] hover:text-[#1C1917] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)]"
               >
                 <LinkedInIcon className="size-3.5" />
               </a>
@@ -146,7 +155,7 @@ function MemberCard({
               <span
                 aria-disabled="true"
                 aria-label={`${member.name} LinkedIn profile pending`}
-                className="grid size-8 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-400 opacity-70"
+                className="grid size-8 shrink-0 place-items-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-deep)] opacity-50"
               >
                 <LinkedInIcon className="size-3.5" />
               </span>
@@ -161,68 +170,52 @@ function MemberCard({
 export default function TeamPage() {
   return (
     <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
-      <section className="relative isolate overflow-hidden bg-[#050b12] pb-0 pt-32 text-white">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
-        />
-        <div className="absolute inset-y-0 right-0 hidden w-[42vw] lg:block">
-          <Image
-            src="/assets/particle-background.png"
-            alt=""
-            fill
-            priority
-            sizes="42vw"
-            className="object-cover opacity-25"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(90deg,#050b12_0%,rgba(5,11,18,0.7)_38%,rgba(5,11,18,0)_100%)]"
-          />
-        </div>
-        <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 pb-20 lg:px-4">
-          <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/45">
-            Team
-          </p>
-          <h1 className="font-heading max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+      <section className="relative overflow-hidden border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)] pb-16 pt-32">
+        <HeroThreads />
+        <Reveal className="container relative mx-auto max-w-7xl px-4 lg:px-4">
+          <p className="kicker">Team</p>
+          <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             The team driving next-generation RF semiconductor technology.
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
             Linear AmpTech brings together experienced RF engineers,
             researchers, and system architects dedicated to developing
             world-class RF and mm-wave front-end solutions.
           </p>
         </Reveal>
-        <div className="relative z-10 border-t border-white/10">
-          <div className="container mx-auto max-w-7xl px-4 lg:px-4">
-            <dl className="grid grid-cols-1 sm:grid-cols-3">
-              {specStrip.map((item, index) => (
-                <div
-                  key={item.label}
-                  className={`border-t border-white/10 py-6 first:border-t-0 sm:border-l sm:border-t-0 sm:py-7 sm:pl-8 sm:pr-6 ${
-                    index === 0 ? "sm:border-l-0 sm:pl-0" : ""
-                  }`}
-                >
-                  <dt className="font-mono text-xs uppercase tracking-[0.18em] text-white/45">
-                    {item.label}
-                  </dt>
-                  <dd className="mt-2 font-mono text-sm uppercase tracking-[0.12em] text-white/80">
-                    {item.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
+      </section>
+
+      <section className="border-b border-[color:var(--color-border)]">
+        <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
+          <dl className="grid grid-cols-1 divide-y divide-[color:var(--color-border)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {specStrip.map((item, index) => (
+              <div
+                key={item.label}
+                className={`flex flex-col gap-2.5 py-8 sm:py-10 ${
+                  index === 0 ? "sm:pr-9" : "sm:px-9"
+                }`}
+              >
+                <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                  <span
+                    aria-hidden="true"
+                    className="h-[2px] w-[18px] bg-[#EA7317]"
+                  />
+                  {item.label}
+                </dt>
+                <dd className="text-xl font-semibold leading-snug tracking-tight text-[color:var(--color-text)] sm:text-2xl">
+                  {item.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto max-w-7xl px-4 lg:px-4">
           <Reveal className="max-w-3xl">
-            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-              Company
-            </p>
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+            <p className="kicker mb-4">Company</p>
+            <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-balance text-[color:var(--color-text)] sm:text-4xl lg:text-[44px]">
               About Linear-AmpTech
             </h2>
           </Reveal>
@@ -230,7 +223,7 @@ export default function TeamPage() {
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {companyWriteups.map((item) => (
               <Reveal key={item.label} className="h-full">
-                <article className="group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
+                <article className="group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)] sm:p-8">
                   <Image
                     src={item.image}
                     alt=""
@@ -252,13 +245,11 @@ export default function TeamPage() {
           </div>
 
           <Reveal className="max-w-3xl">
-            <p className="mb-4 mt-20 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-              People
-            </p>
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+            <p className="kicker mb-4 mt-20">People</p>
+            <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-balance text-[color:var(--color-text)] sm:text-4xl lg:text-[44px]">
               Meet our Leadership Team
             </h2>
-            <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
+            <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)]">
               The team spans company leadership, RF engineering, and product
               development with a focus on measurable semiconductor outcomes.
             </p>

@@ -23,7 +23,7 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="1"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
         textAnchor="middle"
       >
@@ -44,7 +44,7 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         y="191"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#0b1220"
+        fill="#1C1917"
         stroke="none"
         textAnchor="middle"
       >
@@ -52,38 +52,10 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
       </text>
 
       {/* ── landing pads on substrate (faint) ── */}
-      <rect
-        x="160"
-        y="212"
-        width="16"
-        height="8"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-      />
-      <rect
-        x="196"
-        y="212"
-        width="16"
-        height="8"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-      />
-      <rect
-        x="428"
-        y="212"
-        width="16"
-        height="8"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-      />
-      <rect
-        x="464"
-        y="212"
-        width="16"
-        height="8"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-      />
+      <rect x="160" y="212" width="16" height="8" stroke="#E7E0D5" />
+      <rect x="196" y="212" width="16" height="8" stroke="#E7E0D5" />
+      <rect x="428" y="212" width="16" height="8" stroke="#E7E0D5" />
+      <rect x="464" y="212" width="16" height="8" stroke="#E7E0D5" />
 
       {/* ── bond-wire arcs ── left side, 2 wires ── */}
       {/* wire from die left-top edge to left pad 1 */}
@@ -114,7 +86,7 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="1"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         BGA
@@ -122,23 +94,33 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
 
       {/* ── thermal arrow rising from die top ── */}
       {/* arrow shaft */}
-      <path className="draw" pathLength={1} d="M320 162 L320 108" />
+      <path
+        className="draw"
+        pathLength={1}
+        d="M320 162 L320 108"
+        stroke="#EA7317"
+      />
       {/* arrowhead */}
-      <path className="draw" pathLength={1} d="M312 116 L320 104 L328 116" />
+      <path
+        className="draw"
+        pathLength={1}
+        d="M312 116 L320 104 L328 116"
+        stroke="#EA7317"
+      />
       {/* label */}
       <text
         x="334"
         y="132"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         HEAT
       </text>
 
       {/* ── faint horizontal reference baseline ── */}
-      <path d="M140 212H500" stroke="#0b1220" strokeOpacity="0.08" />
+      <path d="M140 212H500" stroke="#E7E0D5" />
     </SchematicFrame>
   );
 }

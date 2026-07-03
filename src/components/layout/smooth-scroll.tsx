@@ -6,22 +6,14 @@ import "lenis/dist/lenis.css";
 import { usePathname } from "next/navigation";
 
 const easing = (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t));
+// Anchored sections are full-viewport with vertically centered content, so
+// they must land flush at their top edge — any offset shifts the content off
+// center. The fixed header only overlays section padding, never content.
 const anchorScrollOptions = {
   duration: 1.05,
   easing,
-  offset: -72,
+  offset: 0,
 };
-
-function getAnchorScrollOptions(hash: string) {
-  if (hash === "#applications" || hash === "#technology") {
-    return {
-      ...anchorScrollOptions,
-      offset: 0,
-    };
-  }
-
-  return anchorScrollOptions;
-}
 
 /**
  * Page-wide smooth (inertial) scrolling via Lenis.
@@ -53,17 +45,19 @@ export function SmoothScroll() {
         }
 
         const lenis = lenisRef.current;
-        const scrollOptions = getAnchorScrollOptions(hash);
 
         if (lenis) {
-          lenis.scrollTo(target, scrollOptions);
+          // After a route change Lenis may still hold the previous page's
+          // scroll limit and would clamp the target short — re-measure first.
+          lenis.resize();
+          lenis.scrollTo(target, anchorScrollOptions);
           return;
         }
 
         const top =
           target.getBoundingClientRect().top +
           window.scrollY +
-          scrollOptions.offset;
+          anchorScrollOptions.offset;
 
         window.scrollTo({ top, left: 0, behavior: "smooth" });
       });
@@ -106,13 +100,6 @@ export function SmoothScroll() {
 
   useEffect(() => {
     const scrollToCurrentHash = () => {
-      if (
-        window.location.hash === "#technology" ||
-        window.location.hash === "#applications"
-      ) {
-        return;
-      }
-
       scrollToHash(window.location.hash);
     };
 
@@ -133,13 +120,6 @@ export function SmoothScroll() {
     previousPathnameRef.current = pathname;
 
     if (window.location.hash) {
-      if (
-        window.location.hash === "#technology" ||
-        window.location.hash === "#applications"
-      ) {
-        return;
-      }
-
       scrollToHash(window.location.hash);
       return;
     }

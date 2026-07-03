@@ -26,10 +26,10 @@ export function CompanySection({ children }: CompanySectionProps) {
       <section id="company" className="py-24">
         <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.95fr_1.05fr] lg:px-4">
           <div>{children}</div>
-          <div className="relative min-h-[500px] overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] shadow-[var(--shadow-card)]">
+          <div className="relative min-h-[500px] mix-blend-multiply [mask-composite:intersect] [mask-image:linear-gradient(180deg,transparent,black_9%,black_91%,transparent),linear-gradient(90deg,transparent,black_7%,black_93%,transparent)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/company-scrub/poster.webp"
+              src="/assets/company/scrub/poster.webp"
               alt="Semiconductor wafer visual for Linear-AmpTech"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -41,12 +41,14 @@ export function CompanySection({ children }: CompanySectionProps) {
 
   return (
     <section id="company" ref={sectionRef} className="relative lg:h-[300vh]">
-      <div className="flex items-center pt-20 pb-12 lg:sticky lg:top-0 lg:min-h-screen lg:pb-10 lg:pt-20 bg-[#f1f2f5]">
-        <div className="container mx-auto flex w-full flex-col justify-between items-center gap-8 px-4 lg:flex-row lg:gap-12 lg:px-4 bg-[#f1f2f5]">
+      <div className="flex items-center pt-20 pb-12 lg:sticky lg:top-0 lg:min-h-screen lg:pb-10 lg:pt-20 bg-[color:var(--color-bg)]">
+        <div className="container mx-auto flex w-full flex-col justify-between items-center gap-8 px-4 lg:flex-row lg:gap-12 lg:px-4 bg-[color:var(--color-bg)]">
           {/* On mobile the video leads (order-1) so the scrubbing frame stays in
               view while pinned; on desktop it returns to the right column. */}
           <div className="order-2 w-full lg:order-1">{children}</div>
-          <div className="relative order-1 w-full justify-end   h-[46vh] sm:h-[52vh] lg:order-2 lg:h-auto lg:aspect-[9/16] lg:max-h-[78vh] max-w-[460px]">
+          {/* multiply + edge mask melt the render's gray studio backdrop into
+              the ivory page so the animation sits frameless on the paper */}
+          <div className="relative order-1 h-[46vh] w-full max-w-[460px] overflow-hidden mix-blend-multiply sm:h-[52vh] lg:order-2 lg:h-auto lg:aspect-[9/16] lg:max-h-[78vh] [mask-composite:intersect] [mask-image:linear-gradient(180deg,transparent,black_9%,black_91%,transparent),linear-gradient(90deg,transparent,black_7%,black_93%,transparent)]">
             <CompanyScrollVideo scrollTargetRef={sectionRef} />
           </div>
         </div>

@@ -16,6 +16,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 
+import { HeroThreads } from "@/components/layout/hero-threads";
 import { Reveal } from "@/components/landing/reveal";
 import { RfPowerAmplifierLineup } from "@/components/products/rf-power-amplifier-lineup";
 import {
@@ -108,26 +109,23 @@ export default async function RfPowerAmplifierProductPage({
 
     return (
       <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
-        <section className="relative isolate overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
-          />
-          <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 lg:px-4">
+        <section className="relative overflow-hidden border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)] pb-16 pt-32">
+          <HeroThreads />
+          <Reveal className="container relative mx-auto max-w-7xl px-4 lg:px-4">
             <Link
               href="/products/rf/power-amplifiers"
-              className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-white/60 transition-colors hover:text-white"
+              className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
             >
               <ArrowLeft className="size-4" aria-hidden="true" />
               Back to RF & mm-Wave Power Amplifiers
             </Link>
-            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
+            <p className="kicker mb-4">
               {category?.eyebrow ?? "Module lineup"}
             </p>
-            <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+            <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
               {category?.title ?? "Hybrid MIC Power Amplifier Modules"}
             </h1>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
               {category?.description ??
                 "Hybrid MIC PA modules with wideband operating ranges, output power, efficiency, gain, and mode-of-operation data."}
             </p>
@@ -157,60 +155,56 @@ export default async function RfPowerAmplifierProductPage({
 
   return (
     <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
-      <section className="relative isolate min-h-[78vh] overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
-        <div className="absolute inset-y-0 right-0 z-0 w-full opacity-85 lg:w-[58%] lg:opacity-100">
-          <Image
-            src={product.heroImage}
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            className="object-contain object-center p-8 drop-shadow-[0_24px_60px_rgb(0_0_0_/_0.42)] sm:p-12 lg:p-16"
-          />
-        </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 z-0 bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.92)_42%,rgb(5_11_18_/_0.72)_70%,rgb(5_11_18_/_0.55)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.42),#050b12_98%)] lg:bg-[linear-gradient(90deg,#050b12_0%,rgb(5_11_18_/_0.98)_36%,rgb(5_11_18_/_0.68)_56%,rgb(5_11_18_/_0.18)_78%,rgb(5_11_18_/_0.06)_100%),linear-gradient(180deg,rgb(5_11_18_/_0.08),#050b12_98%)]"
-        />
-        <div className="container relative z-10 mx-auto flex min-h-[calc(78vh-8rem)] max-w-7xl items-center px-4 lg:px-4">
-          <Reveal>
-            <div className="max-w-5xl">
-              <Link
-                href="/products/rf/power-amplifiers"
-                className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-white"
-              >
-                <ArrowLeft className="size-4" aria-hidden="true" />
-                Back to RF Power Amplifiers
-              </Link>
-              <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
-                Power Amplifier
-              </p>
-              <h1 className="font-heading max-w-5xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+      <section className="border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)] pb-16 pt-32">
+        <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
+          <Link
+            href="/products/rf/power-amplifiers"
+            className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
+          >
+            <ArrowLeft className="size-4" aria-hidden="true" />
+            Back to RF Power Amplifiers
+          </Link>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <p className="kicker mb-4">Power Amplifier</p>
+              <h1 className="font-heading text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
                 {product.partNumber}
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
                 {product.summary}
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-2.5">
                 {product.applications.map((application) => (
                   <span
                     key={application}
-                    className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-medium text-white/80"
+                    className="rounded-full bg-[color:var(--color-accent-wash)] px-4 py-1.5 text-[13px] font-medium text-[color:var(--color-primary-ink)]"
                   >
                     {application}
                   </span>
                 ))}
               </div>
             </div>
-          </Reveal>
-        </div>
+            <div className="media-frame">
+              <div className="media-well aspect-[4/3]">
+                <Image
+                  src={product.heroImage}
+                  alt={product.partNumber}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  className="object-contain p-8"
+                />
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.34fr_0.66fr] lg:px-4">
           <Reveal>
-            <aside className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:sticky lg:top-28">
-              <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+            <aside className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
+              <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                 Inquiry
               </p>
               <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -223,7 +217,7 @@ export default async function RfPowerAmplifierProductPage({
               </p>
               <Link
                 href="/contact"
-                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90"
+                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
               >
                 Get Quote
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -235,7 +229,7 @@ export default async function RfPowerAmplifierProductPage({
             {tableRow ? (
               <Reveal>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Center Frequency
                     </p>
@@ -243,7 +237,7 @@ export default async function RfPowerAmplifierProductPage({
                       {tableRow.centerFrequencyGhz} GHz
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Output Power
                     </p>
@@ -251,7 +245,7 @@ export default async function RfPowerAmplifierProductPage({
                       {tableRow.outputPowerW} W
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Efficiency
                     </p>
@@ -259,7 +253,7 @@ export default async function RfPowerAmplifierProductPage({
                       {tableRow.efficiency}
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+                  <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Gain
                     </p>
@@ -272,7 +266,7 @@ export default async function RfPowerAmplifierProductPage({
             ) : null}
 
             {/* <Reveal>
-              <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+              <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[var(--shadow-card)]">
                 <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[color:var(--color-surface-soft)]">
                   <Image
                     src={product.heroImage}
@@ -287,7 +281,7 @@ export default async function RfPowerAmplifierProductPage({
 
             <Reveal>
               <section>
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                   Key Features
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -302,10 +296,10 @@ export default async function RfPowerAmplifierProductPage({
                     return (
                       <article
                         key={feature}
-                        className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
+                        className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                             <CheckCircle2
                               className="size-5"
                               aria-hidden="true"
@@ -329,7 +323,7 @@ export default async function RfPowerAmplifierProductPage({
 
             <Reveal>
               <section>
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                   Applications
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -339,10 +333,10 @@ export default async function RfPowerAmplifierProductPage({
                     return (
                       <article
                         key={application}
-                        className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
+                        className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--color-surface-soft)] text-[color:var(--color-text-muted)]">
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                             <ApplicationIcon
                               className="size-5"
                               aria-hidden="true"
@@ -363,10 +357,10 @@ export default async function RfPowerAmplifierProductPage({
             </Reveal>
 
             <Reveal>
-              <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+              <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
                 <div className="flex items-end justify-between gap-4 border-b border-[color:var(--color-border)] pb-5">
                   <div>
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                       Diagrams
                     </p>
                   </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+import { FloatingPaths } from "@/components/ui/background-paths";
 import { companyContact } from "@/lib/company-data";
 
 const footerLinks = [
@@ -14,8 +15,15 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
-      <div className="container mx-auto px-4 py-12 lg:px-4">
+    <footer className="footer-dark relative overflow-hidden border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
+      <div
+        className="absolute inset-0 opacity-60 [mask-image:linear-gradient(180deg,transparent_0%,black_45%)]"
+        aria-hidden="true"
+      >
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
+      </div>
+      <div className="container relative mx-auto px-4 py-12 lg:px-4">
         <div className="grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
@@ -25,7 +33,7 @@ export function SiteFooter() {
             >
               <span className="grid h-14 w-[112px] place-items-left ">
                 <Image
-                  src="/assets/linear-amptech-logo.png"
+                  src="/assets/brand/logo.png"
                   alt="Linear-AmpTech logo"
                   width={104}
                   height={58}
@@ -41,7 +49,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-footer-label)]">
               Navigation
             </p>
             <div className="mt-5 grid gap-3 text-sm text-[color:var(--color-text-muted)]">
@@ -58,7 +66,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-footer-label)]">
               Contact
             </p>
             <div className="mt-5 grid gap-4 text-sm text-[color:var(--color-text-muted)]">
@@ -99,7 +107,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[color:var(--color-border)] pt-6 text-center text-xs leading-5 text-[color:var(--color-text-muted)]">
+        <div className="mt-10 border-t border-[color:var(--color-border)] pt-6 text-center text-xs leading-5 text-[color:var(--color-text-muted)] opacity-60">
           © Linearized Amplifier Technologies and Services Private Ltd. 2026.
           All Rights Reserved.
         </div>

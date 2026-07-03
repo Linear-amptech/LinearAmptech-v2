@@ -46,7 +46,8 @@ export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
       "8-50 W output options",
       "Detailed module lineup",
     ],
-    image: "/assets/products/hybrid-mic-pa/1.png",
+    image:
+      "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/card-saffron-v2.png",
     alt: "Hybrid MIC PA module bench hardware",
     operatingBand: "0.49-3.5 GHz",
   },
@@ -62,30 +63,12 @@ export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
       "QFN44 / QFN56",
       "Tapeout and measurement complete",
     ],
-    image: "/assets/products/c-ku-band-chip/1.png",
+    image:
+      "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/card-saffron-v6.png",
     alt: "Fully integrated C-Ku band power amplifier chip hardware",
     operatingBand: "4-19.5 GHz",
   },
 ];
-
-export const rfPowerAmplifierOverviewImages = [
-  {
-    src: "/assets/products/rf-power-amplifiers/overview/p1.png",
-    alt: "Legacy RF power amplifier performance chart 1",
-  },
-  {
-    src: "/assets/products/rf-power-amplifiers/overview/p2.png",
-    alt: "Legacy RF power amplifier performance chart 2",
-  },
-  {
-    src: "/assets/products/rf-power-amplifiers/overview/p3.png",
-    alt: "Legacy RF power amplifier performance chart 3",
-  },
-  {
-    src: "/assets/products/rf-power-amplifiers/overview/p4.png",
-    alt: "Legacy RF power amplifier performance chart 4",
-  },
-] as const;
 
 export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
   {

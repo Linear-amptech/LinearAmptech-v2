@@ -4,6 +4,8 @@ export type RfPassiveComponent = {
   shortName: string;
   summary: string;
   heroImage: string;
+  // studio render for listing cards; heroImage keeps the real lab photo
+  cardImage: string;
   diagrams: { src: string; alt: string }[];
   specs: { label: string; value: string }[];
   features: string[];
@@ -17,6 +19,7 @@ export const rfPassiveComponents: RfPassiveComponent[] = [
     shortName: "Power Divider-KuPD-1",
     summary: "4-way, 0 deg, WR62, 12.85 GHz to 14.50 GHz, SMA / WR62.",
     heroImage: "/assets/products/rf-passive-components/kupd-1/hero.jpg",
+    cardImage: "/assets/products/rf-passive-components/kupd-1/card-saffron.png",
     diagrams: [
       {
         src: "/assets/products/rf-passive-components/kupd-1/diagram-1.jpg",
@@ -65,6 +68,8 @@ export const rfPassiveComponents: RfPassiveComponent[] = [
     shortName: "5G Base Station Filter : 5GBPF-1",
     summary: "3300-3700 MHz, WR229, rectangular waveguide cavity filter.",
     heroImage: "/assets/products/rf-passive-components/5gbpf-1/hero.jpg",
+    cardImage:
+      "/assets/products/rf-passive-components/5gbpf-1/card-saffron.png",
     diagrams: [
       {
         src: "/assets/products/rf-passive-components/5gbpf-1/diagram-1.jpg",
@@ -105,6 +110,8 @@ export const rfPassiveComponents: RfPassiveComponent[] = [
     shortName: "Power Splitter-UHFPD-1",
     summary: "2-way, 0 deg, 50 ohm, 10 MHz to 450 MHz, 1/4 W, SMA / SMD.",
     heroImage: "/assets/products/rf-passive-components/uhfpd-1/hero.jpg",
+    cardImage:
+      "/assets/products/rf-passive-components/uhfpd-1/card-saffron.png",
     diagrams: [
       {
         src: "/assets/products/rf-passive-components/uhfpd-1/diagram-1.jpg",
@@ -156,6 +163,8 @@ export const rfPassiveComponents: RfPassiveComponent[] = [
     shortName: "Power Splitter-UHFPD-2",
     summary: "2-way, 0 deg, 50 ohm, 10 MHz to 1000 MHz, 1/4 W, SMA / SMD.",
     heroImage: "/assets/products/rf-passive-components/uhfpd-2/hero.jpg",
+    cardImage:
+      "/assets/products/rf-passive-components/uhfpd-2/card-saffron.png",
     diagrams: [
       {
         src: "/assets/products/rf-passive-components/uhfpd-2/diagram-1.jpg",

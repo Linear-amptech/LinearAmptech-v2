@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -11,7 +10,9 @@ import {
 } from "lucide-react";
 
 import { products, productBands } from "@/components/landing/data";
+import { HeroThreads } from "@/components/layout/hero-threads";
 import { Reveal } from "@/components/landing/reveal";
+import { ProductListingCard } from "@/components/products/product-listing-card";
 import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
 import { rfPowerAmplifierCategories } from "@/components/products/rf-power-amplifiers-data";
 
@@ -108,7 +109,7 @@ const productCategories: ProductCategory[] = [
     items: rfPassiveComponents.map((product) => ({
       title: product.name,
       href: `/products/rf-passive-components/${product.slug}`,
-      image: product.heroImage,
+      image: product.cardImage,
       operatingBand: product.specs.find(
         (spec) => spec.label.toLowerCase() === "frequency",
       )?.value,
@@ -119,19 +120,14 @@ const productCategories: ProductCategory[] = [
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)]">
-      <section className="relative isolate overflow-hidden bg-[#050b12] pb-20 pt-32 text-white">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(180deg,#050b12_0%,#07101d_100%)]"
-        />
-        <Reveal className="container relative z-10 mx-auto max-w-7xl px-4 lg:px-4">
-          <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-white/45">
-            All Products
-          </p>
-          <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+      <section className="relative overflow-hidden border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)] pb-16 pt-32">
+        <HeroThreads />
+        <Reveal className="container relative mx-auto max-w-7xl px-4 lg:px-4">
+          <p className="kicker mb-4">All Products</p>
+          <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             RF Front-End Product Portfolio
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
             Browse the portfolio by category: power amplifiers, integrated
             front-end ICs, phase shifter ICs, and RF passive components.
           </p>
@@ -149,12 +145,12 @@ export default function ProductsPage() {
                   <Link
                     key={category.title}
                     href={category.href}
-                    className="group flex min-h-72 flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]"
+                    className="group flex min-h-72 flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]"
                   >
-                    <div className="grid size-12 place-items-center rounded-xl border border-[color:var(--color-border)] bg-slate-50 text-slate-700">
+                    <div className="grid size-12 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
-                    <p className="mt-6 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                    <p className="mt-6 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                       {category.eyebrow}
                     </p>
                     <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -163,7 +159,7 @@ export default function ProductsPage() {
                     <p className="mt-4 flex-1 text-sm leading-7 text-[color:var(--color-text-muted)]">
                       {category.description}
                     </p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-slate-600">
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-primary-deep)]">
                       View category
                       <ArrowRight
                         className="size-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -185,10 +181,10 @@ export default function ProductsPage() {
                   <section className="border-t border-[color:var(--color-border)] pt-12">
                     <div className="grid gap-8 lg:grid-cols-[0.32fr_0.68fr]">
                       <div>
-                        <div className="grid size-12 place-items-center rounded-xl border border-[color:var(--color-border)] bg-slate-50 text-slate-700">
+                        <div className="grid size-12 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                           <Icon className="size-5" aria-hidden="true" />
                         </div>
-                        <p className="mt-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                        <p className="mt-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                           {category.eyebrow}
                         </p>
                         <h2 className="mt-3 font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -199,7 +195,7 @@ export default function ProductsPage() {
                         </p>
                         <Link
                           href={category.href}
-                          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-slate-600"
+                          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
                         >
                           Open category
                           <ArrowRight className="size-4" aria-hidden="true" />
@@ -208,45 +204,13 @@ export default function ProductsPage() {
 
                       <div className="grid auto-rows-fr gap-4 sm:grid-cols-2">
                         {category.items.map((item) => (
-                          <Link
+                          <ProductListingCard
                             key={item.href}
+                            title={item.title}
                             href={item.href}
-                            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_44px_rgb(15_23_42/0.09)]"
-                          >
-                            <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-surface-soft)]">
-                              {item.image ? (
-                                <Image
-                                  src={item.image}
-                                  alt={item.title}
-                                  fill
-                                  sizes="(min-width: 1024px) 34vw, 100vw"
-                                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                              ) : null}
-                            </div>
-                            <div className="flex flex-1 flex-col p-5">
-                              <h3 className="flex min-h-[2.5em] items-start font-heading text-xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
-                                {item.title}
-                              </h3>
-                              {item.operatingBand ? (
-                                <div className="mt-4">
-                                  <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
-                                    Operating band
-                                  </p>
-                                  <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
-                                    {item.operatingBand}
-                                  </p>
-                                </div>
-                              ) : null}
-                              <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-slate-600">
-                                View product
-                                <ArrowRight
-                                  className="size-4 transition-transform duration-300 group-hover:translate-x-1"
-                                  aria-hidden="true"
-                                />
-                              </span>
-                            </div>
-                          </Link>
+                            image={item.image}
+                            band={item.operatingBand}
+                          />
                         ))}
                       </div>
                     </div>

@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const rdEngineSlides = [
-  "/assets/rd-engine/1.png",
-  "/assets/rd-engine/2.png",
+  "/assets/rd-engine/slide-1.png",
+  "/assets/rd-engine/slide-2.png",
 ] as const;
 
 export function RdEngineBackgroundSlider() {

@@ -10,7 +10,7 @@ const FIRST_FRAME = 3;
 const FRAME_COUNT = 174;
 // ─────────────────────────────────────────────────────────────────────────────
 
-const BASE = "/assets/company-scrub";
+const BASE = "/assets/company/scrub";
 const POSTER = `${BASE}/poster.webp`;
 
 const clamp = (n: number, lo: number, hi: number): number =>
@@ -230,6 +230,9 @@ export function CompanyScrollVideo({
     <>
       {/* Instant first frame: shows immediately, sits behind the canvas, and is
           covered the moment a real frame is drawn. No blocking loader. */}
+      {/* Blend/mask live on the parent wrapper: blending these two children
+          individually would multiply the canvas against the poster and ghost
+          the closed chip over the exploded frames. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={POSTER}

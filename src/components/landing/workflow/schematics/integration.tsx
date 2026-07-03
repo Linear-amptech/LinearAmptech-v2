@@ -16,19 +16,11 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         y="82"
         width="462"
         height="236"
-        rx="10"
+        rx="6"
       />
 
       {/* Faint inner PCB keep-out margin */}
-      <rect
-        x="100"
-        y="92"
-        width="442"
-        height="216"
-        rx="8"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-      />
+      <rect x="100" y="92" width="442" height="216" rx="4" stroke="#E7E0D5" />
 
       {/* RF MODULE inner rectangle */}
       <rect
@@ -48,7 +40,7 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         textAnchor="middle"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#0b1220"
+        fill="#1C1917"
         stroke="none"
       >
         RF MODULE
@@ -61,7 +53,7 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         textAnchor="middle"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         RFIC
@@ -70,10 +62,30 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
       {/* RIGHT-EDGE ROUTED TRACES — evenly fanned from module pins to pads.
           Pad centers: 140, 180, 220, 260 (40px pitch); each trace meets the
           pad's left edge at x=521 so traces and pads line up exactly. */}
-      <path className="draw" pathLength={1} d="M390 172 H460 V140 H521" />
-      <path className="draw d2" pathLength={1} d="M390 188 H480 V180 H521" />
-      <path className="draw d2" pathLength={1} d="M390 212 H480 V220 H521" />
-      <path className="draw d3" pathLength={1} d="M390 228 H460 V260 H521" />
+      <path
+        className="draw"
+        pathLength={1}
+        d="M390 172 H460 V140 H521"
+        stroke="#EA7317"
+      />
+      <path
+        className="draw d2"
+        pathLength={1}
+        d="M390 188 H480 V180 H521"
+        stroke="#EA7317"
+      />
+      <path
+        className="draw d2"
+        pathLength={1}
+        d="M390 212 H480 V220 H521"
+        stroke="#EA7317"
+      />
+      <path
+        className="draw d3"
+        pathLength={1}
+        d="M390 228 H460 V260 H521"
+        stroke="#EA7317"
+      />
 
       {/* Connector pads — uniform squares, evenly spaced */}
       <rect x="521" y="134" width="12" height="12" rx="2" />
@@ -107,7 +119,7 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         textAnchor="middle"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         BIAS

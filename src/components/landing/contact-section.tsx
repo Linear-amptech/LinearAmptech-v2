@@ -41,9 +41,7 @@ export function ContactSection() {
       <div className="container mx-auto max-w-7xl px-4 lg:px-4">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="flex h-full flex-col">
-            <p className="font-mono mb-4 text-xs uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
-              Contact
-            </p>
+            <p className="kicker mb-4">Contact</p>
             <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
               Build your next silicon innovation with Linear Amptech.
             </h2>
@@ -52,7 +50,7 @@ export function ContactSection() {
               mixed-signal, and ASIC programs from concept to validation.
             </p>
 
-            <div className="mt-8 flex flex-1 flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+            <div className="mt-8 flex flex-1 flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
               <dl className="flex flex-1 flex-col divide-y divide-[color:var(--color-border)]">
                 {directory.map((row) => {
                   const Icon = row.icon;
@@ -79,7 +77,7 @@ export function ContactSection() {
                         {row.href ? (
                           <a
                             href={row.href}
-                            className="inline-block break-words rounded-sm text-sm font-medium leading-6 text-[color:var(--color-text)] underline-offset-4 transition-colors hover:underline focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20"
+                            className="inline-block break-words rounded-sm text-sm font-medium leading-6 text-[color:var(--color-text)] underline-offset-4 transition-colors hover:underline focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/30"
                           >
                             {row.lines[0]}
                           </a>
@@ -95,14 +93,14 @@ export function ContactSection() {
           </Reveal>
 
           <Reveal className="h-full">
-            <form className="flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] sm:p-8">
+            <form className="flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] sm:p-8">
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Name</span>
                   <input
                     name="name"
                     autoComplete="name"
-                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                   />
                 </label>
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
@@ -111,7 +109,7 @@ export function ContactSection() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                   />
                 </label>
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
@@ -119,7 +117,7 @@ export function ContactSection() {
                   <input
                     name="company"
                     autoComplete="organization"
-                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                    className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                   />
                 </label>
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
@@ -127,7 +125,7 @@ export function ContactSection() {
                   <AppSelect
                     name="projectType"
                     placeholder="Select project type"
-                    className="min-h-12 border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-base text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-text)]/30 data-[popup-open]:border-[color:var(--color-text)]/30 data-[popup-open]:bg-[color:var(--color-surface)]"
+                    className="min-h-12 border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-base text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
                     options={projectTypeOptions.map((option) => ({
                       value: option,
                       label: option,
@@ -140,12 +138,12 @@ export function ContactSection() {
                 <textarea
                   name="message"
                   rows={6}
-                  className="min-h-40 flex-1 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                  className="min-h-40 flex-1 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                 />
               </label>
               <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
                 <button
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   type="submit"
                 >
                   Start a Project

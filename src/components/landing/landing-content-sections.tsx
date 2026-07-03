@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import {
   applications,
   ipPlatforms,
-  metrics,
   productBands,
   researchFocusRows,
   type Application,
@@ -19,39 +18,46 @@ import { RdEngineBackgroundSlider } from "@/components/landing/rd-engine-backgro
 import { WorkflowSection } from "@/components/landing/workflow-section";
 import { AllProdcuts } from "../products/AllProducts";
 
+// Saffron-tinted card variants, shown only on the landing grid; each lives
+// beside its product's assets as card-saffron.png.
+const homepageProductImages: Partial<Record<Product["slug"], string>> = {
+  "hybrid-mic-pa-modules":
+    "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/card-saffron-v2.png",
+  "fully-integrated-c-ku-band-pa-chip":
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/card-saffron-v6.png",
+  "fully-integrated-transmitter-chip":
+    "/assets/products/rf-mmwave-front-end-modules/transmitter/card-saffron-v2.png",
+  "fully-integrated-receiver-chip":
+    "/assets/products/rf-mmwave-front-end-modules/receiver/card-saffron-v2.png",
+  "fully-integrated-radar-front-end-chip":
+    "/assets/products/rf-mmwave-front-end-modules/radar/card-saffron-v2.png",
+  "8-bit-phase-shifter-chip":
+    "/assets/products/phase-shifter/card-saffron-v2.png",
+};
+
+const technologyImages: Partial<Record<IpPlatform["name"], string>> = {
+  "III-V GaN Technology": "/assets/technology/gan-hemt-platform-v2.png",
+  "Si CMOS Technology": "/assets/technology/si-cmos-platform-v2.png",
+  "SiGe BiCMOS Technology": "/assets/technology/sige-bicmos-platform-v2.png",
+};
+
 function SectionHeader({
   label,
   title,
   intro,
-  inverted = false,
 }: {
   label: string;
   title: string;
   intro?: string;
-  inverted?: boolean;
 }) {
   return (
     <div className="max-w-3xl">
-      <p
-        className={`mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] ${
-          inverted ? "text-white/45" : "text-[color:var(--color-text-muted)]"
-        }`}
-      >
-        {label}
-      </p>
-      <h2
-        className={`font-heading text-3xl font-bold leading-tight tracking-normal sm:text-4xl lg:text-5xl ${
-          inverted ? "text-white" : "text-[color:var(--color-text)]"
-        }`}
-      >
+      <p className="kicker mb-4">{label}</p>
+      <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] text-balance sm:text-4xl lg:text-[44px]">
         {title}
       </h2>
       {intro ? (
-        <p
-          className={`mt-5 text-base leading-7 sm:text-lg ${
-            inverted ? "text-slate-300" : "text-[color:var(--color-text-muted)]"
-          }`}
-        >
+        <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)]">
           {intro}
         </p>
       ) : null}
@@ -59,21 +65,33 @@ function SectionHeader({
   );
 }
 
-export function ProductPortfolioCard({ product }: { product: Product }) {
+export function ProductPortfolioCard({
+  product,
+  useHomepageImage = false,
+}: {
+  product: Product;
+  useHomepageImage?: boolean;
+}) {
   const band = productBands[product.slug];
+  const homepageImage = useHomepageImage
+    ? homepageProductImages[product.slug]
+    : undefined;
+  const productImage = homepageImage ?? product.image;
+
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
-      <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-surface-soft)]">
+    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
+      {/* light well: the default dark well shows as thin corner arcs behind these ivory renders */}
+      <div className="media-well aspect-[16/10] bg-[color:var(--color-surface-soft)] bg-none">
         <Image
-          src={product.image}
+          src={productImage}
           alt={product.alt}
           fill
           sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="flex min-h-[2.75em] items-start font-[family-name:var(--font-sora)] text-2xl font-semibold leading-snug tracking-tight text-[color:var(--color-text)]">
+      <div className="flex flex-1 flex-col gap-2.5 px-2.5 pt-5 pb-2.5">
+        <h3 className="min-h-[2.75em] font-heading text-[21px] font-semibold leading-snug tracking-tight text-[color:var(--color-text)]">
           <Link
             href={`/products/${product.slug}`}
             className="after:absolute after:inset-0 after:content-['']"
@@ -82,23 +100,19 @@ export function ProductPortfolioCard({ product }: { product: Product }) {
           </Link>
         </h3>
         {band ? (
-          <div className="mt-4">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
+          <div className="mt-1.5">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
               Operating band
             </p>
             <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
               {band.label}
             </p>
           </div>
-        ) : (
-          <p className="mt-2 line-clamp-2 text-sm leading-6 text-[color:var(--color-text-muted)]">
-            {product.description}
-          </p>
-        )}
-        <div className="mt-auto pt-6">
+        ) : null}
+        <div className="mt-auto pt-3">
           <Link
             href={`/products/${product.slug}`}
-            className="group/view relative z-10 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+            className="group/view relative z-10 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
           >
             View product
             <ArrowRight
@@ -113,29 +127,31 @@ export function ProductPortfolioCard({ product }: { product: Product }) {
 }
 
 function TechnologyCard({ platform }: { platform: IpPlatform }) {
+  const platformImage = technologyImages[platform.name] ?? platform.image;
+
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
-      <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-surface-soft)]">
+    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
+      <div className="media-well aspect-[16/10] bg-[color:var(--color-surface-soft)] bg-none">
         <Image
-          src={platform.image}
+          src={platformImage}
           alt={`${platform.name} technology visual`}
           fill
           sizes="(min-width: 1024px) 31vw, 100vw"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-heading text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
+      <div className="flex flex-1 flex-col px-2.5 pt-5 pb-2.5">
+        <h3 className="font-heading text-[23px] font-semibold tracking-tight text-[color:var(--color-text)]">
           {platform.name}
         </h3>
-        <p className="mt-2 text-sm leading-6 text-[color:var(--color-text-muted)]">
+        <p className="mt-2.5 mb-5 line-clamp-3 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
           {platform.description}
         </p>
         <div className="mt-auto border-t border-[color:var(--color-border)] pt-4">
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-600">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
             Focus
           </p>
-          <p className="mt-1.5 text-sm font-medium leading-6 text-[color:var(--color-text)]">
+          <p className="mt-1.5 line-clamp-2 text-[13px] font-medium leading-relaxed text-[color:var(--color-text)]">
             {platform.focus}
           </p>
         </div>
@@ -146,14 +162,14 @@ function TechnologyCard({ platform }: { platform: IpPlatform }) {
 
 function ApplicationCard({ application }: { application: Application }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(15_23_42/0.10)]">
-      <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--color-surface-soft)]">
+    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
+      <div className="media-well aspect-[16/11]">
         <Image
           src={application.image}
           alt={`${application.title} application visual`}
           fill
           sizes="(min-width: 768px) 45vw, 100vw"
-          className={`object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
+          className={`object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
             application.title === "Defense and Aerospace"
               ? "object-[50%_18%]"
               : application.title === "5G/6G Wireless Infrastructure"
@@ -164,17 +180,13 @@ function ApplicationCard({ application }: { application: Application }) {
           }`}
         />
       </div>
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2.5">
         <h3 className="font-heading text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
           {application.title}
         </h3>
-        <p className="mt-2 text-sm leading-6 text-[color:var(--color-text-muted)]">
+        <p className="mt-2 mb-4 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
           {application.description}
         </p>
-        <span
-          aria-hidden="true"
-          className="mt-5 h-px w-full origin-left scale-x-0 bg-slate-300 transition-transform duration-500 ease-out group-hover:scale-x-100"
-        />
       </div>
     </article>
   );
@@ -185,83 +197,50 @@ export function LandingContentSections() {
     <>
       <CompanySection>
         <Reveal>
-          <div className="max-w-3xl">
-            <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-              About us
-            </p>
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
-              Engineering RF semiconductor products from research to deployment.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
-              Linear-AmpTech transforms RF and semiconductor research into
-              scalable products and deployable solutions across communication,
-              radar, defense, aerospace, and next-generation wireless systems.{" "}
-              <Link
-                href="/team"
-                className="group/read-more inline-flex items-center gap-1.5 whitespace-nowrap  text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
-              >
-                Read more
-                <ArrowRight
-                  className="size-4 transition-transform duration-300 group-hover/read-more:translate-x-1"
-                  aria-hidden="true"
-                />
-              </Link>
-            </p>
-          </div>
-          <div className="mt-6 grid auto-rows-fr grid-cols-2 gap-3 sm:mt-8">
-            {metrics.map(([value, label], index) => {
-              return (
-                <div
-                  key={value}
-                  className="group relative flex h-full items-center overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgb(15_23_42/0.08)]"
-                >
-                  <span className="absolute right-4 top-4 text-[0.7rem] tracking-widest text-slate-300">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex items-center gap-3.5">
-                    <div className="min-w-0">
-                      <p className="text-xl font-semibold leading-tight tracking-tight text-[color:var(--color-text)]">
-                        {value}
-                      </p>
-                      <p className="mt-1 font-[family-name:var(--font-sora)] text-[0.82rem] leading-snug text-[color:var(--color-text-muted)]">
-                        {label}
-                      </p>
-                    </div>
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-slate-300 transition-transform duration-500 ease-out group-hover:scale-x-100"
-                  />
-                </div>
-              );
-            })}
-          </div>
+          <SectionHeader
+            label="About us"
+            title="Engineering RF semiconductor products from research to deployment."
+            intro="Linear-AmpTech transforms RF and semiconductor research into scalable products and deployable solutions across communication, radar, defense, aerospace, and next-generation wireless systems."
+          />
+          <Link
+            href="/team"
+            className="group/read-more mt-7 inline-flex items-center gap-1.5 border-b border-[#C2410C]/35 pb-0.5 text-[15px] font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:border-[#C2410C]"
+          >
+            Read more
+            <ArrowRight
+              className="size-4 transition-transform duration-300 group-hover/read-more:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
         </Reveal>
       </CompanySection>
 
       <section
         id="products"
-        className="bg-[color:var(--color-surface-soft)] py-16 sm:py-24"
+        className="flex min-h-[100svh] items-center bg-[color:var(--color-surface-soft)] py-16"
       >
-        <Reveal className="container mx-auto px-4 lg:px-4">
+        <Reveal className="container mx-auto w-full px-4 lg:px-4">
           <SectionHeader
             label="Products"
             title="RF front-end Product Portfolio—from power amplifier modules to advanced RFICs and MMICs."
             intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             <AllProdcuts />
           </div>
         </Reveal>
       </section>
 
-      <section id="technology" className="py-16 sm:py-24">
-        <Reveal className="container mx-auto px-4 lg:px-4">
+      <section
+        id="technology"
+        className="flex min-h-[100svh] items-center py-16"
+      >
+        <Reveal className="container mx-auto w-full px-4 lg:px-4">
           <SectionHeader
             label="Technology"
             title="Engineering across semiconductor technologies."
           />
-          <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {ipPlatforms.map((platform) => (
               <TechnologyCard key={platform.name} platform={platform} />
             ))}
@@ -271,15 +250,15 @@ export function LandingContentSections() {
 
       <section
         id="applications"
-        className="bg-[color:var(--color-surface)] py-16 sm:py-24"
+        className="flex min-h-[100svh] items-center bg-[color:var(--color-surface-soft)] py-16"
       >
-        <Reveal className="container mx-auto px-4 lg:px-4">
+        <Reveal className="container mx-auto w-full px-4 lg:px-4">
           <SectionHeader
             label="Applications"
             title="RF products shaped around real deployment domains."
             intro="Linear-AmpTech's application framing is anchored in defense RF, 6G, radar, phased arrays, active antennas, and RIS research."
           />
-          <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {applications.map((application) => (
               <ApplicationCard
                 key={application.title}
@@ -290,25 +269,33 @@ export function LandingContentSections() {
         </Reveal>
       </section>
 
-      <section className="relative isolate min-h-[calc(100svh-2rem)] overflow-hidden flex items-center bg-[#050b12]  text-white">
+      <section
+        id="rd"
+        className="relative isolate flex min-h-[calc(100svh-2rem)] items-center overflow-hidden bg-[#121110] text-white"
+      >
         <RdEngineBackgroundSlider />
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(5_11_18_/_0.93)_0%,rgb(5_11_18_/_0.78)_36%,rgb(5_11_18_/_0.36)_68%,rgb(5_11_18_/_0.16)_100%)]"
+          className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(18_17_16_/_0.93)_0%,rgb(18_17_16_/_0.78)_36%,rgb(18_17_16_/_0.36)_68%,rgb(18_17_16_/_0.16)_100%)]"
         />
         <Reveal className="container relative z-10 mx-auto flex min-h-[calc(100svh-17rem)] px-4 lg:px-4">
           <div className="flex max-w-3xl flex-col justify-center">
-            <SectionHeader
-              label="R&D Engine"
-              title="Semiconductor R&D engine for next-generation RF systems."
-              intro="From RF architecture and silicon realization to packaged hardware and measured prototypes, Linear-AmpTech delivers complete development capability across the RF semiconductor value chain."
-              inverted
-            />
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#FDEAD7]/80">
+              R&D Engine
+            </p>
+            <h2 className="mt-4 font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-balance text-white sm:text-4xl lg:text-[44px]">
+              Semiconductor R&D engine for next-generation RF systems.
+            </h2>
+            <p className="mt-5 text-[17px] leading-relaxed text-white/70">
+              From RF architecture and silicon realization to packaged hardware
+              and measured prototypes, Linear-AmpTech delivers complete
+              development capability across the RF semiconductor value chain.
+            </p>
             <div className="mt-8 flex flex-wrap gap-2.5">
               {researchFocusRows.map((pill) => (
                 <span
                   key={pill}
-                  className="rounded-lg border border-white/12 bg-white/[0.04] px-3.5 py-2 text-sm font-medium text-white/75 backdrop-blur-sm transition-colors hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+                  className="rounded-full border border-[#FDEAD7]/20 bg-[#FDEAD7]/10 px-4 py-2 text-[13px] font-medium text-[#FDEAD7] transition-colors hover:border-[#EA7317]/50 hover:bg-[#FDEAD7]/15"
                 >
                   {pill}
                 </span>
@@ -319,6 +306,31 @@ export function LandingContentSections() {
       </section>
 
       <WorkflowSection />
+
+      <section
+        id="contact-cta"
+        className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] py-20"
+      >
+        <Reveal className="container mx-auto flex w-full flex-wrap items-center justify-between gap-12 px-4 lg:px-4">
+          <div className="max-w-2xl">
+            <p className="kicker mb-4">Contact</p>
+            <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] text-balance sm:text-[42px]">
+              Start your next RF program with Linear-AmpTech.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-[color:var(--color-text-muted)]">
+              Talk directly with the engineers who design, tape out, and
+              validate the hardware.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex h-[52px] items-center gap-2.5 rounded-full bg-[#EA7317] px-8 text-[15px] font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)]"
+          >
+            Contact us
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </Reveal>
+      </section>
     </>
   );
 }

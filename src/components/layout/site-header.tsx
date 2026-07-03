@@ -114,26 +114,32 @@ function ProductMenuLink({
   href,
   title,
   onNavigate,
+  insideNav = true,
 }: {
   href: string;
   title: string;
   onNavigate?: () => void;
+  // NavigationMenuLink requires a NavigationMenu ancestor; the mobile menu
+  // portal renders outside one, so it must use the bare link.
+  insideNav?: boolean;
 }) {
-  return (
-    <NavigationMenuLink asChild>
-      <Link
-        href={href}
-        onClick={onNavigate}
-        className="group/item flex items-center justify-between gap-3 py-3 text-sm font-medium text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] focus:outline-none"
-      >
-        <span>{title}</span>
-        <ArrowRight
-          className="size-4 shrink-0 -translate-x-1 text-[#0b1220] opacity-0 transition-all duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
-          aria-hidden
-        />
-      </Link>
-    </NavigationMenuLink>
+  const link = (
+    <Link
+      href={href}
+      onClick={onNavigate}
+      className="group/item flex items-center justify-between gap-3 py-3 text-sm font-medium text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] focus:outline-none"
+    >
+      <span>{title}</span>
+      <ArrowRight
+        className="size-4 shrink-0 -translate-x-1 text-[color:var(--color-primary-deep)] opacity-0 transition-all duration-300 group-hover/item:translate-x-1 group-hover/item:opacity-100 group-focus/item:translate-x-1 group-focus/item:opacity-100"
+        aria-hidden
+      />
+    </Link>
   );
+
+  if (!insideNav) return link;
+
+  return <NavigationMenuLink asChild>{link}</NavigationMenuLink>;
 }
 
 function ProductCategoryLink({
@@ -165,11 +171,14 @@ function ProductCategoryLink({
       onClick={onNavigate}
     >
       <span className="flex items-center gap-2.5">
-        <Icon className="size-4 text-[#0b1220]" aria-hidden="true" />
+        <Icon
+          className="size-4 text-[color:var(--color-primary-deep)]"
+          aria-hidden="true"
+        />
         {title}
       </span>
       <ArrowRight
-        className="size-4 shrink-0 -translate-x-1 text-[#0b1220] opacity-0 transition-all duration-300 group-hover/category:translate-x-1 group-hover/category:opacity-100 group-focus/category:translate-x-1 group-focus/category:opacity-100"
+        className="size-4 shrink-0 -translate-x-1 text-[color:var(--color-primary-deep)] opacity-0 transition-all duration-300 group-hover/category:translate-x-1 group-hover/category:opacity-100 group-focus/category:translate-x-1 group-focus/category:opacity-100"
         aria-hidden
       />
     </Link>
@@ -192,7 +201,7 @@ function MobileMenu({
   return createPortal(
     <div
       id="mobile-menu"
-      className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)]/95 backdrop-blur-xl lg:hidden"
+      className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto border-t border-[color:var(--color-border)] bg-[color:var(--color-bg)] lg:hidden"
     >
       <div className="animate-in fade-in slide-in-from-top-2 flex size-full flex-col gap-6 p-5 ease-out">
         {children}
@@ -216,8 +225,11 @@ export function SiteHeader() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Solid chrome when scrolled past the hero, or when the mobile sheet is open.
-  const solid = scrolled || open;
+  // Hairline border + shadow once scrolled, or while the mobile sheet is open.
+  const elevated = scrolled || open;
+  // Home opens on a dark full-bleed photo hero — run the header transparent
+  // with light text there until scroll; every other page is ivory-on-light.
+  const overDark = pathname === "/" && !scrolled && !open;
 
   React.useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -263,8 +275,7 @@ export function SiteHeader() {
       event.preventDefault();
 
       if (pathname !== "/") {
-        sessionStorage.setItem("linearAmptechPendingHash", href.slice(1));
-        router.push("/");
+        router.push(href);
         return;
       }
 
@@ -315,13 +326,16 @@ export function SiteHeader() {
   const deskLink = (active: boolean) =>
     cn(
       "inline-flex h-9 items-center px-1 text-sm font-medium transition-colors",
-      solid
+      overDark
         ? active
-          ? "text-[color:var(--color-text)]"
-          : "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)]"
-        : active
-          ? "text-white"
-          : "text-white/75 hover:text-white",
+          ? "text-white hover:text-[#FDEAD7]"
+          : "text-white/75 hover:text-white"
+        : cn(
+            "hover:text-[color:var(--color-primary-deep)]",
+            active
+              ? "text-[color:var(--color-text)]"
+              : "text-[color:var(--color-text-muted)]",
+          ),
     );
 
   return (
@@ -333,19 +347,23 @@ export function SiteHeader() {
       }
       className={cn(
         "fixed inset-x-0 top-0 z-50 w-full transition-[background-color,border-color,box-shadow] duration-300",
-        solid
-          ? "border-b border-[color:var(--color-border)] bg-[color:var(--color-bg)]/85 shadow-[0_8px_30px_rgb(11_18_32_/_0.06)] backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
+        overDark
+          ? "border-b border-transparent bg-transparent"
+          : cn(
+              "bg-[color:var(--color-bg)]",
+              elevated
+                ? "border-b border-[color:var(--color-border)] shadow-[var(--shadow-header)]"
+                : "border-b border-transparent",
+            ),
       )}
     >
-      {/* Legibility scrim while transparent over the hero */}
-      {!solid ? (
+      {/* Legibility scrim while transparent over the dark hero */}
+      {overDark ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/45 via-black/15 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#121110]/60 via-[#121110]/20 to-transparent"
         />
       ) : null}
-
       <nav
         className={cn(
           "container relative mx-auto flex items-center justify-between gap-4 px-4 transition-[height] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:px-4",
@@ -360,7 +378,7 @@ export function SiteHeader() {
             className="flex items-center"
           >
             <Image
-              src="/assets/linear-amptech-logo.png"
+              src="/assets/brand/logo.png"
               alt="Linear-AmpTech logo"
               width={104}
               height={58}
@@ -394,10 +412,10 @@ export function SiteHeader() {
             <NavigationMenuItem>
               <NavigationMenuTrigger
                 className={cn(
-                  "group h-9 gap-1 bg-transparent px-1 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent cursor-pointer",
-                  solid
-                    ? "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text)] focus:text-[color:var(--color-text)] data-[state=open]:text-[color:var(--color-text)]"
-                    : "text-white/75 hover:text-white focus:text-white data-[state=open]:text-white",
+                  "group h-9 cursor-pointer gap-1 bg-transparent px-1 text-sm font-medium transition-colors hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent",
+                  overDark
+                    ? "text-white/75 hover:text-white focus:text-white data-[state=open]:text-white"
+                    : "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-primary-deep)] focus:text-[color:var(--color-primary-deep)] data-[state=open]:text-[color:var(--color-primary-deep)]",
                 )}
               >
                 Products
@@ -453,7 +471,7 @@ export function SiteHeader() {
                   </div>
 
                   <div className="p-5">
-                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                       {productPanel.label}
                     </p>
                     <div className="mt-3 divide-y divide-[color:var(--color-border)]">
@@ -490,10 +508,10 @@ export function SiteHeader() {
         <Link
           href="/contact"
           className={cn(
-            "group hidden h-10 items-center gap-2 px-1 text-sm font-semibold transition-colors lg:inline-flex",
-            solid
-              ? "text-[color:var(--color-text)] hover:text-[color:var(--color-text-muted)]"
-              : "text-white hover:text-white/75",
+            "group hidden h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-colors lg:inline-flex",
+            overDark
+              ? "text-white hover:text-[#FDEAD7]"
+              : "text-[color:var(--color-text)] hover:text-[color:var(--color-primary-deep)]",
           )}
         >
           Contact Us
@@ -509,9 +527,9 @@ export function SiteHeader() {
             onClick={closeMobile}
             className={cn(
               "group inline-flex h-9 items-center gap-1.5 px-1 text-xs font-semibold transition-colors",
-              solid
-                ? "text-[color:var(--color-text)] hover:text-[color:var(--color-text-muted)]"
-                : "text-white hover:text-white/75",
+              overDark
+                ? "text-white hover:text-[#FDEAD7]"
+                : "text-[color:var(--color-text)] hover:text-[color:var(--color-primary-deep)]",
             )}
           >
             Contact
@@ -525,9 +543,9 @@ export function SiteHeader() {
             variant="outline"
             className={cn(
               "transition-colors",
-              solid
-                ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)]"
-                : "border-white/25 bg-white/10 text-white hover:bg-white/20",
+              overDark
+                ? "border-white/25 bg-white/10 text-white hover:bg-white/20"
+                : "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)]",
             )}
             onClick={() => setOpen((current) => !current)}
             aria-expanded={open}
@@ -601,6 +619,7 @@ export function SiteHeader() {
                   href={item.href}
                   title={item.title}
                   onNavigate={closeMobile}
+                  insideNav={false}
                 />
               ))}
             </div>
@@ -616,7 +635,7 @@ export function SiteHeader() {
               className={cn(
                 "rounded-xl px-3 py-3 text-sm font-semibold transition-colors hover:bg-[color:var(--color-surface-soft)]",
                 isActive(item.href)
-                  ? "text-slate-900"
+                  ? "text-[color:var(--color-primary-deep)]"
                   : "text-[color:var(--color-text)]",
               )}
             >

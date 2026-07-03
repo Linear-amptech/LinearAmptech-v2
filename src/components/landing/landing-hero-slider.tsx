@@ -30,19 +30,19 @@ type HeroSlide = {
 
 const heroImages = [
   {
-    imagePath: "/assets/hero-section-slider/hero-linear-amptech-rfic-chip.png",
+    imagePath: "/assets/hero/rfic-chip.png",
     imageAlt: "Linear-AmpTech RFIC chip hero visual",
   },
   {
-    imagePath: "/assets/hero-section-slider/ghz-transmitter-chip.png",
+    imagePath: "/assets/hero/transmitter-47ghz.png",
     imageAlt: "47 GHz transmitter chip hero visual",
   },
   {
-    imagePath: "/assets/hero-section-slider/rf-lab-validation.png",
+    imagePath: "/assets/hero/rf-lab-validation.png",
     imageAlt: "Hybrid MIC PA module hero visual",
   },
   {
-    imagePath: "/assets/hero-section-slider/6666.png",
+    imagePath: "/assets/hero/silicon-wafer.png",
     imageAlt: "Semiconductor wafer hero visual",
   },
 ];
@@ -90,7 +90,7 @@ export function LandingHeroSlider() {
     setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
 
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#050b12] pb-12 pt-24 text-white sm:pb-14 sm:pt-28">
+    <section className="relative isolate h-[100svh] overflow-hidden bg-[#121110] pb-12 pt-24 text-white sm:pb-14 sm:pt-28">
       {/* Photography */}
       <motion.div
         aria-hidden="true"
@@ -118,14 +118,14 @@ export function LandingHeroSlider() {
       {/* Neutral legibility scrim — no color tint, no decorative glow */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,#050b12_0%,rgba(5,11,18,0.92)_40%,rgba(5,11,18,0.55)_64%,rgba(5,11,18,0.1)_90%)]"
+        className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,#121110_0%,rgba(18,17,16,0.92)_40%,rgba(18,17,16,0.55)_64%,rgba(18,17,16,0.1)_90%)]"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 z-[1] h-72 bg-[linear-gradient(180deg,transparent_0%,rgba(5,11,18,0.92)_92%)]"
+        className="absolute inset-x-0 bottom-0 z-[1] h-72 bg-[linear-gradient(180deg,transparent_0%,rgba(18,17,16,0.92)_92%)]"
       />
 
-      <div className="container relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] flex-col px-4 sm:min-h-[calc(100svh-7rem)] lg:px-4">
+      <div className="container relative z-10 mx-auto flex h-full flex-col px-4 lg:px-4">
         {/* Headline block — vertically centered */}
         <div className="flex flex-1 items-center">
           <Reveal>
@@ -138,7 +138,7 @@ export function LandingHeroSlider() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <p className="font-mono text-[0.72rem] uppercase tracking-[0.32em] text-white/45">
+                  <p className="font-mono text-[0.72rem] uppercase tracking-[0.32em] text-[#FDEAD7]/80">
                     {activeSlide.eyebrow}
                   </p>
                   <h1 className="mt-5 max-w-[40rem] text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
@@ -153,7 +153,7 @@ export function LandingHeroSlider() {
               <div className="mt-9 flex items-center gap-5">
                 <Link
                   href="#products"
-                  className="group inline-flex h-12 items-center gap-2.5 rounded-full bg-white px-6 text-sm font-semibold text-[#050b12] transition-colors hover:bg-white/90"
+                  className="group inline-flex h-12 items-center gap-2.5 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
                 >
                   Explore products
                   <ArrowRight
@@ -163,7 +163,7 @@ export function LandingHeroSlider() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-sm font-medium text-white/70 underline-offset-4 transition-colors hover:text-white hover:underline"
+                  className="text-sm font-medium text-[#FDEAD7]/85 underline-offset-4 transition-colors hover:text-[#FDEAD7] hover:underline"
                 >
                   Talk to engineering
                 </Link>
@@ -187,7 +187,7 @@ export function LandingHeroSlider() {
                   className={cn(
                     "h-1.5 rounded-full transition-all duration-300",
                     activeHeroSlide === index
-                      ? "w-6 bg-white"
+                      ? "w-6 bg-[#EA7317]"
                       : "w-1.5 bg-white/30",
                   )}
                 />
@@ -210,7 +210,7 @@ export function LandingHeroSlider() {
                   isSliderPaused ? "Play slideshow" : "Pause slideshow"
                 }
                 aria-pressed={isSliderPaused}
-                className="grid size-10 place-items-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-white/40 hover:text-white"
+                className="grid size-10 place-items-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-[#EA7317]/60 hover:text-white"
               >
                 {isSliderPaused ? (
                   <Play className="size-4" aria-hidden="true" />
@@ -222,7 +222,7 @@ export function LandingHeroSlider() {
                 type="button"
                 onClick={showPreviousSlide}
                 aria-label="Previous slide"
-                className="grid size-10 place-items-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-white/40 hover:text-white"
+                className="grid size-10 place-items-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-[#EA7317]/60 hover:text-white"
               >
                 <ChevronLeft className="size-5" aria-hidden="true" />
               </button>
@@ -230,7 +230,7 @@ export function LandingHeroSlider() {
                 type="button"
                 onClick={showNextSlide}
                 aria-label="Next slide"
-                className="grid size-10 place-items-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-white/40 hover:text-white"
+                className="grid size-10 place-items-center rounded-full border border-white/15 text-white/75 transition-colors hover:border-[#EA7317]/60 hover:text-white"
               >
                 <ChevronRight className="size-5" aria-hidden="true" />
               </button>
@@ -266,7 +266,7 @@ export function LandingHeroSlider() {
                       <span
                         key={activeHeroSlide}
                         className={cn(
-                          "absolute inset-y-0 left-0 block w-full origin-left bg-white [animation:heroProgress_5.2s_linear_forwards]",
+                          "absolute inset-y-0 left-0 block w-full origin-left bg-[#EA7317] [animation:heroProgress_5.2s_linear_forwards]",
                           isPlaybackPaused && "[animation-play-state:paused]",
                         )}
                       />
@@ -275,7 +275,7 @@ export function LandingHeroSlider() {
                   <span
                     className={cn(
                       "mt-3 block font-mono text-xs transition-colors",
-                      active ? "text-white/80" : "text-white/35",
+                      active ? "text-[#FDEAD7]" : "text-white/35",
                     )}
                   >
                     {String(index + 1).padStart(2, "0")}

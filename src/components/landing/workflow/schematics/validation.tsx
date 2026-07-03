@@ -30,7 +30,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
         y="90"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
         letterSpacing="1"
       >
@@ -41,7 +41,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
         y="90"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
         letterSpacing="1"
       >
@@ -56,7 +56,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
             y={row.y + 4}
             fontFamily="var(--font-app-mono)"
             fontSize="12"
-            fill="#0b1220"
+            fill="#1C1917"
             stroke="none"
           >
             {row.label}
@@ -68,8 +68,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
             y1={row.y}
             x2={trackEnd}
             y2={row.y}
-            stroke="#0b1220"
-            strokeOpacity="0.12"
+            stroke="#E7E0D5"
             strokeWidth="6"
             strokeLinecap="round"
           />
@@ -82,6 +81,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
             y1={row.y}
             x2={trackX + row.barW}
             y2={row.y}
+            stroke="#EA7317"
             strokeWidth="6"
             strokeLinecap="round"
           />
@@ -92,15 +92,14 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
             y1={row.y - 10}
             x2={targetX}
             y2={row.y + 10}
-            stroke="#0b1220"
-            strokeOpacity="0.5"
+            stroke="#78716C"
             strokeWidth="1.5"
           />
 
           {/* Checkmark at row end */}
           <path
             d={`M${checkX} ${row.y} l5 6 l10 -10`}
-            stroke="#0b1220"
+            stroke="#EA7317"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -110,15 +109,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
       ))}
 
       {/* Divider line below column headers */}
-      <line
-        x1="70"
-        y1="98"
-        x2="475"
-        y2="98"
-        stroke="#0b1220"
-        strokeOpacity="0.12"
-        strokeWidth="1"
-      />
+      <line x1="70" y1="98" x2="475" y2="98" stroke="#E7E0D5" strokeWidth="1" />
 
       {/* PASS stamp — rotated rectangle + text */}
       <g transform="rotate(-12 510 300)">
@@ -129,7 +120,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
           height="40"
           rx="4"
           ry="4"
-          stroke="#0b1220"
+          stroke="#EA7317"
           strokeWidth="2"
           fill="none"
         />
@@ -141,7 +132,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
           height="32"
           rx="2"
           ry="2"
-          stroke="#0b1220"
+          stroke="#EA7317"
           strokeOpacity="0.3"
           strokeWidth="1"
           fill="none"
@@ -153,7 +144,7 @@ export function ValidationSchematic({ isActive, reduced }: SchematicProps) {
           fontFamily="var(--font-app-mono)"
           fontSize="18"
           fontWeight="700"
-          fill="#0b1220"
+          fill="#C2410C"
           stroke="none"
           letterSpacing="4"
         >

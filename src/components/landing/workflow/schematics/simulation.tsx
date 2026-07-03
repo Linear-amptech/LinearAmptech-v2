@@ -11,12 +11,13 @@ export function SimulationSchematic({ isActive, reduced }: SchematicProps) {
       {/* plot axes */}
       <path className="draw" pathLength={1} d="M80 92V300H430" />
       {/* faint horizontal gridlines */}
-      <path d="M80 160H430M80 230H430" stroke="#0b1220" strokeOpacity="0.08" />
+      <path d="M80 160H430M80 230H430" stroke="#E7E0D5" />
       {/* S21 bandpass response */}
       <path
         className="draw d2"
         pathLength={1}
         d="M88 286 C 140 286, 150 150, 215 145 C 255 142, 286 142, 320 147 C 382 154, 396 276, 424 289"
+        stroke="#EA7317"
       />
       {/* axis labels */}
       <text
@@ -24,7 +25,7 @@ export function SimulationSchematic({ isActive, reduced }: SchematicProps) {
         y="100"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         dB
@@ -34,7 +35,7 @@ export function SimulationSchematic({ isActive, reduced }: SchematicProps) {
         y="320"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         FREQ
@@ -44,7 +45,7 @@ export function SimulationSchematic({ isActive, reduced }: SchematicProps) {
         y="128"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#0b1220"
+        fill="#C2410C"
         stroke="none"
       >
         S21
@@ -59,7 +60,7 @@ export function SimulationSchematic({ isActive, reduced }: SchematicProps) {
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="1"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         SMITH

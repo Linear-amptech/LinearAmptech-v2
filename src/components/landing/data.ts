@@ -11,77 +11,67 @@ import {
 } from "lucide-react";
 
 export const assets = {
-  heroChip: "/assets/hero-chip.png",
-  siliconWafer: "/assets/silicon-wafer.png",
-  rfSignalWave: "/assets/rf-signal-wave.png",
-  analogCircuit: "/assets/analog-circuit.png",
-  rdLab: "/assets/rd-lab.png",
-  laRfCore: "/assets/la-rf-core.png",
-  laAnalogNexus: "/assets/la-analog-nexus.png",
-  laSiliconLab: "/assets/la-silicon-lab.png",
-  circuitBackground: "/assets/circuit-background.png",
-  particleBackground: "/assets/particle-background.png",
-  hybridPaModule: "/assets/ppt-products/hybrid-pa-module.png",
-  ganPaModulePhoto: "/assets/ppt-products/gan-pa-module-photo.png",
-  ganPaModuleNewPhoto: "/assets/technology/gan-pa-module-photo-new.png",
+  technologyGanHemt: "/assets/technology/gan-hemt.png",
+  technologySigeBicmos: "/assets/technology/sige-bicmos.png",
+  technologySiCmos: "/assets/technology/si-cmos.png",
+  hybridMicBenchTest:
+    "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/bench-test.png",
+  hybridMicCard:
+    "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/card-saffron-v2.png",
 
-  transceiverChipLayout: "/assets/ppt-products/transceiver-chip-layout.png",
-  transceiverChipLayout2: "/assets/technology/sige-bicmos.png",
-
-  radarFrontEndLayout: "/assets/ppt-products/radar-front-end-layout.png",
-  dieProbeMicroscope: "/assets/ppt-products/die-probe-microscope.png",
-  bondedDieCloseup: "/assets/ppt-products/bonded-die-closeup.png",
-  bondedDieCloseup2: "/assets/technology/si-cmos.png",
-  sourceHybridMicModule: "/assets/ppt-products/source/pa-module-bench.png",
-  sourceHybridMicModule2: "/assets/products/hybrid-mic-pa/1.png",
-
-  sourcePortfolioHybridMicModule:
-    "/assets/ppt-products/source/portfolio-hybrid-mic-pa-module.png",
-  sourcePortfolioPaChip: "/assets/ppt-products/source/portfolio-pa-chip.png",
-  sourceTransceiverCollage:
-    "/assets/ppt-products/source/portfolio-transceiver-collage.png",
+  hybridMicModulePhoto:
+    "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/module-photo.png",
+  cKuPaChipRender:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/chip-render.png",
+  transceiverCollage:
+    "/assets/products/rf-mmwave-front-end-modules/transceiver-collage.png",
   sourcePortfolioFrontEndChip:
-    "/assets/ppt-products/source/portfolio-front-end-chip.png",
-  sourceTxRxLayout: "/assets/ppt-products/source/tx-rx-layout.png",
-  sourceTxRxLayout2: "/assets/products/integrated-receiver-chip/1.png",
-  sourceTxRxLayout3: "/assets/products/integrated-transmitter-chip/1.png",
-  sourceRadarFrontEndChip:
-    "/assets/ppt-products/source/radar-front-end-chip.png",
-  sourceRadarFrontEndChip2: "/assets/products/radar-frontend-chip/1.png",
+    "/assets/products/rf-mmwave-front-end-modules/radar/chip-render.png",
+  receiverCard:
+    "/assets/products/rf-mmwave-front-end-modules/receiver/card-saffron-v2.png",
+  transmitterCard:
+    "/assets/products/rf-mmwave-front-end-modules/transmitter/card-saffron-v2.png",
+  radarChipPhoto:
+    "/assets/products/rf-mmwave-front-end-modules/radar/chip-photo.png",
+  radarCard:
+    "/assets/products/rf-mmwave-front-end-modules/radar/card-saffron-v2.png",
   frontendReceiverChipPhoto:
-    "/assets/products/rf-mmwave-front-end-modules/receiver-chip-photo.png",
+    "/assets/products/rf-mmwave-front-end-modules/receiver/chip-photo.png",
   frontendReceiverLayout:
-    "/assets/products/rf-mmwave-front-end-modules/receiver-layout.png",
+    "/assets/products/rf-mmwave-front-end-modules/receiver/layout.png",
   frontendReceiverEmSimulation1:
-    "/assets/products/rf-mmwave-front-end-modules/receiver-em-simulation-1.png",
+    "/assets/products/rf-mmwave-front-end-modules/receiver/em-simulation-1.png",
   frontendReceiverEmSimulation2:
-    "/assets/products/rf-mmwave-front-end-modules/receiver-em-simulation-2.png",
+    "/assets/products/rf-mmwave-front-end-modules/receiver/em-simulation-2.png",
   frontendTransmitterLayout:
-    "/assets/products/rf-mmwave-front-end-modules/transmitter-layout.png",
+    "/assets/products/rf-mmwave-front-end-modules/transmitter/layout.png",
   frontendTransmitterEmSimulation:
-    "/assets/products/rf-mmwave-front-end-modules/transmitter-em-simulation.png",
+    "/assets/products/rf-mmwave-front-end-modules/transmitter/em-simulation.png",
   frontendRadarSystemLayout:
-    "/assets/products/rf-mmwave-front-end-modules/radar-system-layout.png",
+    "/assets/products/rf-mmwave-front-end-modules/radar/system-layout.png",
   frontendRadarChipLayout:
-    "/assets/products/rf-mmwave-front-end-modules/radar-chip-layout.png",
-  sourcePhaseShifterChip: "/assets/ppt-products/source/phase-shifter-chip.jpg",
-  sourcePhaseShifterChip2: "/assets/products/8-bit-phase-shifter/1.png",
+    "/assets/products/rf-mmwave-front-end-modules/radar/chip-layout.png",
+  phaseShifterChipPhoto: "/assets/products/phase-shifter/chip-photo.jpg",
+  phaseShifterCard: "/assets/products/phase-shifter/card-saffron-v2.png",
 
-  sourceGanPackagedChip: "/assets/ppt-products/source/gan-packaged-chip.jpg",
-  sourceGanPaPackagedHardware:
-    "/assets/ppt-products/source/gan-pa-packaged-hardware.jpg",
-  sourceGanPaPackagedHardware2: "/assets/products/c-ku-band-chip/1.png",
-  sourceGanModuleNews: "/assets/ppt-products/source/gan-module-news.jpg",
-  sourceGanPaLayoutQfn44: "/assets/ppt-products/source/gan-pa-layout-qfn44.jpg",
-  sourceGanPaPerformance: "/assets/ppt-products/source/gan-pa-performance.png",
-  sourceGanPaQfn44Performance:
-    "/assets/ppt-products/source/gan-pa-qfn44-performance.png",
-  sourceGanPaQfn56Performance:
-    "/assets/ppt-products/source/gan-pa-qfn56-performance.png",
-  defense: "/assets/applications/defense1.png",
-  sixG: "/assets/applications/6g.png",
-  mimoRadar: "/assets/applications/mimo_radar.png",
-  risActive: "/assets/applications/ris_active.png",
+  cKuPaPackagedChip:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-chip.jpg",
+  cKuPaPackagedHardware:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-hardware.jpg",
+  cKuPaCard:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/card-saffron-v6.png",
+  hybridMicGanNews:
+    "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/gan-module-news.jpg",
+  cKuPaLayoutQfn44:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/layout-qfn44.jpg",
+  cKuPaPerformanceQfn44:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/performance-qfn44.png",
+  cKuPaPerformanceQfn56:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/performance-qfn56.png",
+  defense: "/assets/applications/defense-aerospace.png",
+  sixG: "/assets/applications/wireless-6g.png",
+  mimoRadar: "/assets/applications/mimo-radar.png",
+  risActive: "/assets/applications/ris-active-antenna.png",
 } as const;
 
 export type Capability = {
@@ -120,7 +110,6 @@ export type HeroSlide = {
   eyebrow: string;
   title: string;
   description: string;
-  image: string;
 };
 
 export const capabilities: Capability[] = [
@@ -138,7 +127,7 @@ export const ipPlatforms: IpPlatform[] = [
   {
     name: "III-V GaN Technology",
     icon: RadioTower,
-    image: assets.ganPaModuleNewPhoto,
+    image: assets.technologyGanHemt,
     description:
       "High-power-density PA MMICs and T/R front-end modules up to Ku-band, built for resilient defense and aerospace RF systems.",
     focus: "Standalone PA MMIC chips and T/R front-end modules up to Ku-band.",
@@ -146,7 +135,7 @@ export const ipPlatforms: IpPlatform[] = [
   {
     name: "Si CMOS Technology",
     icon: Cpu,
-    image: assets.bondedDieCloseup2,
+    image: assets.technologySiCmos,
     description:
       "Scalable RFIC IP for lower 5G FR2 and 6G FR3 bands, including RF-SOI switch concepts for 6G reconfigurable intelligent surfaces.",
     focus:
@@ -155,7 +144,7 @@ export const ipPlatforms: IpPlatform[] = [
   {
     name: "SiGe BiCMOS Technology",
     icon: Waves,
-    image: assets.transceiverChipLayout2,
+    image: assets.technologySigeBicmos,
     description:
       "mm-wave and sub-THz performance for wireless transceivers, phased-array 6G ICs, MIMO radar, and D-band front-end research.",
     focus:
@@ -193,7 +182,7 @@ export const products: Product[] = [
     slug: "hybrid-mic-pa-modules",
     name: "Hybrid MIC PA Modules",
     icon: RadioTower,
-    image: assets.sourceHybridMicModule2,
+    image: assets.hybridMicCard,
     alt: "Hybrid MIC PA module bench hardware",
     description:
       "Complete power amplifier module capability with gain-chain budgeting, power conditioning, VSWR protection, and multiple units in the 0.5-3.25 GHz range.",
@@ -231,17 +220,17 @@ export const products: Product[] = [
     ],
     gallery: [
       {
-        src: assets.sourceHybridMicModule,
+        src: assets.hybridMicBenchTest,
         alt: "Complete PA module bench hardware",
         caption: "Complete Power Amplifier Module",
       },
       {
-        src: assets.sourcePortfolioHybridMicModule,
+        src: assets.hybridMicModulePhoto,
         alt: "Hybrid MIC PA module portfolio image",
         caption: "Hybrid MIC PA Modules",
       },
       {
-        src: assets.sourceGanModuleNews,
+        src: assets.hybridMicGanNews,
         alt: "News clipping and module reference for RF power amplifiers",
         caption: "Module development reference",
       },
@@ -251,7 +240,7 @@ export const products: Product[] = [
     slug: "fully-integrated-c-ku-band-pa-chip",
     name: "Fully Integrated C-Ku Band PA Chip",
     icon: Cpu,
-    image: assets.sourceGanPaPackagedHardware2,
+    image: assets.cKuPaCard,
     alt: "Fully integrated C-Ku band power amplifier chip hardware",
     description:
       "5W fully integrated C-Ku band GaN-on-SiC PA chip family with QFN44 and QFN56 variants, completed simulation, tapeout, and measurement.",
@@ -289,34 +278,34 @@ export const products: Product[] = [
     ],
     gallery: [
       {
-        src: assets.sourceGanPaPackagedHardware,
+        src: assets.cKuPaPackagedHardware,
         alt: "Packaged C-Ku band PA chip hardware",
         caption: "Fully Integrated C-Ku Band Power Amplifier hardware",
       },
       {
-        src: assets.sourceGanPaLayoutQfn44,
+        src: assets.cKuPaLayoutQfn44,
         alt: "C-Ku PA chip layout and package reference",
         caption: "QFN44 chip layout reference",
       },
       {
-        src: assets.sourceGanPaQfn44Performance,
+        src: assets.cKuPaPerformanceQfn44,
         alt: "QFN44 CW output power gain and PAE performance plot",
         caption: "CW Output Power, Gain, PAE Performance (QFN44)",
       },
       {
-        src: assets.sourceGanPaQfn56Performance,
+        src: assets.cKuPaPerformanceQfn56,
         alt: "QFN56 CW output power gain and PAE performance plot",
         caption: "CW Output Power, Gain, PAE Performance (QFN56)",
       },
       {
-        src: assets.sourceGanPackagedChip,
+        src: assets.cKuPaPackagedChip,
         alt: "Packaged GaN PA chip",
         caption: "Fully Integrated PA Chip",
       },
       {
-        src: assets.sourcePortfolioPaChip,
-        alt: "Fully integrated PA chip portfolio image",
-        caption: "PA chip from product portfolio slide",
+        src: assets.cKuPaChipRender,
+        alt: "Fully integrated PA chip render",
+        caption: "Fully integrated PA chip — packaged part",
       },
     ],
   },
@@ -324,7 +313,7 @@ export const products: Product[] = [
     slug: "fully-integrated-transmitter-chip",
     name: "Fully Integrated Transmitter Chip",
     icon: Waves,
-    image: assets.sourceTxRxLayout3,
+    image: assets.transmitterCard,
     alt: "Fully integrated transmitter chip layout",
     description:
       "47.2-48.2 GHz fully integrated transmitter chip in GF 130nm SiGe BiCMOS with 20 dB conversion gain and 15 dBm output power.",
@@ -365,7 +354,7 @@ export const products: Product[] = [
     ],
     gallery: [
       {
-        src: assets.sourceTxRxLayout3,
+        src: assets.transmitterCard,
         alt: "Fully integrated transmitter chip layout",
         caption: "Transmitter chip primary visual",
       },
@@ -380,7 +369,7 @@ export const products: Product[] = [
         caption: "EM simulation result",
       },
       {
-        src: assets.sourceTransceiverCollage,
+        src: assets.transceiverCollage,
         alt: "Transmitter and receiver chip collage from portfolio slide",
         caption: "Tx/Rx portfolio reference",
       },
@@ -390,7 +379,7 @@ export const products: Product[] = [
     slug: "fully-integrated-receiver-chip",
     name: "Fully Integrated Receiver Chip",
     icon: Waves,
-    image: assets.sourceTxRxLayout2,
+    image: assets.receiverCard,
     alt: "Fully integrated receiver chip layout",
     description:
       "47.2-48.2 GHz fully integrated receiver chip in GF 130nm SiGe BiCMOS with 36.3-37 dB voltage gain.",
@@ -451,7 +440,7 @@ export const products: Product[] = [
         caption: "EM simulation result",
       },
       {
-        src: assets.sourceTransceiverCollage,
+        src: assets.transceiverCollage,
         alt: "Transmitter and receiver chip collage from portfolio slide",
         caption: "Tx/Rx portfolio reference",
       },
@@ -461,7 +450,7 @@ export const products: Product[] = [
     slug: "fully-integrated-radar-front-end-chip",
     name: "Fully Integrated Radar Front-End Chip",
     icon: Radar,
-    image: assets.sourceRadarFrontEndChip2,
+    image: assets.radarCard,
     alt: "Fully integrated radar front-end chip",
     description:
       "71-81 GHz fully integrated radar front-end chip in GF 130nm SiGe BiCMOS with 10.5 dBm Tx output power and 37 dB receiver conversion gain.",
@@ -505,7 +494,7 @@ export const products: Product[] = [
         caption: "Radar chip layout",
       },
       {
-        src: assets.sourceRadarFrontEndChip,
+        src: assets.radarChipPhoto,
         alt: "Radar front-end chip layout",
         caption: "Fully Integrated Radar Front-End Chip",
       },
@@ -520,7 +509,7 @@ export const products: Product[] = [
     slug: "8-bit-phase-shifter-chip",
     name: "8-Bit Phase Shifter Chip",
     icon: ScanLine,
-    image: assets.sourcePhaseShifterChip2,
+    image: assets.phaseShifterCard,
     alt: "8-bit phase shifter chip",
     description:
       "13-17 GHz 8-bit phase shifter chip in TSMC 65nm Bulk CMOS with 1.5 degree phase resolution.",
@@ -552,7 +541,7 @@ export const products: Product[] = [
     ],
     gallery: [
       {
-        src: assets.sourcePhaseShifterChip,
+        src: assets.phaseShifterChipPhoto,
         alt: "8-bit phase shifter chip",
         caption: "8-Bit Phase Shifter Chip",
       },
@@ -610,28 +599,24 @@ export const heroSlides: HeroSlide[] = [
     title: "Creating Difference with RF Front-End Technology.",
     description:
       "Indigenous RF front-end components, GaN-based MMICs, high-power modules, and silicon-validated CMOS/BiCMOS RFIC IP cores.",
-    image: assets.heroChip,
   },
   {
     eyebrow: "GaN Power Amplifier Modules",
     title: "C-Ku Band Power Amplifiers Built for Next Gen RF Systems",
     description:
       "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense front ends.",
-    image: assets.ganPaModuleNewPhoto,
   },
   {
     eyebrow: "SiGe BiCMOS RFIC Development",
     title: "47 GHz Transmitter and Receiver IC Capability.",
     description:
       "Pin-compatible transmitter and receiver ICs for mm-wave systems, backed by silicon layout, simulation, packaging, and validation workflows.",
-    image: assets.transceiverChipLayout,
   },
   {
     eyebrow: "mm-Wave Packaging and Integration",
     title: "Chip-to-PCB-to-Waveguide Integration for HF.",
     description:
       "Packaging, transitions, and combining networks for mm-wave assemblies where IC, PCB, waveguide, and measurement constraints meet.",
-    image: assets.radarFrontEndLayout,
   },
 ];
 

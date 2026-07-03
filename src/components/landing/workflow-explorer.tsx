@@ -15,50 +15,42 @@ import { cn } from "@/lib/utils";
 
 type WorkflowStep = {
   title: string;
-  image: string;
   description: string;
 };
 
 const workflowSteps: WorkflowStep[] = [
   {
     title: "Design",
-    image: "/assets/workflow/1_1.png",
     description:
       "Define the topology, frequency plan, and device sizing against the target link budget.",
   },
   {
     title: "Simulation",
-    image: "/assets/workflow/2_2.png",
     description:
       "Co-simulate circuit and EM behaviour to converge gain, match, linearity, and stability before silicon.",
   },
   {
     title: "Tapeout",
-    image: "/assets/workflow/3_3.png",
     description:
       "Complete layout, run DRC/LVS sign-off, and hand the GDS to the foundry.",
   },
   {
     title: "Packaging",
-    image: "/assets/workflow/4_4.png",
     description:
       "Attach the die and model the package for thermal and RF performance.",
   },
   {
     title: "Integration",
-    image: "/assets/workflow/5_5.png",
     description:
       "Assemble the front-end into the board and system with bias and control networks.",
   },
   {
     title: "Characterization",
-    image: "/assets/workflow/6_6.png",
     description:
       "Measure S-parameters, output power, efficiency, and linearity across the band.",
   },
   {
     title: "Validation",
-    image: "/assets/workflow/7_7.png",
     description:
       "Correlate measured data to spec and screen for deployment readiness.",
   },
@@ -152,13 +144,11 @@ export function WorkflowExplorer() {
   return (
     // Tall track on desktop so the inner panel pins while stages advance on scroll.
     <section ref={sectionRef} className="relative lg:h-[280vh]">
-      <div className="flex min-h-[100svh] flex-col justify-center pb-10 pt-16 lg:sticky lg:top-0 lg:h-[100svh]">
+      <div className="flex min-h-[100svh] flex-col justify-center py-24 sm:py-32 lg:sticky lg:top-0 lg:h-[100svh] lg:py-0">
         <Reveal className="container mx-auto px-4 lg:px-4">
           <div className="max-w-3xl">
-            <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
-              Workflow
-            </p>
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+            <p className="kicker mb-3">Workflow</p>
+            <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] sm:text-4xl lg:text-[44px]">
               From architecture to measured prototype.
             </h2>
           </div>
@@ -190,9 +180,9 @@ export function WorkflowExplorer() {
                     onMouseEnter={() => select(index)}
                     onFocus={() => setActive(index)}
                     className={cn(
-                      "group relative flex shrink-0 snap-start flex-col rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/20 lg:w-full lg:flex-1",
+                      "group relative flex shrink-0 snap-start flex-col rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] lg:w-full lg:flex-1",
                       isActive
-                        ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)]"
+                        ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]"
                         : "border-transparent hover:bg-[color:var(--color-surface)]",
                     )}
                   >
@@ -200,9 +190,7 @@ export function WorkflowExplorer() {
                       aria-hidden="true"
                       className={cn(
                         "absolute left-0 top-1/2 hidden h-7 w-0.5 -translate-y-1/2 rounded-full transition-colors lg:block",
-                        isActive
-                          ? "bg-[color:var(--color-text)]"
-                          : "bg-transparent",
+                        isActive ? "bg-[#EA7317]" : "bg-transparent",
                       )}
                     />
                     <span className="flex items-center gap-3">
@@ -210,7 +198,7 @@ export function WorkflowExplorer() {
                         className={cn(
                           "font-mono text-xs tabular-nums transition-colors",
                           isActive
-                            ? "text-[color:var(--color-text)]"
+                            ? "text-[color:var(--color-primary-deep)]"
                             : "text-[color:var(--color-text-muted)]",
                         )}
                       >
@@ -242,7 +230,7 @@ export function WorkflowExplorer() {
               id="workflow-panel"
               role="tabpanel"
               aria-labelledby={`workflow-tab-${active}`}
-              className="overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[0_1px_2px_rgb(15_23_42/0.04)] lg:h-full"
+              className="overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)] lg:h-full"
             >
               <div className="relative aspect-[16/10] h-full overflow-hidden bg-[color:var(--color-surface)] sm:aspect-[16/9] lg:aspect-auto">
                 <AnimatePresence mode="wait" initial={false}>

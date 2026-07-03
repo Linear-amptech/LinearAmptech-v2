@@ -20,17 +20,14 @@ export function CharacterizationSchematic({
       <path className="draw" pathLength={1} d="M95 95V300H540" />
 
       {/* Faint horizontal gridlines */}
-      <path
-        d="M95 148H540M95 200H540M95 252H540"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-      />
+      <path d="M95 148H540M95 200H540M95 252H540" stroke="#E7E0D5" />
 
       {/* S21 gain curve — gentle roll-off descending left to right */}
       <path
         className="draw d2"
         pathLength={1}
         d="M105 120 C 160 118, 210 128, 260 142 C 300 153, 340 168, 390 185 C 440 202, 490 218, 530 230"
+        stroke="#EA7317"
       />
 
       {/* S11 return-loss curve — lower in plot with a clear dip/notch around x=300 */}
@@ -46,7 +43,7 @@ export function CharacterizationSchematic({
         y1="95"
         x2="300"
         y2="300"
-        stroke="#64748b"
+        stroke="#EA7317"
         strokeWidth="1"
         strokeDasharray="4 4"
       />
@@ -57,7 +54,7 @@ export function CharacterizationSchematic({
         y="103"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         dB
@@ -69,7 +66,7 @@ export function CharacterizationSchematic({
         y="320"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         FREQ
@@ -81,7 +78,7 @@ export function CharacterizationSchematic({
         y="112"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#0b1220"
+        fill="#C2410C"
         stroke="none"
       >
         S21
@@ -93,7 +90,7 @@ export function CharacterizationSchematic({
         y="278"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#0b1220"
+        fill="#1C1917"
         stroke="none"
       >
         S11
@@ -105,7 +102,7 @@ export function CharacterizationSchematic({
         y="108"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         MKR

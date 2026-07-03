@@ -80,6 +80,7 @@ export function TapeoutSchematic({ isActive, reduced }: SchematicProps) {
         className="draw d3"
         pathLength={1}
         d="M502 163 L507 170 L518 157"
+        stroke="#EA7317"
         strokeOpacity="0.9"
       />
       {/* DRC label */}
@@ -88,7 +89,7 @@ export function TapeoutSchematic({ isActive, reduced }: SchematicProps) {
         y="170"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         DRC
@@ -99,6 +100,7 @@ export function TapeoutSchematic({ isActive, reduced }: SchematicProps) {
         className="draw d3"
         pathLength={1}
         d="M502 198 L507 205 L518 192"
+        stroke="#EA7317"
         strokeOpacity="0.9"
       />
       {/* LVS label */}
@@ -107,37 +109,17 @@ export function TapeoutSchematic({ isActive, reduced }: SchematicProps) {
         y="205"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         LVS
       </text>
 
       {/* faint die boundary tick marks at corners — alignment markers */}
-      <path
-        d="M160 90 L148 78"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-        strokeWidth="1"
-      />
-      <path
-        d="M480 90 L492 78"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-        strokeWidth="1"
-      />
-      <path
-        d="M160 310 L148 322"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-        strokeWidth="1"
-      />
-      <path
-        d="M480 310 L492 322"
-        stroke="#0b1220"
-        strokeOpacity="0.08"
-        strokeWidth="1"
-      />
+      <path d="M160 90 L148 78" stroke="#E7E0D5" strokeWidth="1" />
+      <path d="M480 90 L492 78" stroke="#E7E0D5" strokeWidth="1" />
+      <path d="M160 310 L148 322" stroke="#E7E0D5" strokeWidth="1" />
+      <path d="M480 310 L492 322" stroke="#E7E0D5" strokeWidth="1" />
 
       {/* bottom spec strip */}
       <text
@@ -146,7 +128,7 @@ export function TapeoutSchematic({ isActive, reduced }: SchematicProps) {
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="1"
-        fill="#64748b"
+        fill="#78716C"
         stroke="none"
       >
         METAL · POLY · DIFF · VIA

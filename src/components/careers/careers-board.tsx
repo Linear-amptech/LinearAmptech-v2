@@ -180,7 +180,7 @@ export function CareersBoard() {
   return (
     <section className="mt-12">
       <div className="grid gap-7">
-        <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[0_1px_2px_rgb(15_23_42/0.04)] md:p-6">
+        <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)] md:p-6">
           <div className="mb-5 flex items-center justify-between border-b border-[color:var(--color-border)] pb-4">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               Filter Roles
@@ -202,7 +202,7 @@ export function CareersBoard() {
                 onKeyDown={(event) => {
                   if (event.key === "Enter") applySearch();
                 }}
-                className="h-12 w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] pl-11 pr-4 text-base text-[color:var(--color-text)] outline-none transition-colors placeholder:text-[color:var(--color-text-muted)] focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                className="h-12 w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] pl-11 pr-4 text-base text-[color:var(--color-text)] outline-none transition-colors placeholder:text-[color:var(--color-text-muted)] focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                 placeholder="Search job title or location"
               />
             </div>
@@ -210,7 +210,7 @@ export function CareersBoard() {
               value={experience}
               onValueChange={setExperience}
               placeholder="Experience"
-              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-text)]/30 data-[popup-open]:border-[color:var(--color-text)]/30 data-[popup-open]:bg-[color:var(--color-surface)]"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
               options={experienceOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -220,7 +220,7 @@ export function CareersBoard() {
               value={workSite}
               onValueChange={setWorkSite}
               placeholder="Work site"
-              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-text)]/30 data-[popup-open]:border-[color:var(--color-text)]/30 data-[popup-open]:bg-[color:var(--color-surface)]"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
               options={workSiteOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -230,7 +230,7 @@ export function CareersBoard() {
               value={employmentType}
               onValueChange={setEmploymentType}
               placeholder="Employment"
-              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-text)]/30 data-[popup-open]:border-[color:var(--color-text)]/30 data-[popup-open]:bg-[color:var(--color-surface)]"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
               options={employmentTypeOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -238,7 +238,7 @@ export function CareersBoard() {
             />
             <button
               type="button"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50 md:col-span-3 lg:col-span-1 lg:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50 md:col-span-3 lg:col-span-1 lg:w-auto"
               onClick={applySearch}
             >
               Find Jobs
@@ -253,7 +253,7 @@ export function CareersBoard() {
                   key={`${filter.clear}-${filter.label}`}
                   type="button"
                   onClick={() => clearFilter(filter.clear)}
-                  className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/15"
+                  className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25"
                 >
                   {filter.label}
                   <X className="size-3.5" aria-hidden="true" />
@@ -266,7 +266,7 @@ export function CareersBoard() {
         <div className="grid gap-6 lg:grid-cols-[0.4fr_0.6fr]">
           <div className="grid gap-4 lg:self-start">
             {filteredJobs.length === 0 ? (
-              <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+              <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
                 <h2 className="font-heading text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
                   No matching roles
                 </h2>
@@ -285,16 +285,16 @@ export function CareersBoard() {
                     setStatus("idle");
                     setError("");
                   }}
-                  className={`group/card relative flex flex-col overflow-hidden rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[0_1px_2px_rgb(15_23_42/0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgb(15_23_42/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/15 ${
+                  className={`group/card relative flex flex-col overflow-hidden rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25 ${
                     visibleSelectedJob?.id === job.id
-                      ? "border-[color:var(--color-text)]/15 shadow-[0_16px_40px_rgb(15_23_42/0.08)]"
+                      ? "border-[#F2C79E] shadow-[var(--shadow-card-hover)]"
                       : "border-[color:var(--color-border)]"
                   }`}
                 >
                   {visibleSelectedJob?.id === job.id ? (
                     <span
                       aria-hidden="true"
-                      className="absolute inset-y-0 left-0 w-0.5 bg-[color:var(--color-text)]"
+                      className="absolute inset-y-0 left-0 w-0.5 bg-[#EA7317]"
                     />
                   ) : null}
                   <h2 className="font-heading text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
@@ -314,7 +314,7 @@ export function CareersBoard() {
                         {job.employmentType}
                       </span>
                     </div>
-                    <span className="group/view flex items-center gap-1.5 text-xs font-semibold text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text)]">
+                    <span className="group/view flex items-center gap-1.5 text-xs font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]">
                       View Details
                       <ArrowRight
                         className="size-3.5 transition-transform duration-300 group-hover/view:translate-x-0.5"
@@ -350,7 +350,7 @@ export function CareersBoard() {
                   duration: prefersReducedMotion ? 0.2 : 0.38,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)] md:p-7"
+                className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] md:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <h2 className="font-heading text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
@@ -363,7 +363,7 @@ export function CareersBoard() {
                       setStatus("idle");
                       setError("");
                     }}
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   >
                     Apply Now
                     <ArrowRight className="size-4" aria-hidden="true" />
@@ -480,7 +480,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("fullName", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                         placeholder="Full name"
                       />
                       <AppSelect
@@ -491,7 +491,7 @@ export function CareersBoard() {
                         }
                         name="gender"
                         placeholder="Gender"
-                        className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-text)]/30 data-[popup-open]:border-[color:var(--color-text)]/30 data-[popup-open]:bg-[color:var(--color-surface)]"
+                        className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
                         options={[
                           { value: "Male", label: "Male" },
                           { value: "Female", label: "Female" },
@@ -505,7 +505,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("email", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                         placeholder="Email"
                       />
                       <input
@@ -514,7 +514,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("mobileNumber", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                         placeholder="Mobile number"
                       />
                       <input
@@ -526,7 +526,7 @@ export function CareersBoard() {
                             event.target.value,
                           )
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                         placeholder="Education qualification"
                       />
                       <input
@@ -535,7 +535,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("linkedInProfile", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                         placeholder="LinkedIn profile URL"
                       />
                       <input
@@ -544,7 +544,7 @@ export function CareersBoard() {
                         onChange={(event) =>
                           updateForm("resumeUrl", event.target.value)
                         }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-text)]/30 focus:ring-2 focus:ring-[color:var(--color-text)]/10 md:col-span-2"
+                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15 md:col-span-2"
                         placeholder="Public Google Drive or Docs resume URL"
                       />
                     </div>
@@ -562,7 +562,7 @@ export function CareersBoard() {
                     <button
                       type="submit"
                       disabled={status === "submitting"}
-                      className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--color-text)] px-6 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface-soft)] disabled:cursor-not-allowed disabled:opacity-50"
+                      className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface-soft)] disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {status === "submitting"
                         ? "Submitting..."

@@ -41,8 +41,8 @@ export function SchematicFrame({
           <path
             d="M32 0H0V32"
             fill="none"
-            stroke="#0b1220"
-            strokeOpacity="0.05"
+            stroke="#E7E0D5"
+            strokeOpacity="0.6"
             strokeWidth="1"
           />
         </pattern>
@@ -53,7 +53,7 @@ export function SchematicFrame({
       <rect x="0" y="0" width="640" height="400" fill="url(#bp-grid)" />
 
       {/* corner reticle ticks */}
-      <g stroke="#64748b" strokeWidth="1.25" strokeOpacity="0.6" fill="none">
+      <g stroke="#78716C" strokeWidth="1.25" strokeOpacity="0.6" fill="none">
         <path d="M20 36V20H36" />
         <path d="M604 20H620V36" />
         <path d="M20 364V380H36" />
@@ -68,7 +68,7 @@ export function SchematicFrame({
         fontFamily="var(--font-app-heading)"
         fontSize="150"
         fontWeight="700"
-        fill="#0b1220"
+        fill="#1C1917"
         fillOpacity="0.04"
       >
         {num}
@@ -78,7 +78,7 @@ export function SchematicFrame({
       <g
         className="bp-art"
         data-draw={isActive && !reduced ? "on" : "off"}
-        stroke="#0b1220"
+        stroke="#1C1917"
         fill="none"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -94,7 +94,7 @@ export function SchematicFrame({
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="2"
-        fill="#64748b"
+        fill="#78716C"
       >
         {label.toUpperCase()}
       </text>

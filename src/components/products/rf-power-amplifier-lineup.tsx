@@ -5,7 +5,7 @@ import { rfPowerAmplifierTableRows } from "@/components/products/rf-power-amplif
 
 export function RfPowerAmplifierLineup() {
   return (
-    <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[0_1px_2px_rgb(15_23_42/0.04)]">
+    <section className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
       <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[color:var(--color-border)] pb-5">
         <h2 className="font-heading text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
           Hybrid MIC Power Amplifier Module Lineup
@@ -34,7 +34,7 @@ export function RfPowerAmplifierLineup() {
               {row.slug ? (
                 <Link
                   href={`/products/rf/power-amplifiers/${row.slug}`}
-                  className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+                  className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
                 >
                   Details
                   <ChevronRight className="size-3.5" aria-hidden="true" />
@@ -49,7 +49,7 @@ export function RfPowerAmplifierLineup() {
                 { label: "Gain (dB)", value: row.gainDb },
               ].map((field) => (
                 <div key={field.label}>
-                  <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">
+                  <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                     {field.label}
                   </dt>
                   <dd className="mt-1 text-sm text-[color:var(--color-text)]">
@@ -58,7 +58,7 @@ export function RfPowerAmplifierLineup() {
                 </div>
               ))}
               <div className="col-span-2">
-                <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-slate-400">
+                <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                   Mode of Operation
                 </dt>
                 <dd className="mt-1 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -74,25 +74,25 @@ export function RfPowerAmplifierLineup() {
         <table className="min-w-full border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-[color:var(--color-border)]">
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                 Part Number
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                 Center Frequency (GHz)
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                 Output Power (W)
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                 Efficiency
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                 Gain (dB)
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                 Type Mode of Operation
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
+              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-text-muted)]">
                 Details
               </th>
             </tr>
@@ -134,7 +134,7 @@ export function RfPowerAmplifierLineup() {
                   {row.slug ? (
                     <Link
                       href={`/products/rf/power-amplifiers/${row.slug}`}
-                      className="inline-flex items-center gap-2 font-semibold text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-text-muted)]"
+                      className="inline-flex items-center gap-2 font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
                     >
                       Details
                       <ChevronRight className="size-4" aria-hidden="true" />
