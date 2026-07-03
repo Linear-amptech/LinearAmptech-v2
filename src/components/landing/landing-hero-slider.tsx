@@ -1,5 +1,5 @@
 "use client";
-// deplyed commit
+// deplyed commita
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
