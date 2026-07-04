@@ -68,10 +68,10 @@ export const assets = {
     "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/performance-qfn44.png",
   cKuPaPerformanceQfn56:
     "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/performance-qfn56.png",
-  defense: "/assets/applications/defense-aerospace.png",
-  sixG: "/assets/applications/wireless-6g.png",
-  mimoRadar: "/assets/applications/mimo-radar.png",
-  risActive: "/assets/applications/ris-active-antenna.png",
+  defense: "/assets/applications/defense-aerospace-dark.png",
+  sixG: "/assets/applications/wireless-6g-dark.png",
+  mimoRadar: "/assets/applications/mimo-radar-dark.png",
+  risActive: "/assets/applications/satellite-communications-dark.png",
 } as const;
 
 export type Capability = {

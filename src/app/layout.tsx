@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+import { ImageThemeProvider } from "@/components/layout/image-theme-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
@@ -52,10 +53,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
-        <SmoothScroll />
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <ImageThemeProvider>
+          <SmoothScroll />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </ImageThemeProvider>
       </body>
     </html>
   );

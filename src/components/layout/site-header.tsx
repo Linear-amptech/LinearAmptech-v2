@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+import { ImageThemeToggle } from "@/components/layout/image-theme-provider";
 import { products } from "@/components/landing/data";
 import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
 import { rfPowerAmplifierCategories } from "@/components/products/rf-power-amplifiers-data";
@@ -505,39 +506,27 @@ export function SiteHeader() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Link
-          href="/contact"
-          className={cn(
-            "group hidden h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-colors lg:inline-flex",
-            overDark
-              ? "text-white hover:text-[#FDEAD7]"
-              : "text-[color:var(--color-text)] hover:text-[color:var(--color-primary-deep)]",
-          )}
-        >
-          Contact Us
-          <ArrowRight
-            className="size-4 transition-transform duration-300 group-hover:translate-x-1"
-            aria-hidden
-          />
-        </Link>
-
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="hidden items-center gap-3 lg:flex">
+          <ImageThemeToggle tone={overDark ? "dark" : "light"} />
           <Link
             href="/contact"
-            onClick={closeMobile}
             className={cn(
-              "group inline-flex h-9 items-center gap-1.5 px-1 text-xs font-semibold transition-colors",
+              "group inline-flex h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-colors",
               overDark
                 ? "text-white hover:text-[#FDEAD7]"
                 : "text-[color:var(--color-text)] hover:text-[color:var(--color-primary-deep)]",
             )}
           >
-            Contact
+            Contact Us
             <ArrowRight
-              className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
+              className="size-4 transition-transform duration-300 group-hover:translate-x-1"
               aria-hidden
             />
           </Link>
+        </div>
+
+        <div className="flex items-center gap-2 lg:hidden">
+          <ImageThemeToggle tone={overDark ? "dark" : "light"} compact />
           <Button
             size="icon-lg"
             variant="outline"
@@ -642,6 +631,13 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            onClick={closeMobile}
+            className="rounded-xl px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
+          >
+            Contact
+          </Link>
         </div>
       </MobileMenu>
     </header>

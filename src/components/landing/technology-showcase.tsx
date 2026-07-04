@@ -1,0 +1,105 @@
+"use client";
+
+import Image from "next/image";
+
+import {
+  useImageTheme,
+  type ImageThemeMode,
+} from "@/components/layout/image-theme-provider";
+import type { IpPlatform } from "@/components/landing/data";
+import { Reveal } from "@/components/landing/reveal";
+
+export type TechnologyPlatform = Pick<
+  IpPlatform,
+  "name" | "image" | "description" | "focus"
+>;
+
+const technologyImageSets: Record<
+  TechnologyPlatform["name"],
+  Record<ImageThemeMode, string>
+> = {
+  "III-V GaN Technology": {
+    new: "/assets/technology/1.png",
+    old: "/assets/technology/gan-hemt-platform-v2.png",
+  },
+  "Si CMOS Technology": {
+    new: "/assets/technology/2.png",
+    old: "/assets/technology/si-cmos-platform-v2.png",
+  },
+  "SiGe BiCMOS Technology": {
+    new: "/assets/technology/3.png",
+    old: "/assets/technology/sige-bicmos-platform-v2.png",
+  },
+};
+
+function TechnologyCard({
+  platform,
+  mode,
+}: {
+  platform: TechnologyPlatform;
+  mode: ImageThemeMode;
+}) {
+  const platformImage =
+    technologyImageSets[platform.name]?.[mode] ?? platform.image;
+
+  return (
+    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
+      <div className="media-well aspect-[16/10] bg-[color:var(--color-surface-soft)] bg-none">
+        <Image
+          src={platformImage}
+          alt={`${platform.name} technology visual`}
+          fill
+          sizes="(min-width: 1024px) 31vw, 100vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+      </div>
+      <div className="flex flex-1 flex-col px-2.5 pt-5 pb-2.5">
+        <h3 className="font-heading text-[23px] font-semibold tracking-tight text-[color:var(--color-text)]">
+          {platform.name}
+        </h3>
+        <p className="mt-2.5 mb-5 line-clamp-3 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
+          {platform.description}
+        </p>
+        <div className="mt-auto border-t border-[color:var(--color-border)] pt-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+            Focus
+          </p>
+          <p className="mt-1.5 line-clamp-2 text-[13px] font-medium leading-relaxed text-[color:var(--color-text)]">
+            {platform.focus}
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+export function TechnologyShowcase({
+  platforms,
+}: {
+  platforms: TechnologyPlatform[];
+}) {
+  const { mode } = useImageTheme();
+
+  return (
+    <section id="technology" className="flex min-h-[100svh] items-center py-16">
+      <Reveal className="container mx-auto w-full px-4 lg:px-4">
+        <div className="max-w-3xl">
+          <p className="kicker mb-4">Technology</p>
+          <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] text-balance sm:text-4xl lg:text-[44px]">
+            Engineering across semiconductor technologies.
+          </h2>
+        </div>
+
+        <div className="mt-10 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {platforms.map((platform) => (
+            <TechnologyCard
+              key={platform.name}
+              platform={platform}
+              mode={mode}
+            />
+          ))}
+        </div>
+      </Reveal>
+    </section>
+  );
+}

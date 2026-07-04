@@ -83,10 +83,13 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </div>
               <Link
                 href="/contact"
-                className="mt-9 inline-flex h-12 items-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
+                className="group mt-9 inline-flex h-12 items-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
               >
                 Request Product Quote
-                <ArrowRight className="size-4" aria-hidden="true" />
+                <ArrowRight
+                  className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </div>
             <div className="media-frame">
@@ -149,10 +152,13 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
               <Link
                 href="/contact"
-                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
+                className="group mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
               >
                 Get Quote
-                <ArrowRight className="size-4" aria-hidden="true" />
+                <ArrowRight
+                  className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </aside>
           </Reveal>

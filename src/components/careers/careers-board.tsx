@@ -238,11 +238,14 @@ export function CareersBoard() {
             />
             <button
               type="button"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50 md:col-span-3 lg:col-span-1 lg:w-auto"
+              className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50 md:col-span-3 lg:col-span-1 lg:w-auto"
               onClick={applySearch}
             >
               Find Jobs
-              <ArrowRight className="size-4" aria-hidden="true" />
+              <ArrowRight
+                className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
             </button>
           </div>
 
@@ -363,10 +366,13 @@ export function CareersBoard() {
                       setStatus("idle");
                       setError("");
                     }}
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+                    className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   >
                     Apply Now
-                    <ArrowRight className="size-4" aria-hidden="true" />
+                    <ArrowRight
+                      className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
                   </button>
                 </div>
 
@@ -562,12 +568,15 @@ export function CareersBoard() {
                     <button
                       type="submit"
                       disabled={status === "submitting"}
-                      className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface-soft)] disabled:cursor-not-allowed disabled:opacity-50"
+                      className="group mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface-soft)] disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {status === "submitting"
                         ? "Submitting..."
                         : "Submit Application"}
-                      <ArrowRight className="size-4" aria-hidden="true" />
+                      <ArrowRight
+                        className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                        aria-hidden="true"
+                      />
                     </button>
                   </form>
                 )}

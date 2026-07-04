@@ -143,11 +143,14 @@ export function ContactSection() {
               </label>
               <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
                 <button
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+                  className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   type="submit"
                 >
                   Start a Project
-                  <ArrowRight className="size-4" aria-hidden="true" />
+                  <ArrowRight
+                    className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
                 </button>
               </div>
             </form>

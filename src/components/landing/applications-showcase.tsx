@@ -1,0 +1,117 @@
+"use client";
+
+import Image from "next/image";
+
+import {
+  useImageTheme,
+  type ImageThemeMode,
+} from "@/components/layout/image-theme-provider";
+import type { Application } from "@/components/landing/data";
+import { Reveal } from "@/components/landing/reveal";
+import { cn } from "@/lib/utils";
+
+const applicationImageSets: Record<
+  Application["title"],
+  Record<ImageThemeMode, string>
+> = {
+  "Defense and Aerospace": {
+    new: "/assets/applications/defense-aerospace-dark.png",
+    old: "/assets/applications/defense-aerospace-v2.png",
+  },
+  "Satellite Communications": {
+    new: "/assets/applications/satellite-communications-dark.png",
+    old: "/assets/applications/satellite-communications-v2.png",
+  },
+  "5G/6G Wireless Infrastructure": {
+    new: "/assets/applications/wireless-6g-dark.png",
+    old: "/assets/applications/wireless-6g-v2.png",
+  },
+  "Radar and AESA System": {
+    new: "/assets/applications/mimo-radar-dark.png",
+    old: "/assets/applications/mimo-radar-v2.png",
+  },
+};
+
+const applicationObjectPositions: Partial<
+  Record<Application["title"], string>
+> = {
+  "Defense and Aerospace": "object-[50%_18%]",
+  "5G/6G Wireless Infrastructure": "object-[50%_38%]",
+  "Radar and AESA System": "object-[50%_18%]",
+};
+
+function ApplicationCard({
+  application,
+  mode,
+}: {
+  application: Application;
+  mode: ImageThemeMode;
+}) {
+  const imagePath =
+    applicationImageSets[application.title]?.[mode] ?? application.image;
+  const objectPosition =
+    applicationObjectPositions[application.title] ?? "object-center";
+
+  return (
+    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
+      <div className="media-well aspect-[16/11]">
+        <Image
+          src={imagePath}
+          alt={`${application.title} application visual`}
+          fill
+          sizes="(min-width: 768px) 45vw, 100vw"
+          className={cn(
+            "object-cover transition-transform duration-700 ease-out group-hover:scale-105",
+            objectPosition,
+          )}
+        />
+      </div>
+      <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2.5">
+        <h3 className="font-heading text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
+          {application.title}
+        </h3>
+        <p className="mt-2 mb-4 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
+          {application.description}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+export function ApplicationsShowcase({
+  applications,
+}: {
+  applications: Application[];
+}) {
+  const { mode } = useImageTheme();
+
+  return (
+    <section
+      id="applications"
+      className="flex min-h-[100svh] items-center bg-[color:var(--color-surface-soft)] py-16"
+    >
+      <Reveal className="container mx-auto w-full px-4 lg:px-4">
+        <div className="max-w-3xl">
+          <p className="kicker mb-4">Applications</p>
+          <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] text-balance sm:text-4xl lg:text-[44px]">
+            RF products shaped around real deployment domains.
+          </h2>
+          <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)]">
+            Linear-AmpTech&apos;s application framing is anchored in defense RF,
+            6G, radar, phased arrays, active antennas, and RIS research.
+          </p>
+        </div>
+
+        <div className="mt-16 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {applications.map((application) => (
+            <ApplicationCard
+              key={application.title}
+              application={application}
+              mode={mode}
+            />
+          ))}
+        </div>
+      </Reveal>
+    </section>
+  );
+}

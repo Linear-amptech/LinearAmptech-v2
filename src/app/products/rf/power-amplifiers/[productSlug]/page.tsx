@@ -217,10 +217,13 @@ export default async function RfPowerAmplifierProductPage({
               </p>
               <Link
                 href="/contact"
-                className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
+                className="group mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
               >
                 Get Quote
-                <ArrowRight className="size-4" aria-hidden="true" />
+                <ArrowRight
+                  className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </aside>
           </Reveal>

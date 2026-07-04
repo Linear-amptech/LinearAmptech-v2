@@ -1,6 +1,6 @@
 "use client";
-// deplyed commita
-import { useEffect, useState } from "react";
+
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -16,6 +16,10 @@ import {
   useTransform,
 } from "framer-motion";
 
+import {
+  useImageTheme,
+  type ImageThemeMode,
+} from "@/components/layout/image-theme-provider";
 import { heroSlides as heroSlideContent } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 import { cn } from "@/lib/utils";
@@ -28,46 +32,72 @@ type HeroSlide = {
   imageAlt: string;
 };
 
-const heroImages = [
-  {
-    imagePath: "/assets/hero/rfic-chip.png",
-    imageAlt: "Linear-AmpTech RFIC chip hero visual",
-  },
-  {
-    imagePath: "/assets/hero/transmitter-47ghz.png",
-    imageAlt: "47 GHz transmitter chip hero visual",
-  },
-  {
-    imagePath: "/assets/hero/rf-lab-validation.png",
-    imageAlt: "Hybrid MIC PA module hero visual",
-  },
-  {
-    imagePath: "/assets/hero/silicon-wafer.png",
-    imageAlt: "Semiconductor wafer hero visual",
-  },
-];
+type HeroImage = Pick<HeroSlide, "imagePath" | "imageAlt">;
 
-const heroSlides: HeroSlide[] = heroSlideContent.map((slide, index) => {
-  const image = heroImages[index % heroImages.length];
-
-  return {
-    eyebrow: slide.eyebrow,
-    title: slide.title,
-    description: slide.description,
-    imagePath: image.imagePath,
-    imageAlt: image.imageAlt,
-  };
-});
+const heroImageSets: Record<ImageThemeMode, HeroImage[]> = {
+  new: [
+    {
+      imagePath: "/assets/hero/1.png",
+      imageAlt: "RF front-end technology hero visual",
+    },
+    {
+      imagePath: "/assets/hero/2.png",
+      imageAlt: "GaN power amplifier module hero visual",
+    },
+    {
+      imagePath: "/assets/hero/3.png",
+      imageAlt: "SiGe BiCMOS RFIC development hero visual",
+    },
+    {
+      imagePath: "/assets/hero/4.png",
+      imageAlt: "mm-wave packaging integration hero visual",
+    },
+  ],
+  old: [
+    {
+      imagePath: "/assets/hero/rfic-chip.png",
+      imageAlt: "Linear-AmpTech RFIC chip hero visual",
+    },
+    {
+      imagePath: "/assets/hero/transmitter-47ghz.png",
+      imageAlt: "47 GHz transmitter chip hero visual",
+    },
+    {
+      imagePath: "/assets/hero/rf-lab-validation.png",
+      imageAlt: "Hybrid MIC PA module hero visual",
+    },
+    {
+      imagePath: "/assets/hero/silicon-wafer.png",
+      imageAlt: "Semiconductor wafer hero visual",
+    },
+  ],
+};
 
 const SLIDE_DURATION = 5200;
 
 export function LandingHeroSlider() {
+  const { mode } = useImageTheme();
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [isSliderPaused, setIsSliderPaused] = useState(false);
   const [isNavHovered, setIsNavHovered] = useState(false);
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.5], [0, 90]);
   const isPlaybackPaused = isSliderPaused || isNavHovered;
+  const heroSlides = useMemo<HeroSlide[]>(() => {
+    const heroImages = heroImageSets[mode];
+
+    return heroSlideContent.map((slide, index) => {
+      const image = heroImages[index % heroImages.length];
+
+      return {
+        eyebrow: slide.eyebrow,
+        title: slide.title,
+        description: slide.description,
+        imagePath: image.imagePath,
+        imageAlt: image.imageAlt,
+      };
+    });
+  }, [mode]);
 
   useEffect(() => {
     if (isPlaybackPaused) return;
@@ -77,7 +107,7 @@ export function LandingHeroSlider() {
     }, SLIDE_DURATION);
 
     return () => window.clearInterval(interval);
-  }, [isPlaybackPaused]);
+  }, [heroSlides.length, isPlaybackPaused]);
 
   const activeSlide = heroSlides[activeHeroSlide];
 
@@ -99,7 +129,7 @@ export function LandingHeroSlider() {
       >
         {heroSlides.map((slide, index) => (
           <motion.div
-            key={`${slide.title}-${index}`}
+            key={`${mode}-${slide.title}-${index}`}
             className="absolute inset-0 bg-cover bg-[position:60%_50%] bg-no-repeat will-change-transform sm:bg-[position:64%_50%]"
             style={{ backgroundImage: `url(${slide.imagePath})` }}
             initial={false}
@@ -157,7 +187,7 @@ export function LandingHeroSlider() {
                 >
                   Explore products
                   <ArrowRight
-                    className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                    className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                     aria-hidden="true"
                   />
                 </Link>

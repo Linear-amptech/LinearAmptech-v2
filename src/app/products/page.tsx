@@ -195,10 +195,13 @@ export default function ProductsPage() {
                         </p>
                         <Link
                           href={category.href}
-                          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
+                          className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:text-[color:var(--color-primary-ink)]"
                         >
                           Open category
-                          <ArrowRight className="size-4" aria-hidden="true" />
+                          <ArrowRight
+                            className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                            aria-hidden="true"
+                          />
                         </Link>
                       </div>
 
