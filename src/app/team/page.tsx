@@ -255,17 +255,9 @@ export default function TeamPage() {
             </p>
           </Reveal>
 
-          <div className="mt-16 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member, index) => (
-              <MemberCard
-                key={member.name}
-                member={member}
-                className={
-                  index === team.length - 1 && team.length % 3 === 1
-                    ? "lg:col-start-2"
-                    : ""
-                }
-              />
+              <MemberCard key={member.name + index} member={member} />
             ))}
           </div>
         </div>
