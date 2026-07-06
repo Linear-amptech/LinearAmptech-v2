@@ -189,7 +189,7 @@ export function WorkflowExplorer() {
                     <span
                       aria-hidden="true"
                       className={cn(
-                        "absolute left-0 top-1/2 hidden h-7 w-0.5 -translate-y-1/2 rounded-full transition-colors lg:block",
+                        "absolute inset-y-0 left-0 hidden w-1 rounded-l-xl transition-colors lg:block",
                         isActive ? "bg-[#EA7317]" : "bg-transparent",
                       )}
                     />
