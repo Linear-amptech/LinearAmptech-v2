@@ -1,9 +1,23 @@
-import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+"use client";
+
+import { FormEvent, useState } from "react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  LoaderCircle,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 
 import { projectTypeOptions } from "@/components/landing/data";
 import { Reveal } from "@/components/landing/reveal";
 import { AppSelect } from "@/components/ui/select";
 import { companyContact } from "@/lib/company-data";
+// http://localhost:5001/contact
+// process.env.NEXT_PUBLIC_API_URL
+const API_BASE_URL = "process.env.NEXT_PUBLIC_API_URL";
 
 const directory = [
   {
@@ -33,6 +47,63 @@ const directory = [
 ] as const;
 
 export function ContactSection() {
+  const [projectType, setProjectType] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">(
+    "idle",
+  );
+  const [error, setError] = useState("");
+
+  const submitContact = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const company = String(formData.get("company") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    setError("");
+
+    if (!name || !email || !company || !projectType) {
+      setError("Please complete all required fields before submitting.");
+      return;
+    }
+
+    setStatus("submitting");
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          companyName: company,
+          projectType,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit your message. Please try again.");
+      }
+
+      formElement.reset();
+      setProjectType("");
+      setStatus("success");
+    } catch (submissionError) {
+      setStatus("idle");
+      setError(
+        submissionError instanceof Error
+          ? submissionError.message
+          : "An error occurred while submitting the form.",
+      );
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -93,11 +164,15 @@ export function ContactSection() {
           </Reveal>
 
           <Reveal className="h-full">
-            <form className="flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] sm:p-8">
+            <form
+              onSubmit={submitContact}
+              className="flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] sm:p-8"
+            >
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Name</span>
                   <input
+                    required
                     name="name"
                     autoComplete="name"
                     className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
@@ -106,6 +181,7 @@ export function ContactSection() {
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Email</span>
                   <input
+                    required
                     name="email"
                     type="email"
                     autoComplete="email"
@@ -115,6 +191,7 @@ export function ContactSection() {
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Company</span>
                   <input
+                    required
                     name="company"
                     autoComplete="organization"
                     className="min-h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
@@ -123,7 +200,14 @@ export function ContactSection() {
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">
                   <span>Project type</span>
                   <AppSelect
+                    required
                     name="projectType"
+                    value={projectType}
+                    onValueChange={(nextValue) => {
+                      setProjectType(nextValue);
+                      setError("");
+                      if (status === "success") setStatus("idle");
+                    }}
                     placeholder="Select project type"
                     className="min-h-12 border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-base text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
                     options={projectTypeOptions.map((option) => ({
@@ -141,16 +225,43 @@ export function ContactSection() {
                   className="min-h-40 flex-1 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-base text-[color:var(--color-text)] placeholder:text-[color:var(--color-text-muted)]/60 outline-none transition-colors focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
                 />
               </label>
+              {error && (
+                <p className="mt-4 rounded-lg border border-[color:var(--color-accent-red)]/25 bg-[color:var(--color-accent-red)]/10 px-4 py-3 text-sm text-[color:var(--color-accent-red)]">
+                  {error}
+                </p>
+              )}
+              {status === "success" && (
+                <p className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 py-3 text-sm text-[color:var(--color-text)]">
+                  <CheckCircle2
+                    className="size-4 text-[color:var(--color-primary-deep)]"
+                    aria-hidden="true"
+                  />
+                  Your message has been submitted successfully.
+                </p>
+              )}
               <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
                 <button
                   className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   type="submit"
+                  disabled={status === "submitting"}
                 >
-                  Start a Project
-                  <ArrowRight
-                    className="size-4 transition-transform duration-300 group-hover:translate-x-1"
-                    aria-hidden="true"
-                  />
+                  {status === "submitting" ? (
+                    <>
+                      <LoaderCircle
+                        className="size-4 animate-spin"
+                        aria-hidden="true"
+                      />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Start a Project
+                      <ArrowRight
+                        className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </>
+                  )}
                 </button>
               </div>
             </form>

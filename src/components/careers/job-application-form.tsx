@@ -12,8 +12,8 @@ import {
 
 import { AppSelect } from "@/components/ui/select";
 import type { jobs } from "@/lib/company-data";
-
-const APPLICATION_ENDPOINT = "https://api.linear-amptech.com/job/apply";
+// http://localhost:5001
+const API_BASE_URL = "http://localhost:5001";
 
 type Job = (typeof jobs)[number];
 type ResumeAccessibility = "checking" | "accessible" | "notAccessible" | null;
@@ -118,7 +118,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
     setStatus("submitting");
 
     try {
-      const response = await fetch(APPLICATION_ENDPOINT, {
+      const response = await fetch(`${API_BASE_URL}/job/apply`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
