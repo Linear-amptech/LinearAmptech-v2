@@ -64,7 +64,7 @@ export function ImageThemeToggle({
   return (
     <div
       className={cn(
-        "inline-flex h-10 items-center rounded-full border p-1 transition-colors",
+        " h-10 items-center rounded-full border p-1 transition-colors hidden",
         tone === "dark"
           ? "border-white/20 bg-[#121110]/35"
           : "border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]",
