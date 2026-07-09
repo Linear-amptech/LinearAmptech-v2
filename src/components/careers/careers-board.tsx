@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
@@ -14,32 +15,11 @@ import {
 import { AppSelect } from "@/components/ui/select";
 import { jobs } from "@/lib/company-data";
 
-const APPLICATION_ENDPOINT = "https://api.linear-amptech.com/job/apply";
-
 const experienceOptions = ["Entry Level", "Mid Level", "Senior Level"];
 const workSiteOptions = ["Remote", "On-Site", "Hybrid"];
 const employmentTypeOptions = ["Full-Time", "Part-Time", "Contract"];
 
 type Job = (typeof jobs)[number];
-type ApplicationForm = {
-  fullName: string;
-  gender: string;
-  email: string;
-  mobileNumber: string;
-  educationQualification: string;
-  linkedInProfile: string;
-  resumeUrl: string;
-};
-
-const initialForm: ApplicationForm = {
-  fullName: "",
-  gender: "",
-  email: "",
-  mobileNumber: "",
-  educationQualification: "",
-  linkedInProfile: "",
-  resumeUrl: "",
-};
 
 function normalize(value: string) {
   return value.toLowerCase().replaceAll("-", " ").trim();
@@ -47,16 +27,6 @@ function normalize(value: string) {
 
 function matchesOption(values: string[], selected: string) {
   return values.some((value) => normalize(value) === normalize(selected));
-}
-
-function isLinkedInUrl(value: string) {
-  return /^https?:\/\/(www\.)?linkedin\.com\/in\/[A-Za-z0-9_-]+\/?$/.test(
-    value.trim(),
-  );
-}
-
-function isResumeUrl(value: string) {
-  return /^https?:\/\/(drive|docs)\.google\.com\/.+/i.test(value.trim());
 }
 
 export function CareersBoard() {
@@ -67,12 +37,6 @@ export function CareersBoard() {
   const [experience, setExperience] = useState("");
   const [workSite, setWorkSite] = useState("");
   const [employmentType, setEmploymentType] = useState("");
-  const [activeApplyJob, setActiveApplyJob] = useState<Job | null>(null);
-  const [form, setForm] = useState<ApplicationForm>(initialForm);
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">(
-    "idle",
-  );
-  const [error, setError] = useState("");
 
   const filteredJobs = useMemo(() => {
     const keyword = appliedSearchKeyword.trim().toLowerCase();
@@ -124,57 +88,6 @@ export function CareersBoard() {
 
   const applySearch = () => {
     setAppliedSearchKeyword(searchKeyword.trim());
-  };
-
-  const updateForm = (field: keyof ApplicationForm, value: string) => {
-    setForm((current) => ({ ...current, [field]: value }));
-  };
-
-  const submitApplication = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!activeApplyJob) return;
-
-    setError("");
-    if (!isLinkedInUrl(form.linkedInProfile)) {
-      setError("Enter a valid LinkedIn profile URL.");
-      return;
-    }
-    if (!isResumeUrl(form.resumeUrl)) {
-      setError("Use a public Google Drive or Google Docs resume URL.");
-      return;
-    }
-
-    setStatus("submitting");
-    try {
-      const response = await fetch(APPLICATION_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: form.fullName,
-          email: form.email,
-          mobileNumber: form.mobileNumber,
-          educationQualification: form.educationQualification,
-          jobTitle: activeApplyJob.title,
-          resumeUrl: form.resumeUrl,
-          linkedInProfile: form.linkedInProfile,
-          gender: form.gender,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Application submission failed.");
-      }
-
-      setStatus("success");
-      setForm(initialForm);
-    } catch (submissionError) {
-      setStatus("idle");
-      setError(
-        submissionError instanceof Error
-          ? submissionError.message
-          : "Application submission failed.",
-      );
-    }
   };
 
   return (
@@ -284,9 +197,6 @@ export function CareersBoard() {
                   type="button"
                   onClick={() => {
                     setSelectedJob(job);
-                    setActiveApplyJob(null);
-                    setStatus("idle");
-                    setError("");
                   }}
                   className={`group/card relative flex flex-col overflow-hidden rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25 ${
                     visibleSelectedJob?.id === job.id
@@ -359,13 +269,8 @@ export function CareersBoard() {
                   <h2 className="font-heading text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
                     {visibleSelectedJob.title}
                   </h2>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setActiveApplyJob(visibleSelectedJob);
-                      setStatus("idle");
-                      setError("");
-                    }}
+                  <Link
+                    href={`/careers/jobs/${visibleSelectedJob.id}`}
                     className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   >
                     Apply Now
@@ -373,7 +278,7 @@ export function CareersBoard() {
                       className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                       aria-hidden="true"
                     />
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2">
@@ -454,132 +359,6 @@ export function CareersBoard() {
                     </ul>
                   </div>
                 </div>
-
-                {activeApplyJob && (
-                  <form
-                    onSubmit={submitApplication}
-                    className="mt-8 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-5"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
-                          Application
-                        </p>
-                        <h3 className="font-heading text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
-                          Apply for {activeApplyJob.title}
-                        </h3>
-                      </div>
-                      <button
-                        type="button"
-                        className="grid size-9 shrink-0 place-items-center rounded-lg border border-[color:var(--color-border)] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)]"
-                        onClick={() => setActiveApplyJob(null)}
-                        aria-label="Close application form"
-                      >
-                        <X className="size-4" aria-hidden="true" />
-                      </button>
-                    </div>
-
-                    <div className="mt-6 grid gap-4 md:grid-cols-2">
-                      <input
-                        required
-                        value={form.fullName}
-                        onChange={(event) =>
-                          updateForm("fullName", event.target.value)
-                        }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
-                        placeholder="Full name"
-                      />
-                      <AppSelect
-                        required
-                        value={form.gender}
-                        onValueChange={(nextValue) =>
-                          updateForm("gender", nextValue)
-                        }
-                        name="gender"
-                        placeholder="Gender"
-                        className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
-                        options={[
-                          { value: "Male", label: "Male" },
-                          { value: "Female", label: "Female" },
-                          { value: "Other", label: "Other" },
-                        ]}
-                      />
-                      <input
-                        required
-                        type="email"
-                        value={form.email}
-                        onChange={(event) =>
-                          updateForm("email", event.target.value)
-                        }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
-                        placeholder="Email"
-                      />
-                      <input
-                        required
-                        value={form.mobileNumber}
-                        onChange={(event) =>
-                          updateForm("mobileNumber", event.target.value)
-                        }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
-                        placeholder="Mobile number"
-                      />
-                      <input
-                        required
-                        value={form.educationQualification}
-                        onChange={(event) =>
-                          updateForm(
-                            "educationQualification",
-                            event.target.value,
-                          )
-                        }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
-                        placeholder="Education qualification"
-                      />
-                      <input
-                        required
-                        value={form.linkedInProfile}
-                        onChange={(event) =>
-                          updateForm("linkedInProfile", event.target.value)
-                        }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
-                        placeholder="LinkedIn profile URL"
-                      />
-                      <input
-                        required
-                        value={form.resumeUrl}
-                        onChange={(event) =>
-                          updateForm("resumeUrl", event.target.value)
-                        }
-                        className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15 md:col-span-2"
-                        placeholder="Public Google Drive or Docs resume URL"
-                      />
-                    </div>
-
-                    {error && (
-                      <p className="mt-4 rounded-lg border border-[color:var(--color-accent-red)]/25 bg-[color:var(--color-accent-red)]/10 px-4 py-3 text-sm text-[color:var(--color-accent-red)]">
-                        {error}
-                      </p>
-                    )}
-                    {status === "success" && (
-                      <p className="mt-4 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 text-sm text-[color:var(--color-text)]">
-                        Application submitted successfully.
-                      </p>
-                    )}
-                    <button
-                      type="submit"
-                      disabled={status === "submitting"}
-                      className="group mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface-soft)] disabled:cursor-not-allowed disabled:opacity-50"
-                    >
-                      {status === "submitting"
-                        ? "Submitting..."
-                        : "Submit Application"}
-                      <ArrowRight
-                        className="size-4 transition-transform duration-300 group-hover:translate-x-1"
-                        aria-hidden="true"
-                      />
-                    </button>
-                  </form>
-                )}
               </motion.article>
             )}
           </AnimatePresence>
