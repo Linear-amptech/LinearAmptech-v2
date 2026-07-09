@@ -13,7 +13,7 @@ import {
 import { AppSelect } from "@/components/ui/select";
 import type { jobs } from "@/lib/company-data";
 // http://localhost:5001
-const API_BASE_URL = "http://localhost:5001";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 type Job = (typeof jobs)[number];
 type ResumeAccessibility = "checking" | "accessible" | "notAccessible" | null;
