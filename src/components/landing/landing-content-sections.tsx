@@ -132,6 +132,26 @@ export function ProductPortfolioCard({
   );
 }
 
+function ProductsSection() {
+  return (
+    <section
+      id="products"
+      className="bg-[color:var(--color-surface-soft)] py-12 sm:py-16 lg:flex  lg:items-center"
+    >
+      <Reveal className="container mx-auto w-full px-4 lg:px-4">
+        <SectionHeader
+          label="Products"
+          title="RF front-end Product Portfolio—from power amplifier modules to advanced RFICs and MMICs."
+          intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
+        />
+        <div className="mt-8 grid gap-6 sm:mt-12 md:grid-cols-2 lg:mt-16 xl:grid-cols-3">
+          <AllProdcuts />
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 export function LandingContentSections() {
   return (
     <>
@@ -154,22 +174,7 @@ export function LandingContentSections() {
           </Link>
         </Reveal>
       </CompanySection>
-
-      <section
-        id="products"
-        className="flex min-h-[100svh] items-center bg-[color:var(--color-surface-soft)] py-16"
-      >
-        <Reveal className="container mx-auto w-full px-4 lg:px-4">
-          <SectionHeader
-            label="Products"
-            title="RF front-end Product Portfolio—from power amplifier modules to advanced RFICs and MMICs."
-            intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
-          />
-          <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <AllProdcuts />
-          </div>
-        </Reveal>
-      </section>
+      <ProductsSection />
 
       <TechnologyShowcase platforms={technologyPlatforms} />
 
