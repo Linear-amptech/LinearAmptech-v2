@@ -180,7 +180,7 @@ export function LandingHeroSlider() {
                 </motion.div>
               </AnimatePresence>
 
-              <div className="mt-9 flex items-center gap-5">
+              <div className="mt-9 flex items-center flex-wrap gap-5">
                 <Link
                   href="#products"
                   className="group inline-flex h-12 items-center gap-2.5 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
