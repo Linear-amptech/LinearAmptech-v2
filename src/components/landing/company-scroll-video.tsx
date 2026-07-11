@@ -111,7 +111,7 @@ export function CompanyScrollVideo({
       return;
     }
 
-    currentIndexRef.current = current + diff * 0.2;
+    currentIndexRef.current = current + diff * 0.35;
     draw();
     rafRef.current = requestAnimationFrame(tickRef.current);
   }, [draw]);
