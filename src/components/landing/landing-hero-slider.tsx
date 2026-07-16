@@ -45,6 +45,10 @@ const heroImageSets: Record<ImageThemeMode, HeroImage[]> = {
       imageAlt: "GaN power amplifier module hero visual",
     },
     {
+      imagePath: "/assets/hero/cmos-rfic-development.png",
+      imageAlt: "Si CMOS RFIC development hero visual",
+    },
+    {
       imagePath: "/assets/hero/3.png",
       imageAlt: "SiGe BiCMOS RFIC development hero visual",
     },
@@ -59,12 +63,16 @@ const heroImageSets: Record<ImageThemeMode, HeroImage[]> = {
       imageAlt: "Linear-AmpTech RFIC chip hero visual",
     },
     {
-      imagePath: "/assets/hero/transmitter-47ghz.png",
-      imageAlt: "47 GHz transmitter chip hero visual",
+      imagePath: "/assets/hero/rf-lab-validation.png",
+      imageAlt: "GaN power amplifier module hero visual",
     },
     {
-      imagePath: "/assets/hero/rf-lab-validation.png",
-      imageAlt: "Hybrid MIC PA module hero visual",
+      imagePath: "/assets/hero/silicon-wafer.png",
+      imageAlt: "Si CMOS RFIC development hero visual",
+    },
+    {
+      imagePath: "/assets/hero/transmitter-47ghz.png",
+      imageAlt: "47 GHz transmitter chip hero visual",
     },
     {
       imagePath: "/assets/hero/silicon-wafer.png",

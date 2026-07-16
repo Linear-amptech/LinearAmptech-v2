@@ -6,7 +6,6 @@ import {
   applications,
   ipPlatforms,
   productBands,
-  researchFocusRows,
   type Product,
 } from "@/components/landing/data";
 
@@ -19,7 +18,6 @@ import {
   type TechnologyPlatform,
 } from "@/components/landing/technology-showcase";
 import { WorkflowSection } from "@/components/landing/workflow-section";
-import { AllProdcuts } from "../products/AllProducts";
 
 // Saffron-tinted card variants, shown only on the landing grid; each lives
 // beside its product's assets as card-saffron.png.
@@ -46,6 +44,36 @@ const technologyPlatforms: TechnologyPlatform[] = ipPlatforms.map(
     focus,
   }),
 );
+
+const homepageProductCategories = [
+  {
+    title: "RF & mm-Wave Power Amplifier",
+    eyebrow: "Power amplifier families",
+    description:
+      "Hybrid MIC modules and GaN-on-SiC MMIC PA chips for high-power RF and mm-wave systems.",
+    href: "/products/rf/power-amplifiers",
+    image: "/assets/products/categories/power-amplifier-families.png",
+    alt: "RF and mm-wave power amplifier module hardware",
+  },
+  {
+    title: "RF & mm-Wave Front End Modules",
+    eyebrow: "Integrated RFICs",
+    description:
+      "Fully integrated transmitter, receiver, and radar front-end chips from the mm-wave portfolio.",
+    href: "/products/rf-mmwave-front-end-modules",
+    image: "/assets/products/categories/integrated-rfic.png",
+    alt: "RF and mm-wave front-end module chip portfolio",
+  },
+  {
+    title: "Phase Shifter IC",
+    eyebrow: "Beamforming IC",
+    description:
+      "Phase-shifting IC capability for phased arrays, radar front ends, and reconfigurable RF systems.",
+    href: "/products/8-bit-phase-shifter-chip",
+    image: "/assets/products/categories/phase-shifter.png",
+    alt: "Phase shifter IC package and circuit hardware",
+  },
+] as const;
 
 function SectionHeader({
   label,
@@ -136,16 +164,50 @@ function ProductsSection() {
   return (
     <section
       id="products"
-      className="bg-[color:var(--color-surface-soft)] py-12 sm:py-16 lg:flex  lg:items-center"
+      className="bg-[color:var(--color-surface-soft)] py-16 sm:py-20"
     >
       <Reveal className="container mx-auto w-full px-4 lg:px-4">
         <SectionHeader
           label="Products"
-          title="RF front-end Product Portfolio—from power amplifier modules to advanced RFICs and MMICs."
-          intro="The portfolio is organized around component families, validated chip and module options, integration readiness, and customization paths for customer programs."
+          title="RF front-end Product Portfolio."
+          intro="Browse the portfolio by category, from high-power amplifier hardware to integrated mm-wave RFICs and beamforming ICs."
         />
-        <div className="mt-8 grid gap-6 sm:mt-12 md:grid-cols-2 lg:mt-16 xl:grid-cols-3">
-          <AllProdcuts />
+        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-3 lg:mt-14">
+          {homepageProductCategories.map((category) => (
+            <Link
+              key={category.title}
+              href={category.href}
+              className="group flex h-full min-h-[30rem] flex-col rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]"
+            >
+              <div className="media-well relative aspect-[16/10] overflow-hidden rounded-md bg-[color:var(--color-media-well)]">
+                <Image
+                  src={category.image}
+                  alt={category.alt}
+                  fill
+                  sizes="(min-width: 1024px) 31vw, (min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-1 flex-col px-4 pb-4 pt-7">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                  {category.eyebrow}
+                </p>
+                <h3 className="mt-3 font-heading text-[1.55rem] font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
+                  {category.title}
+                </h3>
+                <p className="mt-5 flex-1 text-[0.95rem] leading-8 text-[color:var(--color-text-muted)]">
+                  {category.description}
+                </p>
+                <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-primary-deep)]">
+                  View category
+                  <ArrowRight
+                    className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </Reveal>
     </section>
@@ -211,8 +273,8 @@ export function LandingContentSections() {
 
             <div className="mt-9 grid max-w-3xl gap-3 sm:grid-cols-3">
               {[
-                ["Architecture", "RFIC, MMIC, PA"],
-                ["Silicon", "GaN, CMOS, SiGe"],
+                ["Architecture", "RFIC, MMIC, MIC modules"],
+                ["Technology", "GaN, CMOS, SiGe"],
                 ["Validation", "Wafer to module"],
               ].map(([label, value]) => (
                 <div
@@ -229,7 +291,7 @@ export function LandingContentSections() {
               ))}
             </div>
 
-            <div className="mt-10 flex max-w-3xl flex-wrap gap-2.5">
+            {/* <div className="mt-10 flex max-w-3xl flex-wrap gap-2.5">
               {researchFocusRows.map((pill) => (
                 <span
                   key={pill}
@@ -238,7 +300,7 @@ export function LandingContentSections() {
                   {pill}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
         </Reveal>
       </section>
@@ -253,7 +315,7 @@ export function LandingContentSections() {
           <div className="max-w-2xl">
             <p className="kicker mb-4">Contact</p>
             <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] text-balance sm:text-[42px]">
-              Start your next RF program with Linear-AmpTech.
+              Power Your Next RF System with Linear AmpTech Products.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-[color:var(--color-text-muted)]">
               Talk directly with the engineers who design, tape out, and

@@ -5,19 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
-import {
-  ArrowRight,
-  Cpu,
-  Layers3,
-  Package,
-  RadioTower,
-  ScanLine,
-} from "lucide-react";
+import { ArrowRight, Cpu, Package, RadioTower, ScanLine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import { ImageThemeToggle } from "@/components/layout/image-theme-provider";
 import { products } from "@/components/landing/data";
-import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
 import { rfPowerAmplifierCategories } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
@@ -39,7 +31,7 @@ const navLinks = [
   { href: "/careers", label: "Careers" },
 ];
 
-type ProductCategoryId = "rf" | "ic" | "phase" | "passive";
+type ProductCategoryId = "rf" | "ic" | "phase";
 
 const frontEndModuleSlugs = new Set([
   "fully-integrated-transmitter-chip",
@@ -311,13 +303,6 @@ export function SiteHeader() {
           title: product.name,
         })),
     },
-    passive: {
-      label: "RF Passive Components",
-      items: rfPassiveComponents.map((product) => ({
-        href: `/products/rf-passive-components/${product.slug}`,
-        title: product.shortName,
-      })),
-    },
   }[activeProductCategory];
 
   const isActive = (href: string) =>
@@ -460,14 +445,6 @@ export function SiteHeader() {
                         onSelect={() => setActiveProductCategory("phase")}
                         onNavigate={closeDesktopMenu}
                       />
-                      <ProductCategoryLink
-                        href="/products/rf-passive-components"
-                        title="RF Passive Components"
-                        icon={Layers3}
-                        active={activeProductCategory === "passive"}
-                        onSelect={() => setActiveProductCategory("passive")}
-                        onNavigate={closeDesktopMenu}
-                      />
                     </div>
                   </div>
 
@@ -589,14 +566,6 @@ export function SiteHeader() {
               icon={ScanLine}
               active={activeProductCategory === "phase"}
               onSelect={() => setActiveProductCategory("phase")}
-              onNavigate={closeMobile}
-            />
-            <ProductCategoryLink
-              href="/products/rf-passive-components"
-              title="RF Passive Components"
-              icon={Layers3}
-              active={activeProductCategory === "passive"}
-              onSelect={() => setActiveProductCategory("passive")}
               onNavigate={closeMobile}
             />
           </div>

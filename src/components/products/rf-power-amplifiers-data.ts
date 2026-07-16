@@ -1,5 +1,3 @@
-import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
-
 export type RfPowerAmplifierSummary = {
   slug: string;
   partNumber: string;
@@ -36,7 +34,7 @@ export type RfPowerAmplifierCategory = {
 export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
   {
     slug: "hybrid-mic-power-amplifier-modules",
-    title: "Hybrid MIC Power Amplifier Modules",
+    title: "Power Amplifier Modules",
     eyebrow: "Module lineup",
     description:
       "Hybrid MIC PA modules with wideband operating ranges, output power, efficiency, gain, and mode-of-operation data.",
@@ -303,25 +301,6 @@ export const productMenuGroups = [
           label: category.title,
           href: category.href,
           meta: category.description,
-        })),
-      },
-    ],
-  },
-  {
-    id: "rf-passive-components",
-    title: "RF Passive Components",
-    href: "/products/rf-passive-components",
-    description: "Passive RF filters, splitters, dividers, and combiners.",
-    panels: [
-      {
-        title: "Radio Frequency Passive Components",
-        href: "/products/rf-passive-components",
-        description:
-          "Low-loss passive RF components for filtering, splitting, and combining.",
-        links: rfPassiveComponents.map((product) => ({
-          label: product.shortName,
-          href: `/products/rf-passive-components/${product.slug}`,
-          meta: product.summary,
         })),
       },
     ],

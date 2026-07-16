@@ -604,17 +604,24 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "GaN Power Amplifier Modules",
     title: "C-Ku Band Power Amplifiers Built for Next Gen RF Systems",
     description:
-      "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense front ends.",
+      "Fully integrated GaN-on-SiC PA modules and chips targeting high-power, high-reliability communication, radar, aerospace, and defense RF front ends.",
+  },
+  {
+    eyebrow: "CMOS RFIC DEVELOPMENT",
+    title:
+      "Advanced CMOS RFIC Design for 5G FR2 and 6G FR3 wireless applications.",
+    description:
+      "Supporting low-power, high-performance RFICs for lower 5G FR2 and 6G FR3 bands, automotive radar, and satellite communications.",
   },
   {
     eyebrow: "SiGe BiCMOS RFIC Development",
-    title: "47 GHz Transmitter and Receiver IC Capability.",
+    title: "mm-wave transmitter and Receiver RFICs.",
     description:
       "Pin-compatible transmitter and receiver ICs for mm-wave systems, backed by silicon layout, simulation, packaging, and validation workflows.",
   },
   {
     eyebrow: "mm-Wave Packaging and Integration",
-    title: "Chip-to-PCB-to-Waveguide Integration for HF.",
+    title: "Chip-to-PCB-to-Waveguide Integration for mm-wave circuits.",
     description:
       "Packaging, transitions, and combining networks for mm-wave assemblies where IC, PCB, waveguide, and measurement constraints meet.",
   },
@@ -625,14 +632,6 @@ export const technologySystemRows = [
   "Customization and integration readiness",
   "Simulation, tapeout, and measurement",
   "Build-to-stock and custom development",
-];
-
-export const researchFocusRows = [
-  "MIC and MMIC PA Design",
-  "GaN HEMT Device Research",
-  "RIS and Active Antenna Validation",
-  "FPGA and DPD Linearization",
-  "Doherty and Waveform Engineering PA",
 ];
 
 export const projectTypeOptions = [

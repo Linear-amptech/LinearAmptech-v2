@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   Cpu,
-  Layers3,
   RadioTower,
   ScanLine,
   type LucideIcon,
@@ -13,13 +12,12 @@ import { products, productBands } from "@/components/landing/data";
 import { HeroThreads } from "@/components/layout/hero-threads";
 import { Reveal } from "@/components/landing/reveal";
 import { ProductListingCard } from "@/components/products/product-listing-card";
-import { rfPassiveComponents } from "@/components/products/rf-passive-components-data";
 import { rfPowerAmplifierCategories } from "@/components/products/rf-power-amplifiers-data";
 
 export const metadata: Metadata = {
   title: "Products | Linear Amptech",
   description:
-    "Explore Linear Amptech RF power amplifiers, mm-wave front-end ICs, phase shifter ICs, and RF passive components.",
+    "Explore Linear Amptech RF power amplifiers, mm-wave front-end ICs, and phase shifter ICs.",
 };
 
 type ProductLink = {
@@ -99,22 +97,6 @@ const productCategories: ProductCategory[] = [
         ]
       : [],
   },
-  {
-    title: "RF Passive Components",
-    eyebrow: "Passive RF",
-    description:
-      "Filters, splitters, dividers, and combiners for signal routing and front-end integration.",
-    href: "/products/rf-passive-components",
-    icon: Layers3,
-    items: rfPassiveComponents.map((product) => ({
-      title: product.name,
-      href: `/products/rf-passive-components/${product.slug}`,
-      image: product.cardImage,
-      operatingBand: product.specs.find(
-        (spec) => spec.label.toLowerCase() === "frequency",
-      )?.value,
-    })),
-  },
 ];
 
 export default function ProductsPage() {
@@ -129,7 +111,7 @@ export default function ProductsPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
             Browse the portfolio by category: power amplifiers, integrated
-            front-end ICs, phase shifter ICs, and RF passive components.
+            front-end ICs, and phase shifter ICs.
           </p>
         </Reveal>
       </section>
@@ -137,7 +119,7 @@ export default function ProductsPage() {
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto max-w-7xl px-4 lg:px-4">
           <Reveal>
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid items-stretch gap-6 md:grid-cols-3">
               {productCategories.map((category) => {
                 const Icon = category.icon;
 
@@ -145,21 +127,21 @@ export default function ProductsPage() {
                   <Link
                     key={category.title}
                     href={category.href}
-                    className="group flex min-h-72 flex-col rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]"
+                    className="group flex min-h-[22rem] flex-col rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]"
                   >
-                    <div className="grid size-12 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
+                    <div className="grid size-12 place-items-center rounded-lg border border-[#F2C79E] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
-                    <p className="mt-6 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                    <p className="mt-8 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                       {category.eyebrow}
                     </p>
-                    <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+                    <h2 className="mt-3 font-heading text-[1.55rem] font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                       {category.title}
                     </h2>
-                    <p className="mt-4 flex-1 text-sm leading-7 text-[color:var(--color-text-muted)]">
+                    <p className="mt-5 flex-1 text-[0.95rem] leading-8 text-[color:var(--color-text-muted)]">
                       {category.description}
                     </p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-primary-deep)]">
+                    <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-primary-deep)]">
                       View category
                       <ArrowRight
                         className="size-4 transition-transform duration-300 group-hover:translate-x-1"
