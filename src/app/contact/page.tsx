@@ -55,7 +55,7 @@ export default function ContactPage() {
                 <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                   <span
                     aria-hidden="true"
-                    className="h-[2px] w-[18px] bg-[#EA7317]"
+                    className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
                   />
                   {item.label}
                 </dt>

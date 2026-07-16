@@ -20,14 +20,17 @@ export function CharacterizationSchematic({
       <path className="draw" pathLength={1} d="M95 95V300H540" />
 
       {/* Faint horizontal gridlines */}
-      <path d="M95 148H540M95 200H540M95 252H540" stroke="#E7E0D5" />
+      <path
+        d="M95 148H540M95 200H540M95 252H540"
+        stroke="var(--color-border)"
+      />
 
       {/* S21 gain curve — gentle roll-off descending left to right */}
       <path
         className="draw d2"
         pathLength={1}
         d="M105 120 C 160 118, 210 128, 260 142 C 300 153, 340 168, 390 185 C 440 202, 490 218, 530 230"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
 
       {/* S11 return-loss curve — lower in plot with a clear dip/notch around x=300 */}
@@ -37,13 +40,13 @@ export function CharacterizationSchematic({
         d="M105 260 C 150 258, 210 255, 255 252 C 275 250, 290 232, 300 218 C 310 232, 322 250, 345 253 C 400 258, 460 260, 530 262"
       />
 
-      {/* Vertical dashed scan cursor at x≈300 */}
+      {/* Vertical dashed scan cursor at x≈300 — instrument marker (blue) */}
       <line
         x1="300"
         y1="95"
         x2="300"
         y2="300"
-        stroke="#EA7317"
+        stroke="var(--color-accent-blue)"
         strokeWidth="1"
         strokeDasharray="4 4"
       />
@@ -54,7 +57,7 @@ export function CharacterizationSchematic({
         y="103"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         dB
@@ -66,7 +69,7 @@ export function CharacterizationSchematic({
         y="320"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         FREQ
@@ -78,7 +81,7 @@ export function CharacterizationSchematic({
         y="112"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#C2410C"
+        fill="var(--color-primary-deep)"
         stroke="none"
       >
         S21
@@ -90,19 +93,19 @@ export function CharacterizationSchematic({
         y="278"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#1C1917"
+        fill="var(--color-text)"
         stroke="none"
       >
         S11
       </text>
 
-      {/* Scan cursor readout label */}
+      {/* Scan cursor readout label — matches blue marker */}
       <text
         x="306"
         y="108"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-accent-blue)"
         stroke="none"
       >
         MKR

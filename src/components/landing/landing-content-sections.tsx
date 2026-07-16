@@ -113,9 +113,9 @@ export function ProductPortfolioCard({
   const productImage = homepageImage ?? product.image;
 
   return (
-    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
-      {/* light well: the default dark well shows as thin corner arcs behind these ivory renders */}
-      <div className="media-well aspect-[16/10] bg-[color:var(--color-surface-soft)] bg-none">
+    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3">
+      {/* Inset well keeps product renders framed on the dark theme. */}
+      <div className="media-well aspect-[16/10]">
         <Image
           src={productImage}
           alt={product.alt}
@@ -164,7 +164,7 @@ function ProductsSection() {
   return (
     <section
       id="products"
-      className="bg-[color:var(--color-surface-soft)] py-16 sm:py-20"
+      className="bg-[color:var(--color-surface-soft)] py-24"
     >
       <Reveal className="container mx-auto w-full px-4 lg:px-4">
         <SectionHeader
@@ -177,9 +177,9 @@ function ProductsSection() {
             <Link
               key={category.title}
               href={category.href}
-              className="group flex h-full min-h-[30rem] flex-col rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]"
+              className="surface-card surface-card-interactive group flex h-full min-h-[30rem] flex-col p-3"
             >
-              <div className="media-well relative aspect-[16/10] overflow-hidden rounded-md bg-[color:var(--color-media-well)]">
+              <div className="media-well aspect-[16/10]">
                 <Image
                   src={category.image}
                   alt={category.alt}
@@ -226,7 +226,7 @@ export function LandingContentSections() {
           />
           <Link
             href="/team"
-            className="group/read-more mt-7 inline-flex items-center gap-1.5 border-b border-[#C2410C]/35 pb-0.5 text-[15px] font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:border-[#C2410C]"
+            className="group/read-more mt-7 inline-flex items-center gap-1.5 border-b border-[color:var(--color-border-strong)] pb-0.5 text-[15px] font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:border-[color:var(--color-primary-deep)]"
           >
             Read more
             <ArrowRight
@@ -247,17 +247,33 @@ export function LandingContentSections() {
         className="relative isolate min-h-[100svh] overflow-hidden border-y border-[color:var(--color-border)] bg-[color:var(--color-bg)]"
       >
         <RdEngineBackgroundSlider />
+        {/* Legibility scrim in the ground color: opaque over the copy, clearing
+            to reveal the lab imagery on the right. */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(250_247_242)_0%,rgb(250_247_242)_28%,rgb(250_247_242_/_0.92)_45%,rgb(250_247_242_/_0.58)_68%,rgb(250_247_242_/_0.16)_100%)]"
+          className="absolute inset-0 z-[1]"
+          style={{
+            background:
+              "linear-gradient(90deg, var(--color-bg) 0%, var(--color-bg) 30%, color-mix(in srgb, var(--color-bg) 82%, transparent) 52%, color-mix(in srgb, var(--color-bg) 32%, transparent) 74%, transparent 100%)",
+          }}
         />
+        {/* Soft saffron warmth anchored behind the headline. */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-[2] bg-[linear-gradient(135deg,rgb(253_234_215_/_0.72)_0%,transparent_44%,rgb(234_115_23_/_0.28)_100%)]"
+          className="absolute inset-0 z-[2]"
+          style={{
+            background:
+              "radial-gradient(120% 105% at 6% 62%, var(--color-accent-wash) 0%, transparent 44%)",
+          }}
         />
+        {/* Bottom fade seats the section into the ground. */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 z-[2] h-32 bg-[linear-gradient(180deg,transparent,rgb(250_247_242_/_0.96))]"
+          className="absolute inset-x-0 bottom-0 z-[2] h-40"
+          style={{
+            background:
+              "linear-gradient(180deg, transparent, var(--color-bg) 94%)",
+          }}
         />
         <Reveal className="container relative z-10 mx-auto flex min-h-[100svh] items-center px-4 py-24 lg:px-4">
           <div className="max-w-[46rem]">
@@ -279,8 +295,12 @@ export function LandingContentSections() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="border-l-2 border-[#EA7317] bg-[color:var(--color-surface)] px-4 py-3 shadow-[var(--shadow-card)]"
+                  className="surface-card relative overflow-hidden py-3.5 pl-5 pr-4"
                 >
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-y-0 left-0 w-[3px] bg-[color:var(--color-primary)]"
+                  />
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     {label}
                   </p>
@@ -290,17 +310,6 @@ export function LandingContentSections() {
                 </div>
               ))}
             </div>
-
-            {/* <div className="mt-10 flex max-w-3xl flex-wrap gap-2.5">
-              {researchFocusRows.map((pill) => (
-                <span
-                  key={pill}
-                  className="rounded-full border border-[#F2C79E] bg-[color:var(--color-accent-wash)] px-4 py-2 text-sm font-semibold text-[color:var(--color-primary-ink)] shadow-[var(--shadow-card)]"
-                >
-                  {pill}
-                </span>
-              ))}
-            </div> */}
           </div>
         </Reveal>
       </section>
@@ -324,7 +333,7 @@ export function LandingContentSections() {
           </div>
           <Link
             href="/contact"
-            className="group inline-flex h-[52px] items-center gap-2.5 rounded-full bg-[#EA7317] px-8 text-[15px] font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)]"
+            className="btn-primary group h-[52px] px-8 text-[15px] font-semibold"
           >
             Contact us
             <ArrowRight

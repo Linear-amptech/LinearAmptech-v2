@@ -43,8 +43,8 @@ function TechnologyCard({
     technologyImageSets[platform.name]?.[mode] ?? platform.image;
 
   return (
-    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
-      <div className="media-well aspect-[16/10] bg-[color:var(--color-surface-soft)] bg-none">
+    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3">
+      <div className="media-well aspect-[16/10]">
         <Image
           src={platformImage}
           alt={`${platform.name} technology visual`}
@@ -81,7 +81,7 @@ export function TechnologyShowcase({
   const { mode } = useImageTheme();
 
   return (
-    <section id="technology" className="flex min-h-[100svh] items-center py-16">
+    <section id="technology" className="py-24">
       <Reveal className="container mx-auto w-full px-4 lg:px-4">
         <div className="max-w-3xl">
           <p className="kicker mb-4">Technology</p>
@@ -90,7 +90,7 @@ export function TechnologyShowcase({
           </h2>
         </div>
 
-        <div className="mt-10 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {platforms.map((platform) => (
             <TechnologyCard
               key={platform.name}

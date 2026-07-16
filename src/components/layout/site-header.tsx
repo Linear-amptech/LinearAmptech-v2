@@ -8,7 +8,6 @@ import { createPortal } from "react-dom";
 import { ArrowRight, Cpu, Package, RadioTower, ScanLine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { ImageThemeToggle } from "@/components/layout/image-theme-provider";
 import { products } from "@/components/landing/data";
 import { rfPowerAmplifierCategories } from "@/components/products/rf-power-amplifiers-data";
 import { Button } from "@/components/ui/button";
@@ -221,7 +220,7 @@ export function SiteHeader() {
   // Hairline border + shadow once scrolled, or while the mobile sheet is open.
   const elevated = scrolled || open;
   // Home opens on a dark full-bleed photo hero — run the header transparent
-  // with light text there until scroll; every other page is ivory-on-light.
+  // with light text there until scroll; other pages use the dark theme tokens.
   const overDark = pathname === "/" && !scrolled && !open;
 
   React.useEffect(() => {
@@ -314,7 +313,7 @@ export function SiteHeader() {
       "inline-flex h-9 items-center px-1 text-sm font-medium transition-colors",
       overDark
         ? active
-          ? "text-white hover:text-[#FDEAD7]"
+          ? "text-white hover:text-[color:var(--color-primary-ink)]"
           : "text-white/75 hover:text-white"
         : cn(
             "hover:text-[color:var(--color-primary-deep)]",
@@ -347,7 +346,7 @@ export function SiteHeader() {
       {overDark ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#121110]/60 via-[#121110]/20 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[rgba(0,0,0,0.7)] via-[rgba(0,0,0,0.25)] to-transparent"
         />
       ) : null}
       <nav
@@ -484,13 +483,12 @@ export function SiteHeader() {
         </NavigationMenu>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <ImageThemeToggle tone={overDark ? "dark" : "light"} />
           <Link
             href="/contact"
             className={cn(
               "group inline-flex h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-colors",
               overDark
-                ? "text-white hover:text-[#FDEAD7]"
+                ? "text-white hover:text-[color:var(--color-primary-ink)]"
                 : "text-[color:var(--color-text)] hover:text-[color:var(--color-primary-deep)]",
             )}
           >
@@ -503,7 +501,6 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ImageThemeToggle tone={overDark ? "dark" : "light"} compact />
           <Button
             size="icon-lg"
             variant="outline"

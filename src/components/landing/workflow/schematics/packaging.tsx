@@ -23,7 +23,7 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="1"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
         textAnchor="middle"
       >
@@ -44,7 +44,7 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         y="191"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#1C1917"
+        fill="var(--color-text)"
         stroke="none"
         textAnchor="middle"
       >
@@ -52,10 +52,34 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
       </text>
 
       {/* ── landing pads on substrate (faint) ── */}
-      <rect x="160" y="212" width="16" height="8" stroke="#E7E0D5" />
-      <rect x="196" y="212" width="16" height="8" stroke="#E7E0D5" />
-      <rect x="428" y="212" width="16" height="8" stroke="#E7E0D5" />
-      <rect x="464" y="212" width="16" height="8" stroke="#E7E0D5" />
+      <rect
+        x="160"
+        y="212"
+        width="16"
+        height="8"
+        stroke="var(--color-border)"
+      />
+      <rect
+        x="196"
+        y="212"
+        width="16"
+        height="8"
+        stroke="var(--color-border)"
+      />
+      <rect
+        x="428"
+        y="212"
+        width="16"
+        height="8"
+        stroke="var(--color-border)"
+      />
+      <rect
+        x="464"
+        y="212"
+        width="16"
+        height="8"
+        stroke="var(--color-border)"
+      />
 
       {/* ── bond-wire arcs ── left side, 2 wires ── */}
       {/* wire from die left-top edge to left pad 1 */}
@@ -86,7 +110,7 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="1"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         BGA
@@ -98,14 +122,14 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         className="draw"
         pathLength={1}
         d="M320 162 L320 108"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       {/* arrowhead */}
       <path
         className="draw"
         pathLength={1}
         d="M312 116 L320 104 L328 116"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       {/* label */}
       <text
@@ -113,14 +137,14 @@ export function PackagingSchematic({ isActive, reduced }: SchematicProps) {
         y="132"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         HEAT
       </text>
 
       {/* ── faint horizontal reference baseline ── */}
-      <path d="M140 212H500" stroke="#E7E0D5" />
+      <path d="M140 212H500" stroke="var(--color-border)" />
     </SchematicFrame>
   );
 }

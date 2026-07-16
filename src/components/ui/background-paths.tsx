@@ -20,8 +20,8 @@ export function FloatingPaths({ position }: { position: number }) {
     } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
       684 - i * 5 * position
     } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-    width: 0.5 + i * 0.03,
-    opacity: 0.1 + i * 0.03,
+    width: 0.4 + i * 0.022,
+    opacity: 0.05 + i * 0.019,
     // deterministic per-path duration (SSR-safe stand-in for Math.random)
     duration: 85 + ((i * 7919) % 100) / 10,
   }));
@@ -29,7 +29,7 @@ export function FloatingPaths({ position }: { position: number }) {
   return (
     <div className="pointer-events-none absolute inset-0" aria-hidden="true">
       <svg
-        className="h-full w-full text-[color:var(--color-primary)]"
+        className="h-full w-full text-[color:var(--color-primary-deep)]"
         viewBox="0 0 696 316"
         fill="none"
         preserveAspectRatio="xMidYMid slice"
@@ -70,8 +70,8 @@ export function FloatingPaths({ position }: { position: number }) {
 }
 
 /**
- * Full-viewport hero variant of the original component, kept on-theme
- * (ivory surface, token text colors — no dark sections or backdrop-blur).
+ * Full-viewport hero variant of the original component, kept token-driven
+ * for the global dark saffron theme.
  * The site footer consumes FloatingPaths directly instead.
  */
 export function BackgroundPaths({

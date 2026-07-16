@@ -9,7 +9,12 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
       reduced={reduced}
     >
       {/* signal rail */}
-      <path className="draw" pathLength={1} d="M70 200H190" stroke="#EA7317" />
+      <path
+        className="draw"
+        pathLength={1}
+        d="M70 200H190"
+        stroke="var(--color-primary)"
+      />
       {/* input matching network (series L, shunt C) */}
       <path className="draw" pathLength={1} d="M190 200h26m0 0v-34m0 34v34" />
       <path
@@ -30,7 +35,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         y="100"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         Vdd
@@ -45,7 +50,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         className="draw d3"
         pathLength={1}
         d="M390 200H570"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       {/* port nodes */}
       <circle
@@ -54,7 +59,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         cx="70"
         cy="200"
         r="6"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       <circle
         className="draw d3"
@@ -62,7 +67,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         cx="570"
         cy="200"
         r="6"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       {/* node labels */}
       <text
@@ -70,7 +75,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         y="186"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         IN
@@ -80,7 +85,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         y="186"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         OUT
@@ -90,7 +95,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         y="206"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#1C1917"
+        fill="var(--color-text)"
         stroke="none"
       >
         PA
@@ -102,7 +107,7 @@ export function DesignSchematic({ isActive, reduced }: SchematicProps) {
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="1"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         GAIN · MATCH · Pout

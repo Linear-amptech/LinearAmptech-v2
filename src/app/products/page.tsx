@@ -127,9 +127,9 @@ export default function ProductsPage() {
                   <Link
                     key={category.title}
                     href={category.href}
-                    className="group flex min-h-[22rem] flex-col rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]"
+                    className="group flex min-h-[22rem] flex-col rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[color:var(--color-accent-border)] hover:shadow-[var(--shadow-card-hover)]"
                   >
-                    <div className="grid size-12 place-items-center rounded-lg border border-[#F2C79E] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
+                    <div className="grid size-12 place-items-center rounded-lg border border-[color:var(--color-accent-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <p className="mt-8 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
@@ -169,7 +169,7 @@ export default function ProductsPage() {
                         <p className="mt-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                           {category.eyebrow}
                         </p>
-                        <h2 className="mt-3 font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+                        <h2 className="mt-3 font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                           {category.title}
                         </h2>
                         <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">

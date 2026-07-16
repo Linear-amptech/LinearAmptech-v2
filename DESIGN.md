@@ -1,90 +1,116 @@
-# Linear Amptech — Saffron Light Design System
+# Linear Amptech — Premium Dark Saffron Design System
 
-A premium, editorial light theme in the Claude/Anthropic style: warm paper surfaces,
-serif display headlines, one saturated saffron accent used with restraint, generous
-whitespace. Typography and spacing do the heavy lifting — never effects.
+A premium dark RF/semiconductor theme built on **depth through an elevation
+ladder**, not flat black. Deep blue-tinted near-black grounds, raised card
+planes that catch light on their top edge, warm ivory text, cool muted copy, and
+a single saffron accent used with restraint. Blue is a subtle tint on surfaces
+and shadows — never a section fill.
 
 ## Tokens (source of truth: `src/app/globals.css` `:root`)
 
-| Token                  | Value     | Role                                          |
-| ---------------------- | --------- | --------------------------------------------- |
-| `--color-bg`           | `#FAF7F2` | Warm ivory page background — never pure white |
-| `--color-surface`      | `#FFFFFF` | Cards, panels, plates                         |
-| `--color-surface-soft` | `#F3EEE5` | Warm paper — alternate section bands          |
-| `--color-text`         | `#1C1917` | Warm near-black                               |
-| `--color-text-muted`   | `#57534E` | Warm stone gray                               |
-| `--color-border`       | `#E7E0D5` | Warm hairline                                 |
-| `--color-primary`      | `#EA7317` | Deep saffron — decorative ONLY                |
-| `--color-primary-deep` | `#B93D0B` | Burnt orange — functional accent              |
-| `--color-primary-ink`  | `#9A3412` | Text on saffron wash                          |
-| `--color-accent-wash`  | `#FDEAD7` | Saffron wash — chips, badges                  |
-| `--color-media-well`   | `#121110` | Warm charcoal wells behind dark imagery       |
-| `--color-accent-red`   | `#ef4444` | Form errors only                              |
+### Elevation ladder — depth comes from lightness, not downward shadow
 
-Shadows are warm and layered (`--shadow-card`, `--shadow-card-hover`,
-`--shadow-soft`, `--shadow-header`) — never glows, never cool `rgb(15 23 42 …)`.
+| Token                    | Value     | Role                                          |
+| ------------------------ | --------- | --------------------------------------------- |
+| `--color-bg`             | `#090C13` | Page ground (deep blue-tinted near-black)     |
+| `--color-surface-soft`   | `#0E121B` | Recessed insets, form fields, alternate bands |
+| `--color-surface`        | `#151B27` | Raised cards, panels, plates                  |
+| `--color-surface-raised` | `#1D2431` | Hover / overlay / active elevation            |
+| `--color-media-well`     | `#06080E` | Deepest well behind dark chip assets          |
 
-## Color laws (WCAG-derived — non-negotiable)
+Each step is **perceptibly** lighter than the one below it, so cards read as
+raised planes. Never reintroduce pure `#000000` as a surface — it flattens the
+ladder and kills all depth.
 
-1. `#EA7317` is decorative only (2.8:1 on ivory): button fills, hairline ticks,
-   progress fills, icon strokes, ornament. Never text, never focus rings.
-2. Saffron-filled buttons take near-black labels (`#1C1917` on `#EA7317`), hover
-   `#E06A0F`. Never white text on saffron.
-3. `--color-primary-deep` is the functional accent: links, kickers, hover text,
-   focus rings (`--ring` points at it).
-4. Wash chips: `--color-accent-wash` background with `--color-primary-ink` text.
-5. No dark sections, no backdrop-blur/translucency, no glow shadows, no cool grays
-   (`slate-*` is banned) — every neutral is warm stone. **Exception:** the site
-   footer (`.footer-dark`) is a deliberate dark section — see "Footer" below.
+### Text & borders
+
+| Token                   | Value     | Role                              |
+| ----------------------- | --------- | --------------------------------- |
+| `--color-text`          | `#F5F3EF` | Warm near-white primary text      |
+| `--color-text-muted`    | `#A7B0C0` | Cool muted secondary text         |
+| `--color-border`        | `#232B3A` | Hairline that actually reads      |
+| `--color-border-strong` | `#2F394B` | Emphasis dividers, ghost controls |
+
+### Saffron system — one fill, one accent, one ink
+
+| Token                   | Value                    | Role                                   |
+| ----------------------- | ------------------------ | -------------------------------------- |
+| `--color-primary`       | `#EA7317`                | Saffron fill (CTAs, rails)             |
+| `--color-primary-hover` | `#FF9036`                | Fill hover — brightens (lifts) on dark |
+| `--color-primary-deep`  | `#FF9A3D`                | Text/links/kickers/focus accent        |
+| `--color-on-primary`    | `#1A1206`                | Dark ink for labels on saffron fills   |
+| `--color-primary-ink`   | `#FFDEC0`                | Text on saffron wash chips             |
+| `--color-accent-wash`   | `rgb(234 115 23 / 0.12)` | Low-opacity saffron chip background    |
+| `--color-accent-border` | `#E2822E`                | Hover and emphasis border              |
+
+### Restrained blue tint & utility
+
+| Token                 | Value                   | Role                                 |
+| --------------------- | ----------------------- | ------------------------------------ |
+| `--color-accent-blue` | `#5B7FC7`               | Rare steel-blue highlight (tint use) |
+| `--color-blue-wash`   | `rgb(59 95 158 / 0.14)` | Subtle blue-tinted panel wash        |
+| `--color-accent-red`  | `#EF4444`               | Form errors only                     |
+
+### Shadows
+
+Shadows carry a soft ambient drop (darker than the ground) **plus a ~1px inset
+top highlight** so raised surfaces catch light — the premium lift a black-on-black
+shadow can never give. See `--shadow-card`, `--shadow-card-hover`, `--shadow-soft`,
+`--shadow-header`. No glow shadows.
+
+## Color Laws
+
+1. Use token colors for surfaces, borders, text, and muted text. No hardcoded
+   backgrounds; no pure `#000000` surfaces.
+2. Build hierarchy through the elevation ladder
+   (`bg` → `surface-soft` → `surface` → `surface-raised`), not through borders
+   alone and not through blue section fills.
+3. Saffron-filled CTAs use dark ink (`--color-on-primary` on `--color-primary`);
+   hover **brightens** (`--color-primary-hover`) because lighter reads as more
+   elevated on dark.
+4. `--color-primary-deep` is the functional text accent: links, kickers, hover
+   text, focus rings. Wash chips use `--color-accent-wash` with
+   `--color-primary-ink`.
+5. Blue is a **tint only** — on surfaces and shadows. Never flood a section with
+   blue, add glow effects, glassmorphism, or backdrop-blur.
 
 ## Typography
 
-- Display/headings: **Sora** (`--font-sora`) — wired to all `h1–h6` and the
-  `font-heading` utility. Letter-spacing tiers in globals.css (h1 −0.02em,
-  h2 −0.015em, h3+ −0.01em). Keep weights 500–600; never below 16px. A geometric
-  tech grotesque — conventional for the semiconductor register while keeping
-  character; do not swap in a generic UI sans for headings.
+- Display/headings: **Sora** (`--font-sora`) on all `h1–h6` and `font-heading`.
+  Weights 500–600; preserve the heading scale and the letter-spacing tiers.
 - Body/UI: **Inter** (`--font-inter`).
-- Kickers/labels/spec values: **JetBrains Mono** via `font-mono`, uppercase,
-  tracked +0.2em, 11–12px.
+- Kickers/labels/spec values: **JetBrains Mono**, uppercase, tracked, compact.
 
-## Recurring patterns (reuse, don't reinvent)
+## Recurring Patterns & Shared Classes
 
-- `.kicker` — mono uppercase label in the functional accent. Every section starts
-  with one.
-- `.media-frame` + `.media-well` — the dark-asset plate: white frame card with a
-  charcoal well inside. ALL dark chip renders/photography sit in wells so they read
-  as intentional technical plates on the ivory page. Never bleed dark imagery into
-  the background.
-- Hero band (interior routes): ivory section, `border-b` hairline, `pt-32 pb-16`,
-  `.kicker` + Sora h1 (`text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold
-leading-[1.05] tracking-tight text-balance`) + muted intro.
-- Stat/spec strips: hairline band (`border-y`), tiles with a saffron tick
-  (`h-[2px] w-[18px] bg-[#EA7317]`), mono muted uppercase label, mono value.
-- Cards: white surface, warm border, `--shadow-card`; hover = `--shadow-card-hover`
-  - border tint `#F2C79E`. Cards never translate/scale — only inner images may
-    scale (1.05, 500–700ms).
-- CTAs: saffron pill (`rounded-full bg-[#EA7317] text-[#1C1917] font-semibold
-hover:bg-[#E06A0F]` + soft shadow lift). Quiet links: `--color-primary-deep`
-  with a 35%-alpha bottom border that fills on hover.
-- Motion: 0.2s house tempo for hover, scroll reveals via `Reveal`
-  (`@/components/landing/reveal`), `prefers-reduced-motion` respected globally.
-- `::selection` is burnt orange with warm white text.
+Reusable classes live in `src/app/globals.css` (Tailwind v4 is CSS-first here —
+no `tailwind.config.*`). Prefer these over re-implementing anatomy inline:
+
+- `.kicker` — mono uppercase section label in the functional saffron accent.
+- `.btn-primary` — saffron CTA: gradient fill for dimension, dark ink, inset top
+  highlight + dark ambient shadow, hover brightens and lifts. Use for every CTA.
+- `.btn-ghost` — secondary/outlined control on the elevation ladder.
+- `.surface-card` (+ `.surface-card-interactive`) — the canonical raised card.
+- `.field-input` — recessed input well (`surface-soft`) with a saffron focus
+  ring; use for all inputs, selects, and textareas.
+- `.media-frame` + `.media-well` — elevated dark plate for dark chip/product
+  imagery.
+- `.product-plate` — intentional light "inspection well" for ivory studio-lit
+  product renders, so light photos read as deliberate captures inside the dark
+  theme rather than accidental white holes.
+- Interior route heroes: dark background, border-b hairline, `.kicker`, Sora h1,
+  muted intro.
+- Motion: ~0.2s house tempo for hover, scroll reveals via `Reveal`,
+  `prefers-reduced-motion` respected.
 
 ## Footer
 
-The one intentional dark section on the site. `.footer-dark` (globals.css)
-shadows `--color-surface` → `--color-media-well` (`#121110`, the site's
-existing near-black token), `--color-text` → `--color-bg` (warm ivory), and
-`--color-text-muted` → `#D8B99C` (warm tan, ≥7:1 on the dark bg), scoped
-to the footer subtree — existing token classnames elsewhere are unaffected.
-`--color-primary` is left global, so `FloatingPaths` keeps drawing its
-saffron traces (now at higher container opacity to read against the dark
-bg) — glowing circuit lines on a warm dark ground, on-brand for an RF/
-semiconductor company.
+The footer uses `.footer-dark` for the deepest local ground (`--color-media-well`)
+so it still has section weight as the "basement" plane. Token-driven.
 
-## Asset generation (future, one by one)
+## Asset Generation
 
-Base prompt for regenerating imagery to match the theme: product renders on warm
-ivory/paper backgrounds, saffron accent lighting, stone-gray metals, no dark
-backdrops, no neon. Until regenerated, dark assets stay framed in media wells.
+Generate imagery with dark blue-tinted saffron environments, warm saffron edge
+lighting, visible semiconductor/RF hardware detail, and no neon, cartoon styling,
+or pale paper backdrops unless a specific product image requires inspection
+clarity (frame those with `.product-plate`).

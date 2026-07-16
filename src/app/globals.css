@@ -54,34 +54,57 @@
     var(--font-sora), "Sora", "Helvetica Neue", Arial, sans-serif;
   --font-app-mono:
     var(--font-jetbrains-mono), ui-monospace, "Courier New", Courier, monospace;
-  --color-bg: #faf7f2;
-  --color-surface: #ffffff;
-  --color-surface-soft: #f3eee5;
-  --color-text: #1c1917;
-  --color-text-muted: #57534e;
-  --color-border: #e7e0d5;
+  /* Elevation ladder on a PITCH-BLACK ground. Surfaces are near-neutral
+     charcoal (only a whisper of warmth to harmonize with saffron — no navy),
+     each step perceptibly lighter so cards read as raised planes. On pure black
+     the lift comes from lighter fills + the inset top highlight, not from a drop
+     shadow (nothing renders darker than the ground). bg = ground, surface-soft
+     = recessed insets / inputs / alt bands, surface = raised cards,
+     surface-raised = hover / overlay / active. */
+  --color-bg: #000000;
+  --color-surface-soft: #0c0b0c;
+  --color-surface: #151414;
+  --color-surface-raised: #1e1c1d;
+  --color-text: #f5f3ef;
+  --color-text-muted: #a6a4a3;
+  --color-border: #2a2827;
+  --color-border-strong: #3a3836;
+  /* Saffron system — one fill, one hover (brightens on dark), one bright accent
+     for text/links/kickers, one dark ink for labels on saffron fills. */
   --color-primary: #ea7317;
-  --color-primary-deep: #b93d0b;
-  --color-primary-ink: #9a3412;
-  --color-accent-wash: #fdead7;
-  --color-media-well: #121110;
+  --color-primary-hover: #ff9036;
+  --color-primary-deep: #ff9a3d;
+  --color-on-primary: #1a1206;
+  --color-primary-ink: #ffdec0;
+  --color-accent-wash: rgb(234 115 23 / 0.12);
+  --color-accent-border: #e2822e;
+  /* Restrained steel-blue accent — tint only, never a section fill. */
+  --color-accent-blue: #5b7fc7;
+  --color-blue-wash: rgb(59 95 158 / 0.14);
+  --color-media-well: #040405;
   --color-accent-red: #ef4444;
-  --shadow-soft: 0 16px 44px rgb(28 25 23 / 0.06);
-  --shadow-card: 0 1px 2px rgb(28 25 23 / 0.05);
+  /* Shadows carry a soft ambient drop (darker than the ground) plus a ~1px
+     inset top highlight so raised surfaces catch light on their top edge —
+     the premium lift a black-on-black shadow can never give. */
+  --shadow-soft: 0 24px 64px -16px rgb(0 0 0 / 0.8);
+  --shadow-card:
+    0 2px 4px -1px rgb(0 0 0 / 0.55), 0 12px 28px -10px rgb(0 0 0 / 0.65),
+    inset 0 1px 0 0 rgb(255 255 255 / 0.06);
   --shadow-card-hover:
-    0 2px 2px rgb(28 25 23 / 0.02), 0 4px 4px rgb(28 25 23 / 0.03),
-    0 16px 24px rgb(28 25 23 / 0.05);
-  --shadow-header: 0 8px 30px rgb(28 25 23 / 0.06);
+    0 4px 10px -2px rgb(0 0 0 / 0.6), 0 26px 52px -12px rgb(0 0 0 / 0.75),
+    inset 0 1px 0 0 rgb(255 255 255 / 0.09);
+  --shadow-header:
+    0 10px 30px -10px rgb(0 0 0 / 0.65), inset 0 -1px 0 0 var(--color-border);
   --radius-card: 0.75rem;
   --radius-control: 0.5rem;
   --background: var(--color-bg);
   --foreground: var(--color-text);
   --card: var(--color-surface);
   --card-foreground: var(--color-text);
-  --popover: oklch(1 0 0);
+  --popover: var(--color-surface);
   --popover-foreground: var(--color-text);
-  --primary: var(--color-primary-deep);
-  --primary-foreground: #ffffff;
+  --primary: var(--color-primary);
+  --primary-foreground: var(--color-on-primary);
   --secondary: var(--color-surface-soft);
   --secondary-foreground: var(--color-text);
   --muted: var(--color-surface-soft);
@@ -92,20 +115,20 @@
   --border: var(--color-border);
   --input: var(--color-border);
   --ring: var(--color-primary-deep);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --chart-1: #ff9a3d;
+  --chart-2: #8db3ff;
+  --chart-3: #3b5f9e;
+  --chart-4: #1d3155;
+  --chart-5: #05070d;
   --radius: 0.375rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: var(--color-surface);
+  --sidebar-foreground: var(--color-text);
+  --sidebar-primary: var(--color-primary-deep);
+  --sidebar-primary-foreground: #140d09;
+  --sidebar-accent: var(--color-surface-soft);
+  --sidebar-accent-foreground: var(--color-text);
+  --sidebar-border: var(--color-border);
+  --sidebar-ring: var(--color-primary-deep);
 }
 
 @layer base {
@@ -123,8 +146,7 @@
     scroll-behavior: auto;
   }
   /* Sora display headings with tightened letter-spacing tiers — the geometric
-     tech grotesque the brand used pre-revamp, kept for a conventional
-     semiconductor register on the premium ivory theme. */
+     tech grotesque keeps a conventional semiconductor register. */
   h1,
   h2,
   h3,
@@ -147,7 +169,7 @@
   }
   ::selection {
     background: var(--color-primary-deep);
-    color: #fff7ed;
+    color: var(--color-on-primary);
   }
 }
 
@@ -157,9 +179,7 @@
     @apply font-mono text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)];
   }
 
-  /* Dark-asset framing: white card frame with a warm-charcoal well inside.
-     Existing dark chip renders/photography read as intentional technical
-     plates on the ivory page until assets are regenerated. */
+  /* Dark-asset framing: elevated saffron-black frame with a near-black well. */
   .media-frame {
     @apply rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3;
     box-shadow: var(--shadow-card), var(--shadow-soft);
@@ -170,11 +190,109 @@
     background-color: var(--color-media-well);
     background-image: repeating-linear-gradient(
       135deg,
-      rgb(250 247 242 / 0.04) 0px,
-      rgb(250 247 242 / 0.04) 1px,
+      rgb(255 247 237 / 0.045) 0px,
+      rgb(255 247 237 / 0.045) 1px,
       transparent 1px,
       transparent 12px
     );
+  }
+
+  /* ── Shared premium primitives (locked vocabulary; apply everywhere) ────────
+     Consistency floor for the fan-out: every button, card, input, and product
+     image should route through these so treatments stay uniform. */
+
+  /* Primary saffron CTA — gradient fill for dimension, dark ink, inset top
+     highlight + dark ambient shadow (no neon glow). Hover brightens and lifts. */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium text-[color:var(--color-on-primary)] transition-all duration-200;
+    background: linear-gradient(180deg, #f4841f 0%, var(--color-primary) 100%);
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.28),
+      0 2px 6px -1px rgb(2 4 10 / 0.5),
+      0 8px 20px -6px rgb(2 4 10 / 0.5);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(
+      180deg,
+      #ff9a3d 0%,
+      var(--color-primary-hover) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.35),
+      0 4px 10px -2px rgb(2 4 10 / 0.55),
+      0 12px 26px -6px rgb(2 4 10 / 0.55);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Secondary / ghost control — outlined on the elevation ladder. */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--color-border-strong)] bg-[color:var(--color-surface)] font-medium text-[color:var(--color-text)] transition-all duration-200;
+    box-shadow: var(--shadow-card);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-accent-border);
+    background: var(--color-surface-raised);
+  }
+
+  /* Canonical raised card — the repeated card anatomy in one place. */
+  .surface-card {
+    @apply rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)];
+    box-shadow: var(--shadow-card);
+  }
+  .surface-card-interactive {
+    @apply transition-all duration-200;
+  }
+  .surface-card-interactive:hover {
+    border-color: var(--color-accent-border);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Recessed input well — sits one step below the card it lives in so fields
+     read as inset rather than flush-on-flush. */
+  .field-input {
+    @apply w-full rounded-[var(--radius-control)] border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] transition-colors duration-200;
+  }
+  .field-input::placeholder {
+    color: color-mix(in srgb, var(--color-text-muted) 65%, transparent);
+  }
+  .field-input:focus,
+  .field-input:focus-visible {
+    outline: none;
+    border-color: var(--color-primary-deep);
+    box-shadow: 0 0 0 3px rgb(255 154 61 / 0.16);
+  }
+
+  /* Inspection plate — the intentional light "capture well" for ivory product
+     renders so the studio-lit photos read as measured shots inside the dark
+     theme instead of accidental white holes. A warm matte border blends the
+     photo's own backdrop; reticle corners tie it to the schematic language.
+     Photo goes in a child that keeps a small inset so the mat shows. */
+  .product-plate {
+    @apply relative overflow-hidden rounded-[var(--radius-card)];
+    background: radial-gradient(
+      130% 105% at 50% 0%,
+      #f7f2ec 0%,
+      #ece5db 55%,
+      #dcd3c6 100%
+    );
+    box-shadow:
+      inset 0 0 0 1px rgb(2 4 10 / 0.2),
+      inset 0 2px 6px 0 rgb(2 4 10 / 0.12);
+  }
+  .product-plate::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(to right, rgb(2 4 10 / 0.35) 0 10px, transparent 10px) 0
+        0 / 1px 100% no-repeat,
+      linear-gradient(to bottom, rgb(2 4 10 / 0.35) 0 10px, transparent 10px) 0
+        0 / 100% 1px no-repeat;
+    opacity: 0;
   }
 
   .team-card-image-zoom {
@@ -183,22 +301,14 @@
     will-change: transform;
   }
 
-  /* Deliberate exception to color law #5 (DESIGN.md) — the footer is the
-     one dark section on the site. Reuses --color-media-well (the site's
-     existing near-black token) so it doesn't introduce a new dark shade.
-     Shadows the surface/text/border tokens locally so existing token
-     classnames (bg-[color:var(--color-surface)],
-     text-[color:var(--color-text-muted)], etc.) resolve to light-on-dark
-     values without per-line edits. --color-primary is also shadowed here
-     (near-white with a faint saffron tint) so FloatingPaths reads as pale
-     glowing threads against the dark bg — safe because nothing else inside
-     the footer references it. */
+  /* Footer gets a slightly deeper local ground so it still has section weight
+     inside the global dark theme. */
   .footer-dark {
     --color-surface: var(--color-media-well);
-    --color-text: var(--color-bg);
-    --color-text-muted: #b7ada3;
-    --color-border: rgb(250 247 242 / 0.16);
-    --color-primary: #ede6de;
+    --color-text: #f5f3ef;
+    --color-text-muted: #a7b0c0;
+    --color-border: rgb(255 247 237 / 0.12);
+    --color-primary: #ea7317;
     --color-footer-label: #fa8f38;
   }
 }

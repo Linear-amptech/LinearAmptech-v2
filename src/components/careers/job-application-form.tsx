@@ -156,7 +156,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
 
   if (status === "success") {
     return (
-      <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 text-center shadow-[var(--shadow-card)] md:p-10">
+      <article className="surface-card rounded-2xl p-6 text-center md:p-10">
         <CheckCircle2
           className="mx-auto size-14 text-[color:var(--color-primary-deep)]"
           aria-hidden="true"
@@ -170,7 +170,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
         </p>
         <Link
           href="/careers"
-          className="mt-7 inline-flex h-11 items-center justify-center gap-2 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-5 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:border-[#F2C79E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25"
+          className="btn-ghost mt-7 h-11 px-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25"
         >
           <ArrowLeft className="size-4" aria-hidden="true" />
           Back to Careers
@@ -182,7 +182,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
   return (
     <form
       onSubmit={submitApplication}
-      className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)] md:p-8"
+      className="surface-card rounded-2xl p-5 md:p-8"
     >
       <div className="mb-7 border-b border-[color:var(--color-border)] pb-5">
         <p className="kicker mb-3">Application Form</p>
@@ -196,7 +196,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
           required
           value={form.fullName}
           onChange={(event) => updateForm("fullName", event.target.value)}
-          className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
+          className="field-input h-12 px-4 text-base"
           placeholder="Full name"
         />
         <AppSelect
@@ -205,7 +205,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
           onValueChange={(nextValue) => updateForm("gender", nextValue)}
           name="gender"
           placeholder="Gender"
-          className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
+          className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-border-strong)] focus-visible:border-[color:var(--color-primary-deep)] focus-visible:ring-[color:var(--color-primary-deep)]/15 data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface-soft)]"
           options={[
             { value: "Male", label: "Male" },
             { value: "Female", label: "Female" },
@@ -217,7 +217,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
           type="email"
           value={form.email}
           onChange={(event) => updateForm("email", event.target.value)}
-          className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
+          className="field-input h-12 px-4 text-base"
           placeholder="Email address"
         />
         <input
@@ -225,7 +225,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
           type="tel"
           value={form.mobileNumber}
           onChange={(event) => updateForm("mobileNumber", event.target.value)}
-          className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
+          className="field-input h-12 px-4 text-base"
           placeholder="Mobile number"
         />
         <AppSelect
@@ -236,7 +236,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
           }
           name="educationQualification"
           placeholder="Education qualification"
-          className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
+          className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-border-strong)] focus-visible:border-[color:var(--color-primary-deep)] focus-visible:ring-[color:var(--color-primary-deep)]/15 data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface-soft)]"
           options={[
             { value: "Diploma", label: "Diploma" },
             { value: "Graduate", label: "Graduate" },
@@ -251,7 +251,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
           onChange={(event) =>
             updateForm("linkedInProfile", event.target.value)
           }
-          className="h-12 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
+          className="field-input h-12 px-4 text-base"
           placeholder="LinkedIn profile URL"
         />
         <div className="md:col-span-2">
@@ -260,7 +260,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
             type="url"
             value={form.resumeUrl}
             onChange={(event) => updateResumeUrl(event.target.value)}
-            className="h-12 w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-base text-[color:var(--color-text)] outline-none focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
+            className="field-input h-12 px-4 text-base"
             placeholder="Public Google Drive or Docs resume URL"
           />
           <div className="mb-2 min-h-5">
@@ -313,7 +313,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="group mt-1 cursor-pointer inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+        className="btn-primary group mt-1 h-12 w-full cursor-pointer px-6 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
       >
         {status === "submitting" ? (
           <>

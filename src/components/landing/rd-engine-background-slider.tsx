@@ -159,8 +159,20 @@ export function RdEngineBackgroundSlider() {
           </motion.div>
         );
       })}
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(253_234_215_/_0.22)_0%,transparent_38%,rgb(234_115_23_/_0.3)_100%)] mix-blend-soft-light" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_48%,transparent_0%,rgb(18_17_16_/_0.08)_55%,rgb(18_17_16_/_0.28)_100%)]" />
+      <div
+        className="absolute inset-0 mix-blend-soft-light"
+        style={{
+          background:
+            "linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 16%, transparent) 0%, transparent 46%, color-mix(in srgb, var(--color-primary) 24%, transparent) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 76% 48%, transparent 0%, color-mix(in srgb, var(--color-bg) 14%, transparent) 55%, color-mix(in srgb, var(--color-bg) 42%, transparent) 100%)",
+        }}
+      />
     </div>
   );
 }

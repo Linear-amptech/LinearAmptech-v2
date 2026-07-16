@@ -45,7 +45,7 @@ export function AppSelect({
     >
       <Select.Trigger
         className={cn(
-          "flex h-12 w-full items-center justify-between gap-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 text-left text-sm text-[color:var(--color-text)] outline-none transition-all duration-300 hover:border-[color:var(--color-text)]/25 focus-visible:border-[color:var(--color-text)]/30 focus-visible:ring-2 focus-visible:ring-[color:var(--color-text)]/10 data-[popup-open]:border-[color:var(--color-text)]/30",
+          "flex h-12 w-full items-center justify-between gap-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 text-left text-sm text-[color:var(--color-text)] outline-none transition-all duration-300 hover:border-[color:var(--color-accent-border)] focus-visible:border-[color:var(--color-primary-deep)] focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/15 data-[popup-open]:border-[color:var(--color-primary-deep)]",
           className,
         )}
       >
@@ -68,7 +68,7 @@ export function AppSelect({
           alignItemWithTrigger={false}
           className="z-[80]"
         >
-          <Select.Popup className="min-w-[var(--anchor-width)] max-w-[calc(100vw-2rem)] origin-[var(--transform-origin)] overflow-hidden rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-1.5 text-sm text-[color:var(--color-text)] shadow-[0_18px_50px_rgba(15,23,42,0.16)] outline-none transition-[opacity,transform] duration-200 ease-out data-[ending-style]:-translate-y-1 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:-translate-y-1 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
+          <Select.Popup className="min-w-[var(--anchor-width)] max-w-[calc(100vw-2rem)] origin-[var(--transform-origin)] overflow-hidden rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-1.5 text-sm text-[color:var(--color-text)] shadow-[var(--shadow-card-hover)] outline-none transition-[opacity,transform] duration-200 ease-out data-[ending-style]:-translate-y-1 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:-translate-y-1 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
             {options.map((option) => (
               <Select.Item
                 key={option.value}

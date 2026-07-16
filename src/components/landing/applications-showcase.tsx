@@ -53,7 +53,7 @@ function ApplicationCard({
     applicationObjectPositions[application.title] ?? "object-center";
 
   return (
-    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
+    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3">
       <div className="media-well aspect-[16/11]">
         <Image
           src={imagePath}
@@ -88,7 +88,7 @@ export function ApplicationsShowcase({
   return (
     <section
       id="applications"
-      className="flex min-h-[100svh] items-center bg-[color:var(--color-surface-soft)] py-16"
+      className="bg-[color:var(--color-surface-soft)] py-24"
     >
       <Reveal className="container mx-auto w-full px-4 lg:px-4">
         <div className="max-w-3xl">

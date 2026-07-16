@@ -115,7 +115,7 @@ function MemberCard({
 }) {
   return (
     <Reveal className={`h-full ${className}`}>
-      <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
+      <article className="surface-card surface-card-interactive group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)]">
         <div className="relative aspect-square overflow-hidden bg-[color:var(--color-surface-soft)]">
           <Image
             src={member.image}
@@ -147,7 +147,7 @@ function MemberCard({
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`View ${member.name} on LinkedIn`}
-                className="grid size-8 shrink-0 place-items-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-deep)] shadow-[var(--shadow-card)] transition-colors duration-200 hover:border-transparent hover:bg-[#EA7317] hover:text-[#1C1917] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)]"
+                className="grid size-8 shrink-0 place-items-center rounded-lg border border-[color:var(--color-accent-border)]/40 bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-deep)] shadow-[var(--shadow-card)] transition-colors duration-200 hover:border-transparent hover:bg-[color:var(--color-primary)] hover:text-[color:var(--color-on-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)]"
               >
                 <LinkedInIcon className="size-3.5" />
               </a>
@@ -198,7 +198,7 @@ export default function TeamPage() {
                 <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                   <span
                     aria-hidden="true"
-                    className="h-[2px] w-[18px] bg-[#EA7317]"
+                    className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
                   />
                   {item.label}
                 </dt>
@@ -223,13 +223,24 @@ export default function TeamPage() {
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {companyWriteups.map((item) => (
               <Reveal key={item.label} className="h-full">
-                <article className="group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)] sm:p-8">
+                <article className="surface-card surface-card-interactive group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-[var(--radius-card)] p-7 sm:p-8">
+                  {/* Marble PCB render treated as a decorative texture, not a
+                      content photo: dimmed hard and sunk under a surface-color
+                      scrim so the panel reads as a dark textured card. */}
                   <Image
                     src={item.image}
                     alt=""
                     fill
                     sizes="(min-width: 1280px) 30vw, (min-width: 1024px) 32vw, 100vw"
-                    className="team-card-image-zoom object-cover"
+                    className="team-card-image-zoom object-cover object-right opacity-[0.2]"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-br from-[color:var(--color-surface)] via-[color:var(--color-surface)]/88 to-[color:var(--color-surface-soft)]/72"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[color:var(--color-bg)]/55 to-transparent"
                   />
                   <div className="relative z-10">
                     <h3 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">

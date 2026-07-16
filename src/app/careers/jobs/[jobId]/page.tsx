@@ -110,7 +110,7 @@ export default async function ApplyJobPage({ params }: ApplyPageProps) {
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.36fr_0.64fr]">
-          <Reveal className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:self-start">
+          <Reveal className="surface-card rounded-2xl p-6 lg:self-start">
             <p className="kicker mb-4">Role Summary</p>
             <h2 className="font-heading text-2xl font-semibold tracking-normal text-[color:var(--color-text)]">
               {job.jobTitle}

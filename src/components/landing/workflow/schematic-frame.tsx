@@ -41,7 +41,7 @@ export function SchematicFrame({
           <path
             d="M32 0H0V32"
             fill="none"
-            stroke="#E7E0D5"
+            stroke="var(--color-border)"
             strokeOpacity="0.6"
             strokeWidth="1"
           />
@@ -49,11 +49,16 @@ export function SchematicFrame({
       </defs>
 
       {/* canvas */}
-      <rect x="0" y="0" width="640" height="400" fill="#ffffff" />
+      <rect x="0" y="0" width="640" height="400" fill="var(--color-surface)" />
       <rect x="0" y="0" width="640" height="400" fill="url(#bp-grid)" />
 
       {/* corner reticle ticks */}
-      <g stroke="#78716C" strokeWidth="1.25" strokeOpacity="0.6" fill="none">
+      <g
+        stroke="var(--color-text-muted)"
+        strokeWidth="1.25"
+        strokeOpacity="0.6"
+        fill="none"
+      >
         <path d="M20 36V20H36" />
         <path d="M604 20H620V36" />
         <path d="M20 364V380H36" />
@@ -68,7 +73,7 @@ export function SchematicFrame({
         fontFamily="var(--font-app-heading)"
         fontSize="150"
         fontWeight="700"
-        fill="#1C1917"
+        fill="var(--color-text)"
         fillOpacity="0.04"
       >
         {num}
@@ -78,7 +83,7 @@ export function SchematicFrame({
       <g
         className="bp-art"
         data-draw={isActive && !reduced ? "on" : "off"}
-        stroke="#1C1917"
+        stroke="var(--color-text)"
         fill="none"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -94,7 +99,7 @@ export function SchematicFrame({
         fontFamily="var(--font-app-mono)"
         fontSize="11"
         letterSpacing="2"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
       >
         {label.toUpperCase()}
       </text>

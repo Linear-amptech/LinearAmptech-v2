@@ -36,7 +36,7 @@ export default function CareersPage() {
               <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                 <span
                   aria-hidden="true"
-                  className="h-[2px] w-[18px] bg-[#EA7317]"
+                  className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
                 />
                 Open Roles
               </dt>
@@ -48,7 +48,7 @@ export default function CareersPage() {
               <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                 <span
                   aria-hidden="true"
-                  className="h-[2px] w-[18px] bg-[#EA7317]"
+                  className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
                 />
                 Location
               </dt>
@@ -60,7 +60,7 @@ export default function CareersPage() {
               <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                 <span
                   aria-hidden="true"
-                  className="h-[2px] w-[18px] bg-[#EA7317]"
+                  className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
                 />
                 Type
               </dt>
@@ -76,7 +76,7 @@ export default function CareersPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <Reveal className="max-w-3xl">
             <p className="kicker mb-4">Open Roles</p>
-            <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
+            <h2 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
               Career paths aligned with RF engineering and product delivery.
             </h2>
             <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">

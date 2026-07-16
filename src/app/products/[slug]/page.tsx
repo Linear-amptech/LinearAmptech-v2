@@ -83,7 +83,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </div>
               <Link
                 href="/contact"
-                className="group mt-9 inline-flex h-12 items-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
+                className="btn-primary group mt-9 h-12 px-6 text-sm font-semibold"
               >
                 Request Product Quote
                 <ArrowRight
@@ -93,16 +93,19 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </Link>
             </div>
             <div className="media-frame">
-              {/* light well: the default dark well shows as thin corner arcs behind light imagery */}
-              <div className="media-well aspect-[4/3] bg-[color:var(--color-surface-soft)] bg-none">
-                <Image
-                  src={product.image}
-                  alt={product.alt}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 45vw, 100vw"
-                  className="object-cover"
-                />
+              {/* Warm inspection plate: the ivory studio render sits on a cream
+                  matte framed by the dark bezel, reading as a measured capture. */}
+              <div className="product-plate aspect-[4/3] p-3">
+                <div className="relative h-full w-full overflow-hidden rounded-lg">
+                  <Image
+                    src={product.image}
+                    alt={product.alt}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -119,7 +122,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                 >
                   <span
                     aria-hidden="true"
-                    className="h-[2px] w-[18px] bg-[#EA7317]"
+                    className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
                   />
                   <dt className="font-mono text-xs uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
                     {item.label}
@@ -141,7 +144,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                 Inquiry
               </p>
-              <h2 className="font-heading text-2xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+              <h2 className="font-heading text-2xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                 Request a quote
               </h2>
               <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -152,7 +155,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
               <Link
                 href="/contact"
-                className="group mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
+                className="btn-primary group mt-7 h-12 w-full px-6 text-sm font-semibold"
               >
                 Get Quote
                 <ArrowRight
@@ -192,20 +195,6 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               </div>
             </Reveal>
 
-            {/* <Reveal>
-              <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[var(--shadow-card)]">
-                <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-white">
-                  <Image
-                    src={product.image}
-                    alt={product.alt}
-                    fill
-                    sizes="(min-width: 1024px) 56vw, 100vw"
-                    className="object-contain p-3"
-                  />
-                </div>
-              </div>
-            </Reveal> */}
-
             <Reveal>
               <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] sm:p-8">
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
@@ -239,9 +228,9 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                     {product.gallery.map((item) => (
                       <figure
                         key={`${item.src}-${item.caption}`}
-                        className="overflow-hidden rounded-xl border border-[color:var(--color-border)] bg-white"
+                        className="surface-card overflow-hidden"
                       >
-                        <div className="relative aspect-[4/3] overflow-hidden">
+                        <div className="media-well aspect-[4/3] rounded-none">
                           <Image
                             src={item.src}
                             alt={item.alt}

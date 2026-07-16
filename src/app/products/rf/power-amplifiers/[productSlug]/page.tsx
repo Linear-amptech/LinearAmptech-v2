@@ -185,15 +185,19 @@ export default async function RfPowerAmplifierProductPage({
               </div>
             </div>
             <div className="media-frame">
-              <div className="media-well aspect-[4/3]">
-                <Image
-                  src={product.heroImage}
-                  alt={product.partNumber}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 45vw, 100vw"
-                  className="object-contain p-8"
-                />
+              {/* Warm inspection plate: the studio module photo sits on a cream
+                  matte framed by the dark bezel, reading as a measured capture. */}
+              <div className="product-plate aspect-[4/3] p-3">
+                <div className="relative h-full w-full">
+                  <Image
+                    src={product.heroImage}
+                    alt={product.partNumber}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-contain p-6"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -207,7 +211,7 @@ export default async function RfPowerAmplifierProductPage({
               <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                 Inquiry
               </p>
-              <h2 className="font-heading text-3xl font-bold leading-tight tracking-normal text-[color:var(--color-text)]">
+              <h2 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                 Product inquiry
               </h2>
               <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -217,7 +221,7 @@ export default async function RfPowerAmplifierProductPage({
               </p>
               <Link
                 href="/contact"
-                className="group mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] transition-colors hover:bg-[#E06A0F]"
+                className="btn-primary group mt-7 h-12 w-full px-6 text-sm font-semibold"
               >
                 Get Quote
                 <ArrowRight
@@ -267,20 +271,6 @@ export default async function RfPowerAmplifierProductPage({
                 </div>
               </Reveal>
             ) : null}
-
-            {/* <Reveal>
-              <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 shadow-[var(--shadow-card)]">
-                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[color:var(--color-surface-soft)]">
-                  <Image
-                    src={product.heroImage}
-                    alt={product.partNumber}
-                    fill
-                    sizes="(min-width: 1024px) 56vw, 100vw"
-                    className="object-contain p-3"
-                  />
-                </div>
-              </div>
-            </Reveal> */}
 
             <Reveal>
               <section>
@@ -373,9 +363,9 @@ export default async function RfPowerAmplifierProductPage({
                   {product.diagrams.map((diagram) => (
                     <figure
                       key={diagram.src}
-                      className="overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)]"
+                      className="surface-card overflow-hidden"
                     >
-                      <div className="relative aspect-[16/10] overflow-hidden bg-white">
+                      <div className="media-well aspect-[16/10] rounded-none">
                         <Image
                           src={diagram.src}
                           alt={diagram.alt}

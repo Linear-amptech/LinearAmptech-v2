@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { products } from "@/components/landing/data";
-import { ProductPortfolioCard } from "@/components/landing/landing-content-sections";
+import { products, productBands } from "@/components/landing/data";
 import { HeroThreads } from "@/components/layout/hero-threads";
 import { Reveal } from "@/components/landing/reveal";
+import { ProductListingCard } from "@/components/products/product-listing-card";
 
 export const metadata: Metadata = {
   title: "RF & mm-Wave Front End Modules | Linear Amptech",
@@ -45,7 +45,14 @@ export default function RfMmWaveFrontEndModulesPage() {
         <Reveal className="container mx-auto max-w-7xl px-4 lg:px-4">
           <div className="grid gap-6 lg:grid-cols-3">
             {frontEndModules.map((product) => (
-              <ProductPortfolioCard key={product.slug} product={product} />
+              <ProductListingCard
+                key={product.slug}
+                title={product.name}
+                href={`/products/${product.slug}`}
+                image={product.image}
+                alt={product.alt}
+                band={productBands[product.slug]?.label}
+              />
             ))}
           </div>
         </Reveal>

@@ -190,7 +190,9 @@ export function WorkflowExplorer() {
                       aria-hidden="true"
                       className={cn(
                         "absolute inset-y-0 left-0 hidden w-1 rounded-l-xl transition-colors lg:block",
-                        isActive ? "bg-[#EA7317]" : "bg-transparent",
+                        isActive
+                          ? "bg-[color:var(--color-primary)]"
+                          : "bg-transparent",
                       )}
                     />
                     <span className="flex items-center gap-3">

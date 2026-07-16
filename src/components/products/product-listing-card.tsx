@@ -4,7 +4,10 @@ import { ArrowRight } from "lucide-react";
 
 /**
  * Product listing card matching the homepage ProductPortfolioCard anatomy:
- * padded white plate, inset media-well image, saffron mono band eyebrow.
+ * dark surface-card, a warm `.product-plate` inspection well for the ivory
+ * studio renders, and a saffron mono band eyebrow. The plate's cream matte
+ * blends the photo's own studio backdrop so the render reads as a measured
+ * capture instead of a bright hole punched in the dark card.
  */
 export function ProductListingCard({
   title,
@@ -20,18 +23,19 @@ export function ProductListingCard({
   band?: string;
 }) {
   return (
-    <article className="group relative flex h-full flex-col rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-3 shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)]">
-      {/* light well: the default dark well shows as thin corner arcs behind these ivory renders */}
-      <div className="media-well aspect-[16/10] bg-[color:var(--color-surface-soft)] bg-none">
-        {image ? (
-          <Image
-            src={image}
-            alt={alt ?? title}
-            fill
-            sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          />
-        ) : null}
+    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3">
+      <div className="product-plate aspect-[16/10] p-2.5">
+        <div className="relative h-full w-full overflow-hidden rounded-md">
+          {image ? (
+            <Image
+              src={image}
+              alt={alt ?? title}
+              fill
+              sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+          ) : null}
+        </div>
       </div>
       <div className="flex flex-1 flex-col gap-2.5 px-2.5 pt-5 pb-2.5">
         <h3 className="min-h-[2.75em] font-heading text-[21px] font-semibold leading-snug tracking-tight text-[color:var(--color-text)]">

@@ -20,7 +20,14 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
       />
 
       {/* Faint inner PCB keep-out margin */}
-      <rect x="100" y="92" width="442" height="216" rx="4" stroke="#E7E0D5" />
+      <rect
+        x="100"
+        y="92"
+        width="442"
+        height="216"
+        rx="4"
+        stroke="var(--color-border)"
+      />
 
       {/* RF MODULE inner rectangle */}
       <rect
@@ -40,7 +47,7 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         textAnchor="middle"
         fontFamily="var(--font-app-mono)"
         fontSize="12"
-        fill="#1C1917"
+        fill="var(--color-text)"
         stroke="none"
       >
         RF MODULE
@@ -53,7 +60,7 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         textAnchor="middle"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         RFIC
@@ -66,25 +73,25 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         className="draw"
         pathLength={1}
         d="M390 172 H460 V140 H521"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       <path
         className="draw d2"
         pathLength={1}
         d="M390 188 H480 V180 H521"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       <path
         className="draw d2"
         pathLength={1}
         d="M390 212 H480 V220 H521"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
       <path
         className="draw d3"
         pathLength={1}
         d="M390 228 H460 V260 H521"
-        stroke="#EA7317"
+        stroke="var(--color-primary)"
       />
 
       {/* Connector pads — uniform squares, evenly spaced */}
@@ -119,7 +126,7 @@ export function IntegrationSchematic({ isActive, reduced }: SchematicProps) {
         textAnchor="middle"
         fontFamily="var(--font-app-mono)"
         fontSize="11"
-        fill="#78716C"
+        fill="var(--color-text-muted)"
         stroke="none"
       >
         BIAS

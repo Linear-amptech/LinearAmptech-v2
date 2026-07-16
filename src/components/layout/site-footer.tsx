@@ -15,9 +15,9 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="footer-dark relative overflow-hidden border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)]">
+    <footer className="footer-dark relative overflow-hidden border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[inset_0_1px_0_0_rgb(255_247_237/0.05)]">
       <div
-        className="absolute inset-0 opacity-60 [mask-image:linear-gradient(180deg,transparent_0%,black_45%)]"
+        className="absolute inset-0 opacity-70 [mask-image:linear-gradient(180deg,transparent_0%,black_45%)]"
         aria-hidden="true"
       >
         <FloatingPaths position={1} />

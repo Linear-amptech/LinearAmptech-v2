@@ -93,7 +93,7 @@ export function CareersBoard() {
   return (
     <section className="mt-12">
       <div className="grid gap-7">
-        <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)] md:p-6">
+        <div className="surface-card rounded-2xl p-5 md:p-6">
           <div className="mb-5 flex items-center justify-between border-b border-[color:var(--color-border)] pb-4">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               Filter Roles
@@ -115,7 +115,7 @@ export function CareersBoard() {
                 onKeyDown={(event) => {
                   if (event.key === "Enter") applySearch();
                 }}
-                className="h-12 w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] pl-11 pr-4 text-base text-[color:var(--color-text)] outline-none transition-colors placeholder:text-[color:var(--color-text-muted)] focus:border-[color:var(--color-primary-deep)] focus:ring-2 focus:ring-[color:var(--color-primary-deep)]/15"
+                className="field-input h-12 pl-11 pr-4 text-base"
                 placeholder="Search job title or location"
               />
             </div>
@@ -123,7 +123,7 @@ export function CareersBoard() {
               value={experience}
               onValueChange={setExperience}
               placeholder="Experience"
-              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-border-strong)] focus-visible:border-[color:var(--color-primary-deep)] focus-visible:ring-[color:var(--color-primary-deep)]/15 data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface-soft)]"
               options={experienceOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -133,7 +133,7 @@ export function CareersBoard() {
               value={workSite}
               onValueChange={setWorkSite}
               placeholder="Work site"
-              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-border-strong)] focus-visible:border-[color:var(--color-primary-deep)] focus-visible:ring-[color:var(--color-primary-deep)]/15 data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface-soft)]"
               options={workSiteOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -143,7 +143,7 @@ export function CareersBoard() {
               value={employmentType}
               onValueChange={setEmploymentType}
               placeholder="Employment"
-              className="border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] hover:border-[color:var(--color-text)]/30 focus-visible:border-[color:var(--color-primary-deep)] data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface)]"
+              className="border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] text-[color:var(--color-text)] hover:border-[color:var(--color-border-strong)] focus-visible:border-[color:var(--color-primary-deep)] focus-visible:ring-[color:var(--color-primary-deep)]/15 data-[popup-open]:border-[color:var(--color-primary-deep)] data-[popup-open]:bg-[color:var(--color-surface-soft)]"
               options={employmentTypeOptions.map((option) => ({
                 value: option,
                 label: option,
@@ -151,7 +151,7 @@ export function CareersBoard() {
             />
             <button
               type="button"
-              className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50 md:col-span-3 lg:col-span-1 lg:w-auto"
+              className="btn-primary group h-12 w-full px-6 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50 md:col-span-3 lg:col-span-1 lg:w-auto"
               onClick={applySearch}
             >
               Find Jobs
@@ -182,8 +182,8 @@ export function CareersBoard() {
         <div className="grid gap-6 lg:grid-cols-[0.4fr_0.6fr]">
           <div className="grid gap-4 lg:self-start">
             {filteredJobs.length === 0 ? (
-              <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
-                <h2 className="font-heading text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
+              <article className="surface-card rounded-2xl p-6">
+                <h2 className="font-heading text-2xl font-semibold tracking-normal text-[color:var(--color-text)]">
                   No matching roles
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -198,19 +198,19 @@ export function CareersBoard() {
                   onClick={() => {
                     setSelectedJob(job);
                   }}
-                  className={`group/card relative flex flex-col overflow-hidden rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[#F2C79E] hover:shadow-[var(--shadow-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25 ${
+                  className={`group/card relative flex flex-col overflow-hidden rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[color:var(--color-accent-border)] hover:shadow-[var(--shadow-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25 ${
                     visibleSelectedJob?.id === job.id
-                      ? "border-[#F2C79E] shadow-[var(--shadow-card-hover)]"
+                      ? "border-[color:var(--color-accent-border)] shadow-[var(--shadow-card-hover)]"
                       : "border-[color:var(--color-border)]"
                   }`}
                 >
                   {visibleSelectedJob?.id === job.id ? (
                     <span
                       aria-hidden="true"
-                      className="absolute inset-y-0 left-0 w-0.5 bg-[#EA7317]"
+                      className="absolute inset-y-0 left-0 w-0.5 bg-[color:var(--color-primary)]"
                     />
                   ) : null}
-                  <h2 className="font-heading text-2xl font-bold tracking-normal text-[color:var(--color-text)]">
+                  <h2 className="font-heading text-2xl font-semibold tracking-normal text-[color:var(--color-text)]">
                     {job.title}
                   </h2>
                   <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
@@ -263,15 +263,15 @@ export function CareersBoard() {
                   duration: prefersReducedMotion ? 0.2 : 0.38,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] md:p-7"
+                className="surface-card rounded-2xl p-6 md:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <h2 className="font-heading text-3xl font-bold tracking-normal text-[color:var(--color-text)]">
+                  <h2 className="font-heading text-3xl font-semibold tracking-normal text-[color:var(--color-text)]">
                     {visibleSelectedJob.title}
                   </h2>
                   <Link
                     href={`/careers/jobs/${visibleSelectedJob.id}`}
-                    className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#EA7317] px-6 text-sm font-semibold text-[#1C1917] shadow-[var(--shadow-card)] transition hover:bg-[#E06A0F] hover:shadow-[0_10px_24px_rgb(28_25_23/0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
+                    className="btn-primary group h-12 px-6 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-surface)] disabled:opacity-50"
                   >
                     Apply Now
                     <ArrowRight
