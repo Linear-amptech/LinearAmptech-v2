@@ -8,6 +8,7 @@ import { CompanyScrollVideo } from "@/components/landing/company-scroll-video";
 type CompanySectionProps = {
   children: React.ReactNode;
 };
+// dep
 
 // Slim scroll-progress rail for the pinned panel. Owns its own useScroll (the
 // parent early-returns for reduced-motion, so hooks can't live there) and binds
