@@ -36,7 +36,7 @@ export default function ContactPage() {
             Talk with Linear Amptech about RF systems, silicon, and deployment
             programs.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             Start a discussion around front-end architectures, semiconductor
             prototypes, measurement plans, or customer-specific R&D work.
           </p>

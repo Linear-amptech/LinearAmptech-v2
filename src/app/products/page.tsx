@@ -80,7 +80,7 @@ const productCategories: ProductCategory[] = [
     })),
   },
   {
-    title: "Phase Shifter IC",
+    title: "Phase Shifter",
     eyebrow: "Beamforming IC",
     description:
       "Phase-shifting IC capability for phased arrays, radar front ends, and reconfigurable RF systems.",
@@ -109,7 +109,7 @@ export default function ProductsPage() {
           <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             RF Front-End Product Portfolio
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             Browse the portfolio by category: power amplifiers, integrated
             front-end ICs, and phase shifter ICs.
           </p>
@@ -138,7 +138,7 @@ export default function ProductsPage() {
                     <h2 className="mt-3 font-heading text-[1.55rem] font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                       {category.title}
                     </h2>
-                    <p className="mt-5 flex-1 text-[0.95rem] leading-8 text-[color:var(--color-text-muted)]">
+                    <p className="mt-5 flex-1 text-[0.95rem] leading-8 text-[color:var(--color-text-muted)] xl:text-lg">
                       {category.description}
                     </p>
                     <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-primary-deep)]">
@@ -163,7 +163,7 @@ export default function ProductsPage() {
                   <section className="border-t border-[color:var(--color-border)] pt-12">
                     <div className="grid gap-8 lg:grid-cols-[0.32fr_0.68fr]">
                       <div>
-                        <div className="grid size-12 place-items-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
+                        <div className="grid size-12 place-items-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                           <Icon className="size-5" aria-hidden="true" />
                         </div>
                         <p className="mt-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
@@ -172,7 +172,7 @@ export default function ProductsPage() {
                         <h2 className="mt-3 font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                           {category.title}
                         </h2>
-                        <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)]">
+                        <p className="mt-4 text-sm leading-7 text-[color:var(--color-text-muted)] xl:text-xl xl:leading-8">
                           {category.description}
                         </p>
                         <Link

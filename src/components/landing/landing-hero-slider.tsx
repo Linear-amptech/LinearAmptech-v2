@@ -183,7 +183,7 @@ export function LandingHeroSlider() {
                   <h1 className="mt-5 max-w-[40rem] text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
                     {activeSlide.title}
                   </h1>
-                  <p className="mt-6 max-w-[34rem] text-base leading-7 text-white/65 sm:text-lg">
+                  <p className="mt-6 max-w-[34rem] text-base leading-7 text-white/65 sm:text-lg xl:text-xl xl:leading-8">
                     {activeSlide.description}
                   </p>
                 </motion.div>

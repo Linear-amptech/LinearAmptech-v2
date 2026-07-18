@@ -180,7 +180,7 @@ export function WorkflowExplorer() {
                     onMouseEnter={() => select(index)}
                     onFocus={() => setActive(index)}
                     className={cn(
-                      "group relative flex shrink-0 snap-start flex-col rounded-xl border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] lg:w-full lg:flex-1",
+                      "group relative flex shrink-0 snap-start flex-col rounded-lg border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)] lg:w-full lg:flex-1",
                       isActive
                         ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]"
                         : "border-transparent hover:bg-[color:var(--color-surface)]",
@@ -189,7 +189,7 @@ export function WorkflowExplorer() {
                     <span
                       aria-hidden="true"
                       className={cn(
-                        "absolute inset-y-0 left-0 hidden w-1 rounded-l-xl transition-colors lg:block",
+                        "absolute inset-y-0 left-0 hidden w-1 rounded-l-[var(--radius-card)] transition-colors lg:block",
                         isActive
                           ? "bg-[color:var(--color-primary)]"
                           : "bg-transparent",
@@ -208,7 +208,7 @@ export function WorkflowExplorer() {
                       </span>
                       <span
                         className={cn(
-                          "font-heading text-sm font-semibold leading-snug transition-colors",
+                          "font-heading text-sm font-semibold leading-snug transition-colors xl:text-lg",
                           isActive
                             ? "text-[color:var(--color-text)]"
                             : "text-[color:var(--color-text-muted)] group-hover:text-[color:var(--color-text)]",
@@ -218,7 +218,7 @@ export function WorkflowExplorer() {
                       </span>
                     </span>
                     {isActive ? (
-                      <span className="mt-2 max-w-sm text-xs leading-5 text-[color:var(--color-text-muted)]">
+                      <span className="mt-2 max-w-sm text-xs leading-5 text-[color:var(--color-text-muted)] xl:text-lg xl:leading-8">
                         {item.description}
                       </span>
                     ) : null}

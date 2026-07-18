@@ -33,7 +33,7 @@ export default function RfMmWaveFrontEndModulesPage() {
           <h1 className="font-heading max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             RF & mm-Wave Front End Modules
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             Fully integrated transmitter, receiver, and radar front-end chips
             based on GF 130nm SiGe BiCMOS technology for high-frequency RF
             systems.

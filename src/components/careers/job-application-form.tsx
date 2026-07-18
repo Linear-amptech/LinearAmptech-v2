@@ -156,7 +156,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
 
   if (status === "success") {
     return (
-      <article className="surface-card rounded-2xl p-6 text-center md:p-10">
+      <article className="surface-card rounded-lg p-6 text-center md:p-10">
         <CheckCircle2
           className="mx-auto size-14 text-[color:var(--color-primary-deep)]"
           aria-hidden="true"
@@ -182,7 +182,7 @@ export function JobApplicationForm({ job }: { job: Job }) {
   return (
     <form
       onSubmit={submitApplication}
-      className="surface-card rounded-2xl p-5 md:p-8"
+      className="surface-card rounded-lg p-5 md:p-8"
     >
       <div className="mb-7 border-b border-[color:var(--color-border)] pb-5">
         <p className="kicker mb-3">Application Form</p>

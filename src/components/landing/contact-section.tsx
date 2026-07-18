@@ -116,12 +116,12 @@ export function ContactSection() {
             <h2 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
               Build your next silicon innovation with Linear Amptech.
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg xl:text-xl">
               Tell us the band, architecture, and target. We scope RF, analog,
               mixed-signal, and ASIC programs from concept to validation.
             </p>
 
-            <div className="surface-card mt-8 flex flex-1 flex-col overflow-hidden rounded-2xl">
+            <div className="surface-card mt-8 flex flex-1 flex-col overflow-hidden rounded-lg">
               <dl className="flex flex-1 flex-col divide-y divide-[color:var(--color-border-strong)]">
                 {directory.map((row) => {
                   const Icon = row.icon;
@@ -166,7 +166,7 @@ export function ContactSection() {
           <Reveal className="h-full">
             <form
               onSubmit={submitContact}
-              className="surface-card flex h-full flex-col rounded-2xl p-6 sm:p-8"
+              className="surface-card flex h-full flex-col rounded-lg p-6 sm:p-8"
             >
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="grid gap-2 text-xs font-medium text-[color:var(--color-text-muted)]">

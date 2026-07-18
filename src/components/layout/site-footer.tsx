@@ -41,7 +41,7 @@ export function SiteFooter() {
                 />
               </span>
             </Link>
-            <p className="mt-5 max-w-md text-sm leading-6 text-[color:var(--color-text-muted)]">
+            <p className="mt-5 max-w-md text-sm leading-6 text-[color:var(--color-text-muted)] xl:text-base xl:leading-7">
               Linear-AmpTech develops RF front-end technologies, GaN PA modules,
               CMOS/BiCMOS RFICs, mm-wave transceivers, active antennas,
               packaging, validation, and semiconductor R&D programs.

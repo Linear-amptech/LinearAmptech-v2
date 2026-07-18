@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type RefObject } from "react";
-import { motion, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 import { CompanyScrollVideo } from "@/components/landing/company-scroll-video";
 
@@ -9,36 +8,6 @@ type CompanySectionProps = {
   children: React.ReactNode;
 };
 // dep
-
-// Slim scroll-progress rail for the pinned panel. Owns its own useScroll (the
-// parent early-returns for reduced-motion, so hooks can't live there) and binds
-// the exploded-package scrub directly to a motion value — no per-frame setState.
-// It fills the left column's dead space and makes the long pin feel earned.
-function ScrubProgressRail({
-  scrollTargetRef,
-}: {
-  scrollTargetRef: RefObject<HTMLElement | null>;
-}) {
-  const { scrollYProgress } = useScroll({
-    target: scrollTargetRef,
-    offset: ["start start", "end end"],
-  });
-
-  return (
-    <div className="mt-14 hidden max-w-[22rem] lg:block">
-      <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
-        Package stack-up
-      </p>
-      <div className="mt-3 h-[3px] w-full overflow-hidden rounded-full bg-[color:var(--color-border-strong)]">
-        <motion.div
-          aria-hidden="true"
-          className="h-full w-full origin-left rounded-full bg-[color:var(--color-primary)]"
-          style={{ scaleX: scrollYProgress }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export function CompanySection({ children }: CompanySectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -64,7 +33,7 @@ export function CompanySection({ children }: CompanySectionProps) {
               the whole frame, so an edge vignette would clip the payoff). */}
           <div className="relative min-h-[500px] rounded-[var(--radius-card)] shadow-[var(--shadow-soft)]">
             <div className="product-plate absolute inset-0">
-              <div className="absolute inset-[5px] overflow-hidden rounded-[0.5rem]">
+              <div className="absolute inset-[5px] overflow-hidden rounded-[var(--radius-card)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/assets/company/scrub/poster.webp"
@@ -88,10 +57,7 @@ export function CompanySection({ children }: CompanySectionProps) {
       >
         <div className="sticky top-0 flex min-h-svh items-center bg-[color:var(--color-bg)] pt-16 pb-8 lg:min-h-screen lg:pb-10 lg:pt-20">
           <div className="container mx-auto flex w-full flex-col items-center justify-center gap-6 bg-[color:var(--color-bg)] px-4 lg:flex-row lg:justify-between lg:gap-12 lg:px-4">
-            <div className="hidden w-full lg:order-1 lg:block">
-              {children}
-              <ScrubProgressRail scrollTargetRef={sectionRef} />
-            </div>
+            <div className="hidden w-full lg:order-1 lg:block">{children}</div>
             {/* On mobile the pinned viewport is reserved for the scrubbed
                 sequence; the text follows after the animation completes. */}
             {/* Studio-lit scrub sequence framed in the inspection plate: crisp
@@ -99,7 +65,7 @@ export function CompanySection({ children }: CompanySectionProps) {
                 (they span the full frame), and aspect-agnostic for portrait. */}
             <div className="relative order-1 aspect-[9/16] w-[min(98vw,calc(98svh*9/16),320px)] max-w-full rounded-[var(--radius-card)] shadow-[var(--shadow-soft)] sm:w-[min(98vw,calc(98svh*9/16),390px)] lg:order-2 lg:h-auto lg:max-h-[78vh] lg:w-full lg:max-w-[460px]">
               <div className="product-plate absolute inset-0">
-                <div className="absolute inset-[5px] overflow-hidden rounded-[0.5rem]">
+                <div className="absolute inset-[5px] overflow-hidden rounded-[var(--radius-card)]">
                   <CompanyScrollVideo scrollTargetRef={sectionRef} />
                 </div>
               </div>

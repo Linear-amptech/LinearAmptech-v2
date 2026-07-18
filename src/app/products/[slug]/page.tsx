@@ -68,7 +68,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
               <h1 className="font-heading text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
                 {product.name}
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
                 {product.description}
               </p>
               <div className="mt-8 flex flex-wrap gap-2.5">
@@ -140,14 +140,14 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.34fr_0.66fr] lg:px-4">
           <Reveal>
-            <aside className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
+            <aside className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                 Inquiry
               </p>
               <h2 className="font-heading text-2xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                 Request a quote
               </h2>
-              <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)]">
+              <p className="mt-4 text-sm leading-6 text-[color:var(--color-text-muted)] xl:text-base xl:leading-7">
                 Share your application, target environment, integration needs,
                 and timeline so the Linear Amptech team can respond with the
                 right product path.
@@ -168,7 +168,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
           <div className="grid gap-8">
             <Reveal>
-              <div className="overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
+              <div className="overflow-hidden rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
                 <div className="flex items-center justify-between gap-3 border-b border-[color:var(--color-border)] px-5 py-3.5">
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     Specifications
@@ -196,7 +196,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
             </Reveal>
 
             <Reveal>
-              <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] sm:p-8">
+              <article className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] sm:p-8">
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                   Overview
                 </p>
@@ -220,7 +220,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
             {product.gallery.length > 0 ? (
               <Reveal>
-                <div className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
+                <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
                   <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     Gallery
                   </p>

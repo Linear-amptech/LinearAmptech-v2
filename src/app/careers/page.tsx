@@ -21,7 +21,7 @@ export default function CareersPage() {
           <h1 className="font-heading max-w-5xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             Build hardware that moves from bench to field.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             Join Linear Amptech in Roorkee to work on embedded hardware, RF
             communication nodes, semiconductor prototyping, and real-world
             electronic systems.
@@ -79,7 +79,7 @@ export default function CareersPage() {
             <h2 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)] sm:text-4xl lg:text-5xl">
               Career paths aligned with RF engineering and product delivery.
             </h2>
-            <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg">
+            <p className="mt-5 text-base leading-7 text-[color:var(--color-text-muted)] sm:text-lg xl:text-xl">
               Browse current openings, review role details, and submit an
               application directly from the job board.
             </p>

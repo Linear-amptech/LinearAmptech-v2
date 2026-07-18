@@ -67,7 +67,7 @@ export default async function ApplyJobPage({ params }: ApplyPageProps) {
           <h1 className="font-heading max-w-5xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             {job.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             Complete the application below with your contact details, LinkedIn
             profile, and a public Google Drive or Docs resume link.
           </p>
@@ -110,12 +110,12 @@ export default async function ApplyJobPage({ params }: ApplyPageProps) {
 
       <section className="bg-[color:var(--color-surface-soft)] py-24">
         <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.36fr_0.64fr]">
-          <Reveal className="surface-card rounded-2xl p-6 lg:self-start">
+          <Reveal className="surface-card rounded-lg p-6 lg:self-start">
             <p className="kicker mb-4">Role Summary</p>
             <h2 className="font-heading text-2xl font-semibold tracking-normal text-[color:var(--color-text)]">
               {job.jobTitle}
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[color:var(--color-text-muted)]">
+            <p className="mt-5 text-sm leading-7 text-[color:var(--color-text-muted)] xl:text-base">
               {job.description}
             </p>
           </Reveal>

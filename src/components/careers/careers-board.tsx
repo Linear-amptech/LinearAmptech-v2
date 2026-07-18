@@ -93,7 +93,7 @@ export function CareersBoard() {
   return (
     <section className="mt-12">
       <div className="grid gap-7">
-        <div className="surface-card rounded-2xl p-5 md:p-6">
+        <div className="surface-card rounded-lg p-5 md:p-6">
           <div className="mb-5 flex items-center justify-between border-b border-[color:var(--color-border)] pb-4">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               Filter Roles
@@ -182,7 +182,7 @@ export function CareersBoard() {
         <div className="grid gap-6 lg:grid-cols-[0.4fr_0.6fr]">
           <div className="grid gap-4 lg:self-start">
             {filteredJobs.length === 0 ? (
-              <article className="surface-card rounded-2xl p-6">
+              <article className="surface-card rounded-lg p-6">
                 <h2 className="font-heading text-2xl font-semibold tracking-normal text-[color:var(--color-text)]">
                   No matching roles
                 </h2>
@@ -198,9 +198,9 @@ export function CareersBoard() {
                   onClick={() => {
                     setSelectedJob(job);
                   }}
-                  className={`group/card relative flex flex-col overflow-hidden rounded-2xl border bg-[color:var(--color-surface)] p-5 text-left shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:border-[color:var(--color-accent-border)] hover:shadow-[var(--shadow-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25 ${
+                  className={`group/card relative flex flex-col overflow-hidden rounded-lg border bg-[color:var(--color-surface)] p-5 text-left shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-300 hover:shadow-[var(--shadow-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25 ${
                     visibleSelectedJob?.id === job.id
-                      ? "border-[color:var(--color-accent-border)] shadow-[var(--shadow-card-hover)]"
+                      ? "border-[color:var(--color-border)] shadow-[var(--shadow-card-hover)]"
                       : "border-[color:var(--color-border)]"
                   }`}
                 >
@@ -263,7 +263,7 @@ export function CareersBoard() {
                   duration: prefersReducedMotion ? 0.2 : 0.38,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="surface-card rounded-2xl p-6 md:p-7"
+                className="surface-card rounded-lg p-6 md:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <h2 className="font-heading text-3xl font-semibold tracking-normal text-[color:var(--color-text)]">

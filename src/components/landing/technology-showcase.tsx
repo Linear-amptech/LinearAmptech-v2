@@ -11,7 +11,7 @@ import { Reveal } from "@/components/landing/reveal";
 
 export type TechnologyPlatform = Pick<
   IpPlatform,
-  "name" | "image" | "description" | "focus"
+  "name" | "image" | "description"
 >;
 
 const technologyImageSets: Record<
@@ -43,7 +43,7 @@ function TechnologyCard({
     technologyImageSets[platform.name]?.[mode] ?? platform.image;
 
   return (
-    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3">
+    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3 xl:min-h-[34rem]">
       <div className="media-well aspect-[16/10]">
         <Image
           src={platformImage}
@@ -57,17 +57,9 @@ function TechnologyCard({
         <h3 className="font-heading text-[23px] font-semibold tracking-tight text-[color:var(--color-text)]">
           {platform.name}
         </h3>
-        <p className="mt-2.5 mb-5 line-clamp-3 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
+        <p className="mt-2.5 mb-5 line-clamp-3 text-sm leading-relaxed text-[color:var(--color-text-muted)] xl:line-clamp-none xl:text-lg xl:leading-7">
           {platform.description}
         </p>
-        <div className="mt-auto border-t border-[color:var(--color-border)] pt-4">
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
-            Focus
-          </p>
-          <p className="mt-1.5 line-clamp-2 text-[13px] font-medium leading-relaxed text-[color:var(--color-text)]">
-            {platform.focus}
-          </p>
-        </div>
       </div>
     </article>
   );

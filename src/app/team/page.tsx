@@ -24,19 +24,19 @@ const companyWriteups = [
   {
     label: "About us",
     title: "Who we are",
-    image: "/assets/team/about-saffron.png",
+    image: "/assets/team/who-we-are-dark.png",
     body: "Linearised Amplifier Technology & Services Pvt. Ltd. (Linear-AmpTech) is founded and driven by innovative minds from IIT Roorkee, one of India's premier technical institutes. The deep-tech startup targets cyber-physical system design with a focus on radio-frequency circuit and system design.",
   },
   {
     label: "Vision",
     title: "Our vision",
-    image: "/assets/team/vision-saffron.png",
+    image: "/assets/team/vision-dark.png",
     body: "To drive disruptive innovation in cyber-physical systems, delivering high-performance, indigenous technology solutions that secure global traction.",
   },
   {
     label: "Mission",
     title: "Our mission",
-    image: "/assets/team/mission-saffron.png",
+    image: "/assets/team/mission-dark.png",
     body: "The company is focused on innovation to cater to technical challenges in radio-frequency electronics targeting cyber-physical systems, with strengths in RF front-end component design, GaN-based MMIC and high-power modules, and CMOS/BiCMOS RFIC IP cores with silicon validation.",
   },
 ];
@@ -88,7 +88,7 @@ const team: TeamMember[] = [
 ];
 
 const specStrip = [
-  { label: "Team", value: `${String(team.length).padStart(2, "0")} Members` },
+  { label: "Team", value: "20+ Members" },
   { label: "Disciplines", value: "RF · Analog · Semiconductor" },
   { label: "Based in", value: "Roorkee · IIT" },
 ];
@@ -177,7 +177,7 @@ export default function TeamPage() {
           <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             The team driving next-generation RF semiconductor technology.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             Linear AmpTech brings together experienced RF engineers,
             researchers, and system architects dedicated to developing
             world-class RF and mm-wave front-end solutions.
@@ -224,23 +224,22 @@ export default function TeamPage() {
             {companyWriteups.map((item) => (
               <Reveal key={item.label} className="h-full">
                 <article className="surface-card surface-card-interactive group relative flex h-full min-h-[28rem] flex-col overflow-hidden rounded-[var(--radius-card)] p-7 sm:p-8">
-                  {/* Marble PCB render treated as a decorative texture, not a
-                      content photo: dimmed hard and sunk under a surface-color
-                      scrim so the panel reads as a dark textured card. */}
+                  {/* Decorative dark-theme card imagery: keep the text side
+                      protected while letting the right-side detail read. */}
                   <Image
                     src={item.image}
                     alt=""
                     fill
                     sizes="(min-width: 1280px) 30vw, (min-width: 1024px) 32vw, 100vw"
-                    className="team-card-image-zoom object-cover object-right opacity-[0.2]"
+                    className="object-cover object-right opacity-75"
                   />
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-br from-[color:var(--color-surface)] via-[color:var(--color-surface)]/88 to-[color:var(--color-surface-soft)]/72"
+                    className="absolute inset-0 bg-gradient-to-r from-[color:var(--color-surface)] via-[color:var(--color-surface)]/78 to-[color:var(--color-surface)]/28"
                   />
                   <div
                     aria-hidden="true"
-                    className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[color:var(--color-bg)]/55 to-transparent"
+                    className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[color:var(--color-bg)]/25 to-transparent"
                   />
                   <div className="relative z-10">
                     <h3 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -260,7 +259,7 @@ export default function TeamPage() {
             <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-balance text-[color:var(--color-text)] sm:text-4xl lg:text-[44px]">
               Meet our Leadership Team
             </h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)]">
+            <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)] xl:text-lg">
               The team spans company leadership, RF engineering, and product
               development with a focus on measurable semiconductor outcomes.
             </p>

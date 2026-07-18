@@ -438,7 +438,7 @@ export function SiteHeader() {
                       />
                       <ProductCategoryLink
                         href="/products/8-bit-phase-shifter-chip"
-                        title="Phase Shifter IC"
+                        title="Phase Shifter"
                         icon={ScanLine}
                         active={activeProductCategory === "phase"}
                         onSelect={() => setActiveProductCategory("phase")}
@@ -525,7 +525,7 @@ export function SiteHeader() {
           <Link
             href="/"
             onClick={handleHomeNavigate}
-            className="rounded-xl px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
+            className="rounded-lg px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
           >
             Home
           </Link>
@@ -588,7 +588,7 @@ export function SiteHeader() {
               href={item.href}
               onClick={handleSectionNavigate(item.href)}
               className={cn(
-                "rounded-xl px-3 py-3 text-sm font-semibold transition-colors hover:bg-[color:var(--color-surface-soft)]",
+                "rounded-lg px-3 py-3 text-sm font-semibold transition-colors hover:bg-[color:var(--color-surface-soft)]",
                 isActive(item.href)
                   ? "text-[color:var(--color-primary-deep)]"
                   : "text-[color:var(--color-text)]",
@@ -600,7 +600,7 @@ export function SiteHeader() {
           <Link
             href="/contact"
             onClick={closeMobile}
-            className="rounded-xl px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
+            className="rounded-lg px-3 py-3 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface-soft)]"
           >
             Contact
           </Link>

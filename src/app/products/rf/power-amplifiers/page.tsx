@@ -24,7 +24,7 @@ export default function RfPowerAmplifiersPage() {
           <h1 className="font-heading max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-[color:var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
             RF & mm-Wave Power Amplifiers
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             {rfPowerAmplifierIntro.description}
           </p>
         </Reveal>

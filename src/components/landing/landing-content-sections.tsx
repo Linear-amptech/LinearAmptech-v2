@@ -37,11 +37,10 @@ const homepageProductImages: Partial<Record<Product["slug"], string>> = {
 };
 
 const technologyPlatforms: TechnologyPlatform[] = ipPlatforms.map(
-  ({ name, image, description, focus }) => ({
+  ({ name, image, description }) => ({
     name,
     image,
     description,
-    focus,
   }),
 );
 
@@ -91,7 +90,7 @@ function SectionHeader({
         {title}
       </h2>
       {intro ? (
-        <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)]">
+        <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)] xl:text-lg">
           {intro}
         </p>
       ) : null}
@@ -195,7 +194,7 @@ function ProductsSection() {
                 <h3 className="mt-3 font-heading text-[1.55rem] font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                   {category.title}
                 </h3>
-                <p className="mt-5 flex-1 text-[0.95rem] leading-8 text-[color:var(--color-text-muted)]">
+                <p className="mt-5 flex-1 text-[0.95rem] leading-8 text-[color:var(--color-text-muted)] xl:text-lg">
                   {category.description}
                 </p>
                 <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-text)] transition-colors group-hover:text-[color:var(--color-primary-deep)]">
@@ -226,7 +225,7 @@ export function LandingContentSections() {
           />
           <Link
             href="/team"
-            className="group/read-more mt-7 inline-flex items-center gap-1.5 border-b border-[color:var(--color-border-strong)] pb-0.5 text-[15px] font-semibold text-[color:var(--color-primary-deep)] transition-colors hover:border-[color:var(--color-primary-deep)]"
+            className="group/read-more mt-7 inline-flex items-center gap-1.5 text-[15px] font-semibold text-[color:var(--color-primary-deep)] transition-colors"
           >
             Read more
             <ArrowRight
@@ -281,7 +280,7 @@ export function LandingContentSections() {
             <h2 className="font-heading text-3xl font-semibold leading-[1.08] tracking-tight text-[color:var(--color-text)] text-balance sm:text-4xl lg:text-[52px]">
               Semiconductor R&D engine for next-generation RF systems.
             </h2>
-            <p className="mt-6 text-[17px] leading-relaxed text-[color:var(--color-text-muted)]">
+            <p className="mt-6 text-[17px] leading-relaxed text-[color:var(--color-text-muted)] xl:text-lg">
               From RF architecture and silicon realization to packaged hardware
               and measured prototypes, Linear-AmpTech delivers complete
               development capability across the RF semiconductor value chain.
@@ -304,7 +303,7 @@ export function LandingContentSections() {
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     {label}
                   </p>
-                  <p className="mt-1.5 text-sm font-semibold text-[color:var(--color-text)]">
+                  <p className="mt-1.5 text-sm font-semibold text-[color:var(--color-text)] xl:text-lg">
                     {value}
                   </p>
                 </div>
@@ -326,7 +325,7 @@ export function LandingContentSections() {
             <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] text-balance sm:text-[42px]">
               Power Your Next RF System with Linear AmpTech Products.
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-[color:var(--color-text-muted)]">
+            <p className="mt-5 text-base leading-relaxed text-[color:var(--color-text-muted)] xl:text-lg">
               Talk directly with the engineers who design, tape out, and
               validate the hardware.
             </p>

@@ -56,8 +56,12 @@ export const assets = {
 
   cKuPaPackagedChip:
     "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-chip.jpg",
+  cKuPaPackagedChipFocused:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-chip-focused.jpg",
   cKuPaPackagedHardware:
     "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-hardware.jpg",
+  cKuPaPackagedHardwareFocused:
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-hardware-focused.jpg",
   cKuPaCard:
     "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/card-saffron-v6.png",
   hybridMicGanNews:
@@ -278,9 +282,9 @@ export const products: Product[] = [
     ],
     gallery: [
       {
-        src: assets.cKuPaPackagedHardware,
-        alt: "Packaged C-Ku band PA chip hardware",
-        caption: "Fully Integrated C-Ku Band Power Amplifier hardware",
+        src: assets.cKuPaPackagedChipFocused,
+        alt: "Packaged GaN PA chip",
+        caption: "Fully Integrated PA Chip",
       },
       {
         src: assets.cKuPaLayoutQfn44,
@@ -298,9 +302,9 @@ export const products: Product[] = [
         caption: "CW Output Power, Gain, PAE Performance (QFN56)",
       },
       {
-        src: assets.cKuPaPackagedChip,
-        alt: "Packaged GaN PA chip",
-        caption: "Fully Integrated PA Chip",
+        src: assets.cKuPaPackagedHardwareFocused,
+        alt: "Packaged C-Ku band PA chip hardware",
+        caption: "Fully Integrated C-Ku Band Power Amplifier hardware",
       },
       {
         src: assets.cKuPaChipRender,

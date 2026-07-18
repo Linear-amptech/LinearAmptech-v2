@@ -70,7 +70,7 @@ function ApplicationCard({
         <h3 className="font-heading text-xl font-semibold tracking-tight text-[color:var(--color-text)]">
           {application.title}
         </h3>
-        <p className="mt-2 mb-4 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
+        <p className="mt-2 mb-4 text-sm leading-relaxed text-[color:var(--color-text-muted)] xl:text-lg xl:leading-8">
           {application.description}
         </p>
       </div>
@@ -96,7 +96,7 @@ export function ApplicationsShowcase({
           <h2 className="font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-[color:var(--color-text)] text-balance sm:text-4xl lg:text-[44px]">
             RF products shaped around real deployment domains.
           </h2>
-          <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)]">
+          <p className="mt-5 text-[17px] leading-relaxed text-[color:var(--color-text-muted)] xl:text-xl">
             Linear-AmpTech&apos;s application framing is anchored in defense RF,
             6G, radar, phased arrays, active antennas, and RIS research.
           </p>
