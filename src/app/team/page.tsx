@@ -245,7 +245,7 @@ export default function TeamPage() {
                     <h3 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
                       {item.title}
                     </h3>
-                    <p className="mt-5 text-[1.0625rem] leading-8 text-[color:var(--color-text-muted)] xl:text-lg xl:leading-9">
+                    <p className="mt-5 text-justify text-[1.0625rem] leading-8 text-[color:var(--color-text-muted)] xl:text-lg xl:leading-9">
                       {item.body}
                     </p>
                   </div>
