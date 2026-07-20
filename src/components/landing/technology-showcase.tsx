@@ -43,7 +43,7 @@ function TechnologyCard({
     technologyImageSets[platform.name]?.[mode] ?? platform.image;
 
   return (
-    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3 xl:min-h-[34rem]">
+    <article className="surface-card surface-card-interactive group relative flex h-full flex-col p-3">
       <div className="media-well aspect-[16/10]">
         <Image
           src={platformImage}
@@ -53,7 +53,7 @@ function TechnologyCard({
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-1 flex-col px-2.5 pt-5 pb-2.5">
+      <div className="flex flex-col px-2.5 pt-5 pb-2.5">
         <h3 className="font-heading text-[23px] font-semibold tracking-tight text-[color:var(--color-text)]">
           {platform.name}
         </h3>
@@ -82,7 +82,7 @@ export function TechnologyShowcase({
           </h2>
         </div>
 
-        <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {platforms.map((platform) => (
             <TechnologyCard
               key={platform.name}
