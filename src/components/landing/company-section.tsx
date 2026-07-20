@@ -7,7 +7,7 @@ import { CompanyScrollVideo } from "@/components/landing/company-scroll-video";
 type CompanySectionProps = {
   children: React.ReactNode;
 };
-// deploy
+//
 
 export function CompanySection({ children }: CompanySectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
