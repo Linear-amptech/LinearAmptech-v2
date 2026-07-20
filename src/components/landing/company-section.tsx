@@ -11,7 +11,7 @@ type CompanySectionProps = {
 
 export function CompanySection({ children }: CompanySectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
-  // SSR-safe default: assume motion is allowed; refine on the client. deployed
+  // SSR-safe default: assume motion is allowed; refine on the client
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
