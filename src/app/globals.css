@@ -176,7 +176,7 @@
 @layer components {
   /* Mono uppercase label in the functional accent — the recurring saffron thread. */
   .kicker {
-    @apply font-mono text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)];
+    @apply font-mono text-[12px] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)];
   }
 
   /* Dark-asset framing: elevated saffron-black frame with a near-black well. */
@@ -195,6 +195,29 @@
       transparent 1px,
       transparent 12px
     );
+  }
+
+  /* Feathers the edges of dark video/image assets into the page background so
+     the asset's own near-black margin doesn't read as a hard rectangle. */
+  .scrub-edge-fade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        to bottom,
+        var(--color-bg) 0%,
+        transparent 9%,
+        transparent 91%,
+        var(--color-bg) 100%
+      ),
+      linear-gradient(
+        to right,
+        var(--color-bg) 0%,
+        transparent 16%,
+        transparent 84%,
+        var(--color-bg) 100%
+      );
   }
 
   /* ── Shared premium primitives (locked vocabulary; apply everywhere) ────────
@@ -369,6 +392,13 @@
     50% {
       opacity: 1;
     }
+  }
+}
+
+@layer utilities {
+  .kicker,
+  .font-mono.uppercase {
+    font-size: 12px !important;
   }
 }
 

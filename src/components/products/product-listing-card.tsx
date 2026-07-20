@@ -48,7 +48,7 @@ export function ProductListingCard({
         </h3>
         {band ? (
           <div className="mt-1.5">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+            <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
               Operating band
             </p>
             <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">

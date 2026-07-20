@@ -49,7 +49,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-footer-label)]">
+            <p className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-footer-label)]">
               Navigation
             </p>
             <div className="mt-5 grid gap-3 text-sm text-[color:var(--color-text-muted)]">
@@ -66,7 +66,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-footer-label)]">
+            <p className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-footer-label)]">
               Contact
             </p>
             <div className="mt-5 grid gap-4 text-sm text-[color:var(--color-text-muted)]">

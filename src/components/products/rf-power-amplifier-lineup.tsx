@@ -49,7 +49,7 @@ export function RfPowerAmplifierLineup() {
                 { label: "Gain (dB)", value: row.gainDb },
               ].map((field) => (
                 <div key={field.label}>
-                  <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+                  <dt className="font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                     {field.label}
                   </dt>
                   <dd className="mt-1 text-sm tabular-nums text-[color:var(--color-text)]">
@@ -58,7 +58,7 @@ export function RfPowerAmplifierLineup() {
                 </div>
               ))}
               <div className="col-span-2">
-                <dt className="font-mono text-[0.65rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+                <dt className="font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                   Mode of Operation
                 </dt>
                 <dd className="mt-1 text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -74,25 +74,25 @@ export function RfPowerAmplifierLineup() {
         <table className="min-w-full border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-[color:var(--color-border-strong)]">
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+              <th className="px-4 py-3 font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                 Part Number
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+              <th className="px-4 py-3 font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                 Center Frequency (GHz)
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+              <th className="px-4 py-3 font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                 Output Power (W)
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+              <th className="px-4 py-3 font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                 Efficiency
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+              <th className="px-4 py-3 font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                 Gain (dB)
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+              <th className="px-4 py-3 font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                 Type Mode of Operation
               </th>
-              <th className="px-4 py-3 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
+              <th className="px-4 py-3 font-mono text-[12px] font-medium uppercase tracking-wider text-[color:var(--color-primary-deep)]">
                 Details
               </th>
             </tr>

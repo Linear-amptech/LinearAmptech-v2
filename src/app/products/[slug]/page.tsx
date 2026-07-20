@@ -124,7 +124,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                     aria-hidden="true"
                     className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
                   />
-                  <dt className="font-mono text-xs uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+                  <dt className="font-mono text-[12px] uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
                     {item.label}
                   </dt>
                   <dd className="font-mono text-sm leading-6 text-[color:var(--color-text)]">
@@ -141,7 +141,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
         <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.34fr_0.66fr] lg:px-4">
           <Reveal>
             <aside className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+              <p className="mb-3 font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                 Inquiry
               </p>
               <h2 className="font-heading text-2xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -170,10 +170,10 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
             <Reveal>
               <div className="overflow-hidden rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] shadow-[var(--shadow-card)]">
                 <div className="flex items-center justify-between gap-3 border-b border-[color:var(--color-border)] px-5 py-3.5">
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                  <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     Specifications
                   </p>
-                  <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                  <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     Datasheet
                   </p>
                 </div>
@@ -183,7 +183,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                       key={spec.label}
                       className="grid gap-1 px-5 py-4 sm:grid-cols-[0.5fr_1fr] sm:items-baseline sm:gap-6"
                     >
-                      <dt className="font-mono text-xs uppercase tracking-[0.16em] text-[color:var(--color-text-muted)]">
+                      <dt className="font-mono text-[12px] uppercase tracking-[0.16em] text-[color:var(--color-text-muted)]">
                         {spec.label}
                       </dt>
                       <dd className="text-sm font-medium leading-6 text-[color:var(--color-text)] sm:text-right">
@@ -197,7 +197,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
 
             <Reveal>
               <article className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] sm:p-8">
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                   Overview
                 </p>
                 <div className="mt-6 divide-y divide-[color:var(--color-border)]">
@@ -221,7 +221,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
             {product.gallery.length > 0 ? (
               <Reveal>
                 <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
-                  <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                  <p className="mb-4 font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     Gallery
                   </p>
                   <div className="grid gap-4 md:grid-cols-2">
@@ -239,7 +239,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
                             className="object-contain p-3"
                           />
                         </div>
-                        <figcaption className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-[color:var(--color-text-muted)]">
+                        <figcaption className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-4 py-3 font-mono text-[12px] uppercase tracking-[0.16em] text-[color:var(--color-text-muted)]">
                           {item.caption}
                         </figcaption>
                       </figure>

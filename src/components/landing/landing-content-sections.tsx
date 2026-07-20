@@ -134,7 +134,7 @@ export function ProductPortfolioCard({
         </h3>
         {band ? (
           <div className="mt-1.5">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+            <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
               Operating band
             </p>
             <p className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--color-text)]">
@@ -188,7 +188,7 @@ function ProductsSection() {
                 />
               </div>
               <div className="flex flex-1 flex-col px-4 pb-4 pt-7">
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                <p className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                   {category.eyebrow}
                 </p>
                 <h3 className="mt-3 font-heading text-[1.55rem] font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -300,7 +300,7 @@ export function LandingContentSections() {
                     aria-hidden="true"
                     className="absolute inset-y-0 left-0 w-[3px] bg-[color:var(--color-primary)]"
                   />
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                  <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                     {label}
                   </p>
                   <p className="mt-1.5 text-sm font-semibold text-[color:var(--color-text)] xl:text-lg">

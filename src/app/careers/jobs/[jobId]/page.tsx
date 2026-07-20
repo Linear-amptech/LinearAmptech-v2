@@ -78,7 +78,7 @@ export default async function ApplyJobPage({ params }: ApplyPageProps) {
         <Reveal className="container mx-auto max-w-7xl px-4">
           <dl className="grid grid-cols-1 divide-y divide-[color:var(--color-border)] sm:grid-cols-3 sm:divide-y-0">
             <div className="flex flex-col gap-3 border-[color:var(--color-border)] py-6 sm:border-r sm:py-9 sm:pr-6">
-              <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+              <dt className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                 <MapPin className="size-4" aria-hidden="true" />
                 Location
               </dt>
@@ -87,7 +87,7 @@ export default async function ApplyJobPage({ params }: ApplyPageProps) {
               </dd>
             </div>
             <div className="flex flex-col gap-3 border-[color:var(--color-border)] py-6 sm:border-r sm:px-6 sm:py-9">
-              <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+              <dt className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                 <BriefcaseBusiness className="size-4" aria-hidden="true" />
                 Type
               </dt>
@@ -96,7 +96,7 @@ export default async function ApplyJobPage({ params }: ApplyPageProps) {
               </dd>
             </div>
             <div className="flex flex-col gap-3 py-6 sm:py-9 sm:pl-6">
-              <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+              <dt className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                 <CalendarDays className="size-4" aria-hidden="true" />
                 Posted
               </dt>

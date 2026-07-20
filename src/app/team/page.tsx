@@ -131,13 +131,13 @@ function MemberCard({
             }
           />
         </div>
-        <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-1 flex-col px-3 py-5">
           <div className="flex items-center justify-between gap-4">
             <div className="min-w-0">
               <h3 className="font-heading text-lg font-semibold leading-snug text-[color:var(--color-text)]">
                 {member.name}
               </h3>
-              <p className="mt-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
+              <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.18em] text-[color:var(--color-primary-deep)]">
                 {member.role}
               </p>
             </div>
@@ -195,7 +195,7 @@ export default function TeamPage() {
                   index === 0 ? "sm:pr-9" : "sm:px-9"
                 }`}
               >
-                <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                <dt className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                   <span
                     aria-hidden="true"
                     className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"
@@ -265,7 +265,7 @@ export default function TeamPage() {
             </p>
           </Reveal>
 
-          <div className="mt-16 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member, index) => (
               <MemberCard key={member.name + index} member={member} />
             ))}

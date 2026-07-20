@@ -27,21 +27,14 @@ export function CompanySection({ children }: CompanySectionProps) {
       <section id="company" className="py-24">
         <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.95fr_1.05fr] lg:px-4 ">
           <div>{children}</div>
-          {/* The studio-lit wafer render sits on a LIGHT gray backdrop, so on
-              the dark ground it is seated in the system inspection plate — a
-              framed capture well — rather than faded (its exploded frames fill
-              the whole frame, so an edge vignette would clip the payoff). */}
-          <div className="relative min-h-[500px] rounded-[var(--radius-card)] shadow-[var(--shadow-soft)]">
-            <div className="product-plate absolute inset-0">
-              <div className="absolute inset-[5px] overflow-hidden rounded-[var(--radius-card)]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/assets/company/scrub/poster.webp"
-                  alt="Semiconductor wafer visual for Linear-AmpTech"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
-            </div>
+          <div className="relative min-h-[500px] overflow-hidden rounded-[var(--radius-card)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/company/scrub/poster.webp"
+              alt="Semiconductor wafer visual for Linear-AmpTech"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="scrub-edge-fade" />
           </div>
         </div>
       </section>
@@ -60,15 +53,9 @@ export function CompanySection({ children }: CompanySectionProps) {
             <div className="hidden w-full lg:order-1 lg:block">{children}</div>
             {/* On mobile the pinned viewport is reserved for the scrubbed
                 sequence; the text follows after the animation completes. */}
-            {/* Studio-lit scrub sequence framed in the inspection plate: crisp
-                on the dark ground with no clipping of the exploded-view frames
-                (they span the full frame), and aspect-agnostic for portrait. */}
-            <div className="relative order-1 aspect-[9/16] w-[min(98vw,calc(98svh*9/16),320px)] max-w-full rounded-[var(--radius-card)] shadow-[var(--shadow-soft)] sm:w-[min(98vw,calc(98svh*9/16),390px)] lg:order-2 lg:h-auto lg:max-h-[78vh] lg:w-full lg:max-w-[460px]">
-              <div className="product-plate absolute inset-0">
-                <div className="absolute inset-[5px] overflow-hidden rounded-[var(--radius-card)]">
-                  <CompanyScrollVideo scrollTargetRef={sectionRef} />
-                </div>
-              </div>
+            <div className="relative order-1 aspect-[9/16] w-[min(98vw,calc(98svh*9/16),320px)] max-w-full overflow-hidden rounded-[var(--radius-card)] sm:w-[min(98vw,calc(98svh*9/16),390px)] lg:order-2 lg:h-auto lg:max-h-[78vh] lg:w-full lg:max-w-[460px]">
+              <CompanyScrollVideo scrollTargetRef={sectionRef} />
+              <div className="scrub-edge-fade" />
             </div>
           </div>
         </div>

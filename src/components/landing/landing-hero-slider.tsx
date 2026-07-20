@@ -177,7 +177,7 @@ export function LandingHeroSlider() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <p className="font-mono text-[0.72rem] uppercase tracking-[0.32em] text-[color:var(--color-primary-deep)]">
+                  <p className="font-mono text-[12px] uppercase tracking-[0.32em] text-[color:var(--color-primary-deep)]">
                     {activeSlide.eyebrow}
                   </p>
                   <h1 className="mt-5 max-w-[40rem] text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">

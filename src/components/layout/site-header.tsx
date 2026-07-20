@@ -408,7 +408,7 @@ export function SiteHeader() {
               <NavigationMenuContent className="bg-transparent p-0">
                 <div className="grid w-[min(52rem,calc(100vw-2rem))] md:grid-cols-[0.38fr_0.62fr]">
                   <div className="border-b border-[color:var(--color-border)] p-5 md:border-b-0 md:border-r">
-                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                    <p className="font-mono text-[12px] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                       Product categories
                     </p>
                     <div className="mt-3 divide-y divide-[color:var(--color-border)]">
@@ -448,7 +448,7 @@ export function SiteHeader() {
                   </div>
 
                   <div className="p-5">
-                    <p className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                    <p className="font-mono text-[12px] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                       {productPanel.label}
                     </p>
                     <div className="mt-3 divide-y divide-[color:var(--color-border)]">

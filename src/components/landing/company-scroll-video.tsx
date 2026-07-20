@@ -4,10 +4,10 @@ import { useCallback, useEffect, useRef, type RefObject } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// The scroll-scrubbed clip lives on disk as frame-003.webp … frame-176.webp.
+// The scroll-scrubbed clip lives on disk as frame-001.webp … frame-193.webp.
 // FIRST_FRAME is the number of the first file; FRAME_COUNT is how many there are.
-const FIRST_FRAME = 3;
-const FRAME_COUNT = 174;
+const FIRST_FRAME = 1;
+const FRAME_COUNT = 193;
 // ─────────────────────────────────────────────────────────────────────────────
 
 const BASE = "/assets/company/scrub";

@@ -208,7 +208,7 @@ export default async function RfPowerAmplifierProductPage({
         <div className="container mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[0.34fr_0.66fr] lg:px-4">
           <Reveal>
             <aside className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)] lg:sticky lg:top-28">
-              <p className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
+              <p className="mb-4 font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                 Inquiry
               </p>
               <h2 className="font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -237,7 +237,7 @@ export default async function RfPowerAmplifierProductPage({
               <Reveal>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                    <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Center Frequency
                     </p>
                     <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
@@ -245,7 +245,7 @@ export default async function RfPowerAmplifierProductPage({
                     </p>
                   </div>
                   <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                    <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Output Power
                     </p>
                     <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
@@ -253,7 +253,7 @@ export default async function RfPowerAmplifierProductPage({
                     </p>
                   </div>
                   <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                    <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Efficiency
                     </p>
                     <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
@@ -261,7 +261,7 @@ export default async function RfPowerAmplifierProductPage({
                     </p>
                   </div>
                   <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-5 shadow-[var(--shadow-card)]">
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                    <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                       Gain
                     </p>
                     <p className="mt-3 text-lg font-semibold leading-7 text-[color:var(--color-text)]">
@@ -274,7 +274,7 @@ export default async function RfPowerAmplifierProductPage({
 
             <Reveal>
               <section>
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
+                <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                   Key Features
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -316,7 +316,7 @@ export default async function RfPowerAmplifierProductPage({
 
             <Reveal>
               <section>
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
+                <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                   Applications
                 </p>
                 <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -335,7 +335,7 @@ export default async function RfPowerAmplifierProductPage({
                               aria-hidden="true"
                             />
                           </div>
-                          <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
+                          <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-text-muted)]">
                             Application
                           </p>
                         </div>
@@ -353,7 +353,7 @@ export default async function RfPowerAmplifierProductPage({
               <section className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-[var(--shadow-card)]">
                 <div className="flex items-end justify-between gap-4 border-b border-[color:var(--color-border)] pb-5">
                   <div>
-                    <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
+                    <p className="font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                       Diagrams
                     </p>
                   </div>

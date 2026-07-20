@@ -52,7 +52,7 @@ export default function ContactPage() {
                   index === 0 ? "sm:border-l-0 sm:pl-0" : ""
                 }`}
               >
-                <dt className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                <dt className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
                   <span
                     aria-hidden="true"
                     className="h-[2px] w-[18px] bg-[color:var(--color-primary)]"

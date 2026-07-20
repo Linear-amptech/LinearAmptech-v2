@@ -95,10 +95,10 @@ export function CareersBoard() {
       <div className="grid gap-7">
         <div className="surface-card rounded-lg p-5 md:p-6">
           <div className="mb-5 flex items-center justify-between border-b border-[color:var(--color-border)] pb-4">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+            <p className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
               Filter Roles
             </p>
-            <p className="font-mono text-xs tabular-nums uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
+            <p className="font-mono text-[12px] tabular-nums uppercase tracking-[0.18em] text-[color:var(--color-text-muted)]">
               {String(filteredJobs.length).padStart(2, "0")} /{" "}
               {String(jobs.length).padStart(2, "0")}
             </p>
@@ -169,7 +169,7 @@ export function CareersBoard() {
                   key={`${filter.clear}-${filter.label}`}
                   type="button"
                   onClick={() => clearFilter(filter.clear)}
-                  className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25"
+                  className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)] transition-colors hover:border-[color:var(--color-text)]/30 hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-primary-deep)]/25"
                 >
                   {filter.label}
                   <X className="size-3.5" aria-hidden="true" />
@@ -282,25 +282,25 @@ export function CareersBoard() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
                     <MapPin className="size-3.5" aria-hidden="true" />
                     {visibleSelectedJob.location}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
                     <BriefcaseBusiness
                       className="size-3.5"
                       aria-hidden="true"
                     />
                     {visibleSelectedJob.employmentType}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]">
                     <CalendarDays className="size-3.5" aria-hidden="true" />
                     Posted {visibleSelectedJob.datePosted}
                   </span>
                   {visibleSelectedJob.workType.map((type) => (
                     <span
                       key={type}
-                      className="inline-flex items-center rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]"
+                      className="inline-flex items-center rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.12em] text-[color:var(--color-text-muted)]"
                     >
                       {type}
                     </span>
@@ -313,7 +313,7 @@ export function CareersBoard() {
 
                 <div className="mt-8 grid gap-7 md:grid-cols-2">
                   <div>
-                    <h3 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
+                    <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
                       Key Responsibilities
                     </h3>
                     <ul className="mt-4 border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -329,7 +329,7 @@ export function CareersBoard() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
+                    <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
                       Requirements
                     </h3>
                     <ul className="mt-4 border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">
@@ -343,7 +343,7 @@ export function CareersBoard() {
                         </li>
                       ))}
                     </ul>
-                    <h3 className="mt-7 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
+                    <h3 className="mt-7 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-text)]">
                       Desired Skills
                     </h3>
                     <ul className="mt-4 border-t border-[color:var(--color-border)] text-sm leading-6 text-[color:var(--color-text-muted)]">

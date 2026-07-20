@@ -132,7 +132,7 @@ export default function ProductsPage() {
                     <div className="grid size-12 place-items-center rounded-lg border border-[color:var(--color-accent-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
-                    <p className="mt-8 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
+                    <p className="mt-8 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-primary-deep)]">
                       {category.eyebrow}
                     </p>
                     <h2 className="mt-3 font-heading text-[1.55rem] font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
@@ -166,7 +166,7 @@ export default function ProductsPage() {
                         <div className="grid size-12 place-items-center rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-primary-ink)]">
                           <Icon className="size-5" aria-hidden="true" />
                         </div>
-                        <p className="mt-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
+                        <p className="mt-5 font-mono text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-primary-deep)]">
                           {category.eyebrow}
                         </p>
                         <h2 className="mt-3 font-heading text-3xl font-semibold leading-tight tracking-normal text-[color:var(--color-text)]">
