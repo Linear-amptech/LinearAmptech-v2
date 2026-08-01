@@ -17,7 +17,7 @@ import { AppSelect } from "@/components/ui/select";
 import { companyContact } from "@/lib/company-data";
 // http://localhost:5001/contact
 // process.env.NEXT_PUBLIC_API_URL
-const API_BASE_URL = "process.env.NEXT_PUBLIC_API_URL";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const directory = [
   {
