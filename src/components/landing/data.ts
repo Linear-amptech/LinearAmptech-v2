@@ -25,14 +25,15 @@ export const assets = {
     "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/chip-render.png",
   transceiverCollage:
     "/assets/products/rf-mmwave-front-end-modules/transceiver-collage.png",
-  sourcePortfolioFrontEndChip:
-    "/assets/products/rf-mmwave-front-end-modules/radar/chip-render.png",
+
   receiverCard:
     "/assets/products/rf-mmwave-front-end-modules/receiver/card-saffron-v2.png",
   transmitterCard:
     "/assets/products/rf-mmwave-front-end-modules/transmitter/card-saffron-v2.png",
-  radarChipPhoto:
-    "/assets/products/rf-mmwave-front-end-modules/radar/chip-photo.png",
+  noiseFigure:
+    "/assets/products/rf-mmwave-front-end-modules/radar/noise-figure.png",
+  gainPerformance:
+    "/assets/products/rf-mmwave-front-end-modules/radar/gain-performance.png",
   radarCard:
     "/assets/products/rf-mmwave-front-end-modules/radar/card-saffron-v2.png",
   frontendReceiverChipPhoto:
@@ -53,11 +54,12 @@ export const assets = {
     "/assets/products/rf-mmwave-front-end-modules/radar/chip-layout.png",
   phaseShifterChipPhoto: "/assets/products/phase-shifter/chip-photo.jpg",
   phaseShifterCard: "/assets/products/phase-shifter/card-saffron-v2.png",
-
+  phaseFreq: "/assets/products/phase-shifter/phase-freq.jpg",
+  gainFreq: "/assets/products/phase-shifter/gain-freq.jpeg",
   cKuPaPackagedChip:
-    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-chip.jpg",
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-chip.png",
   cKuPaPackagedChipFocused:
-    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-chip-focused.jpg",
+    "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-chip.png",
   cKuPaPackagedHardware:
     "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/packaged-hardware.jpg",
   cKuPaPackagedHardwareFocused:
@@ -301,16 +303,16 @@ export const products: Product[] = [
         alt: "QFN56 CW output power gain and PAE performance plot",
         caption: "CW Output Power, Gain, PAE Performance (QFN56)",
       },
-      {
-        src: assets.cKuPaPackagedHardwareFocused,
-        alt: "Packaged C-Ku band PA chip hardware",
-        caption: "Fully Integrated C-Ku Band Power Amplifier hardware",
-      },
-      {
-        src: assets.cKuPaChipRender,
-        alt: "Fully integrated PA chip render",
-        caption: "Fully integrated PA chip — packaged part",
-      },
+      // {
+      //   src: assets.cKuPaPackagedHardwareFocused,
+      //   alt: "Packaged C-Ku band PA chip hardware",
+      //   caption: "Fully Integrated C-Ku Band Power Amplifier hardware",
+      // },
+      // {
+      //   src: assets.cKuPaChipRender,
+      //   alt: "Fully integrated PA chip render",
+      //   caption: "Fully integrated PA chip — packaged part",
+      // },
     ],
   },
   {
@@ -357,25 +359,25 @@ export const products: Product[] = [
       },
     ],
     gallery: [
-      {
-        src: assets.transmitterCard,
-        alt: "Fully integrated transmitter chip layout",
-        caption: "Transmitter chip primary visual",
-      },
+      // {
+      //   src: assets.transmitterCard,
+      //   alt: "Fully integrated transmitter chip layout",
+      //   caption: "Transmitter chip primary visual",
+      // },
       {
         src: assets.frontendTransmitterLayout,
-        alt: "Transmitter chip layout from slide 9",
-        caption: "Layout from transmitter chip slide",
+        alt: "small signal performance",
+        caption: "small signal performance",
       },
       {
         src: assets.frontendTransmitterEmSimulation,
-        alt: "Transmitter chip EM simulation result",
-        caption: "EM simulation result",
+        alt: "large signal performance",
+        caption: "large signal performance",
       },
       {
         src: assets.transceiverCollage,
-        alt: "Transmitter and receiver chip collage from portfolio slide",
-        caption: "Tx/Rx portfolio reference",
+        alt: "chip layout",
+        caption: "chip layout",
       },
     ],
   },
@@ -425,29 +427,29 @@ export const products: Product[] = [
     gallery: [
       {
         src: assets.frontendReceiverChipPhoto,
-        alt: "Receiver chip photo from slide 8",
-        caption: "Chip photo",
+        alt: "Receiver image",
+        caption: "Chip Image",
       },
       {
         src: assets.frontendReceiverLayout,
         alt: "Receiver chip layout from slide 8",
-        caption: "Receiver chip layout",
+        caption: "chip image",
       },
       {
         src: assets.frontendReceiverEmSimulation1,
-        alt: "Receiver chip EM simulation result 1",
-        caption: "EM simulation result",
+        alt: "Noise Figure performance",
+        caption: "Noise Figure performance",
       },
       {
         src: assets.frontendReceiverEmSimulation2,
-        alt: "Receiver chip EM simulation result 2",
-        caption: "EM simulation result",
+        alt: "Gain performance",
+        caption: "Gain performance",
       },
-      {
-        src: assets.transceiverCollage,
-        alt: "Transmitter and receiver chip collage from portfolio slide",
-        caption: "Tx/Rx portfolio reference",
-      },
+      // {
+      //   src: assets.transceiverCollage,
+      //   alt: "Transmitter and receiver chip collage from portfolio slide",
+      //   caption: "Tx/Rx portfolio reference",
+      // },
     ],
   },
   {
@@ -487,25 +489,25 @@ export const products: Product[] = [
       },
     ],
     gallery: [
-      {
-        src: assets.frontendRadarSystemLayout,
-        alt: "Radar front-end chip system layout from slide 10",
-        caption: "Radar front-end system layout",
-      },
+      // {
+      //   src: assets.frontendRadarSystemLayout,
+      //   alt: "Radar front-end chip system layout from slide 10",
+      //   caption: "Radar front-end system layout",
+      // },
       {
         src: assets.frontendRadarChipLayout,
-        alt: "Radar front-end chip layout from slide 10",
-        caption: "Radar chip layout",
+        alt: "Radar front-end chip ",
+        caption: "chip layout",
       },
       {
-        src: assets.radarChipPhoto,
-        alt: "Radar front-end chip layout",
-        caption: "Fully Integrated Radar Front-End Chip",
+        src: assets.noiseFigure,
+        alt: "Noise Figure Performance",
+        caption: "Noise Figure Performance",
       },
       {
-        src: assets.sourcePortfolioFrontEndChip,
-        alt: "Front-end chip portfolio image",
-        caption: "Portfolio front-end chip reference",
+        src: assets.gainPerformance,
+        alt: "Gain Performance",
+        caption: "Gain Performance",
       },
     ],
   },
@@ -548,6 +550,21 @@ export const products: Product[] = [
         src: assets.phaseShifterChipPhoto,
         alt: "8-bit phase shifter chip",
         caption: "8-Bit Phase Shifter Chip",
+      },
+      {
+        src: assets.frontendReceiverLayout,
+        alt: "chip image",
+        caption: "chip image",
+      },
+      {
+        src: assets.phaseFreq,
+        alt: "phase shift vs frequency",
+        caption: "phase shift vs frequency",
+      },
+      {
+        src: assets.gainFreq,
+        alt: "gain vs frequency",
+        caption: "gain vs frequency",
       },
     ],
   },

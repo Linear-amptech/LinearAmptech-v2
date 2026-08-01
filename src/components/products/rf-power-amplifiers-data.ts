@@ -45,7 +45,7 @@ export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
       "Detailed module lineup",
     ],
     image:
-      "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/card-saffron-v2.png",
+      "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/module_photo_2.png",
     alt: "Hybrid MIC PA module bench hardware",
     operatingBand: "0.49-3.5 GHz",
   },

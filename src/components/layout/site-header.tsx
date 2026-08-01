@@ -337,8 +337,8 @@ export function SiteHeader() {
           : cn(
               "bg-[color:var(--color-bg)]",
               elevated
-                ? "border-b border-[color:var(--color-border)] shadow-[var(--shadow-header)]"
-                : "border-b border-transparent",
+                ? " shadow-[var(--shadow-header)]"
+                : " border-transparent",
             ),
       )}
     >
