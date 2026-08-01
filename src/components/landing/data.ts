@@ -549,7 +549,7 @@ export const products: Product[] = [
       {
         src: assets.phaseShifterChipPhoto,
         alt: "8-bit phase shifter chip",
-        caption: "8-Bit Phase Shifter Chip",
+        caption: "chip layout",
       },
       {
         src: assets.frontendReceiverLayout,
