@@ -428,7 +428,7 @@ export const products: Product[] = [
       {
         src: assets.frontendReceiverChipPhoto,
         alt: "Receiver image",
-        caption: "Chip Image",
+        caption: "Chip Layout",
       },
       {
         src: assets.frontendReceiverLayout,
