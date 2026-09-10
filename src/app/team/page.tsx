@@ -65,7 +65,7 @@ const team: TeamMember[] = [
   },
   {
     name: "Dr. Aditya Pal",
-    role: "Chief Operating Officer",
+    role: "Chief Excecutive Officer",
     group: "Leadership",
     image: "/assets/team/headshots/aditya-pal.jpg",
     imagePosition: "50% 0%",
