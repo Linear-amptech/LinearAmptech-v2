@@ -1,5 +1,5 @@
 "use client";
-
+// updated
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -363,7 +363,7 @@ export function SiteHeader() {
             className="flex items-center"
           >
             <Image
-              src="/assets/brand/logo.png"
+              src="/assets/brand/logo.webp"
               alt="Linear-AmpTech logo"
               width={104}
               height={58}

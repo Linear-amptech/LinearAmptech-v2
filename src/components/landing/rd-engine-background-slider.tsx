@@ -22,7 +22,7 @@ const CROSSFADE_SECONDS = 1.6;
 
 const rdEngineSlides: RdEngineSlide[] = [
   {
-    src: "/assets/rd-engine/wafer-probe-lab.png",
+    src: "/assets/rd-engine/wafer-probe-lab.webp",
     description:
       "Wafer-level RF probing environment for semiconductor characterization and device research.",
     objectPosition: "62% 50%",
@@ -36,7 +36,7 @@ const rdEngineSlides: RdEngineSlide[] = [
     },
   },
   {
-    src: "/assets/rd-engine/rf-validation-bench.png",
+    src: "/assets/rd-engine/rf-validation-bench.webp",
     description:
       "RF validation bench with instrumentation for packaged hardware measurement and prototype bring-up.",
     objectPosition: "70% 50%",
@@ -50,7 +50,7 @@ const rdEngineSlides: RdEngineSlide[] = [
     },
   },
   {
-    src: "/assets/rd-engine/mmic-inspection-lab.png",
+    src: "/assets/rd-engine/mmic-inspection-lab.webp",
     description:
       "MMIC inspection and RF probe station setup for device-level semiconductor R&D.",
     objectPosition: "68% 50%",
@@ -64,7 +64,7 @@ const rdEngineSlides: RdEngineSlide[] = [
     },
   },
   {
-    src: "/assets/rd-engine/mmwave-validation-lab.png",
+    src: "/assets/rd-engine/mmwave-validation-lab.webp",
     description:
       "mmWave prototype validation bench with shielded fixture, RF connectors, and measurement instrumentation.",
     objectPosition: "72% 50%",
@@ -133,7 +133,7 @@ export function RdEngineBackgroundSlider() {
             }}
           >
             <motion.div
-              className="absolute -inset-[3%] bg-cover bg-no-repeat brightness-[0.94] contrast-[0.96] saturate-[1.05] sepia-[0.14]"
+              className="absolute -inset-[3%] bg-cover bg-no-repeat"
               data-image-description={slide.description}
               style={{
                 backgroundImage: `url(${slide.src})`,
@@ -159,20 +159,6 @@ export function RdEngineBackgroundSlider() {
           </motion.div>
         );
       })}
-      <div
-        className="absolute inset-0 mix-blend-soft-light"
-        style={{
-          background:
-            "linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 16%, transparent) 0%, transparent 46%, color-mix(in srgb, var(--color-primary) 24%, transparent) 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(circle at 76% 48%, transparent 0%, color-mix(in srgb, var(--color-bg) 14%, transparent) 55%, color-mix(in srgb, var(--color-bg) 42%, transparent) 100%)",
-        }}
-      />
     </div>
   );
 }

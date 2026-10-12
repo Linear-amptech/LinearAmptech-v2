@@ -17,6 +17,7 @@ export type RfPowerAmplifierTableRow = {
   gainDb: string;
   modeOfOperation: string;
   slug?: string;
+  datasheetHref?: string;
 };
 
 export type RfPowerAmplifierCategory = {
@@ -45,7 +46,7 @@ export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
       "Detailed module lineup",
     ],
     image:
-      "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/module_photo_2.png",
+      "/assets/products/rf-power-amplifiers/hybrid-mic-pa-modules/module_photo_2.webp",
     alt: "Hybrid MIC PA module bench hardware",
     operatingBand: "0.49-3.5 GHz",
   },
@@ -62,7 +63,7 @@ export const rfPowerAmplifierCategories: RfPowerAmplifierCategory[] = [
       "Tapeout and measurement complete",
     ],
     image:
-      "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/card-saffron-v6.png",
+      "/assets/products/rf-power-amplifiers/c-ku-band-pa-chip/card-saffron-v6.webp",
     alt: "Fully integrated C-Ku band power amplifier chip hardware",
     operatingBand: "4-19.5 GHz",
   },
@@ -74,7 +75,8 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     partNumber: "LAMP-PACF1P9-10W",
     summary: "50 Ω, Wideband, 1.5 to 2.5 GHz, 7.7-10 W, 28V, SMA.",
     shortSpec: "1.5-2.5 GHz, 7.7-10 W, 28V, SMA",
-    heroImage: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/hero.png",
+    heroImage:
+      "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/hero.webp",
     keyFeatures: [
       "Frequency:1.5-2.5GHz",
       "Drain efficiency: 60-73%",
@@ -85,19 +87,19 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     applications: ["Cellular", "SDRs", "Radars"],
     diagrams: [
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-1.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-1.webp",
         alt: "LAMP-PACF1P9-10W diagram 1",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-2.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-2.webp",
         alt: "LAMP-PACF1P9-10W diagram 2",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-3.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-3.webp",
         alt: "LAMP-PACF1P9-10W diagram 3",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-4.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pacf1p9-10w/diagram-4.webp",
         alt: "LAMP-PACF1P9-10W diagram 4",
       },
     ],
@@ -107,7 +109,8 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     partNumber: "LAMP-PAMOCBJ-10W",
     summary: "50 Ω, Wideband, 1.5 to 2.5 GHz, 7.7-10 W, 28V, SMA.",
     shortSpec: "0.55-3.25 GHz, 8-10 W, 28V, SMA",
-    heroImage: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/hero.png",
+    heroImage:
+      "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/hero.webp",
     keyFeatures: [
       "Frequency:0.55-3.25GHz",
       "Drain efficiency: 60-70.1%",
@@ -124,19 +127,19 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     ],
     diagrams: [
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-1.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-1.webp",
         alt: "LAMP-PAMOCBJ-10W diagram 1",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-2.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-2.webp",
         alt: "LAMP-PAMOCBJ-10W diagram 2",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-3.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-3.webp",
         alt: "LAMP-PAMOCBJ-10W diagram 3",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-4.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocbj-10w/diagram-4.webp",
         alt: "LAMP-PAMOCBJ-10W diagram 4",
       },
     ],
@@ -146,7 +149,8 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     partNumber: "LAMP-PAMOCCE-10W",
     summary: "50 Ω, Wideband, 0.45 to 2.9 GHz, 10W, 28V, SMA.",
     shortSpec: "0.45-2.9 GHz, 10 W, 28V, SMA",
-    heroImage: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/hero.png",
+    heroImage:
+      "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/hero.webp",
     keyFeatures: [
       "Frequency:0.45-2.9GHz",
       "Drain efficiency: 60-72.9%",
@@ -164,19 +168,19 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     ],
     diagrams: [
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-1.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-1.webp",
         alt: "LAMP-PAMOCCE-10W diagram 1",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-2.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-2.webp",
         alt: "LAMP-PAMOCCE-10W diagram 2",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-3.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-3.webp",
         alt: "LAMP-PAMOCCE-10W diagram 3",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-4.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamocce-10w/diagram-4.webp",
         alt: "LAMP-PAMOCCE-10W diagram 4",
       },
     ],
@@ -186,7 +190,8 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     partNumber: "LAMP-PAMOCCF-10W",
     summary: "50 Ω, Wideband, 0.5 to 2.2 GHz, 10 W, 28V, SMA.",
     shortSpec: "0.5-2.2 GHz, 10 W, 28V, SMA",
-    heroImage: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/hero.png",
+    heroImage:
+      "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/hero.webp",
     keyFeatures: [
       "Frequency:0.5-2.2GHz",
       "Drain efficiency: 60-71%",
@@ -197,19 +202,19 @@ export const rfPowerAmplifierProducts: RfPowerAmplifierSummary[] = [
     applications: ["Cellular", "SDRs", "Radars"],
     diagrams: [
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-1.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-1.webp",
         alt: "LAMP-PAMOCCF-10W diagram 1",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-2.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-2.webp",
         alt: "LAMP-PAMOCCF-10W diagram 2",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-3.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-3.webp",
         alt: "LAMP-PAMOCCF-10W diagram 3",
       },
       {
-        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-4.png",
+        src: "/assets/products/rf-power-amplifiers/lamp-pamoccf-10w/diagram-4.webp",
         alt: "LAMP-PAMOCCF-10W diagram 4",
       },
     ],
@@ -268,6 +273,16 @@ export const rfPowerAmplifierTableRows: RfPowerAmplifierTableRow[] = [
     efficiency: "45 (sat.) / 35 (av.)",
     gainDb: "50-55",
     modeOfOperation: "Doherty",
+  },
+  {
+    partNumber: "LAMP-PACAB-0.4-0.52-50W",
+    centerFrequencyGhz: "0.4-0.52",
+    outputPowerW: "45-54",
+    efficiency: "51.3-58.9%",
+    gainDb: "36.5-37.4",
+    modeOfOperation: "Not specified",
+    datasheetHref:
+      "/assets/products/rf-power-amplifiers/datasheets/LAMP-PACAB-0.4-0.52-50W_Datasheet_.pdf",
   },
   {
     partNumber: "LAMP-DPA0P75-50W",

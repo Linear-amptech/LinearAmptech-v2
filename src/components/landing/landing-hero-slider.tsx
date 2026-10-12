@@ -9,12 +9,7 @@ import {
   Pause,
   Play,
 } from "lucide-react";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import {
   useImageTheme,
@@ -37,45 +32,45 @@ type HeroImage = Pick<HeroSlide, "imagePath" | "imageAlt">;
 const heroImageSets: Record<ImageThemeMode, HeroImage[]> = {
   new: [
     {
-      imagePath: "/assets/hero/1.png",
+      imagePath: "/assets/hero/rf-front-end-hero-v2.webp",
       imageAlt: "RF front-end technology hero visual",
     },
     {
-      imagePath: "/assets/hero/2.png",
+      imagePath: "/assets/hero/gan-pa-module-hero-v2.webp",
       imageAlt: "GaN power amplifier module hero visual",
     },
     {
-      imagePath: "/assets/hero/cmos-rfic-development.png",
+      imagePath: "/assets/hero/cmos-rfic-development-hero-v2.webp",
       imageAlt: "Si CMOS RFIC development hero visual",
     },
     {
-      imagePath: "/assets/hero/3.png",
+      imagePath: "/assets/hero/sige-rfic-development-hero-v2.webp",
       imageAlt: "SiGe BiCMOS RFIC development hero visual",
     },
     {
-      imagePath: "/assets/hero/4.png",
+      imagePath: "/assets/hero/mmwave-packaging-hero-v3.webp",
       imageAlt: "mm-wave packaging integration hero visual",
     },
   ],
   old: [
     {
-      imagePath: "/assets/hero/rfic-chip.png",
+      imagePath: "/assets/hero/rfic-chip.webp",
       imageAlt: "Linear-AmpTech RFIC chip hero visual",
     },
     {
-      imagePath: "/assets/hero/rf-lab-validation.png",
+      imagePath: "/assets/hero/rf-lab-validation.webp",
       imageAlt: "GaN power amplifier module hero visual",
     },
     {
-      imagePath: "/assets/hero/silicon-wafer.png",
+      imagePath: "/assets/hero/silicon-wafer.webp",
       imageAlt: "Si CMOS RFIC development hero visual",
     },
     {
-      imagePath: "/assets/hero/transmitter-47ghz.png",
+      imagePath: "/assets/hero/transmitter-47ghz.webp",
       imageAlt: "47 GHz transmitter chip hero visual",
     },
     {
-      imagePath: "/assets/hero/silicon-wafer.png",
+      imagePath: "/assets/hero/silicon-wafer.webp",
       imageAlt: "Semiconductor wafer hero visual",
     },
   ],
@@ -88,8 +83,6 @@ export function LandingHeroSlider() {
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [isSliderPaused, setIsSliderPaused] = useState(false);
   const [isNavHovered, setIsNavHovered] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const heroY = useTransform(scrollYProgress, [0, 0.5], [0, 90]);
   const isPlaybackPaused = isSliderPaused || isNavHovered;
   const heroSlides = useMemo<HeroSlide[]>(() => {
     const heroImages = heroImageSets[mode];
@@ -133,7 +126,6 @@ export function LandingHeroSlider() {
       <motion.div
         aria-hidden="true"
         className="absolute inset-0 z-0 overflow-hidden"
-        style={{ y: heroY }}
       >
         {heroSlides.map((slide, index) => (
           <motion.div
@@ -141,13 +133,9 @@ export function LandingHeroSlider() {
             className="absolute inset-0 bg-cover bg-[position:60%_50%] bg-no-repeat will-change-transform sm:bg-[position:64%_50%]"
             style={{ backgroundImage: `url(${slide.imagePath})` }}
             initial={false}
-            animate={{
-              opacity: activeHeroSlide === index ? 1 : 0,
-              scale: activeHeroSlide === index ? 1.05 : 1,
-            }}
+            animate={{ opacity: activeHeroSlide === index ? 1 : 0 }}
             transition={{
-              opacity: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
-              scale: { duration: 6, ease: "linear" },
+              opacity: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
             }}
           />
         ))}
